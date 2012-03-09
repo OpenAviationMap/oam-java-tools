@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?Fm Condition APSDataLink_NULL APSDataLink NO_OVERRIDE hide?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition XMLToBeDeleted White CHANGEBAR show?>
+<?Fm Condition APSToBeInserted APSInsertion NO_OVERRIDE show?>
+<?Fm Condition APSToBeDeleted APSDeletion STRIKETHROUGH show?>
+<?Fm Condition Source%20Tag Red DOUBLE_UNDERLINE hide?>
+<?Fm Condition Comment Red SINGLE_UNDERLINE show?>
+<?Fm Condition APSDataLink APSDataLink NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+
+<?eAIP-locales ../locales.xml?>
+<e:ENR-5.1 id = "ENR-5.1" xmlns:x = "http://www.w3.org/1999/xhtml" xmlns:e = "http://www.eurocontrol.int/xmlns/AIM/eAIP" xmlns:xlink = "http://www.w3.org/1999/xlink"><?FM MARKER [FrameAPS Content] PM-0.1,557313,1595223?>
+
+<e:Title id = "ENR510603081427571">PROHIBITED, RESTRICTED AND DANGER AREAS</e:Title>
+<e:Sub-section id = "ENR5107041213350512" class = "Heading4" Number = "1. "><e:Title id = "ENR5107041213351513">Prohibited Areas</e:Title><x:table id = "ENR511005141049560" frame = "border">
+<x:thead id = "ENR511005141049561">
+<x:tr id = "ENR511005141049562" class = "Table-row-type-1">
+<x:th id = "ENR511005141049563" class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-0.1,4468771,655360?>Identification / Name, <x:br id = "ENR510707301306310"/>Lateral limits</x:th>
+<x:th id = "ENR511005141049564" class = "bleft btop bright bbottom ">Upper limit / Lower limit</x:th>
+<x:th id = "ENR511005141049565" class = "bleft btop bright bbottom ">Remarks(time of activity, type of restriction, nature of hazard, risk of interception)</x:th>
+</x:tr>
+<x:tr id = "ENR511005141049566" class = "Table-row-type-2">
+<x:th id = "ENR511005141049567" class = "bleft btop bright bbottom ">1</x:th>
+<x:th id = "ENR511005141049568" class = "bleft btop bright bbottom ">2</x:th>
+<x:th id = "ENR511005141049569" class = "bleft btop bright bbottom ">3</x:th>
+</x:tr>
+</x:thead>
+<x:tbody id = "ENR5110051410495610">
+<x:tr id = "ENR5110051410495611">
+<x:td id = "ENR5110051410495612" class = "bleft btop bright bbottom "><x:strong id = "ENR510704130822171" class = "Cell-body">LHP1 / PAKS</x:strong><x:br id = "ENR510704130822090"/>A circle radius 3KM centred on 463443N 0185110E</x:td>
+<x:td id = "ENR5110051410495613" class = "bleft btop bright bbottom ">FL 195 / GND</x:td>
+<x:td id = "ENR5110051410495614" class = "bleft btop bright bbottom ">H24<x:br id = "ENR510806130802340"/>Nuclear Power Plant</x:td>
+</x:tr>
+<x:tr id = "ENR5110051410495615">
+<x:td id = "ENR5110051410495616" class = "bleft btop bright bbottom "><x:strong id = "ENR510704130831513" class = "Cell-body">LHP2 / CSILLEBÉRC</x:strong><x:br id = "ENR510704130831252"/>A circle radius 0.5KM centred on 472923N 0185708E</x:td>
+<x:td id = "ENR5110051410495617" class = "bleft btop bright bbottom ">3500 FT ALT / GND</x:td>
+<x:td id = "ENR5110051410495618" class = "bleft btop bright bbottom ">H24<x:br id = "ENR510806130802511"/>Research nuclear reactor</x:td>
+</x:tr>
+</x:tbody>
+</x:table></e:Sub-section>
+<e:Sub-section id = "ENR510704130726360" class = "Heading4" Number = "2. "><e:Title id = "ENR510704130726461">Restricted Areas</e:Title><x:table id = "ENR5110051410495619" frame = "border">
+<x:thead id = "ENR5110051410495620">
+<x:tr id = "ENR511005141049570" class = "Table-row-type-1">
+<x:th id = "ENR511005141049571" class = "bleft btop bright bbottom ">Identification / Name,<x:br id = "ENR510707301309281"/>lateral limits</x:th>
+<x:th id = "ENR511005141049572" class = "bleft btop bright bbottom ">Upper limit / Lower limit</x:th>
+<x:th id = "ENR511005141049573" class = "bleft btop bright bbottom ">Remarks(time of activity, type of restriction, nature of hazard, risk of interception)</x:th>
+</x:tr>
+<x:tr id = "ENR511005141049574" class = "Table-row-type-2">
+<x:th id = "ENR511005141049575" class = "bleft btop bright bbottom ">1</x:th>
+<x:th id = "ENR511005141049576" class = "bleft btop bright bbottom ">2</x:th>
+<x:th id = "ENR511005141049577" class = "bleft btop bright bbottom ">3</x:th>
+</x:tr>
+</x:thead>
+<x:tbody id = "ENR511005141049578">
+<x:tr id = "ENR511005141049579">
+<x:td id = "ENR5110051410495710" class = "bleft btop bright bbottom "><x:strong id = "ENR510704130835455" class = "Cell-body">LHR1 / BUDAPEST</x:strong><x:br id = "ENR510704130835364"/>473059N 0185828E - 473055N 0190118E - 473054N 0190159E - 473053N 0190237E - 473038N 0190321E - 473022N 0190325E - 472941N 0190336E - 472859N 0190147E - 472910N 0190047E - 472931N 0185846E - 473002N 0185812E - 473059N 0185828E</x:td>
+<x:td id = "ENR5110051410495711" class = "bleft btop bright bbottom ">3500 FT ALT / GND</x:td>
+<x:td id = "ENR5110051410495712" class = "bleft btop bright bbottom ">H24<x:br id = "ENR510806130802572"/>By special permission of the aeronautical authority</x:td>
+</x:tr>
+<x:tr id = "ENR5110051410495713">
+<x:td id = "ENR5110051410495714" class = "bleft btop bright bbottom "><x:strong id = "ENR510704130838457" class = "Cell-body">LHR1A / BUDAPEST</x:strong><x:br id = "ENR510704130838376"/>473154N 0185620E - 473154N 0185756E - 473121N 0185756E - 473121N 0185620E - 473154N 0185620E</x:td>
+<x:td id = "ENR5110051410495715" class = "bleft btop bright bbottom ">3500 FT ALT / GND</x:td>
+<x:td id = "ENR5110051410495716" class = "bleft btop bright bbottom ">H24<x:br id = "ENR510806130803043"/>By special permission of the aeronautical authority</x:td>
+</x:tr>
+<x:tr id = "ENR5110051410495717">
+<x:td id = "ENR5110051410495718" class = "bleft btop bright bbottom "><x:strong id = "ENR510704130840139" class = "Cell-body">LHR3 / BALATONFŰZFŐ</x:strong><x:br id = "ENR510804160722270"/>A circle radius 2KM centred on 470503N 0180254E</x:td>
+<x:td id = "ENR5110051410495719" class = "bleft btop bright bbottom ">7500 FT ALT / GND</x:td>
+<x:td id = "ENR5110051410495720" class = "bleft btop bright bbottom ">H24<x:br id = "ENR510806130803104"/>For aircraft with less than 250 kt (IAS)</x:td>
+</x:tr>
+<x:tr id = "ENR5110051410495721">
+<x:td id = "ENR5110051410495722" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041308472011" class = "Cell-body">LHR4 / ZALAEGERSZEG</x:strong><x:br id = "ENR5107041308470810"/>A circle radius 1KM centred on 464816N 0163720E</x:td>
+<x:td id = "ENR5110051410495723" class = "bleft btop bright bbottom ">7500 FT ALT / GND</x:td>
+<x:td id = "ENR5110051410495724" class = "bleft btop bright bbottom ">H24<x:br id = "ENR510806130803195"/>For aircraft with less than 250 kt (IAS)</x:td>
+</x:tr>
+<x:tr id = "ENR5110051410495725">
+<x:td id = "ENR5110051410495726" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041308500013" class = "Cell-body">LHR5 / RÉPCELAK</x:strong><x:br id = "ENR5107041308494712"/>A circle radius 2KM centred on 472508N 0170055E</x:td>
+<x:td id = "ENR5110051410495727" class = "bleft btop bright bbottom ">7500 FT ALT / GND</x:td>
+<x:td id = "ENR5110051410495728" class = "bleft btop bright bbottom ">H24<x:br id = "ENR510806130803336"/>For aircraft with less than 250 kt (IAS)</x:td>
+</x:tr>
+<x:tr id = "ENR5110051410495729">
+<x:td id = "ENR5110051410495730" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041308510015" class = "Cell-body">LHR6 / SZÁZHALOMBATTA</x:strong><x:br id = "ENR5107041308505314"/>A circle radius 2KM centred on 471702N 0185358E</x:td>
+<x:td id = "ENR5110051410495731" class = "bleft btop bright bbottom ">7500 FT ALT / GND</x:td>
+<x:td id = "ENR5110051410495732" class = "bleft btop bright bbottom ">H24<x:br id = "ENR510806130803407"/>For aircraft with less than 250 kt (IAS)</x:td>
+</x:tr>
+<x:tr id = "ENR5110051410495733">
+<x:td id = "ENR5110051410495734" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041308521117" class = "Cell-body">LHR8 / KAZINCBARCIKA</x:strong><x:br id = "ENR5107041308515716"/>A circle radius 2.5KM centred on 481429N 0203956E</x:td>
+<x:td id = "ENR5110051410495735" class = "bleft btop bright bbottom ">3500 FT ALT / GND</x:td>
+<x:td id = "ENR5110051410495736" class = "bleft btop bright bbottom ">H24<x:br id = "ENR510806130803468"/>For aircraft with less than 250 kt (IAS)</x:td>
+</x:tr>
+<x:tr id = "ENR5110051410495737">
+<x:td id = "ENR5110051410495738" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041308530119" class = "Cell-body">LHR9 / TISZAÚJVÁROS</x:strong><x:br id = "ENR5107041308525418"/>A circle radius 3KM centred on 475413N 0210134E</x:td>
+<x:td id = "ENR5110051410495739" class = "bleft btop bright bbottom ">7500 FT ALT / GND</x:td>
+<x:td id = "ENR5110051410495740" class = "bleft btop bright bbottom ">H24<x:br id = "ENR510806130803549"/>For aircraft with less than 250 kt (IAS)</x:td>
+</x:tr>
+<x:tr id = "ENR5110051410495741">
+<x:td id = "ENR5110051410495742" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041308543821" class = "Cell-body">LHR10 / HAJDÚSZOBOSZLÓ</x:strong><x:br id = "ENR5107041308542820"/>A circle radius 5KM centred on 473154N 0212253E</x:td>
+<x:td id = "ENR5110051410495743" class = "bleft btop bright bbottom ">7500 FT ALT / GND</x:td>
+<x:td id = "ENR5110051410495744" class = "bleft btop bright bbottom ">H24<x:br id = "ENR5108061308041510"/>For aircraft with less than 250 kt (IAS)</x:td>
+</x:tr>
+<x:tr id = "ENR5110051410495745">
+<x:td id = "ENR5110051410495746" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041308561023" class = "Cell-body">LHR11 / TISZAVASVÁRI</x:strong><x:br id = "ENR5107041308551522"/>A circle radius 1.5KM centred on 475703N 0212153E</x:td>
+<x:td id = "ENR5110051410495747" class = "bleft btop bright bbottom ">7500 FT ALT / GND</x:td>
+<x:td id = "ENR5110051410495748" class = "bleft btop bright bbottom ">H24<x:br id = "ENR5108061308042111"/>For aircraft with less than 250 kt (IAS)</x:td>
+</x:tr>
+<x:tr id = "ENR5110051410495749">
+<x:td id = "ENR5110051410495750" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041308565525" class = "Cell-body">LHR12 / SAJÓBÁBONY</x:strong><x:br id = "ENR5107041308565024"/>A circle radius 1.5KM centred on 481003N 0204253E</x:td>
+<x:td id = "ENR5110051410495751" class = "bleft btop bright bbottom ">7500 FT ALT / GND</x:td>
+<x:td id = "ENR5110051410495752" class = "bleft btop bright bbottom ">H24<x:br id = "ENR5108061308042612"/>For aircraft with less than 250 kt (IAS)<?FM MARKER [FrameAPS Content] CU-0.1,9983864,1376256?></x:td>
+</x:tr>
+<x:tr id = "ENR5110051410495753">
+<x:td id = "ENR5110051410495754" class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-1.1,131072,655360?><x:strong id = "ENR5107041308575027">LHR14 / ALGYŐ</x:strong><x:br id = "ENR5107041308574426"/>A circle radius 3KM centred on 461904N 0201246E</x:td>
+<x:td id = "ENR5110051410495755" class = "bleft btop bright bbottom ">7500 FT ALT / GND</x:td>
+<x:td id = "ENR5110051410495756" class = "bleft btop bright bbottom ">H24<x:br id = "ENR5108061308043513"/>For aircraft with less than 250 kt (IAS)</x:td>
+</x:tr>
+<x:tr id = "ENR5110051410495757">
+<x:td id = "ENR5110051410495758" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041308590129" class = "Cell-body">LHR15 / DUNAÚJVÁROS</x:strong><x:br id = "ENR5107041308585328"/>A circle radius 2KM centred on 465703N 0185554E</x:td>
+<x:td id = "ENR5110051410495759" class = "bleft btop bright bbottom ">7500 FT ALT / GND</x:td>
+<x:td id = "ENR5110051410495760" class = "bleft btop bright bbottom ">H24<x:br id = "ENR5108061308044014"/>For aircraft with less than 250 kt (IAS)</x:td>
+</x:tr>
+<x:tr id = "ENR5110051410495761">
+<x:td id = "ENR5110051410495762" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041309000531" class = "Cell-body">LHR16 / SZOLNOK-TÓSZEG</x:strong><x:br id = "ENR5107041308595430"/>A circle radius 2KM centred on 470804N 0200753E</x:td>
+<x:td id = "ENR5110051410495763" class = "bleft btop bright bbottom ">7500 FT ALT / GND</x:td>
+<x:td id = "ENR5110051410495764" class = "bleft btop bright bbottom ">H24<x:br id = "ENR5108061308045015"/>For aircraft with less than 250 kt (IAS)</x:td>
+</x:tr>
+<x:tr id = "ENR5110051410495765">
+<x:td id = "ENR5110051410495766" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041309030133" class = "Cell-body">LHR22 / PÉT</x:strong><x:br id = "ENR5107041309025532"/>A circle radius 2KM centred on 471003N 0180824E</x:td>
+<x:td id = "ENR5110051410495767" class = "bleft btop bright bbottom ">7500 FT ALT / GND</x:td>
+<x:td id = "ENR5110051410495768" class = "bleft btop bright bbottom ">H24<x:br id = "ENR5108061308045616"/>For aircraft with less than 250 kt (IAS)</x:td>
+</x:tr>
+<x:tr id = "ENR5110051410495769" Updated = "No">
+<x:td id = "ENR5110051410495770" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
+<x:td id = "ENR5110051410495771" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
+<x:td id = "ENR5110051410495773" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
+</x:tr>
+<x:tr id = "ENR5110051410495775">
+<x:td id = "ENR5110051410495776" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
+<x:td id = "ENR5110051410495777" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
+<x:td id = "ENR5110051410495779" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
+</x:tr>
+<x:tr id = "ENR5110051410495781">
+<x:td id = "ENR5110051410495782" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
+<x:td id = "ENR5110051410495783" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
+<x:td id = "ENR5110051410495785" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
+</x:tr>
+<x:tr id = "ENR5110051410495786">
+<x:td id = "ENR5110051410495787" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
+<x:td id = "ENR5110051410495788" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
+<x:td id = "ENR5110051410495790" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
+</x:tr>
+<x:tr id = "ENR5110051410495792">
+<x:td id = "ENR5110051410495793" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041309071343" class = "Cell-body">LHR29 / NYÍRTELEK</x:strong><x:br id = "ENR5107041309070642"/>A circle radius 2.5KM centred on 480150N 0213827E</x:td>
+<x:td id = "ENR5110051410495794" class = "bleft btop bright bbottom ">2500 FT ALT / GND</x:td>
+<x:td id = "ENR5110051410495795" class = "bleft btop bright bbottom ">H24<x:br id = "ENR5108061308052721"/>For civil aircraft</x:td>
+</x:tr>
+<x:tr id = "ENR5110051410495796">
+<x:td id = "ENR5110051410495797" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041309081145" class = "Cell-body">LHR30 / HAJDÚSÁMSON</x:strong><x:br id = "ENR5107041309080644"/>A circle radius 2KM centred on 473846N 0214451E</x:td>
+<x:td id = "ENR5110051410495798" class = "bleft btop bright bbottom ">2500 FT ALT / GND</x:td>
+<x:td id = "ENR5110051410495799" class = "bleft btop bright bbottom ">H24<x:br id = "ENR5108061308053322"/>For civil aircraft</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957100">
+<x:td id = "ENR51100514104957101" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041309084547" class = "Cell-body">LHR31 / HEVES-ALATKA</x:strong><x:br id = "ENR5107041309083746"/>A circle radius 2KM centred on 474000N 0201629E</x:td>
+<x:td id = "ENR51100514104957102" class = "bleft btop bright bbottom ">2500 FT ALT / GND</x:td>
+<x:td id = "ENR51100514104957103" class = "bleft btop bright bbottom ">H24<x:br id = "ENR5108061308053823"/>For civil aircraft</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957104">
+<x:td id = "ENR51100514104957105" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041309095949" class = "Cell-body">LHR32 / VÁC-DERECSKEDŰLŐ</x:strong><x:br id = "ENR5107041309094948"/>A circle radius 2KM centred on 474444N 0190831E</x:td>
+<x:td id = "ENR51100514104957106" class = "bleft btop bright bbottom ">2500 FT ALT / GND</x:td>
+<x:td id = "ENR51100514104957107" class = "bleft btop bright bbottom ">H24<x:br id = "ENR5108061308054824"/>For civil aircraft.</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957108">
+<x:td id = "ENR51100514104957109" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041309104651" class = "Cell-body">LHR33 / HETÉNYEGYHÁZA</x:strong><x:br id = "ENR5107041309103950"/>A circle radius 2KM centred on 465554N 0193555E</x:td>
+<x:td id = "ENR51100514104957110" class = "bleft btop bright bbottom ">2500 FT ALT / GND</x:td>
+<x:td id = "ENR51100514104957111" class = "bleft btop bright bbottom ">H24<x:br id = "ENR5108061308055425"/>For civil aircraft.</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957112">
+<x:td id = "ENR51100514104957113" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041309112553" class = "Cell-body">LHR34 / TÁBORFALVA</x:strong><x:br id = "ENR5107041309111752"/>470627N 0192534E - 470317N 0192426E - 470233N 0192733E - 470548N 0192848E - 470627N 0192534E</x:td>
+<x:td id = "ENR51100514104957114" class = "bleft btop bright bbottom ">3000 FT ALT / GND</x:td>
+<x:td id = "ENR51100514104957115" class = "bleft btop bright bbottom ">H24<x:br id = "ENR5108061308060026"/>For civil aircraft.</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957116">
+<x:td id = "ENR51100514104957117" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041309122555" class = "Cell-body">LHR35 / PUSZTAVACS</x:strong><x:br id = "ENR5107041309121654"/>A circle radius 2.5KM centred on 470957N 0192806E</x:td>
+<x:td id = "ENR51100514104957118" class = "bleft btop bright bbottom ">2500 FT ALT / GND</x:td>
+<x:td id = "ENR51100514104957119" class = "bleft btop bright bbottom ">H24<x:br id = "ENR5108061308060427"/>For civil aircraft.<?FM MARKER [FrameAPS Content] CU-1.1,4287056,1376256?></x:td>
+</x:tr>
+</x:tbody>
+</x:table></e:Sub-section><?FM MARKER [FrameAPS Content] PU-0.1,7961793,17434286?>
+
+<?FM MARKER [FrameAPS Content] PM-2.1,1857713,480596?>
+<e:Sub-section id = "ENR510704130734043" Number = "3. "><e:Title id = "ENR510704130734134">Danger Areas</e:Title><x:table id = "ENR51100514104957120" frame = "border">
+<x:thead id = "ENR51100514104957121">
+<x:tr id = "ENR51100514104957122" class = "Table-row-type-1">
+<x:th id = "ENR51100514104957123" class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-2.1,4468771,655360?>Identification / Name,<x:br id = "ENR510707301312252"/>lateral limits</x:th>
+<x:th id = "ENR51100514104957124" class = "bleft btop bright bbottom ">Upper limit / Lower limit</x:th>
+<x:th id = "ENR51100514104957125" class = "bleft btop bright bbottom ">Remarks(time of activity, type of restriction, nature of hazard, risk of interception)</x:th>
+</x:tr>
+<x:tr id = "ENR51100514104957126" class = "Table-row-type-2">
+<x:th id = "ENR51100514104957127" class = "bleft btop bright bbottom ">1</x:th>
+<x:th id = "ENR51100514104957128" class = "bleft btop bright bbottom ">2</x:th>
+<x:th id = "ENR51100514104957129" class = "bleft btop bright bbottom ">3</x:th>
+</x:tr>
+</x:thead>
+<x:tbody id = "ENR51100514104957130">
+<x:tr id = "ENR51100514104957131">
+<x:td id = "ENR51100514104957132" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041309154357" class = "Cell-body">LHD2A / HAJMÁSKÉR</x:strong><x:br id = "ENR5107041309153656"/>470903N 0175624E - 470903N 0180054E - 471003N 0180354E - 471233N 0180654E - 471503N 0180154E - 471133N 0175554E - 470903N 0175624E</x:td>
+<x:td id = "ENR51100514104957133" class = "bleft btop bright bbottom ">FL 245 / GND</x:td>
+<x:td id = "ENR51100514104957134" class = "bleft btop bright bbottom ">NOTAM<x:br id = "ENR5108061308061828"/>Firing field</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957135">
+<x:td id = "ENR51100514104957136" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041309294559" class = "Cell-body">LHD2B / VÁRPALOTA</x:strong><x:br id = "ENR5107041309162258"/>471623N 0181254E - 471533N 0180324E - 471233N 0180654E - 471233N 0181454E - 471503N 0181654E - 471623N 0181254E</x:td>
+<x:td id = "ENR51100514104957137" class = "bleft btop bright bbottom ">FL 300 / GND</x:td>
+<x:td id = "ENR51100514104957138" class = "bleft btop bright bbottom ">NOTAM<x:br id = "ENR5108061308062429"/>Firing field</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957139">
+<x:td id = "ENR51100514104957140" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041309302461" class = "Cell-body">LHD3 / TATÁRSZENTGYÖRGY</x:strong><x:br id = "ENR5107041309301760"/>471200N 0191246E - 471101N 0191132E - 470924N 0191132E - 470909N 0191145E - 470427N 0192615E - 470456N 0192701E - 470735N 0192306E - 471200N 0191246E</x:td>
+<x:td id = "ENR51100514104957141" class = "bleft btop bright bbottom ">FL 300 / GND</x:td>
+<x:td id = "ENR51100514104957142" class = "bleft btop bright bbottom ">NOTAM<x:br id = "ENR5108061308062930"/>Firing field</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957143">
+<x:td id = "ENR51100514104957144" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041309312163" class = "Cell-body">LHD11 / DÓC</x:strong><x:br id = "ENR5107041309311462"/>462804N 0200554E - 462704N 0200624E - 462804N 0201024E - 462924N 0200934E - 462804N 0200554E</x:td>
+<x:td id = "ENR51100514104957145" class = "bleft btop bright bbottom ">7500 FT ALT / GND</x:td>
+<x:td id = "ENR51100514104957146" class = "bleft btop bright bbottom ">NOTAM<x:br id = "ENR5108061308065431"/>Firing field</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957147">
+<x:td id = "ENR51100514104957148" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041309315565" class = "Cell-body">LHD14 / HAJDÚHADHÁZ</x:strong><x:br id = "ENR5107041309314764"/>474104N 0214053E - 474004N 0214623E - 474304N 0214553E - 474304N 0214223E - 474104N 0214053E</x:td>
+<x:td id = "ENR51100514104957149" class = "bleft btop bright bbottom ">FL 105 / GND</x:td>
+<x:td id = "ENR51100514104957150" class = "bleft btop bright bbottom ">NOTAM<x:br id = "ENR5108061308065932"/>Firing field</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957151">
+<x:td id = "ENR51100514104957152" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041309330867" class = "Cell-body">LHD15 / EGERBAKTA</x:strong><x:br id = "ENR5107041309323066"/>475633N 0201753E - 475633N 0201953E - 475903N 0201923E - 480003N 0201623E - 475633N 0201753E</x:td>
+<x:td id = "ENR51100514104957153" class = "bleft btop bright bbottom ">3800 FT ALT / GND</x:td>
+<x:td id = "ENR51100514104957154" class = "bleft btop bright bbottom ">MOFRI 05:00 (UTCW) -  21:00 (UTCW)<x:br id = "ENR5108061308075633"/>Firing field</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957155">
+<x:td id = "ENR51100514104957156" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041309362569" class = "Cell-body">LHD16 / IZBÉG</x:strong><x:br id = "ENR5107041309361968"/>474233N 0190024E - 474233N 0185654E - 474033N 0185824E - 474233N 0190024E</x:td>
+<x:td id = "ENR51100514104957157" class = "bleft btop bright bbottom ">2300 FT ALT / GND</x:td>
+<x:td id = "ENR51100514104957158" class = "bleft btop bright bbottom ">MOFRI 05:00 (UTCW) -  21:00 (UTCW)<x:br id = "ENR5108061308080034"/>Firing field</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957159">
+<x:td id = "ENR51100514104957160" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041309370671" class = "Cell-body">LHD17 / GYŐRSZENTIVÁN</x:strong><x:br id = "ENR5107041309370070"/>474304N 0174554E - 474103N 0174554E - 474203N 0175154E - 474343N 0174854E - 474304N 0174554E</x:td>
+<x:td id = "ENR51100514104957161" class = "bleft btop bright bbottom ">3800 FT ALT / GND</x:td>
+<x:td id = "ENR51100514104957162" class = "bleft btop bright bbottom ">MOFRI 05:00 (UTCW) -  21:00 (UTCW)<x:br id = "ENR5108061308080735"/>Firing field</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957163">
+<x:td id = "ENR51100514104957164" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041312174773" class = "Cell-body">LHD18 / CSORNA/AKASZTÓ</x:strong><x:br id = "ENR5107041312173672"/>464134N 0191154E - 464404N 0190824E - 463634N 0190824E - 463404N 0191154E - 464134N 0191154E</x:td>
+<x:td id = "ENR51100514104957165" class = "bleft btop bright bbottom ">3800 FT ALT / GND</x:td>
+<x:td id = "ENR51100514104957166" class = "bleft btop bright bbottom ">MOFRI 05:00 (UTCW) -  21:00 (UTCW)<x:br id = "ENR5108061308081336"/>Firing field</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957167">
+<x:td id = "ENR51100514104957168" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041312201675" class = "Cell-body">LHD21 / SZOMOD</x:strong><x:br id = "ENR5107041312200874"/>474103N 0182154E - 473803N 0182554E - 474203N 0182624E - 474233N 0182254E - 474103N 0182154E</x:td>
+<x:td id = "ENR51100514104957169" class = "bleft btop bright bbottom ">FL 105 / GND</x:td>
+<x:td id = "ENR51100514104957170" class = "bleft btop bright bbottom ">NOTAM<x:br id = "ENR5108061308082437"/>Firing field</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957171">
+<x:td id = "ENR51100514104957172" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041312230677" class = "Cell-body">LHD24 / SÁNTOS</x:strong><x:br id = "ENR5107041312205276"/>462134N 0175055E - 461804N 0174955E - 461834N 0175225E - 462034N 0175225E - 462134N 0175055E</x:td>
+<x:td id = "ENR51100514104957173" class = "bleft btop bright bbottom ">3800 FT ALT / GND</x:td>
+<x:td id = "ENR51100514104957174" class = "bleft btop bright bbottom ">MOFRI 05:00 (UTCW) -  21:00 (UTCW)<x:br id = "ENR5108061308083838"/>Firing field</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957175">
+<x:td id = "ENR51100514104957176" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041312235279" class = "Cell-body">LHD29 / PÜSPÖKSZILÁGY</x:strong><x:br id = "ENR5107041312234678"/>474533N 0192054E - 474803N 0191454E - 474703N 0191254E - 474533N 0192054E</x:td>
+<x:td id = "ENR51100514104957177" class = "bleft btop bright bbottom ">3800 FT ALT / GND</x:td>
+<x:td id = "ENR51100514104957178" class = "bleft btop bright bbottom ">MOFRI 05:00 (UTCW) -  21:00 (UTCW)<x:br id = "ENR5108061308084339"/>Firing field</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957179">
+<x:td id = "ENR51100514104957180" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041312244681" class = "Cell-body">LHD30 / ÉRD</x:strong><x:br id = "ENR5107041312242480"/>472633N 0184454E - 472403N 0184854E - 472703N 0184754E - 472703N 0184624E - 472633N 0184454E</x:td>
+<x:td id = "ENR51100514104957181" class = "bleft btop bright bbottom ">3800 FT ALT / GND</x:td>
+<x:td id = "ENR51100514104957182" class = "bleft btop bright bbottom ">NOTAM<x:br id = "ENR5108061308084840"/>Firing field</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957183">
+<x:td id = "ENR51100514104957184" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041312271283" class = "Cell-body">LHD33 / ÁLLAMPUSZTA</x:strong><x:br id = "ENR5107041312253782"/>464204N 0190124E - 463904N 0190424E - 464104N 0190954E - 464434N 0190624E - 464204N 0190124E</x:td>
+<x:td id = "ENR51100514104957185" class = "bleft btop bright bbottom ">2300 FT ALT / GND</x:td>
+<x:td id = "ENR51100514104957186" class = "bleft btop bright bbottom ">MOFRI 05:00 (UTCW) -  21:00 (UTCW)<x:br id = "ENR5108061308085241"/>Firing field</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957187">
+<x:td id = "ENR51100514104957188" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041312290985" class = "Cell-body">LHD34 / MÁRIANOSZTRA</x:strong><x:br id = "ENR5107041312285284"/>475603N 0184954E - 475302N 0184554E - 475203N 0185154E - 475303N 0185554E - 475603N 0185354E - 475603N 0184954E</x:td>
+<x:td id = "ENR51100514104957189" class = "bleft btop bright bbottom ">2300 FT ALT / GND</x:td>
+<x:td id = "ENR51100514104957190" class = "bleft btop bright bbottom ">MOFRI 05:00 (UTCW) -  21:00 (UTCW)<x:br id = "ENR5108061308085742"/>Firing field<?FM MARKER [FrameAPS Content] CU-2.1,2847540,2097152?></x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957191">
+<x:td id = "ENR51100514104957192" class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-3.1,131072,655360?><x:strong id = "ENR5107041312301787">LHD36A / HAJMÁSKÉR</x:strong><x:br id = "ENR5107041312295986"/>470743N 0174825E - 470903N 0175624E - 471103N 0180654E - 471503N 0180154E - 471633N 0175754E - 471403N 0174654E - 470743N 0174825E</x:td>
+<x:td id = "ENR51100514104957193" class = "bleft btop bright bbottom ">FL 145 / GND</x:td>
+<x:td id = "ENR51100514104957194" class = "bleft btop bright bbottom ">NOTAM<x:br id = "ENR5108061308090243"/>Firing field</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957195">
+<x:td id = "ENR51100514104957196" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041312310089" class = "Cell-body">LHD36B / VÁRPALOTA</x:strong><x:br id = "ENR5107041312305288"/>471003N 0180354E - 470933N 0181924E - 471933N 0181654E - 471833N 0175954E - 471003N 0180354E</x:td>
+<x:td id = "ENR51100514104957197" class = "bleft btop bright bbottom ">FL 145 / GND</x:td>
+<x:td id = "ENR51100514104957198" class = "bleft btop bright bbottom ">NOTAM<x:br id = "ENR5108061308090944"/>Firing field</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957199">
+<x:td id = "ENR51100514104957200" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041312321991" class = "Cell-body">LHD37 / SIMONTORNYA</x:strong><x:br id = "ENR5107041312321490"/>464503N 0183224E - 464203N 0183054E - 464333N 0183354E - 464503N 0183224E</x:td>
+<x:td id = "ENR51100514104957201" class = "bleft btop bright bbottom ">3800 FT ALT / GND</x:td>
+<x:td id = "ENR51100514104957202" class = "bleft btop bright bbottom ">MOFRI 05:00 (UTCW) -  21:00 (UTCW)<x:br id = "ENR5108061308091445"/>Firing field</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957203">
+<x:td id = "ENR51100514104957204" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041312330293" class = "Cell-body">LHD39 / CIGÁND</x:strong><x:br id = "ENR5107041312325592"/>A circle radius 2KM centred on 481703N 0215422E</x:td>
+<x:td id = "ENR51100514104957205" class = "bleft btop bright bbottom ">2300 FT ALT / GND</x:td>
+<x:td id = "ENR51100514104957206" class = "bleft btop bright bbottom ">MOFRI 05:00 (UTCW) -  21:00 (UTCW)<x:br id = "ENR5108061308092046"/>Firing field</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957207">
+<x:td id = "ENR51100514104957208" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041312345095" class = "Cell-body">LHD50 / HARKA</x:strong><x:br id = "ENR5107041312344094"/>A circle radius 2KM centred on 473903N 0163355E</x:td>
+<x:td id = "ENR51100514104957209" class = "bleft btop bright bbottom ">2300 FT ALT / GND</x:td>
+<x:td id = "ENR51100514104957210" class = "bleft btop bright bbottom ">MOFRI 05:00 (UTCW) -  21:00 (UTCW)<x:br id = "ENR5108061308092747"/>Firing field</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957211">
+<x:td id = "ENR51100514104957212" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041312355797" class = "Cell-body">LHD52 / KŐSZEG</x:strong><x:br id = "ENR5107041312352496"/>A circle radius 2KM centred on 472333N 0163455E</x:td>
+<x:td id = "ENR51100514104957213" class = "bleft btop bright bbottom ">2300 FT ALT / GND</x:td>
+<x:td id = "ENR51100514104957214" class = "bleft btop bright bbottom ">MOFRI 05:00 (UTCW) -  21:00 (UTCW)<x:br id = "ENR5108061308100648"/>Firing field</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957215">
+<x:td id = "ENR51100514104957216" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041312381099" class = "Cell-body">LHD53 / NÁDASD</x:strong><x:br id = "ENR5107041312365198"/>A circle radius 2KM centred on 465903N 0163455E</x:td>
+<x:td id = "ENR51100514104957217" class = "bleft btop bright bbottom ">2300 FT ALT / GND</x:td>
+<x:td id = "ENR51100514104957218" class = "bleft btop bright bbottom ">MOFRI 05:00 (UTCW) -  21:00 (UTCW)<x:br id = "ENR5108061308101249"/>Firing field</x:td>
+</x:tr>
+<x:tr id = "ENR51100514104957219">
+<x:td id = "ENR51100514104957220" class = "bleft btop bright bbottom "><x:strong id = "ENR51070413123906101" class = "Cell-body">LHD55 / SZÜGY</x:strong><x:br id = "ENR51070413123857100"/>A circle radius 2KM centred on 480403N 0191953E</x:td>
+<x:td id = "ENR51100514104957221" class = "bleft btop bright bbottom ">2300 FT ALT / GND</x:td>
+<x:td id = "ENR51100514104957222" class = "bleft btop bright bbottom ">MOFRI 05:00 (UTCW) -  21:00 (UTCW)<x:br id = "ENR5108061308101650"/>Firing field<?FM MARKER [FrameAPS Content] CU-3.1,2847540,2097152?></x:td>
+</x:tr>
+</x:tbody>
+</x:table></e:Sub-section><?FM MARKER [FrameAPS Content] PU-2.1,6777557,480596?>
+</e:ENR-5.1>

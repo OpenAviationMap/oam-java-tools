@@ -1,0 +1,293 @@
+package hu.tyrell.openaviationmap.converter;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
+import hu.tyrell.openaviationmap.model.Airspace;
+import hu.tyrell.openaviationmap.model.Boundary;
+import hu.tyrell.openaviationmap.model.Circle;
+import hu.tyrell.openaviationmap.model.Elevation;
+import hu.tyrell.openaviationmap.model.ElevationReference;
+import hu.tyrell.openaviationmap.model.Point;
+import hu.tyrell.openaviationmap.model.Ring;
+import hu.tyrell.openaviationmap.model.UOM;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.List;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.junit.Test;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.xml.sax.SAXException;
+
+public class EAIPHungaryReaderTest {
+
+    @Test
+    public void testRingAirspace() {
+        Node airspaceNode = null;
+
+        try {
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            DocumentBuilder        db  = dbf.newDocumentBuilder();
+
+            Document   d = db.parse(new FileInputStream("var/lhr1_eAIP.xml"));
+            airspaceNode = d.getDocumentElement();
+
+        } catch (ParserConfigurationException e) {
+            fail(e.toString());
+        } catch (FileNotFoundException e) {
+            fail(e.toString());
+        } catch (SAXException e) {
+            fail(e.toString());
+        } catch (IOException e) {
+            fail(e.toString());
+        }
+
+        assertNotNull(airspaceNode);
+
+        try {
+            EAIPHungaryReader reader   = new EAIPHungaryReader();
+            Airspace          airspace = reader.processAirspace(airspaceNode);
+
+            assertNotNull(airspace);
+            assertEquals("LHR1", airspace.getDesignator());
+            assertEquals("BUDAPEST", airspace.getName());
+            assertEquals("R", airspace.getType());
+
+            assertEquals(Boundary.Type.RING, airspace.getBoundary().getType());
+            Ring ring = (Ring) airspace.getBoundary();
+            assertEquals(12, ring.getPointList().size());
+            List<Point> points = ring.getPointList();
+            assertEquals(47.516389, points.get(0).getLatitude(), 1.0 / 3600.0);
+            assertEquals(18.974444, points.get(0).getLongitude(), 1.0 / 3600.0);
+            assertEquals(47.515278, points.get(1).getLatitude(), 1.0 / 3600.0);
+            assertEquals(19.021667, points.get(1).getLongitude(), 1.0 / 3600.0);
+            assertEquals(47.515   , points.get(2).getLatitude(), 1.0 / 3600.0);
+            assertEquals(19.033056, points.get(2).getLongitude(), 1.0 / 3600.0);
+            assertEquals(47.514722, points.get(3).getLatitude(), 1.0 / 3600.0);
+            assertEquals(19.043611, points.get(3).getLongitude(), 1.0 / 3600.0);
+            assertEquals(47.516389, points.get(11).getLatitude(), 1.0 / 3600.0);
+            assertEquals(18.974444, points.get(11).getLongitude(), 1.0/3600.0);
+
+            assertNotNull(airspace.getUpperLimit());
+            Elevation ul = airspace.getUpperLimit();
+            assertEquals(3500, ul.getElevation(), 0.0);
+            assertEquals(UOM.FT, ul.getUom());
+            assertEquals(ElevationReference.MSL, ul.getReference());
+
+            assertNotNull(airspace.getLowerLimit());
+            Elevation ll = airspace.getLowerLimit();
+            assertEquals(0, ll.getElevation(), 0.0);
+            assertEquals(UOM.FT, ll.getUom());
+            assertEquals(ElevationReference.SFC, ll.getReference());
+
+            assertEquals("By special permission of the aeronautical authority",
+                         airspace.getRemarks());
+
+        } catch (ParseException e) {
+            fail(e.toString());
+        }
+    }
+
+    @Test
+    public void testCircleAirspace() {
+        Node airspaceNode = null;
+
+        try {
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            DocumentBuilder        db  = dbf.newDocumentBuilder();
+
+            Document   d = db.parse(new FileInputStream("var/lhp1_eAIP.xml"));
+            airspaceNode = d.getDocumentElement();
+
+        } catch (ParserConfigurationException e) {
+            fail(e.toString());
+        } catch (FileNotFoundException e) {
+            fail(e.toString());
+        } catch (SAXException e) {
+            fail(e.toString());
+        } catch (IOException e) {
+            fail(e.toString());
+        }
+
+        assertNotNull(airspaceNode);
+
+        try {
+            EAIPHungaryReader reader   = new EAIPHungaryReader();
+            Airspace          airspace = reader.processAirspace(airspaceNode);
+
+            assertNotNull(airspace);
+            assertEquals("LHP1", airspace.getDesignator());
+            assertEquals("PAKS", airspace.getName());
+            assertEquals("P", airspace.getType());
+
+            assertEquals(Boundary.Type.CIRCLE,
+                         airspace.getBoundary().getType());
+            Circle circle = (Circle) airspace.getBoundary();
+            assertEquals(3000, circle.getRadius().getDistance(), 0.0);
+            assertEquals(UOM.M, circle.getRadius().getUom());
+            assertEquals(18.8528, circle.getCenter().getLongitude(),
+                    1.0 / 3600.0);
+            assertEquals(46.57861, circle.getCenter().getLatitude(),
+                    1.0 / 3600.0);
+
+            assertNotNull(airspace.getUpperLimit());
+            Elevation ul = airspace.getUpperLimit();
+            assertEquals(195, ul.getElevation(), 0.0);
+            assertEquals(UOM.FL, ul.getUom());
+            assertEquals(ElevationReference.MSL, ul.getReference());
+
+            assertNotNull(airspace.getLowerLimit());
+            Elevation ll = airspace.getLowerLimit();
+            assertEquals(0, ll.getElevation(), 0.0);
+            assertEquals(UOM.FT, ll.getUom());
+            assertEquals(ElevationReference.SFC, ll.getReference());
+
+            assertEquals("Nuclear Power Plant", airspace.getRemarks());
+
+        } catch (ParseException e) {
+            fail(e.toString());
+        }
+    }
+
+    @Test
+    public void testEAIP() {
+        Node eAipNode = null;
+
+        try {
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            DocumentBuilder        db  = dbf.newDocumentBuilder();
+
+            Document   d = db.parse(
+                            new FileInputStream("var/LH-ENR-5.1-en-HU.xml"));
+            eAipNode = d.getDocumentElement();
+
+        } catch (ParserConfigurationException e) {
+            fail(e.toString());
+        } catch (FileNotFoundException e) {
+            fail(e.toString());
+        } catch (SAXException e) {
+            fail(e.toString());
+        } catch (IOException e) {
+            fail(e.toString());
+        }
+
+        assertNotNull(eAipNode);
+
+        try {
+            EAIPHungaryReader reader    = new EAIPHungaryReader();
+            List<Airspace>    airspaces = reader.processEAIP(eAipNode);
+
+            assertEquals(47, airspaces.size());
+
+            // check LHP1
+            assertEquals("LHP1", airspaces.get(0).getDesignator());
+            assertEquals("PAKS", airspaces.get(0).getName());
+            assertEquals("P", airspaces.get(0).getType());
+
+            assertEquals(Boundary.Type.CIRCLE,
+                         airspaces.get(0).getBoundary().getType());
+            Circle circle = (Circle) airspaces.get(0).getBoundary();
+            assertEquals(3000, circle.getRadius().getDistance(), 0.0);
+            assertEquals(UOM.M, circle.getRadius().getUom());
+            assertEquals(18.8528, circle.getCenter().getLongitude(),
+                    1.0 / 3600.0);
+            assertEquals(46.57861, circle.getCenter().getLatitude(),
+                    1.0 / 3600.0);
+
+            assertNotNull(airspaces.get(0).getUpperLimit());
+            Elevation ul = airspaces.get(0).getUpperLimit();
+            assertEquals(195, ul.getElevation(), 0.0);
+            assertEquals(UOM.FL, ul.getUom());
+            assertEquals(ElevationReference.MSL, ul.getReference());
+
+            assertNotNull(airspaces.get(0).getLowerLimit());
+            Elevation ll = airspaces.get(0).getLowerLimit();
+            assertEquals(0, ll.getElevation(), 0.0);
+            assertEquals(UOM.FT, ll.getUom());
+            assertEquals(ElevationReference.SFC, ll.getReference());
+
+            assertEquals("Nuclear Power Plant", airspaces.get(0).getRemarks());
+
+
+            // check LHR1
+            assertEquals("LHR1", airspaces.get(2).getDesignator());
+            assertEquals("BUDAPEST", airspaces.get(2).getName());
+            assertEquals("R", airspaces.get(2).getType());
+
+            assertEquals(Boundary.Type.RING,
+                    airspaces.get(2).getBoundary().getType());
+            Ring ring = (Ring) airspaces.get(2).getBoundary();
+            assertEquals(12, ring.getPointList().size());
+            List<Point> points = ring.getPointList();
+            assertEquals(47.516389, points.get(0).getLatitude(), 1.0/3600.0);
+            assertEquals(18.974444, points.get(0).getLongitude(), 1.0/3600.0);
+            assertEquals(47.515278, points.get(1).getLatitude(), 1.0/3600.0);
+            assertEquals(19.021667, points.get(1).getLongitude(), 1.0/3600.0);
+            assertEquals(47.515   , points.get(2).getLatitude(), 1.0/3600.0);
+            assertEquals(19.033056, points.get(2).getLongitude(), 1.0/3600.0);
+            assertEquals(47.514722, points.get(3).getLatitude(), 1.0/3600.0);
+            assertEquals(19.043611, points.get(3).getLongitude(), 1.0/3600.0);
+            assertEquals(47.516389, points.get(11).getLatitude(), 1.0/3600.0);
+            assertEquals(18.974444, points.get(11).getLongitude(), 1.0/3600.0);
+
+            assertNotNull(airspaces.get(2).getUpperLimit());
+            ul = airspaces.get(2).getUpperLimit();
+            assertEquals(3500, ul.getElevation(), 0.0);
+            assertEquals(UOM.FT, ul.getUom());
+            assertEquals(ElevationReference.MSL, ul.getReference());
+
+            assertNotNull(airspaces.get(2).getLowerLimit());
+            ll = airspaces.get(2).getLowerLimit();
+            assertEquals(0, ll.getElevation(), 0.0);
+            assertEquals(UOM.FT, ll.getUom());
+            assertEquals(ElevationReference.SFC, ll.getReference());
+
+            assertEquals("By special permission of the aeronautical authority",
+                         airspaces.get(2).getRemarks());
+
+
+
+            // check LHD55
+            assertEquals("LHD55", airspaces.get(46).getDesignator());
+            assertEquals("SZÜGY", airspaces.get(46).getName());
+            assertEquals("D", airspaces.get(46).getType());
+
+            assertEquals(Boundary.Type.CIRCLE,
+                    airspaces.get(46).getBoundary().getType());
+            circle = (Circle) airspaces.get(46).getBoundary();
+            assertEquals(2000, circle.getRadius().getDistance(), 0.0);
+            assertEquals(UOM.M, circle.getRadius().getUom());
+            assertEquals(19.33139, circle.getCenter().getLongitude(),
+                    1.0 / 3600.0);
+            assertEquals(48.0675, circle.getCenter().getLatitude(),
+                    1.0 / 3600.0);
+
+            assertNotNull(airspaces.get(46).getUpperLimit());
+            ul = airspaces.get(46).getUpperLimit();
+            assertEquals(2300, ul.getElevation(), 0.0);
+            assertEquals(UOM.FT, ul.getUom());
+            assertEquals(ElevationReference.MSL, ul.getReference());
+
+            assertNotNull(airspaces.get(46).getLowerLimit());
+            ll = airspaces.get(46).getLowerLimit();
+            assertEquals(0, ll.getElevation(), 0.0);
+            assertEquals(UOM.FT, ll.getUom());
+            assertEquals(ElevationReference.SFC, ll.getReference());
+
+            assertEquals("Firing field",
+                         airspaces.get(46).getRemarks());
+
+
+        } catch (ParseException e) {
+            fail(e.toString());
+        }
+    }
+
+}
