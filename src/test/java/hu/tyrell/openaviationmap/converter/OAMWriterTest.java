@@ -42,8 +42,14 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+/**
+ * Test writing Open Aviation Map files.
+ */
 public class OAMWriterTest {
 
+    /**
+     * Test writing a single airspace.
+     */
     @Test
     public void testSingleAirspace() {
         Airspace airspace = null;
@@ -123,6 +129,9 @@ public class OAMWriterTest {
 
     }
 
+    /**
+     * Test writing a number of airpsaces.
+     */
     @Test
     public void testAirspaces() {
         List<Airspace> airspaces = null;

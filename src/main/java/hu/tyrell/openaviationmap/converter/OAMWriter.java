@@ -215,19 +215,22 @@ public class OAMWriter {
         DocumentFragment nodeFragment = document.createDocumentFragment();
         DocumentFragment wayFragment = document.createDocumentFragment();
 
+        int nIdIx = nodeIdIx;
+        int wIdIx = wayIdIx;
+
         for (Airspace airspace : airspaces) {
 
             // create a node for each point in the airspace ring boundary
-            int minIx  = nodeIdIx + 1;
+            int minIx  = nIdIx + 1;
             int nodeIx = processBoundary(document, nodeFragment,
-                                         airspace.getBoundary(), nodeIdIx,
+                                         airspace.getBoundary(), nIdIx,
                                          create, version);
 
             // create a 'way' element for the airspace itself
-            ++wayIdIx;
+            ++wIdIx;
             Element way = document.createElement("way");
             way.setAttribute("id",
-                             Integer.toString(create ? -wayIdIx : wayIdIx));
+                             Integer.toString(create ? -wIdIx : wIdIx));
             way.setAttribute("version", Integer.toString(version));
             if (create) {
                 way.setAttribute("action", "create");
@@ -247,7 +250,7 @@ public class OAMWriter {
             way.appendChild(nd);
 
 
-            nodeIdIx = nodeIx;
+            nIdIx = nodeIx;
 
             // insert the airspace metadata
             Element tag = document.createElement("tag");
@@ -285,63 +288,7 @@ public class OAMWriter {
                 way.appendChild(tag);
             }
 
-            if (airspace.getLowerLimit() != null) {
-                Elevation elevation = airspace.getLowerLimit();
-
-                tag = document.createElement("tag");
-                tag.setAttribute("k", "height:lower");
-                tag.setAttribute("v",
-                        Integer.toString((int) elevation.getElevation()));
-                way.appendChild(tag);
-
-                tag = document.createElement("tag");
-                tag.setAttribute("k", "height:lower:unit");
-                tag.setAttribute("v",
-                        elevation.getUom().toString().toLowerCase());
-                way.appendChild(tag);
-
-                tag = document.createElement("tag");
-                tag.setAttribute("k", "height:lower:class");
-                switch (elevation.getReference()) {
-                default:
-                case MSL:
-                    tag.setAttribute("v", "amsl");
-                    break;
-                case SFC:
-                    tag.setAttribute("v", "agl");
-                    break;
-                }
-                way.appendChild(tag);
-            }
-
-            if (airspace.getUpperLimit() != null) {
-                Elevation elevation = airspace.getUpperLimit();
-
-                tag = document.createElement("tag");
-                tag.setAttribute("k", "height:upper");
-                tag.setAttribute("v",
-                        Integer.toString((int) elevation.getElevation()));
-                way.appendChild(tag);
-
-                tag = document.createElement("tag");
-                tag.setAttribute("k", "height:upper:unit");
-                tag.setAttribute("v",
-                        elevation.getUom().toString().toLowerCase());
-                way.appendChild(tag);
-
-                tag = document.createElement("tag");
-                tag.setAttribute("k", "height:upper:class");
-                switch (elevation.getReference()) {
-                default:
-                case MSL:
-                    tag.setAttribute("v", "amsl");
-                    break;
-                case SFC:
-                    tag.setAttribute("v", "agl");
-                    break;
-                }
-                way.appendChild(tag);
-            }
+            addElevationLimits(document, airspace, way);
 
             if (airspace.getBoundary().getType() == Boundary.Type.CIRCLE) {
                 Circle c = (Circle) airspace.getBoundary();
@@ -380,6 +327,78 @@ public class OAMWriter {
         root.appendChild(wayFragment);
 
         return document;
+    }
+
+    /**
+     * Add OAM tags related to elevation limits.
+     *
+     * @param document the document to add the tags to
+     * @param airspace the airspace the limits are about
+     * @param way the OAM way to add the limits to.
+     */
+    private void addElevationLimits(Document document,
+                                    Airspace airspace,
+                                    Element  way) {
+        Element tag;
+
+        if (airspace.getLowerLimit() != null) {
+            Elevation elevation = airspace.getLowerLimit();
+
+            tag = document.createElement("tag");
+            tag.setAttribute("k", "height:lower");
+            tag.setAttribute("v",
+                    Integer.toString((int) elevation.getElevation()));
+            way.appendChild(tag);
+
+            tag = document.createElement("tag");
+            tag.setAttribute("k", "height:lower:unit");
+            tag.setAttribute("v",
+                    elevation.getUom().toString().toLowerCase());
+            way.appendChild(tag);
+
+            tag = document.createElement("tag");
+            tag.setAttribute("k", "height:lower:class");
+            switch (elevation.getReference()) {
+            default:
+            case MSL:
+                tag.setAttribute("v", "amsl");
+                break;
+            case SFC:
+                tag.setAttribute("v", "agl");
+                break;
+            }
+            way.appendChild(tag);
+        }
+
+        if (airspace.getUpperLimit() != null) {
+            Elevation elevation = airspace.getUpperLimit();
+
+            tag = document.createElement("tag");
+            tag.setAttribute("k", "height:upper");
+            tag.setAttribute("v",
+                    Integer.toString((int) elevation.getElevation()));
+            way.appendChild(tag);
+
+            tag = document.createElement("tag");
+            tag.setAttribute("k", "height:upper:unit");
+            tag.setAttribute("v",
+                    elevation.getUom().toString().toLowerCase());
+            way.appendChild(tag);
+
+            tag = document.createElement("tag");
+            tag.setAttribute("k", "height:upper:class");
+            switch (elevation.getReference()) {
+            default:
+            case MSL:
+                tag.setAttribute("v", "amsl");
+                break;
+            case SFC:
+                tag.setAttribute("v", "agl");
+                break;
+            }
+            way.appendChild(tag);
+        }
+
     }
 
 }

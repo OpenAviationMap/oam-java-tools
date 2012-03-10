@@ -23,7 +23,15 @@ package hu.tyrell.openaviationmap.model;
 public interface Boundary {
     /** The type of the boundary. */
     public enum Type {
-        RING, CIRCLE;
+        /**
+         * A boundary which is a closed polygon - aka. ring.
+         */
+        RING,
+
+        /**
+         * A boundary which is a circle, with a center point and a radius.
+         */
+        CIRCLE;
     }
 
     /**
@@ -31,5 +39,5 @@ public interface Boundary {
      *
      * @return the type of boundary.
      */
-    public Type getType();
+    Type getType();
 }

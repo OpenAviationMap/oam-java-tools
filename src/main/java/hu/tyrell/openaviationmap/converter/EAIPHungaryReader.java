@@ -43,7 +43,7 @@ import org.w3c.dom.NodeList;
  */
 public class EAIPHungaryReader {
     /**
-     * The prefix string for a circle description
+     * The prefix string for a circle description.
      */
     private static final String CIRCLE_PREFIX = "A circle radius";
 
@@ -54,7 +54,7 @@ public class EAIPHungaryReader {
     private static final String CIRCLE_INFIX = "centred on";
 
     /**
-     * Convert a latitude string into a latitude value
+     * Convert a latitude string into a latitude value.
      *
      * @param latStr the latitude string
      * @return the latitude value
@@ -70,7 +70,7 @@ public class EAIPHungaryReader {
     }
 
     /**
-     * Convert a longitude string into a longitude value
+     * Convert a longitude string into a longitude value.
      *
      * @param lonStr the longitude string
      * @return the longitude value
@@ -92,10 +92,10 @@ public class EAIPHungaryReader {
      * @return the corresponding Point object.
      */
     private Point processPoint(String pointDesc) {
-        pointDesc = pointDesc.trim();
-        int space = pointDesc.indexOf(" ");
-        String latStr = pointDesc.substring(0, space).trim();
-        String lonStr = pointDesc.substring(space + 1).trim();
+        String pd = pointDesc.trim();
+        int space = pd.indexOf(" ");
+        String latStr = pd.substring(0, space).trim();
+        String lonStr = pd.substring(space + 1).trim();
 
         Point point = new Point();
         point.setLatitude(processLat(latStr));
@@ -110,7 +110,7 @@ public class EAIPHungaryReader {
      * @param designator the airspace designator for the point list,
      *                   used to display warnings about the incompleteness
      *                   of the airspace.
-     * @param bounderyDesc the textual boundary description
+     * @param boundaryDesc the textual boundary description
      * @return the airspace boundary
      */
     private Ring processPointList(String designator, String boundaryDesc) {
@@ -155,34 +155,34 @@ public class EAIPHungaryReader {
      * @return the elevation described by elevDesc
      */
     private Elevation processElevation(String elevDesc) {
-        elevDesc = elevDesc.trim();
+        String ed = elevDesc.trim();
 
         Elevation elevation = new Elevation();
 
-        if ("GND".equals(elevDesc)) {
+        if ("GND".equals(ed)) {
             elevation.setElevation(0);
             elevation.setReference(ElevationReference.SFC);
             elevation.setUom(UOM.FT);
-        } else if (elevDesc.startsWith("FL")) {
+        } else if (ed.startsWith("FL")) {
             elevation.setElevation(
-                    Double.parseDouble(elevDesc.substring(2).trim()));
+                    Double.parseDouble(ed.substring(2).trim()));
             elevation.setReference(ElevationReference.MSL);
             elevation.setUom(UOM.FL);
         } else {
             // get the elevation
-            int i = elevDesc.indexOf(" ");
+            int i = ed.indexOf(" ");
             elevation.setElevation(
-                    Double.parseDouble(elevDesc.substring(0, i)));
+                    Double.parseDouble(ed.substring(0, i)));
 
             // get the unit of measurement
-            int j = elevDesc.indexOf(" ", i + 1);
-            String uom = elevDesc.substring(i, j).trim();
+            int j = ed.indexOf(" ", i + 1);
+            String uom = ed.substring(i, j).trim();
             if ("FT".equals(uom)) {
                 elevation.setUom(UOM.FT);
             }
 
             // get the reference
-            String reference = elevDesc.substring(j).trim();
+            String reference = ed.substring(j).trim();
             if ("ALT".equals(reference)) {
                 elevation.setReference(ElevationReference.MSL);
             } else if ("AGL".equals(reference)) {
@@ -200,13 +200,13 @@ public class EAIPHungaryReader {
      * @return the distance described by the description
      */
     private Distance processDistance(String distDesc) {
-        distDesc = distDesc.trim();
+        String dd = distDesc.trim();
 
         Distance distance = new Distance();
 
-        if (distDesc.endsWith("KM")) {
+        if (dd.endsWith("KM")) {
             distance.setDistance(Double.parseDouble(
-                    distDesc.substring(0, distDesc.length()-2)) * 1000.0);
+                    dd.substring(0, dd.length() - 2)) * 1000.0);
             distance.setUom(UOM.M);
         }
 
@@ -221,24 +221,22 @@ public class EAIPHungaryReader {
      * @throws ParseException on parsing errors
      */
     Circle processCircle(String circleDesc) throws ParseException {
-        circleDesc = circleDesc.trim();
+        String cd = circleDesc.trim();
 
         Circle circle = new Circle();
 
-        int i = circleDesc.indexOf(CIRCLE_PREFIX);
-        int j = circleDesc.indexOf(CIRCLE_INFIX);
+        int i = cd.indexOf(CIRCLE_PREFIX);
+        int j = cd.indexOf(CIRCLE_INFIX);
         if (i < 0) {
             throw new ParseException("Circle description missing prefix");
         }
         if (j < 0) {
             throw new ParseException("Circle description missing infix");
         }
-        String radiusStr = circleDesc.substring(i + CIRCLE_PREFIX.length(), j)
-                           .trim();
+        String radiusStr = cd.substring(i + CIRCLE_PREFIX.length(), j).trim();
         circle.setRadius(processDistance(radiusStr));
 
-        String centerStr = circleDesc.substring(j + CIRCLE_INFIX.length() + 1)
-                           .trim();
+        String centerStr = cd.substring(j + CIRCLE_INFIX.length() + 1).trim();
         circle.setCenter(processPoint(centerStr));
 
         return circle;
@@ -265,14 +263,14 @@ public class EAIPHungaryReader {
         return designator.substring(2, i);
     }
 
-	/**
-	 *  Process an airspace definition from the aAIP.
-	 *
-	 *  @param airspaceNode the XML node that represents the airspace
-	 *         which is an &lt;x:tr&gt; node
-	 *  @return an airspace described by the node
-	 *  @throws ParseException on input parsing errors.
-	 */
+    /**
+     *  Process an airspace definition from the aAIP.
+     *
+     *  @param airspaceNode the XML node that represents the airspace
+     *         which is an &lt;x:tr&gt; node
+     *  @return an airspace described by the node
+     *  @throws ParseException on input parsing errors.
+     */
     Airspace processAirspace(Node airspaceNode) throws ParseException {
 
         try {
@@ -311,7 +309,8 @@ public class EAIPHungaryReader {
             str = xpath.evaluate("td[position()=2]", airspaceNode);
             i   = str.indexOf("/");
             Elevation upperLimit = processElevation(str.substring(0, i).trim());
-            Elevation lowerLimit = processElevation(str.substring(i+1).trim());
+            Elevation lowerLimit = processElevation(
+                                                str.substring(i + 1).trim());
 
             airspace.setUpperLimit(upperLimit);
             airspace.setLowerLimit(lowerLimit);
@@ -331,11 +330,11 @@ public class EAIPHungaryReader {
     /**
      *  Process an eAIP file.
      *
-     *  @param eAIPNode the document node of an eAIP file
+     *  @param eAipNode the document node of an eAIP file
      *  @return a list of airspaces described by the document
      *  @throws ParseException on input parsing errors.
      */
-    public List<Airspace> processEAIP(Node EAIPNode) throws ParseException {
+    public List<Airspace> processEAIP(Node eAipNode) throws ParseException {
 
         List<Airspace> airspaces = new ArrayList<Airspace>();
 
@@ -347,7 +346,7 @@ public class EAIPHungaryReader {
               "//table/tbody/tr"
             + "[not(descendant::processing-instruction('Fm')"
                              + "[contains(., 'APSToBeDeleted')])]",
-              EAIPNode,
+              eAipNode,
               XPathConstants.NODESET);
 
             for (int i = 0; i < nodes.getLength(); ++i) {
@@ -355,7 +354,7 @@ public class EAIPHungaryReader {
                     Airspace airspace = processAirspace(nodes.item(i));
                     airspaces.add(airspace);
                 } catch (ParseException e) {
-                    // just continue
+                    continue;
                 }
             }
         } catch (Exception e) {

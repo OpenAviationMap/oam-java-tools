@@ -38,7 +38,12 @@ import org.w3c.dom.Node;
 /**
  * A command line tool to convert between various formats.
  */
-public class Converter {
+public final class Converter {
+    /**
+     * Private default constructor.
+     */
+    private Converter() {
+    }
 
     /**
      * Program entry point.
@@ -104,6 +109,7 @@ public class Converter {
                 System.out.println("help!");
                 return;
 
+            default:
             case '?':
                 System.out.println("Invalid option '" + g.getOptopt()
                                    + "' specified");

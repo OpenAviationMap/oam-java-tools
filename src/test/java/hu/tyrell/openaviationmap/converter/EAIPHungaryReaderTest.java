@@ -43,8 +43,14 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
+/**
+ * Test reading Hungarian eAIP documents.
+ */
 public class EAIPHungaryReaderTest {
 
+    /**
+     * Test a ring type airspace.
+     */
     @Test
     public void testRingAirspace() {
         Node airspaceNode = null;
@@ -90,7 +96,8 @@ public class EAIPHungaryReaderTest {
             assertEquals(47.514722, points.get(3).getLatitude(), 1.0 / 3600.0);
             assertEquals(19.043611, points.get(3).getLongitude(), 1.0 / 3600.0);
             assertEquals(47.516389, points.get(11).getLatitude(), 1.0 / 3600.0);
-            assertEquals(18.974444, points.get(11).getLongitude(), 1.0/3600.0);
+            assertEquals(18.974444, points.get(11).getLongitude(),
+                    1.0 / 3600.0);
 
             assertNotNull(airspace.getUpperLimit());
             Elevation ul = airspace.getUpperLimit();
@@ -112,6 +119,9 @@ public class EAIPHungaryReaderTest {
         }
     }
 
+    /**
+     * Test a circle type airspace.
+     */
     @Test
     public void testCircleAirspace() {
         Node airspaceNode = null;
@@ -173,6 +183,9 @@ public class EAIPHungaryReaderTest {
         }
     }
 
+    /**
+     * Test a whole eAIP document.
+     */
     @Test
     public void testEAIP() {
         Node eAipNode = null;
@@ -243,16 +256,17 @@ public class EAIPHungaryReaderTest {
             Ring ring = (Ring) airspaces.get(2).getBoundary();
             assertEquals(12, ring.getPointList().size());
             List<Point> points = ring.getPointList();
-            assertEquals(47.516389, points.get(0).getLatitude(), 1.0/3600.0);
-            assertEquals(18.974444, points.get(0).getLongitude(), 1.0/3600.0);
-            assertEquals(47.515278, points.get(1).getLatitude(), 1.0/3600.0);
-            assertEquals(19.021667, points.get(1).getLongitude(), 1.0/3600.0);
-            assertEquals(47.515   , points.get(2).getLatitude(), 1.0/3600.0);
-            assertEquals(19.033056, points.get(2).getLongitude(), 1.0/3600.0);
-            assertEquals(47.514722, points.get(3).getLatitude(), 1.0/3600.0);
-            assertEquals(19.043611, points.get(3).getLongitude(), 1.0/3600.0);
-            assertEquals(47.516389, points.get(11).getLatitude(), 1.0/3600.0);
-            assertEquals(18.974444, points.get(11).getLongitude(), 1.0/3600.0);
+            assertEquals(47.516389, points.get(0).getLatitude(), 1.0 / 3600.0);
+            assertEquals(18.974444, points.get(0).getLongitude(), 1.0 / 3600.0);
+            assertEquals(47.515278, points.get(1).getLatitude(), 1.0 / 3600.0);
+            assertEquals(19.021667, points.get(1).getLongitude(), 1.0 / 3600.0);
+            assertEquals(47.515   , points.get(2).getLatitude(), 1.0 / 3600.0);
+            assertEquals(19.033056, points.get(2).getLongitude(), 1.0 / 3600.0);
+            assertEquals(47.514722, points.get(3).getLatitude(), 1.0 / 3600.0);
+            assertEquals(19.043611, points.get(3).getLongitude(), 1.0 / 3600.0);
+            assertEquals(47.516389, points.get(11).getLatitude(), 1.0 / 3600.0);
+            assertEquals(18.974444, points.get(11).getLongitude(),
+                    1.0 / 3600.0);
 
             assertNotNull(airspaces.get(2).getUpperLimit());
             ul = airspaces.get(2).getUpperLimit();

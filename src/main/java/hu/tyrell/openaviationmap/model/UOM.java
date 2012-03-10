@@ -22,21 +22,39 @@ package hu.tyrell.openaviationmap.model;
  * mostly for elevation / height.
  */
 public enum UOM {
-	FT(0.3048), M(1.0), FL(304.8), NM(1852);
+    /**
+     * Feet.
+     */
+    FT(0.3048),
 
-	/**
-	 * The length of this unit of measurement in meters.
-	 */
-	private double inMeters;
+    /**
+     * Meters.
+     */
+    M(1.0),
 
-	/**
-	 * Constructor.
-	 *
-	 * @param inMeters the length of this unit of measurement in meters.
-	 */
-	private UOM(double inMeters) {
-	    this.inMeters = inMeters;
-	}
+    /**
+     * Flight level = in 100 feet units.
+     */
+    FL(304.8),
+
+    /**
+     * Nautical miles.
+     */
+    NM(1852);
+
+    /**
+     * The length of this unit of measurement in meters.
+     */
+    private double inMeters;
+
+    /**
+     * Constructor.
+     *
+     * @param inMeters the length of this unit of measurement in meters.
+     */
+    private UOM(double inMeters) {
+        this.inMeters = inMeters;
+    }
 
     /**
      * @return the inMeters
