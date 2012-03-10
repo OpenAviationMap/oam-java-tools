@@ -28,11 +28,6 @@ import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathFactory;
@@ -112,17 +107,6 @@ public class OAMWriterTest {
             attr = nodes.item(0).getAttributes().getNamedItem("v");
             assertEquals("LHR1", attr.getNodeValue());
 
-
-            // now write the doc to std out
-            // Use a Transformer for output
-            TransformerFactory tFactory = TransformerFactory.newInstance();
-            Transformer transformer = tFactory.newTransformer();
-            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-
-            DOMSource source = new DOMSource(d);
-            StreamResult result = new StreamResult(System.out);
-            transformer.transform(source, result);
-
         } catch (Exception e) {
             fail(e.toString());
         }
@@ -197,17 +181,6 @@ public class OAMWriterTest {
             assertEquals(nodes.getLength(), 1);
             attr = nodes.item(0).getAttributes().getNamedItem("v");
             assertEquals("LHR1", attr.getNodeValue());
-
-
-            // now write the doc to std out
-            // Use a Transformer for output
-            TransformerFactory tFactory = TransformerFactory.newInstance();
-            Transformer transformer = tFactory.newTransformer();
-            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-
-            DOMSource source = new DOMSource(d);
-            StreamResult result = new StreamResult(System.out);
-            transformer.transform(source, result);
 
         } catch (Exception e) {
             fail(e.toString());

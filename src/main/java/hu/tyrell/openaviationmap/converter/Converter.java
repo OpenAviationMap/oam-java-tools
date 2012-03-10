@@ -46,6 +46,56 @@ public final class Converter {
     }
 
     /**
+     * Print a help message.
+     */
+    private static void printHelpMessage() {
+        System.out.println(
+            "Open Aviation Map converter utility");
+        System.out.println("");
+        System.out.println(
+            "usage:");
+        System.out.println("");
+        System.out.println(
+            "  -i | --input <input.file>");
+        System.out.println(
+            "                             specify the input file, required");
+        System.out.println(
+            "  -f | --input-format <input.format>");
+        System.out.println(
+            "                             specify the input format, required");
+        System.out.println(
+            "                             supported formats: eAIP.Hungary");
+        System.out.println(
+            "  -o | --output <output.file>");
+        System.out.println(
+            "                             specify the output file, required");
+        System.out.println(
+            "  -F | --output-format <output.format>");
+        System.out.println(
+            "                             specify the output format, required");
+        System.out.println(
+            "                             supported formats: OAM");
+        System.out.println(
+            "  -c | --create");
+        System.out.println(
+            "                             if specified, the OAM output file");
+        System.out.println(
+            "                             is created in 'create' mode, for");
+        System.out.println(
+            "                             adding new OAM nodes & ways");
+        System.out.println(
+            "  -v | --version");
+        System.out.println(
+            "                             specify the OAM node versions");
+        System.out.println(
+            "                             required if output format is OAM");
+        System.out.println(
+            "  -h | --help");
+        System.out.println(
+            "                             show this usage page");
+    }
+
+    /**
      * Program entry point.
      *
      * @param args command line arguments.
@@ -105,11 +155,11 @@ public final class Converter {
                 version = Integer.parseInt(g.getOptarg());
                 break;
 
+            default:
             case 'h':
-                System.out.println("help!");
+                printHelpMessage();
                 return;
 
-            default:
             case '?':
                 System.out.println("Invalid option '" + g.getOptopt()
                                    + "' specified");
@@ -119,25 +169,67 @@ public final class Converter {
 
         if (inputFile == null) {
             System.out.println("Required option input not specified");
+            System.out.println();
+            printHelpMessage();
             return;
         }
         if (inputFormat == null) {
             System.out.println("Required option input-format not specified");
+            System.out.println();
+            printHelpMessage();
             return;
         }
         if (outputFile == null) {
             System.out.println("Required option output not specified");
+            System.out.println();
+            printHelpMessage();
             return;
         }
         if (outputFormat == null) {
             System.out.println("Required option output-format not specified");
+            System.out.println();
+            printHelpMessage();
             return;
         }
         if (version <= 0) {
             System.out.println("Version not specified as positive ingeger");
+            System.out.println();
+            printHelpMessage();
             return;
         }
 
+        try {
+            convert(inputFile,
+                    inputFormat,
+                    outputFile,
+                    outputFormat,
+                    create,
+                    version);
+        } catch (Exception e) {
+            System.out.println("Conversion failed.");
+            return;
+        }
+
+        System.out.println("Conversion successful");
+    }
+
+    /**
+     * Perform the conversion itself.
+     *
+     * @param inputFile the name of the input file
+     * @param inputFormat the name of the input format
+     * @param outputFile the name of the output file
+     * @param outputFormat the name of the output format
+     * @param create flag to indicate if OAM create mode is to be used
+     * @param version the OAM node / way version to be set
+     * @throws Exception on conversion problems.
+     */
+    private static void convert(String   inputFile,
+                                String   inputFormat,
+                                String   outputFile,
+                                String   outputFormat,
+                                boolean  create,
+                                int      version)        throws Exception {
         List<Airspace> airspaces;
 
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -145,53 +237,37 @@ public final class Converter {
         if ("eAIP.Hungary".equals(inputFormat)) {
             Node eAipNode;
 
-            try {
-                DocumentBuilder db  = dbf.newDocumentBuilder();
-                Document   d = db.parse(new FileInputStream(inputFile));
-                eAipNode = d.getDocumentElement();
+            DocumentBuilder db  = dbf.newDocumentBuilder();
+            Document   d = db.parse(new FileInputStream(inputFile));
+            eAipNode = d.getDocumentElement();
 
-                EAIPHungaryReader reader = new EAIPHungaryReader();
-                airspaces = reader.processEAIP(eAipNode);
-
-            } catch (Exception e) {
-                System.err.println(e.toString());
-                return;
-            }
+            EAIPHungaryReader reader = new EAIPHungaryReader();
+            airspaces = reader.processEAIP(eAipNode);
         } else {
-            System.err.println("input format " + inputFormat
-                             + " not recognized");
-            return;
+            throw new Exception("input format " + inputFormat
+                              + " not recognized");
         }
 
         if ("OAM".equals(outputFormat)) {
-            try {
-                DocumentBuilder db  = dbf.newDocumentBuilder();
-                Document d = db.newDocument();
-                OAMWriter writer = new OAMWriter();
+            DocumentBuilder db  = dbf.newDocumentBuilder();
+            Document d = db.newDocument();
+            OAMWriter writer = new OAMWriter();
 
-                d = writer.processAirspaces(d, airspaces, 0, 0,
-                                            create, version);
+            d = writer.processAirspaces(d, airspaces, 0, 0,
+                                        create, version);
 
-                TransformerFactory tFactory = TransformerFactory.newInstance();
-                Transformer transformer = tFactory.newTransformer();
-                transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            TransformerFactory tFactory = TransformerFactory.newInstance();
+            Transformer transformer = tFactory.newTransformer();
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 
-                DOMSource source = new DOMSource(d);
-                StreamResult result = new StreamResult(outputFile);
-                transformer.transform(source, result);
+            DOMSource source = new DOMSource(d);
+            StreamResult result = new StreamResult(outputFile);
+            transformer.transform(source, result);
 
-            } catch (Exception e) {
-                System.err.println(e.toString());
-                e.printStackTrace(System.err);
-                return;
-            }
         } else {
-            System.err.println("output format " + outputFormat
-                    + " not recognized");
-            return;
+            throw new Exception("output format " + outputFormat
+                              + " not recognized");
         }
-
-        System.out.println("Conversion successful");
     }
 
 }
