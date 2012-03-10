@@ -224,7 +224,7 @@ public class OAMReaderTest {
                         new FileInputStream("var/LH-ENR-5.1-en-HU.xml"));
         EAIPHungaryReader reader   = new EAIPHungaryReader();
 
-        airspaces = reader.processEAIP(d.getDocumentElement());
+        airspaces = reader.processEAIP(d.getDocumentElement(), null);
         assertEquals(47, airspaces.size());
 
         // serialize the airspaces into a stream

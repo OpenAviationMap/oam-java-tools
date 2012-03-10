@@ -76,7 +76,7 @@ public class EAIPHungaryReaderTest {
 
         try {
             EAIPHungaryReader reader   = new EAIPHungaryReader();
-            Airspace          airspace = reader.processAirspace(airspaceNode);
+            Airspace airspace = reader.processAirspace(airspaceNode, null);
 
             assertNotNull(airspace);
             assertEquals("LHR1", airspace.getDesignator());
@@ -147,7 +147,7 @@ public class EAIPHungaryReaderTest {
 
         try {
             EAIPHungaryReader reader   = new EAIPHungaryReader();
-            Airspace          airspace = reader.processAirspace(airspaceNode);
+            Airspace airspace = reader.processAirspace(airspaceNode, null);
 
             assertNotNull(airspace);
             assertEquals("LHP1", airspace.getDesignator());
@@ -212,7 +212,7 @@ public class EAIPHungaryReaderTest {
 
         try {
             EAIPHungaryReader reader    = new EAIPHungaryReader();
-            List<Airspace>    airspaces = reader.processEAIP(eAipNode);
+            List<Airspace>    airspaces = reader.processEAIP(eAipNode, null);
 
             assertEquals(47, airspaces.size());
 

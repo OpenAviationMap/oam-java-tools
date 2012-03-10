@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition APSDataLink_NULL APSDataLink NO_OVERRIDE hide?>
+<?Fm Condition APSToBeInserted APSInsertion NO_OVERRIDE hide?>
+<?Fm Condition APSToBeDeleted APSDeletion STRIKETHROUGH show?>
+<?Fm Condition Source%20Tag Red DOUBLE_UNDERLINE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition XMLToBeDeleted White CHANGEBAR show?>
+<?Fm Condition Comment Red SINGLE_UNDERLINE show?>
+<?Fm Condition APSDataLink APSDataLink NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+
+<?eAIP-locales ../locales.xml?>
+<e:ENR-5.6 id = "ENR-5.6" xmlns:x = "http://www.w3.org/1999/xhtml" xmlns:e = "http://www.eurocontrol.int/xmlns/AIM/eAIP" xmlns:xlink = "http://www.w3.org/1999/xlink"><?FM MARKER [FrameAPS Content] PM-0.1,557313,1595223?>
+<e:Title id = "ENR560603081427591">BIRD MIGRATION AND AREAS WITH SENSITIVE FAUNA</e:Title>
+<x:p id = "ENR560704240813530" class = "Body">Aircraft with operational engines and hot air balloons may operate within the restricted area established for environmental protection if it is cleared by the Civil Aviation Administration</x:p><x:table frame = "border">
+<x:thead>
+<x:tr class = "Table-row-type-1">
+<x:th class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-0.1,5397627,655360?>Identification / Name,<x:br id = "ENR560707301319310"/>Lateral limits</x:th>
+<x:th class = "bleft btop bright bbottom ">Upper limit / Lower limit</x:th>
+<x:th class = "bleft btop bright bbottom ">Time<x:br id = "ENR560704240821460"/>Reason for restriction</x:th>
+</x:tr>
+</x:thead>
+<x:tbody>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR560704240822521" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB01<?Fm Condend APSDataLink?> / ÓCSA</x:strong><x:br id = "ENR560704240826383"/><?Fm Condstart APSDataLink?>471843N 0191007E  - 471740N 0191339E  - 471451N 0191910E  - 471250N 0191626E  - 471843N 0191007E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1000 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br id = "ENR561005101428410"/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR560704240827254" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB02<?Fm Condend APSDataLink?> / TÓSZEG</x:strong><x:br id = "ENR560704240827545"/><?Fm Condstart APSDataLink?>470818N 0200133E  - 470625N 0200713E  - 470241N 0200428E  - 470154N 0200920E  - 465802N 0200304E  - 470304N 0195208E  - 470818N 0200133E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1000 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br id = "ENR560704240828216"/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR560704240828497" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB03<?Fm Condend APSDataLink?> / AGGTELEK</x:strong><x:br id = "ENR560704240828598"/><?Fm Condstart APSDataLink?>483427N 0205016E  - 482446N 0204350E  - 482555N 0202607E along border HUNGARY_SLOVAKREPUBLIC - 483427N 0205016E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1000 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br id = "ENR561005101434500"/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR560704240829349" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB04<?Fm Condend APSDataLink?> / ZEMPLÉNI HG.</x:strong><x:br id = "ENR5607042408294310"/><?Fm Condstart APSDataLink?>A circle radius 13KM centered on 482530N 0212451E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1000 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br id = "ENR561005101436240"/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408301211" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB05<?Fm Condend APSDataLink?> / HEVESI FÜVES PUSZTÁK 1. TISZA-TÓ</x:strong><x:br id = "ENR5607042408302912"/><?Fm Condstart APSDataLink?>474156N 0204928E  - 473325N 0204342E  - 473531N 0203543E  - 474155N 0204322E  - 474156N 0204928E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br id = "ENR561005101440130"/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408305413" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB06A<?Fm Condend APSDataLink?> / HEVESI FÜVES PUSZTÁK 2/A</x:strong><x:br id = "ENR5607042408310414"/><?Fm Condstart APSDataLink?>474826N 0210041E  - 474158N 0205911E  - 472841N 0203520E  - 472648N 0202534E  - 472723N 0201344E  - 474430N 0201528E  - 474504N 0203314E  - 475318N 0204737E  - 474826N 0210041E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>02 MAR-31 JUL: Mon 00:00 (UTCW) - Sun 24:00 (UTCW)<x:br id = "ENR5607042408343019"/><?Fm Condend APSDataLink?>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408315815" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB06B<?Fm Condend APSDataLink?> / HEVESI FÜVES PUSZTÁK 2/B</x:strong><x:br id = "ENR5607042408321016"/><?Fm Condstart APSDataLink?>474826N 0210041E  - 474158N 0205911E  - 472841N 0203520E  - 472648N 0202534E  - 472723N 0201344E  - 474430N 0201528E  - 474504N 0203314E  - 475318N 0204737E  - 474826N 0210041E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1000 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>01 AUG-01 MAR: Mon 00:00 (UTCW) - Sun 24:00 (UTCW)<?Fm Condend APSDataLink?><x:br id = "ENR561005101508280"/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408322117" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB07<?Fm Condend APSDataLink?> / HORTOBÁGY</x:strong><x:br id = "ENR5607042408323218"/><?Fm Condstart APSDataLink?>474718N 0210751E  - 474200N 0212540E  - 471839N 0210656E  - 472500N 0204402E  - 474718N 0210751E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br id = "ENR561005101453440"/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408363821" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB08<?Fm Condend APSDataLink?> / BIHARI SÍK I</x:strong><x:br id = "ENR5607042408365222"/><?Fm Condstart APSDataLink?>471154N 0212611E  - 471037N 0214022E  - 471827N 0213052E  - 471831N 0212135E  - 471154N 0212611E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1000 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br id = "ENR5607042408370523"/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408372624" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB09<?Fm Condend APSDataLink?> / BIHARI SÍK II</x:strong><x:br id = "ENR5607042408373525"/><?Fm Condstart APSDataLink?>471834N 0211342E  - 470119N 0211405E  - 470043N 0213135E  - 470922N 0214153E  - 471037N 0214022E  - 471154N 0212611E  - 471831N 0212135E  - 471834N 0211342E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom ">H24<x:br id = "ENR5607042408375226"/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408382127" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB10<?Fm Condend APSDataLink?> / ALSÓ-TISZA-VÖLGY</x:strong><x:br id = "ENR5607042408383328"/><e:Inserted id = "ENR56100628152356" Updated = "Inserted" Updated-ref = "GEN02_AIRAC_26AUG2010">464459N 0195832E  - 464131N 0201302E  - 462310N 0201739E  - 462338N 0195959E  - 463254N 0195304E  - 463723N 0195943E  - 463547N 0195107E  - 464459N 0195832E </e:Inserted><?Fm Condstart APSToBeInserted?><?Fm Condend APSToBeInserted?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br id = "ENR560707301327483"/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408422030" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB11<?Fm Condend APSDataLink?> / CSANÁDI PUSZTÁK</x:strong><x:br id = "ENR5607042408423231"/><?Fm Condstart APSDataLink?>A circle radius 2KM centered on 462043N 0203820E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br id = "ENR561005101502190"/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408431032" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB12<?Fm Condend APSDataLink?> / KARDOSKÚT</x:strong><x:br id = "ENR5607042408431833"/><?Fm Condstart APSDataLink?>A circle radius 4KM centered on 462824N 0203744E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br id = "ENR561005101504320"/>Sensitive fauna<?FM MARKER [FrameAPS Content] CU-0.1,4158065,1376256?></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-1.1,131072,655360?><x:strong id = "ENR5607042408434934"><?Fm Condstart APSDataLink?>LHB13<?Fm Condend APSDataLink?> / GEMENC</x:strong><x:br id = "ENR5607042408440035"/><?Fm Condstart APSDataLink?>462317N 0184615E  - 462015N 0185620E  - 461526N 0185503E  - 460945N 0185637E  - 460205N 0184456E  - 460316N 0184306E  - 461854N 0185033E  - 462202N 0184439E  - 462317N 0184615E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br id = "ENR561005101512240"/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408442436" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB14<?Fm Condend APSDataLink?> / TAPOLCAI-MEDENCE</x:strong><x:br id = "ENR5607042408443337"/><?Fm Condstart APSDataLink?>A circle radius 1.5KM centered on 464853N 0172410E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br id = "ENR561005101514310"/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408460638" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB15<?Fm Condend APSDataLink?> / TIHANY</x:strong><x:br id = "ENR5607042408461639"/><?Fm Condstart APSDataLink?>465530N 0175103E  - 465546N 0175218E  - 465521N 0175341E  - 465418N 0175421E  - 465337N 0175236E  - 465425N 0175132E  - 465530N 0175103E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br id = "ENR561005101516520"/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408464440" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB16<?Fm Condend APSDataLink?> / ŐRSEG</x:strong><x:br id = "ENR5607042408465441"/><?Fm Condstart APSDataLink?>465824N 0161618E  - 465952N 0163907E  - 464323N 0163210E  - 464252N 0162223E along border HUNGARY_SLOVENIA - 465208.62N 0160649.92E along border AUSTRIA_HUNGARY - 465824N 0161618E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br id = "ENR561005101518540"/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408473342" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB17<?Fm Condend APSDataLink?> / SÁRVÍZ VÖLGYE</x:strong><x:br id = "ENR5607042408474543"/><?Fm Condstart APSDataLink?>470149N 0183222E  - 464813N 0184116E  - 464653N 0183553E  - 470059N 0182606E  - 470149N 0183222E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br id = "ENR561005101520010"/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408485044" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB18<?Fm Condend APSDataLink?> / FERTŐ</x:strong><x:br id = "ENR5607042408490445"/><?Fm Condstart APSDataLink?>473831N 0165158E  - 473630N 0164330E  - 473315N 0164313E then a clockwise arc radius  centered on 473641N 0164632E  - 473831N 0165158E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408493546" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB19<?Fm Condend APSDataLink?> / GERECSE</x:strong><x:br id = "ENR5607042408494647"/><?Fm Condstart APSDataLink?>474358N 0183115E  - 473415N 0183129E  - 473409N 0182237E  - 474338N 0181731E  - 474358N 0183115E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408512048" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB20<?Fm Condend APSDataLink?> / NYÍRKAI-HANY</x:strong><x:br id = "ENR5607042408512949"/><?Fm Condstart APSDataLink?>474241N 0170527E  - 474308N 0171347E  - 474211N 0171346E  - 474007N 0170956E  - 473929N 0170145E  - 474209N 0170115E along border AUSTRIA_HUNGARY - 474241N 0170527E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408515950" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB21<?Fm Condend APSDataLink?> / FEHÉR-TÓ, BARBACSI-TÓ</x:strong><x:br id = "ENR5607042408521051"/><?Fm Condstart APSDataLink?>474300N 0172019E  - 474221N 0172425E  - 473624N 0172149E  - 473730N 0171641E  - 474300N 0172019E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408525152" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB22<?Fm Condend APSDataLink?> / KŐSZEGI-HG.</x:strong><x:br id = "ENR5607042408530053"/><?Fm Condstart APSDataLink?>472433.37N 0163139.40E then a clockwise arc radius  centered on 472154N 0162856E  - 471840.22N 0162837.93E along border AUSTRIA_HUNGARY - 472433.37N 0163139.40E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408533054" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB23<?Fm Condend APSDataLink?> / KIS-BALATON</x:strong><x:br id = "ENR5607042408534155"/><?Fm Condstart APSDataLink?>464303N 0171326E  - 464236N 0171748E  - 463820N 0171503E  - 464034N 0171335E  - 464303N 0171326E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1000 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408560656" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB24<?Fm Condend APSDataLink?> / VELENCEI-TÓ, DINNYÉS</x:strong><x:br id = "ENR5607042408561757"/><?Fm Condstart APSDataLink?>471340N 0183522E  - 470704N 0183623E  - 470723N 0183139E  - 470948N 0183228E  - 471049N 0183137E  - 471308N 0183139E  - 471340N 0183522E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408570458" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB25<?Fm Condend APSDataLink?> / VÉRTES</x:strong><x:br id = "ENR5607042408571359"/><?Fm Condstart APSDataLink?>472942N 0183126E  - 472042N 0183044E  - 471840N 0181458E  - 472435N 0181329E  - 472907N 0182201E  - 472942N 0183126E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br/>Sensitive fauna<?FM MARKER [FrameAPS Content] CU-1.1,4158065,1376256?></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-2.1,131072,655360?><x:strong id = "ENR5607042408580060"><?Fm Condstart APSDataLink?>LHB26<?Fm Condend APSDataLink?> / DUNAZUG-HG., BÖRZSÖNY</x:strong><x:br id = "ENR5607042408585870"/><?Fm Condstart APSDataLink?>480401N 0190608E  - 474833N 0190657E  - 473858N 0190406E  - 474036N 0184353E  - 474723N 0185152E  - 474937N 0185122E along border HUNGARY_SLOVAKREPUBLIC - 480401N 0190608E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br/>Sensitive fauna<x:br/><?Fm Condstart APSDataLink?>Over the river of Danube from 1st November to 30th June, and out of the line of Danube from 1st March to 1st November<?Fm Condend APSDataLink?></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408580761" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB27<?Fm Condend APSDataLink?> / KISKUNSÁG-NORTH 1.</x:strong><x:br id = "ENR5607042408590571"/><?Fm Condstart APSDataLink?>471155N 0190402E  - 471135N 0190402E  - 471022N 0190536E  - 470928N 0190739E  - 470616N 0190231E  - 470403N 0191630E  - 470354N 0192224E  - 471150N 0192150E  - 471155N 0190402E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1000 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408581262" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB28<?Fm Condend APSDataLink?> / KISKUNSÁG-NORTH 2.</x:strong><x:br id = "ENR5607042408591172"/><?Fm Condstart APSDataLink?>470616N 0190231E  - 465519N 0190144E  - 465604N 0192257E  - 470354N 0192224E  - 470403N 0191630E  - 470616N 0190231E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408581663" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB29<?Fm Condend APSDataLink?> / KISKUNSAG-SOUTH</x:strong><x:br id = "ENR5607042408592073"/><?Fm Condstart APSDataLink?>465342N 0190808E  - 465004N 0192716E  - 463639N 0191858E  - 464022N 0191351E  - 463334N 0191413E  - 463435N 0185817E  - 465342N 0190808E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408582465" class = "Cell-body"><x:strong id = "ENR5607042408582064"><?Fm Condstart APSDataLink?>LHB30<?Fm Condend APSDataLink?> / CSERHÁT-EAST</x:strong></x:strong><x:br id = "ENR5607042408592774"/><?Fm Condstart APSDataLink?>480336N 0194155E  - 475943N 0194848E  - 475132N 0193516E  - 475540N 0192835E  - 480336N 0194155E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408582966" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB31<?Fm Condend APSDataLink?> / TARNAVIDÉK</x:strong><x:br id = "ENR5607042408595978"/><?Fm Condstart APSDataLink?>A circle radius 9KM centered on 480713N 0200833E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408583467" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB32<?Fm Condend APSDataLink?> / BÜKK</x:strong><x:br id = "ENR5607042408593575"/><?Fm Condstart APSDataLink?>481629N 0202402E  - 480608N 0204702E  - 475325N 0204119E  - 475631N 0201651E  - 481629N 0202402E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408583868" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB33<?Fm Condend APSDataLink?> / KESZNYÉTEN</x:strong><x:br id = "ENR5607042408594176"/><?Fm Condstart APSDataLink?>A circle radius 7KM centered on 475953N 0210601E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5607042408584269" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB34<?Fm Condend APSDataLink?> / KECSKERI-PUSZTÁK</x:strong><x:br id = "ENR5607042408594877"/><?Fm Condstart APSDataLink?>A circle radius 10KM centered on 471606N 0205122E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>H24<?Fm Condend APSDataLink?><x:br/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR561005131139200" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB35A<?Fm Condend APSDataLink?> / BÉDA-KARAPANCSA</x:strong><x:br id = "ENR561005131135260"/><?Fm Condstart APSDataLink?>460316N 0184306E  - 460144N 0184055E  - 455444N 0183957E along border CROATIA_HUNGARY - 455515.00N 0185324.00E along border HUNGARY_SERBIAANDMONTENEGRO - 455606N 0185427E  - 460945N 0185637E  - 460205N 0184456E  - 460316N 0184306E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1500 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>02 MAR-30 JUN: ANY 00:00 (UTCW) - 24:00 (UTCW)<?Fm Condend APSDataLink?><x:br id = "ENR561005131141400"/>Sensitive fauna</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR561005131234270" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB35B<?Fm Condend APSDataLink?> / BÉDA-KARAPANCSA</x:strong><x:br id = "ENR561005131234370"/><?Fm Condstart APSDataLink?>460316N 0184306E  - 460144N 0184055E  - 455444N 0183957E along border CROATIA_HUNGARY - 455515.00N 0185324.00E along border HUNGARY_SERBIAANDMONTENEGRO - 455606N 0185427E  - 460945N 0185637E  - 460205N 0184456E  - 460316N 0184306E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1000 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>01 JUL-01 MAR: ANY 00:00 (UTCW) - 24:00 (UTCW)<?Fm Condend APSDataLink?><x:br id = "ENR561005131235470"/>Sensitive fauna<?FM MARKER [FrameAPS Content] CU-2.1,4158065,2818048?></x:td>
+</x:tr>
+</x:tbody>
+</x:table><?FM MARKER [FrameAPS Content] PU-0.1,22183429,5047126?>
+</e:ENR-5.6>

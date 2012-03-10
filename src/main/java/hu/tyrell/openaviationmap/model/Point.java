@@ -32,6 +32,19 @@ public class Point {
     private double longitude;
 
     /**
+     * Calculate the distance between two points.
+     *
+     * @param other the other point to calculate the distance from.
+     * @return the distance between the two points
+     */
+    public double distance(Point other) {
+        double latDif = latitude - other.latitude;
+        double lonDif = longitude - other.longitude;
+
+        return Math.sqrt(latDif * latDif + lonDif * lonDif);
+    }
+
+    /**
      * @return the latitude
      */
     public double getLatitude() {
@@ -98,5 +111,13 @@ public class Point {
             return false;
         }
         return true;
+    }
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return "Point [latitude=" + latitude + ", longitude=" + longitude + "]";
     }
 }

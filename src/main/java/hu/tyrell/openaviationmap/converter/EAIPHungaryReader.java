@@ -27,9 +27,9 @@ import hu.tyrell.openaviationmap.model.Point;
 import hu.tyrell.openaviationmap.model.Ring;
 import hu.tyrell.openaviationmap.model.UOM;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
+import java.util.Vector;
 
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
@@ -105,41 +105,100 @@ public class EAIPHungaryReader {
     }
 
     /**
+     * Extract a section of a border polygon, which is closest to the points
+     * specified. Insert the extracted points into the supplied point list.
+     *
+     * @param borderSectionStart the start of the border section to extract
+     * @param borderSectionEnd the end of the border section to extract
+     * @param borderPoints the points of the border to extract from
+     * @param pointList append the extracted points to this list
+     */
+    private void appendBorderSection(Point       borderSectionStart,
+                                     Point       borderSectionEnd,
+                                     List<Point> borderPoints,
+                                     List<Point> pointList) {
+        // find the point on the border that is closest to the section start
+        double dist    = Double.MAX_VALUE;
+        int    startIx = 0;
+        for (int ix = 0; ix < borderPoints.size(); ++ix) {
+            Point  p = borderPoints.get(ix);
+            double d = borderSectionStart.distance(p);
+            if (d < dist) {
+                dist    = d;
+                startIx = ix;
+            }
+        }
+
+        // find the point on the border that is closest to the section end
+        dist         = Double.MAX_VALUE;
+        int    endIx = 0;
+        for (int ix = 0; ix < borderPoints.size(); ++ix) {
+            Point  p = borderPoints.get(ix);
+            double d = borderSectionEnd.distance(p);
+            if (d < dist) {
+                dist    = d;
+                endIx   = ix;
+            }
+        }
+
+        // copy the points from startIx to endIx into pointList
+        if (startIx <= endIx) {
+            for (int i = startIx; i < endIx; ++i) {
+                pointList.add(borderPoints.get(i));
+            }
+        } else {
+            for (int i = startIx; i > endIx; --i) {
+                pointList.add(borderPoints.get(i));
+            }
+        }
+    }
+
+    /**
      * Parse an eAIP point list into a Boundary.
      *
      * @param designator the airspace designator for the point list,
      *                   used to display warnings about the incompleteness
      *                   of the airspace.
      * @param boundaryDesc the textual boundary description
+     * @param borderPoints a list of points repesenting the country border,
+     *        which is used for airspaces that reference a country border.
+     *        may be null.
      * @return the airspace boundary
      */
-    private Ring processPointList(String designator, String boundaryDesc) {
-        ArrayList<Point> pointList = new ArrayList<Point>();
+    private Ring processPointList(String      designator,
+                                  String      boundaryDesc,
+                                  List<Point> borderPoints) {
 
-        int ix       = 0;
-        int borderIx = boundaryDesc.indexOf("along border", ix);
+        Vector<Point> pointList          = new Vector<Point>();
+        Point         borderSectionStart = null;
 
-        while (ix != -1 && borderIx != -1) {
-            StringTokenizer tokenizer =
-                    new StringTokenizer(boundaryDesc.substring(ix, borderIx),
-                                        "-");
-            while (tokenizer.hasMoreTokens()) {
-                String str = tokenizer.nextToken();
-                pointList.add(processPoint(str));
-            }
-
-            ix       = boundaryDesc.indexOf("-", borderIx);
-            System.out.println("WARINING: airspace " + designator
-                             + " contains the following country border: "
-                             + boundaryDesc.substring(borderIx, ix));
-            borderIx = boundaryDesc.indexOf("along border", ix);
-        }
-
-        StringTokenizer tokenizer =
-                new StringTokenizer(boundaryDesc.substring(ix), "-");
+        StringTokenizer tokenizer = new StringTokenizer(boundaryDesc, "-");
         while (tokenizer.hasMoreTokens()) {
             String str = tokenizer.nextToken();
-            pointList.add(processPoint(str));
+
+            Point p = processPoint(str);
+
+            if (borderSectionStart != null) {
+                appendBorderSection(borderSectionStart,
+                                    p,
+                                    borderPoints,
+                                    pointList);
+
+                borderSectionStart = null;
+            }
+
+            int borderIx = str.indexOf("along border");
+            if (borderIx != -1) {
+                if (borderPoints == null) {
+                    System.out.println("WARINING: airspace " + designator
+                           + " contains the following country border: "
+                           + str.substring(borderIx + "along border".length()));
+                }
+
+                borderSectionStart = p;
+            }
+
+            pointList.add(p);
         }
 
         Ring boundary = new Ring();
@@ -268,10 +327,14 @@ public class EAIPHungaryReader {
      *
      *  @param airspaceNode the XML node that represents the airspace
      *         which is an &lt;x:tr&gt; node
+     *  @param borderPoints a list of points repesenting the country border,
+     *         which is used for airspaces that reference a country border.
+     *         may be null.
      *  @return an airspace described by the node
      *  @throws ParseException on input parsing errors.
      */
-    Airspace processAirspace(Node airspaceNode) throws ParseException {
+    Airspace processAirspace(Node        airspaceNode,
+                             List<Point> borderPoints) throws ParseException {
 
         try {
             Airspace airspace = new Airspace();
@@ -299,7 +362,7 @@ public class EAIPHungaryReader {
             if (str.startsWith(CIRCLE_PREFIX)) {
                 boundary = processCircle(str);
             } else {
-                boundary = processPointList(designator, str);
+                boundary = processPointList(designator, str, borderPoints);
             }
 
             airspace.setBoundary(boundary);
@@ -331,12 +394,17 @@ public class EAIPHungaryReader {
      *  Process an eAIP file.
      *
      *  @param eAipNode the document node of an eAIP file
+     *  @param borderPoints a list of points repesenting the country border,
+     *         which is used for airspaces that reference a country border.
+     *         may be null.
      *  @return a list of airspaces described by the document
      *  @throws ParseException on input parsing errors.
      */
-    public List<Airspace> processEAIP(Node eAipNode) throws ParseException {
+    public List<Airspace> processEAIP(Node        eAipNode,
+                                      List<Point> borderPoints)
+                                                      throws ParseException {
 
-        List<Airspace> airspaces = new ArrayList<Airspace>();
+        List<Airspace> airspaces = new Vector<Airspace>();
 
         try {
             XPath          xpath     = XPathFactory.newInstance().newXPath();
@@ -351,7 +419,8 @@ public class EAIPHungaryReader {
 
             for (int i = 0; i < nodes.getLength(); ++i) {
                 try {
-                    Airspace airspace = processAirspace(nodes.item(i));
+                    Airspace airspace = processAirspace(nodes.item(i),
+                                                        borderPoints);
                     airspaces.add(airspace);
                 } catch (ParseException e) {
                     continue;

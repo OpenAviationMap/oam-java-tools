@@ -20,9 +20,12 @@ package hu.tyrell.openaviationmap.converter;
 import gnu.getopt.Getopt;
 import gnu.getopt.LongOpt;
 import hu.tyrell.openaviationmap.model.Airspace;
+import hu.tyrell.openaviationmap.model.Point;
+import hu.tyrell.openaviationmap.model.oam.Way;
 
 import java.io.FileInputStream;
 import java.util.List;
+import java.util.TreeMap;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -84,6 +87,14 @@ public final class Converter {
         System.out.println(
             "                             adding new OAM nodes & ways");
         System.out.println(
+                "  -b | --border");
+        System.out.println(
+                "                         a border polygon file in OSM format");
+        System.out.println(
+                "                         to be used for airspaces that refer");
+        System.out.println(
+                "                         to national borders. optional");
+        System.out.println(
             "  -v | --version");
         System.out.println(
             "                             specify the OAM node versions");
@@ -102,7 +113,7 @@ public final class Converter {
      */
     public static void main(String[] args) {
 
-        LongOpt[] longopts = new LongOpt[7];
+        LongOpt[] longopts = new LongOpt[8];
 
         longopts[0] = new LongOpt("help", LongOpt.NO_ARGUMENT, null, 'h');
         longopts[1] = new LongOpt("input", LongOpt.REQUIRED_ARGUMENT,
@@ -115,10 +126,12 @@ public final class Converter {
                 null, 'F');
         longopts[5] = new LongOpt("create", LongOpt.NO_ARGUMENT,
                 null, 'c');
-        longopts[6] = new LongOpt("version", LongOpt.REQUIRED_ARGUMENT,
+        longopts[6] = new LongOpt("border", LongOpt.REQUIRED_ARGUMENT,
+                null, 'b');
+        longopts[7] = new LongOpt("version", LongOpt.REQUIRED_ARGUMENT,
                 null, 'v');
 
-        Getopt g = new Getopt("Converter", args, "hi:f:o:F:cv:", longopts);
+        Getopt g = new Getopt("Converter", args, "hi:f:o:F:cb:v:", longopts);
 
         int c;
 
@@ -127,6 +140,7 @@ public final class Converter {
         String  outputFile   = null;
         String  outputFormat = null;
         boolean create       = false;
+        String  borderFile   = null;
         int     version      = 0;
 
         while ((c = g.getopt()) != -1) {
@@ -149,6 +163,10 @@ public final class Converter {
 
             case 'c':
                 create = true;
+                break;
+
+            case 'b':
+                borderFile = g.getOptarg();
                 break;
 
             case 'v':
@@ -204,6 +222,7 @@ public final class Converter {
                     outputFile,
                     outputFormat,
                     create,
+                    borderFile,
                     version);
         } catch (Exception e) {
             System.out.println("Conversion failed.");
@@ -221,18 +240,34 @@ public final class Converter {
      * @param outputFile the name of the output file
      * @param outputFormat the name of the output format
      * @param create flag to indicate if OAM create mode is to be used
+     * @param borderFile a file describing the country border to be used
+     *        for airspaces that refer to country borders. may be null
      * @param version the OAM node / way version to be set
      * @throws Exception on conversion problems.
      */
-    private static void convert(String   inputFile,
-                                String   inputFormat,
-                                String   outputFile,
-                                String   outputFormat,
-                                boolean  create,
-                                int      version)        throws Exception {
+    public static void convert(String   inputFile,
+                               String   inputFormat,
+                               String   outputFile,
+                               String   outputFormat,
+                               boolean  create,
+                               String   borderFile,
+                               int      version)        throws Exception {
         List<Airspace> airspaces;
+        List<Point>    borderPoints = null;
 
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+
+        if (borderFile != null) {
+            DocumentBuilder db  = dbf.newDocumentBuilder();
+            Document   d = db.parse(new FileInputStream(borderFile));
+            TreeMap<Integer, Way>   ways   = new TreeMap<Integer, Way>();
+            OAMReader reader = new OAMReader();
+            reader.processOsm(d.getDocumentElement(), ways);
+
+            if (!ways.isEmpty()) {
+                borderPoints = ways.values().iterator().next().getPointList();
+            }
+        }
 
         if ("eAIP.Hungary".equals(inputFormat)) {
             Node eAipNode;
@@ -242,7 +277,7 @@ public final class Converter {
             eAipNode = d.getDocumentElement();
 
             EAIPHungaryReader reader = new EAIPHungaryReader();
-            airspaces = reader.processEAIP(eAipNode);
+            airspaces = reader.processEAIP(eAipNode, borderPoints);
         } else {
             throw new Exception("input format " + inputFormat
                               + " not recognized");

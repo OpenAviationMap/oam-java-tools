@@ -57,7 +57,7 @@ public class OAMWriterTest {
             Document   d = db.parse(new FileInputStream("var/lhr1_eAIP.xml"));
             EAIPHungaryReader reader   = new EAIPHungaryReader();
 
-            airspace = reader.processAirspace(d.getDocumentElement());
+            airspace = reader.processAirspace(d.getDocumentElement(), null);
             assertNotNull(airspace);
 
             // now,  convert this airspace into a OAM document
@@ -129,7 +129,7 @@ public class OAMWriterTest {
                             new FileInputStream("var/LH-ENR-5.1-en-HU.xml"));
             EAIPHungaryReader reader   = new EAIPHungaryReader();
 
-            airspaces = reader.processEAIP(d.getDocumentElement());
+            airspaces = reader.processEAIP(d.getDocumentElement(), null);
             assertEquals(47, airspaces.size());
 
             // now,  convert this airspace into a OAM document
