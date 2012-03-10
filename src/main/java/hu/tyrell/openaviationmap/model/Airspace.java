@@ -173,4 +173,101 @@ public class Airspace {
     public void setRemarks(String remarks) {
         this.remarks = remarks;
     }
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#hashCode()
+     */
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result
+                + ((airspaceClass == null) ? 0 : airspaceClass.hashCode());
+        result = prime * result
+                + ((boundary == null) ? 0 : boundary.hashCode());
+        result = prime * result
+                + ((designator == null) ? 0 : designator.hashCode());
+        result = prime * result
+                + ((lowerLimit == null) ? 0 : lowerLimit.hashCode());
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        result = prime * result + ((remarks == null) ? 0 : remarks.hashCode());
+        result = prime * result + ((type == null) ? 0 : type.hashCode());
+        result = prime * result
+                + ((upperLimit == null) ? 0 : upperLimit.hashCode());
+        return result;
+    }
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#equals(java.lang.Object)
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        Airspace other = (Airspace) obj;
+        if (airspaceClass == null) {
+            if (other.airspaceClass != null) {
+                return false;
+            }
+        } else if (!airspaceClass.equals(other.airspaceClass)) {
+            return false;
+        }
+        if (boundary == null) {
+            if (other.boundary != null) {
+                return false;
+            }
+        } else if (!boundary.equals(other.boundary)) {
+            return false;
+        }
+        if (designator == null) {
+            if (other.designator != null) {
+                return false;
+            }
+        } else if (!designator.equals(other.designator)) {
+            return false;
+        }
+        if (lowerLimit == null) {
+            if (other.lowerLimit != null) {
+                return false;
+            }
+        } else if (!lowerLimit.equals(other.lowerLimit)) {
+            return false;
+        }
+        if (name == null) {
+            if (other.name != null) {
+                return false;
+            }
+        } else if (!name.equals(other.name)) {
+            return false;
+        }
+        if (remarks == null) {
+            if (other.remarks != null) {
+                return false;
+            }
+        } else if (!remarks.equals(other.remarks)) {
+            return false;
+        }
+        if (type == null) {
+            if (other.type != null) {
+                return false;
+            }
+        } else if (!type.equals(other.type)) {
+            return false;
+        }
+        if (upperLimit == null) {
+            if (other.upperLimit != null) {
+                return false;
+            }
+        } else if (!upperLimit.equals(other.upperLimit)) {
+            return false;
+        }
+        return true;
+    }
 }

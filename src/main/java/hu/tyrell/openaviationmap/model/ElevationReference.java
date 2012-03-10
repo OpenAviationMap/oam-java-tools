@@ -30,4 +30,24 @@ public enum ElevationReference {
      * Elevation above the surface - SFC, aka Above Ground Level - AGL.
      */
     SFC;
+
+    /**
+     * Return an elevation reference value based on a string description.
+     *
+     * @param str the string representation of the elevation reference.
+     * @return the elevation reference corresponding the string representation.
+     */
+    public static ElevationReference fromString(String str) {
+        String s = str.trim().toLowerCase();
+
+        if ("amsl".equals(s) || "msl".equals(s)) {
+            return MSL;
+        }
+        if ("agl".equals(s) || "sfc".equals(s)) {
+            return SFC;
+        }
+
+        throw new IllegalArgumentException();
+    }
+
 }

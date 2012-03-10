@@ -274,6 +274,14 @@ public class OAMWriter {
                 way.appendChild(tag);
             }
 
+            if (airspace.getRemarks() != null
+             && !airspace.getRemarks().isEmpty()) {
+                tag = document.createElement("tag");
+                tag.setAttribute("k", "longname");
+                tag.setAttribute("v", airspace.getRemarks());
+                way.appendChild(tag);
+            }
+
             if (airspace.getType() != null) {
                 tag = document.createElement("tag");
                 tag.setAttribute("k", "airspace:type");

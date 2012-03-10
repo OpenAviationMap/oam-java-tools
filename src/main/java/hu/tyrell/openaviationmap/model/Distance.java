@@ -79,4 +79,43 @@ public class Distance {
     public void setUom(UOM uom) {
         this.uom = uom;
     }
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#hashCode()
+     */
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        long temp;
+        temp = Double.doubleToLongBits(distance);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
+        result = prime * result + ((uom == null) ? 0 : uom.hashCode());
+        return result;
+    }
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#equals(java.lang.Object)
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        Distance other = (Distance) obj;
+        if (Double.doubleToLongBits(distance) != Double
+                .doubleToLongBits(other.distance)) {
+            return false;
+        }
+        if (uom != other.uom) {
+            return false;
+        }
+        return true;
+    }
 }

@@ -77,4 +77,48 @@ public class Elevation {
     public void setReference(ElevationReference reference) {
         this.reference = reference;
     }
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#hashCode()
+     */
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        long temp;
+        temp = Double.doubleToLongBits(elevation);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
+        result = prime * result
+                + ((reference == null) ? 0 : reference.hashCode());
+        result = prime * result + ((uom == null) ? 0 : uom.hashCode());
+        return result;
+    }
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#equals(java.lang.Object)
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        Elevation other = (Elevation) obj;
+        if (Double.doubleToLongBits(elevation) != Double
+                .doubleToLongBits(other.elevation)) {
+            return false;
+        }
+        if (reference != other.reference) {
+            return false;
+        }
+        if (uom != other.uom) {
+            return false;
+        }
+        return true;
+    }
 }

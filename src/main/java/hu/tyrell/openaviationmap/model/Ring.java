@@ -51,4 +51,41 @@ public class Ring implements Boundary {
     public void setPointList(List<Point> pointList) {
         this.pointList = pointList;
     }
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#hashCode()
+     */
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result
+                + ((pointList == null) ? 0 : pointList.hashCode());
+        return result;
+    }
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#equals(java.lang.Object)
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        Ring other = (Ring) obj;
+        if (pointList == null) {
+            if (other.pointList != null) {
+                return false;
+            }
+        } else if (!pointList.equals(other.pointList)) {
+            return false;
+        }
+        return true;
+    }
 }

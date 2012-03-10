@@ -70,4 +70,48 @@ public class Circle implements Boundary {
         this.radius = radius;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#hashCode()
+     */
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((center == null) ? 0 : center.hashCode());
+        result = prime * result + ((radius == null) ? 0 : radius.hashCode());
+        return result;
+    }
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#equals(java.lang.Object)
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        Circle other = (Circle) obj;
+        if (center == null) {
+            if (other.center != null) {
+                return false;
+            }
+        } else if (!center.equals(other.center)) {
+            return false;
+        }
+        if (radius == null) {
+            if (other.radius != null) {
+                return false;
+            }
+        } else if (!radius.equals(other.radius)) {
+            return false;
+        }
+        return true;
+    }
+
 }

@@ -43,6 +43,31 @@ public enum UOM {
     NM(1852);
 
     /**
+     * Return an UOM value based on a string description.
+     *
+     * @param str the string representation of the unit of measurement.
+     * @return the UOM corresponding the string representation.
+     */
+    public static UOM fromString(String str) {
+        String s = str.trim().toLowerCase();
+
+        if ("ft".equals(s) || "feet".equals(s)) {
+            return FT;
+        }
+        if ("m".equals(s) || "meter".equals(s) || "meters".equals(s)) {
+            return M;
+        }
+        if ("fl".equals(s)) {
+            return FL;
+        }
+        if ("nm".equals(s)) {
+            return NM;
+        }
+
+        throw new IllegalArgumentException();
+    }
+
+    /**
      * The length of this unit of measurement in meters.
      */
     private double inMeters;
