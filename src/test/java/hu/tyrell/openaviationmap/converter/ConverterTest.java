@@ -19,6 +19,7 @@ package hu.tyrell.openaviationmap.converter;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Boundary;
 import hu.tyrell.openaviationmap.model.Ring;
@@ -45,13 +46,14 @@ public class ConverterTest {
      */
     @Test
     public void testNationalBorderAirspace() throws Exception {
-        String  inputFile       = "var/LH-ENR-5.6-en-HU.xml";
-        String  inputFormat     = "eAIP.Hungary";
-        String  outputFile      = "var/oam-hungary-5.6.xml";
-        String  outputFormat    = "OAM";
-        boolean create          = true;
-        String  borderFile      = "var/hungary.osm";
-        int     version         = 1;
+        String                  inputFile       = "var/LH-ENR-5.6-en-HU.xml";
+        String                  inputFormat     = "eAIP.Hungary";
+        String                  outputFile      = "var/oam-hungary-5.6.xml";
+        String                  outputFormat    = "OAM";
+        boolean                 create          = true;
+        String                  borderFile      = "var/hungary.osm";
+        int                     version         = 1;
+        List<ParseException>    errors          = new Vector<ParseException>();
 
         Converter.convert(inputFile,
                           inputFormat,
@@ -59,7 +61,10 @@ public class ConverterTest {
                           outputFormat,
                           create,
                           borderFile,
-                          version);
+                          version,
+                          errors);
+
+        assertTrue(errors.isEmpty());
 
         // so far so good - now read the generated file
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -70,7 +75,7 @@ public class ConverterTest {
         List<Airspace> airspaces = new Vector<Airspace>();
         reader.processOam(d.getDocumentElement(), airspaces);
 
-        assertEquals(29, airspaces.size());
+        assertEquals(37, airspaces.size());
 
         // look for & check LHB18
         Airspace airspace = null;

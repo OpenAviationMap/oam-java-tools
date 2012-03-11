@@ -17,379 +17,18 @@
  */
 package hu.tyrell.openaviationmap.converter;
 
+import hu.tyrell.openaviationmap.converter.eaip.EAipProcessor;
 import hu.tyrell.openaviationmap.model.Airspace;
-import hu.tyrell.openaviationmap.model.Boundary;
-import hu.tyrell.openaviationmap.model.Circle;
-import hu.tyrell.openaviationmap.model.Distance;
-import hu.tyrell.openaviationmap.model.Elevation;
-import hu.tyrell.openaviationmap.model.ElevationReference;
 import hu.tyrell.openaviationmap.model.Point;
-import hu.tyrell.openaviationmap.model.Ring;
-import hu.tyrell.openaviationmap.model.UOM;
 
 import java.util.List;
-import java.util.StringTokenizer;
-import java.util.Vector;
-
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathFactory;
 
 import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 
 /**
  * A class to read eAIP publications published for Hungary.
  */
 public class EAIPHungaryReader {
-    /**
-     * The prefix string for a circle description.
-     */
-    private static final String CIRCLE_PREFIX = "A circle radius";
-
-    /**
-     * The infix string for a circle description, between radius an center
-     * point. note: it's not a typo, this is how it is in the document
-     */
-    private static final String CIRCLE_INFIX = "centred on";
-
-    /**
-     * Convert a latitude string into a latitude value.
-     *
-     * @param latStr the latitude string
-     * @return the latitude value
-     */
-    private double processLat(String latStr) {
-        double degrees = Double.parseDouble(latStr.substring(0, 2));
-        double minutes = Double.parseDouble(latStr.substring(2, 4));
-        double seconds = Double.parseDouble(latStr.substring(4, 6));
-
-        double value = degrees + (minutes / 60.0) + (seconds / 3600.0);
-
-        return latStr.charAt(6) == 'S' ? -value : value;
-    }
-
-    /**
-     * Convert a longitude string into a longitude value.
-     *
-     * @param lonStr the longitude string
-     * @return the longitude value
-     */
-    private double processLon(String lonStr) {
-        double degrees = Double.parseDouble(lonStr.substring(0, 3));
-        double minutes = Double.parseDouble(lonStr.substring(3, 5));
-        double seconds = Double.parseDouble(lonStr.substring(5, 7));
-
-        double value = degrees + (minutes / 60.0) + (seconds / 3600.0);
-
-        return lonStr.charAt(7) == 'W' ? -value : value;
-    }
-
-    /**
-     * Convert an eAIP point string description into a Point object.
-     *
-     * @param pointDesc a textual point description
-     * @return the corresponding Point object.
-     */
-    private Point processPoint(String pointDesc) {
-        String pd = pointDesc.trim();
-        int space = pd.indexOf(" ");
-        String latStr = pd.substring(0, space).trim();
-        String lonStr = pd.substring(space + 1).trim();
-
-        Point point = new Point();
-        point.setLatitude(processLat(latStr));
-        point.setLongitude(processLon(lonStr));
-
-        return point;
-    }
-
-    /**
-     * Extract a section of a border polygon, which is closest to the points
-     * specified. Insert the extracted points into the supplied point list.
-     *
-     * @param borderSectionStart the start of the border section to extract
-     * @param borderSectionEnd the end of the border section to extract
-     * @param borderPoints the points of the border to extract from
-     * @param pointList append the extracted points to this list
-     */
-    private void appendBorderSection(Point       borderSectionStart,
-                                     Point       borderSectionEnd,
-                                     List<Point> borderPoints,
-                                     List<Point> pointList) {
-        // find the point on the border that is closest to the section start
-        double dist    = Double.MAX_VALUE;
-        int    startIx = 0;
-        for (int ix = 0; ix < borderPoints.size(); ++ix) {
-            Point  p = borderPoints.get(ix);
-            double d = borderSectionStart.distance(p);
-            if (d < dist) {
-                dist    = d;
-                startIx = ix;
-            }
-        }
-
-        // find the point on the border that is closest to the section end
-        dist         = Double.MAX_VALUE;
-        int    endIx = 0;
-        for (int ix = 0; ix < borderPoints.size(); ++ix) {
-            Point  p = borderPoints.get(ix);
-            double d = borderSectionEnd.distance(p);
-            if (d < dist) {
-                dist    = d;
-                endIx   = ix;
-            }
-        }
-
-        // copy the points from startIx to endIx into pointList
-        if (startIx <= endIx) {
-            for (int i = startIx; i < endIx; ++i) {
-                pointList.add(borderPoints.get(i));
-            }
-        } else {
-            for (int i = startIx; i > endIx; --i) {
-                pointList.add(borderPoints.get(i));
-            }
-        }
-    }
-
-    /**
-     * Parse an eAIP point list into a Boundary.
-     *
-     * @param designator the airspace designator for the point list,
-     *                   used to display warnings about the incompleteness
-     *                   of the airspace.
-     * @param boundaryDesc the textual boundary description
-     * @param borderPoints a list of points repesenting the country border,
-     *        which is used for airspaces that reference a country border.
-     *        may be null.
-     * @return the airspace boundary
-     */
-    private Ring processPointList(String      designator,
-                                  String      boundaryDesc,
-                                  List<Point> borderPoints) {
-
-        Vector<Point> pointList          = new Vector<Point>();
-        Point         borderSectionStart = null;
-
-        StringTokenizer tokenizer = new StringTokenizer(boundaryDesc, "-");
-        while (tokenizer.hasMoreTokens()) {
-            String str = tokenizer.nextToken();
-
-            Point p = processPoint(str);
-
-            if (borderSectionStart != null) {
-                appendBorderSection(borderSectionStart,
-                                    p,
-                                    borderPoints,
-                                    pointList);
-
-                borderSectionStart = null;
-            }
-
-            int borderIx = str.indexOf("along border");
-            if (borderIx != -1) {
-                if (borderPoints == null) {
-                    System.out.println("WARINING: airspace " + designator
-                           + " contains the following country border: "
-                           + str.substring(borderIx + "along border".length()));
-                }
-
-                borderSectionStart = p;
-            }
-
-            pointList.add(p);
-        }
-
-        Ring boundary = new Ring();
-        boundary.setPointList(pointList);
-
-        return boundary;
-    }
-
-    /**
-     * Process a textual elevation description.
-     *
-     * @param elevDesc the textual elevation description
-     * @return the elevation described by elevDesc
-     */
-    private Elevation processElevation(String elevDesc) {
-        String ed = elevDesc.trim();
-
-        Elevation elevation = new Elevation();
-
-        if ("GND".equals(ed)) {
-            elevation.setElevation(0);
-            elevation.setReference(ElevationReference.SFC);
-            elevation.setUom(UOM.FT);
-        } else if (ed.startsWith("FL")) {
-            elevation.setElevation(
-                    Double.parseDouble(ed.substring(2).trim()));
-            elevation.setReference(ElevationReference.MSL);
-            elevation.setUom(UOM.FL);
-        } else {
-            // get the elevation
-            int i = ed.indexOf(" ");
-            elevation.setElevation(
-                    Double.parseDouble(ed.substring(0, i)));
-
-            // get the unit of measurement
-            int j = ed.indexOf(" ", i + 1);
-            String uom = ed.substring(i, j).trim();
-            if ("FT".equals(uom)) {
-                elevation.setUom(UOM.FT);
-            }
-
-            // get the reference
-            String reference = ed.substring(j).trim();
-            if ("ALT".equals(reference)) {
-                elevation.setReference(ElevationReference.MSL);
-            } else if ("AGL".equals(reference)) {
-                elevation.setReference(ElevationReference.SFC);
-            }
-        }
-
-        return elevation;
-    }
-
-    /**
-     * Process a distance description.
-     *
-     * @param distDesc a textual distance description
-     * @return the distance described by the description
-     */
-    private Distance processDistance(String distDesc) {
-        String dd = distDesc.trim();
-
-        Distance distance = new Distance();
-
-        if (dd.endsWith("KM")) {
-            distance.setDistance(Double.parseDouble(
-                    dd.substring(0, dd.length() - 2)) * 1000.0);
-            distance.setUom(UOM.M);
-        }
-
-        return distance;
-    }
-
-    /**
-     * Process a circle boundary description.
-     *
-     * @param circleDesc the textual circle description
-     * @return the circle boundary described by the airspace
-     * @throws ParseException on parsing errors
-     */
-    Circle processCircle(String circleDesc) throws ParseException {
-        String cd = circleDesc.trim();
-
-        Circle circle = new Circle();
-
-        int i = cd.indexOf(CIRCLE_PREFIX);
-        int j = cd.indexOf(CIRCLE_INFIX);
-        if (i < 0) {
-            throw new ParseException("Circle description missing prefix");
-        }
-        if (j < 0) {
-            throw new ParseException("Circle description missing infix");
-        }
-        String radiusStr = cd.substring(i + CIRCLE_PREFIX.length(), j).trim();
-        circle.setRadius(processDistance(radiusStr));
-
-        String centerStr = cd.substring(j + CIRCLE_INFIX.length() + 1).trim();
-        circle.setCenter(processPoint(centerStr));
-
-        return circle;
-    }
-
-    /**
-     * Return an airspace type from an airspace designation. This is done
-     * by getting the substring after the country code in the designation
-     * (e.g. "LH"), but before any airspace numeric id. For example, from
-     * "LHTRA23A" this would return "TRA".
-     *
-     *  @param designator the airspace designator string
-     *  @return the airspace type.
-     */
-    private String getAirspaceType(String designator) {
-        int i = 2;
-
-        for (; i < designator.length(); ++i) {
-            if (Character.isDigit(Character.valueOf(designator.charAt(i)))) {
-                break;
-            }
-        }
-
-        return designator.substring(2, i);
-    }
-
-    /**
-     *  Process an airspace definition from the aAIP.
-     *
-     *  @param airspaceNode the XML node that represents the airspace
-     *         which is an &lt;x:tr&gt; node
-     *  @param borderPoints a list of points repesenting the country border,
-     *         which is used for airspaces that reference a country border.
-     *         may be null.
-     *  @return an airspace described by the node
-     *  @throws ParseException on input parsing errors.
-     */
-    Airspace processAirspace(Node        airspaceNode,
-                             List<Point> borderPoints) throws ParseException {
-
-        try {
-            Airspace airspace = new Airspace();
-
-            XPath xpath = XPathFactory.newInstance().newXPath();
-
-            // get the name & designator
-            String str = xpath.evaluate("td/strong", airspaceNode);
-            int    i   = str.indexOf("/");
-            if (i == -1) {
-                throw new ParseException("no airspace designator");
-            }
-            String designator = str.substring(0, i).trim();
-            String name       = str.substring(i + 1).trim();
-            String type       = getAirspaceType(designator);
-
-            airspace.setDesignator(designator);
-            airspace.setName(name);
-            airspace.setType(type);
-
-            // get the boundary
-            xpath.reset();
-            str = xpath.evaluate("td/text()", airspaceNode);
-            Boundary boundary = null;
-            if (str.startsWith(CIRCLE_PREFIX)) {
-                boundary = processCircle(str);
-            } else {
-                boundary = processPointList(designator, str, borderPoints);
-            }
-
-            airspace.setBoundary(boundary);
-
-            // get the vertical limits
-            xpath.reset();
-            str = xpath.evaluate("td[position()=2]", airspaceNode);
-            i   = str.indexOf("/");
-            Elevation upperLimit = processElevation(str.substring(0, i).trim());
-            Elevation lowerLimit = processElevation(
-                                                str.substring(i + 1).trim());
-
-            airspace.setUpperLimit(upperLimit);
-            airspace.setLowerLimit(lowerLimit);
-
-            // get the remarks
-            xpath.reset();
-            str = xpath.evaluate("td[position()=3]/text()[position()=2]",
-                                 airspaceNode);
-            airspace.setRemarks(str);
-
-            return airspace;
-        } catch (Exception e) {
-            throw new ParseException(e);
-        }
-    }
-
     /**
      *  Process an eAIP file.
      *
@@ -397,40 +36,24 @@ public class EAIPHungaryReader {
      *  @param borderPoints a list of points repesenting the country border,
      *         which is used for airspaces that reference a country border.
      *         may be null.
-     *  @return a list of airspaces described by the document
-     *  @throws ParseException on input parsing errors.
+     *  @param airspaces all airspaces extracted from the supplied eAIP file
+     *         will be inserted into this list.
+     *  @param errors all parsing errors will be written to this list
      */
-    public List<Airspace> processEAIP(Node        eAipNode,
-                                      List<Point> borderPoints)
-                                                      throws ParseException {
+    public void processEAIP(Node                    eAipNode,
+                            List<Point>             borderPoints,
+                            List<Airspace>          airspaces,
+                            List<ParseException>    errors) {
 
-        List<Airspace> airspaces = new Vector<Airspace>();
+        String rootName = eAipNode.getOwnerDocument().getDocumentElement()
+                                                                .getNodeName();
 
-        try {
-            XPath          xpath     = XPathFactory.newInstance().newXPath();
+        EAipProcessor processor;
 
-            // get the name & designator
-            NodeList nodes = (NodeList) xpath.evaluate(
-              "//table/tbody/tr"
-            + "[not(descendant::processing-instruction('Fm')"
-                             + "[contains(., 'APSToBeDeleted')])]",
-              eAipNode,
-              XPathConstants.NODESET);
-
-            for (int i = 0; i < nodes.getLength(); ++i) {
-                try {
-                    Airspace airspace = processAirspace(nodes.item(i),
-                                                        borderPoints);
-                    airspaces.add(airspace);
-                } catch (ParseException e) {
-                    continue;
-                }
-            }
-        } catch (Exception e) {
-            throw new ParseException(e);
-        }
+        // the generic case
+        processor = new EAipProcessor();
 
 
-        return airspaces;
+        processor.processEAIP(eAipNode, borderPoints, airspaces, errors);
     }
 }

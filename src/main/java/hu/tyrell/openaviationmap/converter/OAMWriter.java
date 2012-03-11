@@ -277,7 +277,7 @@ public class OAMWriter {
             if (airspace.getRemarks() != null
              && !airspace.getRemarks().isEmpty()) {
                 tag = document.createElement("tag");
-                tag.setAttribute("k", "longname");
+                tag.setAttribute("k", "remark");
                 tag.setAttribute("v", airspace.getRemarks());
                 way.appendChild(tag);
             }

@@ -214,7 +214,10 @@ public class OAMReaderTest {
                                  IOException,
                                  ParseException,
                                  TransformerException {
-        List<Airspace> airspaces = null;
+
+        List<Airspace>       airspaces = new Vector<Airspace>();
+        List<ParseException> errors    = new Vector<ParseException>();
+
 
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder        db  = dbf.newDocumentBuilder();
@@ -224,7 +227,9 @@ public class OAMReaderTest {
                         new FileInputStream("var/LH-ENR-5.1-en-HU.xml"));
         EAIPHungaryReader reader   = new EAIPHungaryReader();
 
-        airspaces = reader.processEAIP(d.getDocumentElement(), null);
+        reader.processEAIP(d.getDocumentElement(), null, airspaces, errors);
+
+        assertTrue(errors.isEmpty());
         assertEquals(47, airspaces.size());
 
         // serialize the airspaces into a stream

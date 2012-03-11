@@ -210,7 +210,7 @@
 <x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>02 MAR-30 JUN: ANY 00:00 (UTCW) - 24:00 (UTCW)<?Fm Condend APSDataLink?><x:br id = "ENR561005131141400"/>Sensitive fauna</x:td>
 </x:tr>
 <x:tr>
-<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR561005131234270" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB35B<?Fm Condend APSDataLink?> / BÉDA-KARAPANCSA</x:strong><x:br id = "ENR561005131234370"/><?Fm Condstart APSDataLink?>460316N 0184306E  - 460144N 0184055E  - 455444N 0183957E along border CROATIA_HUNGARY - 455515.00N 0185324.00E along border HUNGARY_SERBIAANDMONTENEGRO - 455606N 0185427E  - 460945N 0185637E  - 460205N 0184456E  - 460316N 0184306E <?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR561005131234270" class = "Cell-body"><?Fm Condstart APSDataLink?>LHB35B<?Fm Condend APSDataLink?> / BÉDA-KARAPANCSA<x:br id = "ENR561005131234370"/><?Fm Condstart APSDataLink?>460316N 0184306E  - 460144N 0184055E  - 455444N 0183957E along border CROATIA_HUNGARY - 455515.00N 0185324.00E along border HUNGARY_SERBIAANDMONTENEGRO - 455606N 0185427E  - 460945N 0185637E  - 460205N 0184456E  - 460316N 0184306E <?Fm Condend APSDataLink?></x:strong></x:td>
 <x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>1000 FT<?Fm Condend APSDataLink?> AGL / GND</x:td>
 <x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>01 JUL-01 MAR: ANY 00:00 (UTCW) - 24:00 (UTCW)<?Fm Condend APSDataLink?><x:br id = "ENR561005131235470"/>Sensitive fauna<?FM MARKER [FrameAPS Content] CU-2.1,4158065,2818048?></x:td>
 </x:tr>

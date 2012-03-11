@@ -26,6 +26,7 @@ import hu.tyrell.openaviationmap.model.oam.Way;
 import java.io.FileInputStream;
 import java.util.List;
 import java.util.TreeMap;
+import java.util.Vector;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -135,13 +136,14 @@ public final class Converter {
 
         int c;
 
-        String  inputFile    = null;
-        String  inputFormat  = null;
-        String  outputFile   = null;
-        String  outputFormat = null;
-        boolean create       = false;
-        String  borderFile   = null;
-        int     version      = 0;
+        String                  inputFile    = null;
+        String                  inputFormat  = null;
+        String                  outputFile   = null;
+        String                  outputFormat = null;
+        boolean                 create       = false;
+        String                  borderFile   = null;
+        int                     version      = 0;
+        List<ParseException>    errors       = new Vector<ParseException>();
 
         while ((c = g.getopt()) != -1) {
             switch (c) {
@@ -223,10 +225,19 @@ public final class Converter {
                     outputFormat,
                     create,
                     borderFile,
-                    version);
+                    version,
+                    errors);
         } catch (Exception e) {
             System.out.println("Conversion failed.");
             return;
+        }
+
+        if (!errors.isEmpty()) {
+            System.out.println("The following errors were encountered:");
+            for (ParseException e : errors) {
+                System.out.println(e.toString());
+            }
+            System.out.println();
         }
 
         System.out.println("Conversion successful");
@@ -243,16 +254,20 @@ public final class Converter {
      * @param borderFile a file describing the country border to be used
      *        for airspaces that refer to country borders. may be null
      * @param version the OAM node / way version to be set
+     * @param errors all parsing errors will be put into this list
      * @throws Exception on conversion problems.
      */
-    public static void convert(String   inputFile,
-                               String   inputFormat,
-                               String   outputFile,
-                               String   outputFormat,
-                               boolean  create,
-                               String   borderFile,
-                               int      version)        throws Exception {
-        List<Airspace> airspaces;
+    public static void convert(String                   inputFile,
+                               String                   inputFormat,
+                               String                   outputFile,
+                               String                   outputFormat,
+                               boolean                  create,
+                               String                   borderFile,
+                               int                      version,
+                               List<ParseException>     errors)
+                                                           throws Exception {
+
+        List<Airspace> airspaces    = new Vector<Airspace>();
         List<Point>    borderPoints = null;
 
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -277,7 +292,7 @@ public final class Converter {
             eAipNode = d.getDocumentElement();
 
             EAIPHungaryReader reader = new EAIPHungaryReader();
-            airspaces = reader.processEAIP(eAipNode, borderPoints);
+            reader.processEAIP(eAipNode, borderPoints, airspaces, errors);
         } else {
             throw new Exception("input format " + inputFormat
                               + " not recognized");

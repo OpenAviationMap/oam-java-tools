@@ -17,15 +17,28 @@
  */
 package hu.tyrell.openaviationmap.converter;
 
+import org.w3c.dom.Node;
+
 /**
  * An exception thrown when there are issues with parsing input files.
  */
 public class ParseException extends Exception {
 
     /**
-     *
+     * Serialization unique id.
      */
     private static final long serialVersionUID = 5019596445578509079L;
+
+    /**
+     * The XML node related to this error.
+     */
+    private Node node;
+
+    /**
+     * Unique aeronautical designator (airspace designator, etc.)
+     * which this error relates to.
+     */
+    private String designator;
 
     /**
      * Default constructor.
@@ -59,6 +72,126 @@ public class ParseException extends Exception {
      */
     public ParseException(String desc, Throwable cause) {
         super(desc, cause);
+    }
+
+    /**
+     * Constructor with a designator & description.
+     *
+     * @param designator the unique aviation designator this issue is about
+     * @param desc the description of the issue.
+     */
+    public ParseException(String    designator,
+                          String    desc) {
+        super(desc);
+
+        this.designator = designator;
+    }
+
+    /**
+     * Constructor with a designator, description & underlying cause.
+     *
+     * @param designator the unique aviation designator this issue is about
+     * @param desc the description of the issue.
+     * @param cause the original cause of the issue.
+     */
+    public ParseException(String    designator,
+                          String    desc,
+                          Throwable cause) {
+        super(desc, cause);
+
+        this.designator = designator;
+    }
+
+    /**
+     * Constructor with an XML node & description.
+     *
+     * @param node the XML node fromt the source document this issue is about
+     * @param desc the description of the issue.
+     */
+    public ParseException(Node      node,
+                          String    desc) {
+        super(desc);
+
+        this.node       = node;
+    }
+
+    /**
+     * Constructor with an XML node & description.
+     *
+     * @param node the XML node fromt the source document this issue is about
+     * @param cause the original cause of the issue.
+     */
+    public ParseException(Node      node,
+                          Throwable cause) {
+        super(cause);
+
+        this.node       = node;
+    }
+
+    /**
+     * Constructor with a designator, XML node, description & underlying cause.
+     *
+     * @param designator the unique aviation designator this issue is about
+     * @param node the XML node fromt the source document this issue is about
+     * @param desc the description of the issue.
+     * @param cause the original cause of the issue.
+     */
+    public ParseException(String    designator,
+                          Node      node,
+                          String    desc,
+                          Throwable cause) {
+        super(desc, cause);
+
+        this.designator = designator;
+        this.node       = node;
+    }
+
+    /**
+     * @return the node
+     */
+    public Node getNode() {
+        return node;
+    }
+
+    /**
+     * @param node the node to set
+     */
+    public void setNode(Node node) {
+        this.node = node;
+    }
+
+    /**
+     * @return the designator
+     */
+    public String getDesignator() {
+        return designator;
+    }
+
+    /**
+     * @param designator the designator to set
+     */
+    public void setDesignator(String designator) {
+        this.designator = designator;
+    }
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+
+        builder.append("ParseException [designator=");
+        builder.append(designator);
+        builder.append(", node=");
+        builder.append(node);
+        builder.append(", message=");
+        builder.append(getMessage());
+        builder.append(", cause=");
+        builder.append(getCause());
+        builder.append("]");
+
+        return builder.toString();
     }
 
 }

@@ -284,7 +284,7 @@ public class OAMReader {
             airspace.setName(tags.get(k));
         }
 
-        k = "longname";
+        k = "remark";
         if (tags.containsKey(k)) {
             airspace.setRemarks(tags.get(k));
         }
