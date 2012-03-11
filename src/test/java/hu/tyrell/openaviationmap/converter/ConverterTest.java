@@ -46,14 +46,14 @@ public class ConverterTest {
      */
     @Test
     public void testNationalBorderAirspace() throws Exception {
-        String                  inputFile       = "var/LH-ENR-5.6-en-HU.xml";
-        String                  inputFormat     = "eAIP.Hungary";
-        String                  outputFile      = "var/oam-hungary-5.6.xml";
-        String                  outputFormat    = "OAM";
-        boolean                 create          = true;
-        String                  borderFile      = "var/hungary.osm";
-        int                     version         = 1;
-        List<ParseException>    errors          = new Vector<ParseException>();
+        String                  inputFile      = "var/LH-ENR-5.6-en-HU.xml";
+        String                  inputFormat    = "eAIP.Hungary";
+        String                  outputFile     = "var/test-oam-hungary-5.6.xml";
+        String                  outputFormat   = "OAM";
+        boolean                 create         = true;
+        String                  borderFile     = "var/hungary.osm";
+        int                     version        = 1;
+        List<ParseException>    errors         = new Vector<ParseException>();
 
         Converter.convert(inputFile,
                           inputFormat,

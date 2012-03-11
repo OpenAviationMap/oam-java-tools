@@ -18,6 +18,8 @@
 package hu.tyrell.openaviationmap.converter;
 
 import hu.tyrell.openaviationmap.converter.eaip.EAipProcessor;
+import hu.tyrell.openaviationmap.converter.eaip.EAipProcessorEnr51;
+import hu.tyrell.openaviationmap.converter.eaip.EAipProcessorEnr52;
 import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Point;
 
@@ -50,9 +52,14 @@ public class EAIPHungaryReader {
 
         EAipProcessor processor;
 
-        // the generic case
-        processor = new EAipProcessor();
-
+        if ("e:ENR-5.1".equals(rootName)) {
+            processor = new EAipProcessorEnr51();
+        } else if ("e:ENR-5.2".equals(rootName)) {
+            processor = new EAipProcessorEnr52();
+        } else {
+            // the generic case
+            processor = new EAipProcessor();
+        }
 
         processor.processEAIP(eAipNode, borderPoints, airspaces, errors);
     }

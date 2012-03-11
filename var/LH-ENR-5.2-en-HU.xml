@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?Fm Condition APSDataLink_NULL APSDataLink NO_OVERRIDE show?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition APSToBeInserted APSInsertion NO_OVERRIDE show?>
+<?Fm Condition APSToBeDeleted APSDeletion STRIKETHROUGH show?>
+<?Fm Condition Source%20Tag Red DOUBLE_UNDERLINE hide?>
+<?Fm Condition Comment Red SINGLE_UNDERLINE show?>
+<?Fm Condition APSDataLink APSDataLink NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+
+<?eAIP-locales ../locales.xml?>
+<e:ENR-5.2 id = "ENR-5.2" xmlns:x = "http://www.w3.org/1999/xhtml" xmlns:e = "http://www.eurocontrol.int/xmlns/AIM/eAIP" xmlns:xlink = "http://www.w3.org/1999/xlink"><?FM MARKER [FrameAPS Content] PM-0.1,557313,1595223?>
+<e:Title id = "ENR520603081427581">MILITARY EXERCISES AND TRAINING AREAS AND AIR DEFENSE IDENTIFICATION ZONE</e:Title>
+<x:p id = "ENR520606190701220" class = "Body">TRAs may operate on workdays from 30 minutes before sunrise till 24:00 LT as latest, or 17:00 LT as latest on the workday before weekend or holiday.</x:p>
+<e:Sub-section id = "ENR520708310846142" class = "Heading4" Number = "1. "><e:Title id = "ENR520708310846323">Temporary Restricted Areas</e:Title></e:Sub-section><x:table frame = "border">
+<x:thead>
+<x:tr class = "Table-row-type-1">
+<x:th class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-0.1,3621785,655360?>Identification / NameLateral limits</x:th>
+<x:th class = "bleft btop bright bbottom ">Upper/lower limits and system/means of activation announcement INFO for CIV FLT</x:th>
+<x:th class = "bleft btop bright bbottom ">RemarksTime of ACT</x:th>
+</x:tr>
+<x:tr class = "Table-row-type-2">
+<x:th class = "bleft btop bright bbottom ">1</x:th>
+<x:th class = "bleft btop bright bbottom ">2</x:th>
+<x:th class = "bleft btop bright bbottom ">3</x:th>
+</x:tr>
+</x:thead>
+<x:tbody>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR520704211141141" class = "Cell-body">LHTRA11A / PAPA ALPHA</x:strong><x:br id = "ENR520704211140480"/>472959N 0175015E - 472959N 0181529E - 471331N 0181507E - 471259N 0175900E - 472959N 0175015E</x:td>
+<x:td class = "bleft btop bright bbottom ">FL 125 / GND</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR520704211154284" class = "Cell-body">LHTRA11B / PAPA BRAVO</x:strong><x:br id = "ENR520704211153313"/>471259N 0175900E - 471331N 0181507E - 470212N 0181457E - 465529N 0175135E - 470646N 0174335E - 471259N 0175900E</x:td>
+<x:td class = "bleft btop bright bbottom ">9500 FT ALT / 4000 FT ALT</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR520704211157205" class = "Cell-body">LHTRA11C / PAPA CHARLIE</x:strong><x:br id = "ENR520704211157446"/>471259N 0175900E - 471331N 0181507E - 470212N 0181457E - 465529N 0175135E - 470646N 0174335E - 471259N 0175900E</x:td>
+<x:td class = "bleft btop bright bbottom ">4000 FT ALT / GND</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR520704211208377" class = "Cell-body">LHTRA12 / KUNSAG</x:strong><x:br id = "ENR520704211208498"/>465945N 0190242E - 470403N 0191630E - 464938N 0192954E - 463959N 0192954E - 463957N 0192213E - 465945N 0190242E</x:td>
+<x:td class = "bleft btop bright bbottom ">FL 115 / GND</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR520704211210439" class = "Cell-body">LHTRA13 / TISZA</x:strong><x:br id = "ENR5207042112105510"/>472212N 0200910E - 472038N 0201743E - 471829N 0202929E - 471045N 0202532E - 470008N 0202008E - 465401N 0201703E - 465559N 0200729E - 470241N 0200428E - 471203N 0195953E - 472212N 0200910E</x:td>
+<x:td class = "bleft btop bright bbottom ">FL 145 / 9500 FT ALT</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042112124411" class = "Cell-body">LHTRA14A / MEZO ALPHA</x:strong><x:br id = "ENR5207042112125612"/>471829N 0202929E - 471245N 0204529E - 470610N 0204314E - 471045N 0202532E - 471829N 0202929E</x:td>
+<x:td class = "bleft btop bright bbottom ">4500 FT ALT / GND</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042112144313" class = "Cell-body">LHTRA14B / MEZO BRAVO</x:strong><x:br id = "ENR5207042112150214"/>471045N 0202532E - 470610N 0204314E - 465613N 0203951E - 470008N 0202008E - 471045N 0202532E</x:td>
+<x:td class = "bleft btop bright bbottom ">4500 FT ALT / GND</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042112172915" class = "Cell-body">LHTRA14C / MEZO CHARLIE</x:strong><x:br id = "ENR5207042112173816"/>470008N 0202008E - 465613N 0203951E - 464943N 0203740E - 465401N 0201703E - 470008N 0202008E</x:td>
+<x:td class = "bleft btop bright bbottom ">4500 FT ALT / GND</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042112191517" class = "Cell-body">LHTRA15A / SZARVAS ALPHA</x:strong><x:br id = "ENR5207042112192318"/>471829N 0202929E - 471245N 0204529E - 470610N 0204314E - 471045N 0202532E - 471829N 0202929E</x:td>
+<x:td class = "bleft btop bright bbottom ">9500 FT ALT / 4500 FT ALT</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042112212619" class = "Cell-body">LHTRA15B / SZARVAS BRAVO</x:strong><x:br id = "ENR5207042112213320"/>471045N 0202532E - 470610N 0204314E - 465613N 0203951E - 470008N 0202008E - 471045N 0202532E</x:td>
+<x:td class = "bleft btop bright bbottom ">9500 FT ALT / 4500 FT ALT</x:td>
+<x:td class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CU-0.1,131072,655360?></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-1.1,131072,655360?><x:strong id = "ENR5207042112231721">LHTRA15C / SZARVAS CHARLIE</x:strong><x:br id = "ENR5207042112233122"/>470008N 0202008E - 465613N 0203951E - 464943N 0203740E - 465401N 0201703E - 470008N 0202008E</x:td>
+<x:td class = "bleft btop bright bbottom ">9500 FT ALT / 4500 FT ALT</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042112301423" class = "Cell-body">LHTRA16 / ARPAD</x:strong><x:br id = "ENR5207042112385224"/>464943N 0203740E - 464505N 0205357E - 462940N 0204358E - 463203N 0202335E - 464943N 0203740E</x:td>
+<x:td class = "bleft btop bright bbottom ">FL 115 / GND</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042112402025" class = "Cell-body">LHTRA21A / WEST ALPHA</x:strong><x:br id = "ENR5207042112403126"/>465105N 0162126E - 463352N 0180006E - 460854N 0180425E - 460445N 0172645E - 462256N 0170114E - 462930N 0163702E - 464101N 0162522E - 465105N 0162126E</x:td>
+<x:td class = "bleft btop bright bbottom ">FL 245 / 9500 FT ALT</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042112415627" class = "Cell-body">LHTRA21B / WEST BRAVO</x:strong><x:br id = "ENR5207042112420628"/>465105N 0162126E - 464502N 0175809E - 463352N 0180006E - 465105N 0162126E</x:td>
+<x:td class = "bleft btop bright bbottom ">FL 215 / FL 135</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042112431129" class = "Cell-body">LHTRA21C / WEST CHARLIE</x:strong><x:br id = "ENR5207042112432030"/>464502N 0175809E - 463726N 0181335E - 455737N 0182351E - 455529N 0175254E - 460445N 0172645E - 460854N 0180425E - 464502N 0175809E</x:td>
+<x:td class = "bleft btop bright bbottom ">FL 175 / FL 135</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042112443731" class = "Cell-body">LHTRA21D / WEST DELTA</x:strong><x:br id = "ENR5207042112445332"/>462658N 0172525E - 461447N 0175841E - 455529N 0175254E - 460445N 0172645E - 462256N 0170114E - 462658N 0172525E</x:td>
+<x:td class = "bleft btop bright bbottom ">9500 FT ALT / 4000 FT ALT</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042112455633" class = "Cell-body">LHTRA21E / WEST ECHO</x:strong><x:br id = "ENR5207042112460934"/>462658N 0172525E - 461447N 0175841E - 455529N 0175254E - 460445N 0172645E - 462256N 0170114E - 462658N 0172525E</x:td>
+<x:td class = "bleft btop bright bbottom ">4000 FT ALT / GND</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042112471535" class = "Cell-body">LHTRA22A / SOUTH ALPHA</x:strong><x:br id = "ENR5207042112472736"/>470342N 0192349E - 470241N 0200428E - 465559N 0200729E - 464943N 0203740E - 463203N 0202335E - 463728N 0194717E - 470342N 0192349E</x:td>
+<x:td class = "bleft btop bright bbottom ">FL 175 / FL 125</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042112482237" class = "Cell-body">LHTRA22B / SOUTH BRAVO</x:strong><x:br id = "ENR5207042112483138"/>464943N 0203740E - 463943N 0211234E - 462319N 0210540E - 462140N 0205519E - 462648N 0195641E - 463728N 0194717E - 463203N 0202335E - 464943N 0203740E</x:td>
+<x:td class = "bleft btop bright bbottom ">FL 175 / 9500 FT ALT</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042112494839" class = "Cell-body">LHTRA22C / SOUTH CHARLIE</x:strong><x:br id = "ENR5207042112495940"/>470342N 0192349E - 470241N 0200428E - 465559N 0200729E - 464943N 0203740E - 463943N 0211234E - 462319N 0210540E - 462140N 0205519E - 462648N 0195641E - 470342N 0192349E</x:td>
+<x:td class = "bleft btop bright bbottom ">FL 245 / FL 175</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042112510341" class = "Cell-body">LHTRA22D / SOUTH DELTA</x:strong><x:br id = "ENR5207042112511242"/>465945N 0190242E - 462143N 0193952E - 461429N 0190859E - 463056N 0184947E - 463337N 0185631E - 463909N 0185202E - 463600N 0184405E - 464851N 0182835E - 465945N 0190242E</x:td>
+<x:td class = "bleft btop bright bbottom ">FL 145 / 9500 FT ALT</x:td>
+<x:td class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CU-1.1,131072,655360?></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-2.1,131072,655360?><x:strong id = "ENR5207042112530243">LHTRA22E / SOUTH ECHO</x:strong><x:br id = "ENR5207042112531044"/>463957N 0192213E - 463959N 0192954E - 463728N 0194717E - 462648N 0195641E - 462143N 0193952E - 463957N 0192213E</x:td>
+<x:td class = "bleft btop bright bbottom ">FL 125 / 9500 FT ALT</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042112540545" class = "Cell-body">LHTRA22F / SOUTH FOXTROT</x:strong><x:br id = "ENR5207042112541746"/>465046N 0191134E - 462143N 0193952E - 461512N 0191156E - 464352N 0184811E - 465046N 0191134E</x:td>
+<x:td class = "bleft btop bright bbottom ">9500 FT ALT / 4000 FT ALT</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042112552247" class = "Cell-body">LHTRA23A / EAST ALPHA</x:strong><x:br id = "ENR5207042112553048"/>481115N 0202525E - 474559N 0213339E - 472201N 0214313E - 471210N 0213301E - 470506N 0212808E - 472943N 0201605E - 475800N 0195615E - 481115N 0202525E</x:td>
+<x:td class = "bleft btop bright bbottom ">FL 245 / 9500 FT ALT</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042112564449" class = "Cell-body">LHTRA23B / EAST BRAVO</x:strong><x:br id = "ENR5207042112565450"/>472201N 0214313E - 471125N 0214729E - 470219N 0213649E - 465152N 0213027E - 471548N 0203054E - 472943N 0201605E - 470506N 0212808E - 471210N 0213301E - 472201N 0214313E</x:td>
+<x:td class = "bleft btop bright bbottom ">FL 175 / FL 135</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042112574451" class = "Cell-body">LHTRA23C / EAST CHARLIE</x:strong><x:br id = "ENR5207042112575152"/>475800N 0195615E - 480710N 0195452E - 481757N 0202718E - 475845N 0212810E - 474559N 0213339E - 481115N 0202525E - 475800N 0195615E</x:td>
+<x:td class = "bleft btop bright bbottom ">FL 175 / FL 135</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042112585253" class = "Cell-body">LHTRA23D / EAST DELTA</x:strong><x:br id = "ENR5207042112590254"/>481115N 0202525E - 475018N 0212203E - 472252N 0210213E - 474125N 0200756E - 475800N 0195615E - 481115N 0202525E</x:td>
+<x:td class = "bleft btop bright bbottom ">9500 FT ALT / 4000 FT ALT</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042113001355" class = "Cell-body">LHTRA23E / EAST ECHO</x:strong><x:br id = "ENR5207042113002156"/>481115N 0202525E - 475018N 0212203E - 472252N 0210213E - 474125N 0200756E - 475800N 0195615E - 481115N 0202525E</x:td>
+<x:td class = "bleft btop bright bbottom ">4000 FT ALT / GND</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042113014057" class = "Cell-body">LHTRA31A / UPPER WEST ALPHA</x:strong><x:br id = "ENR5207042113014658"/>463352N 0180006E - 462829N 0184129E - 461000N 0190529E - 460259N 0184005E - 455737N 0182351E - 455529N 0175254E - 460445N 0172645E - 463352N 0180006E</x:td>
+<x:td class = "bleft btop bright bbottom ">FL 285 / FL 245</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042113024459" class = "Cell-body">LHTRA31B / UPPER WEST BRAVO</x:strong><x:br id = "ENR5207042113025460"/>464210N 0164659E - 463352N 0180006E - 460445N 0172645E - 463605N 0164210E - 464210N 0164659E</x:td>
+<x:td class = "bleft btop bright bbottom ">FL 285 / FL 245</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042113035361" class = "Cell-body">LHTRA32A / UPPER EAST ALPHA</x:strong><x:br id = "ENR5207042113040062"/>475756N 0210710E - 471911N 0214017E - 471210N 0213301E - 465050N 0211821E - 471548N 0203051E - 472943N 0201605E - 474125N 0200756E - 475756N 0210710E</x:td>
+<x:td class = "bleft btop bright bbottom ">FL 305 / FL 245</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042113045663" class = "Cell-body">LHTRA32B / UPPER EAST BRAVO</x:strong><x:br id = "ENR5207042113051064"/>480810N 0214510E - 475243N 0221532E - 471911N 0214017E - 475756N 0210710E - 480810N 0214510E</x:td>
+<x:td class = "bleft btop bright bbottom ">FL 305 / FL 245</x:td>
+<x:td class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CU-2.1,131072,655360?></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-3.1,131072,655360?><x:strong id = "ENR5207042113061065">LHTRA33A / TOP EAST ALPHA</x:strong><x:br id = "ENR5207042113061866"/>475756N 0210710E - 471911N 0214017E - 471210N 0213301E - 465050N 0211821E - 471548N 0203051E - 472943N 0201605E - 474125N 0200756E - 475756N 0210710E</x:td>
+<x:td class = "bleft btop bright bbottom ">FL 420 / FL 365</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042113071667" class = "Cell-body">LHTRA33B / TOP EAST BRAVO</x:strong><x:br id = "ENR5207042113072568"/>480810N 0214510E - 475243N 0221532E - 471911N 0214017E - 475756N 0210710E - 480810N 0214510E</x:td>
+<x:td class = "bleft btop bright bbottom ">FL 420 / FL 365</x:td>
+<x:td class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+</x:tbody>
+</x:table><?FM MARKER [FrameAPS Content] PU-0.1,11876667,6958588?>
+
+<?FM MARKER [FrameAPS Content] PM-3.1,1857713,11687252?>
+<e:Sub-section id = "ENR520708310845390" Number = "2. "><e:Title id = "ENR520708310845461">Air Defence Identification Zone</e:Title><x:table id = "ENR510708310828440" frame = "border">
+<x:thead>
+<x:tr class = "Table-row-type-1">
+<x:th class = "bleft btop bright bbottom ">Identification / Name,<x:br/>lateral limits</x:th>
+<x:th class = "bleft btop bright bbottom ">Upper limit / Lower limit</x:th>
+<x:th class = "bleft btop bright bbottom ">Remarks(time of activity, type of restriction, nature of hazard, risk of interception)</x:th>
+</x:tr>
+<x:tr class = "Table-row-type-2">
+<x:th class = "bleft btop bright bbottom ">1</x:th>
+<x:th class = "bleft btop bright bbottom ">2</x:th>
+<x:th class = "bleft btop bright bbottom ">3</x:th>
+</x:tr>
+</x:thead>
+<x:tbody>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:p id = "ENR510708310832532" class = "Body"><x:strong id = "ENR510708310831471">Border guard zone (ADIZ)</x:strong></x:p><x:p id = "ENR510708310833113" class = "Body">10 Km wide strip inside the country along the state boundaries of the Republic of Hungary</x:p></x:td>
+<x:td class = "bleft btop bright bbottom ">UNL / GND</x:td>
+<x:td class = "bleft btop bright bbottom ">Flying along the border guard zone with special authorization only.<?FM MARKER [FrameAPS Content] CU-3.1,8118501,1376256?></x:td>
+</x:tr>
+</x:tbody>
+</x:table></e:Sub-section><?FM MARKER [FrameAPS Content] PU-3.1,12746130,11687252?>
+</e:ENR-5.2>

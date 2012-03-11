@@ -20,7 +20,6 @@ package hu.tyrell.openaviationmap.converter;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Boundary;
 import hu.tyrell.openaviationmap.model.Circle;
@@ -31,7 +30,6 @@ import hu.tyrell.openaviationmap.model.Ring;
 import hu.tyrell.openaviationmap.model.UOM;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 import java.util.Vector;
@@ -51,29 +49,24 @@ import org.xml.sax.SAXException;
 public class EAIPHungaryReaderTest {
 
     /**
-     * Test a whole eAIP document.
+     * Test an eAIP ENR-5.1 document.
+     *
+     * @throws ParserConfigurationException on XML parser configuration errors
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing issues
      */
     @Test
-    public void testEAIP() {
+    public void testEAipEnr51() throws ParserConfigurationException,
+                                       SAXException,
+                                       IOException {
         Node eAipNode = null;
 
-        try {
-            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-            DocumentBuilder        db  = dbf.newDocumentBuilder();
+        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        DocumentBuilder        db  = dbf.newDocumentBuilder();
 
-            Document   d = db.parse(
-                            new FileInputStream("var/LH-ENR-5.1-en-HU.xml"));
-            eAipNode = d.getDocumentElement();
-
-        } catch (ParserConfigurationException e) {
-            fail(e.toString());
-        } catch (FileNotFoundException e) {
-            fail(e.toString());
-        } catch (SAXException e) {
-            fail(e.toString());
-        } catch (IOException e) {
-            fail(e.toString());
-        }
+        Document   d = db.parse(
+                        new FileInputStream("var/LH-ENR-5.1-en-HU.xml"));
+        eAipNode = d.getDocumentElement();
 
         assertNotNull(eAipNode);
 
@@ -91,6 +84,8 @@ public class EAIPHungaryReaderTest {
         assertEquals("LHP1", airspaces.get(0).getDesignator());
         assertEquals("PAKS", airspaces.get(0).getName());
         assertEquals("P", airspaces.get(0).getType());
+        assertEquals("H24", airspaces.get(0).getActiveTime());
+        assertEquals("Nuclear Power Plant", airspaces.get(0).getRemarks());
 
         assertEquals(Boundary.Type.CIRCLE,
                      airspaces.get(0).getBoundary().getType());
@@ -114,13 +109,14 @@ public class EAIPHungaryReaderTest {
         assertEquals(UOM.FT, ll.getUom());
         assertEquals(ElevationReference.SFC, ll.getReference());
 
-        assertEquals("Nuclear Power Plant", airspaces.get(0).getRemarks());
-
 
         // check LHR1
         assertEquals("LHR1", airspaces.get(2).getDesignator());
         assertEquals("BUDAPEST", airspaces.get(2).getName());
         assertEquals("R", airspaces.get(2).getType());
+        assertEquals("H24", airspaces.get(2).getActiveTime());
+        assertEquals("By special permission of the aeronautical authority",
+                     airspaces.get(2).getRemarks());
 
         assertEquals(Boundary.Type.RING,
                 airspaces.get(2).getBoundary().getType());

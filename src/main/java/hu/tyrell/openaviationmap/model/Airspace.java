@@ -63,6 +63,11 @@ public class Airspace {
     private String remarks;
 
     /**
+     * Time of activity.
+     */
+    private String activeTime;
+
+    /**
      * @return the name
      */
     public String getName() {
@@ -191,6 +196,8 @@ public class Airspace {
                 + ((lowerLimit == null) ? 0 : lowerLimit.hashCode());
         result = prime * result + ((name == null) ? 0 : name.hashCode());
         result = prime * result + ((remarks == null) ? 0 : remarks.hashCode());
+        result = prime * result
+                + ((activeTime == null) ? 0 : activeTime.hashCode());
         result = prime * result + ((type == null) ? 0 : type.hashCode());
         result = prime * result
                 + ((upperLimit == null) ? 0 : upperLimit.hashCode());
@@ -212,6 +219,13 @@ public class Airspace {
             return false;
         }
         Airspace other = (Airspace) obj;
+        if (designator == null) {
+            if (other.designator != null) {
+                return false;
+            }
+        } else if (!designator.equals(other.designator)) {
+            return false;
+        }
         if (airspaceClass == null) {
             if (other.airspaceClass != null) {
                 return false;
@@ -224,13 +238,6 @@ public class Airspace {
                 return false;
             }
         } else if (!boundary.equals(other.boundary)) {
-            return false;
-        }
-        if (designator == null) {
-            if (other.designator != null) {
-                return false;
-            }
-        } else if (!designator.equals(other.designator)) {
             return false;
         }
         if (lowerLimit == null) {
@@ -254,6 +261,13 @@ public class Airspace {
         } else if (!remarks.equals(other.remarks)) {
             return false;
         }
+        if (activeTime == null) {
+            if (other.activeTime != null) {
+                return false;
+            }
+        } else if (!activeTime.equals(other.activeTime)) {
+            return false;
+        }
         if (type == null) {
             if (other.type != null) {
                 return false;
@@ -269,5 +283,19 @@ public class Airspace {
             return false;
         }
         return true;
+    }
+
+    /**
+     * @return the activeTime
+     */
+    public String getActiveTime() {
+        return activeTime;
+    }
+
+    /**
+     * @param activeTime the activeTime to set
+     */
+    public void setActiveTime(String activeTime) {
+        this.activeTime = activeTime;
     }
 }

@@ -47,19 +47,25 @@ public class EAipProcessor {
     /**
      * The prefix string for a circle description.
      */
-    private static final String CIRCLE_PREFIX = "A circle radius";
+    protected static final String CIRCLE_PREFIX = "A circle radius";
 
     /**
      * The infix string for a circle description, between radius an center
      * point.
      */
-    private static final String CIRCLE_INFIX = "centered on";
+    protected static final String CIRCLE_INFIX = "centered on";
 
     /**
      * The infix string for a circle description, between radius an center
      * point. note: it's not a typo, this is how it is in the document
      */
-    private static final String CIRCLE_INFIX_SIC = "centred on";
+    protected static final String CIRCLE_INFIX_SIC = "centred on";
+
+    /**
+     * The infix string for a circle description, between radius an center
+     * point. note: it's not a typo, this is how it is in the document
+     */
+    protected static final String CIRCLE_INFIX_SIC2 = "entered on";
 
     /**
      * Convert a latitude string into a latitude value.
@@ -203,9 +209,9 @@ public class EAipProcessor {
      * @return the airspace boundary
      * @throws ParseException on parsing errors
      */
-    private Ring processPointList(String      designator,
-                                  String      boundaryDesc,
-                                  List<Point> borderPoints)
+    protected Ring processPointList(String      designator,
+                                    String      boundaryDesc,
+                                    List<Point> borderPoints)
                                                       throws ParseException {
 
         Vector<Point> pointList          = new Vector<Point>();
@@ -252,7 +258,7 @@ public class EAipProcessor {
      * @param elevDesc the textual elevation description
      * @return the elevation described by elevDesc
      */
-    private Elevation processElevation(String elevDesc) {
+    protected Elevation processElevation(String elevDesc) {
         String ed = elevDesc.trim();
 
         Elevation elevation = new Elevation();
@@ -334,11 +340,15 @@ public class EAipProcessor {
         }
         if (j < 0) {
             j = cd.indexOf(CIRCLE_INFIX_SIC);
-            if (j < 0) {
-                throw new ParseException(designator,
-                                         "Circle description missing infix");
-            }
             infixLen = CIRCLE_INFIX_SIC.length();
+            if (j < 0) {
+                j = cd.indexOf(CIRCLE_INFIX_SIC2);
+                infixLen = CIRCLE_INFIX_SIC2.length();
+                if (j < 0) {
+                    throw new ParseException(designator,
+                                           "Circle description missing infix");
+                }
+            }
         }
         String radiusStr = cd.substring(i + CIRCLE_PREFIX.length(), j).trim();
         circle.setRadius(processDistance(radiusStr));
@@ -359,7 +369,7 @@ public class EAipProcessor {
      *  @return the airspace type.
      *  @throws ParseException on input parsing errors.
      */
-    private String getAirspaceType(String designator) throws ParseException {
+    protected String getAirspaceType(String designator) throws ParseException {
         if (designator.length() < 3) {
             throw new ParseException(designator,
                               "designator too short to deduce airspace type");
@@ -453,14 +463,14 @@ public class EAipProcessor {
             xpath.reset();
             str = xpath.evaluate("td[position()=3]/text()[position()=2]",
                                  airspaceNode);
-            airspace.setRemarks(str);
+            if (str != null && !str.isEmpty()) {
+                airspace.setRemarks(str);
+            }
 
             return airspace;
         } catch (ParseException e) {
-            e.printStackTrace();
             throw e;
         } catch (Exception e) {
-            e.printStackTrace();
             throw new ParseException(airspaceNode, e);
         }
     }
