@@ -31,9 +31,10 @@ import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Node;
 
 /**
- * eAIP processor for the ENR-5.1 segment of an eAIP.
+ * eAIP processor for the ENR-5.5 segment of an eAIP.
+ * This is the very same as the generic eAIP processor.
  */
-public class EAipProcessorEnr51 extends EAipProcessor {
+public class EAipProcessorEnr55 extends EAipProcessor {
     /**
      *  Process an airspace definition from the aAIP.
      *
@@ -99,20 +100,45 @@ public class EAipProcessorEnr51 extends EAipProcessor {
             airspace.setUpperLimit(upperLimit);
             airspace.setLowerLimit(lowerLimit);
 
-            // get the time of activity
+            // get the operator
             xpath.reset();
             str = xpath.evaluate("td[position()=3]/text()[position()=1]",
                                  airspaceNode);
             if (str != null && !str.isEmpty()) {
-                airspace.setActiveTime(str);
+                airspace.setOperator(str);
             }
 
-            // get the remarks
+            // get the active time, remarks & class
             xpath.reset();
-            str = xpath.evaluate("td[position()=3]/text()[position()=2]",
-                                 airspaceNode);
-            if (str != null && !str.isEmpty()) {
+            str = xpath.evaluate("td[4]/text()[1]", airspaceNode);
+            String str1 = xpath.evaluate("td[4]/text()[2]", airspaceNode);
+            String str2 = xpath.evaluate("td[4]/text()[3]", airspaceNode);
+            String str3 = xpath.evaluate("td[4]/text()[4]", airspaceNode);
+            if (str3 != null && !str3.isEmpty()) {
+                if (str3.startsWith("Class ")) {
+                    airspace.setAirspaceClass(
+                                            str3.substring("Class ".length()));
+                }
+                airspace.setRemarks(str1 + " " + str2);
+                airspace.setActiveTime(str);
+            } else if (str2 != null && !str2.isEmpty()) {
+                if (str2.startsWith("Class ")) {
+                    airspace.setAirspaceClass(
+                                            str2.substring("Class ".length()));
+                }
+                airspace.setRemarks(str1);
+                airspace.setActiveTime(str);
+            } else if (str1 != null && !str1.isEmpty()) {
+                if (str1.startsWith("Class ")) {
+                    airspace.setAirspaceClass(
+                                            str1.substring("Class ".length()));
+                }
                 airspace.setRemarks(str);
+            } else if (str != null && !str.isEmpty()) {
+                if (str.startsWith("Class ")) {
+                    airspace.setAirspaceClass(
+                                            str.substring("Class ".length()));
+                }
             }
 
             return airspace;
@@ -122,5 +148,4 @@ public class EAipProcessorEnr51 extends EAipProcessor {
             throw new ParseException(airspaceNode, e);
         }
     }
-
 }

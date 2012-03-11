@@ -31,9 +31,10 @@ import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Node;
 
 /**
- * eAIP processor for the ENR-5.1 segment of an eAIP.
+ * eAIP processor for the ENR-5.6 segment of an eAIP.
+ * This is the very same as the generic eAIP processor.
  */
-public class EAipProcessorEnr51 extends EAipProcessor {
+public class EAipProcessorEnr56 extends EAipProcessor {
     /**
      *  Process an airspace definition from the aAIP.
      *
@@ -122,5 +123,4 @@ public class EAipProcessorEnr51 extends EAipProcessor {
             throw new ParseException(airspaceNode, e);
         }
     }
-
 }

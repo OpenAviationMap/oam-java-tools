@@ -58,6 +58,11 @@ public class Airspace {
     private Boundary boundary;
 
     /**
+     * Operator.
+     */
+    private String operator;
+
+    /**
      * Remarks about the airspace.
      */
     private String remarks;
@@ -197,6 +202,8 @@ public class Airspace {
         result = prime * result + ((name == null) ? 0 : name.hashCode());
         result = prime * result + ((remarks == null) ? 0 : remarks.hashCode());
         result = prime * result
+                + ((operator == null) ? 0 : operator.hashCode());
+        result = prime * result
                 + ((activeTime == null) ? 0 : activeTime.hashCode());
         result = prime * result + ((type == null) ? 0 : type.hashCode());
         result = prime * result
@@ -261,6 +268,13 @@ public class Airspace {
         } else if (!remarks.equals(other.remarks)) {
             return false;
         }
+        if (operator == null) {
+            if (other.operator != null) {
+                return false;
+            }
+        } else if (!operator.equals(other.operator)) {
+            return false;
+        }
         if (activeTime == null) {
             if (other.activeTime != null) {
                 return false;
@@ -297,5 +311,19 @@ public class Airspace {
      */
     public void setActiveTime(String activeTime) {
         this.activeTime = activeTime;
+    }
+
+    /**
+     * @return the operator
+     */
+    public String getOperator() {
+        return operator;
+    }
+
+    /**
+     * @param operator the operator to set
+     */
+    public void setOperator(String operator) {
+        this.operator = operator;
     }
 }

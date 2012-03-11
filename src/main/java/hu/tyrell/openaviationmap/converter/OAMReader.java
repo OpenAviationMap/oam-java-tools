@@ -289,6 +289,11 @@ public class OAMReader {
             airspace.setRemarks(tags.get(k));
         }
 
+        k = "operator";
+        if (tags.containsKey(k)) {
+            airspace.setOperator(tags.get(k));
+        }
+
         k = "activetime";
         if (tags.containsKey(k)) {
             airspace.setActiveTime(tags.get(k));

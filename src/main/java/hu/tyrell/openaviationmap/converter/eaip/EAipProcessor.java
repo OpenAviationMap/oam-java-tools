@@ -137,6 +137,10 @@ public class EAipProcessor {
                                                         throws ParseException {
         String pd = pointDesc.trim();
         int space = pd.indexOf(" ");
+        if (space == -1) {
+            throw new ParseException(designator,
+                    "error in point description '" + pointDesc + "'");
+        }
         String latStr = pd.substring(0, space).trim();
         String lonStr = pd.substring(space + 1).trim();
 
@@ -155,11 +159,17 @@ public class EAipProcessor {
      * @param borderSectionEnd the end of the border section to extract
      * @param borderPoints the points of the border to extract from
      * @param pointList append the extracted points to this list
+     * @throws ParseException on parse errors
      */
     private void appendBorderSection(Point       borderSectionStart,
                                      Point       borderSectionEnd,
                                      List<Point> borderPoints,
-                                     List<Point> pointList) {
+                                     List<Point> pointList)
+                                                         throws ParseException {
+        if (borderPoints == null) {
+            throw new ParseException("no border points provided");
+        }
+
         // find the point on the border that is closest to the section start
         double dist    = Double.MAX_VALUE;
         int    startIx = 0;
@@ -219,7 +229,14 @@ public class EAipProcessor {
 
         StringTokenizer tokenizer = new StringTokenizer(boundaryDesc, "-");
         while (tokenizer.hasMoreTokens()) {
-            String str = tokenizer.nextToken();
+            String str = tokenizer.nextToken().trim();
+
+            if (str.startsWith("HUNGARY_")) {
+                // this is not a point, just a note that the border should be
+                // followed
+                borderSectionStart = pointList.lastElement();
+                continue;
+            }
 
             Point p = processPoint(designator, str);
 
@@ -425,21 +442,12 @@ public class EAipProcessor {
             airspace.setType(type);
 
             // get the boundary
+            Boundary boundary = null;
             xpath.reset();
             String str = xpath.evaluate("td[1]//br/following-sibling::text() "
                             + "| td[1]//br/following-sibling::Inserted/text() "
                             + "| td[1]//br/following-sibling::*//text() ",
                             airspaceNode);
-            /*
-            // sometimes the boundary description is encolsed in an
-            // <e:Inserted> element
-            str = xpath.evaluate("td/Inserted/text()", airspaceNode);
-            if (str == null || str.isEmpty()) {
-                // but usually its just the text node in the <x:td> element
-                str = xpath.evaluate("td/text()", airspaceNode);
-            }
-            */
-            Boundary boundary = null;
             if (str.startsWith(CIRCLE_PREFIX)) {
                 boundary = processCircle(designator, str);
             } else {

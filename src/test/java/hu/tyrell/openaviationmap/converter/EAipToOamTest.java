@@ -20,6 +20,8 @@ package hu.tyrell.openaviationmap.converter;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import hu.tyrell.openaviationmap.model.Airspace;
+import hu.tyrell.openaviationmap.model.Point;
+import hu.tyrell.openaviationmap.model.oam.Way;
 
 import java.io.FileInputStream;
 import java.io.FileReader;
@@ -27,6 +29,7 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.util.List;
+import java.util.TreeMap;
 import java.util.Vector;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -54,6 +57,8 @@ public class EAipToOamTest {
      *
      * @param eAipDocumentName the eAIP document to process.
      * @param oamDocumentName the OAM document to verify against.
+     * @param borderDocumentName the name of the OAM document describing the
+     *        border line.
      * @param knowErrors the know number of parse errors
      * @param noAirspaces the expected number of airspaces
      * @throws ParserConfigurationException on XML parser configuration errors.
@@ -64,6 +69,7 @@ public class EAipToOamTest {
      */
     public void testEAipToOam(String eAipDocumentName,
                               String oamDocumentName,
+                              String borderDocumentName,
                               int    knowErrors,
                               int    noAirspaces)
                                      throws ParserConfigurationException,
@@ -79,11 +85,29 @@ public class EAipToOamTest {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder        db  = dbf.newDocumentBuilder();
 
+        // load the border points
+        List<Point>    borderPoints = null;
+
+        if (borderDocumentName != null) {
+            Document   d = db.parse(new FileInputStream(borderDocumentName));
+            TreeMap<Integer, Way>   ways   = new TreeMap<Integer, Way>();
+            OAMReader reader = new OAMReader();
+            reader.processOsm(d.getDocumentElement(), ways);
+
+            if (!ways.isEmpty()) {
+                borderPoints = ways.values().iterator().next().getPointList();
+            }
+        }
+
+
         // first, get an airspace definitions from a eAIP file
         Document   d = db.parse(new FileInputStream(eAipDocumentName));
         EAIPHungaryReader reader   = new EAIPHungaryReader();
 
-        reader.processEAIP(d.getDocumentElement(), null, airspaces, errors);
+        reader.processEAIP(d.getDocumentElement(),
+                           borderPoints,
+                           airspaces,
+                           errors);
 
         // we have one known error: the ADIZ
         assertEquals(knowErrors, errors.size());
@@ -151,6 +175,7 @@ public class EAipToOamTest {
 
         testEAipToOam("var/LH-ENR-5.1-en-HU.xml",
                       "var/oam-hungary-5.1.xml",
+                      "var/hungary.osm",
                       0, 47);
     }
 
@@ -172,6 +197,51 @@ public class EAipToOamTest {
 
         testEAipToOam("var/LH-ENR-5.2-en-HU.xml",
                       "var/oam-hungary-5.2.xml",
+                      "var/hungary.osm",
                       1, 34);
+    }
+
+    /**
+     * Test converting an eAIP section ENR-5.5 element to OAM.
+     *
+     * @throws ParserConfigurationException on XML parser configuration errors.
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing errors
+     * @throws ParseException on OAM parsing errors
+     * @throws TransformerException on XML serialization errors
+     */
+    @Test
+    public void testEAipEnr55ToOam() throws ParserConfigurationException,
+                                            SAXException,
+                                            IOException,
+                                            ParseException,
+                                            TransformerException {
+
+        testEAipToOam("var/LH-ENR-5.5-en-HU.xml",
+                      "var/oam-hungary-5.5.xml",
+                      "var/hungary.osm",
+                      0, 15);
+    }
+
+    /**
+     * Test converting an eAIP section ENR-5.6 element to OAM.
+     *
+     * @throws ParserConfigurationException on XML parser configuration errors.
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing errors
+     * @throws ParseException on OAM parsing errors
+     * @throws TransformerException on XML serialization errors
+     */
+    @Test
+    public void testEAipEnr56ToOam() throws ParserConfigurationException,
+                                            SAXException,
+                                            IOException,
+                                            ParseException,
+                                            TransformerException {
+
+        testEAipToOam("var/LH-ENR-5.6-en-HU.xml",
+                      "var/oam-hungary-5.6.xml",
+                      "var/hungary.osm",
+                      0, 37);
     }
 }

@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<osm version="0.6">
+<node action="create" id="-1" lat="47.442499999999995" lon="18.748333333333335" version="1"/>
+<node action="create" id="-2" lat="47.40083333333333" lon="18.815" version="1"/>
+<node action="create" id="-3" lat="47.450833333333335" lon="18.798333333333336" version="1"/>
+<node action="create" id="-4" lat="47.450833333333335" lon="18.773333333333333" version="1"/>
+<node action="create" id="-6" lat="47.345555555555556" lon="19.000755729400336" version="1"/>
+<node action="create" id="-7" lat="47.34818906422208" lon="19.000372926146213" version="1"/>
+<node action="create" id="-8" lat="47.35072136862744" lon="18.99923922729822" version="1"/>
+<node action="create" id="-9" lat="47.353055153733465" lon="18.997398200267302" version="1"/>
+<node action="create" id="-10" lat="47.35510073348734" lon="18.994920594689795" version="1"/>
+<node action="create" id="-11" lat="47.35677949740629" lon="18.991901623558586" version="1"/>
+<node action="create" id="-12" lat="47.35802693153438" lon="18.98845730424119" version="1"/>
+<node action="create" id="-13" lat="47.35879509767763" lon="18.984719999997377" version="1"/>
+<node action="create" id="-14" lat="47.35905447564195" lon="18.980833333333333" version="1"/>
+<node action="create" id="-15" lat="47.35879509767763" lon="18.97694666666929" version="1"/>
+<node action="create" id="-16" lat="47.35802693153438" lon="18.973209362425475" version="1"/>
+<node action="create" id="-17" lat="47.35677949740629" lon="18.96976504310808" version="1"/>
+<node action="create" id="-18" lat="47.35510073348734" lon="18.96674607197687" version="1"/>
+<node action="create" id="-19" lat="47.353055153733465" lon="18.964268466399364" version="1"/>
+<node action="create" id="-20" lat="47.35072136862744" lon="18.962427439368447" version="1"/>
+<node action="create" id="-21" lat="47.34818906422208" lon="18.961293740520453" version="1"/>
+<node action="create" id="-22" lat="47.345555555555556" lon="18.96091093726633" version="1"/>
+<node action="create" id="-23" lat="47.34292204688903" lon="18.961293740520453" version="1"/>
+<node action="create" id="-24" lat="47.34038974248367" lon="18.962427439368447" version="1"/>
+<node action="create" id="-25" lat="47.33805595737765" lon="18.964268466399364" version="1"/>
+<node action="create" id="-26" lat="47.33601037762377" lon="18.96674607197687" version="1"/>
+<node action="create" id="-27" lat="47.33433161370482" lon="18.96976504310808" version="1"/>
+<node action="create" id="-28" lat="47.33308417957673" lon="18.973209362425475" version="1"/>
+<node action="create" id="-29" lat="47.332316013433484" lon="18.97694666666929" version="1"/>
+<node action="create" id="-30" lat="47.332056635469165" lon="18.980833333333333" version="1"/>
+<node action="create" id="-31" lat="47.332316013433484" lon="18.984719999997377" version="1"/>
+<node action="create" id="-32" lat="47.33308417957673" lon="18.98845730424119" version="1"/>
+<node action="create" id="-33" lat="47.33433161370482" lon="18.991901623558586" version="1"/>
+<node action="create" id="-34" lat="47.33601037762377" lon="18.994920594689795" version="1"/>
+<node action="create" id="-35" lat="47.33805595737765" lon="18.997398200267302" version="1"/>
+<node action="create" id="-36" lat="47.34038974248367" lon="18.99923922729822" version="1"/>
+<node action="create" id="-37" lat="47.34292204688903" lon="19.000372926146213" version="1"/>
+<node action="create" id="-39" lat="47.62222222222222" lon="18.90694444444444" version="1"/>
+<node action="create" id="-40" lat="47.550555555555555" lon="18.985833333333336" version="1"/>
+<node action="create" id="-41" lat="47.538888888888884" lon="18.982777777777777" version="1"/>
+<node action="create" id="-42" lat="47.583333333333336" lon="18.883333333333333" version="1"/>
+<node action="create" id="-44" lat="47.583333333333336" lon="18.883333333333333" version="1"/>
+<node action="create" id="-45" lat="47.538888888888884" lon="18.982777777777777" version="1"/>
+<node action="create" id="-46" lat="47.50055555555556" lon="18.97" version="1"/>
+<node action="create" id="-47" lat="47.49194444444444" lon="18.979444444444443" version="1"/>
+<node action="create" id="-48" lat="47.486111111111114" lon="19.013055555555557" version="1"/>
+<node action="create" id="-49" lat="47.42361111111111" lon="18.994444444444447" version="1"/>
+<node action="create" id="-50" lat="47.42194444444444" lon="18.92527777777778" version="1"/>
+<node action="create" id="-51" lat="47.44333333333333" lon="18.954722222222223" version="1"/>
+<node action="create" id="-52" lat="47.55777777777777" lon="18.76833333333333" version="1"/>
+<node action="create" id="-54" lat="47.583333333333336" lon="18.883333333333333" version="1"/>
+<node action="create" id="-55" lat="47.538888888888884" lon="18.982777777777777" version="1"/>
+<node action="create" id="-56" lat="47.50055555555556" lon="18.97" version="1"/>
+<node action="create" id="-57" lat="47.49194444444444" lon="18.979444444444443" version="1"/>
+<node action="create" id="-58" lat="47.486111111111114" lon="19.013055555555557" version="1"/>
+<node action="create" id="-59" lat="47.42361111111111" lon="18.994444444444447" version="1"/>
+<node action="create" id="-60" lat="47.42194444444444" lon="18.92527777777778" version="1"/>
+<node action="create" id="-61" lat="47.44333333333333" lon="18.954722222222223" version="1"/>
+<node action="create" id="-62" lat="47.55777777777777" lon="18.76833333333333" version="1"/>
+<node action="create" id="-64" lat="47.55777777777777" lon="18.76833333333333" version="1"/>
+<node action="create" id="-65" lat="47.44333333333333" lon="18.954722222222223" version="1"/>
+<node action="create" id="-66" lat="47.42194444444444" lon="18.92527777777778" version="1"/>
+<node action="create" id="-67" lat="47.42111111111111" lon="18.89611111111111" version="1"/>
+<node action="create" id="-68" lat="47.5425" lon="18.698888888888888" version="1"/>
+<node action="create" id="-70" lat="47.7575" lon="18.618055555555557" version="1"/>
+<node action="create" id="-71" lat="47.62277777777778" lon="18.668055555555558" version="1"/>
+<node action="create" id="-72" lat="47.78972222222222" lon="18.864444444444445" version="1"/>
+<node action="create" id="-73" lat="47.817108" lon="18.848199" version="1"/>
+<node action="create" id="-74" lat="47.819103" lon="18.781986" version="1"/>
+<node action="create" id="-75" lat="47.818294" lon="18.754363" version="1"/>
+<node action="create" id="-76" lat="47.815502" lon="18.742258" version="1"/>
+<node action="create" id="-77" lat="47.810547" lon="18.734441" version="1"/>
+<node action="create" id="-78" lat="47.803691" lon="18.730673" version="1"/>
+<node action="create" id="-79" lat="47.797528" lon="18.72883" version="1"/>
+<node action="create" id="-80" lat="47.791425" lon="18.725734" version="1"/>
+<node action="create" id="-81" lat="47.77613" lon="18.697569" version="1"/>
+<node action="create" id="-82" lat="47.765705" lon="18.674675" version="1"/>
+<node action="create" id="-83" lat="47.761345" lon="18.662953" version="1"/>
+<node action="create" id="-85" lat="47.65" lon="19.05" version="1"/>
+<node action="create" id="-86" lat="47.63333333333333" lon="19.35" version="1"/>
+<node action="create" id="-87" lat="47.6" lon="19.175" version="1"/>
+<node action="create" id="-88" lat="47.61666666666667" lon="19.066666666666666" version="1"/>
+<node action="create" id="-90" lat="47.617777777777775" lon="19.17003452751177" version="1"/>
+<node action="create" id="-91" lat="47.621289122666475" lon="19.169521471552734" version="1"/>
+<node action="create" id="-92" lat="47.624665528540284" lon="19.1680020201284" version="1"/>
+<node action="create" id="-93" lat="47.627777242014986" lon="19.165534564904895" version="1"/>
+<node action="create" id="-94" lat="47.63050468168682" lon="19.162213928802686" version="1"/>
+<node action="create" id="-95" lat="47.632743033578755" lon="19.15816772200495" version="1"/>
+<node action="create" id="-96" lat="47.634406279082874" lon="19.153551437969785" version="1"/>
+<node action="create" id="-97" lat="47.63543050060721" lon="19.14854247790382" version="1"/>
+<node action="create" id="-98" lat="47.63577633789296" lon="19.143333333333334" version="1"/>
+<node action="create" id="-99" lat="47.63543050060721" lon="19.13812418876285" version="1"/>
+<node action="create" id="-100" lat="47.634406279082874" lon="19.133115228696884" version="1"/>
+<node action="create" id="-101" lat="47.632743033578755" lon="19.128498944661718" version="1"/>
+<node action="create" id="-102" lat="47.63050468168682" lon="19.124452737863983" version="1"/>
+<node action="create" id="-103" lat="47.627777242014986" lon="19.121132101761773" version="1"/>
+<node action="create" id="-104" lat="47.624665528540284" lon="19.118664646538267" version="1"/>
+<node action="create" id="-105" lat="47.621289122666475" lon="19.117145195113935" version="1"/>
+<node action="create" id="-106" lat="47.617777777777775" lon="19.1166321391549" version="1"/>
+<node action="create" id="-107" lat="47.614266432889075" lon="19.117145195113935" version="1"/>
+<node action="create" id="-108" lat="47.610890027015266" lon="19.118664646538267" version="1"/>
+<node action="create" id="-109" lat="47.607778313540564" lon="19.121132101761773" version="1"/>
+<node action="create" id="-110" lat="47.60505087386873" lon="19.124452737863983" version="1"/>
+<node action="create" id="-111" lat="47.602812521976794" lon="19.128498944661718" version="1"/>
+<node action="create" id="-112" lat="47.601149276472675" lon="19.133115228696884" version="1"/>
+<node action="create" id="-113" lat="47.60012505494834" lon="19.13812418876285" version="1"/>
+<node action="create" id="-114" lat="47.59977921766259" lon="19.143333333333334" version="1"/>
+<node action="create" id="-115" lat="47.60012505494834" lon="19.14854247790382" version="1"/>
+<node action="create" id="-116" lat="47.601149276472675" lon="19.153551437969785" version="1"/>
+<node action="create" id="-117" lat="47.602812521976794" lon="19.15816772200495" version="1"/>
+<node action="create" id="-118" lat="47.60505087386873" lon="19.162213928802686" version="1"/>
+<node action="create" id="-119" lat="47.607778313540564" lon="19.165534564904895" version="1"/>
+<node action="create" id="-120" lat="47.610890027015266" lon="19.1680020201284" version="1"/>
+<node action="create" id="-121" lat="47.614266432889075" lon="19.169521471552734" version="1"/>
+<node action="create" id="-123" lat="47.68333333333333" lon="19.075" version="1"/>
+<node action="create" id="-124" lat="47.663333333333334" lon="19.754166666666666" version="1"/>
+<node action="create" id="-125" lat="47.63333333333333" lon="19.35" version="1"/>
+<node action="create" id="-126" lat="47.65" lon="19.05" version="1"/>
+<node action="create" id="-128" lat="47.776666666666664" lon="19.15138888888889" version="1"/>
+<node action="create" id="-129" lat="47.75083333333333" lon="19.68138888888889" version="1"/>
+<node action="create" id="-130" lat="47.663333333333334" lon="19.754166666666666" version="1"/>
+<node action="create" id="-131" lat="47.68333333333333" lon="19.075" version="1"/>
+<node action="create" id="-133" lat="47.92972222222222" lon="19.529999999999998" version="1"/>
+<node action="create" id="-134" lat="47.75083333333333" lon="19.68138888888889" version="1"/>
+<node action="create" id="-135" lat="47.776666666666664" lon="19.15138888888889" version="1"/>
+<node action="create" id="-137" lat="47.82944444444445" lon="18.960555555555555" version="1"/>
+<node action="create" id="-138" lat="47.72777777777778" lon="19.245833333333334" version="1"/>
+<node action="create" id="-139" lat="47.65" lon="19.05" version="1"/>
+<node action="create" id="-141" lat="48.0" lon="19.133333333333333" version="1"/>
+<node action="create" id="-142" lat="47.72777777777778" lon="19.245833333333334" version="1"/>
+<node action="create" id="-143" lat="47.82944444444445" lon="18.960555555555555" version="1"/>
+<node action="create" id="-144" lat="47.88333333333333" lon="18.933333333333334" version="1"/>
+<node action="create" id="-146" lat="47.958333333333336" lon="19.7" version="1"/>
+<node action="create" id="-147" lat="47.95" lon="20.022222222222222" version="1"/>
+<node action="create" id="-148" lat="47.833333333333336" lon="20.116666666666667" version="1"/>
+<node action="create" id="-149" lat="47.74166666666667" lon="19.766666666666666" version="1"/>
+<node action="create" id="-150" lat="47.825" lon="19.641666666666666" version="1"/>
+<way action="create" id="-1" version="1">
+<nd ref="-1"/>
+<nd ref="-2"/>
+<nd ref="-3"/>
+<nd ref="-4"/>
+<nd ref="-1"/>
+<tag k="airspace" v="yes"/>
+<tag k="icao" v="LHSA1"/>
+<tag k="name" v="AEROBATICS AREA 1"/>
+<tag k="remark" v="Only for aerobatics flights. Prior permission required by Budapest Flight Information Centre."/>
+<tag k="activetime" v="Working day 08:00 (UTCW) - - 17:00 (UTCW)SAT 08:00 (UTCW) - - 11:00 (UTCW)SAT 14:00 (UTCW) - - 17:00 (UTCW)SUN 08:00 (UTCW) - - 11:00 (UTCW)SUN 14:00 (UTCW) - - 17:00 (UTCW)HOL 08:00 (UTCW) - - 11:00 (UTCW)HOL 14:00 (UTCW) - - 17:00 (UTCW)"/>
+<tag k="airspace:type" v="SA"/>
+<tag k="airspace:class" v="G"/>
+<tag k="height:lower" v="3000"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:upper" v="6000"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper:class" v="amsl"/>
+</way>
+<way action="create" id="-2" version="1">
+<nd ref="-6"/>
+<nd ref="-7"/>
+<nd ref="-8"/>
+<nd ref="-9"/>
+<nd ref="-10"/>
+<nd ref="-11"/>
+<nd ref="-12"/>
+<nd ref="-13"/>
+<nd ref="-14"/>
+<nd ref="-15"/>
+<nd ref="-16"/>
+<nd ref="-17"/>
+<nd ref="-18"/>
+<nd ref="-19"/>
+<nd ref="-20"/>
+<nd ref="-21"/>
+<nd ref="-22"/>
+<nd ref="-23"/>
+<nd ref="-24"/>
+<nd ref="-25"/>
+<nd ref="-26"/>
+<nd ref="-27"/>
+<nd ref="-28"/>
+<nd ref="-29"/>
+<nd ref="-30"/>
+<nd ref="-31"/>
+<nd ref="-32"/>
+<nd ref="-33"/>
+<nd ref="-34"/>
+<nd ref="-35"/>
+<nd ref="-36"/>
+<nd ref="-37"/>
+<nd ref="-6"/>
+<tag k="airspace" v="yes"/>
+<tag k="icao" v="LHSA2"/>
+<tag k="name" v="AEROBATICS AREA 2"/>
+<tag k="remark" v="Only for aerobatics flights. Prior permission required by Budapest Flight Information Centre."/>
+<tag k="activetime" v="Working day 09:00 (UTCW) - - 15:00 (UTCW)"/>
+<tag k="airspace:type" v="SA"/>
+<tag k="airspace:class" v="G"/>
+<tag k="height:lower" v="550"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:upper" v="3500"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="airspace:center:lat" v="47.345555555555556"/>
+<tag k="airspace:center:lon" v="18.980833333333333"/>
+<tag k="airspace:radius" v="1500.0"/>
+<tag k="airspace:radius:unit" v="M"/>
+</way>
+<way action="create" id="-3" version="1">
+<nd ref="-39"/>
+<nd ref="-40"/>
+<nd ref="-41"/>
+<nd ref="-42"/>
+<nd ref="-39"/>
+<tag k="airspace" v="yes"/>
+<tag k="icao" v="LHSG1"/>
+<tag k="name" v="GLIDER AREA"/>
+<tag k="remark" v="HX Only for VFR flights.Above 3500 FT AMSL prior permission required by Budapest ATS Centre."/>
+<tag k="operator" v="LHBS, LHFH, LHHH"/>
+<tag k="airspace:type" v="SG"/>
+<tag k="airspace:class" v="G"/>
+<tag k="height:lower" v="0"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:upper" v="3500"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper:class" v="amsl"/>
+</way>
+<way action="create" id="-4" version="1">
+<nd ref="-44"/>
+<nd ref="-45"/>
+<nd ref="-46"/>
+<nd ref="-47"/>
+<nd ref="-48"/>
+<nd ref="-49"/>
+<nd ref="-50"/>
+<nd ref="-51"/>
+<nd ref="-52"/>
+<nd ref="-44"/>
+<tag k="airspace" v="yes"/>
+<tag k="icao" v="LHSG2"/>
+<tag k="name" v="S / GLIDER AREA 2/S"/>
+<tag k="remark" v="HX Only for VFR flights.Above 3500 FT AMSL prior permission required by Budapest ATS Centre."/>
+<tag k="operator" v="Hungarian Free Flying Association"/>
+<tag k="airspace:type" v="SG"/>
+<tag k="airspace:class" v="G"/>
+<tag k="height:lower" v="0"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:upper" v="6500"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper:class" v="amsl"/>
+</way>
+<way action="create" id="-5" version="1">
+<nd ref="-54"/>
+<nd ref="-55"/>
+<nd ref="-56"/>
+<nd ref="-57"/>
+<nd ref="-58"/>
+<nd ref="-59"/>
+<nd ref="-60"/>
+<nd ref="-61"/>
+<nd ref="-62"/>
+<nd ref="-54"/>
+<tag k="airspace" v="yes"/>
+<tag k="icao" v="LHSG2"/>
+<tag k="name" v="V / GLIDER AREA 2/V"/>
+<tag k="remark" v="HX Only for VFR flights.Above 3500 FT AMSL prior permission required by Budapest ATS Centre."/>
+<tag k="operator" v="LHBS, LHFH, LHHH"/>
+<tag k="airspace:type" v="SG"/>
+<tag k="airspace:class" v="G"/>
+<tag k="height:lower" v="0"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:upper" v="6500"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper:class" v="amsl"/>
+</way>
+<way action="create" id="-6" version="1">
+<nd ref="-64"/>
+<nd ref="-65"/>
+<nd ref="-66"/>
+<nd ref="-67"/>
+<nd ref="-68"/>
+<nd ref="-64"/>
+<tag k="airspace" v="yes"/>
+<tag k="icao" v="LHSG3"/>
+<tag k="name" v="GLIDER AREA"/>
+<tag k="remark" v="HX Only for VFR flights. Above 4500 FT AMSL prior permission required by Budapest ATS Centre."/>
+<tag k="operator" v="LHBS, LHFH, LHHH"/>
+<tag k="airspace:type" v="SG"/>
+<tag k="airspace:class" v="G"/>
+<tag k="height:lower" v="0"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:upper" v="6500"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper:class" v="amsl"/>
+</way>
+<way action="create" id="-7" version="1">
+<nd ref="-70"/>
+<nd ref="-71"/>
+<nd ref="-72"/>
+<nd ref="-73"/>
+<nd ref="-74"/>
+<nd ref="-75"/>
+<nd ref="-76"/>
+<nd ref="-77"/>
+<nd ref="-78"/>
+<nd ref="-79"/>
+<nd ref="-80"/>
+<nd ref="-81"/>
+<nd ref="-82"/>
+<nd ref="-83"/>
+<nd ref="-70"/>
+<tag k="airspace" v="yes"/>
+<tag k="icao" v="LHSG10"/>
+<tag k="name" v="GLIDER AREA 10"/>
+<tag k="remark" v="HX Available only for VFR flights Above 4500 FT AMSL prior permission required by Budapest ATS Centre."/>
+<tag k="operator" v="LHEM"/>
+<tag k="airspace:type" v="SG"/>
+<tag k="airspace:class" v="G"/>
+<tag k="height:lower" v="0"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:upper" v="6500"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper:class" v="amsl"/>
+</way>
+<way action="create" id="-8" version="1">
+<nd ref="-85"/>
+<nd ref="-86"/>
+<nd ref="-87"/>
+<nd ref="-88"/>
+<nd ref="-85"/>
+<tag k="airspace" v="yes"/>
+<tag k="icao" v="LHSG20"/>
+<tag k="name" v="GLIDER AREA 20"/>
+<tag k="remark" v="HX Available only for VFR flights.Above 2000 FT AMSL prior permission required by Budapest ATS Centre."/>
+<tag k="operator" v="LHDK"/>
+<tag k="airspace:type" v="SG"/>
+<tag k="airspace:class" v="G"/>
+<tag k="height:lower" v="0"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:upper" v="3000"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper:class" v="amsl"/>
+</way>
+<way action="create" id="-9" version="1">
+<nd ref="-90"/>
+<nd ref="-91"/>
+<nd ref="-92"/>
+<nd ref="-93"/>
+<nd ref="-94"/>
+<nd ref="-95"/>
+<nd ref="-96"/>
+<nd ref="-97"/>
+<nd ref="-98"/>
+<nd ref="-99"/>
+<nd ref="-100"/>
+<nd ref="-101"/>
+<nd ref="-102"/>
+<nd ref="-103"/>
+<nd ref="-104"/>
+<nd ref="-105"/>
+<nd ref="-106"/>
+<nd ref="-107"/>
+<nd ref="-108"/>
+<nd ref="-109"/>
+<nd ref="-110"/>
+<nd ref="-111"/>
+<nd ref="-112"/>
+<nd ref="-113"/>
+<nd ref="-114"/>
+<nd ref="-115"/>
+<nd ref="-116"/>
+<nd ref="-117"/>
+<nd ref="-118"/>
+<nd ref="-119"/>
+<nd ref="-120"/>
+<nd ref="-121"/>
+<nd ref="-90"/>
+<tag k="airspace" v="yes"/>
+<tag k="icao" v="LHSG20A"/>
+<tag k="name" v="GLIDER AREA"/>
+<tag k="remark" v="HX Above 2000 FT AMSL prior permission required by Budapest ATS Centre."/>
+<tag k="operator" v="LHDK"/>
+<tag k="airspace:type" v="SG"/>
+<tag k="airspace:class" v="G"/>
+<tag k="height:lower" v="2000"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:upper" v="4000"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="airspace:center:lat" v="47.617777777777775"/>
+<tag k="airspace:center:lon" v="19.143333333333334"/>
+<tag k="airspace:radius" v="2000.0"/>
+<tag k="airspace:radius:unit" v="M"/>
+</way>
+<way action="create" id="-10" version="1">
+<nd ref="-123"/>
+<nd ref="-124"/>
+<nd ref="-125"/>
+<nd ref="-126"/>
+<nd ref="-123"/>
+<tag k="airspace" v="yes"/>
+<tag k="icao" v="LHSG21"/>
+<tag k="name" v="GLIDER AREA"/>
+<tag k="remark" v="HX Available only for VFR flights Above 2500 FT AMSL prior permission required by Budapest ATS Centre."/>
+<tag k="operator" v="LHDK"/>
+<tag k="airspace:type" v="SG"/>
+<tag k="airspace:class" v="G"/>
+<tag k="height:lower" v="0"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:upper" v="5000"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper:class" v="amsl"/>
+</way>
+<way action="create" id="-11" version="1">
+<nd ref="-128"/>
+<nd ref="-129"/>
+<nd ref="-130"/>
+<nd ref="-131"/>
+<nd ref="-128"/>
+<tag k="airspace" v="yes"/>
+<tag k="icao" v="LHSG22"/>
+<tag k="name" v="GLIDER AREA"/>
+<tag k="remark" v="HX Available only for VFR flights.Above 3000 FT AMSL prior permission required by Budapest ATS Centre."/>
+<tag k="operator" v="LHDK"/>
+<tag k="airspace:type" v="SG"/>
+<tag k="airspace:class" v="G"/>
+<tag k="height:lower" v="0"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:upper" v="6500"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper:class" v="amsl"/>
+</way>
+<way action="create" id="-12" version="1">
+<nd ref="-133"/>
+<nd ref="-134"/>
+<nd ref="-135"/>
+<nd ref="-133"/>
+<tag k="airspace" v="yes"/>
+<tag k="icao" v="LHSG23"/>
+<tag k="name" v="GLIDER AREA"/>
+<tag k="remark" v="HX Available only for VFR flights.Above 6500 FT AMSL prior permission required by Budapest ATS Centre."/>
+<tag k="operator" v="LHDK"/>
+<tag k="airspace:type" v="SG"/>
+<tag k="airspace:class" v="G"/>
+<tag k="height:lower" v="0"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:upper" v="7500"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper:class" v="amsl"/>
+</way>
+<way action="create" id="-13" version="1">
+<nd ref="-137"/>
+<nd ref="-138"/>
+<nd ref="-139"/>
+<nd ref="-137"/>
+<tag k="airspace" v="yes"/>
+<tag k="icao" v="LHSG24"/>
+<tag k="name" v="MOUNTAIN WAVE GLIDER AREA"/>
+<tag k="remark" v="HX Available only for mountain wave flights. Prior permission required by Budapest ATS Centre"/>
+<tag k="operator" v="LHDK"/>
+<tag k="airspace:type" v="SG"/>
+<tag k="airspace:class" v="G"/>
+<tag k="height:lower" v="0"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:upper" v="285"/>
+<tag k="height:upper:unit" v="fl"/>
+<tag k="height:upper:class" v="amsl"/>
+</way>
+<way action="create" id="-14" version="1">
+<nd ref="-141"/>
+<nd ref="-142"/>
+<nd ref="-143"/>
+<nd ref="-144"/>
+<nd ref="-141"/>
+<tag k="airspace" v="yes"/>
+<tag k="icao" v="LHSG25"/>
+<tag k="name" v="GLIDER AREA"/>
+<tag k="remark" v="HX Available only for mountain wave flights. Prior permission required by Budapest ATS Centre."/>
+<tag k="operator" v="LHDK"/>
+<tag k="airspace:type" v="SG"/>
+<tag k="airspace:class" v="G"/>
+<tag k="height:lower" v="0"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:upper" v="285"/>
+<tag k="height:upper:unit" v="fl"/>
+<tag k="height:upper:class" v="amsl"/>
+</way>
+<way action="create" id="-15" version="1">
+<nd ref="-146"/>
+<nd ref="-147"/>
+<nd ref="-148"/>
+<nd ref="-149"/>
+<nd ref="-150"/>
+<nd ref="-146"/>
+<tag k="airspace" v="yes"/>
+<tag k="icao" v="LHSG30"/>
+<tag k="name" v="GLIDER AREA"/>
+<tag k="remark" v="Available only for VFR flights.Prior permission required by Budapest ATS Centre."/>
+<tag k="activetime" v="15 SEP - 15 MAY: SR-SS"/>
+<tag k="airspace:type" v="SG"/>
+<tag k="airspace:class" v="G"/>
+<tag k="height:lower" v="0"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:upper" v="285"/>
+<tag k="height:upper:unit" v="fl"/>
+<tag k="height:upper:class" v="amsl"/>
+</way>
+</osm>
