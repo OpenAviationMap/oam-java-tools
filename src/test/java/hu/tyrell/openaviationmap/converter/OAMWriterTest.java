@@ -22,6 +22,8 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import hu.tyrell.openaviationmap.model.Airspace;
+import hu.tyrell.openaviationmap.model.oam.Action;
+import hu.tyrell.openaviationmap.model.oam.Oam;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -77,11 +79,16 @@ public class OAMWriterTest {
         assertNotNull(airspaces);
         assertFalse(airspaces.isEmpty());
 
-        // now,  convert this airspace into a OAM document
+        // convert the airspaces into an Oam object
+        Oam oam = new Oam();
+
+        Converter.airspacesToOam(airspaces, oam, Action.CREATE, 1, 0, 0);
+
+        // now,  convert this Oam object into XML
         d = db.newDocument();
         OAMWriter writer = new OAMWriter();
 
-        d = writer.processAirspaces(d, airspaces, 0, 0, false, 1);
+        d = writer.processOam(d, oam);
 
         Node root = d.getFirstChild();
 
@@ -153,11 +160,16 @@ public class OAMWriterTest {
         assertTrue(errors.isEmpty());
         assertEquals(47, airspaces.size());
 
-        // now,  convert this airspace into a OAM document
+        // convert the airspaces into an Oam object
+        Oam oam = new Oam();
+
+        Converter.airspacesToOam(airspaces, oam, Action.CREATE, 1, 0, 0);
+
+        // now,  convert the Oam object into XML
         d = db.newDocument();
         OAMWriter writer = new OAMWriter();
 
-        d = writer.processAirspaces(d, airspaces, 0, 0, false, 1);
+        d = writer.processOam(d, oam);
 
         Node root = d.getFirstChild();
 

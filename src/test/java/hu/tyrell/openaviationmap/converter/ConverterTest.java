@@ -23,6 +23,7 @@ import static org.junit.Assert.assertTrue;
 import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Boundary;
 import hu.tyrell.openaviationmap.model.Ring;
+import hu.tyrell.openaviationmap.model.oam.Action;
 
 import java.io.FileInputStream;
 import java.util.List;
@@ -50,7 +51,7 @@ public class ConverterTest {
         String                  inputFormat    = "eAIP.Hungary";
         String                  outputFile     = "var/test-oam-hungary-5.6.xml";
         String                  outputFormat   = "OAM";
-        boolean                 create         = true;
+        Action                  action         = Action.CREATE;
         String                  borderFile     = "var/hungary.osm";
         int                     version        = 1;
         List<ParseException>    errors         = new Vector<ParseException>();
@@ -59,7 +60,7 @@ public class ConverterTest {
                           inputFormat,
                           outputFile,
                           outputFormat,
-                          create,
+                          action,
                           borderFile,
                           version,
                           errors);
@@ -73,8 +74,9 @@ public class ConverterTest {
         Document   d = db.parse(new FileInputStream(outputFile));
         OAMReader  reader = new OAMReader();
         List<Airspace> airspaces = new Vector<Airspace>();
-        reader.processOam(d.getDocumentElement(), airspaces);
+        reader.processOam(d.getDocumentElement(), airspaces, errors);
 
+        assertTrue(errors.isEmpty());
         assertEquals(37, airspaces.size());
 
         // look for & check LHB18

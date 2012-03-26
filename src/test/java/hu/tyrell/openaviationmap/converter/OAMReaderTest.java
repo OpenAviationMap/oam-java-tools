@@ -22,6 +22,9 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Point;
+import hu.tyrell.openaviationmap.model.oam.Action;
+import hu.tyrell.openaviationmap.model.oam.Oam;
+import hu.tyrell.openaviationmap.model.oam.OsmNode;
 import hu.tyrell.openaviationmap.model.oam.Way;
 
 import java.io.FileInputStream;
@@ -63,10 +66,11 @@ public class OAMReaderTest {
      * Test parsing an OSM / OAM 'node' element.
      *
      * @throws ParserConfigurationException on XML parser issues
+     * @throws ParseException on parsing errors
      */
     @Test
-    public void testNode() throws ParserConfigurationException {
-        HashMap<Integer, Point> points = new HashMap<Integer, Point>();
+    public void testNode() throws ParserConfigurationException, ParseException {
+        HashMap<Integer, OsmNode> points = new HashMap<Integer, OsmNode>();
 
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder        db  = dbf.newDocumentBuilder();
@@ -104,7 +108,7 @@ public class OAMReaderTest {
                                    SAXException,
                                    IOException,
                                    ParseException {
-        HashMap<Integer, Point> points = new HashMap<Integer, Point>();
+        HashMap<Integer, OsmNode> points = new HashMap<Integer, OsmNode>();
 
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder        db  = dbf.newDocumentBuilder();
@@ -138,8 +142,8 @@ public class OAMReaderTest {
                                  IOException,
                                  ParseException,
                                  XPathExpressionException {
-        TreeMap<Integer, Point> points = new TreeMap<Integer, Point>();
-        TreeMap<Integer, Way>   ways   = new TreeMap<Integer, Way>();
+        TreeMap<Integer, OsmNode> points = new TreeMap<Integer, OsmNode>();
+        TreeMap<Integer, Way>     ways   = new TreeMap<Integer, Way>();
 
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder        db  = dbf.newDocumentBuilder();
@@ -180,19 +184,21 @@ public class OAMReaderTest {
                                  IOException,
                                  ParseException,
                                  XPathExpressionException {
-        TreeMap<Integer, Way>   ways   = new TreeMap<Integer, Way>();
+        Oam                     oam    = new Oam();
+        List<ParseException>    errors = new Vector<ParseException>();
 
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder        db  = dbf.newDocumentBuilder();
 
         Document   d = db.parse(new FileInputStream("var/hungary.osm"));
         OAMReader reader = new OAMReader();
-        reader.processOsm(d.getDocumentElement(), ways);
+        reader.processOsm(d.getDocumentElement(), oam, errors);
 
-        assertEquals(1, ways.size());
-        assertTrue(ways.containsKey(-1));
+        assertTrue(errors.isEmpty());
+        assertEquals(1, oam.getWays().size());
+        assertTrue(oam.getWays().containsKey(-1));
 
-        Way way = ways.get(-1);
+        Way way = oam.getWays().get(-1);
         assertNotNull(way);
         assertEquals(3, way.getTags().size());
         assertTrue(way.getTags().containsKey("polygon_id"));
@@ -232,11 +238,15 @@ public class OAMReaderTest {
         assertTrue(errors.isEmpty());
         assertEquals(47, airspaces.size());
 
-        // serialize the airspaces into a stream
+        // convert the airspaces into an Oam object
+        Oam oam = new Oam();
+
+        Converter.airspacesToOam(airspaces, oam, Action.CREATE, 1, 0, 0);
+
+        // serialize the Oam object into a stream
         OAMWriter writer = new OAMWriter();
         d = db.newDocument();
-
-        d = writer.processAirspaces(d, airspaces, 0, 0, true, 1);
+        d = writer.processOam(d, oam);
 
         TransformerFactory tFactory = TransformerFactory.newInstance();
         Transformer transformer = tFactory.newTransformer();
@@ -255,8 +265,9 @@ public class OAMReaderTest {
 
         OAMReader oamReader = new OAMReader();
         List<Airspace> oamAirspaces = new Vector<Airspace>();
-        oamReader.processOam(d.getDocumentElement(), oamAirspaces);
+        oamReader.processOam(d.getDocumentElement(), oamAirspaces, errors);
 
+        assertTrue(errors.isEmpty());
         assertEquals(airspaces.size(), oamAirspaces.size());
         assertTrue(airspaces.containsAll(oamAirspaces));
         assertTrue(oamAirspaces.containsAll(airspaces));

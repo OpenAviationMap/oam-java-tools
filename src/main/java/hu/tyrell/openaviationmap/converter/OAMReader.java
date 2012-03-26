@@ -25,32 +25,52 @@ import hu.tyrell.openaviationmap.model.ElevationReference;
 import hu.tyrell.openaviationmap.model.Point;
 import hu.tyrell.openaviationmap.model.Ring;
 import hu.tyrell.openaviationmap.model.UOM;
+import hu.tyrell.openaviationmap.model.oam.Action;
+import hu.tyrell.openaviationmap.model.oam.Oam;
+import hu.tyrell.openaviationmap.model.oam.OsmNode;
 import hu.tyrell.openaviationmap.model.oam.Way;
 
+import java.io.FileReader;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
 import java.util.Vector;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathFactory;
 
+import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 
 /**
  * A class to read Open Aviation Map (and Open Street Map) files.
  */
 public class OAMReader {
     /**
+     * The date format used to read timestamps.
+     */
+    private static DateFormat df =
+                            new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+
+    /**
      * Process a 'node' element in an OAM file.
      *
      * @param node the XML node that represents an OSM 'node' element
      * @param nodes a map that contains the processed nodes, with the nodes
      *        id as the key
+     * @throws ParseException on parsing errors
      */
-    void processNode(Element node, Map<Integer, Point> nodes) {
+    void processNode(Element node, Map<Integer, OsmNode> nodes)
+                                                    throws ParseException {
         if (!"node".equals(node.getTagName())) {
             return;
         }
@@ -63,11 +83,59 @@ public class OAMReader {
         double  lat = Double.parseDouble(latStr);
         double  lon = Double.parseDouble(lonStr);
 
-        Point point = new Point();
-        point.setLatitude(lat);
-        point.setLongitude(lon);
+        OsmNode osmNode = new OsmNode();
+        osmNode.setId(id);
+        osmNode.setLatitude(lat);
+        osmNode.setLongitude(lon);
 
-        nodes.put(id, point);
+        String  str  = node.getAttribute("version");
+        if (str != null && !str.isEmpty()) {
+            osmNode.setVersion(Integer.parseInt(str));
+        }
+
+        str = node.getAttribute("action");
+        if (str != null && !str.isEmpty()) {
+            if ("create".equals(str)) {
+                osmNode.setAction(Action.CREATE);
+            } else if ("modify".equals(str)) {
+                osmNode.setAction(Action.CREATE);
+            } else if ("delete".equals(str)) {
+                osmNode.setAction(Action.DELETE);
+            }
+        }
+
+        str  = node.getAttribute("timestamp");
+        if (str != null && !str.isEmpty()) {
+            try {
+                osmNode.setTimestamp(df.parse(str));
+            } catch (java.text.ParseException e) {
+                throw new ParseException(idStr,
+                                         "bad timestamp format: '" + str + "'",
+                                         e);
+            }
+        }
+
+        str  = node.getAttribute("uid");
+        if (str != null && !str.isEmpty()) {
+            osmNode.setUid(Integer.parseInt(str));
+        }
+
+        str  = node.getAttribute("user");
+        if (str != null && !str.isEmpty()) {
+            osmNode.setUser(str);
+        }
+
+        str  = node.getAttribute("visible");
+        if (str != null && !str.isEmpty()) {
+            osmNode.setVisible("true".equals(str));
+        }
+
+        str  = node.getAttribute("changeset");
+        if (str != null && !str.isEmpty()) {
+            osmNode.setChangeset(Integer.parseInt(str));
+        }
+
+        nodes.put(id, osmNode);
     }
 
     /**
@@ -79,7 +147,7 @@ public class OAMReader {
      *        id as key.
      * @throws ParseException on parsing issues.
      */
-    void processNodes(Element parent, Map<Integer, Point> nodes)
+    void processNodes(Element parent, Map<Integer, OsmNode> nodes)
                                                         throws ParseException {
         try {
             XPath          xpath     = XPathFactory.newInstance().newXPath();
@@ -123,9 +191,9 @@ public class OAMReader {
      * @param way the 'way' to add this tag to.
      * @throws ParseException on document parsing errors
      */
-    void processNodeRef(Element             node,
-                        Map<Integer, Point> points,
-                        Way                 way)        throws ParseException {
+    void processNodeRef(Element               node,
+                        Map<Integer, OsmNode> points,
+                        Way                   way)      throws ParseException {
         if (!"nd".equals(node.getTagName())) {
             return;
         }
@@ -138,7 +206,7 @@ public class OAMReader {
                                    + "node: " + refStr);
         }
 
-        way.getPointList().add(points.get(ref));
+        way.getNodeList().add(ref);
     }
 
     /**
@@ -149,9 +217,9 @@ public class OAMReader {
      * @param ways a map of OAM 'ways', with the key being the ways id
      * @throws ParseException on document parsing errors
      */
-    void processWay(Element             node,
-                    Map<Integer, Point> points,
-                    Map<Integer, Way>   ways)       throws ParseException {
+    void processWay(Element               node,
+                    Map<Integer, OsmNode> points,
+                    Map<Integer, Way>     ways)       throws ParseException {
         if (!"way".equals(node.getTagName())) {
             return;
         }
@@ -160,6 +228,54 @@ public class OAMReader {
         Integer id    = Integer.parseInt(idStr);
 
         Way way = new Way();
+        way.setId(id);
+
+        String  str  = node.getAttribute("version");
+        if (str != null && !str.isEmpty()) {
+            way.setVersion(Integer.parseInt(str));
+        }
+
+        str = node.getAttribute("action");
+        if (str != null && !str.isEmpty()) {
+            if ("create".equals(str)) {
+                way.setAction(Action.CREATE);
+            } else if ("modify".equals(str)) {
+                way.setAction(Action.CREATE);
+            } else if ("delete".equals(str)) {
+                way.setAction(Action.DELETE);
+            }
+        }
+
+        str  = node.getAttribute("timestamp");
+        if (str != null && !str.isEmpty()) {
+            try {
+                way.setTimestamp(df.parse(str));
+            } catch (java.text.ParseException e) {
+                throw new ParseException(idStr,
+                                         "bad timestamp format: '" + str + "'",
+                                         e);
+            }
+        }
+
+        str  = node.getAttribute("uid");
+        if (str != null && !str.isEmpty()) {
+            way.setUid(Integer.parseInt(str));
+        }
+
+        str  = node.getAttribute("user");
+        if (str != null && !str.isEmpty()) {
+            way.setUser(str);
+        }
+
+        str  = node.getAttribute("visible");
+        if (str != null && !str.isEmpty()) {
+            way.setVisible("true".equals(str));
+        }
+
+        str  = node.getAttribute("changeset");
+        if (str != null && !str.isEmpty()) {
+            way.setChangeset(Integer.parseInt(str));
+        }
 
         try {
             XPath          xpath     = XPathFactory.newInstance().newXPath();
@@ -188,32 +304,31 @@ public class OAMReader {
      * Process an OAM / OSM document and generate a number of Way elements.
      *
      * @param root the document root element to process
-     * @param ways a map of Way elements, where the processed Way elements will
-     *        be placed. the way elements are keyd by their ids.
-     * @throws ParseException on document parsing errors
+     * @param oam the OAM element to put the results into
+     * @param errors all parsing errors will be put into this list
      */
-    public void processOsm(Element root, Map<Integer, Way> ways)
-                                                    throws ParseException {
+    public void processOsm(Element              root,
+                           Oam                  oam,
+                           List<ParseException> errors) {
         if (!"osm".equals(root.getTagName())) {
             return;
         }
 
-        TreeMap<Integer, Point> points = new TreeMap<Integer, Point>();
-        processNodes(root, points);
-
         try {
+            processNodes(root, oam.getNodes());
+
             XPath          xpath     = XPathFactory.newInstance().newXPath();
 
             // get the 'way' elements
             NodeList n = (NodeList) xpath.evaluate("//way", root,
                                                    XPathConstants.NODESET);
             for (int i = 0; i < n.getLength(); ++i) {
-                processWay((Element) n.item(i), points, ways);
+                processWay((Element) n.item(i), oam.getNodes(), oam.getWays());
             }
         } catch (ParseException e) {
-            throw e;
+            errors.add(e);
         } catch (Exception e) {
-            throw new ParseException(e);
+            errors.add(new ParseException(e));
         }
     }
 
@@ -259,10 +374,14 @@ public class OAMReader {
      * Convert an OAM 'way' element into an Airspace object.
      *
      * @param way the OAM 'way' to convert
+     * @param nodeList nodes referred to by the nodeList member of the
+     *                 supplied way
      * @return the airspace corresponding to the supplied 'way' element.
      * @throws ParseException on parsing errors
      */
-    Airspace wayToAirspace(Way way) throws ParseException {
+    Airspace wayToAirspace(Way                   way,
+                           Map<Integer, OsmNode> nodeList)
+                                                       throws ParseException {
         Map<String, String> tags = way.getTags();
 
         if (!tags.containsKey("airspace")
@@ -313,14 +432,15 @@ public class OAMReader {
 
         if (tags.containsKey("airspace:center:lat")
          && tags.containsKey("airspace:center:lon")
-         && tags.containsKey("airspace:radius")
-         && tags.containsKey("airspace:radius:unit")) {
+         && tags.containsKey("airspace:center:radius")
+         && tags.containsKey("airspace:center:unit")) {
 
             // this is a circle airspace
             double lat    = Double.parseDouble(tags.get("airspace:center:lat"));
             double lon    = Double.parseDouble(tags.get("airspace:center:lon"));
-            double rDist  = Double.parseDouble(tags.get("airspace:radius"));
-            String unit   = tags.get("airspace:radius:unit");
+            double rDist  = Double.parseDouble(
+                                            tags.get("airspace:center:radius"));
+            String unit   = tags.get("airspace:center:unit");
 
             Point center = new Point();
             center.setLatitude(lat);
@@ -337,7 +457,17 @@ public class OAMReader {
             airspace.setBoundary(c);
         } else {
             // this is a polygon based airspace
-            List<Point> pl = new Vector<Point>(way.getPointList());
+            // convert the list of OsmNodes to a list of Points
+            List<Point> pl = new Vector<Point>(way.getNodeList().size());
+
+            for (Integer ref : way.getNodeList()) {
+                if (!nodeList.containsKey(ref)) {
+                    throw new ParseException(airspace.getDesignator(),
+                                             "bad node reference: " + ref);
+
+                }
+                pl.add(new Point(nodeList.get(ref)));
+            }
 
             Ring r = new Ring();
             r.setPointList(pl);
@@ -354,16 +484,53 @@ public class OAMReader {
      * @param root the document root element to process
      * @param airspaces a list of Airspace elements, which will contain
      *        the airspaces contained on the OAM document.
-     * @throws ParseException on document parsing errors
+     * @param errors all parsing errors will be put into this list
      */
-    public void processOam(Element root, List<Airspace> airspaces)
-                                                     throws ParseException {
-        TreeMap<Integer, Way> ways = new TreeMap<Integer, Way>();
-        processOsm(root, ways);
+    public void processOam(Element                  root,
+                           List<Airspace>           airspaces,
+                           List<ParseException>     errors) {
+        Oam oam = new Oam();
+        processOsm(root, oam, errors);
 
-        for (Way way : ways.values()) {
-            Airspace airspace = wayToAirspace(way);
-            airspaces.add(airspace);
+        for (Way way : oam.getWays().values()) {
+            try {
+                Airspace airspace = wayToAirspace(way, oam.getNodes());
+                airspaces.add(airspace);
+            } catch (ParseException e) {
+                errors.add(e);
+            }
         }
     }
+
+    /**
+     * Load an OAM file.
+     *
+     * @param inputFile the name of the input file
+     * @param errors all parsing errors will be put into this list
+     * @return the Oam object described by the input file
+     * @throws ParserConfigurationException on XML parser configuration errors
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing errors
+     * @throws ParseException on OAM parsing errors
+     */
+    public static Oam loadOam(String                 inputFile,
+                              List<ParseException>   errors)
+                                            throws ParserConfigurationException,
+                                                   SAXException,
+                                                   IOException,
+                                                   ParseException {
+        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        DocumentBuilder        db  = dbf.newDocumentBuilder();
+
+        FileReader   fReader = new FileReader(inputFile);
+        InputSource  fSource = new InputSource(fReader);
+        Document     d = db.parse(fSource);
+
+        OAMReader fOamReader = new OAMReader();
+        Oam       oam        = new Oam();
+        fOamReader.processOsm(d.getDocumentElement(), oam, errors);
+
+        return oam;
+    }
+
 }

@@ -26,14 +26,17 @@ import hu.tyrell.openaviationmap.model.Point;
 import java.util.List;
 
 import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
 import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
- * eAIP processor for the ENR-5.6 segment of an eAIP.
+ * eAIP processor for the ENR-2.1 segment of an eAIP.
  */
-public class EAipProcessorEnr56 extends EAipProcessor {
+public class EAipProcessorEnr21 extends EAipProcessor {
     /**
      *  Process an airspace definition from the aAIP.
      *
@@ -122,4 +125,54 @@ public class EAipProcessorEnr56 extends EAipProcessor {
             throw new ParseException(airspaceNode, e);
         }
     }
+
+    /**
+     *  Process an eAIP file.
+     *
+     *  @param eAipNode the document node of an eAIP file
+     *  @param borderPoints a list of points repesenting the country border,
+     *         which is used for airspaces that reference a country border.
+     *         may be null.
+     *  @param airspaces all airspaces extracted from the supplied eAIP file
+     *         will be inserted into this list.
+     *  @param errors all parsing errors will be written to this list
+     */
+    @Override
+    public void processEAIP(Node                    eAipNode,
+                            List<Point>             borderPoints,
+                            List<Airspace>          airspaces,
+                            List<ParseException>    errors) {
+
+        NodeList nodes = null;
+
+        // get the name & designator
+        try {
+            XPath          xpath     = XPathFactory.newInstance().newXPath();
+
+            nodes = (NodeList) xpath.evaluate(
+                          "//table/tbody/tr"
+                        + "[not(descendant::processing-instruction('Fm')"
+                                         + "[contains(., 'APSToBeDeleted')])]",
+                          eAipNode,
+                          XPathConstants.NODESET);
+        } catch (XPathExpressionException e) {
+            errors.add(new ParseException(e));
+        }
+
+        if (nodes == null) {
+            return;
+        }
+
+        for (int i = 0; i < nodes.getLength(); ++i) {
+            try {
+                Airspace airspace = processAirspace(nodes.item(i),
+                                                    borderPoints);
+                airspaces.add(airspace);
+            } catch (ParseException e) {
+                errors.add(e);
+                continue;
+            }
+        }
+    }
+
 }

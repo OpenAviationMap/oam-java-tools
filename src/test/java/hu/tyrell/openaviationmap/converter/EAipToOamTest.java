@@ -21,7 +21,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Point;
-import hu.tyrell.openaviationmap.model.oam.Way;
+import hu.tyrell.openaviationmap.model.oam.Action;
+import hu.tyrell.openaviationmap.model.oam.Oam;
 
 import java.io.FileInputStream;
 import java.io.FileReader;
@@ -29,7 +30,6 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.util.List;
-import java.util.TreeMap;
 import java.util.Vector;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -89,13 +89,21 @@ public class EAipToOamTest {
         List<Point>    borderPoints = null;
 
         if (borderDocumentName != null) {
-            Document   d = db.parse(new FileInputStream(borderDocumentName));
-            TreeMap<Integer, Way>   ways   = new TreeMap<Integer, Way>();
-            OAMReader reader = new OAMReader();
-            reader.processOsm(d.getDocumentElement(), ways);
+            Document   d   = db.parse(new FileInputStream(borderDocumentName));
+            Oam        oam    = new Oam();
+            OAMReader  reader = new OAMReader();
+            reader.processOsm(d.getDocumentElement(), oam, errors);
 
-            if (!ways.isEmpty()) {
-                borderPoints = ways.values().iterator().next().getPointList();
+            if (!oam.getWays().isEmpty()) {
+                // convert the OsmNodes to Points
+                List<Integer> refList =
+                        oam.getWays().values().iterator().next().getNodeList();
+
+                borderPoints = new Vector<Point>(refList.size());
+
+                for (Integer r : refList) {
+                    borderPoints.add(new Point(oam.getNodes().get(r)));
+                }
             }
         }
 
@@ -109,15 +117,19 @@ public class EAipToOamTest {
                            airspaces,
                            errors);
 
-        // we have one known error: the ADIZ
         assertEquals(knowErrors, errors.size());
         assertEquals(noAirspaces, airspaces.size());
 
-        // serialize the airspaces into a stream
+        // convert the airspaces into an Oam object
+        Oam oam = new Oam();
+
+        Converter.airspacesToOam(airspaces, oam, Action.CREATE, 1, 0, 0);
+
+
+        // serialize the Oam into a stream
         OAMWriter writer = new OAMWriter();
         d = db.newDocument();
-
-        d = writer.processAirspaces(d, airspaces, 0, 0, true, 1);
+        d = writer.processOam(d, oam);
 
         TransformerFactory tFactory = TransformerFactory.newInstance();
         Transformer transformer = tFactory.newTransformer();
@@ -134,10 +146,12 @@ public class EAipToOamTest {
         InputSource  strSource = new InputSource(strReader);
         d = db.parse(strSource);
 
+        errors.clear();
         OAMReader oamReader = new OAMReader();
         List<Airspace> oamAirspaces = new Vector<Airspace>();
-        oamReader.processOam(d.getDocumentElement(), oamAirspaces);
+        oamReader.processOam(d.getDocumentElement(), oamAirspaces, errors);
 
+        assertTrue(errors.isEmpty());
         assertEquals(airspaces.size(), oamAirspaces.size());
         assertTrue(airspaces.containsAll(oamAirspaces));
         assertTrue(oamAirspaces.containsAll(airspaces));
@@ -148,10 +162,12 @@ public class EAipToOamTest {
         InputSource  fSource = new InputSource(fReader);
         d = db.parse(fSource);
 
+        errors.clear();
         OAMReader fOamReader = new OAMReader();
         List<Airspace> fOamAirspaces = new Vector<Airspace>();
-        fOamReader.processOam(d.getDocumentElement(), fOamAirspaces);
+        fOamReader.processOam(d.getDocumentElement(), fOamAirspaces, errors);
 
+        assertTrue(errors.isEmpty());
         assertEquals(airspaces.size(), fOamAirspaces.size());
         assertTrue(airspaces.containsAll(fOamAirspaces));
         assertTrue(fOamAirspaces.containsAll(airspaces));

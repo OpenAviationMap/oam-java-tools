@@ -32,6 +32,22 @@ public class Point {
     private double longitude;
 
     /**
+     * Default constructor.
+     */
+    public Point() {
+    }
+
+    /**
+     * Copy constructor.
+     *
+     * @param other the other object to get values from.
+     */
+    public Point(Point other) {
+        latitude  = other.latitude;
+        longitude = other.longitude;
+    }
+
+    /**
      * Calculate the distance between two points.
      *
      * @param other the other point to calculate the distance from.

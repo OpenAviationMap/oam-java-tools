@@ -20,21 +20,24 @@ package hu.tyrell.openaviationmap.converter;
 import gnu.getopt.Getopt;
 import gnu.getopt.LongOpt;
 import hu.tyrell.openaviationmap.model.Airspace;
+import hu.tyrell.openaviationmap.model.Boundary;
+import hu.tyrell.openaviationmap.model.Circle;
+import hu.tyrell.openaviationmap.model.Elevation;
 import hu.tyrell.openaviationmap.model.Point;
+import hu.tyrell.openaviationmap.model.Ring;
+import hu.tyrell.openaviationmap.model.UOM;
+import hu.tyrell.openaviationmap.model.oam.Action;
+import hu.tyrell.openaviationmap.model.oam.Oam;
+import hu.tyrell.openaviationmap.model.oam.OsmNode;
 import hu.tyrell.openaviationmap.model.oam.Way;
 
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.util.List;
-import java.util.TreeMap;
 import java.util.Vector;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -223,7 +226,7 @@ public final class Converter {
                     inputFormat,
                     outputFile,
                     outputFormat,
-                    create,
+                    create ? Action.CREATE : Action.NONE,
                     borderFile,
                     version,
                     errors);
@@ -244,13 +247,288 @@ public final class Converter {
     }
 
     /**
+     * Process a Circle boundary object, by turning it into a series of node
+     * elements.
+     *
+     * @param oam the OAM object that will contain the nodes
+     * @param circle the circle to process
+     * @param nodeIdIx the last valid node id used, only ids above
+     *        this one will be used for node ids
+     * @param action specify this action for each created node
+     * @param version the version of the node
+     * @return the highest used node id
+     */
+    private static int processCircle(Oam                 oam,
+                                     Circle              circle,
+                                     int                 nodeIdIx,
+                                     Action              action,
+                                     int                 version) {
+
+        int nodeIx = nodeIdIx + 1;
+
+        double radiusInNm  = circle.getRadius().inUom(UOM.NM).getDistance();
+        double radiusInDeg = radiusInNm / 60.0;
+        double radiusLat   = radiusInDeg;
+        double radiusLon   = radiusInDeg / Math.cos(
+                              Math.toRadians(circle.getCenter().getLatitude()));
+
+        // FIXME: calculate number of points on some required precision metric
+        int totalPoints = 32;
+        double tpHalf = totalPoints / 2.0;
+        for (int i = 0; i < totalPoints; ++i, ++nodeIx) {
+            double theta = Math.PI * i / tpHalf;
+            double x = circle.getCenter().getLongitude()
+                    + (radiusLon * Math.cos(theta));
+            double y = circle.getCenter().getLatitude()
+                    + (radiusLat * Math.sin(theta));
+
+            OsmNode node = new OsmNode();
+            node.setLongitude(x);
+            node.setLatitude(y);
+            node.setId(nodeIx);
+            node.setVersion(version);
+            node.setAction(action);
+
+            oam.getNodes().put(nodeIx, node);
+        }
+
+        return nodeIx;
+    }
+
+    /**
+     * Process a Ring boundary object, by turning it into a series of node
+     * elements.
+     *
+     * @param oam the OAM object that will contain the nodes
+     * @param ring the ring to process
+     * @param nodeIdIx the last valid node id used, only ids above
+     *        this one will be used for node ids
+     * @param action specify this action for each created node
+     * @param version the version of the node
+     * @return the highest used node id
+     */
+    private static int processRing(Oam                 oam,
+                                   Ring                ring,
+                                   int                 nodeIdIx,
+                                   Action              action,
+                                   int                 version) {
+
+        int nodeIx = nodeIdIx + 1;
+
+        // omit the last node, as it will be a duplicate of the first one
+        for (int i = 0; i < ring.getPointList().size() - 1; ++i, ++nodeIx) {
+            Point point = ring.getPointList().get(i);
+
+            OsmNode node = new OsmNode();
+
+            node.setLatitude(point.getLatitude());
+            node.setLongitude(point.getLongitude());
+            node.setId(nodeIx);
+            node.setVersion(version);
+            node.setAction(action);
+
+            oam.getNodes().put(nodeIx, node);
+        }
+
+        return nodeIx;
+    }
+
+    /**
+     * Process a Boundary object, by turning it into a series of node
+     * elements.
+     *
+     * @param oam the OAM object that will contain the nodes
+     * @param boundary the boundary to process
+     * @param nodeIdIx the last valid node id used, only ids above
+     *        this one will be used for node ids
+     * @param action specify this action for each created node
+     * @param version the version of the node
+     * @return the highest used node id
+     */
+    private static int processBoundary(Oam                 oam,
+                                       Boundary            boundary,
+                                       int                 nodeIdIx,
+                                       Action              action,
+                                       int                 version) {
+
+        switch (boundary.getType()) {
+        case RING:
+            return processRing(oam, (Ring) boundary,
+                               nodeIdIx, action, version);
+
+        case CIRCLE:
+            return processCircle(oam, (Circle) boundary,
+                                 nodeIdIx, action, version);
+
+        default:
+            return nodeIdIx;
+        }
+    }
+
+    /**
+     * Add OAM tags related to elevation limits.
+     *
+     * @param airspace the airspace the limits are about
+     * @param way the OAM way to add the limits to.
+     */
+    private static void addElevationLimits(Airspace airspace,
+                                           Way      way) {
+
+        if (airspace.getLowerLimit() != null) {
+            Elevation elevation = airspace.getLowerLimit();
+
+            way.getTags().put("height:lower",
+                    Integer.toString((int) elevation.getElevation()));
+            way.getTags().put("height:lower:unit",
+                    elevation.getUom().toString().toLowerCase());
+
+            switch (elevation.getReference()) {
+            default:
+            case MSL:
+                way.getTags().put("height:lower:class", "amsl");
+                break;
+            case SFC:
+                way.getTags().put("height:lower:class", "agl");
+                break;
+            }
+        }
+
+        if (airspace.getUpperLimit() != null) {
+            Elevation elevation = airspace.getUpperLimit();
+
+            way.getTags().put("height:upper",
+                    Integer.toString((int) elevation.getElevation()));
+            way.getTags().put("height:upper:unit",
+                    elevation.getUom().toString().toLowerCase());
+
+            switch (elevation.getReference()) {
+            default:
+            case MSL:
+                way.getTags().put("height:upper:class", "amsl");
+                break;
+            case SFC:
+                way.getTags().put("height:upper:class", "agl");
+                break;
+            }
+        }
+    }
+
+    /**
+     * Convert an Airspace list to an Oam object.
+     *
+     * @param airspaces the airspaces to convert
+     * @param oam the Oam object to put the airspaces into
+     * @param action the OAM action to set for each object
+     * @param version the version to set of reach object
+     * @param nodeIdIx the minimal index of unique node ids. it is assumed
+     *        that any id above this index can be given to OAM nodes
+     * @param wayIdIx the minimal index of unique way ids. it is assumed
+     *        that any id above this index can be given to OAM ways
+     */
+    public static void airspacesToOam(List<Airspace> airspaces,
+                                      Oam            oam,
+                                      Action         action,
+                                      int            version,
+                                      int            nodeIdIx,
+                                      int            wayIdIx) {
+
+        int nIdIx = nodeIdIx;
+        int wIdIx = wayIdIx;
+
+        for (Airspace airspace : airspaces) {
+
+            // create a node for each point in the airspace
+            int minIx  = nIdIx + 1;
+            int nodeIx = processBoundary(oam, airspace.getBoundary(),
+                                         nIdIx, action, version);
+
+            // create a 'way' object for the airspace itself
+            ++wIdIx;
+            Way way = new Way();
+
+            way.setId(wIdIx);
+            way.setVersion(version);
+            way.setAction(action);
+
+            // insert the node references
+            for (int i = minIx; i < nodeIx; ++i) {
+                way.getNodeList().add(i);
+            }
+            way.getNodeList().add(minIx);
+
+            nIdIx = nodeIx;
+
+            // insert the airspace metadata
+            way.getTags().put("airspace", "yes");
+
+            if (airspace.getDesignator() != null
+             && !airspace.getDesignator().isEmpty()) {
+
+                way.getTags().put("icao", airspace.getDesignator());
+            }
+
+            if (airspace.getName() != null && !airspace.getName().isEmpty()) {
+
+                way.getTags().put("name", airspace.getName());
+            }
+
+            if (airspace.getRemarks() != null
+             && !airspace.getRemarks().isEmpty()) {
+
+                way.getTags().put("remark", airspace.getRemarks());
+            }
+
+            if (airspace.getOperator() != null
+             && !airspace.getOperator().isEmpty()) {
+
+                way.getTags().put("operator", airspace.getOperator());
+            }
+
+            if (airspace.getActiveTime() != null
+             && !airspace.getActiveTime().isEmpty()) {
+
+                way.getTags().put("activetime", airspace.getActiveTime());
+            }
+
+            if (airspace.getType() != null) {
+
+                way.getTags().put("airspace:type", airspace.getType());
+            }
+
+            if (airspace.getAirspaceClass() != null) {
+
+                way.getTags().put("airspace:class",
+                                  airspace.getAirspaceClass());
+            }
+
+            addElevationLimits(airspace, way);
+
+            if (airspace.getBoundary().getType() == Boundary.Type.CIRCLE) {
+                Circle c = (Circle) airspace.getBoundary();
+
+                way.getTags().put("airspace:center:lat",
+                        Double.toString(c.getCenter().getLatitude()));
+                way.getTags().put("airspace:center:lon",
+                        Double.toString(c.getCenter().getLongitude()));
+                way.getTags().put("airspace:center:radius",
+                        Double.toString(c.getRadius().getDistance()));
+                way.getTags().put("airspace:center:unit",
+                        c.getRadius().getUom().toString());
+            }
+
+            oam.getWays().put(way.getId(), way);
+        }
+
+    }
+
+    /**
      * Perform the conversion itself.
      *
      * @param inputFile the name of the input file
      * @param inputFormat the name of the input format
      * @param outputFile the name of the output file
      * @param outputFormat the name of the output format
-     * @param create flag to indicate if OAM create mode is to be used
+     * @param action the action to specify for all OAM elements
      * @param borderFile a file describing the country border to be used
      *        for airspaces that refer to country borders. may be null
      * @param version the OAM node / way version to be set
@@ -261,7 +539,7 @@ public final class Converter {
                                String                   inputFormat,
                                String                   outputFile,
                                String                   outputFormat,
-                               boolean                  create,
+                               Action                   action,
                                String                   borderFile,
                                int                      version,
                                List<ParseException>     errors)
@@ -273,14 +551,20 @@ public final class Converter {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 
         if (borderFile != null) {
-            DocumentBuilder db  = dbf.newDocumentBuilder();
-            Document   d = db.parse(new FileInputStream(borderFile));
-            TreeMap<Integer, Way>   ways   = new TreeMap<Integer, Way>();
-            OAMReader reader = new OAMReader();
-            reader.processOsm(d.getDocumentElement(), ways);
+            DocumentBuilder db     = dbf.newDocumentBuilder();
+            Document        d      = db.parse(new FileInputStream(borderFile));
+            OAMReader       reader = new OAMReader();
+            Oam             oam    = new Oam();
+            reader.processOsm(d.getDocumentElement(), oam, errors);
 
-            if (!ways.isEmpty()) {
-                borderPoints = ways.values().iterator().next().getPointList();
+            if (!oam.getWays().isEmpty()) {
+                // extract the border as a point list
+                Way border = oam.getWays().values().iterator().next();
+
+                borderPoints = new Vector<Point>(border.getNodeList().size());
+                for (Integer ref : border.getNodeList()) {
+                    borderPoints.add(new Point(oam.getNodes().get(ref)));
+                }
             }
         }
 
@@ -299,20 +583,12 @@ public final class Converter {
         }
 
         if ("OAM".equals(outputFormat)) {
-            DocumentBuilder db  = dbf.newDocumentBuilder();
-            Document d = db.newDocument();
-            OAMWriter writer = new OAMWriter();
+            // convert the airspaces to OAM
+            Oam oam = new Oam();
 
-            d = writer.processAirspaces(d, airspaces, 0, 0,
-                                        create, version);
+            airspacesToOam(airspaces, oam, action, version, 0, 0);
 
-            TransformerFactory tFactory = TransformerFactory.newInstance();
-            Transformer transformer = tFactory.newTransformer();
-            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-
-            DOMSource source = new DOMSource(d);
-            StreamResult result = new StreamResult(outputFile);
-            transformer.transform(source, result);
+            OAMWriter.write(oam, new FileWriter(outputFile));
 
         } else {
             throw new Exception("output format " + outputFormat

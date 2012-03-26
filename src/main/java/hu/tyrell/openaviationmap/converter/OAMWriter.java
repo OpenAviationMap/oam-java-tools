@@ -17,333 +17,208 @@
  */
 package hu.tyrell.openaviationmap.converter;
 
-import hu.tyrell.openaviationmap.model.Airspace;
-import hu.tyrell.openaviationmap.model.Boundary;
-import hu.tyrell.openaviationmap.model.Circle;
-import hu.tyrell.openaviationmap.model.Elevation;
-import hu.tyrell.openaviationmap.model.Point;
-import hu.tyrell.openaviationmap.model.Ring;
-import hu.tyrell.openaviationmap.model.UOM;
+import hu.tyrell.openaviationmap.model.oam.Oam;
+import hu.tyrell.openaviationmap.model.oam.OsmNode;
+import hu.tyrell.openaviationmap.model.oam.Way;
 
-import java.util.List;
+import java.io.Writer;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.DocumentFragment;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 
 /**
  * A class that writes aviation data in the Open Aviation Map format.
  */
 public class OAMWriter {
     /**
-     * Create a DOM node based on a Point.
-     *
-     * @param document the DOM document to create the document node for
-     * @param point to point to create the node from
-     * @param nodeId the unique id of the node
-     * @param create generate this element in OSM create mode
-     * @param version the version of the node
-     * @return a DOM node representing the point
+     * The date format used to write timestamps.
      */
-    private Node processPoint(Document  document,
-                              Point     point,
-                              int       nodeId,
-                              boolean   create,
-                              int       version) {
-        Element node = document.createElement("node");
-
-        node.setAttribute("id",
-                          Integer.toString(create ? -nodeId : nodeId));
-        node.setAttribute("version", Integer.toString(version));
-        if (create) {
-            node.setAttribute("action", "create");
-        }
-        node.setAttribute("lat", Double.toString(point.getLatitude()));
-        node.setAttribute("lon", Double.toString(point.getLongitude()));
-
-        return node;
-    }
+    private static DateFormat df =
+                            new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
 
     /**
-     * Process a Circle boundary object, by turning it into a series of node
-     * elements.
+     * Process a node.
      *
      * @param document the document that will contain the nodes
      * @param fragment the document fragment to put the nodes into
-     * @param circle the circle to process
-     * @param nodeIdIx the last valid node id used, only ids above
-     *        this one will be used for node ids
-     * @param create generate this element in create mode
-     * @param version the version of the node
-     * @return the highest used node id
+     * @param node the node to process
      */
-    private int processCircle(Document            document,
-                              DocumentFragment    fragment,
-                              Circle              circle,
-                              int                 nodeIdIx,
-                              boolean             create,
-                              int                 version) {
+    private void processNode(Document            document,
+                             DocumentFragment    fragment,
+                             OsmNode             node) {
 
-        int nodeIx = nodeIdIx + 1;
+        Element nodeElement = document.createElement("node");
 
-        double radiusInNm  = circle.getRadius().inUom(UOM.NM).getDistance();
-        double radiusInDeg = radiusInNm / 60.0;
-        double radiusLat   = radiusInDeg;
-        double radiusLon   = radiusInDeg / Math.cos(
-                              Math.toRadians(circle.getCenter().getLatitude()));
+        nodeElement.setAttribute("id", Integer.toString(node.getId()));
+        nodeElement.setAttribute("version",
+                                 Integer.toString(node.getVersion()));
+        if (node.getAction() != null) {
+            switch (node.getAction()) {
+            default:
+            case NONE:
+                break;
 
-        // FIXME: calculate number of points on some required precision metric
-        int totalPoints = 32;
-        double tpHalf = totalPoints / 2.0;
-        for (int i = 0; i < totalPoints; ++i) {
-            double theta = Math.PI * i / tpHalf;
-            double x = circle.getCenter().getLongitude()
-                    + (radiusLon * Math.cos(theta));
-            double y = circle.getCenter().getLatitude()
-                    + (radiusLat * Math.sin(theta));
+            case CREATE:
+                nodeElement.setAttribute("action", "create");
+                break;
 
-            Point point = new Point();
-            point.setLongitude(x);
-            point.setLatitude(y);
+            case MODIFY:
+                nodeElement.setAttribute("action", "modify");
+                break;
 
-            fragment.appendChild(processPoint(document,
-                                              point,
-                                              nodeIx++,
-                                              create,
-                                              version));
+            case DELETE:
+                nodeElement.setAttribute("action", "delete");
+                break;
+            }
         }
 
-        return nodeIx;
+        nodeElement.setAttribute("lat",
+                                 Double.toString(node.getLatitude()));
+        nodeElement.setAttribute("lon",
+                                  Double.toString(node.getLongitude()));
+
+        if (node.getTimestamp() != null) {
+            nodeElement.setAttribute("timestamp",
+                                     df.format(node.getTimestamp()));
+        }
+
+        if (node.getUid() != null) {
+            nodeElement.setAttribute("uid", Integer.toString(node.getUid()));
+        }
+
+        if (node.getUser() != null) {
+            nodeElement.setAttribute("user", node.getUser());
+        }
+
+        if (node.isVisible() != null) {
+            nodeElement.setAttribute("visible", node.isVisible()
+                                              ? "true" : "false");
+        }
+
+        if (node.getChangeset() != null) {
+            nodeElement.setAttribute("changeset",
+                                     Integer.toString(node.getChangeset()));
+        }
+
+        fragment.appendChild(nodeElement);
     }
 
     /**
-     * Process a Ring boundary object, by turning it into a series of node
-     * elements.
+     * Process a way.
      *
      * @param document the document that will contain the nodes
      * @param fragment the document fragment to put the nodes into
-     * @param ring the ring to process
-     * @param nodeIdIx the last valid node id used, only ids above
-     *        this one will be used for node ids
-     * @param create generate this element in create mode
-     * @param version the version of the node
-     * @return the highest used node id
+     * @param way the way to process
      */
-    private int processRing(Document            document,
+    private void processWay(Document            document,
                             DocumentFragment    fragment,
-                            Ring                ring,
-                            int                 nodeIdIx,
-                            boolean             create,
-                            int                 version) {
+                            Way                 way) {
 
-        int nodeIx = nodeIdIx + 1;
+        Element wayElement = document.createElement("way");
 
-        // omit the last node, as it will be a duplicate of the first one
-        for (int i = 0; i < ring.getPointList().size() - 1; ++i) {
-            Point point = ring.getPointList().get(i);
+        wayElement.setAttribute("id", Integer.toString(way.getId()));
+        wayElement.setAttribute("version",
+                                Integer.toString(way.getVersion()));
 
-            fragment.appendChild(processPoint(document,
-                                              point, nodeIx++,
-                                              create, version));
+        if (way.getAction() != null) {
+            switch (way.getAction()) {
+            default:
+            case NONE:
+                break;
+
+            case CREATE:
+                wayElement.setAttribute("action", "create");
+                break;
+
+            case MODIFY:
+                wayElement.setAttribute("action", "modify");
+                break;
+
+            case DELETE:
+                wayElement.setAttribute("action", "delete");
+                break;
+            }
         }
 
-        return nodeIx;
+        if (way.getTimestamp() != null) {
+            wayElement.setAttribute("timestamp",
+                                     df.format(way.getTimestamp()));
+        }
+
+        if (way.getUid() != null) {
+            wayElement.setAttribute("uid", Integer.toString(way.getUid()));
+        }
+
+        if (way.getUser() != null) {
+            wayElement.setAttribute("user", way.getUser());
+        }
+
+        if (way.isVisible() != null) {
+            wayElement.setAttribute("visible", way.isVisible()
+                                              ? "true" : "false");
+        }
+
+        if (way.getChangeset() != null) {
+            wayElement.setAttribute("changeset",
+                                     Integer.toString(way.getChangeset()));
+        }
+
+        for (Integer ref : way.getNodeList()) {
+            Element nd = document.createElement("nd");
+            nd.setAttribute("ref", Integer.toString(ref));
+            wayElement.appendChild(nd);
+        }
+
+        // insert the way tags
+        for (String tag : way.getTags().keySet()) {
+            Element tagElement = document.createElement("tag");
+            tagElement.setAttribute("k", tag);
+            tagElement.setAttribute("v", way.getTags().get(tag));
+            wayElement.appendChild(tagElement);
+
+        }
+
+        fragment.appendChild(wayElement);
     }
 
     /**
-     * Process a Boundary object, by turning it into a series of node
-     * elements.
-     *
-     * @param document the document that will contain the nodes
-     * @param fragment the document fragment to put the nodes into
-     * @param boundary the boundary to process
-     * @param nodeIdIx the last valid node id used, only ids above
-     *        this one will be used for node ids
-     * @param create generate this element in create mode
-     * @param version the version of the node
-     * @return the highest used node id
-     */
-    private int processBoundary(Document            document,
-                                DocumentFragment    fragment,
-                                Boundary            boundary,
-                                int                 nodeIdIx,
-                                boolean             create,
-                                int                 version) {
-
-        switch (boundary.getType()) {
-        case RING:
-            return processRing(document,
-                               fragment,
-                               (Ring) boundary,
-                               nodeIdIx,
-                               create,
-                               version);
-
-        case CIRCLE:
-            return processCircle(document, fragment,
-                                 (Circle) boundary, nodeIdIx,
-                                 create, version);
-
-        default:
-            return nodeIdIx;
-        }
-    }
-
-    /**
-     * Create a DOM node that represents a list of airspaces, and can be written
+     * Create a DOM node that represents a list of ways, and can be written
      * into an OAM file.
      *
      * @param document the DOM document to create the document fragment for
-     * @param airspaces the airspaces to convert
-     * @param nodeIdIx the minimal index of unique node ids. it is assumed
-     *        that any id above this index can be given to OAM nodes
-     * @param wayIdIx the minimal index of unique way ids. it is assumed
-     *        that any id above this index can be given to OAM ways
-     * @param create if true, generate all elements in OSM create mode,
-     *        that is, negative ids and action="create"
-     * @param version the version number to put for all ids
-     * @return the document that represents the supplied airspaces
+     * @param oam the Oam object to create the XML for
+     * @return the document that represents the supplied ways
      */
-    public Document processAirspaces(Document       document,
-                                     List<Airspace> airspaces,
-                                     int            nodeIdIx,
-                                     int            wayIdIx,
-                                     boolean        create,
-                                     int            version) {
+    public Document processOam(Document               document,
+                               Oam                    oam) {
 
         DocumentFragment nodeFragment = document.createDocumentFragment();
-        DocumentFragment wayFragment = document.createDocumentFragment();
+        DocumentFragment wayFragment  = document.createDocumentFragment();
 
-        int nIdIx = nodeIdIx;
-        int wIdIx = wayIdIx;
-
-        for (Airspace airspace : airspaces) {
-
-            // create a node for each point in the airspace ring boundary
-            int minIx  = nIdIx + 1;
-            int nodeIx = processBoundary(document, nodeFragment,
-                                         airspace.getBoundary(), nIdIx,
-                                         create, version);
-
-            // create a 'way' element for the airspace itself
-            ++wIdIx;
-            Element way = document.createElement("way");
-            way.setAttribute("id",
-                             Integer.toString(create ? -wIdIx : wIdIx));
-            way.setAttribute("version", Integer.toString(version));
-            if (create) {
-                way.setAttribute("action", "create");
-            }
-
-            // insert the node references
-            for (int i = minIx; i < nodeIx; ++i) {
-                Element nd = document.createElement("nd");
-                nd.setAttribute("ref",
-                                Integer.toString(create ? -i : i));
-                way.appendChild(nd);
-            }
-            // insert the first node reference again to close the path
-            Element nd = document.createElement("nd");
-            nd.setAttribute("ref",
-                            Integer.toString(create ? -minIx : minIx));
-            way.appendChild(nd);
-
-
-            nIdIx = nodeIx;
-
-            // insert the airspace metadata
-            Element tag = document.createElement("tag");
-            tag.setAttribute("k", "airspace");
-            tag.setAttribute("v", "yes");
-            way.appendChild(tag);
-
-            if (airspace.getDesignator() != null
-             && !airspace.getDesignator().isEmpty()) {
-
-                tag = document.createElement("tag");
-                tag.setAttribute("k", "icao");
-                tag.setAttribute("v", airspace.getDesignator());
-                way.appendChild(tag);
-            }
-
-            if (airspace.getName() != null && !airspace.getName().isEmpty()) {
-                tag = document.createElement("tag");
-                tag.setAttribute("k", "name");
-                tag.setAttribute("v", airspace.getName());
-                way.appendChild(tag);
-            }
-
-            if (airspace.getRemarks() != null
-             && !airspace.getRemarks().isEmpty()) {
-                tag = document.createElement("tag");
-                tag.setAttribute("k", "remark");
-                tag.setAttribute("v", airspace.getRemarks());
-                way.appendChild(tag);
-            }
-
-            if (airspace.getOperator() != null
-             && !airspace.getOperator().isEmpty()) {
-                tag = document.createElement("tag");
-                tag.setAttribute("k", "operator");
-                tag.setAttribute("v", airspace.getOperator());
-                way.appendChild(tag);
-            }
-
-            if (airspace.getActiveTime() != null
-             && !airspace.getActiveTime().isEmpty()) {
-                tag = document.createElement("tag");
-                tag.setAttribute("k", "activetime");
-                tag.setAttribute("v", airspace.getActiveTime());
-                way.appendChild(tag);
-            }
-
-            if (airspace.getType() != null) {
-                tag = document.createElement("tag");
-                tag.setAttribute("k", "airspace:type");
-                tag.setAttribute("v", airspace.getType());
-                way.appendChild(tag);
-            }
-
-            if (airspace.getAirspaceClass() != null) {
-                tag = document.createElement("tag");
-                tag.setAttribute("k", "airspace:class");
-                tag.setAttribute("v", airspace.getAirspaceClass());
-                way.appendChild(tag);
-            }
-
-            addElevationLimits(document, airspace, way);
-
-            if (airspace.getBoundary().getType() == Boundary.Type.CIRCLE) {
-                Circle c = (Circle) airspace.getBoundary();
-
-                tag = document.createElement("tag");
-                tag.setAttribute("k", "airspace:center:lat");
-                tag.setAttribute("v",
-                        Double.toString(c.getCenter().getLatitude()));
-                way.appendChild(tag);
-
-                tag = document.createElement("tag");
-                tag.setAttribute("k", "airspace:center:lon");
-                tag.setAttribute("v",
-                        Double.toString(c.getCenter().getLongitude()));
-                way.appendChild(tag);
-
-                tag = document.createElement("tag");
-                tag.setAttribute("k", "airspace:radius");
-                tag.setAttribute("v",
-                        Double.toString(c.getRadius().getDistance()));
-                way.appendChild(tag);
-
-                tag = document.createElement("tag");
-                tag.setAttribute("k", "airspace:radius:unit");
-                tag.setAttribute("v", c.getRadius().getUom().toString());
-                way.appendChild(tag);
-            }
-
-            wayFragment.appendChild(way);
+        // add all nodes into the node fragment
+        for (OsmNode node : oam.getNodes().values()) {
+            processNode(document, nodeFragment, node);
         }
 
+        // add all ways into the way fragment
+        for (Way way: oam.getWays().values()) {
+            processWay(document, wayFragment, way);
+        }
+
+        // put it all together into a document
         Element root = document.createElement("osm");
         root.setAttribute("version", "0.6");
         document.appendChild(root);
@@ -354,75 +229,31 @@ public class OAMWriter {
     }
 
     /**
-     * Add OAM tags related to elevation limits.
+     * Write an OAM object.
      *
-     * @param document the document to add the tags to
-     * @param airspace the airspace the limits are about
-     * @param way the OAM way to add the limits to.
+     * @param oam the OAM to write.
+     * @param writer the writer to write to.
+     * @throws ParserConfigurationException on XML parser configuration issues
+     * @throws TransformerException on XML transformation issues
      */
-    private void addElevationLimits(Document document,
-                                    Airspace airspace,
-                                    Element  way) {
-        Element tag;
+    public static void write(Oam oam, Writer writer)
+                                throws ParserConfigurationException,
+                                       TransformerException {
 
-        if (airspace.getLowerLimit() != null) {
-            Elevation elevation = airspace.getLowerLimit();
+        DocumentBuilderFactory dbf  = DocumentBuilderFactory.newInstance();
+        DocumentBuilder        db   = dbf.newDocumentBuilder();
+        Document               d    = db.newDocument();
+        OAMWriter         oamWriter = new OAMWriter();
 
-            tag = document.createElement("tag");
-            tag.setAttribute("k", "height:lower");
-            tag.setAttribute("v",
-                    Integer.toString((int) elevation.getElevation()));
-            way.appendChild(tag);
+        d = oamWriter.processOam(d, oam);
 
-            tag = document.createElement("tag");
-            tag.setAttribute("k", "height:lower:unit");
-            tag.setAttribute("v",
-                    elevation.getUom().toString().toLowerCase());
-            way.appendChild(tag);
+        // write the XML document into a file
+        TransformerFactory tFactory = TransformerFactory.newInstance();
+        Transformer transformer = tFactory.newTransformer();
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 
-            tag = document.createElement("tag");
-            tag.setAttribute("k", "height:lower:class");
-            switch (elevation.getReference()) {
-            default:
-            case MSL:
-                tag.setAttribute("v", "amsl");
-                break;
-            case SFC:
-                tag.setAttribute("v", "agl");
-                break;
-            }
-            way.appendChild(tag);
-        }
-
-        if (airspace.getUpperLimit() != null) {
-            Elevation elevation = airspace.getUpperLimit();
-
-            tag = document.createElement("tag");
-            tag.setAttribute("k", "height:upper");
-            tag.setAttribute("v",
-                    Integer.toString((int) elevation.getElevation()));
-            way.appendChild(tag);
-
-            tag = document.createElement("tag");
-            tag.setAttribute("k", "height:upper:unit");
-            tag.setAttribute("v",
-                    elevation.getUom().toString().toLowerCase());
-            way.appendChild(tag);
-
-            tag = document.createElement("tag");
-            tag.setAttribute("k", "height:upper:class");
-            switch (elevation.getReference()) {
-            default:
-            case MSL:
-                tag.setAttribute("v", "amsl");
-                break;
-            case SFC:
-                tag.setAttribute("v", "agl");
-                break;
-            }
-            way.appendChild(tag);
-        }
-
+        DOMSource source = new DOMSource(d);
+        StreamResult result = new StreamResult(writer);
+        transformer.transform(source, result);
     }
-
 }

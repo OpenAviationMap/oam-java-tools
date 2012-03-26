@@ -134,11 +134,9 @@ public class EAipProcessorEnr55 extends EAipProcessor {
                                             str1.substring("Class ".length()));
                 }
                 airspace.setRemarks(str);
-            } else if (str != null && !str.isEmpty()) {
-                if (str.startsWith("Class ")) {
-                    airspace.setAirspaceClass(
-                                            str.substring("Class ".length()));
-                }
+            } else if (str != null && !str.isEmpty()
+                    && str.startsWith("Class ")) {
+                airspace.setAirspaceClass(str.substring("Class ".length()));
             }
 
             return airspace;
