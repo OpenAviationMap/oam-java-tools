@@ -288,7 +288,7 @@ public final class Converter {
             OsmNode node = new OsmNode();
             node.setLongitude(x);
             node.setLatitude(y);
-            node.setId(nodeIx);
+            node.setId(action == Action.CREATE ? -nodeIx : nodeIx);
             node.setVersion(version);
             node.setAction(action);
 
@@ -326,7 +326,7 @@ public final class Converter {
 
             node.setLatitude(point.getLatitude());
             node.setLongitude(point.getLongitude());
-            node.setId(nodeIx);
+            node.setId(action == Action.CREATE ? -nodeIx : nodeIx);
             node.setVersion(version);
             node.setAction(action);
 
@@ -449,15 +449,22 @@ public final class Converter {
             ++wIdIx;
             Way way = new Way();
 
-            way.setId(wIdIx);
+            way.setId(action == Action.CREATE ? -wIdIx : wIdIx);
             way.setVersion(version);
             way.setAction(action);
 
             // insert the node references
-            for (int i = minIx; i < nodeIx; ++i) {
-                way.getNodeList().add(i);
+            if (action == Action.CREATE) {
+                for (int i = minIx; i < nodeIx; ++i) {
+                    way.getNodeList().add(-i);
+                }
+                way.getNodeList().add(-minIx);
+            } else {
+                for (int i = minIx; i < nodeIx; ++i) {
+                    way.getNodeList().add(i);
+                }
+                way.getNodeList().add(minIx);
             }
-            way.getNodeList().add(minIx);
 
             nIdIx = nodeIx;
 
