@@ -73,6 +73,11 @@ public class Airspace {
     private String activeTime;
 
     /**
+     * The frequency of the controlling authority.
+     */
+    private String commFrequency;
+
+    /**
      * @return the name
      */
     public String getName() {
@@ -208,6 +213,8 @@ public class Airspace {
         result = prime * result + ((type == null) ? 0 : type.hashCode());
         result = prime * result
                 + ((upperLimit == null) ? 0 : upperLimit.hashCode());
+        result = prime * result
+                + ((commFrequency == null) ? 0 : commFrequency.hashCode());
         return result;
     }
 
@@ -296,6 +303,13 @@ public class Airspace {
         } else if (!upperLimit.equals(other.upperLimit)) {
             return false;
         }
+        if (commFrequency == null) {
+            if (other.commFrequency != null) {
+                return false;
+            }
+        } else if (!commFrequency.equals(other.commFrequency)) {
+            return false;
+        }
         return true;
     }
 
@@ -325,5 +339,19 @@ public class Airspace {
      */
     public void setOperator(String operator) {
         this.operator = operator;
+    }
+
+    /**
+     * @return the commFrequency
+     */
+    public String getCommFrequency() {
+        return commFrequency;
+    }
+
+    /**
+     * @param commFrequency the commFrequency to set
+     */
+    public void setCommFrequency(String commFrequency) {
+        this.commFrequency = commFrequency;
     }
 }

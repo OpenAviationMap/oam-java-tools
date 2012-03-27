@@ -224,6 +224,15 @@ public class EAipProcessor {
                                     List<Point> borderPoints)
                                                       throws ParseException {
 
+        if ("The borders of the Republic of Hungary".equals(boundaryDesc)) {
+            Vector<Point> pointList = new Vector<Point>(borderPoints);
+            Ring          boundary  = new Ring();
+
+            boundary.setPointList(pointList);
+
+            return boundary;
+        }
+
         Vector<Point> pointList          = new Vector<Point>();
         Point         borderSectionStart = null;
 
@@ -280,7 +289,7 @@ public class EAipProcessor {
 
         Elevation elevation = new Elevation();
 
-        if ("GND".equals(ed)) {
+        if ("GND".equals(ed) || "0 FT".equals(ed)) {
             elevation.setElevation(0);
             elevation.setReference(ElevationReference.SFC);
             elevation.setUom(UOM.FT);
@@ -304,7 +313,7 @@ public class EAipProcessor {
 
             // get the reference
             String reference = ed.substring(j).trim();
-            if ("ALT".equals(reference)) {
+            if ("ALT".equals(reference) || "AMSL".equals(reference)) {
                 elevation.setReference(ElevationReference.MSL);
             } else if ("AGL".equals(reference)) {
                 elevation.setReference(ElevationReference.SFC);

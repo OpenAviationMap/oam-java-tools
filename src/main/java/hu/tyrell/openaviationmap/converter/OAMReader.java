@@ -418,6 +418,11 @@ public class OAMReader {
             airspace.setActiveTime(tags.get(k));
         }
 
+        k = "comm:ctrl";
+        if (tags.containsKey(k)) {
+            airspace.setCommFrequency(tags.get(k));
+        }
+
         k = "airspace:type";
         if (tags.containsKey(k)) {
             airspace.setType(tags.get(k));

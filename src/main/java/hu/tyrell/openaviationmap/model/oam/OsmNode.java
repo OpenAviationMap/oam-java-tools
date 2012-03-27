@@ -89,7 +89,7 @@ public class OsmNode extends Point {
         user      = other.user == null
                   ? null : new String(other.user);
         visible   = other.visible == null
-                  ? null : new Boolean(other.visible);
+                  ? null : other.visible ? Boolean.TRUE : Boolean.FALSE;
         changeset = other.changeset == null
                    ? null : new Integer(other.changeset);
     }

@@ -59,7 +59,7 @@ public class EAipToOamTest {
      * @param oamDocumentName the OAM document to verify against.
      * @param borderDocumentName the name of the OAM document describing the
      *        border line.
-     * @param knowErrors the know number of parse errors
+     * @param knownErrors the know number of parse errors
      * @param noAirspaces the expected number of airspaces
      * @throws ParserConfigurationException on XML parser configuration errors.
      * @throws IOException on I/O errors
@@ -70,7 +70,7 @@ public class EAipToOamTest {
     public void testEAipToOam(String eAipDocumentName,
                               String oamDocumentName,
                               String borderDocumentName,
-                              int    knowErrors,
+                              int    knownErrors,
                               int    noAirspaces)
                                      throws ParserConfigurationException,
                                             SAXException,
@@ -117,7 +117,7 @@ public class EAipToOamTest {
                            airspaces,
                            errors);
 
-        assertEquals(knowErrors, errors.size());
+        assertEquals(knownErrors, errors.size());
         assertEquals(noAirspaces, airspaces.size());
 
         // convert the airspaces into an Oam object
@@ -259,5 +259,28 @@ public class EAipToOamTest {
                       "var/oam-hungary-5.6.xml",
                       "var/hungary.osm",
                       0, 37);
+    }
+
+
+    /**
+     * Test converting an eAIP section ENR-2.1 element to OAM.
+     *
+     * @throws ParserConfigurationException on XML parser configuration errors.
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing errors
+     * @throws ParseException on OAM parsing errors
+     * @throws TransformerException on XML serialization errors
+     */
+    @Test
+    public void testEAipEnr21ToOam() throws ParserConfigurationException,
+                                            SAXException,
+                                            IOException,
+                                            ParseException,
+                                            TransformerException {
+
+        testEAipToOam("var/LH-ENR-2.1-en-HU.xml",
+                      "var/oam-hungary-2.1.xml",
+                      "var/hungary.osm",
+                      0, 20);
     }
 }

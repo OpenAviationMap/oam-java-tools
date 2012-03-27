@@ -22,8 +22,10 @@ import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Boundary;
 import hu.tyrell.openaviationmap.model.Elevation;
 import hu.tyrell.openaviationmap.model.Point;
+import hu.tyrell.openaviationmap.model.Ring;
 
 import java.util.List;
+import java.util.Vector;
 
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
@@ -38,7 +40,7 @@ import org.w3c.dom.NodeList;
  */
 public class EAipProcessorEnr21 extends EAipProcessor {
     /**
-     *  Process an airspace definition from the aAIP.
+     *  Process an MTMA definition from the aAIP.
      *
      *  @param airspaceNode the XML node that represents the airspace
      *         which is an &lt;x:tr&gt; node
@@ -48,79 +50,435 @@ public class EAipProcessorEnr21 extends EAipProcessor {
      *  @return an airspace described by the node
      *  @throws ParseException on input parsing errors.
      */
-    @Override
-    Airspace processAirspace(Node        airspaceNode,
-                             List<Point> borderPoints) throws ParseException {
+    Airspace processMtma(Node        airspaceNode,
+                         List<Point> borderPoints) throws ParseException {
 
         try {
             Airspace airspace = new Airspace();
 
             XPath xpath = XPathFactory.newInstance().newXPath();
 
-            // get the name & designator
-            String designator = xpath.evaluate("td[1]//strong/text()[1]",
-                                               airspaceNode).trim();
-            xpath.reset();
-            String name = xpath.evaluate(
-                    "substring-after(td[1]//strong/text()[2], '/')",
-                    airspaceNode).trim();
-
-            int ix = designator.indexOf("/");
-            if (ix != -1) {
-                name       = designator.substring(ix + 1).trim();
-                designator = designator.substring(0, ix).trim();
-            }
-            String type = getAirspaceType(designator);
-
-            airspace.setDesignator(designator);
+            // get the name
+            String name = xpath.evaluate("td[1]//strong/text()[1]",
+                                         airspaceNode).trim();
             airspace.setName(name);
-            airspace.setType(type);
 
             // get the boundary
             Boundary boundary = null;
             xpath.reset();
-            String str = xpath.evaluate("td[1]//br/following-sibling::text() "
-                            + "| td[1]//br/following-sibling::Inserted/text() "
-                            + "| td[1]//br/following-sibling::*//text() ",
-                            airspaceNode);
+            String str = xpath.evaluate("td[1]/text()[1]", airspaceNode);
             if (str.startsWith(CIRCLE_PREFIX)) {
-                boundary = processCircle(designator, str);
+                boundary = processCircle(name, str);
             } else {
-                boundary = processPointList(designator, str, borderPoints);
+                boundary = processPointList(name, str, borderPoints);
             }
 
             airspace.setBoundary(boundary);
 
             // get the vertical limits
             xpath.reset();
-            str = xpath.evaluate("td[position()=2]", airspaceNode);
-            int i   = str.indexOf("/");
-            Elevation upperLimit = processElevation(str.substring(0, i).trim());
-            Elevation lowerLimit = processElevation(
-                                                str.substring(i + 1).trim());
-
+            str = xpath.evaluate("td[1]/text()[2]", airspaceNode);
+            Elevation upperLimit = processElevation(str.trim());
             airspace.setUpperLimit(upperLimit);
+
+            xpath.reset();
+            str = xpath.evaluate("td[1]/text()[3]", airspaceNode);
+            Elevation lowerLimit = processElevation(str.trim());
             airspace.setLowerLimit(lowerLimit);
 
-            // get the time of activity
+            // get the operator
             xpath.reset();
-            str = xpath.evaluate("td[position()=3]/text()[position()=1]",
-                                 airspaceNode);
-            if (str != null && !str.isEmpty()) {
-                airspace.setActiveTime(str);
+            String operator = xpath.evaluate("td[2]/text()", airspaceNode);
+            if (operator != null && !operator.isEmpty()) {
+                airspace.setOperator(operator.trim());
             }
 
-            // get the remarks
+            // get the airspace type
+            airspace.setType("MTMA");
+
+            return airspace;
+
+        } catch (Exception e) {
+            throw new ParseException(airspaceNode, e);
+        }
+    }
+
+    /**
+     *  Process an MCTR definition from the aAIP.
+     *
+     *  @param airspaceNode the XML node that represents the airspace
+     *         which is an &lt;x:tr&gt; node
+     *  @param borderPoints a list of points repesenting the country border,
+     *         which is used for airspaces that reference a country border.
+     *         may be null.
+     *  @param airspaces the created airspaces are put into this list
+     *  @throws ParseException on input parsing errors.
+     */
+    void processMctr(Node               airspaceNode,
+                     List<Point>        borderPoints,
+                     List<Airspace>     airspaces) throws ParseException {
+
+        try {
+            Airspace airspace = new Airspace();
+
+            XPath xpath = XPathFactory.newInstance().newXPath();
+
+            // get the name
+            String name = xpath.evaluate("td[1]//strong/text()[1]",
+                                         airspaceNode).trim();
+            airspace.setName(name);
+
+            // get the boundary
+            Boundary boundary = null;
             xpath.reset();
-            str = xpath.evaluate("td[position()=3]/text()[position()=2]",
-                                 airspaceNode);
+            String str = xpath.evaluate("td[1]/text()[1]", airspaceNode);
+            if (str.startsWith(CIRCLE_PREFIX)) {
+                boundary = processCircle(name, str);
+            } else {
+                boundary = processPointList(name, str, borderPoints);
+            }
+
+            airspace.setBoundary(boundary);
+
+            // get the vertical limits
+            xpath.reset();
+            str = xpath.evaluate("td[1]/text()[2]", airspaceNode);
+            Elevation upperLimit = processElevation(str.trim());
+            airspace.setUpperLimit(upperLimit);
+
+            xpath.reset();
+            str = xpath.evaluate("td[1]/text()[3]", airspaceNode);
+            Elevation lowerLimit = processElevation(str.trim());
+            airspace.setLowerLimit(lowerLimit);
+
+            // get the operator
+            xpath.reset();
+            String operator = xpath.evaluate("td[2]/text()", airspaceNode);
+            if (operator != null && !operator.isEmpty()) {
+                airspace.setOperator(operator.trim());
+            }
+
+            // get the airspace type
+            airspace.setType("MCTR");
+
+            airspaces.add(airspace);
+
+            // let's see if there is a second airspace being defined here
+            xpath.reset();
+            str = xpath.evaluate("td[1]/text()[4]", airspaceNode);
+            if (!"and".equals(str)) {
+                return;
+            }
+
+            airspace = new Airspace();
+
+            airspace.setName(name);
+            if (operator != null && !operator.isEmpty()) {
+                airspace.setOperator(operator.trim());
+            }
+
+            // get the boundary
+            boundary = null;
+            xpath.reset();
+            str = xpath.evaluate("td[1]/text()[5]", airspaceNode);
+            if (str.startsWith(CIRCLE_PREFIX)) {
+                boundary = processCircle(name, str);
+            } else {
+                boundary = processPointList(name, str, borderPoints);
+            }
+
+            airspace.setBoundary(boundary);
+
+            // get the vertical limits
+            xpath.reset();
+            str = xpath.evaluate("td[1]/text()[6]", airspaceNode);
+            upperLimit = processElevation(str.trim());
+            airspace.setUpperLimit(upperLimit);
+
+            xpath.reset();
+            str = xpath.evaluate("td[1]/text()[7]", airspaceNode);
+            lowerLimit = processElevation(str.trim());
+            airspace.setLowerLimit(lowerLimit);
+
+            // get the airspace type
+            airspace.setType("MCTR");
+
+            airspaces.add(airspace);
+
+        } catch (Exception e) {
+            throw new ParseException(airspaceNode, e);
+        }
+    }
+
+    /**
+     *  Process an TMA definition from the aAIP.
+     *
+     *  @param airspaceNode the XML node that represents the airspace
+     *         which is an &lt;x:tr&gt; node
+     *  @param borderPoints a list of points repesenting the country border,
+     *         which is used for airspaces that reference a country border.
+     *         may be null.
+     *  @return an airspace described by the node
+     *  @throws ParseException on input parsing errors.
+     */
+    Airspace processTma(Node        airspaceNode,
+                        List<Point> borderPoints) throws ParseException {
+
+        try {
+            Airspace airspace = new Airspace();
+
+            XPath xpath = XPathFactory.newInstance().newXPath();
+
+            // get the name
+            String name = xpath.evaluate("td[1]//strong/text()[1]",
+                                         airspaceNode).trim();
+            airspace.setName(name);
+
+            // get the boundary
+            Boundary boundary = null;
+            xpath.reset();
+            String str = xpath.evaluate("td[1]/text()[1]", airspaceNode);
+            if (str.startsWith(CIRCLE_PREFIX)) {
+                boundary = processCircle(name, str);
+            } else {
+                boundary = processPointList(name, str, borderPoints);
+            }
+
+            airspace.setBoundary(boundary);
+
+            // get the vertical limits
+            xpath.reset();
+            str = xpath.evaluate("td[1]/text()[2]", airspaceNode);
+            Elevation upperLimit = processElevation(str.trim());
+            airspace.setUpperLimit(upperLimit);
+
+            xpath.reset();
+            str = xpath.evaluate("td[1]/text()[3]", airspaceNode);
+            Elevation lowerLimit = processElevation(str.trim());
+            airspace.setLowerLimit(lowerLimit);
+
+            // get the airspace type
+            xpath.reset();
+            str = xpath.evaluate("td[1]/text()[4]", airspaceNode);
+            airspace.setAirspaceClass(str);
+
+            airspace.setType("TMA");
+
+            return airspace;
+
+        } catch (Exception e) {
+            throw new ParseException(airspaceNode, e);
+        }
+    }
+
+    /**
+     * Process the Budapest TMA airspace nodes.
+     *
+     * @param nodes the nodes describing the Budapest TMA airspace.
+     * @param borderPoints a list of points repesenting the country border,
+     *        which is used for airspaces that reference a country border.
+     *        may be null.
+     * @param airspaces the airspaces recognized are put into this list
+     * @throws ParseException on parsing issues
+     */
+    void processBudapestTma(NodeList        nodes,
+                            List<Point>     borderPoints,
+                            List<Airspace>  airspaces)
+                                                throws ParseException {
+        Node node = null;
+
+        try {
+            // the first table row contains the frequences for the TMA
+            XPath xpath = XPathFactory.newInstance().newXPath();
+
+            node = nodes.item(0);
+            String frequencies = xpath.evaluate("td[4]",
+                                 node).trim().replaceAll("\\s+", " ");
+
+            xpath.reset();
+            String operator = xpath.evaluate("td[2]",
+                              node).trim().replaceAll("\\s+", " ");
+
+            // process all the TMA parts one by one
+            for (int i = 2; i < nodes.getLength(); ++i) {
+                node = nodes.item(i);
+
+                Airspace airspace = processTma(node, borderPoints);
+                airspace.setCommFrequency(frequencies);
+                if (operator != null && !operator.isEmpty()) {
+                    airspace.setOperator(operator);
+                }
+
+                airspaces.add(airspace);
+            }
+
+        } catch (Exception e) {
+            throw new ParseException(node, e);
+        }
+    }
+
+    /**
+     *  Process an FIR definition from the aAIP.
+     *
+     *  @param airspaceNode the XML node that represents the airspace
+     *         which is an &lt;x:tr&gt; node
+     *  @param borderPoints a list of points repesenting the country border,
+     *         which is used for airspaces that reference a country border.
+     *         may be null.
+     *  @param airspaces created airspaces will be put into this list
+     *  @throws ParseException on input parsing errors.
+     */
+    void processBudapestFir(Node            airspaceNode,
+                            List<Point>     borderPoints,
+                            List<Airspace>  airspaces) throws ParseException {
+
+        try {
+            Airspace airspace = new Airspace();
+
+            XPath xpath = XPathFactory.newInstance().newXPath();
+
+            // get the name
+            String name = xpath.evaluate("td[1]//strong/text()[1]",
+                                         airspaceNode).trim();
+            airspace.setName(name);
+
+            // get the boundary
+            Boundary boundary = null;
+            xpath.reset();
+            String str = xpath.evaluate("td[1]/text()[1]", airspaceNode);
+            if (str.startsWith(CIRCLE_PREFIX)) {
+                boundary = processCircle(name, str);
+            } else {
+                boundary = processPointList(name, str, borderPoints);
+            }
+
+            airspace.setBoundary(boundary);
+
+            // get the vertical limits
+            xpath.reset();
+            str = xpath.evaluate("td[1]/text()[2]", airspaceNode);
+            Elevation upperLimit = processElevation(str.trim());
+            airspace.setUpperLimit(upperLimit);
+
+            xpath.reset();
+            str = xpath.evaluate("td[1]/text()[3]", airspaceNode);
+            Elevation lowerLimit = processElevation(str.trim());
+            airspace.setLowerLimit(lowerLimit);
+
+            // get the unit providing service
+            xpath.reset();
+            str = xpath.evaluate("td[2]/text()", airspaceNode);
+            if (str != null && !str.isEmpty()) {
+                airspace.setOperator(str.trim());
+            }
+
+            // get the active time
+            xpath.reset();
+            str = xpath.evaluate("td[3]/text()[3]", airspaceNode);
+            if (str != null && !str.isEmpty()) {
+                airspace.setActiveTime(str.trim());
+            }
+
+            // get remarks
+            xpath.reset();
+            str = xpath.evaluate("td[5]/text()[1]", airspaceNode);
             if (str != null && !str.isEmpty()) {
                 airspace.setRemarks(str);
             }
 
-            return airspace;
-        } catch (ParseException e) {
-            throw e;
+            airspace.setType("FIR");
+
+            airspaces.add(airspace);
+
+        } catch (Exception e) {
+            throw new ParseException(airspaceNode, e);
+        }
+    }
+
+    /**
+     *  Process a CTA definition from the aAIP.
+     *
+     *  @param airspaceNode the XML node that represents the airspace
+     *         which is an &lt;x:tr&gt; node
+     *  @param borderPoints a list of points repesenting the country border,
+     *         which is used for airspaces that reference a country border.
+     *         may be null.
+     *  @param airspaces created airspaces will be put into this list
+     *  @throws ParseException on input parsing errors.
+     */
+    void processBudapestCta(Node            airspaceNode,
+                            List<Point>     borderPoints,
+                            List<Airspace>  airspaces) throws ParseException {
+
+        try {
+            Airspace airspace = new Airspace();
+
+            XPath xpath = XPathFactory.newInstance().newXPath();
+
+            // get the name
+            String name = xpath.evaluate("td[1]//strong/text()[1]",
+                                         airspaceNode).trim();
+            airspace.setName(name);
+
+            // get the boundary
+            // we're cheating here, as the definition is textual at best
+            // let's just copy the border ponts
+            Ring boundary = new Ring();
+            boundary.setPointList(new Vector<Point>(borderPoints));
+            airspace.setBoundary(boundary);
+
+            // get the vertical limits
+            xpath.reset();
+            String str = xpath.evaluate("td[1]/text()[2]", airspaceNode);
+            Elevation upperLimit = processElevation(str.trim());
+            airspace.setUpperLimit(upperLimit);
+
+            xpath.reset();
+            str = xpath.evaluate("td[1]/text()[3]", airspaceNode);
+            Elevation lowerLimit = processElevation(str.trim());
+            airspace.setLowerLimit(lowerLimit);
+
+            // get the airspace class
+            xpath.reset();
+            str = xpath.evaluate("td[1]/text()[4]", airspaceNode);
+            airspace.setAirspaceClass(str);
+
+            // get the unit providing service
+            xpath.reset();
+            str = xpath.evaluate("td[2]/text()", airspaceNode);
+            if (str != null && !str.isEmpty()) {
+                airspace.setOperator(str.trim());
+            }
+
+            // get the active time
+            xpath.reset();
+            str = xpath.evaluate("td[3]/text()[3]", airspaceNode);
+            if (str != null && !str.isEmpty()) {
+                airspace.setActiveTime(str);
+            }
+
+            // get the frequencies
+            xpath.reset();
+            str = xpath.evaluate("td[4]", airspaceNode);
+            if (str != null && !str.isEmpty()) {
+                airspace.setCommFrequency(str.trim()
+                                          .replaceAll("MHZ", "MHZ ")
+                                          .replaceAll("CH", "CH ")
+                                          .replaceAll("UHF", "UHF ")
+                                          .replaceAll("\\s+", " "));
+            }
+
+            // get remarks
+            xpath.reset();
+            str = xpath.evaluate("td[5]/text()[1]", airspaceNode);
+            if (str != null && !str.isEmpty()) {
+                airspace.setRemarks(str);
+            }
+
+            airspace.setType("CTA");
+
+            airspaces.add(airspace);
+
         } catch (Exception e) {
             throw new ParseException(airspaceNode, e);
         }
@@ -145,33 +503,72 @@ public class EAipProcessorEnr21 extends EAipProcessor {
 
         NodeList nodes = null;
 
-        // get the name & designator
         try {
             XPath          xpath     = XPathFactory.newInstance().newXPath();
 
+            // process the BUDAPEST FIR definition
             nodes = (NodeList) xpath.evaluate(
-                          "//table/tbody/tr"
-                        + "[not(descendant::processing-instruction('Fm')"
-                                         + "[contains(., 'APSToBeDeleted')])]",
+                    "//table[contains(.,'BUDAPEST FIR')]/tbody/tr",
+                    eAipNode,
+                    XPathConstants.NODESET);
+
+            if (nodes != null && nodes.getLength() > 0) {
+                processBudapestFir(nodes.item(0), borderPoints, airspaces);
+            }
+
+            // process the BUDAPEST CTA definition
+            nodes = (NodeList) xpath.evaluate(
+                    "//table[contains(.,'BUDAPEST CTA')]/tbody/tr",
+                    eAipNode,
+                    XPathConstants.NODESET);
+
+            if (nodes != null && nodes.getLength() > 0) {
+                processBudapestCta(nodes.item(0), borderPoints, airspaces);
+            }
+
+            // process the Budapest TMA sectors
+            nodes = (NodeList) xpath.evaluate(
+                          "//table[contains(.,'BUDAPEST TMA')]/tbody/tr",
                           eAipNode,
                           XPathConstants.NODESET);
+
+            if (nodes != null) {
+                processBudapestTma(nodes, borderPoints, airspaces);
+            }
+
+            // process the MTMA sectors
+            nodes = (NodeList) xpath.evaluate(
+                          "//table[contains(.,'MTMA')]/tbody/tr",
+                          eAipNode,
+                          XPathConstants.NODESET);
+
+            if (nodes != null) {
+                // the first two tr elements are not full MTMA defs
+                // but the generic Kecskemet MTMA description
+                for (int i = 2; i < nodes.getLength(); ++i) {
+                    Node node = nodes.item(i);
+                    Airspace airspace = processMtma(node, borderPoints);
+                    airspaces.add(airspace);
+                }
+            }
+
+            // process the MCTRs
+            nodes = (NodeList) xpath.evaluate(
+                          "//table[contains(.,'MCTR')]/tbody/tr",
+                          eAipNode,
+                          XPathConstants.NODESET);
+
+            if (nodes != null) {
+                for (int i = 0; i < nodes.getLength(); ++i) {
+                    Node node = nodes.item(i);
+                    processMctr(node, borderPoints, airspaces);
+                }
+            }
+
         } catch (XPathExpressionException e) {
             errors.add(new ParseException(e));
-        }
-
-        if (nodes == null) {
-            return;
-        }
-
-        for (int i = 0; i < nodes.getLength(); ++i) {
-            try {
-                Airspace airspace = processAirspace(nodes.item(i),
-                                                    borderPoints);
-                airspaces.add(airspace);
-            } catch (ParseException e) {
-                errors.add(e);
-                continue;
-            }
+        } catch (ParseException e) {
+            errors.add(e);
         }
     }
 

@@ -232,6 +232,9 @@ public final class Converter {
                     errors);
         } catch (Exception e) {
             System.out.println("Conversion failed.");
+            System.out.println();
+            System.out.println("error details: " + e.toString());
+            e.printStackTrace(System.out);
             return;
         }
 
@@ -499,6 +502,12 @@ public final class Converter {
 
                 way.getTags().put("airspace:class",
                                   airspace.getAirspaceClass());
+            }
+
+            if (airspace.getCommFrequency() != null) {
+
+                way.getTags().put("comm:ctrl",
+                                  airspace.getCommFrequency());
             }
 
             addElevationLimits(airspace, way);
