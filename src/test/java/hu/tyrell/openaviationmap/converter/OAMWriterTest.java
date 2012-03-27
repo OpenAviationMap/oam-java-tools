@@ -82,7 +82,7 @@ public class OAMWriterTest {
         // convert the airspaces into an Oam object
         Oam oam = new Oam();
 
-        Converter.airspacesToOam(airspaces, oam, Action.CREATE, 1, 0, 0);
+        Converter.airspacesToOam(airspaces, oam, Action.NONE, 1, 0, 0);
 
         // now,  convert this Oam object into XML
         d = db.newDocument();
@@ -163,7 +163,7 @@ public class OAMWriterTest {
         // convert the airspaces into an Oam object
         Oam oam = new Oam();
 
-        Converter.airspacesToOam(airspaces, oam, Action.CREATE, 1, 0, 0);
+        Converter.airspacesToOam(airspaces, oam, Action.NONE, 1, 0, 0);
 
         // now,  convert the Oam object into XML
         d = db.newDocument();

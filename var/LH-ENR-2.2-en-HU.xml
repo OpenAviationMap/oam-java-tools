@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?Fm Condition APSDataLink_NULL APSDataLink NO_OVERRIDE hide?>
+<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
+<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
+<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
+<?Fm Condition APSToBeInserted APSInsertion NO_OVERRIDE show?>
+<?Fm Condition APSToBeDeleted APSDeletion STRIKETHROUGH show?>
+<?Fm Condition Source%20Tag Red DOUBLE_UNDERLINE hide?>
+<?Fm Condition Comment Red SINGLE_UNDERLINE show?>
+<?Fm Condition APSDataLink APSDataLink NO_OVERRIDE show?>
+
+<?Fm BoolCondExpr "" State 0?>
+
+
+<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
+
+<?eAIP-locales ../locales.xml?>
+<e:ENR-2.2 id = "ENR-2.2" xmlns:x = "http://www.w3.org/1999/xhtml" xmlns:e = "http://www.eurocontrol.int/xmlns/AIM/eAIP" xmlns:xlink = "http://www.w3.org/1999/xlink"><?FM MARKER [FrameAPS Content] PM-0.1,557313,1595223?>
+<e:Title id = "ENR220603081427541">OTHER REGULATED AIRSPACE</e:Title><x:table frame = "border">
+<x:thead>
+<x:tr class = "Table-row-type-1">
+<x:th class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-0.1,3563702,655360?>NameLateral limitsVertical limitsClass of airspace</x:th>
+<x:th class = "bleft btop bright bbottom ">Unit providing service</x:th>
+<x:th class = "bleft btop bright bbottom ">Call signLanguagesArea and conditions of useHours of service</x:th>
+<x:th class = "bleft btop bright bbottom ">Frequency/ Purpose</x:th>
+<x:th class = "bleft btop bright bbottom ">Remarks</x:th>
+</x:tr>
+<x:tr class = "Table-row-type-2">
+<x:th class = "bleft btop bright bbottom ">1</x:th>
+<x:th class = "bleft btop bright bbottom ">2</x:th>
+<x:th class = "bleft btop bright bbottom ">3</x:th>
+<x:th class = "bleft btop bright bbottom ">4</x:th>
+<x:th class = "bleft btop bright bbottom ">5</x:th>
+</x:tr>
+</x:thead>
+<x:tbody>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR220705021202552" class = "Cell-body"><?Fm Condstart APSDataLink?>KOSICE TMA 2<?Fm Condend APSDataLink?></x:strong><x:br id = "ENR220705021203173"/><?Fm Condstart APSDataLink?>482346N 0202459E along border HUNGARY_SLOVAKREPUBLIC - 482000N 0214901E  - 481703N 0214953E  - 481110N 0210551E  - 482346N 0202459E <?Fm Condend APSDataLink?><x:br id = "ENR220705021159370"/><?Fm Condstart APSDataLink?>9500 FT ALT
+1000 FT AGL
+D<?Fm Condend APSDataLink?><x:br id = "ENR220705021159541"/></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>KOSICE APP<?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><x:p class = "Body">KOSICE RADAR</x:p><x:p id = "ENR220606121127210" class = "Body">EN, SL</x:p></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>119.85MHZ / STD<?Fm Condend APSDataLink?><x:br id = "ENR220705021204334"/><?Fm Condstart APSDataLink?>121.5MHZ / EMRG<?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>TMA 2 available only for civil aircraft approaching RWY 01. Aircraft has to be equipped with SSR transponder. Using TMA 2 by State aircraft is excluded unless they have received a diplomatic clearance from the Ministry of Foreign Affairs of the Republic of Hungary.<?Fm Condend APSDataLink?></x:td>
+</x:tr>
+</x:tbody>
+</x:table>
+<e:Sub-section id = "ENR220707301148170" class = "Body"></e:Sub-section><x:table frame = "border">
+<x:thead>
+<x:tr class = "Table-row-type-1">
+<x:th class = "bleft btop bright bbottom ">NameLateral limitsVertical limitsClass of airspace</x:th>
+<x:th class = "bleft btop bright bbottom ">Unit providing service</x:th>
+<x:th class = "bleft btop bright bbottom ">Call signLanguagesArea and conditions of useHours of service</x:th>
+<x:th class = "bleft btop bright bbottom ">Frequency/ Purpose</x:th>
+<x:th class = "bleft btop bright bbottom ">Remarks</x:th>
+</x:tr>
+<x:tr class = "Table-row-type-2">
+<x:th class = "bleft btop bright bbottom ">1</x:th>
+<x:th class = "bleft btop bright bbottom ">2</x:th>
+<x:th class = "bleft btop bright bbottom ">3</x:th>
+<x:th class = "bleft btop bright bbottom ">4</x:th>
+<x:th class = "bleft btop bright bbottom ">5</x:th>
+</x:tr>
+</x:thead>
+<x:tbody>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR220705021208521" class = "Cell-body"><?Fm Condstart APSDataLink?>LESMO_AREA<?Fm Condend APSDataLink?></x:strong><x:br id = "ENR220705021208380"/><?Fm Condstart APSDataLink?>474906N 0173650E  - 474449N 0173000E  - 473559N 0172917E  - 473555N 0164005E along border AUSTRIA_HUNGARY - 480024N 0170939E along border HUNGARY_SLOVAKREPUBLIC - 474906N 0173650E <?Fm Condend APSDataLink?><x:br id = "ENR220705021209322"/><?Fm Condstart APSDataLink?>FL 245
+5500 FT ALT
+C<?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom ">ATC and alerting service provided by Wien ATCC. Search and rescue coordination and operation provided by the appropriate Hungarian authorities.</x:td>
+<x:td class = "bleft btop bright bbottom ">	</x:td>
+<x:td class = "bleft btop bright bbottom ">	</x:td>
+<x:td class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CU-0.1,131072,655360?></x:td>
+</x:tr>
+</x:tbody>
+</x:table><?FM MARKER [FrameAPS Content] PU-0.1,1857713,19312130?>
+
+<?FM MARKER [FrameAPS Content] PM-1.1,1857713,415060?>
+<e:Sub-section id = "ENR220707301148261"></e:Sub-section><x:table frame = "border">
+<x:thead>
+<x:tr class = "Table-row-type-1">
+<x:th class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-1.1,3563702,655360?>NameLateral limitsVertical limitsClass of airspace</x:th>
+<x:th class = "bleft btop bright bbottom ">Unit providing service</x:th>
+<x:th class = "bleft btop bright bbottom ">Call signLanguagesArea and conditions of useHours of service</x:th>
+<x:th class = "bleft btop bright bbottom ">Frequency/ Purpose</x:th>
+<x:th class = "bleft btop bright bbottom ">Remarks</x:th>
+</x:tr>
+<x:tr class = "Table-row-type-2">
+<x:th class = "bleft btop bright bbottom ">1</x:th>
+<x:th class = "bleft btop bright bbottom ">2</x:th>
+<x:th class = "bleft btop bright bbottom ">3</x:th>
+<x:th class = "bleft btop bright bbottom ">4</x:th>
+<x:th class = "bleft btop bright bbottom ">5</x:th>
+</x:tr>
+</x:thead>
+<x:tbody>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR220705021219181" class = "Cell-body"><?Fm Condstart APSDataLink?>RUTOL AREA<?Fm Condend APSDataLink?></x:strong><x:br id = "ENR220705021218570"/><?Fm Condstart APSDataLink?>480214N 0184917E along border HUNGARY_SLOVAKREPUBLIC - 474551N 0182754E  - 475117N 0182910E  - 475729N 0183036E  - 480214N 0184917E <?Fm Condend APSDataLink?><x:br id = "ENR220705021219372"/><?Fm Condstart APSDataLink?>FL 195
+FL 90
+C<?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><?Fm Condstart APSDataLink?>ATS provided by Budapest ATCC.
+Search and rescue co-ordination and operations provided by appropriate authorities of the Slovak Republic.<?Fm Condend APSDataLink?></x:td>
+<x:td class = "bleft btop bright bbottom "><x:p class = "Body">BUDAPEST CONTROL 
+EN, HU</x:p></x:td>
+<x:td class = "bleft btop bright bbottom ">	</x:td>
+<x:td class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CU-1.1,131072,655360?></x:td>
+</x:tr>
+</x:tbody>
+</x:table><?FM MARKER [FrameAPS Content] PU-1.1,1857713,415060?>
+</e:ENR-2.2>

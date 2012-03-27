@@ -19,6 +19,7 @@ package hu.tyrell.openaviationmap.converter;
 
 import hu.tyrell.openaviationmap.converter.eaip.EAipProcessor;
 import hu.tyrell.openaviationmap.converter.eaip.EAipProcessorEnr21;
+import hu.tyrell.openaviationmap.converter.eaip.EAipProcessorEnr22;
 import hu.tyrell.openaviationmap.converter.eaip.EAipProcessorEnr51;
 import hu.tyrell.openaviationmap.converter.eaip.EAipProcessorEnr52;
 import hu.tyrell.openaviationmap.converter.eaip.EAipProcessorEnr55;
@@ -57,6 +58,8 @@ public class EAIPHungaryReader {
 
         if ("e:ENR-2.1".equals(rootName)) {
             processor = new EAipProcessorEnr21();
+        } else if ("e:ENR-2.2".equals(rootName)) {
+            processor = new EAipProcessorEnr22();
         } else if ("e:ENR-5.1".equals(rootName)) {
             processor = new EAipProcessorEnr51();
         } else if ("e:ENR-5.2".equals(rootName)) {

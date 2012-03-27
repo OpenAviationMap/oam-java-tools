@@ -261,7 +261,6 @@ public class EAipToOamTest {
                       0, 37);
     }
 
-
     /**
      * Test converting an eAIP section ENR-2.1 element to OAM.
      *
@@ -282,5 +281,27 @@ public class EAipToOamTest {
                       "var/oam-hungary-2.1.xml",
                       "var/hungary.osm",
                       0, 20);
+    }
+
+    /**
+     * Test converting an eAIP section ENR-2.2 element to OAM.
+     *
+     * @throws ParserConfigurationException on XML parser configuration errors.
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing errors
+     * @throws ParseException on OAM parsing errors
+     * @throws TransformerException on XML serialization errors
+     */
+    @Test
+    public void testEAipEnr22ToOam() throws ParserConfigurationException,
+                                            SAXException,
+                                            IOException,
+                                            ParseException,
+                                            TransformerException {
+
+        testEAipToOam("var/LH-ENR-2.2-en-HU.xml",
+                      "var/oam-hungary-2.2.xml",
+                      "var/hungary.osm",
+                      0, 3);
     }
 }
