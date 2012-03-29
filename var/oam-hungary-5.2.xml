@@ -1,787 +1,215 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <osm version="0.6">
-<node action="create" id="1" lat="47.499722222222225" lon="17.8375" version="1"/>
-<node action="create" id="2" lat="47.499722222222225" lon="18.258055555555554" version="1"/>
-<node action="create" id="3" lat="47.22527777777778" lon="18.251944444444444" version="1"/>
-<node action="create" id="4" lat="47.21638888888889" lon="17.983333333333334" version="1"/>
-<node action="create" id="6" lat="47.21638888888889" lon="17.983333333333334" version="1"/>
-<node action="create" id="7" lat="47.22527777777778" lon="18.251944444444444" version="1"/>
-<node action="create" id="8" lat="47.03666666666666" lon="18.249166666666667" version="1"/>
-<node action="create" id="9" lat="46.92472222222222" lon="17.859722222222224" version="1"/>
-<node action="create" id="10" lat="47.11277777777778" lon="17.726388888888888" version="1"/>
-<node action="create" id="12" lat="47.21638888888889" lon="17.983333333333334" version="1"/>
-<node action="create" id="13" lat="47.22527777777778" lon="18.251944444444444" version="1"/>
-<node action="create" id="14" lat="47.03666666666666" lon="18.249166666666667" version="1"/>
-<node action="create" id="15" lat="46.92472222222222" lon="17.859722222222224" version="1"/>
-<node action="create" id="16" lat="47.11277777777778" lon="17.726388888888888" version="1"/>
-<node action="create" id="18" lat="46.99583333333334" lon="19.045" version="1"/>
-<node action="create" id="19" lat="47.0675" lon="19.275" version="1"/>
-<node action="create" id="20" lat="46.827222222222225" lon="19.498333333333335" version="1"/>
-<node action="create" id="21" lat="46.66638888888889" lon="19.498333333333335" version="1"/>
-<node action="create" id="22" lat="46.66583333333333" lon="19.37027777777778" version="1"/>
-<node action="create" id="24" lat="47.37" lon="20.152777777777775" version="1"/>
-<node action="create" id="25" lat="47.34388888888889" lon="20.29527777777778" version="1"/>
-<node action="create" id="26" lat="47.308055555555555" lon="20.49138888888889" version="1"/>
-<node action="create" id="27" lat="47.17916666666667" lon="20.425555555555558" version="1"/>
-<node action="create" id="28" lat="47.00222222222222" lon="20.335555555555555" version="1"/>
-<node action="create" id="29" lat="46.900277777777774" lon="20.284166666666668" version="1"/>
-<node action="create" id="30" lat="46.933055555555555" lon="20.12472222222222" version="1"/>
-<node action="create" id="31" lat="47.04472222222222" lon="20.074444444444445" version="1"/>
-<node action="create" id="32" lat="47.200833333333335" lon="19.998055555555556" version="1"/>
-<node action="create" id="34" lat="47.308055555555555" lon="20.49138888888889" version="1"/>
-<node action="create" id="35" lat="47.212500000000006" lon="20.758055555555554" version="1"/>
-<node action="create" id="36" lat="47.10277777777778" lon="20.720555555555553" version="1"/>
-<node action="create" id="37" lat="47.17916666666667" lon="20.425555555555558" version="1"/>
-<node action="create" id="39" lat="47.17916666666667" lon="20.425555555555558" version="1"/>
-<node action="create" id="40" lat="47.10277777777778" lon="20.720555555555553" version="1"/>
-<node action="create" id="41" lat="46.93694444444444" lon="20.664166666666667" version="1"/>
-<node action="create" id="42" lat="47.00222222222222" lon="20.335555555555555" version="1"/>
-<node action="create" id="44" lat="47.00222222222222" lon="20.335555555555555" version="1"/>
-<node action="create" id="45" lat="46.93694444444444" lon="20.664166666666667" version="1"/>
-<node action="create" id="46" lat="46.828611111111115" lon="20.62777777777778" version="1"/>
-<node action="create" id="47" lat="46.900277777777774" lon="20.284166666666668" version="1"/>
-<node action="create" id="49" lat="47.308055555555555" lon="20.49138888888889" version="1"/>
-<node action="create" id="50" lat="47.212500000000006" lon="20.758055555555554" version="1"/>
-<node action="create" id="51" lat="47.10277777777778" lon="20.720555555555553" version="1"/>
-<node action="create" id="52" lat="47.17916666666667" lon="20.425555555555558" version="1"/>
-<node action="create" id="54" lat="47.17916666666667" lon="20.425555555555558" version="1"/>
-<node action="create" id="55" lat="47.10277777777778" lon="20.720555555555553" version="1"/>
-<node action="create" id="56" lat="46.93694444444444" lon="20.664166666666667" version="1"/>
-<node action="create" id="57" lat="47.00222222222222" lon="20.335555555555555" version="1"/>
-<node action="create" id="59" lat="47.00222222222222" lon="20.335555555555555" version="1"/>
-<node action="create" id="60" lat="46.93694444444444" lon="20.664166666666667" version="1"/>
-<node action="create" id="61" lat="46.828611111111115" lon="20.62777777777778" version="1"/>
-<node action="create" id="62" lat="46.900277777777774" lon="20.284166666666668" version="1"/>
-<node action="create" id="64" lat="46.828611111111115" lon="20.62777777777778" version="1"/>
-<node action="create" id="65" lat="46.75138888888889" lon="20.899166666666666" version="1"/>
-<node action="create" id="66" lat="46.49444444444445" lon="20.732777777777777" version="1"/>
-<node action="create" id="67" lat="46.534166666666664" lon="20.393055555555556" version="1"/>
-<node action="create" id="69" lat="46.85138888888889" lon="16.357222222222223" version="1"/>
-<node action="create" id="70" lat="46.56444444444444" lon="18.001666666666665" version="1"/>
-<node action="create" id="71" lat="46.14833333333333" lon="18.07361111111111" version="1"/>
-<node action="create" id="72" lat="46.07916666666667" lon="17.445833333333333" version="1"/>
-<node action="create" id="73" lat="46.382222222222225" lon="17.020555555555553" version="1"/>
-<node action="create" id="74" lat="46.49166666666667" lon="16.61722222222222" version="1"/>
-<node action="create" id="75" lat="46.683611111111105" lon="16.422777777777778" version="1"/>
-<node action="create" id="77" lat="46.85138888888889" lon="16.357222222222223" version="1"/>
-<node action="create" id="78" lat="46.75055555555556" lon="17.969166666666666" version="1"/>
-<node action="create" id="79" lat="46.56444444444444" lon="18.001666666666665" version="1"/>
-<node action="create" id="81" lat="46.75055555555556" lon="17.969166666666666" version="1"/>
-<node action="create" id="82" lat="46.62388888888889" lon="18.226388888888888" version="1"/>
-<node action="create" id="83" lat="45.96027777777778" lon="18.3975" version="1"/>
-<node action="create" id="84" lat="45.92472222222222" lon="17.881666666666668" version="1"/>
-<node action="create" id="85" lat="46.07916666666667" lon="17.445833333333333" version="1"/>
-<node action="create" id="86" lat="46.14833333333333" lon="18.07361111111111" version="1"/>
-<node action="create" id="88" lat="46.44944444444444" lon="17.42361111111111" version="1"/>
-<node action="create" id="89" lat="46.24638888888889" lon="17.978055555555553" version="1"/>
-<node action="create" id="90" lat="45.92472222222222" lon="17.881666666666668" version="1"/>
-<node action="create" id="91" lat="46.07916666666667" lon="17.445833333333333" version="1"/>
-<node action="create" id="92" lat="46.382222222222225" lon="17.020555555555553" version="1"/>
-<node action="create" id="94" lat="46.44944444444444" lon="17.42361111111111" version="1"/>
-<node action="create" id="95" lat="46.24638888888889" lon="17.978055555555553" version="1"/>
-<node action="create" id="96" lat="45.92472222222222" lon="17.881666666666668" version="1"/>
-<node action="create" id="97" lat="46.07916666666667" lon="17.445833333333333" version="1"/>
-<node action="create" id="98" lat="46.382222222222225" lon="17.020555555555553" version="1"/>
-<node action="create" id="100" lat="47.06166666666666" lon="19.396944444444443" version="1"/>
-<node action="create" id="101" lat="47.04472222222222" lon="20.074444444444445" version="1"/>
-<node action="create" id="102" lat="46.933055555555555" lon="20.12472222222222" version="1"/>
-<node action="create" id="103" lat="46.828611111111115" lon="20.62777777777778" version="1"/>
-<node action="create" id="104" lat="46.534166666666664" lon="20.393055555555556" version="1"/>
-<node action="create" id="105" lat="46.62444444444444" lon="19.78805555555556" version="1"/>
-<node action="create" id="107" lat="46.828611111111115" lon="20.62777777777778" version="1"/>
-<node action="create" id="108" lat="46.661944444444444" lon="21.209444444444443" version="1"/>
-<node action="create" id="109" lat="46.38861111111111" lon="21.094444444444445" version="1"/>
-<node action="create" id="110" lat="46.361111111111114" lon="20.921944444444446" version="1"/>
-<node action="create" id="111" lat="46.446666666666665" lon="19.94472222222222" version="1"/>
-<node action="create" id="112" lat="46.62444444444444" lon="19.78805555555556" version="1"/>
-<node action="create" id="113" lat="46.534166666666664" lon="20.393055555555556" version="1"/>
-<node action="create" id="115" lat="47.06166666666666" lon="19.396944444444443" version="1"/>
-<node action="create" id="116" lat="47.04472222222222" lon="20.074444444444445" version="1"/>
-<node action="create" id="117" lat="46.933055555555555" lon="20.12472222222222" version="1"/>
-<node action="create" id="118" lat="46.828611111111115" lon="20.62777777777778" version="1"/>
-<node action="create" id="119" lat="46.661944444444444" lon="21.209444444444443" version="1"/>
-<node action="create" id="120" lat="46.38861111111111" lon="21.094444444444445" version="1"/>
-<node action="create" id="121" lat="46.361111111111114" lon="20.921944444444446" version="1"/>
-<node action="create" id="122" lat="46.446666666666665" lon="19.94472222222222" version="1"/>
-<node action="create" id="124" lat="46.99583333333334" lon="19.045" version="1"/>
-<node action="create" id="125" lat="46.36194444444445" lon="19.66444444444444" version="1"/>
-<node action="create" id="126" lat="46.24138888888889" lon="19.149722222222223" version="1"/>
-<node action="create" id="127" lat="46.51555555555556" lon="18.829722222222223" version="1"/>
-<node action="create" id="128" lat="46.56027777777778" lon="18.941944444444445" version="1"/>
-<node action="create" id="129" lat="46.652499999999996" lon="18.86722222222222" version="1"/>
-<node action="create" id="130" lat="46.6" lon="18.734722222222224" version="1"/>
-<node action="create" id="131" lat="46.814166666666665" lon="18.476388888888888" version="1"/>
-<node action="create" id="133" lat="46.66583333333333" lon="19.37027777777778" version="1"/>
-<node action="create" id="134" lat="46.66638888888889" lon="19.498333333333335" version="1"/>
-<node action="create" id="135" lat="46.62444444444444" lon="19.78805555555556" version="1"/>
-<node action="create" id="136" lat="46.446666666666665" lon="19.94472222222222" version="1"/>
-<node action="create" id="137" lat="46.36194444444445" lon="19.66444444444444" version="1"/>
-<node action="create" id="139" lat="46.846111111111114" lon="19.192777777777778" version="1"/>
-<node action="create" id="140" lat="46.36194444444445" lon="19.66444444444444" version="1"/>
-<node action="create" id="141" lat="46.25333333333333" lon="19.198888888888888" version="1"/>
-<node action="create" id="142" lat="46.73111111111111" lon="18.803055555555556" version="1"/>
-<node action="create" id="144" lat="48.1875" lon="20.42361111111111" version="1"/>
-<node action="create" id="145" lat="47.76638888888889" lon="21.560833333333335" version="1"/>
-<node action="create" id="146" lat="47.36694444444444" lon="21.720277777777778" version="1"/>
-<node action="create" id="147" lat="47.20277777777778" lon="21.55027777777778" version="1"/>
-<node action="create" id="148" lat="47.085" lon="21.468888888888888" version="1"/>
-<node action="create" id="149" lat="47.49527777777778" lon="20.268055555555556" version="1"/>
-<node action="create" id="150" lat="47.96666666666667" lon="19.9375" version="1"/>
-<node action="create" id="152" lat="47.36694444444444" lon="21.720277777777778" version="1"/>
-<node action="create" id="153" lat="47.19027777777777" lon="21.79138888888889" version="1"/>
-<node action="create" id="154" lat="47.03861111111111" lon="21.613611111111112" version="1"/>
-<node action="create" id="155" lat="46.864444444444445" lon="21.5075" version="1"/>
-<node action="create" id="156" lat="47.263333333333335" lon="20.515" version="1"/>
-<node action="create" id="157" lat="47.49527777777778" lon="20.268055555555556" version="1"/>
-<node action="create" id="158" lat="47.085" lon="21.468888888888888" version="1"/>
-<node action="create" id="159" lat="47.20277777777778" lon="21.55027777777778" version="1"/>
-<node action="create" id="161" lat="47.96666666666667" lon="19.9375" version="1"/>
-<node action="create" id="162" lat="48.11944444444445" lon="19.91444444444444" version="1"/>
-<node action="create" id="163" lat="48.299166666666665" lon="20.455" version="1"/>
-<node action="create" id="164" lat="47.97916666666667" lon="21.46944444444444" version="1"/>
-<node action="create" id="165" lat="47.76638888888889" lon="21.560833333333335" version="1"/>
-<node action="create" id="166" lat="48.1875" lon="20.42361111111111" version="1"/>
-<node action="create" id="168" lat="48.1875" lon="20.42361111111111" version="1"/>
-<node action="create" id="169" lat="47.83833333333334" lon="21.3675" version="1"/>
-<node action="create" id="170" lat="47.38111111111111" lon="21.036944444444448" version="1"/>
-<node action="create" id="171" lat="47.69027777777777" lon="20.13222222222222" version="1"/>
-<node action="create" id="172" lat="47.96666666666667" lon="19.9375" version="1"/>
-<node action="create" id="174" lat="48.1875" lon="20.42361111111111" version="1"/>
-<node action="create" id="175" lat="47.83833333333334" lon="21.3675" version="1"/>
-<node action="create" id="176" lat="47.38111111111111" lon="21.036944444444448" version="1"/>
-<node action="create" id="177" lat="47.69027777777777" lon="20.13222222222222" version="1"/>
-<node action="create" id="178" lat="47.96666666666667" lon="19.9375" version="1"/>
-<node action="create" id="180" lat="46.56444444444444" lon="18.001666666666665" version="1"/>
-<node action="create" id="181" lat="46.474722222222226" lon="18.691388888888888" version="1"/>
-<node action="create" id="182" lat="46.166666666666664" lon="19.091388888888886" version="1"/>
-<node action="create" id="183" lat="46.04972222222222" lon="18.668055555555558" version="1"/>
-<node action="create" id="184" lat="45.96027777777778" lon="18.3975" version="1"/>
-<node action="create" id="185" lat="45.92472222222222" lon="17.881666666666668" version="1"/>
-<node action="create" id="186" lat="46.07916666666667" lon="17.445833333333333" version="1"/>
-<node action="create" id="188" lat="46.70277777777778" lon="16.783055555555556" version="1"/>
-<node action="create" id="189" lat="46.56444444444444" lon="18.001666666666665" version="1"/>
-<node action="create" id="190" lat="46.07916666666667" lon="17.445833333333333" version="1"/>
-<node action="create" id="191" lat="46.60138888888889" lon="16.702777777777776" version="1"/>
-<node action="create" id="193" lat="47.96555555555556" lon="21.119444444444444" version="1"/>
-<node action="create" id="194" lat="47.319722222222225" lon="21.67138888888889" version="1"/>
-<node action="create" id="195" lat="47.20277777777778" lon="21.55027777777778" version="1"/>
-<node action="create" id="196" lat="46.84722222222222" lon="21.305833333333332" version="1"/>
-<node action="create" id="197" lat="47.263333333333335" lon="20.514166666666668" version="1"/>
-<node action="create" id="198" lat="47.49527777777778" lon="20.268055555555556" version="1"/>
-<node action="create" id="199" lat="47.69027777777777" lon="20.13222222222222" version="1"/>
-<node action="create" id="201" lat="48.13611111111111" lon="21.752777777777776" version="1"/>
-<node action="create" id="202" lat="47.87861111111111" lon="22.25888888888889" version="1"/>
-<node action="create" id="203" lat="47.319722222222225" lon="21.67138888888889" version="1"/>
-<node action="create" id="204" lat="47.96555555555556" lon="21.119444444444444" version="1"/>
-<node action="create" id="206" lat="47.96555555555556" lon="21.119444444444444" version="1"/>
-<node action="create" id="207" lat="47.319722222222225" lon="21.67138888888889" version="1"/>
-<node action="create" id="208" lat="47.20277777777778" lon="21.55027777777778" version="1"/>
-<node action="create" id="209" lat="46.84722222222222" lon="21.305833333333332" version="1"/>
-<node action="create" id="210" lat="47.263333333333335" lon="20.514166666666668" version="1"/>
-<node action="create" id="211" lat="47.49527777777778" lon="20.268055555555556" version="1"/>
-<node action="create" id="212" lat="47.69027777777777" lon="20.13222222222222" version="1"/>
-<node action="create" id="214" lat="48.13611111111111" lon="21.752777777777776" version="1"/>
-<node action="create" id="215" lat="47.87861111111111" lon="22.25888888888889" version="1"/>
-<node action="create" id="216" lat="47.319722222222225" lon="21.67138888888889" version="1"/>
-<node action="create" id="217" lat="47.96555555555556" lon="21.119444444444444" version="1"/>
-<way action="create" id="1" version="1">
-<nd ref="1"/>
-<nd ref="2"/>
-<nd ref="3"/>
-<nd ref="4"/>
-<nd ref="1"/>
-<tag k="height:lower:class" v="agl"/>
-<tag k="height:lower" v="0"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="icao" v="LHTRA11A"/>
-<tag k="name" v="PAPA ALPHA"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="fl"/>
-<tag k="height:upper" v="125"/>
-</way>
-<way action="create" id="2" version="1">
-<nd ref="6"/>
-<nd ref="7"/>
-<nd ref="8"/>
-<nd ref="9"/>
-<nd ref="10"/>
-<nd ref="6"/>
+<node action="create" id="-1" lat="47.499722222222225" lon="17.8375" version="1"/>
+<node action="create" id="-2" lat="47.499722222222225" lon="18.258055555555554" version="1"/>
+<node action="create" id="-3" lat="47.22527777777778" lon="18.251944444444444" version="1"/>
+<node action="create" id="-4" lat="47.21638888888889" lon="17.983333333333334" version="1"/>
+<node action="create" id="-6" lat="47.21638888888889" lon="17.983333333333334" version="1"/>
+<node action="create" id="-7" lat="47.22527777777778" lon="18.251944444444444" version="1"/>
+<node action="create" id="-8" lat="47.03666666666666" lon="18.249166666666667" version="1"/>
+<node action="create" id="-9" lat="46.92472222222222" lon="17.859722222222224" version="1"/>
+<node action="create" id="-10" lat="47.11277777777778" lon="17.726388888888888" version="1"/>
+<node action="create" id="-12" lat="47.21638888888889" lon="17.983333333333334" version="1"/>
+<node action="create" id="-13" lat="47.22527777777778" lon="18.251944444444444" version="1"/>
+<node action="create" id="-14" lat="47.03666666666666" lon="18.249166666666667" version="1"/>
+<node action="create" id="-15" lat="46.92472222222222" lon="17.859722222222224" version="1"/>
+<node action="create" id="-16" lat="47.11277777777778" lon="17.726388888888888" version="1"/>
+<node action="create" id="-18" lat="46.99583333333334" lon="19.045" version="1"/>
+<node action="create" id="-19" lat="47.0675" lon="19.275" version="1"/>
+<node action="create" id="-20" lat="46.827222222222225" lon="19.498333333333335" version="1"/>
+<node action="create" id="-21" lat="46.66638888888889" lon="19.498333333333335" version="1"/>
+<node action="create" id="-22" lat="46.66583333333333" lon="19.37027777777778" version="1"/>
+<node action="create" id="-24" lat="47.37" lon="20.152777777777775" version="1"/>
+<node action="create" id="-25" lat="47.34388888888889" lon="20.29527777777778" version="1"/>
+<node action="create" id="-26" lat="47.308055555555555" lon="20.49138888888889" version="1"/>
+<node action="create" id="-27" lat="47.17916666666667" lon="20.425555555555558" version="1"/>
+<node action="create" id="-28" lat="47.00222222222222" lon="20.335555555555555" version="1"/>
+<node action="create" id="-29" lat="46.900277777777774" lon="20.284166666666668" version="1"/>
+<node action="create" id="-30" lat="46.933055555555555" lon="20.12472222222222" version="1"/>
+<node action="create" id="-31" lat="47.04472222222222" lon="20.074444444444445" version="1"/>
+<node action="create" id="-32" lat="47.200833333333335" lon="19.998055555555556" version="1"/>
+<node action="create" id="-34" lat="47.308055555555555" lon="20.49138888888889" version="1"/>
+<node action="create" id="-35" lat="47.212500000000006" lon="20.758055555555554" version="1"/>
+<node action="create" id="-36" lat="47.10277777777778" lon="20.720555555555553" version="1"/>
+<node action="create" id="-37" lat="47.17916666666667" lon="20.425555555555558" version="1"/>
+<node action="create" id="-39" lat="47.17916666666667" lon="20.425555555555558" version="1"/>
+<node action="create" id="-40" lat="47.10277777777778" lon="20.720555555555553" version="1"/>
+<node action="create" id="-41" lat="46.93694444444444" lon="20.664166666666667" version="1"/>
+<node action="create" id="-42" lat="47.00222222222222" lon="20.335555555555555" version="1"/>
+<node action="create" id="-44" lat="47.00222222222222" lon="20.335555555555555" version="1"/>
+<node action="create" id="-45" lat="46.93694444444444" lon="20.664166666666667" version="1"/>
+<node action="create" id="-46" lat="46.828611111111115" lon="20.62777777777778" version="1"/>
+<node action="create" id="-47" lat="46.900277777777774" lon="20.284166666666668" version="1"/>
+<node action="create" id="-49" lat="47.308055555555555" lon="20.49138888888889" version="1"/>
+<node action="create" id="-50" lat="47.212500000000006" lon="20.758055555555554" version="1"/>
+<node action="create" id="-51" lat="47.10277777777778" lon="20.720555555555553" version="1"/>
+<node action="create" id="-52" lat="47.17916666666667" lon="20.425555555555558" version="1"/>
+<node action="create" id="-54" lat="47.17916666666667" lon="20.425555555555558" version="1"/>
+<node action="create" id="-55" lat="47.10277777777778" lon="20.720555555555553" version="1"/>
+<node action="create" id="-56" lat="46.93694444444444" lon="20.664166666666667" version="1"/>
+<node action="create" id="-57" lat="47.00222222222222" lon="20.335555555555555" version="1"/>
+<node action="create" id="-59" lat="47.00222222222222" lon="20.335555555555555" version="1"/>
+<node action="create" id="-60" lat="46.93694444444444" lon="20.664166666666667" version="1"/>
+<node action="create" id="-61" lat="46.828611111111115" lon="20.62777777777778" version="1"/>
+<node action="create" id="-62" lat="46.900277777777774" lon="20.284166666666668" version="1"/>
+<node action="create" id="-64" lat="46.828611111111115" lon="20.62777777777778" version="1"/>
+<node action="create" id="-65" lat="46.75138888888889" lon="20.899166666666666" version="1"/>
+<node action="create" id="-66" lat="46.49444444444445" lon="20.732777777777777" version="1"/>
+<node action="create" id="-67" lat="46.534166666666664" lon="20.393055555555556" version="1"/>
+<node action="create" id="-69" lat="46.85138888888889" lon="16.357222222222223" version="1"/>
+<node action="create" id="-70" lat="46.56444444444444" lon="18.001666666666665" version="1"/>
+<node action="create" id="-71" lat="46.14833333333333" lon="18.07361111111111" version="1"/>
+<node action="create" id="-72" lat="46.07916666666667" lon="17.445833333333333" version="1"/>
+<node action="create" id="-73" lat="46.382222222222225" lon="17.020555555555553" version="1"/>
+<node action="create" id="-74" lat="46.49166666666667" lon="16.61722222222222" version="1"/>
+<node action="create" id="-75" lat="46.683611111111105" lon="16.422777777777778" version="1"/>
+<node action="create" id="-77" lat="46.85138888888889" lon="16.357222222222223" version="1"/>
+<node action="create" id="-78" lat="46.75055555555556" lon="17.969166666666666" version="1"/>
+<node action="create" id="-79" lat="46.56444444444444" lon="18.001666666666665" version="1"/>
+<node action="create" id="-81" lat="46.75055555555556" lon="17.969166666666666" version="1"/>
+<node action="create" id="-82" lat="46.62388888888889" lon="18.226388888888888" version="1"/>
+<node action="create" id="-83" lat="45.96027777777778" lon="18.3975" version="1"/>
+<node action="create" id="-84" lat="45.92472222222222" lon="17.881666666666668" version="1"/>
+<node action="create" id="-85" lat="46.07916666666667" lon="17.445833333333333" version="1"/>
+<node action="create" id="-86" lat="46.14833333333333" lon="18.07361111111111" version="1"/>
+<node action="create" id="-88" lat="46.44944444444444" lon="17.42361111111111" version="1"/>
+<node action="create" id="-89" lat="46.24638888888889" lon="17.978055555555553" version="1"/>
+<node action="create" id="-90" lat="45.92472222222222" lon="17.881666666666668" version="1"/>
+<node action="create" id="-91" lat="46.07916666666667" lon="17.445833333333333" version="1"/>
+<node action="create" id="-92" lat="46.382222222222225" lon="17.020555555555553" version="1"/>
+<node action="create" id="-94" lat="46.44944444444444" lon="17.42361111111111" version="1"/>
+<node action="create" id="-95" lat="46.24638888888889" lon="17.978055555555553" version="1"/>
+<node action="create" id="-96" lat="45.92472222222222" lon="17.881666666666668" version="1"/>
+<node action="create" id="-97" lat="46.07916666666667" lon="17.445833333333333" version="1"/>
+<node action="create" id="-98" lat="46.382222222222225" lon="17.020555555555553" version="1"/>
+<node action="create" id="-100" lat="47.06166666666666" lon="19.396944444444443" version="1"/>
+<node action="create" id="-101" lat="47.04472222222222" lon="20.074444444444445" version="1"/>
+<node action="create" id="-102" lat="46.933055555555555" lon="20.12472222222222" version="1"/>
+<node action="create" id="-103" lat="46.828611111111115" lon="20.62777777777778" version="1"/>
+<node action="create" id="-104" lat="46.534166666666664" lon="20.393055555555556" version="1"/>
+<node action="create" id="-105" lat="46.62444444444444" lon="19.78805555555556" version="1"/>
+<node action="create" id="-107" lat="46.828611111111115" lon="20.62777777777778" version="1"/>
+<node action="create" id="-108" lat="46.661944444444444" lon="21.209444444444443" version="1"/>
+<node action="create" id="-109" lat="46.38861111111111" lon="21.094444444444445" version="1"/>
+<node action="create" id="-110" lat="46.361111111111114" lon="20.921944444444446" version="1"/>
+<node action="create" id="-111" lat="46.446666666666665" lon="19.94472222222222" version="1"/>
+<node action="create" id="-112" lat="46.62444444444444" lon="19.78805555555556" version="1"/>
+<node action="create" id="-113" lat="46.534166666666664" lon="20.393055555555556" version="1"/>
+<node action="create" id="-115" lat="47.06166666666666" lon="19.396944444444443" version="1"/>
+<node action="create" id="-116" lat="47.04472222222222" lon="20.074444444444445" version="1"/>
+<node action="create" id="-117" lat="46.933055555555555" lon="20.12472222222222" version="1"/>
+<node action="create" id="-118" lat="46.828611111111115" lon="20.62777777777778" version="1"/>
+<node action="create" id="-119" lat="46.661944444444444" lon="21.209444444444443" version="1"/>
+<node action="create" id="-120" lat="46.38861111111111" lon="21.094444444444445" version="1"/>
+<node action="create" id="-121" lat="46.361111111111114" lon="20.921944444444446" version="1"/>
+<node action="create" id="-122" lat="46.446666666666665" lon="19.94472222222222" version="1"/>
+<node action="create" id="-124" lat="46.99583333333334" lon="19.045" version="1"/>
+<node action="create" id="-125" lat="46.36194444444445" lon="19.66444444444444" version="1"/>
+<node action="create" id="-126" lat="46.24138888888889" lon="19.149722222222223" version="1"/>
+<node action="create" id="-127" lat="46.51555555555556" lon="18.829722222222223" version="1"/>
+<node action="create" id="-128" lat="46.56027777777778" lon="18.941944444444445" version="1"/>
+<node action="create" id="-129" lat="46.652499999999996" lon="18.86722222222222" version="1"/>
+<node action="create" id="-130" lat="46.6" lon="18.734722222222224" version="1"/>
+<node action="create" id="-131" lat="46.814166666666665" lon="18.476388888888888" version="1"/>
+<node action="create" id="-133" lat="46.66583333333333" lon="19.37027777777778" version="1"/>
+<node action="create" id="-134" lat="46.66638888888889" lon="19.498333333333335" version="1"/>
+<node action="create" id="-135" lat="46.62444444444444" lon="19.78805555555556" version="1"/>
+<node action="create" id="-136" lat="46.446666666666665" lon="19.94472222222222" version="1"/>
+<node action="create" id="-137" lat="46.36194444444445" lon="19.66444444444444" version="1"/>
+<node action="create" id="-139" lat="46.846111111111114" lon="19.192777777777778" version="1"/>
+<node action="create" id="-140" lat="46.36194444444445" lon="19.66444444444444" version="1"/>
+<node action="create" id="-141" lat="46.25333333333333" lon="19.198888888888888" version="1"/>
+<node action="create" id="-142" lat="46.73111111111111" lon="18.803055555555556" version="1"/>
+<node action="create" id="-144" lat="48.1875" lon="20.42361111111111" version="1"/>
+<node action="create" id="-145" lat="47.76638888888889" lon="21.560833333333335" version="1"/>
+<node action="create" id="-146" lat="47.36694444444444" lon="21.720277777777778" version="1"/>
+<node action="create" id="-147" lat="47.20277777777778" lon="21.55027777777778" version="1"/>
+<node action="create" id="-148" lat="47.085" lon="21.468888888888888" version="1"/>
+<node action="create" id="-149" lat="47.49527777777778" lon="20.268055555555556" version="1"/>
+<node action="create" id="-150" lat="47.96666666666667" lon="19.9375" version="1"/>
+<node action="create" id="-152" lat="47.36694444444444" lon="21.720277777777778" version="1"/>
+<node action="create" id="-153" lat="47.19027777777777" lon="21.79138888888889" version="1"/>
+<node action="create" id="-154" lat="47.03861111111111" lon="21.613611111111112" version="1"/>
+<node action="create" id="-155" lat="46.864444444444445" lon="21.5075" version="1"/>
+<node action="create" id="-156" lat="47.263333333333335" lon="20.515" version="1"/>
+<node action="create" id="-157" lat="47.49527777777778" lon="20.268055555555556" version="1"/>
+<node action="create" id="-158" lat="47.085" lon="21.468888888888888" version="1"/>
+<node action="create" id="-159" lat="47.20277777777778" lon="21.55027777777778" version="1"/>
+<node action="create" id="-161" lat="47.96666666666667" lon="19.9375" version="1"/>
+<node action="create" id="-162" lat="48.11944444444445" lon="19.91444444444444" version="1"/>
+<node action="create" id="-163" lat="48.299166666666665" lon="20.455" version="1"/>
+<node action="create" id="-164" lat="47.97916666666667" lon="21.46944444444444" version="1"/>
+<node action="create" id="-165" lat="47.76638888888889" lon="21.560833333333335" version="1"/>
+<node action="create" id="-166" lat="48.1875" lon="20.42361111111111" version="1"/>
+<node action="create" id="-168" lat="48.1875" lon="20.42361111111111" version="1"/>
+<node action="create" id="-169" lat="47.83833333333334" lon="21.3675" version="1"/>
+<node action="create" id="-170" lat="47.38111111111111" lon="21.036944444444448" version="1"/>
+<node action="create" id="-171" lat="47.69027777777777" lon="20.13222222222222" version="1"/>
+<node action="create" id="-172" lat="47.96666666666667" lon="19.9375" version="1"/>
+<node action="create" id="-174" lat="48.1875" lon="20.42361111111111" version="1"/>
+<node action="create" id="-175" lat="47.83833333333334" lon="21.3675" version="1"/>
+<node action="create" id="-176" lat="47.38111111111111" lon="21.036944444444448" version="1"/>
+<node action="create" id="-177" lat="47.69027777777777" lon="20.13222222222222" version="1"/>
+<node action="create" id="-178" lat="47.96666666666667" lon="19.9375" version="1"/>
+<node action="create" id="-180" lat="46.56444444444444" lon="18.001666666666665" version="1"/>
+<node action="create" id="-181" lat="46.474722222222226" lon="18.691388888888888" version="1"/>
+<node action="create" id="-182" lat="46.166666666666664" lon="19.091388888888886" version="1"/>
+<node action="create" id="-183" lat="46.04972222222222" lon="18.668055555555558" version="1"/>
+<node action="create" id="-184" lat="45.96027777777778" lon="18.3975" version="1"/>
+<node action="create" id="-185" lat="45.92472222222222" lon="17.881666666666668" version="1"/>
+<node action="create" id="-186" lat="46.07916666666667" lon="17.445833333333333" version="1"/>
+<node action="create" id="-188" lat="46.70277777777778" lon="16.783055555555556" version="1"/>
+<node action="create" id="-189" lat="46.56444444444444" lon="18.001666666666665" version="1"/>
+<node action="create" id="-190" lat="46.07916666666667" lon="17.445833333333333" version="1"/>
+<node action="create" id="-191" lat="46.60138888888889" lon="16.702777777777776" version="1"/>
+<node action="create" id="-193" lat="47.96555555555556" lon="21.119444444444444" version="1"/>
+<node action="create" id="-194" lat="47.319722222222225" lon="21.67138888888889" version="1"/>
+<node action="create" id="-195" lat="47.20277777777778" lon="21.55027777777778" version="1"/>
+<node action="create" id="-196" lat="46.84722222222222" lon="21.305833333333332" version="1"/>
+<node action="create" id="-197" lat="47.263333333333335" lon="20.514166666666668" version="1"/>
+<node action="create" id="-198" lat="47.49527777777778" lon="20.268055555555556" version="1"/>
+<node action="create" id="-199" lat="47.69027777777777" lon="20.13222222222222" version="1"/>
+<node action="create" id="-201" lat="48.13611111111111" lon="21.752777777777776" version="1"/>
+<node action="create" id="-202" lat="47.87861111111111" lon="22.25888888888889" version="1"/>
+<node action="create" id="-203" lat="47.319722222222225" lon="21.67138888888889" version="1"/>
+<node action="create" id="-204" lat="47.96555555555556" lon="21.119444444444444" version="1"/>
+<node action="create" id="-206" lat="47.96555555555556" lon="21.119444444444444" version="1"/>
+<node action="create" id="-207" lat="47.319722222222225" lon="21.67138888888889" version="1"/>
+<node action="create" id="-208" lat="47.20277777777778" lon="21.55027777777778" version="1"/>
+<node action="create" id="-209" lat="46.84722222222222" lon="21.305833333333332" version="1"/>
+<node action="create" id="-210" lat="47.263333333333335" lon="20.514166666666668" version="1"/>
+<node action="create" id="-211" lat="47.49527777777778" lon="20.268055555555556" version="1"/>
+<node action="create" id="-212" lat="47.69027777777777" lon="20.13222222222222" version="1"/>
+<node action="create" id="-214" lat="48.13611111111111" lon="21.752777777777776" version="1"/>
+<node action="create" id="-215" lat="47.87861111111111" lon="22.25888888888889" version="1"/>
+<node action="create" id="-216" lat="47.319722222222225" lon="21.67138888888889" version="1"/>
+<node action="create" id="-217" lat="47.96555555555556" lon="21.119444444444444" version="1"/>
+<way action="create" id="-34" version="1">
+<nd ref="-214"/>
+<nd ref="-215"/>
+<nd ref="-216"/>
+<nd ref="-217"/>
+<nd ref="-214"/>
 <tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="4000"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="icao" v="LHTRA11B"/>
-<tag k="name" v="PAPA BRAVO"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="ft"/>
-<tag k="height:upper" v="9500"/>
-</way>
-<way action="create" id="3" version="1">
-<nd ref="12"/>
-<nd ref="13"/>
-<nd ref="14"/>
-<nd ref="15"/>
-<nd ref="16"/>
-<nd ref="12"/>
-<tag k="height:lower:class" v="agl"/>
-<tag k="height:lower" v="0"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="icao" v="LHTRA11C"/>
-<tag k="name" v="PAPA CHARLIE"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="ft"/>
-<tag k="height:upper" v="4000"/>
-</way>
-<way action="create" id="4" version="1">
-<nd ref="18"/>
-<nd ref="19"/>
-<nd ref="20"/>
-<nd ref="21"/>
-<nd ref="22"/>
-<nd ref="18"/>
-<tag k="height:lower:class" v="agl"/>
-<tag k="height:lower" v="0"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="icao" v="LHTRA12"/>
-<tag k="name" v="KUNSAG"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="fl"/>
-<tag k="height:upper" v="115"/>
-</way>
-<way action="create" id="5" version="1">
-<nd ref="24"/>
-<nd ref="25"/>
-<nd ref="26"/>
-<nd ref="27"/>
-<nd ref="28"/>
-<nd ref="29"/>
-<nd ref="30"/>
-<nd ref="31"/>
-<nd ref="32"/>
-<nd ref="24"/>
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="9500"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="icao" v="LHTRA13"/>
-<tag k="name" v="TISZA"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="fl"/>
-<tag k="height:upper" v="145"/>
-</way>
-<way action="create" id="6" version="1">
-<nd ref="34"/>
-<nd ref="35"/>
-<nd ref="36"/>
-<nd ref="37"/>
-<nd ref="34"/>
-<tag k="height:lower:class" v="agl"/>
-<tag k="height:lower" v="0"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="icao" v="LHTRA14A"/>
-<tag k="name" v="MEZO ALPHA"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="ft"/>
-<tag k="height:upper" v="4500"/>
-</way>
-<way action="create" id="7" version="1">
-<nd ref="39"/>
-<nd ref="40"/>
-<nd ref="41"/>
-<nd ref="42"/>
-<nd ref="39"/>
-<tag k="height:lower:class" v="agl"/>
-<tag k="height:lower" v="0"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="icao" v="LHTRA14B"/>
-<tag k="name" v="MEZO BRAVO"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="ft"/>
-<tag k="height:upper" v="4500"/>
-</way>
-<way action="create" id="8" version="1">
-<nd ref="44"/>
-<nd ref="45"/>
-<nd ref="46"/>
-<nd ref="47"/>
-<nd ref="44"/>
-<tag k="height:lower:class" v="agl"/>
-<tag k="height:lower" v="0"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="icao" v="LHTRA14C"/>
-<tag k="name" v="MEZO CHARLIE"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="ft"/>
-<tag k="height:upper" v="4500"/>
-</way>
-<way action="create" id="9" version="1">
-<nd ref="49"/>
-<nd ref="50"/>
-<nd ref="51"/>
-<nd ref="52"/>
-<nd ref="49"/>
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="4500"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="icao" v="LHTRA15A"/>
-<tag k="name" v="SZARVAS ALPHA"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="ft"/>
-<tag k="height:upper" v="9500"/>
-</way>
-<way action="create" id="10" version="1">
-<nd ref="54"/>
-<nd ref="55"/>
-<nd ref="56"/>
-<nd ref="57"/>
-<nd ref="54"/>
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="4500"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="icao" v="LHTRA15B"/>
-<tag k="name" v="SZARVAS BRAVO"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="ft"/>
-<tag k="height:upper" v="9500"/>
-</way>
-<way action="create" id="11" version="1">
-<nd ref="59"/>
-<nd ref="60"/>
-<nd ref="61"/>
-<nd ref="62"/>
-<nd ref="59"/>
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="4500"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="icao" v="LHTRA15C"/>
-<tag k="name" v="SZARVAS CHARLIE"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="ft"/>
-<tag k="height:upper" v="9500"/>
-</way>
-<way action="create" id="12" version="1">
-<nd ref="64"/>
-<nd ref="65"/>
-<nd ref="66"/>
-<nd ref="67"/>
-<nd ref="64"/>
-<tag k="height:lower:class" v="agl"/>
-<tag k="height:lower" v="0"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="icao" v="LHTRA16"/>
-<tag k="name" v="ARPAD"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="fl"/>
-<tag k="height:upper" v="115"/>
-</way>
-<way action="create" id="13" version="1">
-<nd ref="69"/>
-<nd ref="70"/>
-<nd ref="71"/>
-<nd ref="72"/>
-<nd ref="73"/>
-<nd ref="74"/>
-<nd ref="75"/>
-<nd ref="69"/>
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="9500"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="icao" v="LHTRA21A"/>
-<tag k="name" v="WEST ALPHA"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="fl"/>
-<tag k="height:upper" v="245"/>
-</way>
-<way action="create" id="14" version="1">
-<nd ref="77"/>
-<nd ref="78"/>
-<nd ref="79"/>
-<nd ref="77"/>
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="135"/>
+<tag k="height:lower" v="365"/>
 <tag k="height:upper:class" v="amsl"/>
 <tag k="height:lower:unit" v="fl"/>
-<tag k="icao" v="LHTRA21B"/>
-<tag k="name" v="WEST BRAVO"/>
+<tag k="icao" v="LHTRA33B"/>
+<tag k="name" v="TOP EAST BRAVO"/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="TRA"/>
 <tag k="height:upper:unit" v="fl"/>
-<tag k="height:upper" v="215"/>
+<tag k="height:upper" v="420"/>
 </way>
-<way action="create" id="15" version="1">
-<nd ref="81"/>
-<nd ref="82"/>
-<nd ref="83"/>
-<nd ref="84"/>
-<nd ref="85"/>
-<nd ref="86"/>
-<nd ref="81"/>
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="135"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="fl"/>
-<tag k="icao" v="LHTRA21C"/>
-<tag k="name" v="WEST CHARLIE"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="fl"/>
-<tag k="height:upper" v="175"/>
-</way>
-<way action="create" id="16" version="1">
-<nd ref="88"/>
-<nd ref="89"/>
-<nd ref="90"/>
-<nd ref="91"/>
-<nd ref="92"/>
-<nd ref="88"/>
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="4000"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="icao" v="LHTRA21D"/>
-<tag k="name" v="WEST DELTA"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="ft"/>
-<tag k="height:upper" v="9500"/>
-</way>
-<way action="create" id="17" version="1">
-<nd ref="94"/>
-<nd ref="95"/>
-<nd ref="96"/>
-<nd ref="97"/>
-<nd ref="98"/>
-<nd ref="94"/>
-<tag k="height:lower:class" v="agl"/>
-<tag k="height:lower" v="0"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="icao" v="LHTRA21E"/>
-<tag k="name" v="WEST ECHO"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="ft"/>
-<tag k="height:upper" v="4000"/>
-</way>
-<way action="create" id="18" version="1">
-<nd ref="100"/>
-<nd ref="101"/>
-<nd ref="102"/>
-<nd ref="103"/>
-<nd ref="104"/>
-<nd ref="105"/>
-<nd ref="100"/>
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="125"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="fl"/>
-<tag k="icao" v="LHTRA22A"/>
-<tag k="name" v="SOUTH ALPHA"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="fl"/>
-<tag k="height:upper" v="175"/>
-</way>
-<way action="create" id="19" version="1">
-<nd ref="107"/>
-<nd ref="108"/>
-<nd ref="109"/>
-<nd ref="110"/>
-<nd ref="111"/>
-<nd ref="112"/>
-<nd ref="113"/>
-<nd ref="107"/>
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="9500"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="icao" v="LHTRA22B"/>
-<tag k="name" v="SOUTH BRAVO"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="fl"/>
-<tag k="height:upper" v="175"/>
-</way>
-<way action="create" id="20" version="1">
-<nd ref="115"/>
-<nd ref="116"/>
-<nd ref="117"/>
-<nd ref="118"/>
-<nd ref="119"/>
-<nd ref="120"/>
-<nd ref="121"/>
-<nd ref="122"/>
-<nd ref="115"/>
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="175"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="fl"/>
-<tag k="icao" v="LHTRA22C"/>
-<tag k="name" v="SOUTH CHARLIE"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="fl"/>
-<tag k="height:upper" v="245"/>
-</way>
-<way action="create" id="21" version="1">
-<nd ref="124"/>
-<nd ref="125"/>
-<nd ref="126"/>
-<nd ref="127"/>
-<nd ref="128"/>
-<nd ref="129"/>
-<nd ref="130"/>
-<nd ref="131"/>
-<nd ref="124"/>
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="9500"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="icao" v="LHTRA22D"/>
-<tag k="name" v="SOUTH DELTA"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="fl"/>
-<tag k="height:upper" v="145"/>
-</way>
-<way action="create" id="22" version="1">
-<nd ref="133"/>
-<nd ref="134"/>
-<nd ref="135"/>
-<nd ref="136"/>
-<nd ref="137"/>
-<nd ref="133"/>
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="9500"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="icao" v="LHTRA22E"/>
-<tag k="name" v="SOUTH ECHO"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="fl"/>
-<tag k="height:upper" v="125"/>
-</way>
-<way action="create" id="23" version="1">
-<nd ref="139"/>
-<nd ref="140"/>
-<nd ref="141"/>
-<nd ref="142"/>
-<nd ref="139"/>
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="4000"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="icao" v="LHTRA22F"/>
-<tag k="name" v="SOUTH FOXTROT"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="ft"/>
-<tag k="height:upper" v="9500"/>
-</way>
-<way action="create" id="24" version="1">
-<nd ref="144"/>
-<nd ref="145"/>
-<nd ref="146"/>
-<nd ref="147"/>
-<nd ref="148"/>
-<nd ref="149"/>
-<nd ref="150"/>
-<nd ref="144"/>
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="9500"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="icao" v="LHTRA23A"/>
-<tag k="name" v="EAST ALPHA"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="fl"/>
-<tag k="height:upper" v="245"/>
-</way>
-<way action="create" id="25" version="1">
-<nd ref="152"/>
-<nd ref="153"/>
-<nd ref="154"/>
-<nd ref="155"/>
-<nd ref="156"/>
-<nd ref="157"/>
-<nd ref="158"/>
-<nd ref="159"/>
-<nd ref="152"/>
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="135"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="fl"/>
-<tag k="icao" v="LHTRA23B"/>
-<tag k="name" v="EAST BRAVO"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="fl"/>
-<tag k="height:upper" v="175"/>
-</way>
-<way action="create" id="26" version="1">
-<nd ref="161"/>
-<nd ref="162"/>
-<nd ref="163"/>
-<nd ref="164"/>
-<nd ref="165"/>
-<nd ref="166"/>
-<nd ref="161"/>
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="135"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="fl"/>
-<tag k="icao" v="LHTRA23C"/>
-<tag k="name" v="EAST CHARLIE"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="fl"/>
-<tag k="height:upper" v="175"/>
-</way>
-<way action="create" id="27" version="1">
-<nd ref="168"/>
-<nd ref="169"/>
-<nd ref="170"/>
-<nd ref="171"/>
-<nd ref="172"/>
-<nd ref="168"/>
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="4000"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="icao" v="LHTRA23D"/>
-<tag k="name" v="EAST DELTA"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="ft"/>
-<tag k="height:upper" v="9500"/>
-</way>
-<way action="create" id="28" version="1">
-<nd ref="174"/>
-<nd ref="175"/>
-<nd ref="176"/>
-<nd ref="177"/>
-<nd ref="178"/>
-<nd ref="174"/>
-<tag k="height:lower:class" v="agl"/>
-<tag k="height:lower" v="0"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="icao" v="LHTRA23E"/>
-<tag k="name" v="EAST ECHO"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="ft"/>
-<tag k="height:upper" v="4000"/>
-</way>
-<way action="create" id="29" version="1">
-<nd ref="180"/>
-<nd ref="181"/>
-<nd ref="182"/>
-<nd ref="183"/>
-<nd ref="184"/>
-<nd ref="185"/>
-<nd ref="186"/>
-<nd ref="180"/>
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="245"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="fl"/>
-<tag k="icao" v="LHTRA31A"/>
-<tag k="name" v="UPPER WEST ALPHA"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="fl"/>
-<tag k="height:upper" v="285"/>
-</way>
-<way action="create" id="30" version="1">
-<nd ref="188"/>
-<nd ref="189"/>
-<nd ref="190"/>
-<nd ref="191"/>
-<nd ref="188"/>
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="245"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="fl"/>
-<tag k="icao" v="LHTRA31B"/>
-<tag k="name" v="UPPER WEST BRAVO"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="fl"/>
-<tag k="height:upper" v="285"/>
-</way>
-<way action="create" id="31" version="1">
-<nd ref="193"/>
-<nd ref="194"/>
-<nd ref="195"/>
-<nd ref="196"/>
-<nd ref="197"/>
-<nd ref="198"/>
-<nd ref="199"/>
-<nd ref="193"/>
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="245"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="fl"/>
-<tag k="icao" v="LHTRA32A"/>
-<tag k="name" v="UPPER EAST ALPHA"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="fl"/>
-<tag k="height:upper" v="305"/>
-</way>
-<way action="create" id="32" version="1">
-<nd ref="201"/>
-<nd ref="202"/>
-<nd ref="203"/>
-<nd ref="204"/>
-<nd ref="201"/>
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="245"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="fl"/>
-<tag k="icao" v="LHTRA32B"/>
-<tag k="name" v="UPPER EAST BRAVO"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TRA"/>
-<tag k="height:upper:unit" v="fl"/>
-<tag k="height:upper" v="305"/>
-</way>
-<way action="create" id="33" version="1">
-<nd ref="206"/>
-<nd ref="207"/>
-<nd ref="208"/>
-<nd ref="209"/>
-<nd ref="210"/>
-<nd ref="211"/>
-<nd ref="212"/>
-<nd ref="206"/>
+<way action="create" id="-33" version="1">
+<nd ref="-206"/>
+<nd ref="-207"/>
+<nd ref="-208"/>
+<nd ref="-209"/>
+<nd ref="-210"/>
+<nd ref="-211"/>
+<nd ref="-212"/>
+<nd ref="-206"/>
 <tag k="height:lower:class" v="amsl"/>
 <tag k="height:lower" v="365"/>
 <tag k="height:upper:class" v="amsl"/>
@@ -793,21 +221,593 @@
 <tag k="height:upper:unit" v="fl"/>
 <tag k="height:upper" v="420"/>
 </way>
-<way action="create" id="34" version="1">
-<nd ref="214"/>
-<nd ref="215"/>
-<nd ref="216"/>
-<nd ref="217"/>
-<nd ref="214"/>
+<way action="create" id="-32" version="1">
+<nd ref="-201"/>
+<nd ref="-202"/>
+<nd ref="-203"/>
+<nd ref="-204"/>
+<nd ref="-201"/>
 <tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="365"/>
+<tag k="height:lower" v="245"/>
 <tag k="height:upper:class" v="amsl"/>
 <tag k="height:lower:unit" v="fl"/>
-<tag k="icao" v="LHTRA33B"/>
-<tag k="name" v="TOP EAST BRAVO"/>
+<tag k="icao" v="LHTRA32B"/>
+<tag k="name" v="UPPER EAST BRAVO"/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="TRA"/>
 <tag k="height:upper:unit" v="fl"/>
-<tag k="height:upper" v="420"/>
+<tag k="height:upper" v="305"/>
+</way>
+<way action="create" id="-31" version="1">
+<nd ref="-193"/>
+<nd ref="-194"/>
+<nd ref="-195"/>
+<nd ref="-196"/>
+<nd ref="-197"/>
+<nd ref="-198"/>
+<nd ref="-199"/>
+<nd ref="-193"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:lower" v="245"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="fl"/>
+<tag k="icao" v="LHTRA32A"/>
+<tag k="name" v="UPPER EAST ALPHA"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="fl"/>
+<tag k="height:upper" v="305"/>
+</way>
+<way action="create" id="-30" version="1">
+<nd ref="-188"/>
+<nd ref="-189"/>
+<nd ref="-190"/>
+<nd ref="-191"/>
+<nd ref="-188"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:lower" v="245"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="fl"/>
+<tag k="icao" v="LHTRA31B"/>
+<tag k="name" v="UPPER WEST BRAVO"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="fl"/>
+<tag k="height:upper" v="285"/>
+</way>
+<way action="create" id="-29" version="1">
+<nd ref="-180"/>
+<nd ref="-181"/>
+<nd ref="-182"/>
+<nd ref="-183"/>
+<nd ref="-184"/>
+<nd ref="-185"/>
+<nd ref="-186"/>
+<nd ref="-180"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:lower" v="245"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="fl"/>
+<tag k="icao" v="LHTRA31A"/>
+<tag k="name" v="UPPER WEST ALPHA"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="fl"/>
+<tag k="height:upper" v="285"/>
+</way>
+<way action="create" id="-28" version="1">
+<nd ref="-174"/>
+<nd ref="-175"/>
+<nd ref="-176"/>
+<nd ref="-177"/>
+<nd ref="-178"/>
+<nd ref="-174"/>
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:lower" v="0"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="icao" v="LHTRA23E"/>
+<tag k="name" v="EAST ECHO"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper" v="4000"/>
+</way>
+<way action="create" id="-27" version="1">
+<nd ref="-168"/>
+<nd ref="-169"/>
+<nd ref="-170"/>
+<nd ref="-171"/>
+<nd ref="-172"/>
+<nd ref="-168"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:lower" v="4000"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="icao" v="LHTRA23D"/>
+<tag k="name" v="EAST DELTA"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper" v="9500"/>
+</way>
+<way action="create" id="-26" version="1">
+<nd ref="-161"/>
+<nd ref="-162"/>
+<nd ref="-163"/>
+<nd ref="-164"/>
+<nd ref="-165"/>
+<nd ref="-166"/>
+<nd ref="-161"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:lower" v="135"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="fl"/>
+<tag k="icao" v="LHTRA23C"/>
+<tag k="name" v="EAST CHARLIE"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="fl"/>
+<tag k="height:upper" v="175"/>
+</way>
+<way action="create" id="-25" version="1">
+<nd ref="-152"/>
+<nd ref="-153"/>
+<nd ref="-154"/>
+<nd ref="-155"/>
+<nd ref="-156"/>
+<nd ref="-157"/>
+<nd ref="-158"/>
+<nd ref="-159"/>
+<nd ref="-152"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:lower" v="135"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="fl"/>
+<tag k="icao" v="LHTRA23B"/>
+<tag k="name" v="EAST BRAVO"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="fl"/>
+<tag k="height:upper" v="175"/>
+</way>
+<way action="create" id="-24" version="1">
+<nd ref="-144"/>
+<nd ref="-145"/>
+<nd ref="-146"/>
+<nd ref="-147"/>
+<nd ref="-148"/>
+<nd ref="-149"/>
+<nd ref="-150"/>
+<nd ref="-144"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:lower" v="9500"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="icao" v="LHTRA23A"/>
+<tag k="name" v="EAST ALPHA"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="fl"/>
+<tag k="height:upper" v="245"/>
+</way>
+<way action="create" id="-23" version="1">
+<nd ref="-139"/>
+<nd ref="-140"/>
+<nd ref="-141"/>
+<nd ref="-142"/>
+<nd ref="-139"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:lower" v="4000"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="icao" v="LHTRA22F"/>
+<tag k="name" v="SOUTH FOXTROT"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper" v="9500"/>
+</way>
+<way action="create" id="-22" version="1">
+<nd ref="-133"/>
+<nd ref="-134"/>
+<nd ref="-135"/>
+<nd ref="-136"/>
+<nd ref="-137"/>
+<nd ref="-133"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:lower" v="9500"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="icao" v="LHTRA22E"/>
+<tag k="name" v="SOUTH ECHO"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="fl"/>
+<tag k="height:upper" v="125"/>
+</way>
+<way action="create" id="-21" version="1">
+<nd ref="-124"/>
+<nd ref="-125"/>
+<nd ref="-126"/>
+<nd ref="-127"/>
+<nd ref="-128"/>
+<nd ref="-129"/>
+<nd ref="-130"/>
+<nd ref="-131"/>
+<nd ref="-124"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:lower" v="9500"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="icao" v="LHTRA22D"/>
+<tag k="name" v="SOUTH DELTA"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="fl"/>
+<tag k="height:upper" v="145"/>
+</way>
+<way action="create" id="-20" version="1">
+<nd ref="-115"/>
+<nd ref="-116"/>
+<nd ref="-117"/>
+<nd ref="-118"/>
+<nd ref="-119"/>
+<nd ref="-120"/>
+<nd ref="-121"/>
+<nd ref="-122"/>
+<nd ref="-115"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:lower" v="175"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="fl"/>
+<tag k="icao" v="LHTRA22C"/>
+<tag k="name" v="SOUTH CHARLIE"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="fl"/>
+<tag k="height:upper" v="245"/>
+</way>
+<way action="create" id="-19" version="1">
+<nd ref="-107"/>
+<nd ref="-108"/>
+<nd ref="-109"/>
+<nd ref="-110"/>
+<nd ref="-111"/>
+<nd ref="-112"/>
+<nd ref="-113"/>
+<nd ref="-107"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:lower" v="9500"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="icao" v="LHTRA22B"/>
+<tag k="name" v="SOUTH BRAVO"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="fl"/>
+<tag k="height:upper" v="175"/>
+</way>
+<way action="create" id="-18" version="1">
+<nd ref="-100"/>
+<nd ref="-101"/>
+<nd ref="-102"/>
+<nd ref="-103"/>
+<nd ref="-104"/>
+<nd ref="-105"/>
+<nd ref="-100"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:lower" v="125"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="fl"/>
+<tag k="icao" v="LHTRA22A"/>
+<tag k="name" v="SOUTH ALPHA"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="fl"/>
+<tag k="height:upper" v="175"/>
+</way>
+<way action="create" id="-17" version="1">
+<nd ref="-94"/>
+<nd ref="-95"/>
+<nd ref="-96"/>
+<nd ref="-97"/>
+<nd ref="-98"/>
+<nd ref="-94"/>
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:lower" v="0"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="icao" v="LHTRA21E"/>
+<tag k="name" v="WEST ECHO"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper" v="4000"/>
+</way>
+<way action="create" id="-16" version="1">
+<nd ref="-88"/>
+<nd ref="-89"/>
+<nd ref="-90"/>
+<nd ref="-91"/>
+<nd ref="-92"/>
+<nd ref="-88"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:lower" v="4000"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="icao" v="LHTRA21D"/>
+<tag k="name" v="WEST DELTA"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper" v="9500"/>
+</way>
+<way action="create" id="-15" version="1">
+<nd ref="-81"/>
+<nd ref="-82"/>
+<nd ref="-83"/>
+<nd ref="-84"/>
+<nd ref="-85"/>
+<nd ref="-86"/>
+<nd ref="-81"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:lower" v="135"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="fl"/>
+<tag k="icao" v="LHTRA21C"/>
+<tag k="name" v="WEST CHARLIE"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="fl"/>
+<tag k="height:upper" v="175"/>
+</way>
+<way action="create" id="-14" version="1">
+<nd ref="-77"/>
+<nd ref="-78"/>
+<nd ref="-79"/>
+<nd ref="-77"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:lower" v="135"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="fl"/>
+<tag k="icao" v="LHTRA21B"/>
+<tag k="name" v="WEST BRAVO"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="fl"/>
+<tag k="height:upper" v="215"/>
+</way>
+<way action="create" id="-13" version="1">
+<nd ref="-69"/>
+<nd ref="-70"/>
+<nd ref="-71"/>
+<nd ref="-72"/>
+<nd ref="-73"/>
+<nd ref="-74"/>
+<nd ref="-75"/>
+<nd ref="-69"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:lower" v="9500"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="icao" v="LHTRA21A"/>
+<tag k="name" v="WEST ALPHA"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="fl"/>
+<tag k="height:upper" v="245"/>
+</way>
+<way action="create" id="-12" version="1">
+<nd ref="-64"/>
+<nd ref="-65"/>
+<nd ref="-66"/>
+<nd ref="-67"/>
+<nd ref="-64"/>
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:lower" v="0"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="icao" v="LHTRA16"/>
+<tag k="name" v="ARPAD"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="fl"/>
+<tag k="height:upper" v="115"/>
+</way>
+<way action="create" id="-11" version="1">
+<nd ref="-59"/>
+<nd ref="-60"/>
+<nd ref="-61"/>
+<nd ref="-62"/>
+<nd ref="-59"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:lower" v="4500"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="icao" v="LHTRA15C"/>
+<tag k="name" v="SZARVAS CHARLIE"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper" v="9500"/>
+</way>
+<way action="create" id="-10" version="1">
+<nd ref="-54"/>
+<nd ref="-55"/>
+<nd ref="-56"/>
+<nd ref="-57"/>
+<nd ref="-54"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:lower" v="4500"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="icao" v="LHTRA15B"/>
+<tag k="name" v="SZARVAS BRAVO"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper" v="9500"/>
+</way>
+<way action="create" id="-9" version="1">
+<nd ref="-49"/>
+<nd ref="-50"/>
+<nd ref="-51"/>
+<nd ref="-52"/>
+<nd ref="-49"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:lower" v="4500"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="icao" v="LHTRA15A"/>
+<tag k="name" v="SZARVAS ALPHA"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper" v="9500"/>
+</way>
+<way action="create" id="-8" version="1">
+<nd ref="-44"/>
+<nd ref="-45"/>
+<nd ref="-46"/>
+<nd ref="-47"/>
+<nd ref="-44"/>
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:lower" v="0"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="icao" v="LHTRA14C"/>
+<tag k="name" v="MEZO CHARLIE"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper" v="4500"/>
+</way>
+<way action="create" id="-7" version="1">
+<nd ref="-39"/>
+<nd ref="-40"/>
+<nd ref="-41"/>
+<nd ref="-42"/>
+<nd ref="-39"/>
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:lower" v="0"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="icao" v="LHTRA14B"/>
+<tag k="name" v="MEZO BRAVO"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper" v="4500"/>
+</way>
+<way action="create" id="-6" version="1">
+<nd ref="-34"/>
+<nd ref="-35"/>
+<nd ref="-36"/>
+<nd ref="-37"/>
+<nd ref="-34"/>
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:lower" v="0"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="icao" v="LHTRA14A"/>
+<tag k="name" v="MEZO ALPHA"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper" v="4500"/>
+</way>
+<way action="create" id="-5" version="1">
+<nd ref="-24"/>
+<nd ref="-25"/>
+<nd ref="-26"/>
+<nd ref="-27"/>
+<nd ref="-28"/>
+<nd ref="-29"/>
+<nd ref="-30"/>
+<nd ref="-31"/>
+<nd ref="-32"/>
+<nd ref="-24"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:lower" v="9500"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="icao" v="LHTRA13"/>
+<tag k="name" v="TISZA"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="fl"/>
+<tag k="height:upper" v="145"/>
+</way>
+<way action="create" id="-4" version="1">
+<nd ref="-18"/>
+<nd ref="-19"/>
+<nd ref="-20"/>
+<nd ref="-21"/>
+<nd ref="-22"/>
+<nd ref="-18"/>
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:lower" v="0"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="icao" v="LHTRA12"/>
+<tag k="name" v="KUNSAG"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="fl"/>
+<tag k="height:upper" v="115"/>
+</way>
+<way action="create" id="-3" version="1">
+<nd ref="-12"/>
+<nd ref="-13"/>
+<nd ref="-14"/>
+<nd ref="-15"/>
+<nd ref="-16"/>
+<nd ref="-12"/>
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:lower" v="0"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="icao" v="LHTRA11C"/>
+<tag k="name" v="PAPA CHARLIE"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper" v="4000"/>
+</way>
+<way action="create" id="-2" version="1">
+<nd ref="-6"/>
+<nd ref="-7"/>
+<nd ref="-8"/>
+<nd ref="-9"/>
+<nd ref="-10"/>
+<nd ref="-6"/>
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:lower" v="4000"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="icao" v="LHTRA11B"/>
+<tag k="name" v="PAPA BRAVO"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper" v="9500"/>
+</way>
+<way action="create" id="-1" version="1">
+<nd ref="-1"/>
+<nd ref="-2"/>
+<nd ref="-3"/>
+<nd ref="-4"/>
+<nd ref="-1"/>
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:lower" v="0"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="icao" v="LHTRA11A"/>
+<tag k="name" v="PAPA ALPHA"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TRA"/>
+<tag k="height:upper:unit" v="fl"/>
+<tag k="height:upper" v="125"/>
 </way>
 </osm>

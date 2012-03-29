@@ -372,10 +372,21 @@ public final class OamDiff {
                 Way w = new Way(baseWay);
                 w.setAction(Action.DELETE);
 
-                deletedOam.getWays().put(w.getId(), w);
-
                 deletedOam.importWayNodes(w, baseOam.getNodes());
-                markNodes(baseWay, deletedOam.getNodes(), Action.DELETE, false);
+                markNodes(w, deletedOam.getNodes(), Action.DELETE, false);
+
+                // make sure all ids are positive
+                if (w.getId() < 0) {
+                    w.setId(-w.getId());
+                }
+                for (int i = 0; i < w.getNodeList().size(); ++i) {
+                    int j = w.getNodeList().get(i);
+                    if (j < 0) {
+                        w.getNodeList().set(i,  -j);
+                    }
+                }
+
+                deletedOam.getWays().put(w.getId(), w);
             }
         }
 

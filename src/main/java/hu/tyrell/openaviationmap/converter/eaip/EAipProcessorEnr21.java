@@ -338,7 +338,7 @@ public class EAipProcessorEnr21 extends EAipProcessor {
             XPath xpath = XPathFactory.newInstance().newXPath();
 
             // get the name
-            String name = xpath.evaluate("td[1]//strong/text()[1]",
+            String name = xpath.evaluate("td[1]//strong/text()",
                                          airspaceNode).trim();
             airspace.setName(name);
 
@@ -356,12 +356,14 @@ public class EAipProcessorEnr21 extends EAipProcessor {
 
             // get the vertical limits
             xpath.reset();
-            str = xpath.evaluate("td[1]/text()[2]", airspaceNode);
+            str = xpath.evaluate("td[1]/br[2]/following-sibling::text()[1]",
+                                 airspaceNode);
             Elevation upperLimit = processElevation(str.trim());
             airspace.setUpperLimit(upperLimit);
 
             xpath.reset();
-            str = xpath.evaluate("td[1]/text()[3]", airspaceNode);
+            str = xpath.evaluate("td[1]/br[3]/following-sibling::text()[1]",
+                                 airspaceNode);
             Elevation lowerLimit = processElevation(str.trim());
             airspace.setLowerLimit(lowerLimit);
 

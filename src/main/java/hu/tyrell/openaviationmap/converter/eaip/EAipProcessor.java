@@ -224,7 +224,7 @@ public class EAipProcessor {
                                     List<Point> borderPoints)
                                                       throws ParseException {
 
-        if ("The borders of the Republic of Hungary".equals(boundaryDesc)) {
+        if (boundaryDesc.startsWith("The borders of")) {
             Vector<Point> pointList = new Vector<Point>(borderPoints);
             Ring          boundary  = new Ring();
 

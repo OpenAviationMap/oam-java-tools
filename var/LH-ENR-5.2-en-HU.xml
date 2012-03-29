@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 
-<?Fm Condition APSDataLink_NULL APSDataLink NO_OVERRIDE show?>
-<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
-<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
-<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
-<?Fm Condition APSToBeInserted APSInsertion NO_OVERRIDE show?>
-<?Fm Condition APSToBeDeleted APSDeletion STRIKETHROUGH show?>
-<?Fm Condition Source%20Tag Red DOUBLE_UNDERLINE hide?>
-<?Fm Condition Comment Red SINGLE_UNDERLINE show?>
-<?Fm Condition APSDataLink APSDataLink NO_OVERRIDE show?>
-
-<?Fm BoolCondExpr "" State 0?>
-
-
-<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
-
 <?eAIP-locales ../locales.xml?>
 <e:ENR-5.2 id = "ENR-5.2" xmlns:x = "http://www.w3.org/1999/xhtml" xmlns:e = "http://www.eurocontrol.int/xmlns/AIM/eAIP" xmlns:xlink = "http://www.w3.org/1999/xlink"><?FM MARKER [FrameAPS Content] PM-0.1,557313,1595223?>
 <e:Title id = "ENR520603081427581">MILITARY EXERCISES AND TRAINING AREAS AND AIR DEFENSE IDENTIFICATION ZONE</e:Title>
 <x:p id = "ENR520606190701220" class = "Body">TRAs may operate on workdays from 30 minutes before sunrise till 24:00 LT as latest, or 17:00 LT as latest on the workday before weekend or holiday.</x:p>
-<e:Sub-section id = "ENR520708310846142" class = "Heading4" Number = "1. "><e:Title id = "ENR520708310846323">Temporary Restricted Areas</e:Title></e:Sub-section><x:table frame = "border">
+<e:Sub-section id = "ENR520708310846142" class = "Heading4" Number = "1. "><e:Title id = "ENR520708310846323">Temporary Restricted Areas</e:Title></e:Sub-section><x:table frame = "border" align = "center">
 <x:thead>
 <x:tr class = "Table-row-type-1">
 <x:th class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-0.1,3621785,655360?>Identification / NameLateral limits</x:th>
@@ -202,31 +187,9 @@
 <x:tr>
 <x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5207042113071667" class = "Cell-body">LHTRA33B / TOP EAST BRAVO</x:strong><x:br id = "ENR5207042113072568"/>480810N 0214510E - 475243N 0221532E - 471911N 0214017E - 475756N 0210710E - 480810N 0214510E</x:td>
 <x:td class = "bleft btop bright bbottom ">FL 420 / FL 365</x:td>
-<x:td class = "bleft btop bright bbottom "></x:td>
+<x:td class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CU-3.1,131072,655360?></x:td>
 </x:tr>
 </x:tbody>
-</x:table><?FM MARKER [FrameAPS Content] PU-0.1,11876667,6958588?>
-
-<?FM MARKER [FrameAPS Content] PM-3.1,1857713,11687252?>
-<e:Sub-section id = "ENR520708310845390" Number = "2. "><e:Title id = "ENR520708310845461">Air Defence Identification Zone</e:Title><x:table id = "ENR510708310828440" frame = "border">
-<x:thead>
-<x:tr class = "Table-row-type-1">
-<x:th class = "bleft btop bright bbottom ">Identification / Name,<x:br/>lateral limits</x:th>
-<x:th class = "bleft btop bright bbottom ">Upper limit / Lower limit</x:th>
-<x:th class = "bleft btop bright bbottom ">Remarks(time of activity, type of restriction, nature of hazard, risk of interception)</x:th>
-</x:tr>
-<x:tr class = "Table-row-type-2">
-<x:th class = "bleft btop bright bbottom ">1</x:th>
-<x:th class = "bleft btop bright bbottom ">2</x:th>
-<x:th class = "bleft btop bright bbottom ">3</x:th>
-</x:tr>
-</x:thead>
-<x:tbody>
-<x:tr>
-<x:td class = "bleft btop bright bbottom "><x:p id = "ENR510708310832532" class = "Body"><x:strong id = "ENR510708310831471">Border guard zone (ADIZ)</x:strong></x:p><x:p id = "ENR510708310833113" class = "Body">10 Km wide strip inside the country along the state boundaries of the Republic of Hungary</x:p></x:td>
-<x:td class = "bleft btop bright bbottom ">UNL / GND</x:td>
-<x:td class = "bleft btop bright bbottom ">Flying along the border guard zone with special authorization only.<?FM MARKER [FrameAPS Content] CU-3.1,8118501,1376256?></x:td>
-</x:tr>
-</x:tbody>
-</x:table></e:Sub-section><?FM MARKER [FrameAPS Content] PU-3.1,12746130,11687252?>
+</x:table>
+<x:p id = "ENR520708310845461" class = "Body" Updated = "Deleted" Updated-ref = "GEN022012011013121309680000">Air Defence Identification Zone</x:p><?FM MARKER [FrameAPS Content] PU-0.1,11876667,6958588?>
 </e:ENR-5.2>

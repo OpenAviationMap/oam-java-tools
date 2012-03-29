@@ -157,7 +157,7 @@ public class OAMWriterTest {
 
         reader.processEAIP(d.getDocumentElement(), null, airspaces, errors);
 
-        assertTrue(errors.isEmpty());
+        assertEquals(4, errors.size());
         assertEquals(47, airspaces.size());
 
         // convert the airspaces into an Oam object

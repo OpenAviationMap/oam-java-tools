@@ -19,7 +19,6 @@ package hu.tyrell.openaviationmap.converter;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Boundary;
 import hu.tyrell.openaviationmap.model.Circle;
@@ -77,7 +76,7 @@ public class EAIPHungaryReaderTest {
 
         reader.processEAIP(eAipNode, null, airspaces, errors);
 
-        assertTrue(errors.isEmpty());
+        assertEquals(4, errors.size());
         assertEquals(47, airspaces.size());
 
         // check LHP1

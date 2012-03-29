@@ -192,7 +192,7 @@ public class EAipToOamTest {
         testEAipToOam("var/LH-ENR-5.1-en-HU.xml",
                       "var/oam-hungary-5.1.xml",
                       "var/hungary.osm",
-                      0, 47);
+                      4, 47);
     }
 
     /**
@@ -214,7 +214,7 @@ public class EAipToOamTest {
         testEAipToOam("var/LH-ENR-5.2-en-HU.xml",
                       "var/oam-hungary-5.2.xml",
                       "var/hungary.osm",
-                      1, 34);
+                      0, 34);
     }
 
     /**

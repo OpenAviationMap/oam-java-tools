@@ -235,7 +235,7 @@ public class OAMReaderTest {
 
         reader.processEAIP(d.getDocumentElement(), null, airspaces, errors);
 
-        assertTrue(errors.isEmpty());
+        assertEquals(4, errors.size());
         assertEquals(47, airspaces.size());
 
         // convert the airspaces into an Oam object
@@ -267,7 +267,7 @@ public class OAMReaderTest {
         List<Airspace> oamAirspaces = new Vector<Airspace>();
         oamReader.processOam(d.getDocumentElement(), oamAirspaces, errors);
 
-        assertTrue(errors.isEmpty());
+        assertEquals(4, errors.size());
         assertEquals(airspaces.size(), oamAirspaces.size());
         assertTrue(airspaces.containsAll(oamAirspaces));
         assertTrue(oamAirspaces.containsAll(airspaces));

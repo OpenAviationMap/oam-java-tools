@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?eAIP-locales ../locales.xml?>
+<e:ENR-4.1 id = "ENR-4.1" xmlns:x = "http://www.w3.org/1999/xhtml" xmlns:e = "http://www.eurocontrol.int/xmlns/AIM/eAIP" xmlns:xlink = "http://www.w3.org/1999/xlink"><?FM MARKER [FrameAPS Content] PM-0.1,557313,1595223?>
+
+<e:Title id = "ENR410603081427561">RADIO NAVIGATION AIDS - EN-ROUTE</e:Title><e:Navaid-table id = "ENR410606160755260">
+<e:Navaid id = "BKS-DVORDME">
+
+<e:Navaid-type id = "ENR4106061607552622" class = "Navaid">DVOR/DME</e:Navaid-type>
+<e:Navaid-name id = "ENR4106061607552621" class = "Navaid">BÉKÉS</e:Navaid-name>
+<e:Navaid-ident id = "ENR4106061607552625">BKS</e:Navaid-ident>
+
+<e:Navaid-declination id = "ENR410802291359040" class = "Navaid">+4.2°</e:Navaid-declination><e:Navaid-frequency id = "ENR4106061607552626">115.8MHZ<x:br id = "ENR4109073011225736"/>105X</e:Navaid-frequency>
+<e:Navaid-hours id = "ENR4106061607552627">H24</e:Navaid-hours>
+<e:Latitude id = "ENR4106082910381220">464800N</e:Latitude><e:Longitude id = "ENR4106082910381221">0210426E</e:Longitude><e:Navaid-elevation id = "ENR4106061607552631">95 M</e:Navaid-elevation>
+<e:Navaid-remarks id = "ENR4106061607552632">Coverage: 100 NM/185 km<x:br id = "ENR412010090813353303430000"/>DME COORD:<x:br id = "ENR412010090813345207180000"/>464759.9N 0210426.0E</e:Navaid-remarks>
+</e:Navaid>
+<e:Navaid id = "BKS-NDB">
+
+<e:Navaid-type id = "ENR4106061607552636" class = "Navaid">NDB</e:Navaid-type>
+<e:Navaid-name id = "ENR4106061607552635" class = "Navaid">BÉKÉS</e:Navaid-name>
+<e:Navaid-ident id = "ENR4106061607552639">BKS</e:Navaid-ident>
+
+<e:Navaid-magnetic-variation id = "ENR412010092009021400930000" class = "Navaid">+4.1° / 2009</e:Navaid-magnetic-variation><e:Navaid-frequency id = "ENR4106061607552640">374KHZ</e:Navaid-frequency>
+<e:Navaid-hours id = "ENR4106061607552641">H24</e:Navaid-hours>
+<e:Latitude id = "ENR4106082910381224">464742N</e:Latitude><e:Longitude id = "ENR4106082910381225">0210441E</e:Longitude><e:Navaid-elevation id = "ENR4106061607552645"></e:Navaid-elevation>
+<e:Navaid-remarks id = "ENR4106061607552646">Coverage: 60NM/110km</e:Navaid-remarks>
+</e:Navaid>
+<e:Navaid id = "BUD-DVORDME">
+
+<e:Navaid-type id = "ENR4106061607552650" class = "Navaid">DVOR/DME</e:Navaid-type>
+<e:Navaid-name id = "ENR4106061607552649" class = "Navaid">BUDAPEST</e:Navaid-name>
+<e:Navaid-ident id = "ENR4106061607552653">BUD</e:Navaid-ident>
+
+<e:Navaid-declination id = "ENR410802291401563" class = "Navaid">+4.4°</e:Navaid-declination><e:Navaid-frequency id = "ENR4106061607552654">117.3MHZ<x:br id = "ENR412010090809473409680000"/>120X</e:Navaid-frequency>
+<e:Navaid-hours id = "ENR4106061607552655">H24</e:Navaid-hours>
+<e:Latitude id = "ENR4106082910381228">472702N</e:Latitude><e:Longitude id = "ENR410907081559110">0191458E</e:Longitude><e:Navaid-elevation id = "ENR4106061607552659">162 M</e:Navaid-elevation>
+<e:Navaid-remarks id = "ENR4106061607552660">Coverage: 100 NM/185 km
+ATIS is also transmitted.<x:br id = "ENR412010090809481104370000"/>DME COORD:<x:br id = "ENR412010090809484903590000"/>472701N 0191458E</e:Navaid-remarks>
+</e:Navaid>
+<e:Navaid id = "BUG-DVORDME">
+
+<e:Navaid-type id = "ENR4106061607552678" class = "Navaid">DVOR/DME</e:Navaid-type>
+<e:Navaid-name id = "ENR4106061607552677" class = "Navaid">BUGAC</e:Navaid-name>
+<e:Navaid-ident id = "ENR4106061607552681">BUG</e:Navaid-ident>
+
+<e:Navaid-declination id = "ENR410802291403126" class = "Navaid">+4.0°</e:Navaid-declination><e:Navaid-frequency id = "ENR4106061607552682">113.4MHZ<x:br id = "ENR4109073011231237"/>81X</e:Navaid-frequency>
+<e:Navaid-hours id = "ENR4106061607552683">H24</e:Navaid-hours>
+<e:Latitude id = "ENR4106082910381236">464040N</e:Latitude><e:Longitude id = "ENR410907300944020">0194054E</e:Longitude><e:Navaid-elevation id = "ENR4106061607552687">123 M</e:Navaid-elevation>
+<e:Navaid-remarks id = "ENR4106061607552688">Coverage: 100 NM/185 km<x:br id = "ENR412010090813314006560000"/>DME COORD:<x:br id = "ENR412010090813315806090000"/>464040N 0194054E </e:Navaid-remarks>
+</e:Navaid>
+<e:Navaid id = "BUG-NDB">
+
+<e:Navaid-type id = "ENR4106061607552692" class = "Navaid">NDB</e:Navaid-type>
+<e:Navaid-name id = "ENR4106061607552691" class = "Navaid">BUGAC</e:Navaid-name>
+<e:Navaid-ident id = "ENR4106061607552695">BUG</e:Navaid-ident>
+
+<e:Navaid-magnetic-variation id = "ENR412010092009044505930000" class = "Navaid">+3.9° / 2009</e:Navaid-magnetic-variation><e:Navaid-frequency id = "ENR4106061607552696">430 KHZ</e:Navaid-frequency>
+<e:Navaid-hours id = "ENR4106061607552697">H24</e:Navaid-hours>
+<e:Latitude id = "ENR410907301002471">464039N</e:Latitude><e:Longitude id = "ENR410907301003012">0194056E</e:Longitude><e:Navaid-elevation id = "ENR41060616075526101"></e:Navaid-elevation>
+<e:Navaid-remarks id = "ENR41060616075526102">Coverage: 60NM/110km</e:Navaid-remarks>
+</e:Navaid>
+<e:Navaid id = "GYR-DVORDME">
+
+<e:Navaid-type id = "ENR41060616075526106" class = "Navaid">DVOR/DME</e:Navaid-type>
+<e:Navaid-name id = "ENR411006281529300" class = "Navaid">GYŐR</e:Navaid-name>
+<e:Navaid-ident id = "ENR41060616075526109">GYR</e:Navaid-ident>
+
+<e:Navaid-declination id = "ENR410802291403588" class = "Navaid">+3.4°</e:Navaid-declination><e:Navaid-frequency id = "ENR41060616075526110">115.1 MHZ<x:br id = "ENR412010090809434602810000"/>98X</e:Navaid-frequency>
+<e:Navaid-hours id = "ENR41060616075526111">H24</e:Navaid-hours>
+<e:Latitude id = "ENR410907301007423">473933N</e:Latitude><e:Longitude id = "ENR410907301007484">0174328E</e:Longitude><e:Navaid-elevation id = "ENR41060616075526115">157 M</e:Navaid-elevation>
+<e:Navaid-remarks id = "ENR41060616075526116">Coverage: 100 NM/185 km<x:br id = "ENR412010090809443300780000"/>DME COORD:<x:br id = "ENR412010090809444900150000"/>473932N 0174328E</e:Navaid-remarks>
+</e:Navaid>
+<e:Navaid id = "GYR-NDB">
+
+<e:Navaid-type id = "ENR41060616075526134" class = "Navaid">NDB</e:Navaid-type>
+<e:Navaid-name id = "ENR41060616075526133" class = "Navaid">GYŐR</e:Navaid-name>
+<e:Navaid-ident id = "ENR41060616075526137">GYR</e:Navaid-ident>
+
+<e:Navaid-magnetic-variation id = "ENR412010092009054404680000" class = "Navaid">+3.5° / 2009</e:Navaid-magnetic-variation><e:Navaid-frequency id = "ENR41060616075526138">354 KHZ</e:Navaid-frequency>
+<e:Navaid-hours id = "ENR41060616075526139">H24</e:Navaid-hours>
+<e:Latitude id = "ENR4109073011144128">473936N</e:Latitude><e:Longitude id = "ENR4109073011145029">0174305E</e:Longitude><e:Navaid-elevation id = "ENR41060616075526143"></e:Navaid-elevation>
+<e:Navaid-remarks id = "ENR41060616075526144">Coverage: 60NM/110km</e:Navaid-remarks>
+</e:Navaid>
+<e:Navaid id = "JBR-NDB">
+
+<e:Navaid-type id = "ENR41060616075526148" class = "Navaid">NDB<x:br id = "ENR412010090809025309680000"/></e:Navaid-type>
+<e:Navaid-name id = "ENR41060616075526147" class = "Navaid">JÁSZBERÉNY</e:Navaid-name>
+<e:Navaid-ident id = "ENR41060616075526151">JBR</e:Navaid-ident>
+
+<e:Navaid-magnetic-variation id = "ENR412010092009062900620000" class = "Navaid">+3.9° / 2009</e:Navaid-magnetic-variation><e:Navaid-frequency id = "ENR41060616075526152">517 KHZ</e:Navaid-frequency>
+<e:Navaid-hours id = "ENR41060616075526153">H24</e:Navaid-hours>
+<e:Latitude id = "ENR410907301036192">472938N</e:Latitude><e:Longitude id = "ENR410907301036303">0195341E</e:Longitude><e:Navaid-elevation id = "ENR41060616075526157"></e:Navaid-elevation>
+<e:Navaid-remarks id = "ENR41060616075526158">Coverage: 30NM/55km</e:Navaid-remarks>
+</e:Navaid>
+<e:Navaid id = "MNR-DVORDME">
+
+<e:Navaid-type id = "ENR41060616075526162" class = "Navaid">DVOR/DME</e:Navaid-type>
+<e:Navaid-name id = "ENR41060616075526161" class = "Navaid">MONOR</e:Navaid-name>
+<e:Navaid-ident id = "ENR41060616075526165">MNR</e:Navaid-ident>
+
+<e:Navaid-declination id = "ENR4108022914051310" class = "Navaid">+4.3°</e:Navaid-declination><e:Navaid-frequency id = "ENR41060616075526166">112.5 MHZ<x:br id = "ENR412010090809155905310000"/>72X</e:Navaid-frequency>
+<e:Navaid-hours id = "ENR41060616075526167">H24</e:Navaid-hours>
+<e:Latitude id = "ENR4109073011160830">472005N</e:Latitude><e:Longitude id = "ENR4109073011161331">0192420E</e:Longitude><e:Navaid-elevation id = "ENR41060616075526171">138 M</e:Navaid-elevation>
+<e:Navaid-remarks id = "ENR41060616075526172">Coverage: 100 NM/185 km<x:br id = "ENR412010090813360403280000"/>DME COORD:<x:br id = "ENR412010090813361503280000"/>472005N 0192420E</e:Navaid-remarks>
+</e:Navaid>
+<e:Navaid id = "MNR-NDB">
+
+<e:Navaid-type id = "ENR41060616075526190" class = "Navaid">NDB<x:br id = "ENR412010090809104001400000"/>(+3.8° / 2009)</e:Navaid-type>
+<e:Navaid-name id = "ENR41060616075526189" class = "Navaid">MONOR</e:Navaid-name><e:Navaid-ident id = "ENR41060616075526193">MNR</e:Navaid-ident>
+
+<e:Navaid-frequency id = "ENR41060616075526194">288 KHZ</e:Navaid-frequency>
+<e:Navaid-hours id = "ENR41060616075526195">H24</e:Navaid-hours>
+<e:Latitude id = "ENR410907301046236">472016N</e:Latitude><e:Longitude id = "ENR410907301046287">0192359E</e:Longitude><e:Navaid-elevation id = "ENR41060616075526199"></e:Navaid-elevation>
+<e:Navaid-remarks id = "ENR41060616075526200">Coverage: 60NM/110km</e:Navaid-remarks>
+</e:Navaid>
+<e:Navaid id = "PTB-DVORDME">
+
+<e:Navaid-type id = "ENR41060616075526218" class = "Navaid">DVOR/DME</e:Navaid-type>
+<e:Navaid-name id = "ENR41060616075526217" class = "Navaid">PUSZTASZABOLCS</e:Navaid-name>
+<e:Navaid-ident id = "ENR41060616075526221">PTB</e:Navaid-ident>
+
+<e:Navaid-declination id = "ENR4108022914070414" class = "Navaid">+3.5°</e:Navaid-declination><e:Navaid-frequency id = "ENR41060616075526222">117.1 MHZ<x:br id = "ENR412010090809251105780000"/>118X</e:Navaid-frequency>
+<e:Navaid-hours id = "ENR41060616075526223">H24</e:Navaid-hours>
+<e:Latitude id = "ENR4109073011205334">470908N</e:Latitude><e:Longitude id = "ENR4109073011205735">0184432E</e:Longitude><e:Navaid-elevation id = "ENR41060616075526227">138 M</e:Navaid-elevation>
+<e:Navaid-remarks id = "ENR41060616075526228">Coverage: 100 NM/185 km<x:br id = "ENR412010090813380004060000"/>DME COORD:<x:br id = "ENR412010090813371000000000"/>470908N 0184432E</e:Navaid-remarks>
+</e:Navaid>
+<e:Navaid id = "PTB-NDB">
+
+<e:Navaid-type id = "ENR41060616075526246" class = "Navaid">NDB</e:Navaid-type>
+<e:Navaid-name id = "ENR41060616075526245" class = "Navaid">PUSZTASZABOLCS</e:Navaid-name>
+<e:Navaid-ident id = "ENR41060616075526249">PTB</e:Navaid-ident>
+
+<e:Navaid-magnetic-variation id = "ENR412010092009070808590000" class = "Navaid">+3.4° / 2009</e:Navaid-magnetic-variation><e:Navaid-frequency id = "ENR41060616075526250">386 KHZ</e:Navaid-frequency>
+<e:Navaid-hours id = "ENR41060616075526251">H24</e:Navaid-hours>
+<e:Latitude id = "ENR4109073010515410">470909N</e:Latitude><e:Longitude id = "ENR4109073010520011">0184434E</e:Longitude><e:Navaid-elevation id = "ENR41060616075526255"></e:Navaid-elevation>
+<e:Navaid-remarks id = "ENR41060616075526256">Coverage: 60NM/110km<?FM MARKER [FrameAPS Content] CU-0.1,6514065,655360?></e:Navaid-remarks>
+</e:Navaid>
+<e:Navaid id = "SAG-DVORDME">
+<?FM MARKER [FrameAPS Content] CM-1.1,131072,655360?>
+
+<e:Navaid-type id = "ENR41060616075526260" class = "Navaid">DVOR/DME</e:Navaid-type>
+<e:Navaid-name id = "ENR4109073011521839">SAJÓHÍDVÉG</e:Navaid-name>
+<e:Navaid-ident id = "ENR41060616075526263">SAG</e:Navaid-ident>
+
+<e:Navaid-declination id = "ENR4108022914100219" class = "Navaid">+4.4°</e:Navaid-declination><e:Navaid-frequency id = "ENR41060616075526264">114.4 MHZ<x:br id = "ENR4109073011233238"/>91X</e:Navaid-frequency>
+<e:Navaid-hours id = "ENR41060616075526265">H24</e:Navaid-hours>
+<e:Latitude id = "ENR4109073010532912">480029N</e:Latitude><e:Longitude id = "ENR4109073010533613">0205947E</e:Longitude><e:Navaid-elevation id = "ENR41060616075526269">114 M</e:Navaid-elevation>
+<e:Navaid-remarks id = "ENR41060616075526270">Coverage: 100 NM/185 km<x:br id = "ENR412010090813384506250000"/>DME COORD:<x:br id = "ENR412010090813390702500000"/>480029N 0205947E</e:Navaid-remarks>
+</e:Navaid>
+<e:Navaid id = "SAG-NDB">
+
+<e:Navaid-type id = "ENR41060616075526274" class = "Navaid">NDB</e:Navaid-type>
+<e:Navaid-name id = "ENR41060616075526273" class = "Navaid">SAJÓHÍDVÉG</e:Navaid-name>
+<e:Navaid-ident id = "ENR41060616075526277">SAG</e:Navaid-ident>
+
+<e:Navaid-magnetic-variation id = "ENR412010092009075101710000" class = "Navaid">+4.3° / 2009</e:Navaid-magnetic-variation><e:Navaid-frequency id = "ENR41060616075526278">390 KHZ</e:Navaid-frequency>
+<e:Navaid-hours id = "ENR41060616075526279">H24</e:Navaid-hours>
+<e:Latitude id = "ENR4109073011010814">475950N</e:Latitude><e:Longitude id = "ENR4109073011011515">0205916E</e:Longitude><e:Navaid-elevation id = "ENR41060616075526283"></e:Navaid-elevation>
+<e:Navaid-remarks id = "ENR41060616075526284">Coverage: 60NM/110km</e:Navaid-remarks>
+</e:Navaid>
+<e:Navaid id = "SVR-DVORDME">
+
+<e:Navaid-type id = "ENR41060616075526288" class = "Navaid">DVOR/DME</e:Navaid-type>
+<e:Navaid-name id = "ENR411006281529304" class = "Navaid">SÁGVÁR</e:Navaid-name>
+<e:Navaid-ident id = "ENR41060616075526291">SVR</e:Navaid-ident>
+
+<e:Navaid-declination id = "ENR4108022914111022" class = "Navaid">+3.6°</e:Navaid-declination><e:Navaid-frequency id = "ENR41060616075526292">117.7 MHZ<x:br id = "ENR412010090809414405310000"/>124X</e:Navaid-frequency>
+<e:Navaid-hours id = "ENR41060616075526293">H24</e:Navaid-hours>
+<e:Latitude id = "ENR4109073011022416">464941N</e:Latitude><e:Longitude id = "ENR4109073011022917">0180704E</e:Longitude><e:Navaid-elevation id = "ENR41060616075526297">153 M</e:Navaid-elevation>
+<e:Navaid-remarks id = "ENR41060616075526298">Coverage: 100 NM/185 km<x:br id = "ENR412010090809382600780000"/>DME COORD:<x:br id = "ENR412010090809392706250000"/>464941N 0180705E</e:Navaid-remarks>
+</e:Navaid>
+<e:Navaid id = "SVR-NDB">
+
+<e:Navaid-type id = "ENR41060616075526316" class = "Navaid">NDB</e:Navaid-type>
+<e:Navaid-name id = "ENR41060616075526315" class = "Navaid">SÁGVÁR</e:Navaid-name>
+<e:Navaid-ident id = "ENR41060616075526319">SVR</e:Navaid-ident>
+
+<e:Navaid-magnetic-variation id = "ENR412010092009083209060000" class = "Navaid">+4.3° / 2009</e:Navaid-magnetic-variation><e:Navaid-frequency id = "ENR41060616075526320">348 KHZ</e:Navaid-frequency>
+<e:Navaid-hours id = "ENR41060616075526321">H24</e:Navaid-hours>
+<e:Latitude id = "ENR4109073011072420">464947N</e:Latitude><e:Longitude id = "ENR4109073011073021">0180702E</e:Longitude><e:Navaid-elevation id = "ENR41060616075526325"></e:Navaid-elevation>
+<e:Navaid-remarks id = "ENR41060616075526326">Coverage: 60NM/110km</e:Navaid-remarks>
+</e:Navaid>
+<e:Navaid id = "SME-L">
+
+<e:Navaid-type id = "ENR412010092008521703590000" class = "Navaid">L</e:Navaid-type>
+<e:Navaid-name class = "Navaid">SÁRMELLÉK</e:Navaid-name><e:Navaid-ident>SME</e:Navaid-ident>
+
+<e:Navaid-frequency>436 KHZ</e:Navaid-frequency>
+<e:Navaid-hours>H24</e:Navaid-hours>
+<e:Latitude>463957N</e:Latitude><e:Longitude id = "ENR412010092008550901400000">0171001E</e:Longitude><e:Navaid-elevation></e:Navaid-elevation>
+<e:Navaid-remarks></e:Navaid-remarks>
+</e:Navaid>
+<e:Navaid id = "TPS-DVORDME">
+
+<e:Navaid-type id = "ENR41060616075526330" class = "Navaid">DVOR/DME</e:Navaid-type>
+<e:Navaid-name id = "ENR41060616075526329" class = "Navaid">TÁPIÓSÁP</e:Navaid-name>
+<e:Navaid-ident id = "ENR41060616075526333">TPS</e:Navaid-ident>
+
+<e:Navaid-declination id = "ENR4108022914133827" class = "Navaid">+3.9</e:Navaid-declination><e:Navaid-frequency id = "ENR41060616075526334">115.9  MHZ<x:br id = "ENR412010090809371809680000"/>106X</e:Navaid-frequency>
+<e:Navaid-hours id = "ENR41060616075526335">H24</e:Navaid-hours>
+<e:Latitude id = "ENR4109073011091822">472936N</e:Latitude><e:Longitude id = "ENR4109073011092223">0192646E</e:Longitude><e:Navaid-elevation id = "ENR41060616075526339">252 M</e:Navaid-elevation>
+<e:Navaid-remarks id = "ENR41060616075526340">Coverage: 100 NM/185 km<x:br id = "ENR412010090813395609210000"/>DME COORD:<x:br id = "ENR412010090813400908590000"/>472936N 0192646E</e:Navaid-remarks>
+</e:Navaid>
+<e:Navaid id = "TPS-NDB">
+
+<e:Navaid-type id = "ENR41060616075526357" class = "Navaid">NDB</e:Navaid-type>
+<e:Navaid-name id = "ENR41060616075526356" class = "Navaid">TÁPIÓSÁP</e:Navaid-name>
+<e:Navaid-ident id = "ENR41060616075526360">TPS</e:Navaid-ident>
+
+<e:Navaid-magnetic-variation id = "ENR412010092009091200780000" class = "Navaid">+3.8° / 2009</e:Navaid-magnetic-variation><e:Navaid-frequency id = "ENR41060616075526361">306 KHZ</e:Navaid-frequency>
+<e:Navaid-hours id = "ENR41060616075526362">H24</e:Navaid-hours>
+<e:Latitude id = "ENR4109073011124226">472936N</e:Latitude><e:Longitude id = "ENR4109073011124827">0192645E</e:Longitude><e:Navaid-elevation id = "ENR41060616075526365"></e:Navaid-elevation>
+<e:Navaid-remarks id = "ENR41060616075526366">Coverage: 60NM/110km<?FM MARKER [FrameAPS Content] CU-1.1,6514065,655360?></e:Navaid-remarks>
+</e:Navaid>
+</e:Navaid-table><?FM MARKER [FrameAPS Content] PU-0.1,18933459,5451781?>
+</e:ENR-4.1>

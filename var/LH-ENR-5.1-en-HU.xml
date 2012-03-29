@@ -1,27 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 
-<?Fm Condition APSDataLink_NULL APSDataLink NO_OVERRIDE hide?>
-<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
-<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
-<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
-<?Fm Condition XMLToBeDeleted White CHANGEBAR show?>
-<?Fm Condition APSToBeInserted APSInsertion NO_OVERRIDE show?>
-<?Fm Condition APSToBeDeleted APSDeletion STRIKETHROUGH show?>
-<?Fm Condition Source%20Tag Red DOUBLE_UNDERLINE hide?>
-<?Fm Condition Comment Red SINGLE_UNDERLINE show?>
-<?Fm Condition APSDataLink APSDataLink NO_OVERRIDE show?>
-
-<?Fm BoolCondExpr "" State 0?>
-
-
-<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
-
 <?eAIP-locales ../locales.xml?>
 <e:ENR-5.1 id = "ENR-5.1" xmlns:x = "http://www.w3.org/1999/xhtml" xmlns:e = "http://www.eurocontrol.int/xmlns/AIM/eAIP" xmlns:xlink = "http://www.w3.org/1999/xlink"><?FM MARKER [FrameAPS Content] PM-0.1,557313,1595223?>
 
 <e:Title id = "ENR510603081427571">PROHIBITED, RESTRICTED AND DANGER AREAS</e:Title>
-<e:Sub-section id = "ENR5107041213350512" class = "Heading4" Number = "1. "><e:Title id = "ENR5107041213351513">Prohibited Areas</e:Title><x:table id = "ENR511005141049560" frame = "border">
+<e:Sub-section id = "ENR5107041213350512" class = "Heading4" Number = "1. "><e:Title id = "ENR5107041213351513">Prohibited Areas</e:Title><x:table id = "ENR511005141049560" frame = "border" align = "center">
 <x:thead id = "ENR511005141049561">
 <x:tr id = "ENR511005141049562" class = "Table-row-type-1">
 <x:th id = "ENR511005141049563" class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-0.1,4468771,655360?>Identification / Name, <x:br id = "ENR510707301306310"/>Lateral limits</x:th>
@@ -47,7 +31,7 @@
 </x:tr>
 </x:tbody>
 </x:table></e:Sub-section>
-<e:Sub-section id = "ENR510704130726360" class = "Heading4" Number = "2. "><e:Title id = "ENR510704130726461">Restricted Areas</e:Title><x:table id = "ENR5110051410495619" frame = "border">
+<e:Sub-section id = "ENR510704130726360" class = "Heading4" Number = "2. "><e:Title id = "ENR510704130726461">Restricted Areas</e:Title><x:table id = "ENR5110051410495619" frame = "border" align = "center">
 <x:thead id = "ENR5110051410495620">
 <x:tr id = "ENR511005141049570" class = "Table-row-type-1">
 <x:th id = "ENR511005141049571" class = "bleft btop bright bbottom ">Identification / Name,<x:br id = "ENR510707301309281"/>lateral limits</x:th>
@@ -137,24 +121,24 @@
 <x:td id = "ENR5110051410495768" class = "bleft btop bright bbottom ">H24<x:br id = "ENR5108061308045616"/>For aircraft with less than 250 kt (IAS)</x:td>
 </x:tr>
 <x:tr id = "ENR5110051410495769" Updated = "No">
-<x:td id = "ENR5110051410495770" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
-<x:td id = "ENR5110051410495771" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
-<x:td id = "ENR5110051410495773" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
+<x:td id = "ENR5110051410495770" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "ENR5110051410495771" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "ENR5110051410495773" class = "bleft btop bright bbottom "></x:td>
 </x:tr>
 <x:tr id = "ENR5110051410495775">
-<x:td id = "ENR5110051410495776" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
-<x:td id = "ENR5110051410495777" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
-<x:td id = "ENR5110051410495779" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
+<x:td id = "ENR5110051410495776" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "ENR5110051410495777" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "ENR5110051410495779" class = "bleft btop bright bbottom "></x:td>
 </x:tr>
 <x:tr id = "ENR5110051410495781">
-<x:td id = "ENR5110051410495782" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
-<x:td id = "ENR5110051410495783" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
-<x:td id = "ENR5110051410495785" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
+<x:td id = "ENR5110051410495782" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "ENR5110051410495783" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "ENR5110051410495785" class = "bleft btop bright bbottom "></x:td>
 </x:tr>
 <x:tr id = "ENR5110051410495786">
-<x:td id = "ENR5110051410495787" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
-<x:td id = "ENR5110051410495788" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
-<x:td id = "ENR5110051410495790" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
+<x:td id = "ENR5110051410495787" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "ENR5110051410495788" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "ENR5110051410495790" class = "bleft btop bright bbottom "></x:td>
 </x:tr>
 <x:tr id = "ENR5110051410495792">
 <x:td id = "ENR5110051410495793" class = "bleft btop bright bbottom "><x:strong id = "ENR5107041309071343" class = "Cell-body">LHR29 / NYÍRTELEK</x:strong><x:br id = "ENR5107041309070642"/>A circle radius 2.5KM centred on 480150N 0213827E</x:td>
@@ -195,7 +179,7 @@
 </x:table></e:Sub-section><?FM MARKER [FrameAPS Content] PU-0.1,7961793,17434286?>
 
 <?FM MARKER [FrameAPS Content] PM-2.1,1857713,480596?>
-<e:Sub-section id = "ENR510704130734043" Number = "3. "><e:Title id = "ENR510704130734134">Danger Areas</e:Title><x:table id = "ENR51100514104957120" frame = "border">
+<e:Sub-section id = "ENR510704130734043" Number = "3. "><e:Title id = "ENR510704130734134">Danger Areas</e:Title><x:table id = "ENR51100514104957120" frame = "border" align = "center">
 <x:thead id = "ENR51100514104957121">
 <x:tr id = "ENR51100514104957122" class = "Table-row-type-1">
 <x:th id = "ENR51100514104957123" class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-2.1,4468771,655360?>Identification / Name,<x:br id = "ENR510707301312252"/>lateral limits</x:th>

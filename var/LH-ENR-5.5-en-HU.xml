@@ -1,30 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 
-<?Fm Condition APSDataLink_NULL APSDataLink NO_OVERRIDE hide?>
-<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
-<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
-<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
-<?Fm Condition XMLToBeDeleted White CHANGEBAR show?>
-<?Fm Condition APSToBeInserted APSInsertion NO_OVERRIDE show?>
-<?Fm Condition APSToBeDeleted APSDeletion STRIKETHROUGH show?>
-<?Fm Condition Source%20Tag Red DOUBLE_UNDERLINE hide?>
-<?Fm Condition Comment Red SINGLE_UNDERLINE show?>
-<?Fm Condition APSDataLink APSDataLink NO_OVERRIDE show?>
-
-<?Fm BoolCondExpr "" State 0?>
-
-
-<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
-
 <?eAIP-locales ../locales.xml?>
 <e:ENR-5.5 id = "ENR-5.5" xmlns:x = "http://www.w3.org/1999/xhtml" xmlns:e = "http://www.eurocontrol.int/xmlns/AIM/eAIP" xmlns:xlink = "http://www.w3.org/1999/xlink"><?FM MARKER [FrameAPS Content] PM-0.1,557313,1595223?>
-<e:Title id = "ENR550603081427581">AERIAL SPORTING AND RECREATIONAL ACTIVITIES</e:Title><x:table frame = "border">
+<e:Title id = "ENR550603081427581">AERIAL SPORTING AND RECREATIONAL ACTIVITIES</e:Title><x:table id = "ENR552011042908275509680000" frame = "border" Updated = "No">
 <x:thead>
 <x:tr class = "Table-row-type-1">
-<x:th class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-0.1,3468349,655360?>Designation/Name<x:br id = "ENR550704230744290"/>and lateral limits</x:th>
-<x:th class = "bleft btop bright bbottom ">Vertical limits</x:th>
-<x:th class = "bleft btop bright bbottom ">Operator/UserTel Nr.</x:th>
+<x:th class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-0.1,1062284,655360?>Designation/Name and lateral limits</x:th>
+<x:th class = "bleft btop bright bbottom ">Upper limit / Lower limit</x:th>
+<x:th class = "bleft btop bright bbottom ">Operator/User
+Tel Nr.</x:th>
 <x:th class = "bleft btop bright bbottom ">Remarks and time of ACT</x:th>
 </x:tr>
 <x:tr class = "Table-row-type-2">
@@ -36,94 +21,113 @@
 </x:thead>
 <x:tbody>
 <x:tr>
-<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR550704230744462" class = "Cell-body">LHSA1 / AEROBATICS AREA 1</x:strong><x:br id = "ENR550704230744401"/>472633N 0184454E - 472403N 0184854E - 472703N 0184754E - 472703N 0184624E - 472633N 0184454E</x:td>
-<x:td class = "bleft btop bright bbottom ">6000 FT ALT / 3000 FT ALT</x:td>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR552011042908491105780000" class = "Cell-body">LHSA1 / AEROBATICS AREA1</x:strong><x:br id = "ENR552011042908495509530000"/>472633N 0184454E  - 472403N 0184854E  - 472703N 0184754E  - 472703N 0184624E  - 472633N 0184454E</x:td>
+<x:td class = "bleft btop bright bbottom ">6000 FT ALT<x:span> / </x:span><x:br id = "ENR552011050208195102180000"/>3000 FT ALT</x:td>
 <x:td class = "bleft btop bright bbottom "></x:td>
-<x:td class = "bleft btop bright bbottom ">Working day 08:00 (UTCW) - - 17:00 (UTCW)SAT 08:00 (UTCW) - - 11:00 (UTCW)SAT 14:00 (UTCW) - - 17:00 (UTCW)SUN 08:00 (UTCW) - - 11:00 (UTCW)SUN 14:00 (UTCW) - - 17:00 (UTCW)HOL 08:00 (UTCW) - - 11:00 (UTCW)HOL 14:00 (UTCW) - - 17:00 (UTCW)<x:br id = "ENR550704230756163"/>Only for aerobatics flights.<x:br id = "ENR550704230801244"/>Prior permission required by Budapest Flight Information Centre.<x:br id = "ENR5507042308474715"/>Class G</x:td>
+<x:td class = "bleft btop bright bbottom ">Working day 08:00 (UTCW) - 17:00 (UTCW)
+Sat 08:00 (UTCW) - 11:00 (UTCW)
+Sat 14:00 (UTCW) - 17:00 (UTCW)
+HOL 14:00 (UTCW) - 17:00 (UTCW)
+Sun 14:00 (UTCW) - 17:00 (UTCW)
+HOL 08:00 (UTCW) - 11:00 (UTCW)
+Sun 08:00 (UTCW) - 11:00 (UTCW)<x:br/>Above 3000 FT AMSL prior permission required by Budapest ATS Centre.<x:br id = "ENR552011042909063502650000"/>Not available when LH-D30 activated<x:br id = "ENR552011042909064607960000"/>Class: G</x:td>
 </x:tr>
 <x:tr>
-<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR550704230802385" class = "Cell-body">LHSA2 / AEROBATICS AREA 2</x:strong><x:br id = "ENR550704230802466"/>A circle radius 1.5KM centred on 472044N 0185851E</x:td>
-<x:td class = "bleft btop bright bbottom ">3500 FT ALT / 550 FT ALT</x:td>
+<x:td class = "bleft btop bright bbottom "><x:strong class = "Cell-body">LHSA2 / AEROBATICS AREA2</x:strong><x:br id = "ENR552011042909160600150000"/>A circle radius 1.5 KM centered on 472044N 0185851E</x:td>
+<x:td class = "bleft btop bright bbottom ">3500 FT ALT<x:span> / </x:span><x:br id = "ENR552011050208200804840000"/>550 FT ALT</x:td>
 <x:td class = "bleft btop bright bbottom "></x:td>
-<x:td class = "bleft btop bright bbottom ">Working day 09:00 (UTCW) - - 15:00 (UTCW)<x:br/>Only for aerobatics flights.<x:br/>Prior permission required by Budapest Flight Information Centre.<x:br/>Class G</x:td>
+<x:td class = "bleft btop bright bbottom ">Working day 09:00 (UTCW) - 15:00 (UTCW)<x:br id = "ENR552011042909183605620000"/>Prior permission required by Budapest ATS Centre.<x:br id = "ENR552011042909185800620000"/>Class: G</x:td>
 </x:tr>
 <x:tr>
-<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR550704230806277" class = "Cell-body">LHSG1 / GLIDER AREA</x:strong><x:br id = "ENR550704230806448"/>473720N 0185425E - 473302N 0185909E - 473220N 0185858E - 473500N 0185300E - 473720N 0185425E</x:td>
-<x:td class = "bleft btop bright bbottom ">3500 FT ALT / GND</x:td>
-<x:td class = "bleft btop bright bbottom ">LHBS, LHFH, LHHH<x:br id = "ENR550704231115590"/><x:a id = "ENR550706121552140" href = "LH-AD-1.3-en-HU.html#AD-1.3">See AD 1.3</x:a></x:td>
-<x:td class = "bleft btop bright bbottom ">HX Only for VFR flights.Above 3500 FT AMSL prior permission required by Budapest ATS Centre.<x:br/>Class G</x:td>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR552011042910274403280000" class = "Cell-body">LHSG1 / GLIDER AREA1</x:strong><x:br id = "ENR552011042909300505460000"/>473720N 0185425E  - 473302N 0185909E  - 473220N 0185858E  - 473500N 0185300E  - 473720N 0185425E</x:td>
+<x:td class = "bleft btop bright bbottom ">3500 FT ALT<x:span> / </x:span><x:br id = "ENR552011050208203506090000"/>GND</x:td>
+<x:td class = "bleft btop bright bbottom ">LHBS, LHFH, LHHH<x:br/><x:a href = "LH-AD-1.3-en-HU.html#AD-1.3">See AD 1.3</x:a></x:td>
+<x:td class = "bleft btop bright bbottom ">HX<x:br id = "ENR552011042909325500150000"/>Only for VFR flights.
+Above 2500 FT AMSL prior permission required by Budapest ATS Centre.<x:br id = "ENR552011042909345902030000"/>Class: G</x:td>
 </x:tr>
 <x:tr>
-<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5507042308415711" class = "Cell-body">LHSG2/S / GLIDER AREA 2/S</x:strong><x:br id = "ENR5507042308421512"/>473500N 0185300E - 473220N 0185858E - 473002N 0185812E - 472931N 0185846E - 472910N 0190047E - 472525N 0185940E - 472519N 0185531E - 472636N 0185717E - 473328N 0184606E - 473500N 0185300E</x:td>
-<x:td class = "bleft btop bright bbottom ">6500 FT ALT / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR552011042909414103750000" class = "Cell-body">LHSG2S / GLIDER AREA2/S</x:strong><x:br id = "ENR552011042909415006250000"/>473500N 0185300E  - 473220N 0185858E  - 473002N 0185812E  - 472931N 0185846E  - 472910N 0190047E  - 472525N 0185940E  - 472519N 0185531E  - 472636N 0185717E  - 473328N 0184606E  - 473500N 0185300E</x:td>
+<x:td class = "bleft btop bright bbottom ">6500 FT ALT<x:span> / </x:span><x:br id = "ENR552011050208205202810000"/>GND</x:td>
 <x:td class = "bleft btop bright bbottom ">Hungarian Free Flying Association</x:td>
-<x:td class = "bleft btop bright bbottom ">HX Only for VFR flights.Above 3500 FT AMSL prior permission required by Budapest ATS Centre.<x:br id = "ENR5507042310021236"/>Class G</x:td>
+<x:td class = "bleft btop bright bbottom ">HX<x:br id = "ENR552011042909432807650000"/>Only for VFR flights.
+Above 3500 FT AMSL prior permission required by Budapest ATS Centre.<x:br id = "ENR552011042909441502340000"/>Class: G</x:td>
 </x:tr>
 <x:tr>
-<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5507042308433713" class = "Cell-body">LHSG2/V / GLIDER AREA 2/V</x:strong><x:br id = "ENR5507042308435514"/>473500N 0185300E - 473220N 0185858E - 473002N 0185812E - 472931N 0185846E - 472910N 0190047E - 472525N 0185940E - 472519N 0185531E - 472636N 0185717E - 473328N 0184606E - 473500N 0185300E</x:td>
-<x:td class = "bleft btop bright bbottom ">6500 FT ALT / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR552011042909503601710000" class = "Cell-body">LHSG2V / GLIDER AREA2/V</x:strong><x:br id = "ENR552011042909492603120000"/>473500N 0185300E  - 473220N 0185858E  - 473002N 0185812E  - 472931N 0185846E  - 472910N 0190047E  - 472525N 0185940E  - 472519N 0185531E  - 472636N 0185717E  - 473328N 0184606E  - 473500N 0185300E</x:td>
+<x:td class = "bleft btop bright bbottom ">6500 FT ALT<x:span> / </x:span><x:br id = "ENR552011050208211001250000"/>GND</x:td>
 <x:td class = "bleft btop bright bbottom ">LHBS, LHFH, LHHH<x:br/><x:a href = "LH-AD-1.3-en-HU.html#AD-1.3">See AD 1.3</x:a></x:td>
-<x:td class = "bleft btop bright bbottom ">HX Only for VFR flights.Above 3500 FT AMSL prior permission required by Budapest ATS Centre.<x:br/>Class G</x:td>
+<x:td class = "bleft btop bright bbottom ">HX<x:br id = "ENR552011042909500405150000"/>Only for VFR flights.
+Above 3500 FT AMSL prior permission required by Budapest ATS Centre.<x:br id = "ENR552011042909521208430000"/>Class: G</x:td>
 </x:tr>
 <x:tr>
-<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5507042309054930" class = "Cell-body">LHSG3 / GLIDER AREA</x:strong><x:br id = "ENR5507042309055531"/>473328N 0184606E - 472636N 0185717E - 472519N 0185531E - 472516N 0185346E - 473233N 0184156E - 473328N 0184606E</x:td>
-<x:td class = "bleft btop bright bbottom ">6500 FT ALT / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR552011042909555001870000" class = "Cell-body">LHSG3 / GLIDER AREA3</x:strong><x:br id = "ENR552011042909560103750000"/>473328N 0184606E  - 472636N 0185717E  - 472519N 0185531E  - 472516N 0185346E  - 473233N 0184156E  - 473328N 0184606E</x:td>
+<x:td class = "bleft btop bright bbottom ">6500 FT ALT<x:span> / </x:span><x:br id = "ENR552011050208212508590000"/>GND</x:td>
 <x:td class = "bleft btop bright bbottom ">LHBS, LHFH, LHHH<x:br/><x:a href = "LH-AD-1.3-en-HU.html#AD-1.3">See AD 1.3</x:a></x:td>
-<x:td class = "bleft btop bright bbottom ">HX Only for VFR flights. Above 4500 FT AMSL prior permission required by Budapest ATS Centre.<x:br/>Class G<?Fm Condstart APSToBeInserted?><?Fm Condend APSToBeInserted?></x:td>
+<x:td class = "bleft btop bright bbottom ">HX<x:br id = "ENR552011042909565801560000"/>Only for VFR flights.
+ Above 4500 FT AMSL prior permission required by Budapest ATS Centre.<x:br id = "ENR552011042909572507340000"/>Class: G</x:td>
 </x:tr>
 <x:tr>
-<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR550704230835179" class = "Cell-body">LHSG10 / GLIDER AREA 10</x:strong><x:br id = "ENR5507042308352810"/>474527N 0183705E - 473722N 0184005E - 474723N 0185152E - HUNGARY_SLOVAKREPUBLIC - 474527N 0183705E</x:td>
-<x:td class = "bleft btop bright bbottom ">6500 FT ALT / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR552011042909593202030000" class = "Cell-body">LHSG10 / GLIDER AREA10</x:strong><x:br id = "ENR552011042909594407960000"/>474527N 0183705E  - 473722N 0184005E  - 474723N 0185152E  - 474750N 0184351E along border HUNGARY_SLOVAKREPUBLIC - 474527N 0183705E</x:td>
+<x:td class = "bleft btop bright bbottom ">6500 FT ALT<x:span> / </x:span><x:br id = "ENR552011050208214401250000"/>GND</x:td>
 <x:td class = "bleft btop bright bbottom ">LHEM<x:br/><x:a href = "LH-AD-1.3-en-HU.html#AD-1.3">See AD 1.3</x:a></x:td>
-<x:td class = "bleft btop bright bbottom ">HX Available only for VFR flights Above 4500 FT AMSL prior permission required by Budapest ATS Centre.<x:br/>Class G<?FM MARKER [FrameAPS Content] CU-0.1,2225556,3538944?></x:td>
+<x:td class = "bleft btop bright bbottom ">HX<x:br id = "ENR552011042910010305000000"/>Available only for VFR flights
+Above 4500 FT AMSL prior permission required by Budapest ATS Centre.<x:br id = "ENR552011042910012702810000"/>Class: G</x:td>
 </x:tr>
 <x:tr>
-<x:td class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-1.1,131072,655360?><x:strong id = "ENR5507042308512616">LHSG20 / GLIDER AREA 20</x:strong><x:br id = "ENR5507042308513917"/>473900N 0190300E - 473800N 0192100E - 473600N 0191030E - 473700N 0190400E - 473900N 0190300E</x:td>
-<x:td class = "bleft btop bright bbottom ">3000 FT ALT / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR552011042910033607810000" class = "Cell-body">LHSG20 / GLIDER AREA20</x:strong><x:br id = "ENR552011042910034403900000"/>473900N 0190300E  - 473800N 0192100E  - 473600N 0191030E  - 473700N 0190400E  - 473900N 0190300E</x:td>
+<x:td class = "bleft btop bright bbottom ">3000 FT ALT<x:span> / </x:span><x:br id = "ENR552011050208220107500000"/>GND</x:td>
 <x:td class = "bleft btop bright bbottom ">LHDK<x:br/><x:a href = "LH-AD-1.3-en-HU.html#AD-1.3">See AD 1.3</x:a></x:td>
-<x:td class = "bleft btop bright bbottom ">HX Available only for VFR flights.Above 2000 FT AMSL prior permission required by Budapest ATS Centre.<x:br/>Class G</x:td>
+<x:td class = "bleft btop bright bbottom ">HX<x:br id = "ENR552011042910045702650000"/>Available only for VFR flights.
+Above 2000 FT AMSL prior permission required by Budapest ATS Centre.<x:br id = "ENR552011042910052902030000"/>Class:G<?FM MARKER [FrameAPS Content] CU-0.1,2225556,3538944?></x:td>
 </x:tr>
 <x:tr>
-<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5507042308550718" class = "Cell-body">LHSG20A / GLIDER AREA</x:strong><x:br id = "ENR5507042308551619"/>A circle radius 2KM centred on 473704N 0190836E</x:td>
-<x:td class = "bleft btop bright bbottom ">4000 FT ALT / 2000 FT ALT</x:td>
+<x:td class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-1.1,131072,655360?><x:strong id = "ENR552011042910073107340000">LHSG20A / GLIDER AREA20A</x:strong><x:br id = "ENR552011042910074400150000"/>A circle radius 2 KM centered on 473704N 0190836E</x:td>
+<x:td class = "bleft btop bright bbottom ">4000 FT ALT<x:span> / </x:span><x:br id = "ENR552011050208221408120000"/>2000 FT ALT</x:td>
 <x:td class = "bleft btop bright bbottom ">LHDK<x:br/><x:a href = "LH-AD-1.3-en-HU.html#AD-1.3">See AD 1.3</x:a></x:td>
-<x:td class = "bleft btop bright bbottom ">HX Above 2000 FT AMSL prior permission required by Budapest ATS Centre.<x:br/>Class G</x:td>
+<x:td class = "bleft btop bright bbottom ">HX<x:br id = "ENR552011042910091600620000"/>Above 2000 FT AMSL prior permission required by Budapest ATS Centre.<x:br id = "ENR552011042910100402960000"/>Class: G</x:td>
 </x:tr>
 <x:tr>
-<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5507042308571120" class = "Cell-body">LHSG21 / GLIDER AREA</x:strong><x:br id = "ENR5507042308571821"/>474100N 0190430E - 473948N 0194515E - 473800N 0192100E - 473900N 0190300E - 474100N 0190430E</x:td>
-<x:td class = "bleft btop bright bbottom ">5000 FT ALT / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR552011042910114903900000" class = "Cell-body">LHSG21 / GLIDER AREA21</x:strong><x:br id = "ENR552011042910115701560000"/>474100N 0190430E  - 473948N 0194515E  - 473800N 0192100E  - 473900N 0190300E  - 474100N 0190430E</x:td>
+<x:td class = "bleft btop bright bbottom ">5000 FT ALT<x:span> / </x:span><x:br id = "ENR552011050208223009680000"/>GND</x:td>
 <x:td class = "bleft btop bright bbottom ">LHDK<x:br/><x:a href = "LH-AD-1.3-en-HU.html#AD-1.3">See AD 1.3</x:a></x:td>
-<x:td class = "bleft btop bright bbottom ">HX Available only for VFR flights Above 2500 FT AMSL prior permission required by Budapest ATS Centre.<x:br/>Class G</x:td>
+<x:td class = "bleft btop bright bbottom ">HX<x:br id = "ENR552011042910124009060000"/>Available only for VFR flights
+Above 2500 FT AMSL prior permission required by Budapest ATS Centre.<x:br id = "ENR552011042910131201400000"/>Class: G</x:td>
 </x:tr>
 <x:tr>
-<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5507042308591622" class = "Cell-body">LHSG22 / GLIDER AREA</x:strong><x:br id = "ENR5507042308592523"/>474636N 0190905E - 474503N 0194053E - 473948N 0194515E - 474100N 0190430E - 474636N 0190905E</x:td>
-<x:td class = "bleft btop bright bbottom ">6500 FT ALT / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR552011042910143802030000" class = "Cell-body">LHSG22 / GLIDER AREA22</x:strong><x:br id = "ENR552011042910144507180000"/>474636N 0190905E  - 474503N 0194053E  - 473948N 0194515E  - 474100N 0190430E  - 474636N 0190905E</x:td>
+<x:td class = "bleft btop bright bbottom ">6500 FT ALT<x:span> / </x:span><x:br id = "ENR552011050208224502650000"/>GND</x:td>
 <x:td class = "bleft btop bright bbottom ">LHDK<x:br/><x:a href = "LH-AD-1.3-en-HU.html#AD-1.3">See AD 1.3</x:a></x:td>
-<x:td class = "bleft btop bright bbottom ">HX Available only for VFR flights.Above 3000 FT AMSL prior permission required by Budapest ATS Centre.<x:br/>Class G</x:td>
+<x:td class = "bleft btop bright bbottom ">HX<x:br id = "ENR552011042910151206710000"/>Available only for VFR flights.
+Above 3000 FT AMSL prior permission required by Budapest ATS Centre.<x:br id = "ENR552011042910153808120000"/>Class: G</x:td>
 </x:tr>
 <x:tr>
-<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5507042309004024" class = "Cell-body">LHSG23 / GLIDER AREA</x:strong><x:br id = "ENR5507042309010025"/>475547N 0193148E - 474503N 0194053E - 474636N 0190905E - 475547N 0193148E</x:td>
-<x:td class = "bleft btop bright bbottom ">7500 FT ALT / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR552011042910175304370000" class = "Cell-body">LHSG23 / GLIDER AREA23</x:strong><x:br id = "ENR552011042910175900780000"/>475547N 0193148E  - 474503N 0194053E  - 474636N 0190905E  - 475547N 0193148E</x:td>
+<x:td class = "bleft btop bright bbottom ">7500 FT ALT<x:span> / </x:span><x:br id = "ENR552011050208225503750000"/>GND</x:td>
 <x:td class = "bleft btop bright bbottom ">LHDK<x:br/><x:a href = "LH-AD-1.3-en-HU.html#AD-1.3">See AD 1.3</x:a></x:td>
-<x:td class = "bleft btop bright bbottom ">HX Available only for VFR flights.Above 6500 FT AMSL prior permission required by Budapest ATS Centre.<x:br/>Class G</x:td>
+<x:td class = "bleft btop bright bbottom ">HX<x:br id = "ENR552011042910185005620000"/>Available only for VFR flights.
+Above 6500 FT AMSL prior permission required by Budapest ATS Centre.<x:br id = "ENR552011042910201602030000"/>Class: G</x:td>
 </x:tr>
 <x:tr>
-<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5507042309021926" class = "Cell-body">LHSG24 / MOUNTAIN WAVE GLIDER AREA</x:strong><x:br id = "ENR5507042309022827"/>474946N 0185738E - 474340N 0191445E - 473900N 0190300E - 474946N 0185738E</x:td>
-<x:td class = "bleft btop bright bbottom ">FL 285 / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR552011042910215401250000" class = "Cell-body">LHSG24 / GLIDER AREA24</x:strong><x:br id = "ENR552011042910220200310000"/>474946N 0185738E  - 474340N 0191445E  - 473900N 0190300E  - 474946N 0185738E</x:td>
+<x:td class = "bleft btop bright bbottom ">FL 285<x:span> / </x:span><x:br id = "ENR552011050208230406250000"/>GND</x:td>
 <x:td class = "bleft btop bright bbottom ">LHDK<x:br/><x:a href = "LH-AD-1.3-en-HU.html#AD-1.3">See AD 1.3</x:a></x:td>
-<x:td class = "bleft btop bright bbottom ">HX Available only for mountain wave flights. Prior permission required by Budapest ATS Centre<x:br/>Class G</x:td>
+<x:td class = "bleft btop bright bbottom ">HX<x:br id = "ENR552011042910223002960000"/>Prior permission required by Budapest ATS Centre.
+Mountain wave glider flights.<x:br id = "ENR552011042910251507180000"/>Class: G</x:td>
 </x:tr>
 <x:tr>
-<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5507042309040028" class = "Cell-body">LHSG25 / GLIDER AREA</x:strong><x:br id = "ENR5507042309040729"/>480000N 0190800E - 474340N 0191445E - 474946N 0185738E - 475300N 0185600E - 480000N 0190800E</x:td>
-<x:td class = "bleft btop bright bbottom ">FL 285 / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR552011042910290205150000" class = "Cell-body">LHSG25 / GLIDER AREA25</x:strong><x:br id = "ENR552011042910290905150000"/>480000N 0190800E  - 474340N 0191445E  - 474946N 0185738E  - 475300N 0185600E  - 480000N 0190800E</x:td>
+<x:td class = "bleft btop bright bbottom ">FL 285<x:span> / </x:span><x:br id = "ENR552011050208232009530000"/>GND</x:td>
 <x:td class = "bleft btop bright bbottom ">LHDK<x:br/><x:a href = "LH-AD-1.3-en-HU.html#AD-1.3">See AD 1.3</x:a></x:td>
-<x:td class = "bleft btop bright bbottom ">HX Available only for mountain wave flights. Prior permission required by Budapest ATS Centre.<x:br/>Class G</x:td>
+<x:td class = "bleft btop bright bbottom ">HX<x:br id = "ENR552011042910294806560000"/>Prior permission required by Budapest ATS Centre.
+Mountain wave glider flights.<x:br id = "ENR552011042910301309210000"/>Class: G</x:td>
 </x:tr>
 <x:tr>
-<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR5507042309064832" class = "Cell-body">LHSG30 / GLIDER AREA</x:strong><x:br id = "ENR5507042309070033"/>475730N 0194200E - 475700N 0200120E - 475000N 0200700E - 474430N 0194600E - 474930N 0193830E - 475730N 0194200E</x:td>
-<x:td class = "bleft btop bright bbottom ">FL 285 / GND</x:td>
+<x:td class = "bleft btop bright bbottom "><x:strong id = "ENR552011042910315504530000" class = "Cell-body">LHSG30 / GLIDER AREA30</x:strong><x:br id = "ENR552011042910320307180000"/>475730N 0194200E  - 475700N 0200120E  - 475000N 0200700E  - 474430N 0194600E  - 474930N 0193830E  - 475730N 0194200E</x:td>
+<x:td class = "bleft btop bright bbottom ">FL 285<x:span> / </x:span><x:br id = "ENR552011050208233703120000"/>GND</x:td>
 <x:td class = "bleft btop bright bbottom "></x:td>
-<x:td class = "bleft btop bright bbottom ">15 SEP - 15 MAY: SR-SS<x:br id = "ENR5507042309110234"/>Available only for VFR flights.Prior permission required by Budapest ATS Centre.<x:br/>Class G<?FM MARKER [FrameAPS Content] CU-1.1,2225556,4259840?></x:td>
+<x:td class = "bleft btop bright bbottom ">15 SEP-15 MAY: ANY SR - SS<x:br id = "ENR552011042910324707650000"/>Available only for VFR flights.
+Prior permission required by Budapest ATS Centre.
+Mountain wave glider flights.<x:br id = "ENR552011042910330707960000"/>Class: G<?FM MARKER [FrameAPS Content] CU-1.1,2389298,4259840?></x:td>
 </x:tr>
 </x:tbody>
 </x:table><?FM MARKER [FrameAPS Content] PU-0.1,24054099,1595223?>

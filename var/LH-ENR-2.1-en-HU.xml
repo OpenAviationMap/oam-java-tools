@@ -1,27 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 
-<?Fm Condition APSDataLink_NULL APSDataLink NO_OVERRIDE hide?>
-<?Fm Condition XMLToBeDeleted White CHANGEBAR show?>
-<?Fm Condition FM8_SYSTEM_HIDEELEMENT AsIs NO_OVERRIDE hide?>
-<?Fm Condition FM8_TRACK_CHANGES_ADDED Forest%20Green SINGLE_UNDERLINE show?>
-<?Fm Condition FM8_TRACK_CHANGES_DELETED Red STRIKETHROUGH show?>
-<?Fm Condition APSToBeInserted APSInsertion NO_OVERRIDE show?>
-<?Fm Condition APSToBeDeleted APSDeletion STRIKETHROUGH show?>
-<?Fm Condition Source%20Tag Red DOUBLE_UNDERLINE hide?>
-<?Fm Condition Comment Red SINGLE_UNDERLINE show?>
-<?Fm Condition APSDataLink APSDataLink NO_OVERRIDE show?>
-
-<?Fm BoolCondExpr "" State 0?>
-
-
-<?Fm TrackChange Off PreviewState PREVIEW_OFF_TRACK_CHANGE?>
-
 <?eAIP-locales ../locales.xml?>
 <e:ENR-2.1 id = "ENR-2.1" xmlns:x = "http://www.w3.org/1999/xhtml" xmlns:e = "http://www.eurocontrol.int/xmlns/AIM/eAIP" xmlns:xlink = "http://www.w3.org/1999/xlink"><?FM MARKER [FrameAPS Content] PM-0.1,557313,1595223?>
 
 <e:Title id = "ENR210603081427541"><?FM MARKER [Cross-Ref] 62434: Heading3: ENR 2.1 FIR, CTA, TMA, MTMA, MCTR?>FIR, CTA, TMA, MTMA, MCTR</e:Title>
-<e:Sub-section id = "ENR210705021139452" class = "Heading4" Number = "1. "><e:Title id = "ENR210705021139523"><e:Abbreviation id = "ENR210809090706320" Ref = "ABBR-FIR"/>, <e:Abbreviation id = "ENR210809090707271" Ref = "ABBR-CTA"/>, <e:Abbreviation id = "ENR210809090708302" Ref = "ABBR-TMA"/></e:Title><x:table id = "ENR210804041129031" frame = "border">
+<e:Sub-section id = "ENR210705021139452" class = "Heading4" Number = "1. "><e:Title id = "ENR210705021139523"><e:Abbreviation id = "ENR210809090706320" Ref = "ABBR-FIR"/>, <e:Abbreviation id = "ENR210809090707271" Ref = "ABBR-CTA"/>, <e:Abbreviation id = "ENR210809090708302" Ref = "ABBR-TMA"/></e:Title><x:table id = "ENR210804041129031" frame = "border" align = "center">
 <x:thead id = "ENR210804041129032">
 <x:tr id = "ENR210804041129033" class = "Table-row-type-1">
 <x:th id = "ENR210804041129034" class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-0.1,3563702,655360?>NameLateral limitsVertical limitsClass of airspace</x:th>
@@ -40,7 +24,7 @@
 </x:thead>
 <x:tbody id = "ENR2108040411290315">
 <x:tr id = "ENR2108040411290316">
-<x:td id = "ENR2108040411290317" class = "bleft btop bright bbottom " rowspan = "4"><x:strong id = "ENR2107050208381063" class = "Cell-body">BUDAPEST FIR</x:strong><x:br id = "ENR211005121330130"/>The borders of the Republic of Hungary<x:br/>FL 660<x:br/>GND</x:td>
+<x:td id = "ENR2108040411290317" class = "bleft btop bright bbottom " rowspan = "4"><x:strong id = "ENR2107050208381063" class = "Cell-body">BUDAPEST FIR</x:strong><x:br id = "ENR211005121330130"/>The borders of <e:Deleted id = "ENR212012011310292601870000" Updated = "Deleted" Updated-ref = "GEN022012011013121309680000">Republic of </e:Deleted>Hungary<x:br/>FL 660<x:br/>GND</x:td>
 <x:td id = "ENR2108040411290322" class = "bleft btop bright bbottom ">BUDAPEST ACC</x:td>
 <x:td id = "ENR2108040411290323" class = "bleft btop bright bbottom ">BUDAPEST CONTROL/RADAR<x:br/>EN, HU<x:br/>H24				</x:td>
 <x:td id = "ENR2108040411290325" class = "bleft btop bright bbottom "></x:td>
@@ -59,12 +43,12 @@
 </x:tr>
 <x:tr id = "ENR2108040411290342">
 <x:td id = "ENR2108040411290343" class = "bleft bright bbottom ">BUDAPEST INFORMATION NORTH<x:br/>EN, HU<x:br/>H24</x:td>
-<x:td id = "ENR2108040411290345" class = "bleft bright bbottom ">119.350MHZ<?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
+<x:td id = "ENR2108040411290345" class = "bleft bright bbottom ">119.350MHZ</x:td>
 <x:td id = "ENR2108040411290347" class = "bleft bright bbottom ">Uncontrolled airspace under Budapest TMA</x:td>
 </x:tr>
 </x:tbody>
 </x:table>
-<e:Sub-section id = "ENR210707251348450" class = "Body"></e:Sub-section><x:table id = "ENR2108040411290349" frame = "border">
+<e:Sub-section id = "ENR210707251348450" class = "Body"></e:Sub-section><x:table id = "ENR2108040411290349" frame = "border" align = "center">
 <x:thead id = "ENR2108040411290350">
 <x:tr id = "ENR2108040411290351" class = "Table-row-type-1">
 <x:th id = "ENR2108040411290352" class = "bleft btop bright bbottom ">NameLateral limitsVertical limitsClass of airspace</x:th>
@@ -86,14 +70,14 @@
 <x:td id = "ENR2108040411290365" class = "bleft btop bright bbottom "><x:strong id = "ENR2108040411290366" class = "Cell-body">BUDAPEST CTA</x:strong><x:br/>Lateral limits as for Budapest FIR<x:br/>FL 660<x:br/>9500 FT AMSL<x:br/>C</x:td>
 <x:td id = "ENR2108040411290370" class = "bleft btop bright bbottom ">BUDAPEST ACC</x:td>
 <x:td id = "ENR2108040411290372" class = "bleft btop bright bbottom ">BUDAPEST CONTROL/RADAR<x:br/>EN, HU<x:br/>H24</x:td>
-<x:td id = "ENR2108040411290374" class = "bleft btop bright bbottom ">120.375MHZ<x:br/>128.100MHZ<x:br/>128.950MHZ<x:br/>130.575MHZ<x:br/>132.055MHZ CH<x:br/>133.200MHZ<x:br/>135.205MHZ CH<x:br/>135.555MHZ CH<x:br/>136.380MHZ CH<x:br/>234.250MHZ UHF<x:br/>264.650MHZ UHF<x:br/>290.650MHZ UHF<?Fm Condstart APSToBeInserted?><?Fm Condend APSToBeInserted?></x:td>
+<x:td id = "ENR2108040411290374" class = "bleft btop bright bbottom ">120.375MHZ<x:br/>128.100MHZ<x:br/>128.950MHZ<x:br/>130.575MHZ<x:br/>132.055MHZ CH<x:br/>133.200MHZ<x:br/>135.205MHZ CH<x:br/>135.555MHZ CH<x:br/>136.380MHZ CH<x:br/>234.250MHZ UHF<x:br/>264.650MHZ UHF<x:br/>290.650MHZ UHF</x:td>
 <x:td id = "ENR2108040411290387" class = "bleft btop bright bbottom " valign = "bottom">UHF frequencies available for use by 8.33 exempted State aircraft and in case of VHF COM failure<?FM MARKER [FrameAPS Content] CU-0.1,4614540,8585216?></x:td>
 </x:tr>
 </x:tbody>
 </x:table><?FM MARKER [FrameAPS Content] PU-0.1,1857713,29427374?>
 
 <?FM MARKER [FrameAPS Content] PM-1.1,1857713,415060?>
-<e:Sub-section id = "ENR2108040411290388"></e:Sub-section><x:table id = "ENR2108040411290389" frame = "border">
+<e:Sub-section id = "ENR2108040411290388"></e:Sub-section><x:table id = "ENR2108040411290389" frame = "border" align = "center">
 <x:thead id = "ENR2108040411290390">
 <x:tr id = "ENR2108040411290391" class = "Table-row-type-1">
 <x:th id = "ENR2108040411290392" class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-1.1,3563702,655360?>NameLateral limitsVertical limitsClass of airspace</x:th>
@@ -114,39 +98,39 @@
 <x:tr id = "ENR21080404112903104">
 <x:td id = "ENR21080404112903105" class = "bleft btop bright bbottom "><x:strong id = "ENR2107050208403066" class = "Cell-body">BUDAPEST TMA</x:strong><x:br/>C</x:td>
 <x:td id = "ENR21080404112903108" class = "bleft btop bright bbottom ">BUDAPEST TRCC</x:td>
-<x:td id = "ENR21080404112903110" class = "bleft btop bright bbottom ">BUDAPEST APPROACH<x:br/>EN, HU<x:br/><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
+<x:td id = "ENR21080404112903110" class = "bleft btop bright bbottom ">BUDAPEST APPROACH<x:br/>EN, HU<x:br/></x:td>
 <x:td id = "ENR21080404112903113" class = "bleft btop bright bbottom "> 129.7MHZ<x:br id = "ENR211005121400170"/> 122.975MHZ				<x:br id = "ENR211005121400520"/> 119.5MHZ								</x:td>
-<x:td id = "ENR21080404112903120" class = "bleft btop bright bbottom "><?Fm Condstart APSToBeDeleted?><?Fm Condend APSToBeDeleted?></x:td>
+<x:td id = "ENR21080404112903120" class = "bleft btop bright bbottom "></x:td>
 </x:tr>
 <x:tr>
 <x:td class = "bleft btop bright bbottom " colspan = "5">BUDAPEST TMA PARTS</x:td>
 </x:tr>
 <x:tr id = "ENR21080404112903123">
-<x:td id = "ENR21080404112903124" class = "bleft btop bright bbottom " colspan = "5"><x:strong id = "ENR2107050208405067" class = "Cell-body"><?Fm Condstart APSDataLink?>BUDAPEST TMA1<?Fm Condend APSDataLink?></x:strong><x:br id = "ENR211005121403060"/><?Fm Condstart APSDataLink?>474419N 0181530E along border HUNGARY_SLOVAKREPUBLIC - 474551N 0182754E  - 473503N 0182754E  - 470908N 0184432E  - 471331N 0181507E  - 473521N 0181527E  - 474419N 0181530E <?Fm Condend APSDataLink?><x:br id = "ENR211005121403400"/><?Fm Condstart APSDataLink?>FL 195<?Fm Condend APSDataLink?><x:br id = "ENR211005121404190"/><?Fm Condstart APSDataLink?>7500 FT ALT<?Fm Condend APSDataLink?><x:br id = "ENR211005121404450"/><?Fm Condstart APSDataLink?>C<?Fm Condend APSDataLink?></x:td>
+<x:td id = "ENR21080404112903124" class = "bleft btop bright bbottom " colspan = "5"><x:strong id = "ENR2107050208405067" class = "Cell-body">BUDAPEST TMA1</x:strong><x:br id = "ENR211005121403060"/>474419N 0181530E along border HUNGARY_SLOVAKREPUBLIC - 474551N 0182754E  - 473503N 0182754E  - 470908N 0184432E  - 471331N 0181507E  - 473521N 0181527E  - 474419N 0181530E<x:br id = "ENR211005121403400"/>FL 195<x:br id = "ENR211005121404190"/>7500 FT ALT<x:br id = "ENR211005121404450"/>C</x:td>
 </x:tr>
 <x:tr id = "ENR21080404112903135">
-<x:td id = "ENR21080404112903136" class = "bleft btop bright bbottom " colspan = "5"><x:strong id = "ENR2107050208411968" class = "Cell-body"><?Fm Condstart APSDataLink?>BUDAPEST TMA2<?Fm Condend APSDataLink?></x:strong><x:br id = "ENR211005121409070"/><?Fm Condstart APSDataLink?>474551N 0182754E along border HUNGARY_SLOVAKREPUBLIC - 474527N 0183705E  - 473233N 0184156E  - 472516N 0185346E  - 470806N 0185112E  - 470908N 0184432E  - 473503N 0182754E  - 474551N 0182754E <?Fm Condend APSDataLink?><x:br id = "ENR211005121409470"/><?Fm Condstart APSDataLink?>FL 195<x:br id = "ENR211005121410440"/>6500 FT ALT<?Fm Condend APSDataLink?><x:br id = "ENR211005121411000"/><?Fm Condstart APSDataLink?>C<?Fm Condend APSDataLink?></x:td>
+<x:td id = "ENR21080404112903136" class = "bleft btop bright bbottom " colspan = "5"><x:strong id = "ENR2107050208411968" class = "Cell-body">BUDAPEST TMA2</x:strong><x:br id = "ENR211005121409070"/>474551N 0182754E along border HUNGARY_SLOVAKREPUBLIC - 474527N 0183705E  - 473233N 0184156E  - 472516N 0185346E  - 470806N 0185112E  - 470908N 0184432E  - 473503N 0182754E  - 474551N 0182754E<x:br id = "ENR211005121409470"/>FL 195<x:br id = "ENR211005121410440"/>6500 FT ALT<x:br id = "ENR211005121411000"/>C</x:td>
 </x:tr>
 <x:tr id = "ENR21080404112904147">
-<x:td id = "ENR21080404112904148" class = "bleft btop bright bbottom " colspan = "5"><x:strong id = "ENR2107050208413269" class = "Cell-body"><?Fm Condstart APSDataLink?>BUDAPEST TMA3<?Fm Condend APSDataLink?></x:strong><x:br id = "ENR211005121412160"/><?Fm Condstart APSDataLink?>474527N 0183705E  - 473233N 0184156E  - 472516N 0185346E  - 470806N 0185112E  - 470403N 0191630E  - 470606N 0192729E  - 472525N 0185940E  - 473055N 0190118E  - 473220N 0185858E  - 473500N 0185300E  - 473720N 0185425E  - 474643N 0190652E  - 474750N 0184351E along border HUNGARY_SLOVAKREPUBLIC - 474527N 0183705E <?Fm Condend APSDataLink?><x:br id = "ENR211005121412450"/><?Fm Condstart APSDataLink?>FL 195<?Fm Condend APSDataLink?><x:br id = "ENR211005121413030"/><?Fm Condstart APSDataLink?>3500 FT ALT<?Fm Condend APSDataLink?><x:br id = "ENR211005121413180"/><?Fm Condstart APSDataLink?>C<?Fm Condend APSDataLink?></x:td>
+<x:td id = "ENR21080404112904148" class = "bleft btop bright bbottom " colspan = "5"><x:strong id = "ENR2107050208413269" class = "Cell-body">BUDAPEST TMA3</x:strong><x:br id = "ENR211005121412160"/>474527N 0183705E  - 473233N 0184156E  - 472516N 0185346E  - 470806N 0185112E  - 470403N 0191630E  - 470606N 0192729E  - 472525N 0185940E  - 473055N 0190118E  - 473220N 0185858E  - 473500N 0185300E  - 473720N 0185425E  - 474643N 0190652E  - 474750N 0184351E along border HUNGARY_SLOVAKREPUBLIC - 474527N 0183705E<x:br id = "ENR211005121412450"/>FL 195<x:br id = "ENR211005121413030"/>3500 FT ALT<x:br id = "ENR211005121413180"/>C</x:td>
 </x:tr>
 <x:tr id = "ENR21080404112904159">
-<x:td id = "ENR21080404112904160" class = "bleft btop bright bbottom " colspan = "5"><x:strong id = "ENR2107050208420970" class = "Cell-body"><?Fm Condstart APSDataLink?>BUDAPEST TMA4<?Fm Condend APSDataLink?></x:strong><x:br id = "ENR211005121414210"/><?Fm Condstart APSDataLink?>474643N 0190652E  - 473720N 0185425E  - 473500N 0185300E  - 473220N 0185858E  - 473055N 0190118E  - 473054N 0190159E  - 473612N 0190412E  - 474615N 0191631E  - 474643N 0190652E <?Fm Condend APSDataLink?><x:br id = "ENR211005121414410"/><?Fm Condstart APSDataLink?>FL 195<?Fm Condend APSDataLink?><x:br id = "ENR211005121414550"/><?Fm Condstart APSDataLink?>2500 FT ALT<?Fm Condend APSDataLink?><x:br id = "ENR211005121415090"/><?Fm Condstart APSDataLink?>C<?Fm Condend APSDataLink?></x:td>
+<x:td id = "ENR21080404112904160" class = "bleft btop bright bbottom " colspan = "5"><x:strong id = "ENR2107050208420970" class = "Cell-body">BUDAPEST TMA4</x:strong><x:br id = "ENR211005121414210"/>474643N 0190652E  - 473720N 0185425E  - 473500N 0185300E  - 473220N 0185858E  - 473055N 0190118E  - 473054N 0190159E  - 473612N 0190412E  - 474615N 0191631E  - 474643N 0190652E<x:br id = "ENR211005121414410"/>FL 195<x:br id = "ENR211005121414550"/>2500 FT ALT<x:br id = "ENR211005121415090"/>C</x:td>
 </x:tr>
 <x:tr id = "ENR21080404112904171">
-<x:td id = "ENR21080404112904172" class = "bleft btop bright bbottom " colspan = "5"><x:strong id = "ENR2107050208421871" class = "Cell-body"><?Fm Condstart APSDataLink?>BUDAPEST TMA5<?Fm Condend APSDataLink?></x:strong><x:br id = "ENR211005121417000"/><?Fm Condstart APSDataLink?>474750N 0184351E  - 474643N 0190652E  - 474615N 0191631E  - 474503N 0194053E  - 475224N 0193441E  - 480513N 0192330E along border HUNGARY_SLOVAKREPUBLIC - 474750N 0184351E <?Fm Condend APSDataLink?><x:br id = "ENR211005121417160"/><?Fm Condstart APSDataLink?>FL 195<?Fm Condend APSDataLink?><x:br id = "ENR211005121417300"/><?Fm Condstart APSDataLink?>6500 FT ALT<?Fm Condend APSDataLink?><x:br id = "ENR211005121417420"/><?Fm Condstart APSDataLink?>C<?Fm Condend APSDataLink?></x:td>
+<x:td id = "ENR21080404112904172" class = "bleft btop bright bbottom " colspan = "5"><x:strong id = "ENR2107050208421871" class = "Cell-body">BUDAPEST TMA5</x:strong><x:br id = "ENR211005121417000"/>474750N 0184351E  - 474643N 0190652E  - 474615N 0191631E  - 474503N 0194053E  - 475224N 0193441E  - 480513N 0192330E along border HUNGARY_SLOVAKREPUBLIC - 474750N 0184351E<x:br id = "ENR211005121417160"/>FL 195<x:br id = "ENR211005121417300"/>6500 FT ALT<x:br id = "ENR211005121417420"/>C</x:td>
 </x:tr>
 <x:tr id = "ENR21080404112904183">
-<x:td id = "ENR21080404112904184" class = "bleft btop bright bbottom " colspan = "5"><x:strong id = "ENR2107050208425572" class = "Cell-body"><?Fm Condstart APSDataLink?>BUDAPEST TMA6<?Fm Condend APSDataLink?></x:strong><x:br id = "ENR211005121418300"/><?Fm Condstart APSDataLink?>474615N 0191631E  - 473612N 0190412E  - 473054N 0190159E  - 473055N 0190118E  - 472525N 0185940E  - 470606N 0192729E  - 471203N 0195953E  - 474503N 0194053E  - 474615N 0191631E <?Fm Condend APSDataLink?><x:br id = "ENR211005121418420"/><?Fm Condstart APSDataLink?>FL 195<?Fm Condend APSDataLink?><x:br id = "ENR211005121418560"/><?Fm Condstart APSDataLink?>2000 FT ALT<?Fm Condend APSDataLink?><x:br id = "ENR211005121419080"/><?Fm Condstart APSDataLink?>C<?Fm Condend APSDataLink?></x:td>
+<x:td id = "ENR21080404112904184" class = "bleft btop bright bbottom " colspan = "5"><x:strong id = "ENR2107050208425572" class = "Cell-body">BUDAPEST TMA6</x:strong><x:br id = "ENR211005121418300"/>474615N 0191631E  - 473612N 0190412E  - 473054N 0190159E  - 473055N 0190118E  - 472525N 0185940E  - 470606N 0192729E  - 471203N 0195953E  - 474503N 0194053E  - 474615N 0191631E<x:br id = "ENR211005121418420"/>FL 195<x:br id = "ENR211005121418560"/>2000 FT ALT<x:br id = "ENR211005121419080"/>C</x:td>
 </x:tr>
 <x:tr id = "ENR21080404112904195">
-<x:td id = "ENR21080404112904196" class = "bleft btop bright bbottom " colspan = "5"><x:strong id = "ENR2107050208430473" class = "Cell-body"><?Fm Condstart APSDataLink?>BUDAPEST TMA7<?Fm Condend APSDataLink?></x:strong><x:br id = "ENR211005121419530"/><?Fm Condstart APSDataLink?>474503N 0194053E  - 471203N 0195953E  - 472351N 0201040E  - 473529N 0200354E  - 474503N 0194053E <?Fm Condend APSDataLink?><x:br id = "ENR211005121420080"/><?Fm Condstart APSDataLink?>FL 195<?Fm Condend APSDataLink?><x:br id = "ENR211005121420240"/><?Fm Condstart APSDataLink?>5500 FT ALT<?Fm Condend APSDataLink?><x:br id = "ENR211005121420370"/><?Fm Condstart APSDataLink?>C<?Fm Condend APSDataLink?><?FM MARKER [FrameAPS Content] CU-1.1,556330,3538944?></x:td>
+<x:td id = "ENR21080404112904196" class = "bleft btop bright bbottom " colspan = "5"><x:strong id = "ENR2107050208430473" class = "Cell-body">BUDAPEST TMA7</x:strong><x:br id = "ENR211005121419530"/>474503N 0194053E  - 471203N 0195953E  - 472351N 0201040E  - 473529N 0200354E  - 474503N 0194053E<x:br id = "ENR211005121420080"/>FL 195<x:br id = "ENR211005121420240"/>5500 FT ALT<x:br id = "ENR211005121420370"/>C<?FM MARKER [FrameAPS Content] CU-1.1,556330,3538944?></x:td>
 </x:tr>
 <x:tr id = "ENR21080404112904207">
-<x:td id = "ENR21080404112904208" class = "bleft btop bright bbottom " colspan = "5"><?FM MARKER [FrameAPS Content] CM-2.1,131072,655360?><x:strong id = "ENR2107050208431474"><?Fm Condstart APSDataLink?>BUDAPEST TMA8<?Fm Condend APSDataLink?></x:strong><x:br id = "ENR211005121421200"/><?Fm Condstart APSDataLink?>480513N 0192330E along border HUNGARY_SLOVAKREPUBLIC - 480944N 0195400E  - 475224N 0193441E  - 480513N 0192330E <?Fm Condend APSDataLink?><x:br id = "ENR211005121421330"/><?Fm Condstart APSDataLink?>FL 195<?Fm Condend APSDataLink?><x:br id = "ENR211005121421440"/><?Fm Condstart APSDataLink?>9500 FT ALT<?Fm Condend APSDataLink?><x:br id = "ENR211005121421570"/><?Fm Condstart APSDataLink?>C<?Fm Condend APSDataLink?></x:td>
+<x:td id = "ENR21080404112904208" class = "bleft btop bright bbottom " colspan = "5"><?FM MARKER [FrameAPS Content] CM-2.1,131072,655360?><x:strong id = "ENR2107050208431474">BUDAPEST TMA8</x:strong><x:br id = "ENR211005121421200"/>480513N 0192330E along border HUNGARY_SLOVAKREPUBLIC - 480944N 0195400E  - 475224N 0193441E  - 480513N 0192330E<x:br id = "ENR211005121421330"/>FL 195<x:br id = "ENR211005121421440"/>9500 FT ALT<x:br id = "ENR211005121421570"/>C</x:td>
 </x:tr>
 <x:tr id = "ENR21080404112904219">
-<x:td id = "ENR21080404112904220" class = "bleft btop bright bbottom " colspan = "5"><x:strong id = "ENR2107050208432075" class = "Cell-body"><?Fm Condstart APSDataLink?>BUDAPEST TMA9<?Fm Condend APSDataLink?></x:strong><x:br id = "ENR211005121422430"/><?Fm Condstart APSDataLink?>471203N 0195953E  - 470606N 0192729E  - 470403N 0191630E  - 470240N 0200428E  - 471203N 0195953E <?Fm Condend APSDataLink?><x:br id = "ENR211005121422540"/><?Fm Condstart APSDataLink?>FL 195<?Fm Condend APSDataLink?><x:br id = "ENR211005121423080"/><?Fm Condstart APSDataLink?>2000 FT ALT<?Fm Condend APSDataLink?><x:br id = "ENR211005121423180"/><?Fm Condstart APSDataLink?>C<?Fm Condend APSDataLink?><x:p id = "ENR21080404112904230" class = "Body"></x:p></x:td>
+<x:td id = "ENR21080404112904220" class = "bleft btop bright bbottom " colspan = "5"><x:strong id = "ENR2107050208432075" class = "Cell-body">BUDAPEST TMA9</x:strong><x:br id = "ENR211005121422430"/>471203N 0195953E  - 470606N 0192729E  - 470403N 0191630E  - 470240N 0200428E  - 471203N 0195953E<x:br id = "ENR211005121422540"/>FL 195<x:br id = "ENR211005121423080"/>2000 FT ALT<x:br id = "ENR211005121423180"/>C<x:p id = "ENR21080404112904230" class = "Body"></x:p></x:td>
 </x:tr>
 </x:tbody>
 </x:table></e:Sub-section><?FM MARKER [FrameAPS Content] PU-1.1,1857713,415060?>
@@ -156,7 +140,7 @@
 <x:p id = "ENR210708310810480" class = "Body">On holidays and week-ends, furthermore on workdays between 22.00 LT - 08.00 LT are operational only for special request.</x:p>
 <x:p id = "ENR210705021142246" class = "Body">Outside the operational hours of MCTRs, civil flights shall operate based on filed flight plans only:</x:p>
 <x:ul id = "ENR210705021145007" class = "Body"><x:li id = "ENR21080404112904231">Within a circle with 10 km radius entered at the ARP of Pápa and Kecskemét aerodromes, below 3000 FT AGL.</x:li>
-<x:li id = "ENR210705021147238" class = "Body">Within a circle with 5 km radius entered at the ARP (470722N 0201407E) of Szolnok aerodrome - with the exception of Szolnok city and the area west from the road to Rákóczifalva -, below 2000 FT AGL.</x:li></x:ul><x:table id = "ENR21080404112904232" frame = "border">
+<x:li id = "ENR210705021147238" class = "Body">Within a circle with 5 km radius entered at the ARP (470722N 0201407E) of Szolnok aerodrome - with the exception of Szolnok city and the area west from the road to Rákóczifalva -, below 2000 FT AGL.</x:li></x:ul><x:table id = "ENR21080404112904232" frame = "border" align = "center">
 <x:thead id = "ENR21080404112904233">
 <x:tr id = "ENR21080404112904234" class = "Table-row-type-1">
 <x:th id = "ENR21080404112904235" class = "bleft btop bright bbottom ">NameLateral limitsVertical limitsClass of airspace</x:th>
@@ -185,16 +169,16 @@
 <x:td class = "bleft btop bright bbottom " colspan = "5">KECSKEMET MTMA PARTS</x:td>
 </x:tr>
 <x:tr id = "ENR21080404112904255">
-<x:td id = "ENR21080404112904256" class = "bleft btop bright bbottom " colspan = "5"><x:strong id = "ENR2107050209083034" class = "Cell-body"><?Fm Condstart APSDataLink?>KECSKEMET MTMA1<?Fm Condend APSDataLink?></x:strong><x:br id = "ENR211005121424580"/><?Fm Condstart APSDataLink?>470403N 0191630E  - 470241N 0200428E  - 465559N 0200729E  - 465142N 0202813E  - 463622N 0201429E  - 464938N 0192954E  - 470403N 0191630E <?Fm Condend APSDataLink?><x:br id = "ENR211005121425100"/><?Fm Condstart APSDataLink?>FL 125<?Fm Condend APSDataLink?><x:br id = "ENR211005121425230"/><?Fm Condstart APSDataLink?>2000 FT ALT<?Fm Condend APSDataLink?></x:td>
+<x:td id = "ENR21080404112904256" class = "bleft btop bright bbottom " colspan = "5"><x:strong id = "ENR2107050209083034" class = "Cell-body">KECSKEMET MTMA1</x:strong><x:br id = "ENR211005121424580"/>470403N 0191630E  - 470241N 0200428E  - 465559N 0200729E  - 465142N 0202813E  - 463622N 0201429E  - 464938N 0192954E  - 470403N 0191630E<x:br id = "ENR211005121425100"/>FL 125<x:br id = "ENR211005121425230"/>2000 FT ALT</x:td>
 </x:tr>
 <x:tr id = "ENR21080404112904266">
-<x:td id = "ENR21080404112904267" class = "bleft btop bright bbottom " colspan = "5"><x:strong id = "ENR2107050209114037" class = "Cell-body"><?Fm Condstart APSDataLink?>KECSKEMET MTMA2<?Fm Condend APSDataLink?></x:strong><x:br id = "ENR211005121426060"/><?Fm Condstart APSDataLink?>465142N 0202813E  - 464943N 0203740E  - 463203N 0202335E  - 463959N 0192954E  - 464938N 0192954E  - 463622N 0201429E  - 465142N 0202813E <?Fm Condend APSDataLink?><x:br id = "ENR211005121426180"/><?Fm Condstart APSDataLink?>FL 125<?Fm Condend APSDataLink?><x:br id = "ENR211005121426280"/><?Fm Condstart APSDataLink?>5000 FT ALT<?Fm Condend APSDataLink?><?FM MARKER [FrameAPS Content] CU-2.1,3568476,3538944?></x:td>
+<x:td id = "ENR21080404112904267" class = "bleft btop bright bbottom " colspan = "5"><x:strong id = "ENR2107050209114037" class = "Cell-body">KECSKEMET MTMA2</x:strong><x:br id = "ENR211005121426060"/>465142N 0202813E  - 464943N 0203740E  - 463203N 0202335E  - 463959N 0192954E  - 464938N 0192954E  - 463622N 0201429E  - 465142N 0202813E<x:br id = "ENR211005121426180"/>FL 125<x:br id = "ENR211005121426280"/>5000 FT ALT<?FM MARKER [FrameAPS Content] CU-2.1,3568476,3538944?></x:td>
 </x:tr>
 </x:tbody>
 </x:table><?FM MARKER [FrameAPS Content] PU-2.1,31407488,22598980?>
 
 <?FM MARKER [FrameAPS Content] PM-3.1,1857713,415060?>
-<e:Sub-section id = "ENR21080404112904277"></e:Sub-section><x:table id = "ENR21080404112904278" frame = "border">
+<e:Sub-section id = "ENR21080404112904277"></e:Sub-section><x:table id = "ENR21080404112904278" frame = "border" align = "center">
 <x:thead id = "ENR21080404112904279">
 <x:tr id = "ENR21080404112904280" class = "Table-row-type-1">
 <x:th id = "ENR21080404112904281" class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-3.1,3563702,655360?>NameLateral limitsVertical limitsClass of airspace</x:th>
@@ -213,7 +197,7 @@
 </x:thead>
 <x:tbody id = "ENR21080404112904292">
 <x:tr id = "ENR21080404112904293">
-<x:td id = "ENR21080404112904294" class = "bleft btop bright bbottom "><x:strong id = "ENR210705020927567" class = "Cell-body"><?Fm Condstart APSDataLink?>PAPA MTMA<?Fm Condend APSDataLink?></x:strong><x:br id = "ENR211005121427060"/><?Fm Condstart APSDataLink?>473559N 0171554E  - 473559N 0173554E  - 472959N 0174154E  - 472959N 0175015E  - 471259N 0175900E  - 465959N 0172640E  - 470229N 0171654E  - 472854N 0170304E  - 473559N 0171554E <?Fm Condend APSDataLink?><x:br id = "ENR211005121427180"/><?Fm Condstart APSDataLink?>9500 FT ALT<?Fm Condend APSDataLink?><x:br id = "ENR211005121427290"/><?Fm Condstart APSDataLink?>2000 FT ALT<?Fm Condend APSDataLink?></x:td>
+<x:td id = "ENR21080404112904294" class = "bleft btop bright bbottom "><x:strong id = "ENR210705020927567" class = "Cell-body">PAPA MTMA</x:strong><x:br id = "ENR211005121427060"/>473559N 0171554E  - 473559N 0173554E  - 472959N 0174154E  - 472959N 0175015E  - 471259N 0175900E  - 465959N 0172640E  - 470229N 0171654E  - 472854N 0170304E  - 473559N 0171554E<x:br id = "ENR211005121427180"/>9500 FT ALT<x:br id = "ENR211005121427290"/>2000 FT ALT</x:td>
 <x:td id = "ENR21080404112904300" class = "bleft btop bright bbottom ">PAPA APP</x:td>
 <x:td id = "ENR21080404112904302" class = "bleft btop bright bbottom ">PAPA APP<x:br id = "ENR211005121429040"/>EN, HU</x:td>
 <x:td id = "ENR21080404112904303" class = "bleft btop bright bbottom "></x:td>
@@ -221,7 +205,7 @@
 </x:tr>
 </x:tbody>
 </x:table>
-<e:Sub-section id = "ENR21080404112904305" class = "Body"></e:Sub-section><x:table id = "ENR21080404112904306" frame = "border">
+<e:Sub-section id = "ENR21080404112904305" class = "Body"></e:Sub-section><x:table id = "ENR21080404112904306" frame = "border" align = "center">
 <x:thead id = "ENR21080404112904307">
 <x:tr id = "ENR21080404112904308" class = "Table-row-type-1">
 <x:th id = "ENR21080404112904309" class = "bleft btop bright bbottom ">NameLateral limitsVertical limitsClass of airspace</x:th>
@@ -240,7 +224,7 @@
 </x:thead>
 <x:tbody id = "ENR21080404112904320">
 <x:tr id = "ENR21080404112904321">
-<x:td id = "ENR21080404112904322" class = "bleft btop bright bbottom "><x:strong id = "ENR210705020935117" class = "Cell-body"><?Fm Condstart APSDataLink?>SZOLNOK MTMA<?Fm Condend APSDataLink?></x:strong><x:br id = "ENR211005121429420"/><?Fm Condstart APSDataLink?>472212N 0200910E  - 472038N 0201743E  - 471829N 0202929E  - 471045N 0202532E  - 470008N 0202008E  - 465401N 0201703E  - 465559N 0200729E  - 470241N 0200428E  - 471203N 0195953E  - 472212N 0200910E <?Fm Condend APSDataLink?><x:br/><?Fm Condstart APSDataLink?>9500 FT ALT<?Fm Condend APSDataLink?><x:br/><?Fm Condstart APSDataLink?>2000 FT ALT<?Fm Condend APSDataLink?></x:td>
+<x:td id = "ENR21080404112904322" class = "bleft btop bright bbottom "><x:strong id = "ENR210705020935117" class = "Cell-body">SZOLNOK MTMA</x:strong><x:br id = "ENR211005121429420"/>472212N 0200910E  - 472038N 0201743E  - 471829N 0202929E  - 471045N 0202532E  - 470008N 0202008E  - 465401N 0201703E  - 465559N 0200729E  - 470241N 0200428E  - 471203N 0195953E  - 472212N 0200910E<x:br/>9500 FT ALT<x:br/>2000 FT ALT</x:td>
 <x:td id = "ENR21080404112904328" class = "bleft btop bright bbottom ">SZOLNOK APP	</x:td>
 <x:td id = "ENR21080404112904331" class = "bleft btop bright bbottom ">SZOLNOK APP<x:br/>EN, HU</x:td>
 <x:td id = "ENR21080404112904332" class = "bleft btop bright bbottom ">	</x:td>
@@ -250,7 +234,7 @@
 </x:table><?FM MARKER [FrameAPS Content] PU-3.1,1857713,15062354?>
 
 <?FM MARKER [FrameAPS Content] PM-4.1,1857713,415060?>
-<e:Sub-section id = "ENR21080404112904334"></e:Sub-section><x:table id = "ENR21080404112904335" frame = "border">
+<e:Sub-section id = "ENR21080404112904334"></e:Sub-section><x:table id = "ENR21080404112904335" frame = "border" align = "center">
 <x:thead id = "ENR21080404112904336">
 <x:tr id = "ENR21080404112904337" class = "Table-row-type-1">
 <x:th id = "ENR21080404112904338" class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-4.1,3563702,655360?>NameLateral limitsVertical limitsClass of airspace</x:th>
@@ -269,7 +253,7 @@
 </x:thead>
 <x:tbody id = "ENR21080404112904349">
 <x:tr id = "ENR21080404112904350">
-<x:td id = "ENR21080404112904351" class = "bleft btop bright bbottom "><x:strong id = "ENR2107050209545622" class = "Cell-body"><?Fm Condstart APSDataLink?>KECSKEMET MCTR<?Fm Condend APSDataLink?></x:strong><x:br/><?Fm Condstart APSDataLink?>470342N 0192954E  - 470304N 0195208E  - 465559N 0200729E  - 464529N 0195854E  - 465329N 0193659E  - 465329N 0192954E  - 470342N 0192954E <?Fm Condend APSDataLink?><x:br/><?Fm Condstart APSDataLink?>4000 FT ALT<?Fm Condend APSDataLink?><x:br/><?Fm Condstart APSDataLink?>0 FT<?Fm Condend APSDataLink?><x:br/>and<x:br/><?Fm Condstart APSDataLink?>A circle radius 10KM centered on 465504N 0194503E <?Fm Condend APSDataLink?><x:br/><?Fm Condstart APSDataLink?>4000 FT ALT<?Fm Condend APSDataLink?><x:br/><?Fm Condstart APSDataLink?>0 FT<?Fm Condend APSDataLink?></x:td>
+<x:td id = "ENR21080404112904351" class = "bleft btop bright bbottom "><x:strong id = "ENR2107050209545622" class = "Cell-body">KECSKEMET MCTR</x:strong><x:br/>470342N 0192954E  - 470304N 0195208E  - 465559N 0200729E  - 464529N 0195854E  - 465329N 0193659E  - 465329N 0192954E  - 470342N 0192954E<x:br/>4000 FT ALT<x:br/>0 FT<x:br/>and<x:br/>A circle radius 10 KM centered on 465504N 0194503E<x:br/>4000 FT ALT<x:br/>0 FT</x:td>
 <x:td id = "ENR21080404112904359" class = "bleft btop bright bbottom ">	KECSKEMET TWR</x:td>
 <x:td id = "ENR21080404112904360" class = "bleft btop bright bbottom ">KECSKEMET TWR<x:br id = "ENR2107050210225113"/>EN, HU</x:td>
 <x:td id = "ENR21080404112904363" class = "bleft btop bright bbottom ">	</x:td>
@@ -277,7 +261,7 @@
 </x:tr>
 </x:tbody>
 </x:table>
-<e:Sub-section id = "ENR21080404112904368" class = "Body"></e:Sub-section><x:table id = "ENR21080404112904369" frame = "border">
+<e:Sub-section id = "ENR21080404112904368" class = "Body"></e:Sub-section><x:table id = "ENR21080404112904369" frame = "border" align = "center">
 <x:thead id = "ENR21080404112904370">
 <x:tr id = "ENR21080404112904371" class = "Table-row-type-1">
 <x:th id = "ENR21080404112904372" class = "bleft btop bright bbottom ">NameLateral limitsVertical limitsClass of airspace</x:th>
@@ -296,7 +280,7 @@
 </x:thead>
 <x:tbody id = "ENR21080404112904383">
 <x:tr id = "ENR21080404112904384">
-<x:td id = "ENR21080404112904385" class = "bleft btop bright bbottom "><x:strong id = "ENR2107050210143220" class = "Cell-body"><?Fm Condstart APSDataLink?>PAPA MCTR<?Fm Condend APSDataLink?></x:strong><x:br/><?Fm Condstart APSDataLink?>473539N 0172854E  - 471029N 0174254E  - 470738N 0173124E  - 473259N 0171754E  - 473539N 0172854E <?Fm Condend APSDataLink?><x:br/><?Fm Condstart APSDataLink?>4000 FT ALT<?Fm Condend APSDataLink?><x:br/><?Fm Condstart APSDataLink?>0 FT<?Fm Condend APSDataLink?><x:br/>and<x:br/><?Fm Condstart APSDataLink?>A circle radius 10KM centered on 472150N 0173002E <?Fm Condend APSDataLink?><x:br/><?Fm Condstart APSDataLink?>4000 FT ALT<?Fm Condend APSDataLink?><x:br/><?Fm Condstart APSDataLink?>0 FT<?Fm Condend APSDataLink?></x:td>
+<x:td id = "ENR21080404112904385" class = "bleft btop bright bbottom "><x:strong id = "ENR2107050210143220" class = "Cell-body">PAPA MCTR</x:strong><x:br/>473539N 0172854E  - 471029N 0174254E  - 470738N 0173124E  - 473259N 0171754E  - 473539N 0172854E<x:br/>4000 FT ALT<x:br/>0 FT<x:br/>and<x:br/>A circle radius 10 KM centered on 472150N 0173002E<x:br/>4000 FT ALT<x:br/>0 FT</x:td>
 <x:td id = "ENR21080404112904393" class = "bleft btop bright bbottom ">	PAPA TWR</x:td>
 <x:td id = "ENR21080404112904394" class = "bleft btop bright bbottom ">PAPA TWR<x:br id = "ENR2107050210213111"/>EN, HU</x:td>
 <x:td id = "ENR21080404112904397" class = "bleft btop bright bbottom ">	</x:td>
@@ -306,7 +290,7 @@
 </x:table><?FM MARKER [FrameAPS Content] PU-4.1,1857713,18666834?>
 
 <?FM MARKER [FrameAPS Content] PM-5.1,1857713,415060?>
-<e:Sub-section id = "ENR21080404112904402"></e:Sub-section><x:table id = "ENR21080404112904403" frame = "border">
+<e:Sub-section id = "ENR21080404112904402"></e:Sub-section><x:table id = "ENR21080404112904403" frame = "border" align = "center">
 <x:thead id = "ENR21080404112904404">
 <x:tr id = "ENR21080404112904405" class = "Table-row-type-1">
 <x:th id = "ENR21080404112904406" class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-5.1,3563702,655360?>NameLateral limitsVertical limitsClass of airspace</x:th>
@@ -325,7 +309,7 @@
 </x:thead>
 <x:tbody id = "ENR21080404112904417">
 <x:tr id = "ENR21080404112904418">
-<x:td id = "ENR21080404112904419" class = "bleft btop bright bbottom "><x:strong id = "ENR21080404112904421" class = "Cell-body"><?Fm Condstart APSDataLink?>SZOLNOK MCTR<?Fm Condend APSDataLink?></x:strong><x:br/><?Fm Condstart APSDataLink?>472038N 0201743E  - 471829N 0202929E  - 470008N 0202008E  - 470241N 0200428E  - 472038N 0201743E <?Fm Condend APSDataLink?><x:br/><?Fm Condstart APSDataLink?>4000 FT ALT<?Fm Condend APSDataLink?><x:br/><?Fm Condstart APSDataLink?>0 FT<?Fm Condend APSDataLink?></x:td>
+<x:td id = "ENR21080404112904419" class = "bleft btop bright bbottom "><x:strong id = "ENR21080404112904421" class = "Cell-body">SZOLNOK MCTR</x:strong><x:br/>472038N 0201743E  - 471829N 0202929E  - 470008N 0202008E  - 470241N 0200428E  - 472038N 0201743E<x:br/>4000 FT ALT<x:br/>0 FT</x:td>
 <x:td id = "ENR21080404112904425" class = "bleft btop bright bbottom ">	SZOLNOK TWR</x:td>
 <x:td id = "ENR21080404112904426" class = "bleft btop bright bbottom ">SZOLNOK TWR<x:br id = "ENR210705021020189"/>EN, HU</x:td>
 <x:td id = "ENR21080404112904430" class = "bleft btop bright bbottom ">	</x:td>
