@@ -37,6 +37,49 @@ public class Elevation {
     private ElevationReference reference;
 
     /**
+     * Default constructor.
+     */
+    public Elevation() {
+        elevation = 0;
+        uom = null;
+    }
+
+    /**
+     * Elevation with initialization values.
+     *
+     * @param elevation the elevation
+     * @param uom the unit of measurement
+     * @param reference the elevation reference
+     */
+    public Elevation(double elevation, UOM uom, ElevationReference reference) {
+        this.elevation = elevation;
+        this.uom       = uom;
+        this.reference = reference;
+    }
+
+    /**
+     * Get the elevation in a specific unit of measurement.
+     *
+     * @param requestedUom the desired unit of measurement
+     * @return the elevation object converted to the desired
+     *         unit of measurement. returns this very object if the
+     *         desired unit of measurement is the same as this one.
+     */
+    public Elevation inUom(UOM requestedUom) {
+        if (this.uom == requestedUom) {
+            return this;
+        }
+
+        double inMeters = elevation * uom.getInMeters();
+        Elevation convertedElevation = new Elevation();
+        convertedElevation.setUom(requestedUom);
+        convertedElevation.setElevation(inMeters / requestedUom.getInMeters());
+        convertedElevation.setReference(reference);
+
+        return convertedElevation;
+    }
+
+    /**
      * @return the elevation
      */
     public double getElevation() {
@@ -109,16 +152,17 @@ public class Elevation {
             return false;
         }
         Elevation other = (Elevation) obj;
-        if (Double.doubleToLongBits(elevation) != Double
-                .doubleToLongBits(other.elevation)) {
-            return false;
-        }
+
         if (reference != other.reference) {
             return false;
         }
         if (uom != other.uom) {
+            other = other.inUom(uom);
+        }
+        if (Math.abs(elevation - other.elevation) > 0.000001) {
             return false;
         }
+
         return true;
     }
 }

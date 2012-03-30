@@ -23,6 +23,7 @@ import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Boundary;
 import hu.tyrell.openaviationmap.model.Circle;
 import hu.tyrell.openaviationmap.model.Elevation;
+import hu.tyrell.openaviationmap.model.Navaid;
 import hu.tyrell.openaviationmap.model.Point;
 import hu.tyrell.openaviationmap.model.Ring;
 import hu.tyrell.openaviationmap.model.UOM;
@@ -538,6 +539,149 @@ public final class Converter {
     }
 
     /**
+     * Convert a Navaid list to an Oam object.
+     *
+     * @param navaids the navaids to convert
+     * @param oam the Oam object to put the navaids into
+     * @param action the OAM action to set for each object
+     * @param version the version to set of reach object
+     * @param nodeIdIx the minimal index of unique node ids. it is assumed
+     *        that any id above this index can be given to OAM nodes
+     */
+    public static void navaidsToOam(List<Navaid>   navaids,
+                                    Oam            oam,
+                                    Action         action,
+                                    int            version,
+                                    int            nodeIdIx) {
+
+        int nIdIx = nodeIdIx;
+
+        for (Navaid navaid : navaids) {
+
+            OsmNode node = new OsmNode();
+
+            node.setLatitude(navaid.getLatitude());
+            node.setLongitude(navaid.getLongitude());
+            node.setId(action == Action.CREATE ? -nIdIx : nIdIx);
+            node.setVersion(version);
+            node.setAction(action);
+
+            nIdIx++;
+
+            // insert the airspace metadata
+            node.getTags().put("navaid", "yes");
+
+            if (navaid.getId() != null) {
+                node.getTags().put("id", navaid.getId());
+            }
+
+            if (navaid.getName() != null) {
+                node.getTags().put("name", navaid.getName());
+            }
+
+            if (navaid.getIdent() != null) {
+                node.getTags().put("navaid:ident", navaid.getIdent());
+            }
+
+            switch (navaid.getType()) {
+            case VOR:
+                node.getTags().put("navaid:type", "VOR");
+                break;
+
+            case VORDME:
+                node.getTags().put("navaid:type", "VOR/DME");
+                break;
+
+            case DME:
+                node.getTags().put("navaid:type", "DME");
+                break;
+
+            case NDB:
+                node.getTags().put("navaid:type", "NDB");
+                break;
+
+            default:
+            }
+
+            if (navaid.getDeclination() != 0.0) {
+                node.getTags().put("navaid:declination",
+                                   Double.toString(navaid.getDeclination()));
+            }
+
+            if (navaid.getVariation() != null) {
+                node.getTags().put("navaid:variation",
+                        Double.toString(navaid.getVariation().getVariation()));
+                node.getTags().put("navaid:variation:year",
+                        Integer.toString(navaid.getVariation().getYear()));
+            }
+
+            if (navaid.getFrequency() != null) {
+                switch (navaid.getType()) {
+                case VOR:
+                    node.getTags().put("navaid:vor",
+                                        navaid.getFrequency().toString());
+                    break;
+
+                case VORDME:
+                    node.getTags().put("navaid:vor",
+                                       navaid.getFrequency().toString());
+                    if (navaid.getDmeChannel() != null) {
+                        node.getTags().put("navaid:dme",
+                                            navaid.getDmeChannel());
+                    }
+                    break;
+
+                case DME:
+                    node.getTags().put("navaid:dme",
+                                       navaid.getDmeChannel());
+                    break;
+
+                case NDB:
+                    node.getTags().put("navaid:ndb",
+                                       navaid.getFrequency().toString());
+                    break;
+
+                default:
+                }
+            }
+
+            if (navaid.getActivetime() != null) {
+                node.getTags().put("navaid:activetime", navaid.getActivetime());
+            }
+
+            if (navaid.getElevation() != null) {
+                Elevation e = navaid.getElevation().inUom(UOM.FT);
+
+                node.getTags().put("height", Double.toString(e.getElevation()));
+                node.getTags().put("height:unit", e.getUom().toString());
+                switch (e.getReference()) {
+                default:
+                case MSL:
+                    node.getTags().put("height:class", "amsl");
+                    break;
+                case SFC:
+                    node.getTags().put("height:class", "agl");
+                    break;
+                }
+            }
+
+            if (navaid.getCoverage() != null) {
+                node.getTags().put("navaid:coverage",
+                        Double.toString(navaid.getCoverage().getDistance()));
+                node.getTags().put("navaid:coverage:unit",
+                        navaid.getCoverage().getUom().toString());
+            }
+
+            if (navaid.getRemarks() != null) {
+                node.getTags().put("navaid:remarks", navaid.getRemarks());
+            }
+
+
+            oam.getNodes().put(node.getId(), node);
+        }
+    }
+
+    /**
      * Perform the conversion itself.
      *
      * @param inputFile the name of the input file
@@ -562,6 +706,7 @@ public final class Converter {
                                                            throws Exception {
 
         List<Airspace> airspaces    = new Vector<Airspace>();
+        List<Navaid>   navaids      = new Vector<Navaid>();
         List<Point>    borderPoints = null;
 
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -592,7 +737,8 @@ public final class Converter {
             eAipNode = d.getDocumentElement();
 
             EAIPHungaryReader reader = new EAIPHungaryReader();
-            reader.processEAIP(eAipNode, borderPoints, airspaces, errors);
+            reader.processEAIP(eAipNode, borderPoints, airspaces, navaids,
+                               errors);
         } else {
             throw new Exception("input format " + inputFormat
                               + " not recognized");
@@ -603,6 +749,7 @@ public final class Converter {
             Oam oam = new Oam();
 
             airspacesToOam(airspaces, oam, action, version, 0, 0);
+            navaidsToOam(navaids, oam, action, version, oam.getMaxNodeId() + 1);
 
             OAMWriter.write(oam, new FileWriter(outputFile));
 

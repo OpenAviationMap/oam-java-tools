@@ -73,7 +73,8 @@ public class OAMWriterTest {
         List<Airspace>       airspaces = new Vector<Airspace>();
         List<ParseException> errors    = new Vector<ParseException>();
 
-        reader.processEAIP(d.getDocumentElement(), null, airspaces, errors);
+        reader.processEAIP(d.getDocumentElement(), null, airspaces, null,
+                           errors);
 
         assertTrue(errors.isEmpty());
         assertNotNull(airspaces);
@@ -155,7 +156,8 @@ public class OAMWriterTest {
                         new FileInputStream("var/LH-ENR-5.1-en-HU.xml"));
         EAIPHungaryReader reader   = new EAIPHungaryReader();
 
-        reader.processEAIP(d.getDocumentElement(), null, airspaces, errors);
+        reader.processEAIP(d.getDocumentElement(), null, airspaces, null,
+                           errors);
 
         assertEquals(4, errors.size());
         assertEquals(47, airspaces.size());

@@ -44,6 +44,26 @@ public class Oam {
     }
 
     /**
+     * Return the maximum absolute value of node ids. Useful for generating
+     * new unique ids.
+     *
+     * @return the maximum absolute value of node ids.
+     */
+    public int getMaxNodeId() {
+        int i = 0;
+        for (int j : nodes.keySet()) {
+            if (j < 0) {
+                j = -1;
+            }
+            if (i < j) {
+                i = j;
+            }
+        }
+
+        return i;
+    }
+
+    /**
      * Import nodes related to a Way object.
      * Note: it is assumed that the Way & associated nodes have ids
      * that will not collide with ids in this Oam.

@@ -19,11 +19,11 @@ package hu.tyrell.openaviationmap.converter.eaip;
 
 import hu.tyrell.openaviationmap.converter.ParseException;
 import hu.tyrell.openaviationmap.model.Airspace;
-import hu.tyrell.openaviationmap.model.Boundary;
 import hu.tyrell.openaviationmap.model.Circle;
 import hu.tyrell.openaviationmap.model.Distance;
 import hu.tyrell.openaviationmap.model.Elevation;
 import hu.tyrell.openaviationmap.model.ElevationReference;
+import hu.tyrell.openaviationmap.model.Navaid;
 import hu.tyrell.openaviationmap.model.Point;
 import hu.tyrell.openaviationmap.model.Ring;
 import hu.tyrell.openaviationmap.model.UOM;
@@ -77,7 +77,7 @@ public class EAipProcessor {
      * @return the latitude value
      * @throws ParseException on parsing errors
      */
-    private double processLat(String designator, String latStr)
+    protected double processLat(String designator, String latStr)
                                                         throws ParseException {
         if (latStr == null) {
             throw new ParseException(designator, "lat string is null");
@@ -105,7 +105,7 @@ public class EAipProcessor {
      * @return the longitude value
      * @throws ParseException on parsing errors
      */
-    private double processLon(String designator, String lonStr)
+    protected double processLon(String designator, String lonStr)
                                                         throws ParseException {
         if (lonStr == null) {
             throw new ParseException(designator, "lon string is null");
@@ -133,7 +133,7 @@ public class EAipProcessor {
      * @return the corresponding Point object.
      * @throws ParseException on parsing errors
      */
-    private Point processPoint(String designator, String pointDesc)
+    protected Point processPoint(String designator, String pointDesc)
                                                         throws ParseException {
         String pd = pointDesc.trim();
         int space = pd.indexOf(" ");
@@ -283,8 +283,10 @@ public class EAipProcessor {
      *
      * @param elevDesc the textual elevation description
      * @return the elevation described by elevDesc
+     * @throws ParseException in parsing errors
      */
-    protected Elevation processElevation(String elevDesc) {
+    protected Elevation processElevation(String elevDesc)
+                                                    throws ParseException {
         String ed = elevDesc.trim();
 
         Elevation elevation = new Elevation();
@@ -306,9 +308,17 @@ public class EAipProcessor {
 
             // get the unit of measurement
             int j = ed.indexOf(" ", i + 1);
+            if (j == -1) {
+                j = ed.length();
+            }
             String uom = ed.substring(i, j).trim();
             if ("FT".equals(uom)) {
                 elevation.setUom(UOM.FT);
+            } else if ("M".equals(uom)) {
+                elevation.setUom(UOM.M);
+            } else {
+                throw new ParseException("unknown elevation unit if measurement"
+                                       + uom);
             }
 
             // get the reference
@@ -328,16 +338,23 @@ public class EAipProcessor {
      *
      * @param distDesc a textual distance description
      * @return the distance described by the description
+     * @throws ParseException on parsing errors.
      */
-    private Distance processDistance(String distDesc) {
-        String dd = distDesc.trim();
+    protected Distance processDistance(String distDesc) throws ParseException {
+        String dd = distDesc.trim().toLowerCase();
 
         Distance distance = new Distance();
 
-        if (dd.endsWith("KM")) {
+        if (dd.endsWith("km")) {
             distance.setDistance(Double.parseDouble(
                     dd.substring(0, dd.length() - 2)) * 1000.0);
             distance.setUom(UOM.M);
+        } else if (dd.endsWith("nm")) {
+            distance.setDistance(Double.parseDouble(
+                    dd.substring(0, dd.length() - 2)));
+            distance.setUom(UOM.NM);
+        } else {
+            throw new ParseException("unknown distance unit in " + dd);
         }
 
         return distance;
@@ -425,71 +442,8 @@ public class EAipProcessor {
      */
     Airspace processAirspace(Node        airspaceNode,
                              List<Point> borderPoints) throws ParseException {
-
-        try {
-            Airspace airspace = new Airspace();
-
-            XPath xpath = XPathFactory.newInstance().newXPath();
-
-            // get the name & designator
-            String designator = xpath.evaluate("td[1]//strong/text()[1]",
-                                               airspaceNode).trim();
-            xpath.reset();
-            String name = xpath.evaluate(
-                    "substring-after(td[1]//strong/text()[2], '/')",
-                    airspaceNode).trim();
-
-            int ix = designator.indexOf("/");
-            if (ix != -1) {
-                name       = designator.substring(ix + 1).trim();
-                designator = designator.substring(0, ix).trim();
-            }
-            String type = getAirspaceType(designator);
-
-            airspace.setDesignator(designator);
-            airspace.setName(name);
-            airspace.setType(type);
-
-            // get the boundary
-            Boundary boundary = null;
-            xpath.reset();
-            String str = xpath.evaluate("td[1]//br/following-sibling::text() "
-                            + "| td[1]//br/following-sibling::Inserted/text() "
-                            + "| td[1]//br/following-sibling::*//text() ",
-                            airspaceNode);
-            if (str.startsWith(CIRCLE_PREFIX)) {
-                boundary = processCircle(designator, str);
-            } else {
-                boundary = processPointList(designator, str, borderPoints);
-            }
-
-            airspace.setBoundary(boundary);
-
-            // get the vertical limits
-            xpath.reset();
-            str = xpath.evaluate("td[position()=2]", airspaceNode);
-            int i   = str.indexOf("/");
-            Elevation upperLimit = processElevation(str.substring(0, i).trim());
-            Elevation lowerLimit = processElevation(
-                                                str.substring(i + 1).trim());
-
-            airspace.setUpperLimit(upperLimit);
-            airspace.setLowerLimit(lowerLimit);
-
-            // get the remarks
-            xpath.reset();
-            str = xpath.evaluate("td[position()=3]/text()[position()=2]",
-                                 airspaceNode);
-            if (str != null && !str.isEmpty()) {
-                airspace.setRemarks(str);
-            }
-
-            return airspace;
-        } catch (ParseException e) {
-            throw e;
-        } catch (Exception e) {
-            throw new ParseException(airspaceNode, e);
-        }
+        // to be implemented by subclasses
+        return new Airspace();
     }
 
     /**
@@ -501,11 +455,13 @@ public class EAipProcessor {
      *         may be null.
      *  @param airspaces all airspaces extracted from the supplied eAIP file
      *         will be inserted into this list.
+     *  @param navaids the navaids that are contained in the eAIP
      *  @param errors all parsing errors will be written to this list
      */
     public void processEAIP(Node                    eAipNode,
                             List<Point>             borderPoints,
                             List<Airspace>          airspaces,
+                            List<Navaid>            navaids,
                             List<ParseException>    errors) {
 
         NodeList nodes = null;

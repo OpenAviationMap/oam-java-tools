@@ -22,6 +22,9 @@ import hu.tyrell.openaviationmap.model.Circle;
 import hu.tyrell.openaviationmap.model.Distance;
 import hu.tyrell.openaviationmap.model.Elevation;
 import hu.tyrell.openaviationmap.model.ElevationReference;
+import hu.tyrell.openaviationmap.model.Frequency;
+import hu.tyrell.openaviationmap.model.MagneticVariation;
+import hu.tyrell.openaviationmap.model.Navaid;
 import hu.tyrell.openaviationmap.model.Point;
 import hu.tyrell.openaviationmap.model.Ring;
 import hu.tyrell.openaviationmap.model.UOM;
@@ -43,6 +46,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
 import org.w3c.dom.Document;
@@ -135,6 +139,18 @@ public class OAMReader {
             osmNode.setChangeset(Integer.parseInt(str));
         }
 
+        // process the tags
+        try {
+            XPath    xpath = XPathFactory.newInstance().newXPath();
+            NodeList n = (NodeList) xpath.evaluate("tag", node,
+                                                   XPathConstants.NODESET);
+            for (int i = 0; i < n.getLength(); ++i) {
+                processTag((Element) n.item(i), osmNode);
+            }
+        } catch (XPathExpressionException e) {
+            throw new ParseException(e);
+        }
+
         nodes.put(id, osmNode);
     }
 
@@ -163,6 +179,23 @@ public class OAMReader {
         } catch (Exception e) {
             throw new ParseException(e);
         }
+    }
+
+    /**
+     * Process a 'tag' element, which is part of a 'node' element.
+     *
+     * @param node the XML 'tag' element
+     * @param osmNode the 'node' to add this tag to.
+     */
+    void processTag(Element node, OsmNode osmNode) {
+        if (!"tag".equals(node.getTagName())) {
+            return;
+        }
+
+        String key   = node.getAttribute("k");
+        String value = node.getAttribute("v");
+
+        osmNode.getTags().put(key, value);
     }
 
     /**
@@ -484,18 +517,155 @@ public class OAMReader {
     }
 
     /**
+     * Convert an OAM 'node' element into a Navaid object.
+     *
+     * @param node the OAM 'node' to convert
+     * @return the navaid corresponding to the supplied 'node' element.
+     * @throws ParseException on parsing errors
+     */
+    Navaid nodeToNavaid(OsmNode node) throws ParseException {
+
+        Map<String, String> tags = node.getTags();
+
+        if (!tags.containsKey("navaid")
+         || !"yes".equals(tags.get("navaid"))) {
+
+            throw new ParseException("node is not a navaid");
+        }
+
+        Navaid navaid = new Navaid();
+
+        navaid.setLatitude(node.getLatitude());
+        navaid.setLongitude(node.getLongitude());
+
+        String k;
+
+        k = "id";
+        if (tags.containsKey(k)) {
+            navaid.setId(tags.get(k));
+        }
+
+        k = "navaid:type";
+        if (tags.containsKey(k)) {
+            String s = tags.get(k);
+            if ("VOR".equals(s)) {
+                navaid.setType(Navaid.Type.VOR);
+            } else if ("VOR/DME".equals(s)) {
+                navaid.setType(Navaid.Type.VORDME);
+            } else if ("DME".equals(s)) {
+                navaid.setType(Navaid.Type.DME);
+            } else if ("NDB".equals(s)) {
+                navaid.setType(Navaid.Type.NDB);
+            }
+        }
+
+        k = "name";
+        if (tags.containsKey(k)) {
+            navaid.setName(tags.get(k));
+        }
+
+        k = "navaid:ident";
+        if (tags.containsKey(k)) {
+            navaid.setIdent(tags.get(k));
+        }
+
+        k = "navaid:declination";
+        if (tags.containsKey(k)) {
+            navaid.setDeclination(Double.parseDouble(tags.get(k)));
+        }
+
+        k = "navaid:variation";
+        if (tags.containsKey(k)) {
+            double variation = Double.parseDouble(tags.get(k));
+            int    year      = 0;
+            k = "navaid:variation:year";
+            if (tags.containsKey(k)) {
+                year = Integer.parseInt(tags.get(k));
+            }
+            navaid.setVariation(new MagneticVariation(variation, year));
+        }
+
+        k = "navaid:vor";
+        if (tags.containsKey(k)) {
+            navaid.setFrequency(Frequency.fromString(tags.get(k)));
+        }
+
+        k = "navaid:ndb";
+        if (tags.containsKey(k)) {
+            navaid.setFrequency(Frequency.fromString(tags.get(k)));
+        }
+
+        k = "navaid:dme";
+        if (tags.containsKey(k)) {
+            navaid.setDmeChannel(tags.get(k));
+        }
+
+        k = "navaid:activetime";
+        if (tags.containsKey(k)) {
+            navaid.setActivetime(tags.get(k));
+        }
+
+        if (tags.containsKey("height")
+         && tags.containsKey("height:unit")
+         && tags.containsKey("height:class")) {
+
+           Elevation e = new Elevation();
+
+           e.setElevation(Double.parseDouble(tags.get("height")));
+           e.setUom(UOM.fromString(tags.get("height:unit")));
+           e.setReference(ElevationReference.fromString(
+                                          tags.get("height:class")));
+
+           navaid.setElevation(e);
+       }
+
+        if (tags.containsKey("navaid:coverage")
+         && tags.containsKey("navaid:coverage:unit")) {
+            Distance coverage = new Distance();
+
+            coverage.setDistance(Double.parseDouble(
+                                                tags.get("navaid:coverage")));
+            coverage.setUom(UOM.fromString(tags.get("navaid:coverage:unit")));
+
+            navaid.setCoverage(coverage);
+        }
+
+        k = "navaid:remarks";
+        if (tags.containsKey(k)) {
+            navaid.setRemarks(tags.get(k));
+        }
+
+
+        return navaid;
+    }
+
+    /**
      * Process an OAM document and generate a number of Airspace elements.
      *
      * @param root the document root element to process
      * @param airspaces a list of Airspace elements, which will contain
      *        the airspaces contained on the OAM document.
+     * @param navaids a list of navaid elemets, which will contain the
+     *        navaids contained in the OAM document.
      * @param errors all parsing errors will be put into this list
      */
     public void processOam(Element                  root,
                            List<Airspace>           airspaces,
+                           List<Navaid>             navaids,
                            List<ParseException>     errors) {
         Oam oam = new Oam();
         processOsm(root, oam, errors);
+
+        for (OsmNode node : oam.getNodes().values()) {
+            if (node.getTags().containsKey("navaid")) {
+                try {
+                    Navaid n = nodeToNavaid(node);
+                    navaids.add(n);
+                } catch (ParseException e) {
+                    errors.add(e);
+                }
+            }
+        }
 
         for (Way way : oam.getWays().values()) {
             try {

@@ -19,11 +19,16 @@ package hu.tyrell.openaviationmap.converter;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Boundary;
 import hu.tyrell.openaviationmap.model.Circle;
+import hu.tyrell.openaviationmap.model.Distance;
 import hu.tyrell.openaviationmap.model.Elevation;
 import hu.tyrell.openaviationmap.model.ElevationReference;
+import hu.tyrell.openaviationmap.model.Frequency;
+import hu.tyrell.openaviationmap.model.MagneticVariation;
+import hu.tyrell.openaviationmap.model.Navaid;
 import hu.tyrell.openaviationmap.model.Point;
 import hu.tyrell.openaviationmap.model.Ring;
 import hu.tyrell.openaviationmap.model.UOM;
@@ -74,7 +79,7 @@ public class EAIPHungaryReaderTest {
         List<ParseException> errors    = new Vector<ParseException>();
 
 
-        reader.processEAIP(eAipNode, null, airspaces, errors);
+        reader.processEAIP(eAipNode, null, airspaces, null, errors);
 
         assertEquals(4, errors.size());
         assertEquals(47, airspaces.size());
@@ -180,8 +185,76 @@ public class EAIPHungaryReaderTest {
 
         assertEquals("Firing field",
                      airspaces.get(46).getRemarks());
+    }
+
+    /**
+     * Test an eAIP ENR-4.1 document.
+     *
+     * @throws ParserConfigurationException on XML parser configuration errors
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing issues
+     */
+    @Test
+    public void testEAipEnr41() throws ParserConfigurationException,
+                                       SAXException,
+                                       IOException {
+        Node eAipNode = null;
+
+        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        DocumentBuilder        db  = dbf.newDocumentBuilder();
+
+        Document   d = db.parse(
+                        new FileInputStream("var/LH-ENR-4.1-en-HU.xml"));
+        eAipNode = d.getDocumentElement();
+
+        assertNotNull(eAipNode);
+
+        EAIPHungaryReader    reader    = new EAIPHungaryReader();
+        List<Navaid>         navaids   = new Vector<Navaid>();
+        List<ParseException> errors    = new Vector<ParseException>();
 
 
+        reader.processEAIP(eAipNode, null, null, navaids, errors);
+
+        assertEquals(1, errors.size());
+        assertEquals(18, navaids.size());
+
+        // check the BKS VOR/DME
+        Navaid navaid = navaids.get(0);
+        assertEquals("BKS-DVORDME", navaid.getId());
+        assertEquals(Navaid.Type.VORDME, navaid.getType());
+        assertEquals("BÉKÉS", navaid.getName());
+        assertEquals("BKS", navaid.getIdent());
+        assertEquals(4.2, navaid.getDeclination(), 0.01);
+        assertNull(navaid.getVariation());
+        assertEquals(Frequency.fromString("115.8MHz"), navaid.getFrequency());
+        assertEquals("105X", navaid.getDmeChannel());
+        assertEquals("H24", navaid.getActivetime());
+        assertEquals(46.8, navaid.getLatitude(), 0.00001);
+        assertEquals(21.07388, navaid.getLongitude(), 0.00001);
+        assertEquals(new Elevation(95, UOM.M, ElevationReference.SFC),
+                     navaid.getElevation());
+        assertEquals(new Distance(100, UOM.NM), navaid.getCoverage());
+        assertEquals("Coverage: 100 NM/185 km DME COORD: 464759.9N 0210426.0E",
+                navaid.getRemarks());
+
+        // check the BKS NDB
+        navaid = navaids.get(1);
+        assertEquals("BKS-NDB", navaid.getId());
+        assertEquals(Navaid.Type.NDB, navaid.getType());
+        assertEquals("BÉKÉS", navaid.getName());
+        assertEquals("BKS", navaid.getIdent());
+        assertEquals(0, navaid.getDeclination(), 0.01);
+        assertEquals(new MagneticVariation(4.1, 2009),
+                navaid.getVariation());
+        assertEquals(Frequency.fromString("374kHz"), navaid.getFrequency());
+        assertNull(navaid.getDmeChannel());
+        assertEquals("H24", navaid.getActivetime());
+        assertEquals(46.79499, navaid.getLatitude(), 0.00001);
+        assertEquals(21.07805, navaid.getLongitude(), 0.00001);
+        assertNull(navaid.getElevation());
+        assertEquals(new Distance(60, UOM.NM), navaid.getCoverage());
+        assertEquals("Coverage: 60NM/110km", navaid.getRemarks());
     }
 
 }

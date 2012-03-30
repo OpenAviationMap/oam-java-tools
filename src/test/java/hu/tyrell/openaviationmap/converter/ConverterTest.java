@@ -22,6 +22,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Boundary;
+import hu.tyrell.openaviationmap.model.Navaid;
 import hu.tyrell.openaviationmap.model.Ring;
 import hu.tyrell.openaviationmap.model.oam.Action;
 
@@ -74,7 +75,8 @@ public class ConverterTest {
         Document   d = db.parse(new FileInputStream(outputFile));
         OAMReader  reader = new OAMReader();
         List<Airspace> airspaces = new Vector<Airspace>();
-        reader.processOam(d.getDocumentElement(), airspaces, errors);
+        List<Navaid>   navaids   = new Vector<Navaid>();
+        reader.processOam(d.getDocumentElement(), airspaces, navaids, errors);
 
         assertTrue(errors.isEmpty());
         assertEquals(37, airspaces.size());

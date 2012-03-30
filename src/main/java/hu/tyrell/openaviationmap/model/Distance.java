@@ -32,6 +32,25 @@ public class Distance {
     private UOM uom;
 
     /**
+     * Default constructor.
+     */
+    public Distance() {
+        distance = 0;
+        uom      = null;
+    }
+
+    /**
+     * Constructor with initial values.
+     *
+     * @param distance the distance value
+     * @param uom the distance unit of measurement.
+     */
+    public Distance(double distance, UOM uom) {
+        this.distance = distance;
+        this.uom      = uom;
+    }
+
+    /**
      * Get the distance in a specific unit of measurement.
      *
      * @param requestedUom the desired unit of measurement

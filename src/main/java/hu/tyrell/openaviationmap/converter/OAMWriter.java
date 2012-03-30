@@ -113,6 +113,14 @@ public class OAMWriter {
                                      Integer.toString(node.getChangeset()));
         }
 
+        // insert the node tags
+        for (String tag : node.getTags().keySet()) {
+            Element tagElement = document.createElement("tag");
+            tagElement.setAttribute("k", tag);
+            tagElement.setAttribute("v", node.getTags().get(tag));
+            nodeElement.appendChild(tagElement);
+        }
+
         fragment.appendChild(nodeElement);
     }
 

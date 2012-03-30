@@ -20,6 +20,8 @@ package hu.tyrell.openaviationmap.model.oam;
 import hu.tyrell.openaviationmap.model.Point;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * An OAM / OSM node.
@@ -66,9 +68,15 @@ public class OsmNode extends Point {
     private Integer changeset;
 
     /**
+     * Tags of this way element.
+     */
+    private Map<String, String> tags;
+
+    /**
      * Default constructor.
      */
     public OsmNode() {
+        tags = new HashMap<String, String>();
     }
 
     /**
@@ -92,6 +100,9 @@ public class OsmNode extends Point {
                   ? null : other.visible ? Boolean.TRUE : Boolean.FALSE;
         changeset = other.changeset == null
                    ? null : new Integer(other.changeset);
+        tags      = other.tags == null
+                  ? new HashMap<String, String>()
+                  : new HashMap<String, String>(other.tags);
     }
 
     /**
@@ -104,7 +115,8 @@ public class OsmNode extends Point {
      */
     public boolean compare(OsmNode other) {
         return Math.abs(getLatitude() - other.getLatitude()) < 0.0000001
-            && Math.abs(getLongitude() - other.getLongitude()) < 0.0000001;
+            && Math.abs(getLongitude() - other.getLongitude()) < 0.0000001
+            && tags.equals(other.tags);
     }
 
     /**
@@ -231,5 +243,26 @@ public class OsmNode extends Point {
      */
     public void setChangeset(Integer changeset) {
         this.changeset = changeset;
+    }
+
+    /**
+     * @return the tags
+     */
+    public Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * @param tags the tags to set
+     */
+    public void setTags(Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * @return the visible
+     */
+    public Boolean getVisible() {
+        return visible;
     }
 }

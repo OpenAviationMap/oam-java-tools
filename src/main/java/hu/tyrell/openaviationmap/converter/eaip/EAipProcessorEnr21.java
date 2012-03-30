@@ -21,6 +21,7 @@ import hu.tyrell.openaviationmap.converter.ParseException;
 import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Boundary;
 import hu.tyrell.openaviationmap.model.Elevation;
+import hu.tyrell.openaviationmap.model.Navaid;
 import hu.tyrell.openaviationmap.model.Point;
 import hu.tyrell.openaviationmap.model.Ring;
 
@@ -495,12 +496,14 @@ public class EAipProcessorEnr21 extends EAipProcessor {
      *         may be null.
      *  @param airspaces all airspaces extracted from the supplied eAIP file
      *         will be inserted into this list.
+     *  @param navaids the navaids that are contained in the eAIP
      *  @param errors all parsing errors will be written to this list
      */
     @Override
     public void processEAIP(Node                    eAipNode,
                             List<Point>             borderPoints,
                             List<Airspace>          airspaces,
+                            List<Navaid>            navaids,
                             List<ParseException>    errors) {
 
         NodeList nodes = null;

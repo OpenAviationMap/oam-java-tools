@@ -26,6 +26,7 @@ import hu.tyrell.openaviationmap.converter.eaip.EAipProcessorEnr52;
 import hu.tyrell.openaviationmap.converter.eaip.EAipProcessorEnr55;
 import hu.tyrell.openaviationmap.converter.eaip.EAipProcessorEnr56;
 import hu.tyrell.openaviationmap.model.Airspace;
+import hu.tyrell.openaviationmap.model.Navaid;
 import hu.tyrell.openaviationmap.model.Point;
 
 import java.util.List;
@@ -45,11 +46,13 @@ public class EAIPHungaryReader {
      *         may be null.
      *  @param airspaces all airspaces extracted from the supplied eAIP file
      *         will be inserted into this list.
+     *  @param navaids the navaids that are contained in the eAIP
      *  @param errors all parsing errors will be written to this list
      */
     public void processEAIP(Node                    eAipNode,
                             List<Point>             borderPoints,
                             List<Airspace>          airspaces,
+                            List<Navaid>            navaids,
                             List<ParseException>    errors) {
 
         String rootName = eAipNode.getOwnerDocument().getDocumentElement()
@@ -76,6 +79,7 @@ public class EAIPHungaryReader {
             processor = new EAipProcessor();
         }
 
-        processor.processEAIP(eAipNode, borderPoints, airspaces, errors);
+        processor.processEAIP(eAipNode, borderPoints, airspaces, navaids,
+                              errors);
     }
 }

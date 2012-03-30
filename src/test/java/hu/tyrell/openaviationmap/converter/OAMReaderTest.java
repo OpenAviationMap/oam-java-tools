@@ -21,6 +21,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import hu.tyrell.openaviationmap.model.Airspace;
+import hu.tyrell.openaviationmap.model.Navaid;
 import hu.tyrell.openaviationmap.model.Point;
 import hu.tyrell.openaviationmap.model.oam.Action;
 import hu.tyrell.openaviationmap.model.oam.Oam;
@@ -233,7 +234,8 @@ public class OAMReaderTest {
                         new FileInputStream("var/LH-ENR-5.1-en-HU.xml"));
         EAIPHungaryReader reader   = new EAIPHungaryReader();
 
-        reader.processEAIP(d.getDocumentElement(), null, airspaces, errors);
+        reader.processEAIP(d.getDocumentElement(), null, airspaces, null,
+                           errors);
 
         assertEquals(4, errors.size());
         assertEquals(47, airspaces.size());
@@ -265,11 +267,14 @@ public class OAMReaderTest {
 
         OAMReader oamReader = new OAMReader();
         List<Airspace> oamAirspaces = new Vector<Airspace>();
-        oamReader.processOam(d.getDocumentElement(), oamAirspaces, errors);
+        List<Navaid>   oamNavaids   = new Vector<Navaid>();
+        oamReader.processOam(d.getDocumentElement(), oamAirspaces, oamNavaids,
+                             errors);
 
         assertEquals(4, errors.size());
         assertEquals(airspaces.size(), oamAirspaces.size());
         assertTrue(airspaces.containsAll(oamAirspaces));
         assertTrue(oamAirspaces.containsAll(airspaces));
+        assertTrue(oamNavaids.isEmpty());
     }
 }

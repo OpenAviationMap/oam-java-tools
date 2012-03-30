@@ -70,7 +70,7 @@ public class EAipProcessorTest {
 
         assertNotNull(airspaceNode);
 
-        EAipProcessor processor = new EAipProcessor();
+        EAipProcessor processor = new EAipProcessorEnr51();
         Airspace airspace = processor.processAirspace(airspaceNode, null);
 
         assertNotNull(airspace);
@@ -133,7 +133,7 @@ public class EAipProcessorTest {
 
         assertNotNull(airspaceNode);
 
-        EAipProcessor processor = new EAipProcessor();
+        EAipProcessor processor = new EAipProcessorEnr51();
         Airspace airspace = processor.processAirspace(airspaceNode, null);
 
         assertNotNull(airspace);

@@ -19,8 +19,11 @@ package hu.tyrell.openaviationmap.converter.eaip;
 
 import hu.tyrell.openaviationmap.converter.ParseException;
 import hu.tyrell.openaviationmap.model.Airspace;
-import hu.tyrell.openaviationmap.model.Boundary;
 import hu.tyrell.openaviationmap.model.Elevation;
+import hu.tyrell.openaviationmap.model.ElevationReference;
+import hu.tyrell.openaviationmap.model.Frequency;
+import hu.tyrell.openaviationmap.model.MagneticVariation;
+import hu.tyrell.openaviationmap.model.Navaid;
 import hu.tyrell.openaviationmap.model.Point;
 
 import java.util.List;
@@ -38,83 +41,173 @@ import org.w3c.dom.NodeList;
  */
 public class EAipProcessorEnr41 extends EAipProcessor {
     /**
-     *  Process an airspace definition from the aAIP.
+     *  Process a navaid definition from the aAIP.
      *
-     *  @param airspaceNode the XML node that represents the airspace
-     *         which is an &lt;x:tr&gt; node
-     *  @param borderPoints a list of points repesenting the country border,
-     *         which is used for airspaces that reference a country border.
-     *         may be null.
-     *  @return an airspace described by the node
+     *  @param navaidNode the XML node that represents the navaid
+     *  @return a navaid described by the node
      *  @throws ParseException on input parsing errors.
      */
-    @Override
-    Airspace processAirspace(Node        airspaceNode,
-                             List<Point> borderPoints) throws ParseException {
+    Navaid processNavaid(Node        navaidNode) throws ParseException {
 
         try {
-            Airspace airspace = new Airspace();
+            Navaid navaid = new Navaid();
 
             XPath xpath = XPathFactory.newInstance().newXPath();
 
-            // get the name & designator
-            String name = xpath.evaluate("td[1]//strong/text()[1]",
-                                               airspaceNode).trim();
-            airspace.setName(name);
+            // get the id
+            String id = navaidNode.getAttributes().getNamedItem("id")
+                         .getNodeValue();
+            navaid.setId(id);
 
-            // get the boundary
-            Boundary boundary = null;
-            xpath.reset();
-            String str = xpath.evaluate("td[1]/text()[1]", airspaceNode);
-            if (str.startsWith(CIRCLE_PREFIX)) {
-                boundary = processCircle(name, str);
+            // get the type
+            String str = xpath.evaluate("Navaid-type/text()[1]", navaidNode)
+                    .trim();
+            if ("DVOR/DME".equals(str)) {
+                navaid.setType(Navaid.Type.VORDME);
+            } else if ("NDB".equals(str)) {
+                navaid.setType(Navaid.Type.NDB);
             } else {
-                boundary = processPointList(name, str, borderPoints);
+                throw new ParseException(id, "unknown navaid type " + str);
             }
 
-            airspace.setBoundary(boundary);
-
-            // get the vertical limits & class
+            // get the name
             xpath.reset();
-            str = xpath.evaluate("td[1]/text()[2]", airspaceNode);
-            int i   = str.indexOf("\n");
-            int j   = str.lastIndexOf("\n");
-            Elevation upperLimit = processElevation(str.substring(0, i).trim());
-            Elevation lowerLimit = processElevation(
-                                                str.substring(i + 1, j).trim());
-
-            airspace.setUpperLimit(upperLimit);
-            airspace.setLowerLimit(lowerLimit);
-            airspace.setAirspaceClass(str.substring(j + 1).trim());
-
-            // get the operator
-            xpath.reset();
-            str = xpath.evaluate("td[2]/text()", airspaceNode);
+            str = xpath.evaluate("Navaid-name", navaidNode).trim();
             if (str != null && !str.isEmpty()) {
-                airspace.setOperator(str);
+                navaid.setName(str);
             }
 
-            // get the frequencies
+            // get the ident
             xpath.reset();
-            str = xpath.evaluate("td[4]/text()", airspaceNode).trim();
+            str = xpath.evaluate("Navaid-ident", navaidNode).trim();
             if (str != null && !str.isEmpty()) {
-                airspace.setCommFrequency(str);
+                navaid.setIdent(str);
+            }
+
+            // get the declination
+            xpath.reset();
+            str = xpath.evaluate("Navaid-declination", navaidNode).trim();
+            if (str != null && !str.isEmpty()) {
+                // remove the trailing degree sign
+                if (str.endsWith("\u00b0")) {
+                    str = str.substring(0, str.length() - 1);
+                }
+                navaid.setDeclination(Double.parseDouble(str));
+            }
+
+            // get the variation
+            xpath.reset();
+            str = xpath.evaluate("Navaid-magnetic-variation", navaidNode)
+                    .trim();
+            if (str != null && !str.isEmpty()) {
+                navaid.setVariation(processVariation(str));
+            }
+
+            // get the frequency
+            xpath.reset();
+            str = xpath.evaluate("Navaid-frequency/text()[1]", navaidNode)
+                    .trim();
+            if (str != null && !str.isEmpty()) {
+                navaid.setFrequency(Frequency.fromString(str));
+            }
+
+            // get the DME channel, if any
+            xpath.reset();
+            str = xpath.evaluate("Navaid-frequency/text()[2]", navaidNode)
+                    .trim();
+            if (str != null && !str.isEmpty()) {
+                navaid.setDmeChannel(str);
+            }
+
+            // get the active time
+            xpath.reset();
+            str = xpath.evaluate("Navaid-hours", navaidNode).trim();
+            if (str != null && !str.isEmpty()) {
+                navaid.setActivetime(str);
+            }
+
+            // get the latitude
+            xpath.reset();
+            str = xpath.evaluate("Latitude", navaidNode).trim();
+            if (str != null && !str.isEmpty()) {
+                navaid.setLatitude(processLat(id, str));
+            }
+
+            // get the longitude
+            xpath.reset();
+            str = xpath.evaluate("Longitude", navaidNode).trim();
+            if (str != null && !str.isEmpty()) {
+                navaid.setLongitude(processLon(id, str));
+            }
+
+            // get the elevation
+            xpath.reset();
+            str = xpath.evaluate("Navaid-elevation", navaidNode).trim();
+            if (str != null && !str.isEmpty()) {
+                Elevation elevation = processElevation(str);
+                if (elevation.getReference() == null) {
+                    elevation.setReference(ElevationReference.SFC);
+                }
+                navaid.setElevation(elevation);
+            }
+
+            // get the coverage
+            xpath.reset();
+            str = xpath.evaluate("Navaid-remarks/text()[1]", navaidNode).trim();
+            if (str != null && !str.isEmpty() && str.startsWith("Coverage")) {
+                String s = str.substring(str.indexOf(':') + 1,
+                                         str.indexOf('/')).trim();
+                navaid.setCoverage(processDistance(s));
             }
 
             // get the remarks
             xpath.reset();
-            str = xpath.evaluate("td[5]/text()", airspaceNode);
-            if (str != null && !str.isEmpty()) {
-                airspace.setRemarks(str);
+            NodeList nodes = (NodeList) xpath.evaluate("Navaid-remarks/text()",
+                                            navaidNode,
+                                            XPathConstants.NODESET);
+            StringBuffer strb = new StringBuffer();
+            for (int i = 0; i < nodes.getLength(); ++i) {
+                strb.append(nodes.item(i).getNodeValue());
+                strb.append(" ");
+            }
+            str = strb.toString().trim();
+            if (!str.isEmpty()) {
+                navaid.setRemarks(str);
             }
 
-            return airspace;
+            return navaid;
 
         } catch (ParseException e) {
             throw e;
         } catch (Exception e) {
-            throw new ParseException(airspaceNode, e);
+            throw new ParseException(navaidNode, e);
         }
+    }
+
+    /**
+     * Process a magnetic variation string found in the eAIP.
+     *
+     * @param str the magnetic variation string, like "+4.1° / 2009"
+     * @return the magnetic variation described by str
+     */
+    private MagneticVariation processVariation(String str) {
+        MagneticVariation variation = new MagneticVariation();
+
+        // cut up to degree & year
+        int i = str.indexOf('/');
+
+        // process the degree of variation
+        String s = str.substring(0, i).trim();
+        // remove the trailing degree sign
+        if (s.endsWith("\u00b0")) {
+            s = s.substring(0, s.length() - 1);
+        }
+        variation.setVariation(Double.parseDouble(s));
+
+        // process the year
+        s = str.substring(i + 1).trim();
+        variation.setYear(Integer.parseInt(s));
+        return variation;
     }
 
     /**
@@ -126,12 +219,14 @@ public class EAipProcessorEnr41 extends EAipProcessor {
      *         may be null.
      *  @param airspaces all airspaces extracted from the supplied eAIP file
      *         will be inserted into this list.
+     *  @param navaids the navaids that are contained in the eAIP
      *  @param errors all parsing errors will be written to this list
      */
     @Override
     public void processEAIP(Node                    eAipNode,
                             List<Point>             borderPoints,
                             List<Airspace>          airspaces,
+                            List<Navaid>            navaids,
                             List<ParseException>    errors) {
 
         NodeList nodes = null;
@@ -140,12 +235,9 @@ public class EAipProcessorEnr41 extends EAipProcessor {
         try {
             XPath          xpath     = XPathFactory.newInstance().newXPath();
 
-            nodes = (NodeList) xpath.evaluate(
-                          "//table/tbody/tr"
-                        + "[not(descendant::processing-instruction('Fm')"
-                                         + "[contains(., 'APSToBeDeleted')])]",
-                          eAipNode,
-                          XPathConstants.NODESET);
+            nodes = (NodeList) xpath.evaluate("//Navaid-table/Navaid",
+                                              eAipNode,
+                                              XPathConstants.NODESET);
         } catch (XPathExpressionException e) {
             errors.add(new ParseException(e));
         }
@@ -156,9 +248,8 @@ public class EAipProcessorEnr41 extends EAipProcessor {
 
         for (int i = 0; i < nodes.getLength(); ++i) {
             try {
-                Airspace airspace = processAirspace(nodes.item(i),
-                                                    borderPoints);
-                airspaces.add(airspace);
+                Navaid navaid = processNavaid(nodes.item(i));
+                navaids.add(navaid);
             } catch (ParseException e) {
                 errors.add(e);
                 continue;
