@@ -600,6 +600,10 @@ public final class Converter {
                 node.getTags().put("navaid:type", "NDB");
                 break;
 
+            case DESIGNATED:
+                node.getTags().put("navaid:type", "DESIGNATED");
+                break;
+
             default:
             }
 

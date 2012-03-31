@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<osm version="0.6">
+<node action="create" id="-81" lat="47.75666666666667" lon="18.061944444444446" version="1">
+<tag k="id" v="XOMBA"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="XOMBA"/>
+<tag k="navaid:ident" v="XOMBA"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-80" lat="47.17222222222222" lon="21.72472222222222" version="1">
+<tag k="id" v="VERIG"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="VERIG"/>
+<tag k="navaid:ident" v="VERIG"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-79" lat="47.30638888888888" lon="18.63722222222222" version="1">
+<tag k="id" v="VEBOS"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="VEBOS"/>
+<tag k="navaid:ident" v="VEBOS"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-78" lat="45.99138888888889" lon="17.296666666666667" version="1">
+<tag k="id" v="VEBAL"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="VEBAL"/>
+<tag k="navaid:ident" v="VEBAL"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-77" lat="47.78722222222222" lon="17.662499999999998" version="1">
+<tag k="id" v="VAMOG"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="VAMOG"/>
+<tag k="navaid:ident" v="VAMOG"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-76" lat="47.53972222222222" lon="18.490000000000002" version="1">
+<tag k="id" v="TORNO"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="TORNO"/>
+<tag k="navaid:ident" v="TORNO"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-75" lat="46.04722222222222" lon="19.355833333333333" version="1">
+<tag k="id" v="TONDO"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="TONDO"/>
+<tag k="navaid:ident" v="TONDO"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-74" lat="47.62388888888889" lon="17.40888888888889" version="1">
+<tag k="id" v="TEKNO"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="TEKNO"/>
+<tag k="navaid:ident" v="TEKNO"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-73" lat="46.26277777777778" lon="21.104444444444447" version="1">
+<tag k="id" v="TEGRI"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="TEGRI"/>
+<tag k="navaid:ident" v="TEGRI"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-72" lat="46.47972222222222" lon="17.297222222222224" version="1">
+<tag k="id" v="SUNOR"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="SUNOR"/>
+<tag k="navaid:ident" v="SUNOR"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-71" lat="47.14194444444444" lon="16.349722222222223" version="1">
+<tag k="id" v="SUNIS"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="SUNIS"/>
+<tag k="navaid:ident" v="SUNIS"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-70" lat="47.42111111111111" lon="17.42666666666667" version="1">
+<tag k="id" v="SUBES"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="SUBES"/>
+<tag k="navaid:ident" v="SUBES"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-69" lat="47.427499999999995" lon="16.599722222222223" version="1">
+<tag k="id" v="STEIN"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="STEIN"/>
+<tag k="navaid:ident" v="STEIN"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-68" lat="47.58777777777778" lon="16.802500000000002" version="1">
+<tag k="id" v="SOPRO"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="SOPRO"/>
+<tag k="navaid:ident" v="SOPRO"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-67" lat="46.61027777777778" lon="17.684166666666666" version="1">
+<tag k="id" v="SOGMO"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="SOGMO"/>
+<tag k="navaid:ident" v="SOGMO"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-66" lat="47.25472222222222" lon="17.331944444444446" version="1">
+<tag k="id" v="SIRDU"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="SIRDU"/>
+<tag k="navaid:ident" v="SIRDU"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-65" lat="47.28472222222222" lon="16.474444444444444" version="1">
+<tag k="id" v="SASAL"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="SASAL"/>
+<tag k="navaid:ident" v="SASAL"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-64" lat="48.221944444444446" lon="21.840277777777775" version="1">
+<tag k="id" v="ROMKA"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="ROMKA"/>
+<tag k="navaid:ident" v="ROMKA"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-63" lat="48.16444444444444" lon="20.751666666666665" version="1">
+<tag k="id" v="RIGSA"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="RIGSA"/>
+<tag k="navaid:ident" v="RIGSA"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-62" lat="47.15222222222222" lon="18.742222222222225" version="1">
+<tag k="id" v="PUSTA"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="PUSTA"/>
+<tag k="navaid:ident" v="PUSTA"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-61" lat="48.32472222222223" lon="20.371666666666666" version="1">
+<tag k="id" v="PITOK"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="PITOK"/>
+<tag k="navaid:ident" v="PITOK"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-60" lat="46.12222222222222" lon="18.069444444444443" version="1">
+<tag k="id" v="PIDON"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="PIDON"/>
+<tag k="navaid:ident" v="PIDON"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-59" lat="47.715" lon="17.053055555555556" version="1">
+<tag k="id" v="PESAT"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="PESAT"/>
+<tag k="navaid:ident" v="PESAT"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-58" lat="47.788333333333334" lon="21.622777777777777" version="1">
+<tag k="id" v="PERIT"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="PERIT"/>
+<tag k="navaid:ident" v="PERIT"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-57" lat="46.163888888888884" lon="20.094166666666666" version="1">
+<tag k="id" v="PARAK"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="PARAK"/>
+<tag k="navaid:ident" v="PARAK"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-56" lat="48.073055555555555" lon="19.127222222222223" version="1">
+<tag k="id" v="PATAK"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="PATAK"/>
+<tag k="navaid:ident" v="PATAK"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-55" lat="46.72666666666667" lon="20.3625" version="1">
+<tag k="id" v="OSLEN"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="OSLEN"/>
+<tag k="navaid:ident" v="OSLEN"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-54" lat="46.98722222222222" lon="17.479166666666664" version="1">
+<tag k="id" v="OLATI"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="OLATI"/>
+<tag k="navaid:ident" v="OLATI"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-53" lat="46.76638888888889" lon="18.37138888888889" version="1">
+<tag k="id" v="OKORA"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="OKORA"/>
+<tag k="navaid:ident" v="OKORA"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-52" lat="47.86666666666667" lon="17.5" version="1">
+<tag k="id" v="NUBRA"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="NUBRA"/>
+<tag k="navaid:ident" v="NUBRA"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-51" lat="47.61611111111111" lon="19.808055555555555" version="1">
+<tag k="id" v="NORAH"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="NORAH"/>
+<tag k="navaid:ident" v="NORAH"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-50" lat="46.619166666666665" lon="17.545555555555556" version="1">
+<tag k="id" v="NIKAB"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="NIKAB"/>
+<tag k="navaid:ident" v="NIKAB"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-49" lat="47.248333333333335" lon="21.860000000000003" version="1">
+<tag k="id" v="NARKA"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="NARKA"/>
+<tag k="navaid:ident" v="NARKA"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-48" lat="46.86972222222222" lon="16.82" version="1">
+<tag k="id" v="NALOX"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="NALOX"/>
+<tag k="navaid:ident" v="NALOX"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-47" lat="48.0425" lon="19.765833333333333" version="1">
+<tag k="id" v="NALAG"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="NALAG"/>
+<tag k="navaid:ident" v="NALAG"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-46" lat="46.16361111111111" lon="20.708055555555553" version="1">
+<tag k="id" v="MOPUG"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="MOPUG"/>
+<tag k="navaid:ident" v="MOPUG"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-45" lat="47.93444444444444" lon="17.141666666666666" version="1">
+<tag k="id" v="MIRLU"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="MIRLU"/>
+<tag k="navaid:ident" v="MIRLU"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-44" lat="47.208333333333336" lon="21.861111111111114" version="1">
+<tag k="id" v="MEGIK"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="MEGIK"/>
+<tag k="navaid:ident" v="MEGIK"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-43" lat="46.39833333333333" lon="19.825277777777778" version="1">
+<tag k="id" v="MAVIR"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="MAVIR"/>
+<tag k="navaid:ident" v="MAVIR"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-42" lat="48.34" lon="22.31972222222222" version="1">
+<tag k="id" v="LONLA"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="LONLA"/>
+<tag k="navaid:ident" v="LONLA"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-41" lat="48.230555555555554" lon="19.59861111111111" version="1">
+<tag k="id" v="LITKU"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="LITKU"/>
+<tag k="navaid:ident" v="LITKU"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-40" lat="47.946666666666665" lon="17.32638888888889" version="1">
+<tag k="id" v="KUNET"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="KUNET"/>
+<tag k="navaid:ident" v="KUNET"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-39" lat="47.84722222222222" lon="20.502777777777776" version="1">
+<tag k="id" v="KOVEK"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="KOVEK"/>
+<tag k="navaid:ident" v="KOVEK"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-38" lat="46.24027777777778" lon="16.962777777777777" version="1">
+<tag k="id" v="KOPRY"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="KOPRY"/>
+<tag k="navaid:ident" v="KOPRY"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-37" lat="46.18444444444444" lon="19.696666666666665" version="1">
+<tag k="id" v="KEROP"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="KEROP"/>
+<tag k="navaid:ident" v="KEROP"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-36" lat="48.361666666666665" lon="21.927222222222223" version="1">
+<tag k="id" v="KENIN"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="KENIN"/>
+<tag k="navaid:ident" v="KENIN"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-35" lat="48.52305555555555" lon="21.29138888888889" version="1">
+<tag k="id" v="KEKED"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="KEKED"/>
+<tag k="navaid:ident" v="KEKED"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-34" lat="47.79388888888889" lon="22.442222222222224" version="1">
+<tag k="id" v="KARIL"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="KARIL"/>
+<tag k="navaid:ident" v="KARIL"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-33" lat="46.157777777777774" lon="20.40138888888889" version="1">
+<tag k="id" v="INVED"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="INVED"/>
+<tag k="navaid:ident" v="INVED"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-32" lat="46.99777777777778" lon="16.22472222222222" version="1">
+<tag k="id" v="GOTAR"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="GOTAR"/>
+<tag k="navaid:ident" v="GOTAR"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-31" lat="47.05472222222222" lon="18.174166666666668" version="1">
+<tag k="id" v="GITAS"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="GITAS"/>
+<tag k="navaid:ident" v="GITAS"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-30" lat="47.483333333333334" lon="18.25888888888889" version="1">
+<tag k="id" v="GILEP"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="GILEP"/>
+<tag k="navaid:ident" v="GILEP"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-29" lat="47.75944444444445" lon="17.67666666666667" version="1">
+<tag k="id" v="GIGOR"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="GIGOR"/>
+<tag k="navaid:ident" v="GIGOR"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-28" lat="48.10138888888889" lon="20.233055555555556" version="1">
+<tag k="id" v="GELKA"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="GELKA"/>
+<tag k="navaid:ident" v="GELKA"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-27" lat="47.77777777777778" lon="17.100555555555555" version="1">
+<tag k="id" v="EVAXI"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="EVAXI"/>
+<tag k="navaid:ident" v="EVAXI"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-26" lat="47.0675" lon="19.275" version="1">
+<tag k="id" v="ERLOS"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="ERLOS"/>
+<tag k="navaid:ident" v="ERLOS"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-25" lat="47.80833333333333" lon="18.733055555555556" version="1">
+<tag k="id" v="ERGOM"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="ERGOM"/>
+<tag k="navaid:ident" v="ERGOM"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-24" lat="47.686388888888885" lon="18.978055555555553" version="1">
+<tag k="id" v="EPARI"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="EPARI"/>
+<tag k="navaid:ident" v="EPARI"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-23" lat="46.35583333333334" lon="19.9875" version="1">
+<tag k="id" v="EBORO"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="EBORO"/>
+<tag k="navaid:ident" v="EBORO"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-22" lat="47.214444444444446" lon="19.5275" version="1">
+<tag k="id" v="DODAR"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="DODAR"/>
+<tag k="navaid:ident" v="DODAR"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-21" lat="46.683611111111105" lon="16.422777777777778" version="1">
+<tag k="id" v="DIMLO"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="DIMLO"/>
+<tag k="navaid:ident" v="DIMLO"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-20" lat="48.17472222222222" lon="20.056944444444444" version="1">
+<tag k="id" v="DEMOP"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="DEMOP"/>
+<tag k="navaid:ident" v="DEMOP"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-19" lat="46.493611111111115" lon="21.26722222222222" version="1">
+<tag k="id" v="DEGET"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="DEGET"/>
+<tag k="navaid:ident" v="DEGET"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-18" lat="46.6875" lon="21.496666666666666" version="1">
+<tag k="id" v="BUDOP"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="BUDOP"/>
+<tag k="navaid:ident" v="BUDOP"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-17" lat="46.63527777777778" lon="19.830833333333334" version="1">
+<tag k="id" v="BOKSI"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="BOKSI"/>
+<tag k="navaid:ident" v="BOKSI"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-16" lat="46.92611111111111" lon="20.459166666666665" version="1">
+<tag k="id" v="BINKU"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="BINKU"/>
+<tag k="navaid:ident" v="BINKU"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-15" lat="47.83083333333334" lon="17.114444444444445" version="1">
+<tag k="id" v="BEGLA"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="BEGLA"/>
+<tag k="navaid:ident" v="BEGLA"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-14" lat="45.74611111111111" lon="18.41333333333333" version="1">
+<tag k="id" v="BAREB"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="BAREB"/>
+<tag k="navaid:ident" v="BAREB"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-13" lat="47.340833333333336" lon="19.129444444444445" version="1">
+<tag k="id" v="BALUX"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="BALUX"/>
+<tag k="navaid:ident" v="BALUX"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-12" lat="48.06805555555556" lon="19.25" version="1">
+<tag k="id" v="BALAP"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="BALAP"/>
+<tag k="navaid:ident" v="BALAP"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-11" lat="48.02111111111111" lon="18.815833333333334" version="1">
+<tag k="id" v="BADOV"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="BADOV"/>
+<tag k="navaid:ident" v="BADOV"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-10" lat="47.57361111111111" lon="22.108055555555556" version="1">
+<tag k="id" v="BADOR"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="BADOR"/>
+<tag k="navaid:ident" v="BADOR"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-9" lat="46.895833333333336" lon="19.68305555555556" version="1">
+<tag k="id" v="BABOX"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="BABOX"/>
+<tag k="navaid:ident" v="BABOX"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-8" lat="45.931666666666665" lon="18.92888888888889" version="1">
+<tag k="id" v="BABIT"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="BABIT"/>
+<tag k="navaid:ident" v="BABIT"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-7" lat="47.56722222222223" lon="16.753611111111113" version="1">
+<tag k="id" v="ARSIN"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="ARSIN"/>
+<tag k="navaid:ident" v="ARSIN"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-6" lat="48.09138888888889" lon="19.366111111111113" version="1">
+<tag k="id" v="AMRAX"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="AMRAX"/>
+<tag k="navaid:ident" v="AMRAX"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-5" lat="47.73694444444445" lon="18.33" version="1">
+<tag k="id" v="ALAMU"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="ALAMU"/>
+<tag k="navaid:ident" v="ALAMU"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-4" lat="47.48416666666667" lon="19.691666666666666" version="1">
+<tag k="id" v="AGMAS"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="AGMAS"/>
+<tag k="navaid:ident" v="AGMAS"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-3" lat="48.48416666666667" lon="20.486666666666668" version="1">
+<tag k="id" v="ABULI"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="ABULI"/>
+<tag k="navaid:ident" v="ABULI"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-2" lat="47.270833333333336" lon="19.979166666666664" version="1">
+<tag k="id" v="ABONY"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="ABONY"/>
+<tag k="navaid:ident" v="ABONY"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-1" lat="47.67777777777778" lon="17.012777777777778" version="1">
+<tag k="id" v="ABETI"/>
+<tag k="navaid:type" v="DESIGNATED"/>
+<tag k="name" v="ABETI"/>
+<tag k="navaid:ident" v="ABETI"/>
+<tag k="navaid" v="yes"/>
+</node>
+</osm>

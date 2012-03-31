@@ -257,4 +257,55 @@ public class EAIPHungaryReaderTest {
         assertEquals("Coverage: 60NM/110km", navaid.getRemarks());
     }
 
+    /**
+     * Test an eAIP ENR-4.4 document.
+     *
+     * @throws ParserConfigurationException on XML parser configuration errors
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing issues
+     */
+    @Test
+    public void testEAipEnr44() throws ParserConfigurationException,
+                                       SAXException,
+                                       IOException {
+        Node eAipNode = null;
+
+        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        DocumentBuilder        db  = dbf.newDocumentBuilder();
+
+        Document   d = db.parse(
+                        new FileInputStream("var/LH-ENR-4.4-en-HU.xml"));
+        eAipNode = d.getDocumentElement();
+
+        assertNotNull(eAipNode);
+
+        EAIPHungaryReader    reader    = new EAIPHungaryReader();
+        List<Navaid>         navaids   = new Vector<Navaid>();
+        List<ParseException> errors    = new Vector<ParseException>();
+
+
+        reader.processEAIP(eAipNode, null, null, navaids, errors);
+
+        assertEquals(0, errors.size());
+        assertEquals(81, navaids.size());
+
+        // check the ABETI
+        Navaid navaid = navaids.get(0);
+        assertEquals("ABETI", navaid.getId());
+        assertEquals(Navaid.Type.DESIGNATED, navaid.getType());
+        assertEquals("ABETI", navaid.getName());
+        assertEquals("ABETI", navaid.getIdent());
+        assertEquals(47.67777, navaid.getLatitude(), 0.00001);
+        assertEquals(17.01277, navaid.getLongitude(), 0.00001);
+
+        // check the DIMLO
+        navaid = navaids.get(20);
+        assertEquals("DIMLO", navaid.getId());
+        assertEquals(Navaid.Type.DESIGNATED, navaid.getType());
+        assertEquals("DIMLO", navaid.getName());
+        assertEquals("DIMLO", navaid.getIdent());
+        assertEquals(46.68361, navaid.getLatitude(), 0.00001);
+        assertEquals(16.42277, navaid.getLongitude(), 0.00001);
+}
+
 }

@@ -556,6 +556,8 @@ public class OAMReader {
                 navaid.setType(Navaid.Type.DME);
             } else if ("NDB".equals(s)) {
                 navaid.setType(Navaid.Type.NDB);
+            } else if ("DESIGNATED".equals(s)) {
+                navaid.setType(Navaid.Type.DESIGNATED);
             }
         }
 

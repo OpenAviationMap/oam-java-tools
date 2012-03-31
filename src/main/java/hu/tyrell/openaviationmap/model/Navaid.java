@@ -43,7 +43,12 @@ public class Navaid extends Point {
         /**
          * A co-located VOR-DME.
          */
-        VORDME
+        VORDME,
+
+        /**
+         * A designated point / GPS reporting point.
+         */
+        DESIGNATED
     }
 
     /**

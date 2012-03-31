@@ -343,4 +343,26 @@ public class EAipToOamTest {
                       "var/hungary.osm",
                       1, 0, 18);
     }
+
+    /**
+     * Test converting an eAIP section ENR-4.4 element to OAM.
+     *
+     * @throws ParserConfigurationException on XML parser configuration errors.
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing errors
+     * @throws ParseException on OAM parsing errors
+     * @throws TransformerException on XML serialization errors
+     */
+    @Test
+    public void testEAipEnr44ToOam() throws ParserConfigurationException,
+                                            SAXException,
+                                            IOException,
+                                            ParseException,
+                                            TransformerException {
+
+        testEAipToOam("var/LH-ENR-4.4-en-HU.xml",
+                      "var/oam-hungary-4.4.xml",
+                      "var/hungary.osm",
+                      0, 0, 81);
+    }
 }
