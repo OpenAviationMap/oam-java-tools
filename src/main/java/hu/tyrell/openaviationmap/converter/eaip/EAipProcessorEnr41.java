@@ -18,6 +18,7 @@
 package hu.tyrell.openaviationmap.converter.eaip;
 
 import hu.tyrell.openaviationmap.converter.ParseException;
+import hu.tyrell.openaviationmap.model.Aerodrome;
 import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Elevation;
 import hu.tyrell.openaviationmap.model.ElevationReference;
@@ -144,9 +145,9 @@ public class EAipProcessorEnr41 extends EAipProcessor {
             xpath.reset();
             str = xpath.evaluate("Navaid-elevation", navaidNode).trim();
             if (str != null && !str.isEmpty()) {
-                Elevation elevation = processElevation(str);
+                Elevation elevation = processElevation(id, str);
                 if (elevation.getReference() == null) {
-                    elevation.setReference(ElevationReference.SFC);
+                    elevation.setReference(ElevationReference.MSL);
                 }
                 navaid.setElevation(elevation);
             }
@@ -219,7 +220,10 @@ public class EAipProcessorEnr41 extends EAipProcessor {
      *         may be null.
      *  @param airspaces all airspaces extracted from the supplied eAIP file
      *         will be inserted into this list.
-     *  @param navaids the navaids that are contained in the eAIP
+     *  @param navaids the navaids that are contained in the eAIP file
+     *         will be inserted into this list.
+     *  @param aerodromes the aerodromes that are contained contained in the
+     *         eAIP file will be put into this list
      *  @param errors all parsing errors will be written to this list
      */
     @Override
@@ -227,11 +231,12 @@ public class EAipProcessorEnr41 extends EAipProcessor {
                             List<Point>             borderPoints,
                             List<Airspace>          airspaces,
                             List<Navaid>            navaids,
+                            List<Aerodrome>         aerodromes,
                             List<ParseException>    errors) {
 
         NodeList nodes = null;
 
-        // get the name & designator
+        // get the navaid nodes
         try {
             XPath          xpath     = XPathFactory.newInstance().newXPath();
 

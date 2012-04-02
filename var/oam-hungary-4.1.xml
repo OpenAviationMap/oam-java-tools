@@ -5,7 +5,7 @@
 <tag k="navaid:type" v="NDB"/>
 <tag k="navaid:variation:year" v="2009"/>
 <tag k="navaid:coverage" v="60.0"/>
-<tag k="navaid:coverage:unit" v="NM"/>
+<tag k="navaid:coverage:unit" v="nm"/>
 <tag k="navaid:activetime" v="H24"/>
 <tag k="name" v="TÁPIÓSÁP"/>
 <tag k="navaid:ndb" v="306kHz"/>
@@ -22,11 +22,11 @@
 <tag k="navaid:remarks" v="Coverage: 100 NM/185 km DME COORD: 472936N 0192646E"/>
 <tag k="navaid" v="yes"/>
 <tag k="id" v="TPS-DVORDME"/>
-<tag k="height:unit" v="FT"/>
-<tag k="height" v="826.771653543307"/>
+<tag k="height:unit" v="m"/>
+<tag k="height" v="252"/>
 <tag k="navaid:declination" v="3.9"/>
-<tag k="height:class" v="agl"/>
-<tag k="navaid:coverage:unit" v="NM"/>
+<tag k="height:class" v="amsl"/>
+<tag k="navaid:coverage:unit" v="nm"/>
 <tag k="name" v="TÁPIÓSÁP"/>
 <tag k="navaid:ident" v="TPS"/>
 <tag k="navaid:dme" v="106X"/>
@@ -36,7 +36,7 @@
 <tag k="navaid:type" v="NDB"/>
 <tag k="navaid:variation:year" v="2009"/>
 <tag k="navaid:coverage" v="60.0"/>
-<tag k="navaid:coverage:unit" v="NM"/>
+<tag k="navaid:coverage:unit" v="nm"/>
 <tag k="navaid:activetime" v="H24"/>
 <tag k="name" v="SÁGVÁR"/>
 <tag k="navaid:ndb" v="348kHz"/>
@@ -53,11 +53,11 @@
 <tag k="navaid:remarks" v="Coverage: 100 NM/185 km DME COORD: 464941N 0180705E"/>
 <tag k="navaid" v="yes"/>
 <tag k="id" v="SVR-DVORDME"/>
-<tag k="height:unit" v="FT"/>
-<tag k="height" v="501.9685039370078"/>
+<tag k="height:unit" v="m"/>
+<tag k="height" v="153"/>
 <tag k="navaid:declination" v="3.6"/>
-<tag k="height:class" v="agl"/>
-<tag k="navaid:coverage:unit" v="NM"/>
+<tag k="height:class" v="amsl"/>
+<tag k="navaid:coverage:unit" v="nm"/>
 <tag k="name" v="SÁGVÁR"/>
 <tag k="navaid:ident" v="SVR"/>
 <tag k="navaid:dme" v="124X"/>
@@ -67,7 +67,7 @@
 <tag k="navaid:type" v="NDB"/>
 <tag k="navaid:variation:year" v="2009"/>
 <tag k="navaid:coverage" v="60.0"/>
-<tag k="navaid:coverage:unit" v="NM"/>
+<tag k="navaid:coverage:unit" v="nm"/>
 <tag k="navaid:activetime" v="H24"/>
 <tag k="name" v="SAJÓHÍDVÉG"/>
 <tag k="navaid:ndb" v="390kHz"/>
@@ -84,11 +84,11 @@
 <tag k="navaid:remarks" v="Coverage: 100 NM/185 km DME COORD: 480029N 0205947E"/>
 <tag k="navaid" v="yes"/>
 <tag k="id" v="SAG-DVORDME"/>
-<tag k="height:unit" v="FT"/>
-<tag k="height" v="374.01574803149606"/>
+<tag k="height:unit" v="m"/>
+<tag k="height" v="114"/>
 <tag k="navaid:declination" v="4.4"/>
-<tag k="height:class" v="agl"/>
-<tag k="navaid:coverage:unit" v="NM"/>
+<tag k="height:class" v="amsl"/>
+<tag k="navaid:coverage:unit" v="nm"/>
 <tag k="name" v="SAJÓHÍDVÉG"/>
 <tag k="navaid:ident" v="SAG"/>
 <tag k="navaid:dme" v="91X"/>
@@ -98,7 +98,7 @@
 <tag k="navaid:type" v="NDB"/>
 <tag k="navaid:variation:year" v="2009"/>
 <tag k="navaid:coverage" v="60.0"/>
-<tag k="navaid:coverage:unit" v="NM"/>
+<tag k="navaid:coverage:unit" v="nm"/>
 <tag k="navaid:activetime" v="H24"/>
 <tag k="name" v="PUSZTASZABOLCS"/>
 <tag k="navaid:ndb" v="386kHz"/>
@@ -115,11 +115,11 @@
 <tag k="navaid:remarks" v="Coverage: 100 NM/185 km DME COORD: 470908N 0184432E"/>
 <tag k="navaid" v="yes"/>
 <tag k="id" v="PTB-DVORDME"/>
-<tag k="height:unit" v="FT"/>
-<tag k="height" v="452.755905511811"/>
+<tag k="height:unit" v="m"/>
+<tag k="height" v="138"/>
 <tag k="navaid:declination" v="3.5"/>
-<tag k="height:class" v="agl"/>
-<tag k="navaid:coverage:unit" v="NM"/>
+<tag k="height:class" v="amsl"/>
+<tag k="navaid:coverage:unit" v="nm"/>
 <tag k="name" v="PUSZTASZABOLCS"/>
 <tag k="navaid:ident" v="PTB"/>
 <tag k="navaid:dme" v="118X"/>
@@ -128,7 +128,7 @@
 <tag k="id" v="MNR-NDB"/>
 <tag k="navaid:type" v="NDB"/>
 <tag k="navaid:coverage" v="60.0"/>
-<tag k="navaid:coverage:unit" v="NM"/>
+<tag k="navaid:coverage:unit" v="nm"/>
 <tag k="navaid:activetime" v="H24"/>
 <tag k="name" v="MONOR"/>
 <tag k="navaid:ndb" v="288kHz"/>
@@ -144,11 +144,11 @@
 <tag k="navaid:remarks" v="Coverage: 100 NM/185 km DME COORD: 472005N 0192420E"/>
 <tag k="navaid" v="yes"/>
 <tag k="id" v="MNR-DVORDME"/>
-<tag k="height:unit" v="FT"/>
-<tag k="height" v="452.755905511811"/>
+<tag k="height:unit" v="m"/>
+<tag k="height" v="138"/>
 <tag k="navaid:declination" v="4.3"/>
-<tag k="height:class" v="agl"/>
-<tag k="navaid:coverage:unit" v="NM"/>
+<tag k="height:class" v="amsl"/>
+<tag k="navaid:coverage:unit" v="nm"/>
 <tag k="name" v="MONOR"/>
 <tag k="navaid:ident" v="MNR"/>
 <tag k="navaid:dme" v="72X"/>
@@ -158,7 +158,7 @@
 <tag k="navaid:type" v="NDB"/>
 <tag k="navaid:variation:year" v="2009"/>
 <tag k="navaid:coverage" v="30.0"/>
-<tag k="navaid:coverage:unit" v="NM"/>
+<tag k="navaid:coverage:unit" v="nm"/>
 <tag k="navaid:activetime" v="H24"/>
 <tag k="name" v="JÁSZBERÉNY"/>
 <tag k="navaid:ndb" v="517kHz"/>
@@ -172,7 +172,7 @@
 <tag k="navaid:type" v="NDB"/>
 <tag k="navaid:variation:year" v="2009"/>
 <tag k="navaid:coverage" v="60.0"/>
-<tag k="navaid:coverage:unit" v="NM"/>
+<tag k="navaid:coverage:unit" v="nm"/>
 <tag k="navaid:activetime" v="H24"/>
 <tag k="name" v="GYŐR"/>
 <tag k="navaid:ndb" v="354kHz"/>
@@ -189,11 +189,11 @@
 <tag k="navaid:remarks" v="Coverage: 100 NM/185 km DME COORD: 473932N 0174328E"/>
 <tag k="navaid" v="yes"/>
 <tag k="id" v="GYR-DVORDME"/>
-<tag k="height:unit" v="FT"/>
-<tag k="height" v="515.0918635170603"/>
+<tag k="height:unit" v="m"/>
+<tag k="height" v="157"/>
 <tag k="navaid:declination" v="3.4"/>
-<tag k="height:class" v="agl"/>
-<tag k="navaid:coverage:unit" v="NM"/>
+<tag k="height:class" v="amsl"/>
+<tag k="navaid:coverage:unit" v="nm"/>
 <tag k="name" v="GYŐR"/>
 <tag k="navaid:ident" v="GYR"/>
 <tag k="navaid:dme" v="98X"/>
@@ -203,7 +203,7 @@
 <tag k="navaid:type" v="NDB"/>
 <tag k="navaid:variation:year" v="2009"/>
 <tag k="navaid:coverage" v="60.0"/>
-<tag k="navaid:coverage:unit" v="NM"/>
+<tag k="navaid:coverage:unit" v="nm"/>
 <tag k="navaid:activetime" v="H24"/>
 <tag k="name" v="BUGAC"/>
 <tag k="navaid:ndb" v="430kHz"/>
@@ -220,11 +220,11 @@
 <tag k="navaid:remarks" v="Coverage: 100 NM/185 km DME COORD: 464040N 0194054E"/>
 <tag k="navaid" v="yes"/>
 <tag k="id" v="BUG-DVORDME"/>
-<tag k="height:unit" v="FT"/>
-<tag k="height" v="403.54330708661416"/>
+<tag k="height:unit" v="m"/>
+<tag k="height" v="123"/>
 <tag k="navaid:declination" v="4.0"/>
-<tag k="height:class" v="agl"/>
-<tag k="navaid:coverage:unit" v="NM"/>
+<tag k="height:class" v="amsl"/>
+<tag k="navaid:coverage:unit" v="nm"/>
 <tag k="name" v="BUGAC"/>
 <tag k="navaid:ident" v="BUG"/>
 <tag k="navaid:dme" v="81X"/>
@@ -237,11 +237,11 @@
 <tag k="navaid:remarks" v="Coverage: 100 NM/185 km&#10;ATIS is also transmitted. DME COORD: 472701N 0191458E"/>
 <tag k="navaid" v="yes"/>
 <tag k="id" v="BUD-DVORDME"/>
-<tag k="height:unit" v="FT"/>
-<tag k="height" v="531.496062992126"/>
+<tag k="height:unit" v="m"/>
+<tag k="height" v="162"/>
 <tag k="navaid:declination" v="4.4"/>
-<tag k="height:class" v="agl"/>
-<tag k="navaid:coverage:unit" v="NM"/>
+<tag k="height:class" v="amsl"/>
+<tag k="navaid:coverage:unit" v="nm"/>
 <tag k="name" v="BUDAPEST"/>
 <tag k="navaid:ident" v="BUD"/>
 <tag k="navaid:dme" v="120X"/>
@@ -251,7 +251,7 @@
 <tag k="navaid:type" v="NDB"/>
 <tag k="navaid:variation:year" v="2009"/>
 <tag k="navaid:coverage" v="60.0"/>
-<tag k="navaid:coverage:unit" v="NM"/>
+<tag k="navaid:coverage:unit" v="nm"/>
 <tag k="navaid:activetime" v="H24"/>
 <tag k="name" v="BÉKÉS"/>
 <tag k="navaid:ndb" v="374kHz"/>
@@ -268,11 +268,11 @@
 <tag k="navaid:remarks" v="Coverage: 100 NM/185 km DME COORD: 464759.9N 0210426.0E"/>
 <tag k="navaid" v="yes"/>
 <tag k="id" v="BKS-DVORDME"/>
-<tag k="height:unit" v="FT"/>
-<tag k="height" v="311.6797900262467"/>
+<tag k="height:unit" v="m"/>
+<tag k="height" v="95"/>
 <tag k="navaid:declination" v="4.2"/>
-<tag k="height:class" v="agl"/>
-<tag k="navaid:coverage:unit" v="NM"/>
+<tag k="height:class" v="amsl"/>
+<tag k="navaid:coverage:unit" v="nm"/>
 <tag k="name" v="BÉKÉS"/>
 <tag k="navaid:ident" v="BKS"/>
 <tag k="navaid:dme" v="105X"/>

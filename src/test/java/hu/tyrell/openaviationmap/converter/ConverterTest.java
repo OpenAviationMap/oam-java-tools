@@ -20,6 +20,7 @@ package hu.tyrell.openaviationmap.converter;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
+import hu.tyrell.openaviationmap.model.Aerodrome;
 import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Boundary;
 import hu.tyrell.openaviationmap.model.Navaid;
@@ -54,6 +55,7 @@ public class ConverterTest {
         String                  outputFormat   = "OAM";
         Action                  action         = Action.CREATE;
         String                  borderFile     = "var/hungary.osm";
+        String                  adFile         = "var/LH-AD-1.3-en-HU.xml";
         int                     version        = 1;
         List<ParseException>    errors         = new Vector<ParseException>();
 
@@ -63,6 +65,7 @@ public class ConverterTest {
                           outputFormat,
                           action,
                           borderFile,
+                          adFile,
                           version,
                           errors);
 
@@ -74,9 +77,14 @@ public class ConverterTest {
 
         Document   d = db.parse(new FileInputStream(outputFile));
         OAMReader  reader = new OAMReader();
-        List<Airspace> airspaces = new Vector<Airspace>();
-        List<Navaid>   navaids   = new Vector<Navaid>();
-        reader.processOam(d.getDocumentElement(), airspaces, navaids, errors);
+        List<Airspace>      airspaces  = new Vector<Airspace>();
+        List<Navaid>        navaids    = new Vector<Navaid>();
+        List<Aerodrome>     aerodromes = new Vector<Aerodrome>();
+        reader.processOam(d.getDocumentElement(),
+                          airspaces,
+                          navaids,
+                          aerodromes,
+                          errors);
 
         assertTrue(errors.isEmpty());
         assertEquals(37, airspaces.size());

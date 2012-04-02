@@ -74,7 +74,7 @@ public class OAMWriterTest {
         List<ParseException> errors    = new Vector<ParseException>();
 
         reader.processEAIP(d.getDocumentElement(), null, airspaces, null,
-                           errors);
+                           null, errors);
 
         assertTrue(errors.isEmpty());
         assertNotNull(airspaces);
@@ -83,7 +83,7 @@ public class OAMWriterTest {
         // convert the airspaces into an Oam object
         Oam oam = new Oam();
 
-        Converter.airspacesToOam(airspaces, oam, Action.NONE, 1, 0, 0);
+        Converter.airspacesToOam(airspaces, oam, Action.NONE, 1, 0);
 
         // now,  convert this Oam object into XML
         d = db.newDocument();
@@ -102,7 +102,7 @@ public class OAMWriterTest {
                                                    XPathConstants.NODESET);
         assertEquals(nodes.getLength(), 11);
         Node attr = nodes.item(2).getAttributes().getNamedItem("id");
-        assertEquals("3", attr.getNodeValue());
+        assertEquals("2", attr.getNodeValue());
         attr = nodes.item(2).getAttributes().getNamedItem("version");
         assertEquals("1", attr.getNodeValue());
         attr = nodes.item(2).getAttributes().getNamedItem("lat");
@@ -115,7 +115,7 @@ public class OAMWriterTest {
                                           XPathConstants.NODESET);
         assertEquals(nodes.getLength(), 1);
         attr = nodes.item(0).getAttributes().getNamedItem("id");
-        assertEquals("1", attr.getNodeValue());
+        assertEquals("11", attr.getNodeValue());
 
         xpath.reset();
         nodes = (NodeList) xpath.evaluate("//way/nd", root,
@@ -157,7 +157,7 @@ public class OAMWriterTest {
         EAIPHungaryReader reader   = new EAIPHungaryReader();
 
         reader.processEAIP(d.getDocumentElement(), null, airspaces, null,
-                           errors);
+                           null, errors);
 
         assertEquals(4, errors.size());
         assertEquals(47, airspaces.size());
@@ -165,7 +165,7 @@ public class OAMWriterTest {
         // convert the airspaces into an Oam object
         Oam oam = new Oam();
 
-        Converter.airspacesToOam(airspaces, oam, Action.NONE, 1, 0, 0);
+        Converter.airspacesToOam(airspaces, oam, Action.NONE, 1, 0);
 
         // now,  convert the Oam object into XML
         d = db.newDocument();
@@ -193,24 +193,24 @@ public class OAMWriterTest {
         attr = nodes.item(0).getAttributes().getNamedItem("version");
         assertEquals("1", attr.getNodeValue());
         attr = nodes.item(0).getAttributes().getNamedItem("lat");
-        assertEquals("47.515", attr.getNodeValue());
+        assertEquals("47.514722222222225", attr.getNodeValue());
         attr = nodes.item(0).getAttributes().getNamedItem("lon");
-        assertEquals("19.033055555555556", attr.getNodeValue());
+        assertEquals("19.04361111111111", attr.getNodeValue());
 
         xpath.reset();
         nodes = (NodeList) xpath.evaluate("//way", root,
                                           XPathConstants.NODESET);
         assertEquals(nodes.getLength(), 47);
         attr = nodes.item(0).getAttributes().getNamedItem("id");
-        assertEquals("1", attr.getNodeValue());
+        assertEquals("32", attr.getNodeValue());
 
         xpath.reset();
-        nodes = (NodeList) xpath.evaluate("//way[@id='3']/nd", root,
+        nodes = (NodeList) xpath.evaluate("//way[@id='77']/nd", root,
                                           XPathConstants.NODESET);
         assertEquals(nodes.getLength(), 12);
 
         xpath.reset();
-        nodes = (NodeList) xpath.evaluate("//way[@id='3']/tag[@k='icao']",
+        nodes = (NodeList) xpath.evaluate("//way[@id='77']/tag[@k='icao']",
                                           root,
                                           XPathConstants.NODESET);
         assertEquals(nodes.getLength(), 1);

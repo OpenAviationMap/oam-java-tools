@@ -17,6 +17,8 @@
  */
 package hu.tyrell.openaviationmap.model;
 
+import hu.tyrell.openaviationmap.converter.ParseException;
+
 /**
  * An object describing distance.
  */
@@ -48,6 +50,46 @@ public class Distance {
     public Distance(double distance, UOM uom) {
         this.distance = distance;
         this.uom      = uom;
+    }
+
+    /**
+     * Return a distance from a string representation.
+     *
+     * @param str the string representing a distance.
+     * @return the distance object described by the string
+     * @throws ParseException on parse errors
+     */
+    public static Distance fromString(String str) throws ParseException {
+        String   s = str.trim().toLowerCase();
+        Distance d = new Distance();
+
+        if (s.endsWith("nm")) {
+            d.setUom(UOM.NM);
+            d.setDistance(Double.parseDouble(s.substring(0, s.length() - 2)));
+        } else if (s.endsWith("km")) {
+            d.setUom(UOM.M);
+            d.setDistance(1000.0
+                        * Double.parseDouble(s.substring(0, s.length() - 1)));
+        } else if (s.endsWith("m")) {
+            d.setUom(UOM.M);
+            d.setDistance(Double.parseDouble(s.substring(0, s.length() - 1)));
+        } else if (s.endsWith("meter")) {
+            d.setUom(UOM.M);
+            d.setDistance(Double.parseDouble(s.substring(0, s.length() - 5)));
+        } else if (s.endsWith("meters")) {
+            d.setUom(UOM.M);
+            d.setDistance(Double.parseDouble(s.substring(0, s.length() - 6)));
+        } else if (s.endsWith("ft")) {
+            d.setUom(UOM.FT);
+            d.setDistance(Double.parseDouble(s.substring(0, s.length() - 2)));
+        } else if (s.endsWith("feet")) {
+            d.setUom(UOM.FT);
+            d.setDistance(Double.parseDouble(s.substring(0, s.length() - 4)));
+        } else {
+            throw new ParseException("unrecognized distance format " + s);
+        }
+
+        return d;
     }
 
     /**
@@ -128,13 +170,22 @@ public class Distance {
             return false;
         }
         Distance other = (Distance) obj;
-        if (Double.doubleToLongBits(distance) != Double
-                .doubleToLongBits(other.distance)) {
-            return false;
-        }
+
         if (uom != other.uom) {
+            other = other.inUom(uom);
+        }
+        if (Math.abs(distance - other.distance) > 0.000001) {
             return false;
         }
+
         return true;
+    }
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return Double.toString(distance) + uom.toString();
     }
 }

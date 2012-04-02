@@ -17,8 +17,6 @@
  */
 package hu.tyrell.openaviationmap.model.oam;
 
-import java.util.Date;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -27,47 +25,7 @@ import java.util.Vector;
 /**
  * An Open Street Map 'way' element.
  */
-public class Way {
-    /**
-     * The id of the way.
-     */
-    private int id;
-
-    /**
-     * The version of the way.
-     */
-    private int version;
-
-    /**
-     * The state / action to be performed with this node.
-     */
-    private Action action;
-
-    /**
-     * Last change timestamp.
-     */
-    private Date timestamp;
-
-    /**
-     * Last change user id.
-     */
-    private Integer uid;
-
-    /**
-     * Last change user name.
-     */
-    private String user;
-
-    /**
-     * Flag to indicate visibility.
-     */
-    private Boolean visible;
-
-    /**
-     * Last change change set.
-     */
-    private Integer changeset;
-
+public class Way extends OsmBaseNode {
     /**
      * The points that make up the closed polygon. These are id references
      * into some OsmNode map.
@@ -75,17 +33,12 @@ public class Way {
     private List<Integer> nodeList;
 
     /**
-     * Tags of this way element.
-     */
-    private Map<String, String> tags;
-
-    /**
      * Default constructor.
      */
     public Way() {
+        super();
+
         nodeList = new Vector<Integer>();
-        tags     = new HashMap<String, String>();
-        action   = Action.CREATE;
     }
 
     /**
@@ -94,22 +47,9 @@ public class Way {
      * @param other the other object to copy from.
      */
     public Way(Way other) {
-        id        = other.id;
-        version   = other.version;
-        action    = other.action;
-        timestamp = other.timestamp == null
-                  ? null : (Date) other.timestamp.clone();
-        uid       = other.uid == null
-                  ? null : new Integer(other.uid);
-        user      = other.user == null
-                  ? null : new String(other.user);
-        visible   = other.visible == null
-                  ? null : other.visible ? Boolean.TRUE : Boolean.FALSE;
-        changeset = other.changeset == null
-                   ? null : new Integer(other.changeset);
+        super(other);
 
         nodeList = new Vector<Integer>(other.nodeList);
-        tags     = new HashMap<String, String>(other.tags);
     }
 
     /**
@@ -127,7 +67,7 @@ public class Way {
     public boolean compare(Map<Integer, OsmNode> osmNodes,
                            Way                   other,
                            Map<Integer, OsmNode> otherOsmNodes) {
-        if (!tags.equals(other.tags)) {
+        if (!super.compare(other)) {
             return false;
         }
 
@@ -171,129 +111,4 @@ public class Way {
         this.nodeList = nodeList;
     }
 
-    /**
-     * @return the tags
-     */
-    public Map<String, String> getTags() {
-        return tags;
-    }
-
-    /**
-     * @param tags the tags to set
-     */
-    public void setTags(Map<String, String> tags) {
-        this.tags = tags;
-    }
-
-    /**
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
-     * @return the version
-     */
-    public int getVersion() {
-        return version;
-    }
-
-    /**
-     * @param version the version to set
-     */
-    public void setVersion(int version) {
-        this.version = version;
-    }
-
-    /**
-     * @return the action
-     */
-    public Action getAction() {
-        return action;
-    }
-
-    /**
-     * @param action the action to set
-     */
-    public void setAction(Action action) {
-        this.action = action;
-    }
-
-    /**
-     * @return the timestamp
-     */
-    public Date getTimestamp() {
-        return timestamp;
-    }
-
-    /**
-     * @param timestamp the timestamp to set
-     */
-    public void setTimestamp(Date timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    /**
-     * @return the uid
-     */
-    public Integer getUid() {
-        return uid;
-    }
-
-    /**
-     * @param uid the uid to set
-     */
-    public void setUid(Integer uid) {
-        this.uid = uid;
-    }
-
-    /**
-     * @return the user
-     */
-    public String getUser() {
-        return user;
-    }
-
-    /**
-     * @param user the user to set
-     */
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    /**
-     * @return the visible
-     */
-    public Boolean isVisible() {
-        return visible;
-    }
-
-    /**
-     * @param visible the visible to set
-     */
-    public void setVisible(Boolean visible) {
-        this.visible = visible;
-    }
-
-    /**
-     * @return the changeset
-     */
-    public Integer getChangeset() {
-        return changeset;
-    }
-
-    /**
-     * @param changeset the changeset to set
-     */
-    public void setChangeset(Integer changeset) {
-        this.changeset = changeset;
-    }
 }

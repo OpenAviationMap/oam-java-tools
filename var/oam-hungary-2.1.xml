@@ -7214,7 +7214,7 @@
 <tag k="height:lower:class" v="amsl"/>
 <tag k="comm:ctrl" v="120.375MHZ 128.100MHZ 128.950MHZ 130.575MHZ 132.055MHZ CH 133.200MHZ 135.205MHZ CH 135.555MHZ CH 136.380MHZ CH 234.250MHZ UHF 264.650MHZ UHF 290.650MHZ UHF "/>
 <tag k="height:lower" v="9500"/>
-<tag k="remark" v="UHF frequencies available for use by 8.33 exempted State aircraft and in case of VHF COM failure"/>
+<tag k="remarks" v="UHF frequencies available for use by 8.33 exempted State aircraft and in case of VHF COM failure"/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="CTA"/>
 <tag k="operator" v="BUDAPEST ACC"/>
@@ -9281,7 +9281,7 @@
 <nd ref="-1"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="The airspace layer between FL290-FL410 (both inclusive) of Budapest FIR is part of the EUR RVSM airspace."/>
+<tag k="remarks" v="The airspace layer between FL290-FL410 (both inclusive) of Budapest FIR is part of the EUR RVSM airspace."/>
 <tag k="height:upper:class" v="amsl"/>
 <tag k="height:lower:unit" v="ft"/>
 <tag k="name" v="BUDAPEST FIR"/>

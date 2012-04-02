@@ -18,6 +18,7 @@
 package hu.tyrell.openaviationmap.converter.eaip;
 
 import hu.tyrell.openaviationmap.converter.ParseException;
+import hu.tyrell.openaviationmap.model.Aerodrome;
 import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Boundary;
 import hu.tyrell.openaviationmap.model.Elevation;
@@ -79,12 +80,12 @@ public class EAipProcessorEnr21 extends EAipProcessor {
             // get the vertical limits
             xpath.reset();
             str = xpath.evaluate("td[1]/text()[2]", airspaceNode);
-            Elevation upperLimit = processElevation(str.trim());
+            Elevation upperLimit = processElevation(name, str.trim());
             airspace.setUpperLimit(upperLimit);
 
             xpath.reset();
             str = xpath.evaluate("td[1]/text()[3]", airspaceNode);
-            Elevation lowerLimit = processElevation(str.trim());
+            Elevation lowerLimit = processElevation(name, str.trim());
             airspace.setLowerLimit(lowerLimit);
 
             // get the operator
@@ -144,12 +145,12 @@ public class EAipProcessorEnr21 extends EAipProcessor {
             // get the vertical limits
             xpath.reset();
             str = xpath.evaluate("td[1]/text()[2]", airspaceNode);
-            Elevation upperLimit = processElevation(str.trim());
+            Elevation upperLimit = processElevation(name, str.trim());
             airspace.setUpperLimit(upperLimit);
 
             xpath.reset();
             str = xpath.evaluate("td[1]/text()[3]", airspaceNode);
-            Elevation lowerLimit = processElevation(str.trim());
+            Elevation lowerLimit = processElevation(name, str.trim());
             airspace.setLowerLimit(lowerLimit);
 
             // get the operator
@@ -193,12 +194,12 @@ public class EAipProcessorEnr21 extends EAipProcessor {
             // get the vertical limits
             xpath.reset();
             str = xpath.evaluate("td[1]/text()[6]", airspaceNode);
-            upperLimit = processElevation(str.trim());
+            upperLimit = processElevation(name, str.trim());
             airspace.setUpperLimit(upperLimit);
 
             xpath.reset();
             str = xpath.evaluate("td[1]/text()[7]", airspaceNode);
-            lowerLimit = processElevation(str.trim());
+            lowerLimit = processElevation(name, str.trim());
             airspace.setLowerLimit(lowerLimit);
 
             // get the airspace type
@@ -250,12 +251,12 @@ public class EAipProcessorEnr21 extends EAipProcessor {
             // get the vertical limits
             xpath.reset();
             str = xpath.evaluate("td[1]/text()[2]", airspaceNode);
-            Elevation upperLimit = processElevation(str.trim());
+            Elevation upperLimit = processElevation(name, str.trim());
             airspace.setUpperLimit(upperLimit);
 
             xpath.reset();
             str = xpath.evaluate("td[1]/text()[3]", airspaceNode);
-            Elevation lowerLimit = processElevation(str.trim());
+            Elevation lowerLimit = processElevation(name, str.trim());
             airspace.setLowerLimit(lowerLimit);
 
             // get the airspace type
@@ -359,13 +360,13 @@ public class EAipProcessorEnr21 extends EAipProcessor {
             xpath.reset();
             str = xpath.evaluate("td[1]/br[2]/following-sibling::text()[1]",
                                  airspaceNode);
-            Elevation upperLimit = processElevation(str.trim());
+            Elevation upperLimit = processElevation(name, str.trim());
             airspace.setUpperLimit(upperLimit);
 
             xpath.reset();
             str = xpath.evaluate("td[1]/br[3]/following-sibling::text()[1]",
                                  airspaceNode);
-            Elevation lowerLimit = processElevation(str.trim());
+            Elevation lowerLimit = processElevation(name, str.trim());
             airspace.setLowerLimit(lowerLimit);
 
             // get the unit providing service
@@ -433,12 +434,12 @@ public class EAipProcessorEnr21 extends EAipProcessor {
             // get the vertical limits
             xpath.reset();
             String str = xpath.evaluate("td[1]/text()[2]", airspaceNode);
-            Elevation upperLimit = processElevation(str.trim());
+            Elevation upperLimit = processElevation(name, str.trim());
             airspace.setUpperLimit(upperLimit);
 
             xpath.reset();
             str = xpath.evaluate("td[1]/text()[3]", airspaceNode);
-            Elevation lowerLimit = processElevation(str.trim());
+            Elevation lowerLimit = processElevation(name, str.trim());
             airspace.setLowerLimit(lowerLimit);
 
             // get the airspace class
@@ -496,7 +497,10 @@ public class EAipProcessorEnr21 extends EAipProcessor {
      *         may be null.
      *  @param airspaces all airspaces extracted from the supplied eAIP file
      *         will be inserted into this list.
-     *  @param navaids the navaids that are contained in the eAIP
+     *  @param navaids the navaids that are contained in the eAIP file
+     *         will be inserted into this list.
+     *  @param aerodromes the aerodromes that are contained contained in the
+     *         eAIP file will be put into this list
      *  @param errors all parsing errors will be written to this list
      */
     @Override
@@ -504,6 +508,7 @@ public class EAipProcessorEnr21 extends EAipProcessor {
                             List<Point>             borderPoints,
                             List<Airspace>          airspaces,
                             List<Navaid>            navaids,
+                            List<Aerodrome>         aerodromes,
                             List<ParseException>    errors) {
 
         NodeList nodes = null;

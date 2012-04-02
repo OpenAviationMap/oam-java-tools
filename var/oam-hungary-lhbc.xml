@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<osm version="0.6">
+<node action="create" id="-44" lat="46.68333333333333" lon="21.162499999999998" version="1">
+<tag k="height:unit" v="m"/>
+<tag k="height" v="87"/>
+<tag k="height:class" v="amsl"/>
+<tag k="name" v="BÉKÉSCSABA ARP"/>
+</node>
+<node action="create" id="-14" lat="46.79997222222222" lon="21.073888888888888" version="1">
+<tag k="height:unit" v="m"/>
+<tag k="navaid:type" v="VOR/DME"/>
+<tag k="navaid:vor" v="115.8MHz"/>
+<tag k="height" v="95"/>
+<tag k="height:class" v="amsl"/>
+<tag k="navaid:declination" v="4.2"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="BKS"/>
+<tag k="navaid:ident" v="BKS"/>
+<tag k="navaid:remarks" v="DME COORD:464759.9N 0210426.0E"/>
+<tag k="navaid:dme" v="105X"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-13" lat="46.66488888888889" lon="21.16508333333333" version="1">
+<tag k="navaid:type" v="NDB"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="BC"/>
+<tag k="navaid:ndb" v="400kHz"/>
+<tag k="navaid:ident" v="BC"/>
+<tag k="navaid:remarks" v="LI 35R"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-11" lat="46.682944444444445" lon="21.15738888888889" version="1"/>
+<node action="create" id="-10" lat="46.67587222222222" lon="21.158375" version="1"/>
+<node action="create" id="-8" lat="46.67587222222222" lon="21.158375" version="1"/>
+<node action="create" id="-7" lat="46.682944444444445" lon="21.15738888888889" version="1"/>
+<node action="create" id="-5" lat="46.68919444444444" lon="21.161708333333333" version="1"/>
+<node action="create" id="-4" lat="46.67755277777778" lon="21.163327777777777" version="1"/>
+<node action="create" id="-2" lat="46.67755277777778" lon="21.163327777777777" version="1"/>
+<node action="create" id="-1" lat="46.68919444444444" lon="21.161708333333333" version="1"/>
+<node action="create" id="-15" lat="46.89472222222222" lon="21.390277777777776" version="1"/>
+<node action="create" id="-16" lat="46.77027777777778" lon="21.40722222222222" version="1"/>
+<node action="create" id="-17" lat="46.62972222222222" lon="21.34861111111111" version="1"/>
+<node action="create" id="-18" lat="46.63467" lon="21.35064" version="1"/>
+<node action="create" id="-19" lat="46.634023" lon="21.332386" version="1"/>
+<node action="create" id="-20" lat="46.631046" lon="21.32231" version="1"/>
+<node action="create" id="-21" lat="46.621524" lon="21.312683" version="1"/>
+<node action="create" id="-22" lat="46.598641" lon="21.30299" version="1"/>
+<node action="create" id="-23" lat="46.59063" lon="21.296561" version="1"/>
+<node action="create" id="-24" lat="46.58509" lon="21.304829" version="1"/>
+<node action="create" id="-25" lat="46.587711" lon="21.310969" version="1"/>
+<node action="create" id="-26" lat="46.58622" lon="21.31617" version="1"/>
+<node action="create" id="-27" lat="46.578975" lon="21.313096" version="1"/>
+<node action="create" id="-28" lat="46.571223" lon="21.308923" version="1"/>
+<node action="create" id="-29" lat="46.563488" lon="21.303412" version="1"/>
+<node action="create" id="-30" lat="46.557893" lon="21.301126" version="1"/>
+<node action="create" id="-31" lat="46.551849" lon="21.293582" version="1"/>
+<node action="create" id="-32" lat="46.546066" lon="21.27167" version="1"/>
+<node action="create" id="-33" lat="46.537937" lon="21.270984" version="1"/>
+<node action="create" id="-34" lat="46.52856" lon="21.263627" version="1"/>
+<node action="create" id="-35" lat="46.508873" lon="21.254869" version="1"/>
+<node action="create" id="-36" lat="46.492484" lon="21.265216" version="1"/>
+<node action="create" id="-37" lat="46.479397" lon="21.272065" version="1"/>
+<node action="create" id="-38" lat="46.48027777777778" lon="21.28666666666667" version="1"/>
+<node action="create" id="-39" lat="46.44138888888889" lon="21.21861111111111" version="1"/>
+<node action="create" id="-40" lat="46.42472222222222" lon="20.961111111111112" version="1"/>
+<node action="create" id="-41" lat="46.586111111111116" lon="20.885833333333334" version="1"/>
+<node action="create" id="-42" lat="46.87583333333333" lon="21.098333333333333" version="1"/>
+<way action="create" id="-43" version="1">
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:lower" v="0"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="name" v="Békéscsaba TIZ"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TIZ"/>
+<tag k="airspace:class" v="F"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper" v="4000"/>
+<nd ref="-15"/>
+<nd ref="-16"/>
+<nd ref="-17"/>
+<nd ref="-18"/>
+<nd ref="-19"/>
+<nd ref="-20"/>
+<nd ref="-21"/>
+<nd ref="-22"/>
+<nd ref="-23"/>
+<nd ref="-24"/>
+<nd ref="-25"/>
+<nd ref="-26"/>
+<nd ref="-27"/>
+<nd ref="-28"/>
+<nd ref="-29"/>
+<nd ref="-30"/>
+<nd ref="-31"/>
+<nd ref="-32"/>
+<nd ref="-33"/>
+<nd ref="-34"/>
+<nd ref="-35"/>
+<nd ref="-36"/>
+<nd ref="-37"/>
+<nd ref="-38"/>
+<nd ref="-39"/>
+<nd ref="-40"/>
+<nd ref="-41"/>
+<nd ref="-42"/>
+<nd ref="-15"/>
+</way>
+<way action="create" id="-12" version="1">
+<tag k="aeroway" v="runway"/>
+<tag k="surface" v="grass"/>
+<tag k="width" v="40.0m"/>
+<tag k="lda" v="790.0m"/>
+<tag k="height:unit" v="m"/>
+<tag k="tora" v="790.0m"/>
+<tag k="asda" v="790.0m"/>
+<tag k="height" v="86"/>
+<tag k="height:class" v="amsl"/>
+<tag k="slope" v="0.06"/>
+<tag k="name" v="35L"/>
+<tag k="length" v="790.0m"/>
+<tag k="bearing" v="354.5"/>
+<tag k="toda" v="790.0m"/>
+<nd ref="-10"/>
+<nd ref="-11"/>
+</way>
+<way action="create" id="-9" version="1">
+<tag k="aeroway" v="runway"/>
+<tag k="surface" v="grass"/>
+<tag k="width" v="40.0m"/>
+<tag k="lda" v="790.0m"/>
+<tag k="height:unit" v="m"/>
+<tag k="tora" v="790.0m"/>
+<tag k="asda" v="790.0m"/>
+<tag k="height" v="86"/>
+<tag k="height:class" v="amsl"/>
+<tag k="slope" v="-0.06"/>
+<tag k="name" v="17R"/>
+<tag k="length" v="790.0m"/>
+<tag k="bearing" v="174.5"/>
+<tag k="toda" v="790.0m"/>
+<nd ref="-7"/>
+<nd ref="-8"/>
+</way>
+<way action="create" id="-6" version="1">
+<tag k="aeroway" v="runway"/>
+<tag k="surface" v="asphalt"/>
+<tag k="width" v="30.0m"/>
+<tag k="lda" v="1300.0m"/>
+<tag k="height:unit" v="m"/>
+<tag k="tora" v="1300.0m"/>
+<tag k="asda" v="1300.0m"/>
+<tag k="height" v="87"/>
+<tag k="height:class" v="amsl"/>
+<tag k="slope" v="-0.08"/>
+<tag k="name" v="35R"/>
+<tag k="length" v="1300.0m"/>
+<tag k="bearing" v="354.5"/>
+<tag k="toda" v="1300.0m"/>
+<nd ref="-4"/>
+<nd ref="-5"/>
+</way>
+<way action="create" id="-3" version="1">
+<tag k="aeroway" v="runway"/>
+<tag k="surface" v="asphalt"/>
+<tag k="width" v="30.0m"/>
+<tag k="lda" v="1300.0m"/>
+<tag k="height:unit" v="m"/>
+<tag k="tora" v="1300.0m"/>
+<tag k="asda" v="1300.0m"/>
+<tag k="height" v="86"/>
+<tag k="height:class" v="amsl"/>
+<tag k="slope" v="0.08"/>
+<tag k="name" v="17L"/>
+<tag k="length" v="1300.0m"/>
+<tag k="bearing" v="174.5"/>
+<tag k="toda" v="1300.0m"/>
+<nd ref="-1"/>
+<nd ref="-2"/>
+</way>
+<relation action="create" id="-45" version="1">
+<tag k="height:unit" v="m"/>
+<tag k="comm:afis" v="123.25MHz"/>
+<tag k="height" v="87"/>
+<tag k="height:class" v="amsl"/>
+<tag k="icao" v="LHBC"/>
+<tag k="name" v="BÉKÉSCSABA"/>
+<tag k="aerodrome" v="yes"/>
+<tag k="runway:designator" v="17L, 35R, 17R, 35L"/>
+<tag k="remarks" v="Prior permission required."/>
+<tag k="runway:surface" v="asphalt, asphalt, grass, grass"/>
+<tag k="runway:length" v="1300.0m, 1300.0m, 790.0m, 790.0m"/>
+<member ref="-3" role="runway" type="way"/>
+<member ref="-6" role="runway" type="way"/>
+<member ref="-9" role="runway" type="way"/>
+<member ref="-12" role="runway" type="way"/>
+<member ref="-13" role="navaid" type="node"/>
+<member ref="-14" role="navaid" type="node"/>
+<member ref="-43" role="airspace" type="way"/>
+<member ref="-44" role="arp" type="node"/>
+</relation>
+</osm>

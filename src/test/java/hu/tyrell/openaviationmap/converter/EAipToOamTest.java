@@ -19,6 +19,8 @@ package hu.tyrell.openaviationmap.converter;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import hu.tyrell.openaviationmap.converter.eaip.EAipProcessorAd13;
+import hu.tyrell.openaviationmap.model.Aerodrome;
 import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Navaid;
 import hu.tyrell.openaviationmap.model.Point;
@@ -60,9 +62,11 @@ public class EAipToOamTest {
      * @param oamDocumentName the OAM document to verify against.
      * @param borderDocumentName the name of the OAM document describing the
      *        border line.
+     * @param ad13DocumentName the name of an aerodrome list eAIP document
      * @param knownErrors the know number of parse errors
      * @param noAirspaces the expected number of airspaces
      * @param noNavaids the expected number of navaids
+     * @param noAerodromes the expected number of aerodromes
      * @throws ParserConfigurationException on XML parser configuration errors.
      * @throws IOException on I/O errors
      * @throws SAXException on XML parsing errors
@@ -72,18 +76,21 @@ public class EAipToOamTest {
     public void testEAipToOam(String eAipDocumentName,
                               String oamDocumentName,
                               String borderDocumentName,
+                              String ad13DocumentName,
                               int    knownErrors,
                               int    noAirspaces,
-                              int    noNavaids)
+                              int    noNavaids,
+                              int    noAerodromes)
                                      throws ParserConfigurationException,
                                             SAXException,
                                             IOException,
                                             ParseException,
                                             TransformerException {
 
-        List<Airspace>       airspaces = new Vector<Airspace>();
-        List<Navaid>         navaids   = new Vector<Navaid>();
-        List<ParseException> errors    = new Vector<ParseException>();
+        List<Airspace>       airspaces  = new Vector<Airspace>();
+        List<Navaid>         navaids    = new Vector<Navaid>();
+        List<Aerodrome>      aerodromes = new Vector<Aerodrome>();
+        List<ParseException> errors     = new Vector<ParseException>();
 
 
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -106,11 +113,25 @@ public class EAipToOamTest {
                 borderPoints = new Vector<Point>(refList.size());
 
                 for (Integer r : refList) {
-                    borderPoints.add(new Point(oam.getNodes().get(r)));
+                    borderPoints.add(oam.getNodes().get(r).asPoint());
                 }
             }
         }
 
+        if (ad13DocumentName != null) {
+            Document d = db.parse(new FileInputStream(ad13DocumentName));
+
+            if ("e:AD-1.3".equals(d.getDocumentElement().getTagName())) {
+                EAipProcessorAd13 p = new EAipProcessorAd13();
+                p.processEAIP(d.getDocumentElement(),
+                              borderPoints,
+                              airspaces,
+                              navaids,
+                              aerodromes,
+                              errors);
+            }
+
+        }
 
         // first, get an airspace definitions from a eAIP file
         Document   d = db.parse(new FileInputStream(eAipDocumentName));
@@ -120,18 +141,22 @@ public class EAipToOamTest {
                            borderPoints,
                            airspaces,
                            navaids,
+                           aerodromes,
                            errors);
 
         assertEquals(knownErrors, errors.size());
         assertEquals(noAirspaces, airspaces.size());
         assertEquals(noNavaids, navaids.size());
+        assertEquals(noAerodromes, aerodromes.size());
 
         // convert the airspaces into an Oam object
         Oam oam = new Oam();
 
-        Converter.airspacesToOam(airspaces, oam, Action.CREATE, 1, 0, 0);
+        Converter.airspacesToOam(airspaces, oam, Action.CREATE, 1, 0);
         Converter.navaidsToOam(navaids, oam, Action.CREATE, 1,
-                oam.getMaxNodeId());
+                               oam.getMaxNodeId());
+        Converter.aerodromesToOam(aerodromes, oam, Action.CREATE, 1,
+                                  oam.getMaxNodeId());
 
         // serialize the Oam into a stream
         OAMWriter writer = new OAMWriter();
@@ -155,9 +180,13 @@ public class EAipToOamTest {
 
         errors.clear();
         OAMReader oamReader = new OAMReader();
-        List<Airspace> oamAirspaces = new Vector<Airspace>();
-        List<Navaid>   oamNavaids   = new Vector<Navaid>();
-        oamReader.processOam(d.getDocumentElement(), oamAirspaces, oamNavaids,
+        List<Airspace>  oamAirspaces  = new Vector<Airspace>();
+        List<Navaid>    oamNavaids    = new Vector<Navaid>();
+        List<Aerodrome> oamAerodromes = new Vector<Aerodrome>();
+        oamReader.processOam(d.getDocumentElement(),
+                             oamAirspaces,
+                             oamNavaids,
+                             oamAerodromes,
                              errors);
 
         assertTrue(errors.isEmpty());
@@ -167,6 +196,9 @@ public class EAipToOamTest {
         assertEquals(navaids.size(), oamNavaids.size());
         assertTrue(navaids.containsAll(oamNavaids));
         assertTrue(oamNavaids.containsAll(navaids));
+        assertEquals(aerodromes.size(), oamAerodromes.size());
+        assertTrue(aerodromes.containsAll(oamAerodromes));
+        assertTrue(oamAerodromes.containsAll(aerodromes));
 
         // parse a stored OAM file and compare the airspace definitions
         // with that one as well
@@ -176,10 +208,14 @@ public class EAipToOamTest {
 
         errors.clear();
         OAMReader fOamReader = new OAMReader();
-        List<Airspace> fOamAirspaces = new Vector<Airspace>();
-        List<Navaid>   fOamNavaids   = new Vector<Navaid>();
-        fOamReader.processOam(d.getDocumentElement(), fOamAirspaces,
-                              fOamNavaids, errors);
+        List<Airspace>  fOamAirspaces  = new Vector<Airspace>();
+        List<Navaid>    fOamNavaids    = new Vector<Navaid>();
+        List<Aerodrome> fOamAerodromes = new Vector<Aerodrome>();
+        fOamReader.processOam(d.getDocumentElement(),
+                              fOamAirspaces,
+                              fOamNavaids,
+                              fOamAerodromes,
+                              errors);
 
         assertTrue(errors.isEmpty());
         assertEquals(airspaces.size(), fOamAirspaces.size());
@@ -188,6 +224,9 @@ public class EAipToOamTest {
         assertEquals(navaids.size(), fOamNavaids.size());
         assertTrue(navaids.containsAll(fOamNavaids));
         assertTrue(fOamNavaids.containsAll(navaids));
+        assertEquals(aerodromes.size(), fOamAerodromes.size());
+        assertTrue(aerodromes.containsAll(fOamAerodromes));
+        assertTrue(fOamAerodromes.containsAll(aerodromes));
     }
 
     /**
@@ -209,7 +248,8 @@ public class EAipToOamTest {
         testEAipToOam("var/LH-ENR-5.1-en-HU.xml",
                       "var/oam-hungary-5.1.xml",
                       "var/hungary.osm",
-                      4, 47, 0);
+                      "var/LH-AD-1.3-en-HU.xml",
+                      4, 47, 0, 0);
     }
 
     /**
@@ -231,7 +271,8 @@ public class EAipToOamTest {
         testEAipToOam("var/LH-ENR-5.2-en-HU.xml",
                       "var/oam-hungary-5.2.xml",
                       "var/hungary.osm",
-                      0, 34, 0);
+                      "var/LH-AD-1.3-en-HU.xml",
+                      0, 34, 0, 0);
     }
 
     /**
@@ -253,7 +294,8 @@ public class EAipToOamTest {
         testEAipToOam("var/LH-ENR-5.5-en-HU.xml",
                       "var/oam-hungary-5.5.xml",
                       "var/hungary.osm",
-                      0, 15, 0);
+                      "var/LH-AD-1.3-en-HU.xml",
+                      0, 15, 0, 0);
     }
 
     /**
@@ -275,7 +317,8 @@ public class EAipToOamTest {
         testEAipToOam("var/LH-ENR-5.6-en-HU.xml",
                       "var/oam-hungary-5.6.xml",
                       "var/hungary.osm",
-                      0, 37, 0);
+                      "var/LH-AD-1.3-en-HU.xml",
+                      0, 37, 0, 0);
     }
 
     /**
@@ -297,7 +340,8 @@ public class EAipToOamTest {
         testEAipToOam("var/LH-ENR-2.1-en-HU.xml",
                       "var/oam-hungary-2.1.xml",
                       "var/hungary.osm",
-                      0, 20, 0);
+                      "var/LH-AD-1.3-en-HU.xml",
+                      0, 20, 0, 0);
     }
 
     /**
@@ -319,7 +363,8 @@ public class EAipToOamTest {
         testEAipToOam("var/LH-ENR-2.2-en-HU.xml",
                       "var/oam-hungary-2.2.xml",
                       "var/hungary.osm",
-                      0, 3, 0);
+                      "var/LH-AD-1.3-en-HU.xml",
+                      0, 3, 0, 0);
     }
 
     /**
@@ -341,7 +386,8 @@ public class EAipToOamTest {
         testEAipToOam("var/LH-ENR-4.1-en-HU.xml",
                       "var/oam-hungary-4.1.xml",
                       "var/hungary.osm",
-                      1, 0, 18);
+                      "var/LH-AD-1.3-en-HU.xml",
+                      1, 0, 18, 0);
     }
 
     /**
@@ -363,6 +409,30 @@ public class EAipToOamTest {
         testEAipToOam("var/LH-ENR-4.4-en-HU.xml",
                       "var/oam-hungary-4.4.xml",
                       "var/hungary.osm",
-                      0, 0, 81);
+                      "var/LH-AD-1.3-en-HU.xml",
+                      0, 0, 81, 0);
+    }
+
+    /**
+     * Test converting an eAIP section AD-LHBC element to OAM.
+     *
+     * @throws ParserConfigurationException on XML parser configuration errors.
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing errors
+     * @throws ParseException on OAM parsing errors
+     * @throws TransformerException on XML serialization errors
+     */
+    @Test
+    public void testEAipAdLhbcToOam() throws ParserConfigurationException,
+                                             SAXException,
+                                             IOException,
+                                             ParseException,
+                                             TransformerException {
+
+        testEAipToOam("var/LH-AD-LHBC-en-HU.xml",
+                      "var/oam-hungary-lhbc.xml",
+                      "var/hungary.osm",
+                      "var/LH-AD-1.3-en-HU.xml",
+                      0, 0, 0, 1);
     }
 }

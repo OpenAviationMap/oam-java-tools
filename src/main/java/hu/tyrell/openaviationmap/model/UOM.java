@@ -87,4 +87,27 @@ public enum UOM {
     public double getInMeters() {
         return inMeters;
     }
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        switch (this) {
+        case FT:
+            return "ft";
+
+        case M:
+            return "m";
+
+        case FL:
+            return "FL";
+
+        case NM:
+            return "nm";
+
+        default:
+            return "";
+        }
+    }
 }

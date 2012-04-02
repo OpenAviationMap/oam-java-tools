@@ -34,63 +34,42 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 /**
- * eAIP processor for the ENR-4.4 segment of an eAIP.
+ * eAIP processor for the AD-1.3 segment of an eAIP, which is an index.
+ * of aerodromes.
  */
-public class EAipProcessorEnr44 extends EAipProcessor {
+public class EAipProcessorAd13 extends EAipProcessor {
     /**
-     *  Process a navaid definition from the aAIP.
+     *  Process a row in an AD-1.3 aerodrome index.
      *
-     *  @param navaidNode the XML node that represents the navaid
-     *  @return a navaid described by the node
+     *  @param node the AD-1.3 aerodrome row
+     *  @return aerodrome the aerodrome described by that row, with only
+     *          minimal data filled in, like ICAO code and name.
      *  @throws ParseException on input parsing errors.
      */
-    Navaid processNavaid(Node        navaidNode) throws ParseException {
+    Aerodrome processAdNode(Node node) throws ParseException {
+
+        Aerodrome ad = new Aerodrome();
 
         try {
-            Navaid navaid = new Navaid();
-
             XPath xpath = XPathFactory.newInstance().newXPath();
 
-            // get the id
-            String id = navaidNode.getAttributes().getNamedItem("id")
-                         .getNodeValue();
-            navaid.setId(id);
-
-            // set the type
-            navaid.setType(Navaid.Type.DESIGNATED);
-
-            // get the ident
-            xpath.reset();
-            String str = xpath.evaluate("Designated-point-ident", navaidNode)
-                                                                        .trim();
+            // get the name
+            String str = xpath.evaluate("td[1]/text()[1]", node).trim();
             if (str != null && !str.isEmpty()) {
-                navaid.setIdent(str);
-                // set the same for the name
-                navaid.setName(str);
+                ad.setName(str);
             }
 
-            // get the latitude
-            xpath.reset();
-            str = xpath.evaluate("Latitude", navaidNode).trim();
+            // get the ICAO code
+            str = xpath.evaluate("td[1]/text()[2]", node).trim();
             if (str != null && !str.isEmpty()) {
-                navaid.setLatitude(processLat(id, str));
+                ad.setIcao(str);
             }
 
-            // get the longitude
-            xpath.reset();
-            str = xpath.evaluate("Longitude", navaidNode).trim();
-            if (str != null && !str.isEmpty()) {
-                navaid.setLongitude(processLon(id, str));
-            }
-
-
-            return navaid;
-
-        } catch (ParseException e) {
-            throw e;
         } catch (Exception e) {
-            throw new ParseException(navaidNode, e);
+            throw new ParseException(ad.getIcao(), e);
         }
+
+        return ad;
     }
 
     /**
@@ -116,32 +95,25 @@ public class EAipProcessorEnr44 extends EAipProcessor {
                             List<Aerodrome>         aerodromes,
                             List<ParseException>    errors) {
 
-        NodeList nodes = null;
+        XPath xpath = XPathFactory.newInstance().newXPath();
 
-        // get the designated point nodes
+        // process the list of aerodromes
         try {
-            XPath          xpath     = XPathFactory.newInstance().newXPath();
+            NodeList nodes = (NodeList) xpath.evaluate(
+                    "//AD-1.3/Sub-section[1]/table/tbody/tr[position() > 1]",
+                    eAipNode,  XPathConstants.NODESET);
 
-            nodes = (NodeList) xpath.evaluate(
-                    "//Designated-point-table/Designated-point",
-                    eAipNode, XPathConstants.NODESET);
+            for (int i = 0; i < nodes.getLength(); ++i) {
+                Aerodrome ad = processAdNode(nodes.item(i));
+                aerodromes.add(ad);
+            }
+
         } catch (XPathExpressionException e) {
             errors.add(new ParseException(e));
+        } catch (ParseException e) {
+            errors.add(e);
         }
 
-        if (nodes == null) {
-            return;
-        }
-
-        for (int i = 0; i < nodes.getLength(); ++i) {
-            try {
-                Navaid navaid = processNavaid(nodes.item(i));
-                navaids.add(navaid);
-            } catch (ParseException e) {
-                errors.add(e);
-                continue;
-            }
-        }
     }
 
 }

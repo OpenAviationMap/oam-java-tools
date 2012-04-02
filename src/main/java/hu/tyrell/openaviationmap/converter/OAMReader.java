@@ -17,6 +17,7 @@
  */
 package hu.tyrell.openaviationmap.converter;
 
+import hu.tyrell.openaviationmap.model.Aerodrome;
 import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Circle;
 import hu.tyrell.openaviationmap.model.Distance;
@@ -27,10 +28,15 @@ import hu.tyrell.openaviationmap.model.MagneticVariation;
 import hu.tyrell.openaviationmap.model.Navaid;
 import hu.tyrell.openaviationmap.model.Point;
 import hu.tyrell.openaviationmap.model.Ring;
+import hu.tyrell.openaviationmap.model.Runway;
+import hu.tyrell.openaviationmap.model.SurfaceType;
 import hu.tyrell.openaviationmap.model.UOM;
 import hu.tyrell.openaviationmap.model.oam.Action;
+import hu.tyrell.openaviationmap.model.oam.Member;
 import hu.tyrell.openaviationmap.model.oam.Oam;
+import hu.tyrell.openaviationmap.model.oam.OsmBaseNode;
 import hu.tyrell.openaviationmap.model.oam.OsmNode;
+import hu.tyrell.openaviationmap.model.oam.Relation;
 import hu.tyrell.openaviationmap.model.oam.Way;
 
 import java.io.FileReader;
@@ -66,6 +72,82 @@ public class OAMReader {
                             new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
 
     /**
+     * Process a generic OSM node.
+     *
+     * @param element the XML node that represents an OSM node
+     * @param osmNode the base OSM node to put the information into
+     * @throws ParseException on parsing errors
+     */
+    void processBaseNode(Element element, OsmBaseNode osmNode)
+                                                    throws ParseException {
+
+        String idStr  = element.getAttribute("id");
+        Integer id  = Integer.parseInt(idStr);
+
+        osmNode.setId(id);
+
+        String  str  = element.getAttribute("version");
+        if (str != null && !str.isEmpty()) {
+            osmNode.setVersion(Integer.parseInt(str));
+        }
+
+        str = element.getAttribute("action");
+        if (str != null && !str.isEmpty()) {
+            if ("create".equals(str)) {
+                osmNode.setAction(Action.CREATE);
+            } else if ("modify".equals(str)) {
+                osmNode.setAction(Action.CREATE);
+            } else if ("delete".equals(str)) {
+                osmNode.setAction(Action.DELETE);
+            }
+        }
+
+        str  = element.getAttribute("timestamp");
+        if (str != null && !str.isEmpty()) {
+            try {
+                osmNode.setTimestamp(df.parse(str));
+            } catch (java.text.ParseException e) {
+                throw new ParseException(idStr,
+                                         "bad timestamp format: '" + str + "'",
+                                         e);
+            }
+        }
+
+        str  = element.getAttribute("uid");
+        if (str != null && !str.isEmpty()) {
+            osmNode.setUid(Integer.parseInt(str));
+        }
+
+        str  = element.getAttribute("user");
+        if (str != null && !str.isEmpty()) {
+            osmNode.setUser(str);
+        }
+
+        str  = element.getAttribute("visible");
+        if (str != null && !str.isEmpty()) {
+            osmNode.setVisible("true".equals(str));
+        }
+
+        str  = element.getAttribute("changeset");
+        if (str != null && !str.isEmpty()) {
+            osmNode.setChangeset(Integer.parseInt(str));
+        }
+
+        // process the tags
+        try {
+            XPath    xpath = XPathFactory.newInstance().newXPath();
+            NodeList n = (NodeList) xpath.evaluate("tag", element,
+                                                   XPathConstants.NODESET);
+            for (int i = 0; i < n.getLength(); ++i) {
+                processTag((Element) n.item(i), osmNode);
+            }
+        } catch (XPathExpressionException e) {
+            throw new ParseException(e);
+        }
+    }
+
+
+    /**
      * Process a 'node' element in an OAM file.
      *
      * @param node the XML node that represents an OSM 'node' element
@@ -79,79 +161,17 @@ public class OAMReader {
             return;
         }
 
-        String idStr  = node.getAttribute("id");
+        OsmNode osmNode = new OsmNode();
+
+        processBaseNode(node,  osmNode);
+
         String latStr = node.getAttribute("lat");
         String lonStr = node.getAttribute("lon");
 
-        Integer id  = Integer.parseInt(idStr);
-        double  lat = Double.parseDouble(latStr);
-        double  lon = Double.parseDouble(lonStr);
+        osmNode.setLatitude(Double.parseDouble(latStr));
+        osmNode.setLongitude(Double.parseDouble(lonStr));
 
-        OsmNode osmNode = new OsmNode();
-        osmNode.setId(id);
-        osmNode.setLatitude(lat);
-        osmNode.setLongitude(lon);
-
-        String  str  = node.getAttribute("version");
-        if (str != null && !str.isEmpty()) {
-            osmNode.setVersion(Integer.parseInt(str));
-        }
-
-        str = node.getAttribute("action");
-        if (str != null && !str.isEmpty()) {
-            if ("create".equals(str)) {
-                osmNode.setAction(Action.CREATE);
-            } else if ("modify".equals(str)) {
-                osmNode.setAction(Action.CREATE);
-            } else if ("delete".equals(str)) {
-                osmNode.setAction(Action.DELETE);
-            }
-        }
-
-        str  = node.getAttribute("timestamp");
-        if (str != null && !str.isEmpty()) {
-            try {
-                osmNode.setTimestamp(df.parse(str));
-            } catch (java.text.ParseException e) {
-                throw new ParseException(idStr,
-                                         "bad timestamp format: '" + str + "'",
-                                         e);
-            }
-        }
-
-        str  = node.getAttribute("uid");
-        if (str != null && !str.isEmpty()) {
-            osmNode.setUid(Integer.parseInt(str));
-        }
-
-        str  = node.getAttribute("user");
-        if (str != null && !str.isEmpty()) {
-            osmNode.setUser(str);
-        }
-
-        str  = node.getAttribute("visible");
-        if (str != null && !str.isEmpty()) {
-            osmNode.setVisible("true".equals(str));
-        }
-
-        str  = node.getAttribute("changeset");
-        if (str != null && !str.isEmpty()) {
-            osmNode.setChangeset(Integer.parseInt(str));
-        }
-
-        // process the tags
-        try {
-            XPath    xpath = XPathFactory.newInstance().newXPath();
-            NodeList n = (NodeList) xpath.evaluate("tag", node,
-                                                   XPathConstants.NODESET);
-            for (int i = 0; i < n.getLength(); ++i) {
-                processTag((Element) n.item(i), osmNode);
-            }
-        } catch (XPathExpressionException e) {
-            throw new ParseException(e);
-        }
-
-        nodes.put(id, osmNode);
+        nodes.put(osmNode.getId(), osmNode);
     }
 
     /**
@@ -187,7 +207,7 @@ public class OAMReader {
      * @param node the XML 'tag' element
      * @param osmNode the 'node' to add this tag to.
      */
-    void processTag(Element node, OsmNode osmNode) {
+    void processTag(Element node, OsmBaseNode osmNode) {
         if (!"tag".equals(node.getTagName())) {
             return;
         }
@@ -199,26 +219,9 @@ public class OAMReader {
     }
 
     /**
-     * Process a 'tag' element, which is part of a 'way' element.
-     *
-     * @param node the XML 'tag' element
-     * @param way the 'way' to add this tag to.
-     */
-    void processTag(Element node, Way way) {
-        if (!"tag".equals(node.getTagName())) {
-            return;
-        }
-
-        String key   = node.getAttribute("k");
-        String value = node.getAttribute("v");
-
-        way.getTags().put(key, value);
-    }
-
-    /**
      * Process an 'nd' element, which is part of a 'way' element.
      *
-     * @param node the XML 'tag' element
+     * @param node the XML 'nd' element
      * @param points a map of existing points, into which this node reference
      *        points by an id
      * @param way the 'way' to add this tag to.
@@ -257,71 +260,16 @@ public class OAMReader {
             return;
         }
 
-        String  idStr = node.getAttribute("id");
-        Integer id    = Integer.parseInt(idStr);
-
         Way way = new Way();
-        way.setId(id);
 
-        String  str  = node.getAttribute("version");
-        if (str != null && !str.isEmpty()) {
-            way.setVersion(Integer.parseInt(str));
-        }
+        processBaseNode(node, way);
 
-        str = node.getAttribute("action");
-        if (str != null && !str.isEmpty()) {
-            if ("create".equals(str)) {
-                way.setAction(Action.CREATE);
-            } else if ("modify".equals(str)) {
-                way.setAction(Action.CREATE);
-            } else if ("delete".equals(str)) {
-                way.setAction(Action.DELETE);
-            }
-        }
-
-        str  = node.getAttribute("timestamp");
-        if (str != null && !str.isEmpty()) {
-            try {
-                way.setTimestamp(df.parse(str));
-            } catch (java.text.ParseException e) {
-                throw new ParseException(idStr,
-                                         "bad timestamp format: '" + str + "'",
-                                         e);
-            }
-        }
-
-        str  = node.getAttribute("uid");
-        if (str != null && !str.isEmpty()) {
-            way.setUid(Integer.parseInt(str));
-        }
-
-        str  = node.getAttribute("user");
-        if (str != null && !str.isEmpty()) {
-            way.setUser(str);
-        }
-
-        str  = node.getAttribute("visible");
-        if (str != null && !str.isEmpty()) {
-            way.setVisible("true".equals(str));
-        }
-
-        str  = node.getAttribute("changeset");
-        if (str != null && !str.isEmpty()) {
-            way.setChangeset(Integer.parseInt(str));
-        }
-
+        // get the all 'nd' (node reference) elements
         try {
             XPath          xpath     = XPathFactory.newInstance().newXPath();
 
-            // get the 'tag' elements
-            NodeList n = (NodeList) xpath.evaluate("tag", node,
+            NodeList n = (NodeList) xpath.evaluate("nd", node,
                                                    XPathConstants.NODESET);
-            for (int i = 0; i < n.getLength(); ++i) {
-                processTag((Element) n.item(i), way);
-            }
-
-            // get the all 'nd' (node reference) elements
-            n = (NodeList) xpath.evaluate("nd", node, XPathConstants.NODESET);
             for (int i = 0; i < n.getLength(); ++i) {
                 processNodeRef((Element) n.item(i), points, way);
             }
@@ -330,7 +278,89 @@ public class OAMReader {
             throw new ParseException(e);
         }
 
-        ways.put(id, way);
+        ways.put(way.getId(), way);
+    }
+
+    /**
+     * Process an 'member' element, which is part of a 'relation' element.
+     *
+     * @param node the XML 'member' element
+     * @param points a map of OAM 'nodes', with the key being the nodes id
+     * @param ways a map of OAM 'ways', with the key being the nodes id
+     * @param relation the 'relation' to add this tag to.
+     * @throws ParseException on document parsing errors
+     */
+    void processMember(Element               node,
+                       Map<Integer, OsmNode> points,
+                       Map<Integer, Way>     ways,
+                       Relation              relation)  throws ParseException {
+        if (!"member".equals(node.getTagName())) {
+            return;
+        }
+
+        String  refStr = node.getAttribute("ref");
+        Integer ref    = Integer.parseInt(refStr);
+
+        String roleStr = node.getAttribute("role");
+
+        Member.Type type      = null;
+        String      typeStr   = node.getAttribute("type");
+        if ("node".equals(typeStr)) {
+            type = Member.Type.NODE;
+
+            if (!points.containsKey(ref)) {
+                throw new ParseException("node reference points to nonexistent "
+                                       + "node: " + refStr);
+            }
+        } else if ("way".equals(typeStr)) {
+            type = Member.Type.WAY;
+
+            if (!ways.containsKey(ref)) {
+                throw new ParseException("way reference points to nonexistent "
+                                       + "way: " + refStr);
+            }
+        }
+
+        relation.getMembers().add(new Member(type, ref, roleStr));
+    }
+
+    /**
+     * Process am OSM / OAM 'relation' node.
+     *
+     * @param node an XML 'relation' node
+     * @param points a map of OAM 'nodes', with the key being the nodes id
+     * @param ways a map of OAM 'ways', with the key being the nodes id
+     * @param relations a map of OAM 'relations', with the key being the ways id
+     * @throws ParseException on document parsing errors
+     */
+    void processRelation(Element                 node,
+                         Map<Integer, OsmNode>   points,
+                         Map<Integer, Way>       ways,
+                         Map<Integer, Relation>  relations)
+                                                         throws ParseException {
+        if (!"relation".equals(node.getTagName())) {
+            return;
+        }
+
+        Relation rel = new Relation();
+
+        processBaseNode(node, rel);
+
+        // get the all 'member' (node reference) elements
+        try {
+            XPath          xpath     = XPathFactory.newInstance().newXPath();
+
+            NodeList n = (NodeList) xpath.evaluate("member", node,
+                                                   XPathConstants.NODESET);
+            for (int i = 0; i < n.getLength(); ++i) {
+                processMember((Element) n.item(i), points, ways, rel);
+            }
+
+        } catch (Exception e) {
+            throw new ParseException(e);
+        }
+
+        relations.put(rel.getId(), rel);
     }
 
     /**
@@ -358,11 +388,283 @@ public class OAMReader {
             for (int i = 0; i < n.getLength(); ++i) {
                 processWay((Element) n.item(i), oam.getNodes(), oam.getWays());
             }
+
+            // get the 'relation' elements
+            n = (NodeList) xpath.evaluate("//relation", root,
+                                          XPathConstants.NODESET);
+            for (int i = 0; i < n.getLength(); ++i) {
+                processRelation((Element) n.item(i),
+                                oam.getNodes(), oam.getWays(),
+                                oam.getRelations());
+            }
+
         } catch (ParseException e) {
             errors.add(e);
         } catch (Exception e) {
             errors.add(new ParseException(e));
         }
+    }
+
+    /**
+     * Convert an OAM 'way' element into a Runway object.
+     *
+     * @param way the OAM 'way' to convert
+     * @param nodeList nodes referred to by the nodeList member of the
+     *                 supplied way
+     * @return the runway corresponding to the supplied 'way' element.
+     * @throws ParseException on parsing errors
+     */
+    Runway wayToRunway(Way                   way,
+                       Map<Integer, OsmNode> nodeList)
+                                                       throws ParseException {
+        Map<String, String> tags = way.getTags();
+
+        if (!tags.containsKey("aeroway")
+         || !"runway".equals(tags.get("aeroway"))) {
+
+            throw new ParseException("way is not a runway");
+        }
+
+        Runway rwy = new Runway();
+        String k;
+
+        k = "name";
+        if (tags.containsKey(k)) {
+            rwy.setDesignator(tags.get(k));
+        }
+
+        k = "bearing";
+        if (tags.containsKey(k)) {
+            rwy.setBearing(Double.parseDouble(tags.get(k)));
+        }
+
+        k = "slope";
+        if (tags.containsKey(k)) {
+            rwy.setSlope(Double.parseDouble(tags.get(k)));
+        }
+
+        k = "length";
+        if (tags.containsKey(k)) {
+            rwy.setLength(Distance.fromString(tags.get(k)));
+        }
+
+        k = "width";
+        if (tags.containsKey(k)) {
+            rwy.setWidth(Distance.fromString(tags.get(k)));
+        }
+
+        k = "tora";
+        if (tags.containsKey(k)) {
+            rwy.setTora(Distance.fromString(tags.get(k)));
+        }
+
+        k = "toda";
+        if (tags.containsKey(k)) {
+            rwy.setToda(Distance.fromString(tags.get(k)));
+        }
+
+        k = "asda";
+        if (tags.containsKey(k)) {
+            rwy.setAsda(Distance.fromString(tags.get(k)));
+        }
+
+        k = "lda";
+        if (tags.containsKey(k)) {
+            rwy.setLda(Distance.fromString(tags.get(k)));
+        }
+
+        k = "surface";
+        if (tags.containsKey(k)) {
+            String v = tags.get(k);
+            if ("asphalt".equals(v)) {
+                rwy.setSurface(SurfaceType.ASPHALT);
+            } else if ("grass".equals(v)) {
+                rwy.setSurface(SurfaceType.GRASS);
+            } else {
+                throw new ParseException(rwy.getDesignator(),
+                                         "unrecognized sufrace type " + v);
+            }
+        }
+
+        if (tags.containsKey("height")
+         && tags.containsKey("height:unit")
+         && tags.containsKey("height:class")) {
+
+            Elevation e = new Elevation();
+
+            e.setElevation(Double.parseDouble(tags.get("height")));
+            e.setUom(UOM.fromString(tags.get("height:unit")));
+            e.setReference(ElevationReference.fromString(
+                                          tags.get("height:class")));
+
+            rwy.setElevation(e);
+        }
+
+        if (way.getNodeList().size() != 2) {
+            throw new ParseException(rwy.getDesignator(),
+                                     "runway with incorrect number of nodes: "
+                                    + way.getNodeList().size());
+        }
+
+        int ix = way.getNodeList().get(0);
+        if (!nodeList.containsKey(ix)) {
+            throw new ParseException(rwy.getDesignator(),
+                                     "node reference does not exist: " + ix);
+
+        }
+        rwy.setThreshold(nodeList.get(ix).asPoint());
+        nodeList.remove(ix);
+
+        ix = way.getNodeList().get(1);
+        if (!nodeList.containsKey(ix)) {
+            throw new ParseException(rwy.getDesignator(),
+                                     "node reference does not exist: " + ix);
+
+        }
+        rwy.setEnd(nodeList.get(ix).asPoint());
+        nodeList.remove(ix);
+
+
+        return rwy;
+    }
+
+    /**
+     * Convert an OAM 'relation' element into an Aerodrome object.
+     *
+     * @param relation the OAM 'relation' to convert
+     * @param oam the OAM object that contains nodes related to the aerodrome,
+     *        e.g. airspaces, navaids
+     * @return the airspace corresponding to the supplied 'way' element.
+     * @throws ParseException on parsing errors
+     */
+    Aerodrome relationToAerodrome(Relation   relation,
+                                  Oam        oam)        throws ParseException {
+
+        Map<String, String> tags = relation.getTags();
+
+        if (!tags.containsKey("aerodrome")
+         || !"yes".equals(tags.get("aerodrome"))) {
+
+            throw new ParseException("relation is not an aerodrome");
+        }
+
+        Aerodrome ad = new Aerodrome();
+        String   k;
+
+        k = "icao";
+        if (tags.containsKey(k)) {
+            ad.setIcao(tags.get(k));
+        }
+
+        k = "name";
+        if (tags.containsKey(k)) {
+            ad.setName(tags.get(k));
+        }
+
+        k = "remarks";
+        if (tags.containsKey(k)) {
+            ad.setRemarks(tags.get(k));
+        }
+
+        k = "comm:afis";
+        if (tags.containsKey(k)) {
+            ad.setAfis(Frequency.fromString(tags.get(k)));
+        }
+
+        k = "comm:twr";
+        if (tags.containsKey(k)) {
+            ad.setTower(Frequency.fromString(tags.get(k)));
+        }
+
+        k = "comm:gnd";
+        if (tags.containsKey(k)) {
+            ad.setGround(Frequency.fromString(tags.get(k)));
+        }
+
+        if (tags.containsKey("height")
+         && tags.containsKey("height:unit")
+         && tags.containsKey("height:class")) {
+
+            Elevation e = new Elevation();
+
+            e.setElevation(Double.parseDouble(tags.get("height")));
+            e.setUom(UOM.fromString(tags.get("height:unit")));
+            e.setReference(ElevationReference.fromString(
+                                          tags.get("height:class")));
+
+            ad.setElevation(e);
+        }
+
+        for (Member m : relation.getMembers()) {
+            if ("arp".equals(m.getRole())) {
+                if (Member.Type.NODE != m.getType()) {
+                    throw new ParseException(ad.getIcao(),
+                                        "arp member is not of node type");
+                }
+                if (!oam.getNodes().containsKey(m.getRef())) {
+                    throw new ParseException(ad.getIcao(),
+                                    "arp node does not exist: " + m.getRef());
+                }
+
+                ad.setArp(oam.getNodes().get(m.getRef()).asPoint());
+                oam.getNodes().remove(m.getRef());
+
+            } else if ("airspace".equals(m.getRole())) {
+                if (Member.Type.WAY != m.getType()) {
+                    throw new ParseException(ad.getIcao(),
+                                        "airspace member is not of way type");
+                }
+                if (!oam.getWays().containsKey(m.getRef())) {
+                    throw new ParseException(ad.getIcao(),
+                                "airspace way does not exist: " + m.getRef());
+                }
+
+                Way apWay = oam.getWays().get(m.getRef());
+                ad.setAirspace(wayToAirspace(apWay, oam.getNodes()));
+                for (int i : apWay.getNodeList()) {
+                    oam.getNodes().remove(i);
+                }
+                oam.getWays().remove(m.getRef());
+
+            } else if ("navaid".equals(m.getRole())) {
+                if (Member.Type.NODE != m.getType()) {
+                    throw new ParseException(ad.getIcao(),
+                                        "navaid member is not of node type");
+                }
+                if (!oam.getNodes().containsKey(m.getRef())) {
+                    throw new ParseException(ad.getIcao(),
+                                "navaid node does not exist: " + m.getRef());
+                }
+
+                Navaid navaid = nodeToNavaid(oam.getNodes().get(m.getRef()));
+                ad.getNavaids().add(navaid);
+                oam.getNodes().remove(m.getRef());
+
+            } else if ("runway".equals(m.getRole())) {
+                if (Member.Type.WAY != m.getType()) {
+                    throw new ParseException(ad.getIcao(),
+                                        "runway member is not of way type");
+                }
+                if (!oam.getWays().containsKey(m.getRef())) {
+                    throw new ParseException(ad.getIcao(),
+                                "runway way does not exist: " + m.getRef());
+                }
+
+                Way    way = oam.getWays().get(m.getRef());
+                Runway rwy = wayToRunway(way, oam.getNodes());
+                ad.getRunways().add(rwy);
+                for (int i : way.getNodeList()) {
+                    oam.getNodes().remove(i);
+                }
+                oam.getWays().remove(m.getRef());
+
+            } else {
+                throw new ParseException(ad.getIcao(),
+                                       "unrecognized relation " + m.getRole());
+            }
+        }
+
+        return ad;
     }
 
     /**
@@ -436,7 +738,7 @@ public class OAMReader {
             airspace.setName(tags.get(k));
         }
 
-        k = "remark";
+        k = "remarks";
         if (tags.containsKey(k)) {
             airspace.setRemarks(tags.get(k));
         }
@@ -504,7 +806,7 @@ public class OAMReader {
                                              "bad node reference: " + ref);
 
                 }
-                pl.add(new Point(nodeList.get(ref)));
+                pl.add(nodeList.get(ref).asPoint());
             }
 
             Ring r = new Ring();
@@ -649,14 +951,26 @@ public class OAMReader {
      *        the airspaces contained on the OAM document.
      * @param navaids a list of navaid elemets, which will contain the
      *        navaids contained in the OAM document.
+     * @param aerodromes a list of Aerodrome objects, which will contain
+     *        the aerodromes described by the OAM document
      * @param errors all parsing errors will be put into this list
      */
     public void processOam(Element                  root,
                            List<Airspace>           airspaces,
                            List<Navaid>             navaids,
+                           List<Aerodrome>          aerodromes,
                            List<ParseException>     errors) {
         Oam oam = new Oam();
         processOsm(root, oam, errors);
+
+        for (Relation relation : oam.getRelations().values()) {
+            try {
+                Aerodrome ad = relationToAerodrome(relation, oam);
+                aerodromes.add(ad);
+            } catch (ParseException e) {
+                errors.add(e);
+            }
+        }
 
         for (OsmNode node : oam.getNodes().values()) {
             if (node.getTags().containsKey("navaid")) {
@@ -671,8 +985,12 @@ public class OAMReader {
 
         for (Way way : oam.getWays().values()) {
             try {
-                Airspace airspace = wayToAirspace(way, oam.getNodes());
-                airspaces.add(airspace);
+                if (way.getTags().containsKey("airspace")
+                 && "yes".equals(way.getTags().get("airspace"))) {
+
+                    Airspace airspace = wayToAirspace(way, oam.getNodes());
+                    airspaces.add(airspace);
+                }
             } catch (ParseException e) {
                 errors.add(e);
             }

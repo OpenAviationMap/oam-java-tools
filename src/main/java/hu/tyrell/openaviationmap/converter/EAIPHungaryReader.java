@@ -18,6 +18,8 @@
 package hu.tyrell.openaviationmap.converter;
 
 import hu.tyrell.openaviationmap.converter.eaip.EAipProcessor;
+import hu.tyrell.openaviationmap.converter.eaip.EAipProcessorAd;
+import hu.tyrell.openaviationmap.converter.eaip.EAipProcessorAd13;
 import hu.tyrell.openaviationmap.converter.eaip.EAipProcessorEnr21;
 import hu.tyrell.openaviationmap.converter.eaip.EAipProcessorEnr22;
 import hu.tyrell.openaviationmap.converter.eaip.EAipProcessorEnr41;
@@ -26,11 +28,13 @@ import hu.tyrell.openaviationmap.converter.eaip.EAipProcessorEnr51;
 import hu.tyrell.openaviationmap.converter.eaip.EAipProcessorEnr52;
 import hu.tyrell.openaviationmap.converter.eaip.EAipProcessorEnr55;
 import hu.tyrell.openaviationmap.converter.eaip.EAipProcessorEnr56;
+import hu.tyrell.openaviationmap.model.Aerodrome;
 import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Navaid;
 import hu.tyrell.openaviationmap.model.Point;
 
 import java.util.List;
+import java.util.Vector;
 
 import org.w3c.dom.Node;
 
@@ -47,13 +51,17 @@ public class EAIPHungaryReader {
      *         may be null.
      *  @param airspaces all airspaces extracted from the supplied eAIP file
      *         will be inserted into this list.
-     *  @param navaids the navaids that are contained in the eAIP
+     *  @param navaids the navaids that are contained in the eAIP file
+     *         will be inserted into this list.
+     *  @param aerodromes the aerodromes that are contained contained in the
+     *         eAIP file will be put into this list
      *  @param errors all parsing errors will be written to this list
      */
     public void processEAIP(Node                    eAipNode,
                             List<Point>             borderPoints,
                             List<Airspace>          airspaces,
                             List<Navaid>            navaids,
+                            List<Aerodrome>         aerodromes,
                             List<ParseException>    errors) {
 
         String rootName = eAipNode.getOwnerDocument().getDocumentElement()
@@ -77,12 +85,33 @@ public class EAIPHungaryReader {
             processor = new EAipProcessorEnr55();
         } else if ("e:ENR-5.6".equals(rootName)) {
             processor = new EAipProcessorEnr56();
+        } else if ("e:AD-1.3".equals(rootName)) {
+            processor = new EAipProcessorAd13();
+        } else if ("e:Aerodrome".equals(rootName)) {
+            processor = new EAipProcessorAd();
         } else {
             // the generic case
             processor = new EAipProcessor();
         }
 
-        processor.processEAIP(eAipNode, borderPoints, airspaces, navaids,
+        processor.processEAIP(eAipNode,
+                              borderPoints,
+                              airspaces,
+                              navaids,
+                              aerodromes,
                               errors);
+
+        // clean the result of placeholder aerodrome objects, if this
+        // is not AD-1.3, which contains this list of aerodrome names
+        if (!"e:AD-1.3".equals(rootName) && aerodromes != null) {
+            List<Aerodrome>  ads = new Vector<Aerodrome>();
+
+            for (Aerodrome ad : aerodromes) {
+                if (ad.getArp() != null) {
+                    ads.add(ad);
+                }
+            }
+            aerodromes.retainAll(ads);
+        }
     }
 }

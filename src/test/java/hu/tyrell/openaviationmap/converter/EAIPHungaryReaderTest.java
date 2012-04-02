@@ -20,6 +20,8 @@ package hu.tyrell.openaviationmap.converter;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import hu.tyrell.openaviationmap.model.Aerodrome;
 import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Boundary;
 import hu.tyrell.openaviationmap.model.Circle;
@@ -31,7 +33,10 @@ import hu.tyrell.openaviationmap.model.MagneticVariation;
 import hu.tyrell.openaviationmap.model.Navaid;
 import hu.tyrell.openaviationmap.model.Point;
 import hu.tyrell.openaviationmap.model.Ring;
+import hu.tyrell.openaviationmap.model.Runway;
+import hu.tyrell.openaviationmap.model.SurfaceType;
 import hu.tyrell.openaviationmap.model.UOM;
+import hu.tyrell.openaviationmap.model.oam.Oam;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -79,7 +84,7 @@ public class EAIPHungaryReaderTest {
         List<ParseException> errors    = new Vector<ParseException>();
 
 
-        reader.processEAIP(eAipNode, null, airspaces, null, errors);
+        reader.processEAIP(eAipNode, null, airspaces, null, null, errors);
 
         assertEquals(4, errors.size());
         assertEquals(47, airspaces.size());
@@ -214,7 +219,7 @@ public class EAIPHungaryReaderTest {
         List<ParseException> errors    = new Vector<ParseException>();
 
 
-        reader.processEAIP(eAipNode, null, null, navaids, errors);
+        reader.processEAIP(eAipNode, null, null, navaids, null, errors);
 
         assertEquals(1, errors.size());
         assertEquals(18, navaids.size());
@@ -232,7 +237,7 @@ public class EAIPHungaryReaderTest {
         assertEquals("H24", navaid.getActivetime());
         assertEquals(46.8, navaid.getLatitude(), 0.00001);
         assertEquals(21.07388, navaid.getLongitude(), 0.00001);
-        assertEquals(new Elevation(95, UOM.M, ElevationReference.SFC),
+        assertEquals(new Elevation(95, UOM.M, ElevationReference.MSL),
                      navaid.getElevation());
         assertEquals(new Distance(100, UOM.NM), navaid.getCoverage());
         assertEquals("Coverage: 100 NM/185 km DME COORD: 464759.9N 0210426.0E",
@@ -284,7 +289,7 @@ public class EAIPHungaryReaderTest {
         List<ParseException> errors    = new Vector<ParseException>();
 
 
-        reader.processEAIP(eAipNode, null, null, navaids, errors);
+        reader.processEAIP(eAipNode, null, null, navaids, null, errors);
 
         assertEquals(0, errors.size());
         assertEquals(81, navaids.size());
@@ -306,6 +311,186 @@ public class EAIPHungaryReaderTest {
         assertEquals("DIMLO", navaid.getIdent());
         assertEquals(46.68361, navaid.getLatitude(), 0.00001);
         assertEquals(16.42277, navaid.getLongitude(), 0.00001);
-}
+    }
 
+    /**
+     * Test an eAIP AD-1.3 document.
+     *
+     * @throws ParserConfigurationException on XML parser configuration errors
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing issues
+     */
+    @Test
+    public void testEAipAd13() throws ParserConfigurationException,
+                                    SAXException,
+                                    IOException {
+        Node eAipNode = null;
+
+        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        DocumentBuilder        db  = dbf.newDocumentBuilder();
+
+        Document   d = db.parse(
+                        new FileInputStream("var/LH-AD-1.3-en-HU.xml"));
+        eAipNode = d.getDocumentElement();
+
+        assertNotNull(eAipNode);
+
+        EAIPHungaryReader    reader     = new EAIPHungaryReader();
+        List<Aerodrome>      aerodromes = new Vector<Aerodrome>();
+        List<ParseException> errors     = new Vector<ParseException>();
+
+
+        reader.processEAIP(eAipNode, null, null, null, aerodromes, errors);
+
+        assertEquals(0, errors.size());
+        assertEquals(9, aerodromes.size());
+
+        Aerodrome ad = aerodromes.get(0);
+        assertEquals("LHBC", ad.getIcao());
+        assertEquals("BÉKÉSCSABA", ad.getName());
+        ad = aerodromes.get(6);
+        assertEquals("LHPP", ad.getIcao());
+        assertEquals("PÉCS-POGÁNY", ad.getName());
+    }
+
+    /**
+     * Test an eAIP AD document.
+     *
+     * @throws ParserConfigurationException on XML parser configuration errors
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing issues
+     */
+    @Test
+    public void testEAipAd() throws ParserConfigurationException,
+                                    SAXException,
+                                    IOException {
+
+        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        DocumentBuilder        db  = dbf.newDocumentBuilder();
+
+        List<ParseException> errors     = new Vector<ParseException>();
+
+        // load the border points
+        List<Point>    borderPoints = null;
+
+        Document   d         = db.parse(new FileInputStream("var/hungary.osm"));
+        Oam        oam       = new Oam();
+        OAMReader  oamReader = new OAMReader();
+        oamReader.processOsm(d.getDocumentElement(), oam, errors);
+        assertTrue(errors.isEmpty());
+
+        if (!oam.getWays().isEmpty()) {
+            // convert the OsmNodes to Points
+            List<Integer> refList =
+                    oam.getWays().values().iterator().next().getNodeList();
+
+            borderPoints = new Vector<Point>(refList.size());
+
+            for (Integer r : refList) {
+                borderPoints.add(oam.getNodes().get(r).asPoint());
+            }
+        }
+
+
+        // process the airport definition file
+        Node eAipNode = null;
+
+        d = db.parse(new FileInputStream("var/LH-AD-LHBC-en-HU.xml"));
+        eAipNode = d.getDocumentElement();
+
+        assertNotNull(eAipNode);
+
+        EAIPHungaryReader    reader     = new EAIPHungaryReader();
+        List<Aerodrome>      aerodromes = new Vector<Aerodrome>();
+
+
+        reader.processEAIP(eAipNode, borderPoints, null, null,
+                           aerodromes, errors);
+
+        assertEquals(0, errors.size());
+        assertEquals(1, aerodromes.size());
+
+        // check the processed aerodrome
+        Aerodrome ad = aerodromes.get(0);
+        assertEquals("LHBC", ad.getIcao());
+        assertNotNull(ad.getArp());
+        assertEquals(Frequency.fromString("123.25MHz"), ad.getAfis());
+        assertEquals(46.68333, ad.getArp().getLatitude(), 0.00001);
+        assertEquals(21.16249, ad.getArp().getLongitude(), 0.00001);
+        assertTrue(ad.getElevation().equals(
+                new Elevation(87, UOM.M, ElevationReference.MSL)));
+        assertEquals("Prior permission required.", ad.getRemarks());
+
+        // check the related TIZ
+        assertNotNull(ad.getAirspace());
+        Airspace ap = ad.getAirspace();
+        assertEquals("Békéscsaba TIZ", ap.getName());
+        assertEquals("TIZ", ap.getType());
+        assertEquals("F", ap.getAirspaceClass());
+        assertEquals(Boundary.Type.RING, ap.getBoundary().getType());
+        assertEquals(29, ((Ring) ap.getBoundary()).getPointList().size());
+        assertTrue(new Elevation(4000, UOM.FT, ElevationReference.MSL)
+                   .equals(ap.getUpperLimit()));
+        assertTrue(new Elevation(0, UOM.FT, ElevationReference.SFC)
+                   .equals(ap.getLowerLimit()));
+
+        // check some of the runways
+        assertEquals(4, ad.getRunways().size());
+        Runway rwy = ad.getRunways().get(0);
+        assertEquals("17L", rwy.getDesignator());
+        assertEquals(174.5, rwy.getBearing(), 0.001);
+        assertTrue(rwy.getLength().equals(new Distance(1300, UOM.M)));
+        assertTrue(rwy.getWidth().equals(new Distance(30, UOM.M)));
+        assertEquals(SurfaceType.ASPHALT, rwy.getSurface());
+        assertEquals(46.6891944, rwy.getThreshold().getLatitude(), 0.0000001);
+        assertEquals(21.1617083, rwy.getThreshold().getLongitude(), 0.0000001);
+        assertEquals(46.6775527, rwy.getEnd().getLatitude(), 0.0000001);
+        assertEquals(21.1633277, rwy.getEnd().getLongitude(), 0.0000001);
+        assertTrue(rwy.getElevation().equals(
+                         new Elevation(86, UOM.M, ElevationReference.MSL)));
+        assertTrue(rwy.getTora().equals(new Distance(1300, UOM.M)));
+        assertTrue(rwy.getToda().equals(new Distance(1300, UOM.M)));
+        assertTrue(rwy.getAsda().equals(new Distance(1300, UOM.M)));
+        assertTrue(rwy.getLda().equals(new Distance(1300, UOM.M)));
+        assertEquals(0.08, rwy.getSlope(), 0.001);
+
+        rwy = ad.getRunways().get(3);
+        assertEquals("35L", rwy.getDesignator());
+        assertEquals(354.5, rwy.getBearing(), 0.001);
+        assertTrue(rwy.getLength().equals(new Distance(790, UOM.M)));
+        assertTrue(rwy.getWidth().equals(new Distance(40, UOM.M)));
+        assertEquals(SurfaceType.GRASS, rwy.getSurface());
+        assertEquals(46.6758722, rwy.getThreshold().getLatitude(), 0.0000001);
+        assertEquals(21.1583750, rwy.getThreshold().getLongitude(), 0.0000001);
+        assertEquals(46.6829444, rwy.getEnd().getLatitude(), 0.0000001);
+        assertEquals(21.1573888, rwy.getEnd().getLongitude(), 0.0000001);
+        assertTrue(rwy.getElevation().equals(
+                         new Elevation(86, UOM.M, ElevationReference.MSL)));
+        assertTrue(rwy.getTora().equals(new Distance(790, UOM.M)));
+        assertTrue(rwy.getToda().equals(new Distance(790, UOM.M)));
+        assertTrue(rwy.getAsda().equals(new Distance(790, UOM.M)));
+        assertTrue(rwy.getLda().equals(new Distance(790, UOM.M)));
+        assertEquals(0.06, rwy.getSlope(), 0.001);
+
+        // check the related navaids
+        assertEquals(2, ad.getNavaids().size());
+        Navaid navaid = ad.getNavaids().get(0);
+        assertEquals(Navaid.Type.NDB, navaid.getType());
+        assertEquals(Frequency.fromString("400kHz"), navaid.getFrequency());
+        assertEquals("H24", navaid.getActivetime());
+        assertEquals(46.6648888, navaid.getLatitude(), 0.0000001);
+        assertEquals(21.1650833, navaid.getLongitude(), 0.0000001);
+        assertEquals("LI 35R", navaid.getRemarks());
+
+        navaid = ad.getNavaids().get(1);
+        assertEquals(Navaid.Type.VORDME, navaid.getType());
+        assertEquals(Frequency.fromString("115.8MHz"), navaid.getFrequency());
+        assertEquals("105X", navaid.getDmeChannel());
+        assertEquals("H24", navaid.getActivetime());
+        assertEquals(46.7999722, navaid.getLatitude(), 0.0000001);
+        assertEquals(21.0738888, navaid.getLongitude(), 0.0000001);
+        assertTrue(navaid.getElevation().equals(
+                   new Elevation(95, UOM.M, ElevationReference.MSL)));
+        assertEquals("DME COORD:464759.9N 0210426.0E", navaid.getRemarks());
+}
 }

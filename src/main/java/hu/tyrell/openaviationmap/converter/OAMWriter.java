@@ -17,8 +17,11 @@
  */
 package hu.tyrell.openaviationmap.converter;
 
+import hu.tyrell.openaviationmap.model.oam.Member;
 import hu.tyrell.openaviationmap.model.oam.Oam;
+import hu.tyrell.openaviationmap.model.oam.OsmBaseNode;
 import hu.tyrell.openaviationmap.model.oam.OsmNode;
+import hu.tyrell.openaviationmap.model.oam.Relation;
 import hu.tyrell.openaviationmap.model.oam.Way;
 
 import java.io.Writer;
@@ -50,17 +53,13 @@ public class OAMWriter {
                             new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
 
     /**
-     * Process a node.
+     * Process a generic OSM node.
      *
-     * @param document the document that will contain the nodes
-     * @param fragment the document fragment to put the nodes into
      * @param node the node to process
+     * @param nodeElement the XML node to put the info into.
      */
-    private void processNode(Document            document,
-                             DocumentFragment    fragment,
-                             OsmNode             node) {
-
-        Element nodeElement = document.createElement("node");
+    private void processOsmBaseNode(OsmBaseNode         node,
+                                    Element             nodeElement) {
 
         nodeElement.setAttribute("id", Integer.toString(node.getId()));
         nodeElement.setAttribute("version",
@@ -84,11 +83,6 @@ public class OAMWriter {
                 break;
             }
         }
-
-        nodeElement.setAttribute("lat",
-                                 Double.toString(node.getLatitude()));
-        nodeElement.setAttribute("lon",
-                                  Double.toString(node.getLongitude()));
 
         if (node.getTimestamp() != null) {
             nodeElement.setAttribute("timestamp",
@@ -115,11 +109,31 @@ public class OAMWriter {
 
         // insert the node tags
         for (String tag : node.getTags().keySet()) {
-            Element tagElement = document.createElement("tag");
+            Element tagElement = nodeElement.getOwnerDocument()
+                                                    .createElement("tag");
             tagElement.setAttribute("k", tag);
             tagElement.setAttribute("v", node.getTags().get(tag));
             nodeElement.appendChild(tagElement);
         }
+    }
+
+    /**
+     * Process a node.
+     *
+     * @param document the document that will contain the nodes
+     * @param fragment the document fragment to put the nodes into
+     * @param node the node to process
+     */
+    private void processNode(Document            document,
+                             DocumentFragment    fragment,
+                             OsmNode             node) {
+
+        Element nodeElement = document.createElement("node");
+
+        processOsmBaseNode(node, nodeElement);
+
+        nodeElement.setAttribute("lat", Double.toString(node.getLatitude()));
+        nodeElement.setAttribute("lon", Double.toString(node.getLongitude()));
 
         fragment.appendChild(nodeElement);
     }
@@ -137,52 +151,7 @@ public class OAMWriter {
 
         Element wayElement = document.createElement("way");
 
-        wayElement.setAttribute("id", Integer.toString(way.getId()));
-        wayElement.setAttribute("version",
-                                Integer.toString(way.getVersion()));
-
-        if (way.getAction() != null) {
-            switch (way.getAction()) {
-            default:
-            case NONE:
-                break;
-
-            case CREATE:
-                wayElement.setAttribute("action", "create");
-                break;
-
-            case MODIFY:
-                wayElement.setAttribute("action", "modify");
-                break;
-
-            case DELETE:
-                wayElement.setAttribute("action", "delete");
-                break;
-            }
-        }
-
-        if (way.getTimestamp() != null) {
-            wayElement.setAttribute("timestamp",
-                                     df.format(way.getTimestamp()));
-        }
-
-        if (way.getUid() != null) {
-            wayElement.setAttribute("uid", Integer.toString(way.getUid()));
-        }
-
-        if (way.getUser() != null) {
-            wayElement.setAttribute("user", way.getUser());
-        }
-
-        if (way.isVisible() != null) {
-            wayElement.setAttribute("visible", way.isVisible()
-                                              ? "true" : "false");
-        }
-
-        if (way.getChangeset() != null) {
-            wayElement.setAttribute("changeset",
-                                     Integer.toString(way.getChangeset()));
-        }
+        processOsmBaseNode(way, wayElement);
 
         for (Integer ref : way.getNodeList()) {
             Element nd = document.createElement("nd");
@@ -190,16 +159,46 @@ public class OAMWriter {
             wayElement.appendChild(nd);
         }
 
-        // insert the way tags
-        for (String tag : way.getTags().keySet()) {
-            Element tagElement = document.createElement("tag");
-            tagElement.setAttribute("k", tag);
-            tagElement.setAttribute("v", way.getTags().get(tag));
-            wayElement.appendChild(tagElement);
+        fragment.appendChild(wayElement);
+    }
 
+    /**
+     * Process a relation.
+     *
+     * @param document the document that will contain the nodes
+     * @param fragment the document fragment to put the nodes into
+     * @param rel the relation to process
+     */
+    private void processRelation(Document            document,
+                                 DocumentFragment    fragment,
+                                 Relation            rel) {
+
+        Element relElement = document.createElement("relation");
+
+        processOsmBaseNode(rel, relElement);
+
+        for (Member member : rel.getMembers()) {
+            Element m = document.createElement("member");
+
+            switch (member.getType()) {
+            case NODE:
+                m.setAttribute("type", "node");
+                break;
+
+            case WAY:
+                m.setAttribute("type", "way");
+                break;
+
+            default:
+            }
+
+            m.setAttribute("ref", Integer.toString(member.getRef()));
+            m.setAttribute("role", member.getRole());
+
+            relElement.appendChild(m);
         }
 
-        fragment.appendChild(wayElement);
+        fragment.appendChild(relElement);
     }
 
     /**
@@ -215,6 +214,7 @@ public class OAMWriter {
 
         DocumentFragment nodeFragment = document.createDocumentFragment();
         DocumentFragment wayFragment  = document.createDocumentFragment();
+        DocumentFragment relFragment  = document.createDocumentFragment();
 
         // add all nodes into the node fragment
         for (OsmNode node : oam.getNodes().values()) {
@@ -222,8 +222,13 @@ public class OAMWriter {
         }
 
         // add all ways into the way fragment
-        for (Way way: oam.getWays().values()) {
+        for (Way way : oam.getWays().values()) {
             processWay(document, wayFragment, way);
+        }
+
+        // add all relations into the rel fragment
+        for (Relation rel : oam.getRelations().values()) {
+            processRelation(document, relFragment, rel);
         }
 
         // put it all together into a document
@@ -232,6 +237,7 @@ public class OAMWriter {
         document.appendChild(root);
         root.appendChild(nodeFragment);
         root.appendChild(wayFragment);
+        root.appendChild(relFragment);
 
         return document;
     }

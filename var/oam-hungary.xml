@@ -1669,7 +1669,7 @@
     <tag k='icao' v='LHR14' />
     <tag k='name' v='ALGYŐ' />
     <tag k="activetime" v="H24"/>
-    <tag k="remark" v="For aircraft with less than 250 kt (IAS)"/>
+    <tag k="remarks" v="For aircraft with less than 250 kt (IAS)"/>
   </way>
   <way id='904' timestamp='2012-03-04T20:48:25Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='125'>
     <nd ref='6657' />
@@ -1719,7 +1719,7 @@
     <tag k='height:upper:unit' v='ft' />
     <tag k='icao' v='LHR3' />
     <tag k='name' v='BALATONFŰZFŐ' />
-    <tag k="remark" v="For aircraft with less than 250 kt (IAS)"/>
+    <tag k="remarks" v="For aircraft with less than 250 kt (IAS)"/>
     <tag k="activetime" v="H24"/>
   </way>
   <way id='905' timestamp='2012-03-04T20:48:26Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='125'>
@@ -1745,7 +1745,7 @@
     <tag k='height:upper:unit' v='ft' />
     <tag k='icao' v='LHR1' />
     <tag k='name' v='BUDAPEST' />
-    <tag k="remark" v="By special permission of the aeronautical authority"/>
+    <tag k="remarks" v="By special permission of the aeronautical authority"/>
     <tag k="activetime" v="H24"/>
   </way>
   <way id='906' timestamp='2012-03-04T20:48:27Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='125'>
@@ -1862,7 +1862,7 @@
     <tag k='height:upper:unit' v='ft' />
     <tag k='icao' v='LHP2' />
     <tag k='name' v='CSILLEBÉRC' />
-    <tag k="remark" v="Research nuclear reactor"/>
+    <tag k="remarks" v="Research nuclear reactor"/>
     <tag k="activetime" v="H24"/>
   </way>
   <way id='909' timestamp='2012-03-04T20:48:30Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='125'>
@@ -1881,7 +1881,7 @@
     <tag k='height:upper:unit' v='ft' />
     <tag k='icao' v='LHD18' />
     <tag k='name' v='CSORNA/AKASZTÓ' />
-    <tag k="remark" v="Firing field"/>
+    <tag k="remarks" v="Firing field"/>
     <tag k="activetime" v="MOFRI 05:00 (UTCW) -  21:00 (UTCW)"/>
   </way>
   <way id='910' timestamp='2012-03-04T20:48:30Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='125'>
@@ -1932,7 +1932,7 @@
     <tag k='height:upper:unit' v='ft' />
     <tag k='icao' v='LHR15' />
     <tag k='name' v='DUNAÚJVÁROS' />
-    <tag k="remark" v="For aircraft with less than 250 kt (IAS)"/>
+    <tag k="remarks" v="For aircraft with less than 250 kt (IAS)"/>
     <tag k="activetime" v="H24"/>
   </way>
   <way id='911' timestamp='2012-03-04T20:48:31Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='125'>
@@ -1951,7 +1951,7 @@
     <tag k='height:upper:unit' v='ft' />
     <tag k='icao' v='LHD11' />
     <tag k='name' v='DÓC' />
-    <tag k="remark" v="Firing field"/>
+    <tag k="remarks" v="Firing field"/>
     <tag k="activetime" v="NOTAM"/>
   </way>
   <way id='912' timestamp='2012-03-04T20:48:32Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='125'>
@@ -1970,7 +1970,7 @@
     <tag k='height:upper:unit' v='ft' />
     <tag k='icao' v='LHD15' />
     <tag k='name' v='EGERBAKTA' />
-    <tag k="remark" v="Firing field"/>
+    <tag k="remarks" v="Firing field"/>
     <tag k="activetime" v="MOFRI 05:00 (UTCW) -  21:00 (UTCW)"/>
   </way>
   <way id='913' timestamp='2012-03-04T20:48:33Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='125'>
@@ -1989,7 +1989,7 @@
     <tag k='height:upper:unit' v='ft' />
     <tag k='icao' v='LHD17' />
     <tag k='name' v='GYŐRSZENTIVÁN' />
-    <tag k="remark" v="Firing field"/>
+    <tag k="remarks" v="Firing field"/>
     <tag k="activetime" v="MOFRI 05:00 (UTCW) -  21:00 (UTCW)"/>
   </way>
   <way id='914' timestamp='2012-03-04T20:48:33Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='125'>
@@ -2008,7 +2008,7 @@
     <tag k='height:upper:unit' v='fl' />
     <tag k='icao' v='LHD14' />
     <tag k='name' v='HAJDÚHADHÁZ' />
-    <tag k="remark" v="Firing field"/>
+    <tag k="remarks" v="Firing field"/>
     <tag k="activetime" v="NOTAM"/>
   </way>
   <way id='915' timestamp='2012-03-04T20:48:34Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='125'>
@@ -2059,7 +2059,7 @@
     <tag k='height:upper:unit' v='ft' />
     <tag k='icao' v='LHR10' />
     <tag k='name' v='HAJDÚSZOBOSZLÓ' />
-    <tag k="remark" v="For aircraft with less than 250 kt (IAS)"/>
+    <tag k="remarks" v="For aircraft with less than 250 kt (IAS)"/>
     <tag k="activetime" v="H24"/>
   </way>
   <way id='916' timestamp='2012-03-04T20:48:35Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='125'>
@@ -2110,7 +2110,7 @@
     <tag k='height:upper:unit' v='ft' />
     <tag k='icao' v='LHR30' />
     <tag k='name' v='HAJDÚSÁMSON' />
-    <tag k="remark" v="For civil aircraft"/>
+    <tag k="remarks" v="For civil aircraft"/>
     <tag k="activetime" v="H24"/>
   </way>
   <way id='917' timestamp='2012-03-04T20:48:36Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='125'>
@@ -2297,7 +2297,7 @@
     <tag k='height:upper:unit' v='ft' />
     <tag k='icao' v='LHR31' />
     <tag k='name' v='HEVES-ALATKA' />
-    <tag k="remark" v="For civil aircraft"/>
+    <tag k="remarks" v="For civil aircraft"/>
     <tag k="activetime" v="H24"/>
   </way>
   <way id='922' timestamp='2012-03-04T20:48:41Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='125'>
@@ -2315,7 +2315,7 @@
     <tag k='height:upper:unit' v='ft' />
     <tag k='icao' v='LHD16' />
     <tag k='name' v='IZBÉG' />
-    <tag k="remark" v="Firing field"/>
+    <tag k="remarks" v="Firing field"/>
     <tag k="activetime" v="MOFRI 05:00 (UTCW) -  21:00 (UTCW)"/>
   </way>
   <way id='923' timestamp='2012-03-04T20:48:41Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='125'>
@@ -2580,7 +2580,7 @@
     <tag k='height:upper:unit' v='fl' />
     <tag k='icao' v='LHP1' />
     <tag k='name' v='PAKS' />
-    <tag k="remark" v="Nuclear Power Plant"/>
+    <tag k="remarks" v="Nuclear Power Plant"/>
     <tag k="activetime" v="H24"/>
   </way>
   <way id='929' timestamp='2012-03-04T20:48:48Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='125'>
@@ -2631,7 +2631,7 @@
     <tag k='height:upper:unit' v='ft' />
     <tag k='icao' v='LHR35' />
     <tag k='name' v='PUSZTAVACS' />
-    <tag k="remark" v="For civil aircraft."/>
+    <tag k="remarks" v="For civil aircraft."/>
     <tag k="activetime" v="H24"/>
   </way>
   <way id='930' timestamp='2012-03-04T20:48:49Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='125'>
@@ -2747,7 +2747,7 @@
     <tag k='height:upper:unit' v='ft' />
     <tag k='icao' v='LHR5' />
     <tag k='name' v='RÉPCELAK' />
-    <tag k="remark" v="For aircraft with less than 250 kt (IAS)"/>
+    <tag k="remarks" v="For aircraft with less than 250 kt (IAS)"/>
     <tag k="activetime" v="H24"/>
   </way>
   <way id='933' timestamp='2012-03-04T20:48:52Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='125'>
@@ -2798,7 +2798,7 @@
     <tag k='height:upper:unit' v='ft' />
     <tag k='icao' v='LHR12' />
     <tag k='name' v='SAJÓBÁBONY' />
-    <tag k="remark" v="For aircraft with less than 250 kt (IAS)"/>
+    <tag k="remarks" v="For aircraft with less than 250 kt (IAS)"/>
     <tag k="activetime" v="H24"/>
   </way>
   <way id='934' timestamp='2012-03-04T20:48:53Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='125'>
@@ -2865,7 +2865,7 @@
     <tag k='height:upper:unit' v='ft' />
     <tag k='icao' v='LHR16' />
     <tag k='name' v='SZOLNOK-TÓSZEG' />
-    <tag k="remark" v="For aircraft with less than 250 kt (IAS)"/>
+    <tag k="remarks" v="For aircraft with less than 250 kt (IAS)"/>
     <tag k="activetime" v="H24"/>
   </way>
   <way id='936' timestamp='2012-03-04T20:48:55Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='125'>
@@ -3068,7 +3068,7 @@
     <tag k='height:upper:unit' v='ft' />
     <tag k='icao' v='LHR11' />
     <tag k='name' v='TISZAVASVÁRI' />
-    <tag k="remark" v="For aircraft with less than 250 kt (IAS)"/>
+    <tag k="remarks" v="For aircraft with less than 250 kt (IAS)"/>
     <tag k="activetime" v="H24"/>
   </way>
   <way id='942' timestamp='2012-03-04T20:49:00Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='125'>
@@ -3269,7 +3269,7 @@
     <tag k='height:upper:unit' v='ft' />
     <tag k='icao' v='LHR4' />
     <tag k='name' v='ZALAEGERSZEG' />
-    <tag k="remark" v="For aircraft with less than 250 kt (IAS)"/>
+    <tag k="remarks" v="For aircraft with less than 250 kt (IAS)"/>
     <tag k="activetime" v="H24"/>
   </way>
   <way id='948' timestamp='2012-03-04T20:49:06Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='125'>

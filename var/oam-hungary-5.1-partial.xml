@@ -965,7 +965,7 @@
 <nd ref="1"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="Nuclear Power Plant"/>
+<tag k="remarks" v="Nuclear Power Plant"/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="P"/>
 <tag k="airspace:center:unit" v="M"/>
@@ -1016,7 +1016,7 @@
 <nd ref="34"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="Research nuclear reactor"/>
+<tag k="remarks" v="Research nuclear reactor"/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="P"/>
 <tag k="airspace:center:unit" v="M"/>
@@ -1046,7 +1046,7 @@
 <nd ref="67"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="By special permission of the aeronautical authority"/>
+<tag k="remarks" v="By special permission of the aeronautical authority"/>
 <tag k="height:upper:class" v="amsl"/>
 <tag k="height:lower:unit" v="ft"/>
 <tag k="icao" v="LHR1"/>
@@ -1093,7 +1093,7 @@
 <nd ref="84"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="For aircraft with less than 250 kt (IAS)"/>
+<tag k="remarks" v="For aircraft with less than 250 kt (IAS)"/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="R"/>
 <tag k="airspace:center:unit" v="M"/>
@@ -1144,7 +1144,7 @@
 <nd ref="117"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="For aircraft with less than 250 kt (IAS)"/>
+<tag k="remarks" v="For aircraft with less than 250 kt (IAS)"/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="R"/>
 <tag k="airspace:center:unit" v="M"/>
@@ -1195,7 +1195,7 @@
 <nd ref="150"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="For aircraft with less than 250 kt (IAS)"/>
+<tag k="remarks" v="For aircraft with less than 250 kt (IAS)"/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="R"/>
 <tag k="airspace:center:unit" v="M"/>
@@ -1246,7 +1246,7 @@
 <nd ref="282"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="For aircraft with less than 250 kt (IAS)"/>
+<tag k="remarks" v="For aircraft with less than 250 kt (IAS)"/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="R"/>
 <tag k="airspace:center:unit" v="M"/>
@@ -1297,7 +1297,7 @@
 <nd ref="315"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="For aircraft with less than 250 kt (IAS)"/>
+<tag k="remarks" v="For aircraft with less than 250 kt (IAS)"/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="R"/>
 <tag k="airspace:center:unit" v="M"/>
@@ -1348,7 +1348,7 @@
 <nd ref="348"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="For aircraft with less than 250 kt (IAS)"/>
+<tag k="remarks" v="For aircraft with less than 250 kt (IAS)"/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="R"/>
 <tag k="airspace:center:unit" v="M"/>
@@ -1399,7 +1399,7 @@
 <nd ref="381"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="For aircraft with less than 250 kt (IAS)"/>
+<tag k="remarks" v="For aircraft with less than 250 kt (IAS)"/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="R"/>
 <tag k="airspace:center:unit" v="M"/>
@@ -1450,7 +1450,7 @@
 <nd ref="414"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="For aircraft with less than 250 kt (IAS)"/>
+<tag k="remarks" v="For aircraft with less than 250 kt (IAS)"/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="R"/>
 <tag k="airspace:center:unit" v="M"/>
@@ -1501,7 +1501,7 @@
 <nd ref="447"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="For aircraft with less than 250 kt (IAS)"/>
+<tag k="remarks" v="For aircraft with less than 250 kt (IAS)"/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="R"/>
 <tag k="airspace:center:unit" v="M"/>
@@ -1552,7 +1552,7 @@
 <nd ref="546"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="For civil aircraft"/>
+<tag k="remarks" v="For civil aircraft"/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="R"/>
 <tag k="airspace:center:unit" v="M"/>
@@ -1603,7 +1603,7 @@
 <nd ref="579"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="For civil aircraft"/>
+<tag k="remarks" v="For civil aircraft"/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="R"/>
 <tag k="airspace:center:unit" v="M"/>
@@ -1654,7 +1654,7 @@
 <nd ref="683"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="For civil aircraft."/>
+<tag k="remarks" v="For civil aircraft."/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="R"/>
 <tag k="airspace:center:unit" v="M"/>
@@ -1677,7 +1677,7 @@
 <nd ref="737"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="Firing field"/>
+<tag k="remarks" v="Firing field"/>
 <tag k="height:upper:class" v="amsl"/>
 <tag k="height:lower:unit" v="ft"/>
 <tag k="icao" v="LHD11"/>
@@ -1696,7 +1696,7 @@
 <nd ref="742"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="Firing field"/>
+<tag k="remarks" v="Firing field"/>
 <tag k="height:upper:class" v="amsl"/>
 <tag k="height:lower:unit" v="ft"/>
 <tag k="icao" v="LHD14"/>
@@ -1715,7 +1715,7 @@
 <nd ref="747"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="Firing field"/>
+<tag k="remarks" v="Firing field"/>
 <tag k="height:upper:class" v="amsl"/>
 <tag k="height:lower:unit" v="ft"/>
 <tag k="icao" v="LHD15"/>
@@ -1733,7 +1733,7 @@
 <nd ref="752"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="Firing field"/>
+<tag k="remarks" v="Firing field"/>
 <tag k="height:upper:class" v="amsl"/>
 <tag k="height:lower:unit" v="ft"/>
 <tag k="icao" v="LHD16"/>
@@ -1752,7 +1752,7 @@
 <nd ref="756"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="Firing field"/>
+<tag k="remarks" v="Firing field"/>
 <tag k="height:upper:class" v="amsl"/>
 <tag k="height:lower:unit" v="ft"/>
 <tag k="icao" v="LHD17"/>
@@ -1771,7 +1771,7 @@
 <nd ref="761"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="Firing field"/>
+<tag k="remarks" v="Firing field"/>
 <tag k="height:upper:class" v="amsl"/>
 <tag k="height:lower:unit" v="ft"/>
 <tag k="icao" v="LHD18"/>

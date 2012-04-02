@@ -76,8 +76,9 @@ public class EAipProcessorEnr22 extends EAipProcessor {
             str = xpath.evaluate("td[1]/text()[2]", airspaceNode);
             int i   = str.indexOf("\n");
             int j   = str.lastIndexOf("\n");
-            Elevation upperLimit = processElevation(str.substring(0, i).trim());
-            Elevation lowerLimit = processElevation(
+            Elevation upperLimit = processElevation(name,
+                                                str.substring(0, i).trim());
+            Elevation lowerLimit = processElevation(name,
                                                 str.substring(i + 1, j).trim());
 
             airspace.setUpperLimit(upperLimit);

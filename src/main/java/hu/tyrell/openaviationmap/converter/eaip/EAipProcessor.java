@@ -18,6 +18,7 @@
 package hu.tyrell.openaviationmap.converter.eaip;
 
 import hu.tyrell.openaviationmap.converter.ParseException;
+import hu.tyrell.openaviationmap.model.Aerodrome;
 import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Circle;
 import hu.tyrell.openaviationmap.model.Distance;
@@ -86,13 +87,23 @@ public class EAipProcessor {
             throw new ParseException(designator,
                                      "lat string too short: '" + latStr + "'");
         }
-        double degrees = Double.parseDouble(latStr.substring(0, 2));
-        double minutes = Double.parseDouble(latStr.substring(2, 4));
-        double seconds = Double.parseDouble(latStr.substring(4, 6));
+        String str = latStr.trim().toUpperCase();
+        double degrees = Double.parseDouble(str.substring(0, 2));
+        double minutes = Double.parseDouble(str.substring(2, 4));
+
+        int i = str.indexOf('N');
+        if (i == -1) {
+            i = str.indexOf('S');
+        }
+        if (i == -1) {
+            throw new ParseException(designator,
+                                "latitude string missing N or S designator");
+        }
+        double seconds = Double.parseDouble(str.substring(4, i));
 
         double value = degrees + (minutes / 60.0) + (seconds / 3600.0);
 
-        return latStr.charAt(6) == 'S' ? -value : value;
+        return str.charAt(i) == 'S' ? -value : value;
     }
 
     /**
@@ -114,13 +125,23 @@ public class EAipProcessor {
             throw new ParseException(designator,
                                      "lon string too short: '" + lonStr + "'");
         }
-        double degrees = Double.parseDouble(lonStr.substring(0, 3));
-        double minutes = Double.parseDouble(lonStr.substring(3, 5));
-        double seconds = Double.parseDouble(lonStr.substring(5, 7));
+        String str = lonStr.trim().toUpperCase();
+        double degrees = Double.parseDouble(str.substring(0, 3));
+        double minutes = Double.parseDouble(str.substring(3, 5));
+
+        int i = str.indexOf('E');
+        if (i == -1) {
+            i = str.indexOf('W');
+        }
+        if (i == -1) {
+            throw new ParseException(designator,
+                                "latitude string missing E or W designator");
+        }
+        double seconds = Double.parseDouble(str.substring(5, i));
 
         double value = degrees + (minutes / 60.0) + (seconds / 3600.0);
 
-        return lonStr.charAt(7) == 'W' ? -value : value;
+        return str.charAt(i) == 'W' ? -value : value;
     }
 
     /**
@@ -281,11 +302,14 @@ public class EAipProcessor {
     /**
      * Process a textual elevation description.
      *
+     * @param designator the airspace designator for the point list,
+     *                   used to display warnings about the incompleteness
+     *                   of the airspace.
      * @param elevDesc the textual elevation description
      * @return the elevation described by elevDesc
      * @throws ParseException in parsing errors
      */
-    protected Elevation processElevation(String elevDesc)
+    protected Elevation processElevation(String designator, String elevDesc)
                                                     throws ParseException {
         String ed = elevDesc.trim();
 
@@ -317,8 +341,8 @@ public class EAipProcessor {
             } else if ("M".equals(uom)) {
                 elevation.setUom(UOM.M);
             } else {
-                throw new ParseException("unknown elevation unit if measurement"
-                                       + uom);
+                throw new ParseException(designator,
+                              "unknown elevation unit if measurement" + uom);
             }
 
             // get the reference
@@ -455,13 +479,17 @@ public class EAipProcessor {
      *         may be null.
      *  @param airspaces all airspaces extracted from the supplied eAIP file
      *         will be inserted into this list.
-     *  @param navaids the navaids that are contained in the eAIP
+     *  @param navaids the navaids that are contained in the eAIP file
+     *         will be inserted into this list.
+     *  @param aerodromes the aerodromes that are contained contained in the
+     *         eAIP file will be put into this list
      *  @param errors all parsing errors will be written to this list
      */
     public void processEAIP(Node                    eAipNode,
                             List<Point>             borderPoints,
                             List<Airspace>          airspaces,
                             List<Navaid>            navaids,
+                            List<Aerodrome>         aerodromes,
                             List<ParseException>    errors) {
 
         NodeList nodes = null;

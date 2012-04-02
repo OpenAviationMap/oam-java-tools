@@ -36,11 +36,17 @@ public class Oam {
     private Map<Integer, Way> ways;
 
     /**
+     * The relations in the OAM document.
+     */
+    private Map<Integer, Relation> relations;
+
+    /**
      * Default constructor.
      */
     public Oam() {
-        nodes = new TreeMap<Integer, OsmNode>();
-        ways  = new TreeMap<Integer, Way>();
+        nodes     = new TreeMap<Integer, OsmNode>();
+        ways      = new TreeMap<Integer, Way>();
+        relations = new TreeMap<Integer, Relation>();
     }
 
     /**
@@ -50,17 +56,18 @@ public class Oam {
      * @return the maximum absolute value of node ids.
      */
     public int getMaxNodeId() {
-        int i = 0;
-        for (int j : nodes.keySet()) {
-            if (j < 0) {
-                j = -1;
+        int max = 0;
+        int min = 0;
+        for (int k : nodes.keySet()) {
+            if (max < k) {
+                max = k;
             }
-            if (i < j) {
-                i = j;
+            if (min > k) {
+                min = k;
             }
         }
 
-        return i;
+        return max > -min ? max : -min;
     }
 
     /**
@@ -138,6 +145,9 @@ public class Oam {
         for (Way way : other.ways.values()) {
             ways.put(way.getId(), way);
         }
+        for (Relation relation : other.relations.values()) {
+            relations.put(relation.getId(), relation);
+        }
     }
 
     /**
@@ -166,5 +176,19 @@ public class Oam {
      */
     public void setWays(Map<Integer, Way> ways) {
         this.ways = ways;
+    }
+
+    /**
+     * @return the relations
+     */
+    public Map<Integer, Relation> getRelations() {
+        return relations;
+    }
+
+    /**
+     * @param relations the relations to set
+     */
+    public void setRelations(Map<Integer, Relation> relations) {
+        this.relations = relations;
     }
 }

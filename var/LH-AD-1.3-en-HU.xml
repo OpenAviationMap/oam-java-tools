@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?eAIP-locales ../locales.xml?>
+<e:AD-1.3 id = "AD-1.3" xmlns:x = "http://www.w3.org/1999/xhtml" xmlns:e = "http://www.eurocontrol.int/xmlns/AIM/eAIP" xmlns:xlink = "http://www.w3.org/1999/xlink"><?FM MARKER [FrameAPS Content] PM-0.1,557313,1595223?>
+<e:Title id = "AD130812011324390"><?FM MARKER [Cross-Ref] 56197: Heading3: AD 1.3 INDEX TO AERODROMES AND HELIPORTS?>INDEX TO AERODROMES AND HELIPORTS</e:Title>
+<e:Sub-section id = "AD130608231137285" class = "Heading4" Number = "1. "><e:Title id = "AD130608231137496">Aerodromes and heliports with reference to AD 2 part</e:Title><x:table id = "AD130812011324401" frame = "border" align = "center">
+<x:thead id = "AD130812011324402">
+<x:tr id = "AD130812011324403" class = "Table-row-type-1">
+<x:th id = "AD130812011324404" class = "bleft btop bright bbottom " rowspan = "2"><?FM MARKER [FrameAPS Content] CM-0.1,1060512,655360?>Aerodrome/heliport nameLocation indicator</x:th>
+<x:th id = "AD130812011324405" class = "bleft btop bright bbottom " colspan = "3">Type of traffic permitted to use the aerodrome/heliport</x:th>
+<x:th id = "AD130812011324406" class = "bleft btop bright bbottom " rowspan = "2">Reference to AD Section and Remarks</x:th>
+</x:tr>
+<x:tr id = "AD130812011324407" class = "Table-row-type-2">
+<x:th id = "AD130812011324408" class = "bleft btop bright bbottom ">International - National(INTL-NTL)</x:th>
+<x:th id = "AD130812011324409" class = "bleft btop bright bbottom ">IFR-VFR</x:th>
+<x:th id = "AD1308120113244010" class = "bleft btop bright bbottom " align = "left">S = ScheduledNS = Non-scheduledP = Private</x:th>
+</x:tr>
+<x:tr id = "AD1308120113244011" class = "Table-row-type-2">
+<x:th id = "AD1308120113244012" class = "bleft btop bright bbottom ">1</x:th>
+<x:th id = "AD1308120113244013" class = "bleft btop bright bbottom ">2</x:th>
+<x:th id = "AD1308120113244014" class = "bleft btop bright bbottom ">3</x:th>
+<x:th id = "AD1308120113244015" class = "bleft btop bright bbottom ">4</x:th>
+<x:th id = "AD1308120113244016" class = "bleft btop bright bbottom ">5</x:th>
+</x:tr>
+</x:thead>
+<x:tbody id = "AD1308120113244017">
+<x:tr id = "AD130608231132533">
+<x:td id = "AD1308120113244018" class = "bleft btop bright bbottom "><x:strong id = "AD130608231137044" class = "Cell-body">Aerodrome</x:strong></x:td>
+<x:td id = "AD1308120113244019" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD1308120113244020" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD1308120113244021" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD1308120113244022" class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr id = "AD1308120113244023">
+<x:td id = "AD1308120113244024" class = "bleft btop bright bbottom ">BÉKÉSCSABA<x:br id = "AD132011053106502107180000"/>LHBC</x:td>
+<x:td id = "AD1308120113244025" class = "bleft btop bright bbottom ">INTL-NTL</x:td>
+<x:td id = "AD1308120113244026" class = "bleft btop bright bbottom ">IFR-VFR</x:td>
+<x:td id = "AD1308120113244027" class = "bleft btop bright bbottom ">P</x:td>
+<x:td id = "AD1308120113244028" class = "bleft btop bright bbottom "><x:a id = "AD130709130914050" class = "Cell-body" href = "LH-AD-LHBC-en-HU.html#AD-2.LHBC">AD 2-LHBC</x:a></x:td>
+</x:tr>
+<x:tr id = "AD1308120113244030">
+<x:td id = "AD1308120113244031" class = "bleft btop bright bbottom ">BUDAPEST LISZT FERENC INTERNATIONAL AIRPORT<x:br id = "AD132011053106504601560000"/>LHBP</x:td>
+<x:td id = "AD1308120113244032" class = "bleft btop bright bbottom ">INTL-NTL</x:td>
+<x:td id = "AD1308120113244033" class = "bleft btop bright bbottom ">IFR-VFR</x:td>
+<x:td id = "AD1308120113244034" class = "bleft btop bright bbottom ">S-NS-P</x:td>
+<x:td id = "AD1308120113244035" class = "bleft btop bright bbottom "><x:a id = "AD130706141407040" class = "Cell-body" href = "LH-AD-2.LHBP-en-HU.html#AD0706130924525150">AD 2-LHBP</x:a></x:td>
+</x:tr>
+<x:tr id = "AD1308120113244037">
+<x:td id = "AD1308120113244038" class = "bleft btop bright bbottom ">DEBRECEN<x:br id = "AD132011053106511700150000"/>LHDC</x:td>
+<x:td id = "AD1308120113244039" class = "bleft btop bright bbottom ">INTL-NTL</x:td>
+<x:td id = "AD1308120113244040" class = "bleft btop bright bbottom ">IFR-VFR</x:td>
+<x:td id = "AD1308120113244041" class = "bleft btop bright bbottom ">NS-P</x:td>
+<x:td id = "AD1308120113244042" class = "bleft btop bright bbottom "><x:a id = "AD130706131122100" class = "Cell-body" href = "LH-AD-2.LHDC-en-HU.html#AD0706130923224311">AD 2-LHDC</x:a></x:td>
+</x:tr>
+<x:tr id = "AD1308120113244044">
+<x:td id = "AD1308120113244045" class = "bleft btop bright bbottom ">FERTŐSZENTMIKLÓS<x:br id = "AD132011053106512200620000"/>LHFM</x:td>
+<x:td id = "AD1308120113244046" class = "bleft btop bright bbottom ">INTL-NTL</x:td>
+<x:td id = "AD1308120113244047" class = "bleft btop bright bbottom ">VFR</x:td>
+<x:td id = "AD1308120113244048" class = "bleft btop bright bbottom ">P</x:td>
+<x:td id = "AD1308120113244049" class = "bleft btop bright bbottom "><x:a id = "AD130706131123201" class = "Cell-body" href = "LH-AD-2.LHFM-en-HU.html#AD0706130922083724">AD 2-LHFM</x:a></x:td>
+</x:tr>
+<x:tr id = "AD1308120113244051">
+<x:td id = "AD1308120113244052" class = "bleft btop bright bbottom ">GYŐR/PÉR<x:br id = "AD132011053106512704680000"/>LHPR</x:td>
+<x:td id = "AD1308120113244053" class = "bleft btop bright bbottom ">INTL-NTL</x:td>
+<x:td id = "AD1308120113244054" class = "bleft btop bright bbottom ">IFR-VFR</x:td>
+<x:td id = "AD1308120113244055" class = "bleft btop bright bbottom ">P</x:td>
+<x:td id = "AD1308120113244056" class = "bleft btop bright bbottom "><x:a id = "AD130706131124022" class = "Cell-body" href = "LH-AD-2.LHPR-en-HU.html#AD0706130919443011">AD 2-LHPR</x:a></x:td>
+</x:tr>
+<x:tr id = "AD1308120113244058">
+<x:td id = "AD1308120113244059" class = "bleft btop bright bbottom ">NYÍREGYHÁZA<x:br id = "AD132011053106513209060000"/>LHNY</x:td>
+<x:td id = "AD1308120113244060" class = "bleft btop bright bbottom ">NTL</x:td>
+<x:td id = "AD1308120113244061" class = "bleft btop bright bbottom ">VFR</x:td>
+<x:td id = "AD1308120113244062" class = "bleft btop bright bbottom ">P</x:td>
+<x:td id = "AD1308120113244063" class = "bleft btop bright bbottom "><x:a id = "AD131002081418130" class = "Cell-body" href = "LH-AD-2.LHNY-en-HU.html#AD0812170723001">AD 2-LHNY</x:a></x:td>
+</x:tr>
+<x:tr id = "AD1308120113244065">
+<x:td id = "AD1308120113244066" class = "bleft btop bright bbottom ">PÉCS-POGÁNY<x:br id = "AD132011053106513708430000"/>LHPP</x:td>
+<x:td id = "AD1308120113244067" class = "bleft btop bright bbottom ">INTL-NTL</x:td>
+<x:td id = "AD1308120113244068" class = "bleft btop bright bbottom ">IFR-VFR</x:td>
+<x:td id = "AD1308120113244069" class = "bleft btop bright bbottom ">P</x:td>
+<x:td id = "AD1308120113244070" class = "bleft btop bright bbottom "><x:a id = "AD130706131125434" class = "Cell-body" href = "LH-AD-2.LHPP-en-HU.html#AD0706130917311542">AD 2-LHPP</x:a></x:td>
+</x:tr>
+<x:tr id = "AD1308120113244072">
+<x:td id = "AD1308120113244073" class = "bleft btop bright bbottom ">SÁRMELLÉK/BALATON<x:br id = "AD132011053106514503280000"/>LHSM</x:td>
+<x:td id = "AD1308120113244074" class = "bleft btop bright bbottom ">INTL-NTL</x:td>
+<x:td id = "AD1308120113244075" class = "bleft btop bright bbottom ">IFR-VFR</x:td>
+<x:td id = "AD1308120113244076" class = "bleft btop bright bbottom ">NS-P</x:td>
+<x:td id = "AD1308120113244077" class = "bleft btop bright bbottom "><x:a id = "AD130706131126315" class = "Cell-body" href = "LH-AD-2.LHSM-en-HU.html#AD070613091426703">AD 2-LHSM</x:a></x:td>
+</x:tr>
+<x:tr id = "AD1308120113244079">
+<x:td id = "AD1308120113244080" class = "bleft btop bright bbottom ">SZEGED<x:br id = "AD132011053106515007960000"/>LHUD</x:td>
+<x:td id = "AD1308120113244081" class = "bleft btop bright bbottom ">INTL-NTL</x:td>
+<x:td id = "AD1308120113244082" class = "bleft btop bright bbottom ">IFR-VFR</x:td>
+<x:td id = "AD1308120113244083" class = "bleft btop bright bbottom ">P</x:td>
+<x:td id = "AD1308120113244084" class = "bleft btop bright bbottom "><x:a id = "AD130706131127156" class = "Cell-body" href = "LH-AD-2.LHUD-en-HU.html#AD0706130912041">AD 2-LHUD</x:a></x:td>
+</x:tr>
+</x:tbody>
+</x:table></e:Sub-section>
+<e:Sub-section id = "AD130608231141197" class = "Heading4" Number = "2. "><e:Title id = "AD130608231141288">Other aerodromes and heliports</e:Title><x:table id = "AD1308120113244086" frame = "border" align = "center">
+<x:thead id = "AD1308120113244087">
+<x:tr id = "AD1308120113244088" class = "Table-row-type-1">
+<x:th id = "AD1308120113244089" class = "bleft btop bright bbottom " rowspan = "2">Aerodrome/heliport nameLocation indicator</x:th>
+<x:th id = "AD1308120113244090" class = "bleft btop bright bbottom " colspan = "3">Type of traffic permitted to use the aerodrome/heliport</x:th>
+<x:th id = "AD1308120113244091" class = "bleft btop bright bbottom " rowspan = "2">Contact/Remark</x:th>
+</x:tr>
+<x:tr id = "AD1308120113244092" class = "Table-row-type-2">
+<x:th id = "AD1308120113244093" class = "bleft btop bright bbottom ">International - National(INTL-NTL)</x:th>
+<x:th id = "AD1308120113244094" class = "bleft btop bright bbottom ">IFR-VFR</x:th>
+<x:th id = "AD1308120113244095" class = "bleft btop bright bbottom " align = "left">S = ScheduledNS = Non-scheduledP = Private
+MIL=Military</x:th>
+</x:tr>
+<x:tr id = "AD1308120113244096" class = "Table-row-type-2">
+<x:th id = "AD1308120113244097" class = "bleft btop bright bbottom ">1</x:th>
+<x:th id = "AD1308120113244098" class = "bleft btop bright bbottom ">2</x:th>
+<x:th id = "AD1308120113244099" class = "bleft btop bright bbottom ">3</x:th>
+<x:th id = "AD13081201132440100" class = "bleft btop bright bbottom ">4</x:th>
+<x:th id = "AD13081201132440101" class = "bleft btop bright bbottom ">5</x:th>
+</x:tr>
+</x:thead>
+<x:tbody id = "AD13081201132440102">
+<x:tr id = "AD13081201132440103">
+<x:td id = "AD13081201132440104" class = "bleft btop bright bbottom "><x:strong id = "AD130608231215293" class = "Cell-body">Aerodromes</x:strong></x:td>
+<x:td id = "AD13081201132440105" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD13081201132440106" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD13081201132440107" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD13081201132440108" class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr id = "AD13081201132440109">
+<x:td id = "AD13081201132440110" class = "bleft btop bright bbottom ">BUDAÖRS<x:br id = "AD132011053106520603900000"/>LHBS</x:td>
+<x:td id = "AD13081201132440111" class = "bleft btop bright bbottom ">INTL-NTL</x:td>
+<x:td id = "AD13081201132440112" class = "bleft btop bright bbottom ">VFR</x:td>
+<x:td id = "AD13081201132440113" class = "bleft btop bright bbottom ">P</x:td>
+<x:td id = "AD13081201132440114" class = "bleft btop bright bbottom "><e:Address id = "AD130608231223254" class = "Cell-body"><e:Address-part id = "AD13081201132440115" Type = "Post">1112 Budapest Kőérberki út 36.</e:Address-part>
+<e:Address-part id = "AD130608231226295" Type = "Post" class = "Cell-body">1515 Budapest P.O.Box 114.</e:Address-part>
+<e:Address-part id = "AD130608231228076" Type = "Phone" class = "Cell-body">(+36) 1-249-9831</e:Address-part>
+<e:Address-part id = "AD130608231232080" Type = "Fax" class = "Cell-body">(+36) 1-249-9832</e:Address-part></e:Address><x:p id = "AD130608231234532" class = "Body">AFIS</x:p><e:Address id = "AD130608231235073" class = "Cell-body"><e:Address-part id = "AD130608231232591" Type = "Phone">(+36) 1-249-9826</e:Address-part></e:Address><x:p id = "AD13081201132440116" class = "Body">Customs AD, <x:a id = "AD13081201132440118" href = "LH-AD-1.4-en-HU.html#NoName06021512411711">See AD 1.4 para 2.</x:a></x:p><?FM MARKER [FrameAPS Content] CU-0.1,2507533,6968656?></x:td>
+</x:tr>
+<x:tr id = "AD13081201132440120">
+<x:td id = "AD13081201132440121" class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-1.1,131072,655360?>DUNAKESZI<x:br id = "AD132011053106521400780000"/>LHDK</x:td>
+<x:td id = "AD13081201132440122" class = "bleft btop bright bbottom ">NTL</x:td>
+<x:td id = "AD13081201132440123" class = "bleft btop bright bbottom ">VFR</x:td>
+<x:td id = "AD13081201132440124" class = "bleft btop bright bbottom ">P</x:td>
+<x:td id = "AD13081201132440125" class = "bleft btop bright bbottom "><e:Address id = "AD130608231237244" class = "Cell-body"><e:Address-part id = "AD13081201132440126" Type = "Post">2120 Dunakeszi P.O.Box 12.</e:Address-part>
+<e:Address-part id = "AD130608231238185" Type = "Phone" class = "Cell-body">(+36) 27-341-790</e:Address-part>
+<e:Address-part id = "AD130608231239086" Type = "Fax" class = "Cell-body">(+36) 27-342-254</e:Address-part></e:Address></x:td>
+</x:tr>
+<x:tr id = "AD13081201132440127">
+<x:td id = "AD13081201132440128" class = "bleft btop bright bbottom ">DUNAÚJVÁROS<x:br id = "AD132011053106522008900000"/>LHDV</x:td>
+<x:td id = "AD13081201132440129" class = "bleft btop bright bbottom ">NTL</x:td>
+<x:td id = "AD13081201132440130" class = "bleft btop bright bbottom ">VFR</x:td>
+<x:td id = "AD13081201132440131" class = "bleft btop bright bbottom ">P</x:td>
+<x:td id = "AD13081201132440132" class = "bleft btop bright bbottom "><e:Address id = "AD130608240651000" class = "Cell-body"><e:Address-part id = "AD13081201132440133" Type = "Post">2401 Dunaújváros P.O.Box 161.</e:Address-part>
+<e:Address-part id = "AD130608240654211" Type = "Phone" class = "Cell-body">(+36) 25-277-005</e:Address-part>
+<e:Address-part id = "AD130608240655482" Type = "Fax" class = "Cell-body">(+36) 25-277-005</e:Address-part>
+<e:Address-part id = "AD130608240657033" Type = "Phone" class = "Cell-body">(+36) 25-278-220</e:Address-part>
+<e:Address-part id = "AD13081201132440134" Type = "Fax" class = "Cell-body">(+36) 25-278-220</e:Address-part></e:Address></x:td>
+</x:tr>
+<x:tr id = "AD13081201132440135">
+<x:td id = "AD13081201132440136" class = "bleft btop bright bbottom ">ESZTERGOM<x:br id = "AD132011053106522705780000"/>LHEM</x:td>
+<x:td id = "AD13081201132440137" class = "bleft btop bright bbottom ">NTL</x:td>
+<x:td id = "AD13081201132440138" class = "bleft btop bright bbottom ">VFR</x:td>
+<x:td id = "AD13081201132440139" class = "bleft btop bright bbottom ">P</x:td>
+<x:td id = "AD13081201132440140" class = "bleft btop bright bbottom "><e:Address id = "AD130608240658474" class = "Cell-body"><e:Address-part id = "AD13081201132440141" Type = "Post">2500 Esztergom P.O.Box 66.</e:Address-part>
+<e:Address-part id = "AD130608240700055" Type = "Phone" class = "Cell-body">(+36) 33-416-700</e:Address-part>
+<e:Address-part id = "AD13081201132440142" Type = "Fax" class = "Cell-body">(+36) 33-416-700</e:Address-part>
+<e:Address-part id = "AD130608240701026" Type = "Phone" class = "Cell-body">(+36) 33-441-443</e:Address-part>
+<e:Address-part id = "AD13081201132440143" Type = "Fax" class = "Cell-body">(+36) 33-441-443</e:Address-part></e:Address></x:td>
+</x:tr>
+<x:tr id = "AD13081201132440144">
+<x:td id = "AD13081201132440145" class = "bleft btop bright bbottom ">FARKASHEGY<x:br id = "AD132011053106523500310000"/>LHFH</x:td>
+<x:td id = "AD13081201132440146" class = "bleft btop bright bbottom ">NTL</x:td>
+<x:td id = "AD13081201132440147" class = "bleft btop bright bbottom ">VFR</x:td>
+<x:td id = "AD13081201132440148" class = "bleft btop bright bbottom ">P</x:td>
+<x:td id = "AD13081201132440149" class = "bleft btop bright bbottom "><e:Address id = "AD130608240703107" class = "Cell-body"><e:Address-part id = "AD13081201132440150" Type = "Post">2029 Budakeszi P.O.Box 23.</e:Address-part>
+<e:Address-part id = "AD130608240704068" Type = "Phone" class = "Cell-body">(+36) 23-450-694</e:Address-part>
+<e:Address-part id = "AD13081201132440151" Type = "Fax" class = "Cell-body">(+36) 23-450-694</e:Address-part></e:Address></x:td>
+</x:tr>
+<x:tr id = "AD13081201132440152">
+<x:td id = "AD13081201132440153" class = "bleft btop bright bbottom ">GÖDÖLLŐ<x:br id = "AD132011053106524100460000"/>LHGD</x:td>
+<x:td id = "AD13081201132440154" class = "bleft btop bright bbottom ">NTL</x:td>
+<x:td id = "AD13081201132440155" class = "bleft btop bright bbottom ">VFR</x:td>
+<x:td id = "AD13081201132440156" class = "bleft btop bright bbottom ">P</x:td>
+<x:td id = "AD13081201132440157" class = "bleft btop bright bbottom "><e:Address id = "AD130608240707029" class = "Cell-body"><e:Address-part id = "AD13081201132440158" Type = "Post">2100 Gödöllő P.O.Box 20.</e:Address-part>
+<e:Address-part id = "AD1306082407092610" Type = "Phone" class = "Cell-body">(+36) 28-410-099</e:Address-part>
+<e:Address-part id = "AD1306082407101011" Type = "Fax" class = "Cell-body">(+36) 28-420-099</e:Address-part></e:Address></x:td>
+</x:tr>
+<x:tr id = "AD13081201132440159">
+<x:td id = "AD13081201132440160" class = "bleft btop bright bbottom ">GYÖNGYÖS/PIPISHEGY<x:br id = "AD132011053106524703900000"/>LHGY</x:td>
+<x:td id = "AD13081201132440161" class = "bleft btop bright bbottom ">NTL</x:td>
+<x:td id = "AD13081201132440162" class = "bleft btop bright bbottom ">VFR</x:td>
+<x:td id = "AD13081201132440163" class = "bleft btop bright bbottom ">P</x:td>
+<x:td id = "AD13081201132440164" class = "bleft btop bright bbottom "><e:Address id = "AD1306082407122712" class = "Cell-body"><e:Address-part id = "AD13081201132440165" Type = "Post">3201 Gyöngyös P.O.Box 47.</e:Address-part>
+<e:Address-part id = "AD13081201132440166" Type = "Phone" class = "Cell-body">(+36) 37-312-393</e:Address-part>
+<e:Address-part id = "AD13081201132440167" Type = "Fax" class = "Cell-body">(+36) 37-312-393</e:Address-part></e:Address></x:td>
+</x:tr>
+<x:tr id = "AD13081201132440168">
+<x:td id = "AD13081201132440169" class = "bleft btop bright bbottom ">HÁRMASHATÁRHEGY<x:br id = "AD132011053106525305460000"/>LHHH</x:td>
+<x:td id = "AD13081201132440170" class = "bleft btop bright bbottom ">NTL</x:td>
+<x:td id = "AD13081201132440171" class = "bleft btop bright bbottom ">VFR</x:td>
+<x:td id = "AD13081201132440172" class = "bleft btop bright bbottom ">P</x:td>
+<x:td id = "AD13081201132440173" class = "bleft btop bright bbottom "><e:Address id = "AD1306082407164713" class = "Cell-body"><e:Address-part id = "AD13081201132440174" Type = "Post">1028 Budapest Arad u. 9.</e:Address-part>
+<e:Address-part id = "AD1306082407174214" Type = "Phone" class = "Cell-body">(+36) 1-376-5110</e:Address-part>
+<e:Address-part id = "AD13081201132440175" Type = "Fax" class = "Cell-body">(+36) 1-376-5110</e:Address-part></e:Address></x:td>
+</x:tr>
+<x:tr id = "AD132011053106564005150000">
+<x:td class = "bleft btop bright bbottom ">JAKABSZÁLLÁS<x:br id = "AD132011053106574202180000"/>LHJK</x:td>
+<x:td class = "bleft btop bright bbottom ">NTL</x:td>
+<x:td class = "bleft btop bright bbottom ">VFR</x:td>
+<x:td class = "bleft btop bright bbottom ">P</x:td>
+<x:td class = "bleft btop bright bbottom "><e:Address id = "AD132011053107045709680000" class = "Address-part-Post"><e:Address-part Type = "Post">H-6078 Jakabszállás P. O. Box:9</e:Address-part>
+<e:Address-part id = "AD132011053107060809370000" Type = "Phone" class = "Address-part-Phone">+3676 382 770</e:Address-part>
+<e:Address-part id = "AD132011053107065505780000" Type = "Phone" class = "Address-part-Phone">+3676 382 177</e:Address-part>
+<e:Address-part id = "AD132011053107080708120000" Type = "Fax" class = "Address-part-Fax">+3676 382 770</e:Address-part></e:Address></x:td>
+</x:tr>
+<x:tr id = "AD13081201132440176">
+<x:td id = "AD13081201132440177" class = "bleft btop bright bbottom ">KAPOSVÁR/KAPOSÚJLAK<x:br id = "AD132011053106530609680000"/>LHKV</x:td>
+<x:td id = "AD13081201132440178" class = "bleft btop bright bbottom ">NTL</x:td>
+<x:td id = "AD13081201132440179" class = "bleft btop bright bbottom ">VFR</x:td>
+<x:td id = "AD13081201132440180" class = "bleft btop bright bbottom ">P</x:td>
+<x:td id = "AD13081201132440181" class = "bleft btop bright bbottom "><e:Address id = "AD1306082407205015" class = "Cell-body"><e:Address-part id = "AD13081201132440182" Type = "Post">7400 Kaposvár P.O.Box 127.</e:Address-part>
+<e:Address-part id = "AD1306082407224216" Type = "Phone" class = "Cell-body">(+36) 82-315-327</e:Address-part></e:Address></x:td>
+</x:tr>
+<x:tr id = "AD13081201132440183">
+<x:td id = "AD13081201132440184" class = "bleft btop bright bbottom ">KECSKEMÉT<x:br id = "AD132011053106532107650000"/>LHKE</x:td>
+<x:td id = "AD13081201132440185" class = "bleft btop bright bbottom ">NTL</x:td>
+<x:td id = "AD13081201132440186" class = "bleft btop bright bbottom ">IFR/VFR</x:td>
+<x:td id = "AD13081201132440187" class = "bleft btop bright bbottom ">MIL</x:td>
+<x:td id = "AD13081201132440188" class = "bleft btop bright bbottom ">See Military AIP Hungary</x:td>
+</x:tr>
+<x:tr id = "AD132011053107093903120000">
+<x:td class = "bleft btop bright bbottom ">KECSKÉD<x:br id = "AD132011053107102700150000"/>LHKD</x:td>
+<x:td class = "bleft btop bright bbottom ">NTL</x:td>
+<x:td class = "bleft btop bright bbottom ">VFR</x:td>
+<x:td class = "bleft btop bright bbottom ">P</x:td>
+<x:td class = "bleft btop bright bbottom "><e:Address id = "AD132011053107112408120000" class = "Address-part-Post"><e:Address-part Type = "Post">H-2800 Tatabánya Bem Jóysef u. 1</e:Address-part>
+<e:Address-part id = "AD132011053107133904060000" Type = "Post" class = "Address-part-Post">H-2800 Tatabánya P. O. Box: 1267 (Mail address)</e:Address-part>
+<e:Address-part id = "AD132011053107145108900000" Type = "Phone" class = "Address-part-Phone">+3634 360 365</e:Address-part>
+<e:Address-part id = "AD132011053107151501250000" Type = "Phone" class = "Address-part-Phone">+3634 365 053</e:Address-part>
+<e:Address-part id = "AD132011053107160307960000" Type = "Email" class = "Address-part-Email">oldtimeraero@gmail.com</e:Address-part>
+<e:Address-part id = "AD132011053107164805460000" Type = "URL" class = "Address-part-URL">http://oldtimeraero.extra.hu</e:Address-part></e:Address></x:td>
+</x:tr>
+<x:tr id = "AD13081201132440189">
+<x:td id = "AD13081201132440190" class = "bleft btop bright bbottom ">KISKUNFÉLEGYHÁZA<x:br id = "AD132011053106532704370000"/>LHKH</x:td>
+<x:td id = "AD13081201132440191" class = "bleft btop bright bbottom ">NTL</x:td>
+<x:td id = "AD13081201132440192" class = "bleft btop bright bbottom ">VFR</x:td>
+<x:td id = "AD13081201132440193" class = "bleft btop bright bbottom ">P</x:td>
+<x:td id = "AD13081201132440194" class = "bleft btop bright bbottom "><e:Address id = "AD1306082407282018" class = "Cell-body"><e:Address-part id = "AD13081201132440195" Type = "Post">6100 Kiskunfélegyháza P.O.Box 12.</e:Address-part>
+<e:Address-part id = "AD1306082407295619" Type = "Phone" class = "Cell-body">(+36) 76-466-057</e:Address-part>
+<e:Address-part id = "AD1306082407304420" Type = "Fax" class = "Cell-body">(+36) 76-466-601</e:Address-part></e:Address></x:td>
+</x:tr>
+<x:tr id = "AD13081201132440196">
+<x:td id = "AD13081201132440197" class = "bleft btop bright bbottom ">MISKOLC<x:br id = "AD132011053106534301090000"/>LHMC</x:td>
+<x:td id = "AD13081201132440198" class = "bleft btop bright bbottom ">NTL</x:td>
+<x:td id = "AD13081201132440199" class = "bleft btop bright bbottom ">VFR</x:td>
+<x:td id = "AD13081201132440200" class = "bleft btop bright bbottom ">P</x:td>
+<x:td id = "AD13081201132440201" class = "bleft btop bright bbottom "><e:Address id = "AD1306082407314321" class = "Cell-body"><e:Address-part id = "AD13081201132440202" Type = "Post">3526 Miskolc Repülõtér út 7.</e:Address-part>
+<e:Address-part id = "AD1306082407342622" Type = "Phone" class = "Cell-body">(+36) 46-325-254</e:Address-part>
+<e:Address-part id = "AD13081201132440203" Type = "Fax" class = "Cell-body">(+36) 46-325-271</e:Address-part></e:Address></x:td>
+</x:tr>
+<x:tr id = "AD13081201132440204">
+<x:td id = "AD13081201132440205" class = "bleft btop bright bbottom ">ŐCSÉNY<x:br id = "AD132011053106535001710000"/>LHOY</x:td>
+<x:td id = "AD13081201132440206" class = "bleft btop bright bbottom ">NTL</x:td>
+<x:td id = "AD13081201132440207" class = "bleft btop bright bbottom ">VFR</x:td>
+<x:td id = "AD13081201132440208" class = "bleft btop bright bbottom ">P</x:td>
+<x:td id = "AD13081201132440209" class = "bleft btop bright bbottom "><e:Address id = "AD1306082407403623" class = "Cell-body"><e:Address-part id = "AD13081201132440210" Type = "Post">7143 Őcsény</e:Address-part>
+<e:Address-part id = "AD1306082407421624" Type = "Phone" class = "Cell-body">(+36) 74-496-264</e:Address-part></e:Address><?FM MARKER [FrameAPS Content] CU-1.1,6564719,1376256?></x:td>
+</x:tr>
+<x:tr id = "AD13081201132440211">
+<x:td id = "AD13081201132440212" class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-2.1,131072,655360?>PÁPA<x:br id = "AD132011053106535701250000"/>LHPA</x:td>
+<x:td id = "AD13081201132440213" class = "bleft btop bright bbottom ">NTL</x:td>
+<x:td id = "AD13081201132440214" class = "bleft btop bright bbottom ">IFR/VFR</x:td>
+<x:td id = "AD13081201132440215" class = "bleft btop bright bbottom ">MIL</x:td>
+<x:td id = "AD13081201132440216" class = "bleft btop bright bbottom ">See Military AIP Hungary</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom ">SIOFOK/KILITI<x:br id = "AD131001121057400"/>LHSK</x:td>
+<x:td class = "bleft btop bright bbottom ">NTL</x:td>
+<x:td class = "bleft btop bright bbottom ">VFR</x:td>
+<x:td class = "bleft btop bright bbottom ">P</x:td>
+<x:td class = "bleft btop bright bbottom "><e:Address id = "AD131001121100381" class = "Address-part-Post"><e:Address-part Type = "Post">8600 Siófok, Szekszárdi út</e:Address-part>
+<e:Address-part id = "AD131001121105442" Type = "Phone" class = "Address-part-Phone">(+36) 84-522-010</e:Address-part>
+<e:Address-part id = "AD131001121106363" Type = "Fax" class = "Address-part-Fax">(+36) 84-522-011</e:Address-part></e:Address></x:td>
+</x:tr>
+<x:tr id = "AD13081201132440217">
+<x:td id = "AD13081201132440218" class = "bleft btop bright bbottom ">SZENTES<x:br id = "AD132011053106541102810000"/>LHSZ</x:td>
+<x:td id = "AD13081201132440219" class = "bleft btop bright bbottom ">NTL</x:td>
+<x:td id = "AD13081201132440220" class = "bleft btop bright bbottom ">VFR</x:td>
+<x:td id = "AD13081201132440221" class = "bleft btop bright bbottom ">P</x:td>
+<x:td id = "AD13081201132440222" class = "bleft btop bright bbottom "><e:Address id = "AD1306082407450226" class = "Cell-body"><e:Address-part id = "AD13081201132440223" Type = "Post">6601 Szentes P.O.Box 217.</e:Address-part>
+<e:Address-part id = "AD1306082407454627" Type = "Phone" class = "Cell-body">(+36) 63-312-504</e:Address-part>
+<e:Address-part id = "AD13081201132440224" Type = "Fax" class = "Cell-body">(+36) 63-312-504</e:Address-part></e:Address></x:td>
+</x:tr>
+<x:tr id = "AD13081201132440225">
+<x:td id = "AD13081201132440226" class = "bleft btop bright bbottom ">SZOLNOK<x:br id = "AD132011053106541808120000"/>LHSN</x:td>
+<x:td id = "AD13081201132440227" class = "bleft btop bright bbottom ">NTL</x:td>
+<x:td id = "AD13081201132440228" class = "bleft btop bright bbottom ">IFR/VFR</x:td>
+<x:td id = "AD13081201132440229" class = "bleft btop bright bbottom ">MIL</x:td>
+<x:td id = "AD13081201132440230" class = "bleft btop bright bbottom ">See Military AIP Hungary</x:td>
+</x:tr>
+<x:tr id = "AD13081201132440232">
+<x:td id = "AD13081201132441233" class = "bleft btop bright bbottom ">SZOLNOK/SZANDASZŐLŐS<x:br id = "AD132011053106544709370000"/>LHSS</x:td>
+<x:td id = "AD13081201132441234" class = "bleft btop bright bbottom ">NTL</x:td>
+<x:td id = "AD13081201132441235" class = "bleft btop bright bbottom ">VFR</x:td>
+<x:td id = "AD13081201132441236" class = "bleft btop bright bbottom ">P</x:td>
+<x:td id = "AD13081201132441237" class = "bleft btop bright bbottom "><e:Address id = "AD1306082407484928" class = "Cell-body"><e:Address-part id = "AD13081201132441238" Type = "Post">5001 Szolnok-Szandaszőlős Baross u. 20. P.O.Box 70.</e:Address-part>
+<e:Address-part id = "AD1306082407502629" Type = "Phone" class = "Cell-body">(+36) 56-343-760</e:Address-part>
+<e:Address-part id = "AD13081201132441239" Type = "Fax" class = "Cell-body">(+36) 56-343-761</e:Address-part></e:Address></x:td>
+</x:tr>
+<x:tr id = "AD13081201132441240">
+<x:td id = "AD13081201132441241" class = "bleft btop bright bbottom ">SZOMBATHELY<x:br id = "AD132011053106545307030000"/>LHSY</x:td>
+<x:td id = "AD13081201132441242" class = "bleft btop bright bbottom ">NTL</x:td>
+<x:td id = "AD13081201132441243" class = "bleft btop bright bbottom ">VFR</x:td>
+<x:td id = "AD13081201132441244" class = "bleft btop bright bbottom ">P</x:td>
+<x:td id = "AD13081201132441245" class = "bleft btop bright bbottom "><e:Address id = "AD1306082407522730" class = "Cell-body"><e:Address-part id = "AD13081201132441246" Type = "Post">9701 Szombathely P.O.Box. 387.</e:Address-part>
+<e:Address-part id = "AD1306082407540031" Type = "Phone" class = "Cell-body">(+36) 94-349-310</e:Address-part></e:Address></x:td>
+</x:tr>
+<x:tr id = "AD13081201132441247">
+<x:td id = "AD13081201132441248" class = "bleft btop bright bbottom "><x:strong id = "AD1306082407555732" class = "Cell-body">Heliports</x:strong></x:td>
+<x:td id = "AD13081201132441249" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD13081201132441250" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD13081201132441251" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD13081201132441252" class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr id = "AD13081201132441253">
+<x:td id = "AD13081201132441254" class = "bleft btop bright bbottom ">KECEL<x:br id = "AD132011053106545903750000"/>LHKC</x:td>
+<x:td id = "AD13081201132441255" class = "bleft btop bright bbottom ">NTL</x:td>
+<x:td id = "AD13081201132441256" class = "bleft btop bright bbottom ">VFR</x:td>
+<x:td id = "AD13081201132441257" class = "bleft btop bright bbottom ">P</x:td>
+<x:td id = "AD13081201132441258" class = "bleft btop bright bbottom "><e:Address id = "AD1306082407563833" class = "Cell-body"><e:Address-part id = "AD13081201132441259" Type = "Post">6237 Kecel Rákóczi út.</e:Address-part>
+<e:Address-part id = "AD130706051254010" Type = "Phone" class = "Cell-body">(+36) 78-321-199</e:Address-part></e:Address><?FM MARKER [FrameAPS Content] CU-2.1,6564719,1376256?></x:td>
+</x:tr>
+</x:tbody>
+</x:table></e:Sub-section><?FM MARKER [FrameAPS Content] PU-0.1,13302088,28913152?>
+</e:AD-1.3>

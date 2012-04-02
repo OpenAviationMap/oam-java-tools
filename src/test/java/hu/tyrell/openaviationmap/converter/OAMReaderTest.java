@@ -20,9 +20,9 @@ package hu.tyrell.openaviationmap.converter;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
+import hu.tyrell.openaviationmap.model.Aerodrome;
 import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Navaid;
-import hu.tyrell.openaviationmap.model.Point;
 import hu.tyrell.openaviationmap.model.oam.Action;
 import hu.tyrell.openaviationmap.model.oam.Oam;
 import hu.tyrell.openaviationmap.model.oam.OsmNode;
@@ -90,7 +90,7 @@ public class OAMReaderTest {
         assertEquals(1, points.size());
         assertTrue(points.containsKey(-2));
 
-        Point point = points.get(-2);
+        OsmNode point = points.get(-2);
         assertNotNull(point);
         assertEquals(point.getLatitude(), 46.658302, 0.0);
         assertEquals(point.getLongitude(), 16.413235, 0.0);
@@ -122,7 +122,7 @@ public class OAMReaderTest {
         assertEquals(2051, points.size());
         assertTrue(points.containsKey(-2020));
 
-        Point point = points.get(-2020);
+        OsmNode point = points.get(-2020);
         assertNotNull(point);
         assertEquals(point.getLatitude(), 46.610283, 0.0);
         assertEquals(point.getLongitude(), 16.444185, 0.0);
@@ -235,7 +235,7 @@ public class OAMReaderTest {
         EAIPHungaryReader reader   = new EAIPHungaryReader();
 
         reader.processEAIP(d.getDocumentElement(), null, airspaces, null,
-                           errors);
+                           null, errors);
 
         assertEquals(4, errors.size());
         assertEquals(47, airspaces.size());
@@ -243,7 +243,7 @@ public class OAMReaderTest {
         // convert the airspaces into an Oam object
         Oam oam = new Oam();
 
-        Converter.airspacesToOam(airspaces, oam, Action.CREATE, 1, 0, 0);
+        Converter.airspacesToOam(airspaces, oam, Action.CREATE, 1, 0);
 
         // serialize the Oam object into a stream
         OAMWriter writer = new OAMWriter();
@@ -266,9 +266,13 @@ public class OAMReaderTest {
         d = db.parse(strSource);
 
         OAMReader oamReader = new OAMReader();
-        List<Airspace> oamAirspaces = new Vector<Airspace>();
-        List<Navaid>   oamNavaids   = new Vector<Navaid>();
-        oamReader.processOam(d.getDocumentElement(), oamAirspaces, oamNavaids,
+        List<Airspace>  oamAirspaces  = new Vector<Airspace>();
+        List<Navaid>    oamNavaids    = new Vector<Navaid>();
+        List<Aerodrome> oamAerodromes = new Vector<Aerodrome>();
+        oamReader.processOam(d.getDocumentElement(),
+                             oamAirspaces,
+                             oamNavaids,
+                             oamAerodromes,
                              errors);
 
         assertEquals(4, errors.size());
@@ -276,5 +280,6 @@ public class OAMReaderTest {
         assertTrue(airspaces.containsAll(oamAirspaces));
         assertTrue(oamAirspaces.containsAll(airspaces));
         assertTrue(oamNavaids.isEmpty());
+        assertTrue(oamAerodromes.isEmpty());
     }
 }

@@ -140,7 +140,7 @@
 <nd ref="-141"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="Available only for VFR flights.&#10;Prior permission required by Budapest ATS Centre.&#10;Mountain wave glider flights."/>
+<tag k="remarks" v="Available only for VFR flights.&#10;Prior permission required by Budapest ATS Centre.&#10;Mountain wave glider flights."/>
 <tag k="height:upper:class" v="amsl"/>
 <tag k="height:lower:unit" v="ft"/>
 <tag k="icao" v="LHSG30"/>
@@ -159,7 +159,7 @@
 <nd ref="-136"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="Prior permission required by Budapest ATS Centre.&#10;Mountain wave glider flights."/>
+<tag k="remarks" v="Prior permission required by Budapest ATS Centre.&#10;Mountain wave glider flights."/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="SG"/>
 <tag k="operator" v="LHDK"/>
@@ -178,7 +178,7 @@
 <nd ref="-132"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="Prior permission required by Budapest ATS Centre.&#10;Mountain wave glider flights."/>
+<tag k="remarks" v="Prior permission required by Budapest ATS Centre.&#10;Mountain wave glider flights."/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="SG"/>
 <tag k="operator" v="LHDK"/>
@@ -197,7 +197,7 @@
 <nd ref="-128"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="Available only for VFR flights.&#10;Above 6500 FT AMSL prior permission required by Budapest ATS Centre."/>
+<tag k="remarks" v="Available only for VFR flights.&#10;Above 6500 FT AMSL prior permission required by Budapest ATS Centre."/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="SG"/>
 <tag k="operator" v="LHDK"/>
@@ -217,7 +217,7 @@
 <nd ref="-123"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="Available only for VFR flights.&#10;Above 3000 FT AMSL prior permission required by Budapest ATS Centre."/>
+<tag k="remarks" v="Available only for VFR flights.&#10;Above 3000 FT AMSL prior permission required by Budapest ATS Centre."/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="SG"/>
 <tag k="operator" v="LHDK"/>
@@ -237,7 +237,7 @@
 <nd ref="-118"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="Available only for VFR flights&#10;Above 2500 FT AMSL prior permission required by Budapest ATS Centre."/>
+<tag k="remarks" v="Available only for VFR flights&#10;Above 2500 FT AMSL prior permission required by Budapest ATS Centre."/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="SG"/>
 <tag k="operator" v="LHDK"/>
@@ -285,7 +285,7 @@
 <nd ref="-85"/>
 <tag k="height:lower:class" v="amsl"/>
 <tag k="height:lower" v="2000"/>
-<tag k="remark" v="Above 2000 FT AMSL prior permission required by Budapest ATS Centre."/>
+<tag k="remarks" v="Above 2000 FT AMSL prior permission required by Budapest ATS Centre."/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="SG"/>
 <tag k="operator" v="LHDK"/>
@@ -309,7 +309,7 @@
 <nd ref="-80"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="Available only for VFR flights.&#10;Above 2000 FT AMSL prior permission required by Budapest ATS Centre."/>
+<tag k="remarks" v="Available only for VFR flights.&#10;Above 2000 FT AMSL prior permission required by Budapest ATS Centre."/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="SG"/>
 <tag k="operator" v="LHDK"/>
@@ -334,7 +334,7 @@
 <nd ref="-70"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="Available only for VFR flights&#10;Above 4500 FT AMSL prior permission required by Budapest ATS Centre."/>
+<tag k="remarks" v="Available only for VFR flights&#10;Above 4500 FT AMSL prior permission required by Budapest ATS Centre."/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="SG"/>
 <tag k="operator" v="LHEM"/>
@@ -355,7 +355,7 @@
 <nd ref="-64"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="Only for VFR flights.&#10; Above 4500 FT AMSL prior permission required by Budapest ATS Centre."/>
+<tag k="remarks" v="Only for VFR flights.&#10; Above 4500 FT AMSL prior permission required by Budapest ATS Centre."/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="SG"/>
 <tag k="operator" v="LHBS, LHFH, LHHH"/>
@@ -380,7 +380,7 @@
 <nd ref="-54"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="Only for VFR flights.&#10;Above 3500 FT AMSL prior permission required by Budapest ATS Centre."/>
+<tag k="remarks" v="Only for VFR flights.&#10;Above 3500 FT AMSL prior permission required by Budapest ATS Centre."/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="SG"/>
 <tag k="operator" v="LHBS, LHFH, LHHH"/>
@@ -405,7 +405,7 @@
 <nd ref="-44"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="Only for VFR flights.&#10;Above 3500 FT AMSL prior permission required by Budapest ATS Centre."/>
+<tag k="remarks" v="Only for VFR flights.&#10;Above 3500 FT AMSL prior permission required by Budapest ATS Centre."/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="SG"/>
 <tag k="operator" v="Hungarian Free Flying Association"/>
@@ -425,7 +425,7 @@
 <nd ref="-39"/>
 <tag k="height:lower:class" v="agl"/>
 <tag k="height:lower" v="0"/>
-<tag k="remark" v="Only for VFR flights.&#10;Above 2500 FT AMSL prior permission required by Budapest ATS Centre."/>
+<tag k="remarks" v="Only for VFR flights.&#10;Above 2500 FT AMSL prior permission required by Budapest ATS Centre."/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="SG"/>
 <tag k="operator" v="LHBS, LHFH, LHHH"/>
@@ -473,7 +473,7 @@
 <nd ref="-6"/>
 <tag k="height:lower:class" v="amsl"/>
 <tag k="height:lower" v="550"/>
-<tag k="remark" v="Prior permission required by Budapest ATS Centre."/>
+<tag k="remarks" v="Prior permission required by Budapest ATS Centre."/>
 <tag k="airspace" v="yes"/>
 <tag k="airspace:type" v="SA"/>
 <tag k="airspace:center:unit" v="M"/>
@@ -496,7 +496,7 @@
 <nd ref="-1"/>
 <tag k="height:lower:class" v="amsl"/>
 <tag k="height:lower" v="3000"/>
-<tag k="remark" v="Above 3000 FT AMSL prior permission required by Budapest ATS Centre. Not available when LH-D30 activated"/>
+<tag k="remarks" v="Above 3000 FT AMSL prior permission required by Budapest ATS Centre. Not available when LH-D30 activated"/>
 <tag k="height:upper:class" v="amsl"/>
 <tag k="height:lower:unit" v="ft"/>
 <tag k="icao" v="LHSA1"/>
