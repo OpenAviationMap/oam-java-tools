@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<osm version="0.6">
+<node action="create" id="-27" lat="46.25083333333333" lon="20.089166666666664" version="1">
+<tag k="height:unit" v="m"/>
+<tag k="height" v="82.0"/>
+<tag k="height:class" v="amsl"/>
+<tag k="name" v="SZEGED ARP"/>
+</node>
+<node action="create" id="-20" lat="46.24013611111111" lon="20.089705555555554" version="1">
+<tag k="height:unit" v="m"/>
+<tag k="navaid:type" v="DME"/>
+<tag k="navaid:coverage" v="25.0"/>
+<tag k="height" v="81.0"/>
+<tag k="height:class" v="amsl"/>
+<tag k="navaid:coverage:unit" v="nm"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="SEG"/>
+<tag k="navaid:ident" v="SEG"/>
+<tag k="navaid:remarks" v="Coverage: 25NM"/>
+<tag k="navaid:dme" v="85X"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-19" lat="46.24005555555556" lon="20.089199999999998" version="1">
+<tag k="navaid:type" v="NDB"/>
+<tag k="navaid:coverage" v="25.0"/>
+<tag k="navaid:declination" v="4.0"/>
+<tag k="navaid:coverage:unit" v="nm"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="SEG"/>
+<tag k="navaid:ndb" v="456kHz"/>
+<tag k="navaid:ident" v="SEG"/>
+<tag k="navaid:remarks" v="Coverage: 25NM"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-17" lat="46.248602777777776" lon="20.09075" version="1"/>
+<node action="create" id="-16" lat="46.248602777777776" lon="20.09867222222222" version="1"/>
+<node action="create" id="-14" lat="46.248602777777776" lon="20.09867222222222" version="1"/>
+<node action="create" id="-13" lat="46.248602777777776" lon="20.09075" version="1"/>
+<node action="create" id="-11" lat="46.25116666666667" lon="20.091666666666665" version="1"/>
+<node action="create" id="-10" lat="46.240833333333335" lon="20.09506111111111" version="1"/>
+<node action="create" id="-8" lat="46.240833333333335" lon="20.09506111111111" version="1"/>
+<node action="create" id="-7" lat="46.25116666666667" lon="20.091666666666665" version="1"/>
+<node action="create" id="-5" lat="46.250797222222225" lon="20.08906111111111" version="1"/>
+<node action="create" id="-4" lat="46.24036666666667" lon="20.092255555555553" version="1"/>
+<node action="create" id="-2" lat="46.24036666666667" lon="20.092255555555553" version="1"/>
+<node action="create" id="-1" lat="46.250797222222225" lon="20.08906111111111" version="1"/>
+<node action="create" id="-21" lat="46.38333333333333" lon="20.0" version="1"/>
+<node action="create" id="-22" lat="46.38333333333333" lon="20.216666666666665" version="1"/>
+<node action="create" id="-23" lat="46.25" lon="20.216666666666665" version="1"/>
+<node action="create" id="-24" lat="46.20472222222222" lon="20.090555555555554" version="1"/>
+<node action="create" id="-25" lat="46.25" lon="20.0" version="1"/>
+<way action="create" id="-26" version="1">
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:lower" v="0.0"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="name" v="SZEGED TIZ"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TIZ"/>
+<tag k="airspace:class" v="F"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper" v="4000.0"/>
+<nd ref="-21"/>
+<nd ref="-22"/>
+<nd ref="-23"/>
+<nd ref="-24"/>
+<nd ref="-25"/>
+<nd ref="-21"/>
+</way>
+<way action="create" id="-18" version="1">
+<tag k="asda" v="610.0m"/>
+<tag k="tora" v="610.0m"/>
+<tag k="surface" v="grass"/>
+<tag k="aeroway" v="runway"/>
+<tag k="width" v="50.0m"/>
+<tag k="name" v="27"/>
+<tag k="length" v="610.0m"/>
+<tag k="bearing" v="270.0"/>
+<tag k="toda" v="610.0m"/>
+<tag k="lda" v="610.0m"/>
+<nd ref="-16"/>
+<nd ref="-17"/>
+</way>
+<way action="create" id="-15" version="1">
+<tag k="asda" v="610.0m"/>
+<tag k="tora" v="610.0m"/>
+<tag k="surface" v="grass"/>
+<tag k="aeroway" v="runway"/>
+<tag k="width" v="50.0m"/>
+<tag k="name" v="09"/>
+<tag k="length" v="610.0m"/>
+<tag k="bearing" v="90.0"/>
+<tag k="toda" v="610.0m"/>
+<tag k="lda" v="610.0m"/>
+<nd ref="-13"/>
+<nd ref="-14"/>
+</way>
+<way action="create" id="-12" version="1">
+<tag k="asda" v="1177.0m"/>
+<tag k="tora" v="1177.0m"/>
+<tag k="surface" v="grass"/>
+<tag k="aeroway" v="runway"/>
+<tag k="width" v="50.0m"/>
+<tag k="name" v="34R"/>
+<tag k="length" v="1177.0m"/>
+<tag k="bearing" v="347.4"/>
+<tag k="toda" v="1177.0m"/>
+<tag k="lda" v="1177.0m"/>
+<nd ref="-10"/>
+<nd ref="-11"/>
+</way>
+<way action="create" id="-9" version="1">
+<tag k="asda" v="1177.0m"/>
+<tag k="tora" v="1177.0m"/>
+<tag k="surface" v="grass"/>
+<tag k="aeroway" v="runway"/>
+<tag k="width" v="50.0m"/>
+<tag k="name" v="16L"/>
+<tag k="length" v="1177.0m"/>
+<tag k="bearing" v="167.4"/>
+<tag k="toda" v="1177.0m"/>
+<tag k="lda" v="1177.0m"/>
+<nd ref="-7"/>
+<nd ref="-8"/>
+</way>
+<way action="create" id="-6" version="1">
+<tag k="aeroway" v="runway"/>
+<tag k="surface" v="asphalt"/>
+<tag k="width" v="30.0m"/>
+<tag k="lda" v="1185.0m"/>
+<tag k="height:unit" v="m"/>
+<tag k="tora" v="1185.0m"/>
+<tag k="asda" v="1185.0m"/>
+<tag k="height" v="81.08"/>
+<tag k="height:class" v="amsl"/>
+<tag k="slope" v="0.04"/>
+<tag k="name" v="34L"/>
+<tag k="length" v="1185.0m"/>
+<tag k="bearing" v="348.0"/>
+<tag k="toda" v="1185.0m"/>
+<nd ref="-4"/>
+<nd ref="-5"/>
+</way>
+<way action="create" id="-3" version="1">
+<tag k="aeroway" v="runway"/>
+<tag k="surface" v="asphalt"/>
+<tag k="width" v="30.0m"/>
+<tag k="lda" v="1185.0m"/>
+<tag k="height:unit" v="m"/>
+<tag k="tora" v="1185.0m"/>
+<tag k="asda" v="1185.0m"/>
+<tag k="height" v="81.59"/>
+<tag k="height:class" v="amsl"/>
+<tag k="slope" v="-0.04"/>
+<tag k="name" v="16R"/>
+<tag k="length" v="1185.0m"/>
+<tag k="bearing" v="168.0"/>
+<tag k="toda" v="1185.0m"/>
+<nd ref="-1"/>
+<nd ref="-2"/>
+</way>
+<relation action="create" id="-28" version="1">
+<tag k="height:unit" v="m"/>
+<tag k="comm:afis" v="122.8MHz"/>
+<tag k="height" v="82.0"/>
+<tag k="height:class" v="amsl"/>
+<tag k="icao" v="LHUD"/>
+<tag k="name" v="SZEGED"/>
+<tag k="aerodrome" v="yes"/>
+<tag k="runway:designator" v="16R, 34L, 16L, 34R, 09, 27"/>
+<tag k="runway:surface" v="asphalt, asphalt, grass, grass, grass, grass"/>
+<tag k="runway:length" v="1185.0m, 1185.0m, 1177.0m, 1177.0m, 610.0m, 610.0m"/>
+<member ref="-3" role="runway" type="way"/>
+<member ref="-6" role="runway" type="way"/>
+<member ref="-9" role="runway" type="way"/>
+<member ref="-12" role="runway" type="way"/>
+<member ref="-15" role="runway" type="way"/>
+<member ref="-18" role="runway" type="way"/>
+<member ref="-19" role="navaid" type="node"/>
+<member ref="-20" role="navaid" type="node"/>
+<member ref="-26" role="airspace" type="way"/>
+<member ref="-27" role="arp" type="node"/>
+</relation>
+</osm>

@@ -435,4 +435,27 @@ public class EAipToOamTest {
                       "var/LH-AD-1.3-en-HU.xml",
                       0, 0, 0, 1);
     }
+
+    /**
+     * Test converting an eAIP section AD-LHUD element to OAM.
+     *
+     * @throws ParserConfigurationException on XML parser configuration errors.
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing errors
+     * @throws ParseException on OAM parsing errors
+     * @throws TransformerException on XML serialization errors
+     */
+    @Test
+    public void testEAipAdLhudToOam() throws ParserConfigurationException,
+                                             SAXException,
+                                             IOException,
+                                             ParseException,
+                                             TransformerException {
+
+        testEAipToOam("var/LH-AD-LHUD-en-HU.xml",
+                      "var/oam-hungary-lhud.xml",
+                      "var/hungary.osm",
+                      "var/LH-AD-1.3-en-HU.xml",
+                      0, 0, 0, 1);
+    }
 }

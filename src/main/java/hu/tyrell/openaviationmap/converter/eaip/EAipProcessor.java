@@ -293,6 +293,11 @@ public class EAipProcessor {
             pointList.add(p);
         }
 
+        // at the first point to close the ring, if not so already
+        if (!pointList.get(0).equals(pointList.get(pointList.size() - 1))) {
+            pointList.add(new Point(pointList.get(0)));
+        }
+
         Ring boundary = new Ring();
         boundary.setPointList(pointList);
 

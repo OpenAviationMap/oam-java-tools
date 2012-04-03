@@ -288,7 +288,7 @@ public final class Converter {
                                          String                 prefix,
                                          Map<String, String>    tags) {
 
-        tags.put(prefix, Integer.toString((int) elevation.getElevation()));
+        tags.put(prefix, Double.toString(elevation.getElevation()));
         tags.put(prefix + ":unit",
                 elevation.getUom().toString().toLowerCase());
 
@@ -672,15 +672,9 @@ public final class Converter {
                 case VORDME:
                     node.getTags().put("navaid:vor",
                                        navaid.getFrequency().toString());
-                    if (navaid.getDmeChannel() != null) {
-                        node.getTags().put("navaid:dme",
-                                            navaid.getDmeChannel());
-                    }
                     break;
 
                 case DME:
-                    node.getTags().put("navaid:dme",
-                                       navaid.getDmeChannel());
                     break;
 
                 case NDB:
@@ -690,6 +684,10 @@ public final class Converter {
 
                 default:
                 }
+            }
+
+            if (navaid.getDmeChannel() != null) {
+                node.getTags().put("navaid:dme", navaid.getDmeChannel());
             }
 
             if (navaid.getActivetime() != null) {

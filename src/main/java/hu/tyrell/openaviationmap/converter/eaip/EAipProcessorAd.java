@@ -89,7 +89,7 @@ public class EAipProcessorAd extends EAipProcessor {
             // get the remarks
             xpath.reset();
             str = xpath.evaluate("//tbody/tr[8]/td[3]", node).trim();
-            if (str != null && !str.isEmpty()) {
+            if (str != null && !str.isEmpty() && !"Nil".equals(str)) {
                 ad.setRemarks(str);
             }
 
@@ -308,6 +308,11 @@ public class EAipProcessorAd extends EAipProcessor {
             Frequency f;
             String str = xpath.evaluate("td[3]", node).trim();
             if (str != null && !str.isEmpty()) {
+                int i = str.indexOf('\n');
+                // process only the first frequency available
+                if (i != -1) {
+                    str = str.substring(0, i);
+                }
                 f = Frequency.fromString(str);
             } else {
                 throw new ParseException(ad.getIcao(),
@@ -315,7 +320,10 @@ public class EAipProcessorAd extends EAipProcessor {
             }
 
             xpath.reset();
-            str = xpath.evaluate("td[1]/Abbreviation/@Ref", node).trim();
+            str = xpath.evaluate("td[1]/text()", node).trim();
+            if (str == null || str.isEmpty()) {
+                str = xpath.evaluate("td[1]/Abbreviation/@Ref", node).trim();
+            }
             if (str != null && !str.isEmpty()) {
                 if (str.endsWith("AFIS")) {
                     ad.setAfis(f);
@@ -342,8 +350,10 @@ public class EAipProcessorAd extends EAipProcessor {
             XPath xpath = XPathFactory.newInstance().newXPath();
 
             NodeList nodes = (NodeList) xpath.evaluate(
-            "table/tbody/tr[following-sibling::tr/th and not(descendant::th)]",
-            node, XPathConstants.NODESET);
+                            "table/tbody/tr"
+                          + "[following-sibling::tr[contains(., 'Slope')] "
+                                                 + "and not(descendant::th)]",
+                          node, XPathConstants.NODESET);
 
             for (int i = 0; i < nodes.getLength(); ++i) {
                 Runway rwy = processRunwayNode(ad, nodes.item(i));
@@ -352,12 +362,16 @@ public class EAipProcessorAd extends EAipProcessor {
             }
 
             nodes = (NodeList) xpath.evaluate(
-            "table/tbody/tr[preceding-sibling::tr/th and not(descendant::th)]",
-            node, XPathConstants.NODESET);
+                            "table/tbody/tr"
+                          + "[preceding-sibling::tr[contains(., 'Slope')]]"
+                          + "[position() > 1]",
+                          node, XPathConstants.NODESET);
 
             if (nodes.getLength() != ad.getRunways().size()) {
                 throw new ParseException(ad.getIcao(),
-                        "AD-2.12 runway definition incorrect second part");
+                        "AD-2.12 runway definition incorrect second part"
+                      + " (" + ad.getRunways().size() + " vs. "
+                             + nodes.getLength() + ")");
             }
 
             for (int i = 0; i < nodes.getLength(); ++i) {
@@ -422,29 +436,54 @@ public class EAipProcessorAd extends EAipProcessor {
 
             String str = xpath.evaluate(
                             "table/tbody/tr[1]/td[3]/text()[1]", node).trim();
-            String type = xpath.evaluate(
-                      "table/tbody/tr[1]/td[3]/Abbreviation/@Ref", node).trim();
-            if (str != null && !str.isEmpty()
-             && type != null && !type.isEmpty()) {
+            if (str != null && !str.isEmpty()) {
 
-                if (type.startsWith("ABBR-")) {
-                    type = type.substring(5).trim();
+                String type = xpath.evaluate(
+                            "table/tbody/tr[1]/td[3]/Abbreviation/@Ref", node)
+                            .trim();
+                if (type != null && !type.isEmpty()) {
+                    if (type.startsWith("ABBR-")) {
+                        type = type.substring(5).trim();
+
+                        name = str + " " + type;
+                    }
                 } else {
-                    throw new ParseException(ad.getIcao(),
-                                             "incorrect airspace type");
+                    int i = str.lastIndexOf(' ');
+                    if (i != -1) {
+                        type = str.substring(i + 1);
+                    }
+                    name = str;
                 }
 
-                name = str + " " + type;
-
                 airspace.setName(name);
-                airspace.setType(type);
+                if (type != null && !type.isEmpty()) {
+                    airspace.setType(type);
+                }
             }
 
             // get the boundary
             Boundary boundary = null;
             xpath.reset();
+            // the airspace definition might simply be in the first row
             str = xpath.evaluate(
                             "table/tbody/tr[1]/td[3]/text()[2]", node).trim();
+            // or, it may be scattered in a number of rows
+            if (str == null || str.isEmpty()) {
+                NodeList nl = (NodeList) xpath.evaluate(
+                   "table/tbody/tr[position() > 1 "
+                 + "and following-sibling::tr[contains(., 'Vertical limits')]]"
+                 + "/td/text()",
+                    node,
+                    XPathConstants.NODESET);
+
+                str = "";
+                for (int i = 0; i < nl.getLength(); ++i) {
+                    str += nl.item(i).getNodeValue() + " ";
+                    if ((i % 2) == 1 && i != nl.getLength() - 1) {
+                        str += "- ";
+                    }
+                }
+            }
             if (str.startsWith(CIRCLE_PREFIX)) {
                 boundary = processCircle(name, str);
             } else {
@@ -456,26 +495,39 @@ public class EAipProcessorAd extends EAipProcessor {
             // get the vertical limits
             xpath.reset();
             str = xpath.evaluate(
-                            "table/tbody/tr[2]/td[3]/text()", node).trim();
+                  "table/tbody/tr/td "
+                + "[preceding-sibling::td[contains(., 'Vertical limits')]]"
+                + "/text()",
+                   node).trim();
             int i   = str.indexOf("/");
             Elevation upperLimit = processElevation(name,
                                                 str.substring(0, i).trim());
             airspace.setUpperLimit(upperLimit);
 
-            xpath.reset();
-            str = xpath.evaluate(
-                    "table/tbody/tr[2]/td[3]/Abbreviation/@Ref", node).trim();
-            if ("ABBR-GND".equals(str)) {
-                airspace.setLowerLimit(
-                            new Elevation(0, UOM.FT, ElevationReference.SFC));
+            if (i + 1 < str.length()) {
+                Elevation lowerLimit = processElevation(name,
+                                                str.substring(i + 1).trim());
+                airspace.setLowerLimit(lowerLimit);
             } else {
-                throw new ParseException(name,
-                                         "undefined airspace lower limit");
+                xpath.reset();
+                str = xpath.evaluate(
+                       "table/tbody/tr/td "
+                     + "[preceding-sibling::td[contains(., 'Vertical limits')]]"
+                     + "/Abbreviation/@Ref",
+                        node).trim();
+                if ("ABBR-GND".equals(str)) {
+                    airspace.setLowerLimit(
+                              new Elevation(0, UOM.FT, ElevationReference.SFC));
+                }
             }
 
             xpath.reset();
             str = xpath.evaluate(
-                            "table/tbody/tr[3]/td[3]/text()", node).trim();
+                       "table/tbody/tr/td "
+                     + "[preceding-sibling::td["
+                                + "contains(., 'Airspace classification')]]"
+                     + "/text()",
+                     node).trim();
             if (str != null && !str.isEmpty()) {
                 airspace.setAirspaceClass(str);
             }
@@ -536,6 +588,8 @@ public class EAipProcessorAd extends EAipProcessor {
             String str = xpath.evaluate("td[1]/text()[1]", node).trim();
             if ("DVOR/DME".equals(str)) {
                 navaid.setType(Navaid.Type.VORDME);
+            } else if ("DME".equals(str)) {
+                navaid.setType(Navaid.Type.DME);
             } else if ("NDB".equals(str) || "L".equals(str)) {
                 navaid.setType(Navaid.Type.NDB);
             } else {
@@ -573,7 +627,14 @@ public class EAipProcessorAd extends EAipProcessor {
             xpath.reset();
             str = xpath.evaluate("td[3]/text()[1]", node).trim();
             if (str != null && !str.isEmpty()) {
-                navaid.setFrequency(Frequency.fromString(str));
+                try {
+                    navaid.setFrequency(Frequency.fromString(str));
+                } catch (Exception e) {
+                    // this might be a DME channel string actually
+                    if (str.endsWith("X") || str.endsWith("Y")) {
+                        navaid.setDmeChannel(str);
+                    }
+                }
             }
 
             // get the DME channel
@@ -594,16 +655,14 @@ public class EAipProcessorAd extends EAipProcessor {
             xpath.reset();
             str = xpath.evaluate("td[5]", node).trim();
             if (str != null && !str.isEmpty()) {
-                int i = str.indexOf('\n');
-                if (i == -1) {
+                String[] s = str.split("[\n \t\r]");
+                if (s.length != 2) {
                     throw new ParseException(navaid.getIdent(),
                                         "incorrect navaid location string");
                 }
 
-                navaid.setLatitude(processLat(navaid.getIdent(),
-                                              str.substring(0, i).trim()));
-                navaid.setLongitude(processLon(navaid.getIdent(),
-                                               str.substring(i + 1).trim()));
+                navaid.setLatitude(processLat(navaid.getIdent(), s[0].trim()));
+                navaid.setLongitude(processLon(navaid.getIdent(), s[1].trim()));
             }
 
             // get the elevation
@@ -622,6 +681,17 @@ public class EAipProcessorAd extends EAipProcessor {
             str = xpath.evaluate("td[7]", node).trim();
             if (str != null && !str.isEmpty()) {
                 navaid.setRemarks(str);
+            }
+
+            // extract the coverage from the remarks, if there
+            if (str.contains("Coverage")) {
+                String[] s = str.split(":[ \t\r\n]");
+                for (int i = 0; i < s.length; ++i) {
+                    if ("Coverage".equals(s[i]) && i + 1 < s.length) {
+                        navaid.setCoverage(Distance.fromString(s[i + 1]));
+                        break;
+                    }
+                }
             }
 
             ad.getNavaids().add(navaid);
