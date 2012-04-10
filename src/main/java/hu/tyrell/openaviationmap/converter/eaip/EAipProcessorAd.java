@@ -846,7 +846,9 @@ public class EAipProcessorAd extends EAipProcessor {
             str = xpath.evaluate("td[1]/text()[2]", node).trim();
             if (str != null && !str.isEmpty()) {
                 // remove parenthesis
-                if (str.startsWith("(")) {
+                if (str.startsWith("(decl.:")) {
+                    str = str.substring(7, str.length());
+                } else if (str.startsWith("(")) {
                     str = str.substring(1, str.length());
                 }
                 if (str.endsWith(")")) {
