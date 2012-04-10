@@ -105,7 +105,8 @@
 <tag k="height:lower:unit" v="ft"/>
 <tag k="name" v="DEBRECEN CTA2"/>
 <tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="D"/>
+<tag k="airspace:type" v="CTA"/>
+<tag k="airspace:class" v="D"/>
 <tag k="height:upper:unit" v="ft"/>
 <tag k="height:upper" v="9500.0"/>
 <nd ref="-43"/>
@@ -121,7 +122,8 @@
 <tag k="height:lower:unit" v="ft"/>
 <tag k="name" v="DEBRECEN TIZ3"/>
 <tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="F"/>
+<tag k="airspace:type" v="TIZ"/>
+<tag k="airspace:class" v="F"/>
 <tag k="height:upper:unit" v="ft"/>
 <tag k="height:upper" v="9500.0"/>
 <nd ref="-38"/>
@@ -137,7 +139,8 @@
 <tag k="height:lower:unit" v="ft"/>
 <tag k="name" v="DEBRECEN CTA1"/>
 <tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="D"/>
+<tag k="airspace:type" v="CTA"/>
+<tag k="airspace:class" v="D"/>
 <tag k="height:upper:unit" v="ft"/>
 <tag k="height:upper" v="9500.0"/>
 <nd ref="-31"/>
@@ -155,7 +158,8 @@
 <tag k="height:lower:unit" v="ft"/>
 <tag k="name" v="DEBRECEN TIZ2"/>
 <tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="F"/>
+<tag k="airspace:type" v="TIZ"/>
+<tag k="airspace:class" v="F"/>
 <tag k="height:upper:unit" v="ft"/>
 <tag k="height:upper" v="9500.0"/>
 <nd ref="-24"/>
@@ -173,7 +177,8 @@
 <tag k="height:lower:unit" v="ft"/>
 <tag k="name" v="DEBRECEN CTR"/>
 <tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="D"/>
+<tag k="airspace:type" v="CTR"/>
+<tag k="airspace:class" v="D"/>
 <tag k="height:upper:unit" v="ft"/>
 <tag k="height:upper" v="2000.0"/>
 <nd ref="-19"/>
@@ -189,7 +194,8 @@
 <tag k="height:lower:unit" v="ft"/>
 <tag k="name" v="DEBRECEN TIZ1"/>
 <tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="F"/>
+<tag k="airspace:type" v="TIZ"/>
+<tag k="airspace:class" v="F"/>
 <tag k="height:upper:unit" v="ft"/>
 <tag k="height:upper" v="2000.0"/>
 <nd ref="-14"/>

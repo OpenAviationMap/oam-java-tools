@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<osm version="0.6">
+<node action="create" id="-42" lat="46.686388888888885" lon="17.159166666666664" version="1">
+<tag k="height:unit" v="m"/>
+<tag k="height" v="124.0"/>
+<tag k="height:class" v="amsl"/>
+<tag k="name" v="SÁRMELLÉK/BALATON ARP"/>
+</node>
+<node action="create" id="-11" lat="46.66580555555555" lon="17.166861111111114" version="1">
+<tag k="navaid:type" v="NDB"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 16 (CAT I) L"/>
+<tag k="navaid:ndb" v="436kHz"/>
+<tag k="navaid:ident" v="SME"/>
+<tag k="navaid:remarks" v="1km from THR RWY 34"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-10" lat="46.66572222222222" lon="17.166361111111108" version="1">
+<tag k="height:unit" v="ft"/>
+<tag k="navaid:type" v="DME"/>
+<tag k="height" v="453.0"/>
+<tag k="height:class" v="amsl"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 16 (CAT I) DME"/>
+<tag k="navaid:ident" v="SME"/>
+<tag k="navaid:remarks" v="Co-located with L/SME."/>
+<tag k="navaid:dme" v="79X"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-9" lat="46.69461111111111" lon="17.157527777777776" version="1">
+<tag k="height:unit" v="ft"/>
+<tag k="navaid:type" v="DME"/>
+<tag k="height" v="443.0"/>
+<tag k="height:class" v="amsl"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 16 (CAT I) DME"/>
+<tag k="navaid:ident" v="SMK"/>
+<tag k="navaid:remarks" v="Co-located with GP 16"/>
+<tag k="navaid:dme" v="24Y"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-8" lat="46.69461111111111" lon="17.157527777777776" version="1">
+<tag k="navaid:type" v="GP"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 16 (CAT I) GP"/>
+<tag k="navaid:remarks" v="GP angle: 3°"/>
+<tag k="navaid:gp" v="330.35MHz"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-7" lat="46.672999999999995" lon="17.16413888888889" version="1">
+<tag k="navaid:type" v="LOC"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 16 (CAT I) LLZ"/>
+<tag k="navaid:ident" v="SMK"/>
+<tag k="navaid:loc" v="108.75MHz"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-5" lat="46.697266666666664" lon="17.15491388888889" version="1"/>
+<node action="create" id="-4" lat="46.675511111111106" lon="17.163188888888886" version="1"/>
+<node action="create" id="-2" lat="46.675511111111106" lon="17.163188888888886" version="1"/>
+<node action="create" id="-1" lat="46.697266666666664" lon="17.15491388888889" version="1"/>
+<node action="create" id="-12" lat="46.86972222222222" lon="16.82" version="1"/>
+<node action="create" id="-13" lat="46.87583333333333" lon="17.214444444444442" version="1"/>
+<node action="create" id="-14" lat="46.573055555555555" lon="17.328888888888887" version="1"/>
+<node action="create" id="-15" lat="46.47972222222222" lon="17.297222222222224" version="1"/>
+<node action="create" id="-16" lat="46.427499999999995" lon="17.00861111111111" version="1"/>
+<node action="create" id="-18" lat="46.86972222222222" lon="16.82" version="1"/>
+<node action="create" id="-19" lat="46.87583333333333" lon="17.214444444444442" version="1"/>
+<node action="create" id="-20" lat="46.573055555555555" lon="17.328888888888887" version="1"/>
+<node action="create" id="-21" lat="46.47972222222222" lon="17.297222222222224" version="1"/>
+<node action="create" id="-22" lat="46.427499999999995" lon="17.00861111111111" version="1"/>
+<node action="create" id="-24" lat="46.87555555555556" lon="17.078611111111112" version="1"/>
+<node action="create" id="-25" lat="46.87583333333333" lon="17.214444444444442" version="1"/>
+<node action="create" id="-26" lat="46.67638888888889" lon="17.225277777777777" version="1"/>
+<node action="create" id="-27" lat="46.54" lon="17.3175" version="1"/>
+<node action="create" id="-28" lat="46.47972222222222" lon="17.297222222222224" version="1"/>
+<node action="create" id="-29" lat="46.44972222222222" lon="17.13111111111111" version="1"/>
+<node action="create" id="-30" lat="46.655277777777776" lon="17.108333333333334" version="1"/>
+<node action="create" id="-31" lat="46.836111111111116" lon="16.985277777777778" version="1"/>
+<node action="create" id="-33" lat="46.87555555555556" lon="17.078611111111112" version="1"/>
+<node action="create" id="-34" lat="46.87583333333333" lon="17.214444444444442" version="1"/>
+<node action="create" id="-35" lat="46.67638888888889" lon="17.225277777777777" version="1"/>
+<node action="create" id="-36" lat="46.54" lon="17.3175" version="1"/>
+<node action="create" id="-37" lat="46.47972222222222" lon="17.297222222222224" version="1"/>
+<node action="create" id="-38" lat="46.44972222222222" lon="17.13111111111111" version="1"/>
+<node action="create" id="-39" lat="46.655277777777776" lon="17.108333333333334" version="1"/>
+<node action="create" id="-40" lat="46.836111111111116" lon="16.985277777777778" version="1"/>
+<way action="create" id="-41" version="1">
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:lower" v="0.0"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="name" v="SARMELLEK CTR"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="CTR"/>
+<tag k="airspace:class" v="D"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper" v="2000.0"/>
+<nd ref="-33"/>
+<nd ref="-34"/>
+<nd ref="-35"/>
+<nd ref="-36"/>
+<nd ref="-37"/>
+<nd ref="-38"/>
+<nd ref="-39"/>
+<nd ref="-40"/>
+<nd ref="-33"/>
+</way>
+<way action="create" id="-32" version="1">
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:lower" v="0.0"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="name" v="SARMELLEK TIZ1"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TIZ"/>
+<tag k="airspace:class" v="F"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper" v="2000.0"/>
+<nd ref="-24"/>
+<nd ref="-25"/>
+<nd ref="-26"/>
+<nd ref="-27"/>
+<nd ref="-28"/>
+<nd ref="-29"/>
+<nd ref="-30"/>
+<nd ref="-31"/>
+<nd ref="-24"/>
+</way>
+<way action="create" id="-23" version="1">
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:lower" v="2000.0"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="name" v="SARMELLEK CTA"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="CTA"/>
+<tag k="airspace:class" v="D"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper" v="9500.0"/>
+<nd ref="-18"/>
+<nd ref="-19"/>
+<nd ref="-20"/>
+<nd ref="-21"/>
+<nd ref="-22"/>
+<nd ref="-18"/>
+</way>
+<way action="create" id="-17" version="1">
+<tag k="height:lower:class" v="amsl"/>
+<tag k="height:lower" v="2000.0"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="name" v="SARMELLEK TIZ2"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="TIZ"/>
+<tag k="airspace:class" v="F"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper" v="9500.0"/>
+<nd ref="-12"/>
+<nd ref="-13"/>
+<nd ref="-14"/>
+<nd ref="-15"/>
+<nd ref="-16"/>
+<nd ref="-12"/>
+</way>
+<way action="create" id="-6" version="1">
+<tag k="aeroway" v="runway"/>
+<tag k="surface" v="asphalt"/>
+<tag k="width" v="60.0m"/>
+<tag k="lda" v="2500.0m"/>
+<tag k="height:unit" v="m"/>
+<tag k="tora" v="2500.0m"/>
+<tag k="asda" v="2500.0m"/>
+<tag k="height" v="122.0"/>
+<tag k="height:class" v="amsl"/>
+<tag k="name" v="34"/>
+<tag k="length" v="2500.0m"/>
+<tag k="bearing" v="345.3"/>
+<tag k="toda" v="2500.0m"/>
+<nd ref="-4"/>
+<nd ref="-5"/>
+</way>
+<way action="create" id="-3" version="1">
+<tag k="aeroway" v="runway"/>
+<tag k="surface" v="asphalt"/>
+<tag k="width" v="60.0m"/>
+<tag k="lda" v="2500.0m"/>
+<tag k="height:unit" v="m"/>
+<tag k="tora" v="2500.0m"/>
+<tag k="asda" v="2500.0m"/>
+<tag k="height" v="124.4"/>
+<tag k="height:class" v="amsl"/>
+<tag k="name" v="16"/>
+<tag k="length" v="2500.0m"/>
+<tag k="bearing" v="165.3"/>
+<tag k="toda" v="2500.0m"/>
+<nd ref="-1"/>
+<nd ref="-2"/>
+</way>
+<relation action="create" id="-43" version="1">
+<tag k="height:unit" v="m"/>
+<tag k="comm:afis" v="134.575MHz"/>
+<tag k="height" v="124.0"/>
+<tag k="height:class" v="amsl"/>
+<tag k="icao" v="LHSM"/>
+<tag k="name" v="SÁRMELLÉK/BALATON"/>
+<tag k="aerodrome" v="yes"/>
+<tag k="runway:designator" v="16, 34"/>
+<tag k="comm:twr" v="134.575MHz"/>
+<tag k="runway:surface" v="asphalt, asphalt"/>
+<tag k="runway:length" v="2500.0m, 2500.0m"/>
+<member ref="-3" role="runway" type="way"/>
+<member ref="-6" role="runway" type="way"/>
+<member ref="-7" role="navaid" type="node"/>
+<member ref="-8" role="navaid" type="node"/>
+<member ref="-9" role="navaid" type="node"/>
+<member ref="-10" role="navaid" type="node"/>
+<member ref="-11" role="navaid" type="node"/>
+<member ref="-17" role="airspace" type="way"/>
+<member ref="-23" role="airspace" type="way"/>
+<member ref="-32" role="airspace" type="way"/>
+<member ref="-41" role="airspace" type="way"/>
+<member ref="-42" role="arp" type="node"/>
+</relation>
+</osm>

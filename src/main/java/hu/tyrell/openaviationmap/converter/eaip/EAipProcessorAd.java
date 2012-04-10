@@ -471,6 +471,8 @@ public class EAipProcessorAd extends EAipProcessor {
 
         if ("LHDC".equals(ad.getIcao())) {
             processAd217Lhdc(ad, borderPoints, airspaces, node);
+        } else if ("LHSM".equals(ad.getIcao())) {
+            processAd217Lhsm(ad, borderPoints, airspaces, node);
         } else {
             processAd217Generic(ad, borderPoints, airspaces, node);
         }
@@ -695,15 +697,6 @@ public class EAipProcessorAd extends EAipProcessor {
                 String baseName = st.nextToken();
                 str = st.nextToken();
                 String tizName = baseName + " " + str;
-                // determine the type
-                String tizType = null;
-                for (int j = 0; j < row3.getLength(); ++j) {
-                    String s = row3.item(j).getNodeValue();
-                    if (s.contains(str)) {
-                        tizType = s.substring(s.length() - 1);
-                        break;
-                    }
-                }
 
                 if (!"and".equals(st.nextToken())) {
                     throw new ParseException(ad.getIcao(),
@@ -712,12 +705,35 @@ public class EAipProcessorAd extends EAipProcessor {
 
                 str = st.nextToken();
                 String ctaName = baseName + " " + str;
+
                 // determine the type
                 String ctaType = null;
+                if (ctaName.contains("CTA")) {
+                    ctaType = "CTA";
+                } else if (ctaName.contains("CTR")) {
+                    ctaType = "CTR";
+                }
+
+                String tizType = null;
+                if (tizName.contains("TIZ")) {
+                    tizType = "TIZ";
+                }
+
+                // determine the class
+                String ctaClass = null;
                 for (int j = 0; j < row3.getLength(); ++j) {
                     String s = row3.item(j).getNodeValue();
-                    if (s.contains(str)) {
-                        ctaType = s.substring(s.length() - 1);
+                    if (s.contains(ctaType)) {
+                        ctaClass = s.substring(s.length() - 1);
+                        break;
+                    }
+                }
+
+                String tizClass = null;
+                for (int j = 0; j < row3.getLength(); ++j) {
+                    String s = row3.item(j).getNodeValue();
+                    if (s.contains(tizType)) {
+                        tizClass = s.substring(s.length() - 1);
                         break;
                     }
                 }
@@ -752,6 +768,7 @@ public class EAipProcessorAd extends EAipProcessor {
                 Airspace tiz = new Airspace();
                 tiz.setName(tizName);
                 tiz.setType(tizType);
+                tiz.setAirspaceClass(tizClass);
                 tiz.setBoundary(boundary);
                 tiz.setUpperLimit(upperLimit);
                 tiz.setLowerLimit(lowerLimit);
@@ -759,6 +776,152 @@ public class EAipProcessorAd extends EAipProcessor {
                 Airspace cta = new Airspace();
                 cta.setName(ctaName);
                 cta.setType(ctaType);
+                cta.setAirspaceClass(ctaClass);
+                cta.setBoundary(boundary);
+                cta.setUpperLimit(upperLimit);
+                cta.setLowerLimit(lowerLimit);
+
+                ad.getAirspaces().add(tiz);
+                ad.getAirspaces().add(cta);
+            }
+
+        } catch (ParseException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new ParseException(ad.getIcao(), e);
+        }
+    }
+
+    /**
+     *  Process section AD-2.17 of an AD definition for the following airport
+     *  definitions: LHSM.
+     *
+     *  @param ad the aerodrome to collect the information into
+     *  @param borderPoints points of the national border, in case an airspace
+     *         definition refers to a border
+     *  @param airspaces a list of airspaces. the newly processed airspace
+     *         will be put into this map.
+     *  @param node the AD-2.17 node of an AD eAIP document
+     *  @throws ParseException on input parsing errors.
+     */
+    void processAd217Lhsm(Aerodrome         ad,
+                          List<Point>       borderPoints,
+                          List<Airspace>    airspaces,
+                          Node              node) throws ParseException {
+
+        try {
+            XPath xpath = XPathFactory.newInstance().newXPath();
+
+            NodeList set1 = (NodeList) xpath.evaluate(
+                                "table/tbody/tr[1]/td[position() > 2]/text()",
+                                node, XPathConstants.NODESET);
+
+            NodeList set2 = (NodeList) xpath.evaluate(
+                                "table/tbody/tr[2]/td[position() > 2]/text()",
+                                node, XPathConstants.NODESET);
+
+            NodeList set3 = (NodeList) xpath.evaluate(
+                                "table/tbody/tr[3]/td[position() > 2]/text()",
+                                node, XPathConstants.NODESET);
+
+            if (set1.getLength() != set2.getLength()) {
+                throw new ParseException(ad.getIcao(),
+                        "airspace definition and vertical limits don't match");
+            }
+
+
+            for (int i = 0; i < set1.getLength(); ++i) {
+                // process the airspace names & boundaries
+                String str  = set1.item(i).getNodeValue();
+                int    delimiter = str.indexOf('\n');
+                if (delimiter == -1) {
+                    throw new ParseException(ad.getIcao(),
+                      "airspace definition missing name - airspace separator");
+                }
+                String names        = str.substring(0, delimiter);
+                String boundaryDesc = str.substring(delimiter + 1);
+
+                int and = names.indexOf("and");
+                if (and == -1) {
+                    throw new ParseException(ad.getIcao(),
+                                 "airspace definition missing name delimiter:");
+                }
+                String ctaName = names.substring(0, and).trim();
+                String tizName = names.substring(and + 3).trim();
+
+                // determine the type
+                String ctaType = null;
+                if (ctaName.contains("CTA")) {
+                    ctaType = "CTA";
+                } else if (ctaName.contains("CTR")) {
+                    ctaType = "CTR";
+                }
+
+                String tizType = null;
+                if (tizName.contains("TIZ")) {
+                    tizType = "TIZ";
+                }
+
+                // determine the class
+                String ctaClass = null;
+                for (int j = 0; j < set3.getLength(); ++j) {
+                    String s = set3.item(j).getNodeValue();
+                    if (s.contains(ctaType)) {
+                        ctaClass = s.substring(s.length() - 1);
+                        break;
+                    }
+                }
+
+                String tizClass = null;
+                for (int j = 0; j < set3.getLength(); ++j) {
+                    String s = set3.item(j).getNodeValue();
+                    if (s.contains(tizType)) {
+                        tizClass = s.substring(s.length() - 1);
+                        break;
+                    }
+                }
+
+                // parse the airspace boundary
+                Boundary boundary;
+
+                if (boundaryDesc.startsWith(CIRCLE_PREFIX)) {
+                    boundary = processCircle(boundaryDesc, boundaryDesc);
+                } else {
+                    boundary = processPointList(names, boundaryDesc,
+                                                borderPoints);
+                }
+
+                // process the vertical limits
+                str  = set2.item(i).getNodeValue();
+                delimiter = str.indexOf("\n");
+                if (delimiter == -1) {
+                    throw new ParseException(ad.getIcao(),
+                            "airspace vertical limit missing delimiter");
+                }
+                str = str.substring(delimiter + 1).trim();
+                int j = str.indexOf("/");
+                Elevation upperLimit = processElevation(names,
+                                                    str.substring(0, j).trim());
+
+                Elevation lowerLimit = null;
+                if (j + 1 < str.length()) {
+                    lowerLimit = processElevation(names,
+                                                  str.substring(j + 1).trim());
+                }
+
+                // create the two airspaces
+                Airspace tiz = new Airspace();
+                tiz.setName(tizName);
+                tiz.setType(tizType);
+                tiz.setAirspaceClass(tizClass);
+                tiz.setBoundary(boundary);
+                tiz.setUpperLimit(upperLimit);
+                tiz.setLowerLimit(lowerLimit);
+
+                Airspace cta = new Airspace();
+                cta.setName(ctaName);
+                cta.setType(ctaType);
+                cta.setAirspaceClass(ctaClass);
                 cta.setBoundary(boundary);
                 cta.setUpperLimit(upperLimit);
                 cta.setLowerLimit(lowerLimit);
