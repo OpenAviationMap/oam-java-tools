@@ -643,6 +643,18 @@ public final class Converter {
                 node.getTags().put("navaid:type", "NDB");
                 break;
 
+            case LOC:
+                node.getTags().put("navaid:type", "LOC");
+                break;
+
+            case GP:
+                node.getTags().put("navaid:type", "GP");
+                break;
+
+            case MARKER:
+                node.getTags().put("navaid:type", "MARKER");
+                break;
+
             case DESIGNATED:
                 node.getTags().put("navaid:type", "DESIGNATED");
                 break;
@@ -679,6 +691,21 @@ public final class Converter {
 
                 case NDB:
                     node.getTags().put("navaid:ndb",
+                                       navaid.getFrequency().toString());
+                    break;
+
+                case LOC:
+                    node.getTags().put("navaid:loc",
+                                       navaid.getFrequency().toString());
+                    break;
+
+                case GP:
+                    node.getTags().put("navaid:gp",
+                                       navaid.getFrequency().toString());
+                    break;
+
+                case MARKER:
+                    node.getTags().put("navaid:marker",
                                        navaid.getFrequency().toString());
                     break;
 
@@ -864,8 +891,8 @@ public final class Converter {
 
 
             // process airspaces
-            if (ad.getAirspace() != null) {
-                nIdIx = airspaceToOam(ad.getAirspace(), oam, action,
+            for (Airspace as : ad.getAirspaces()) {
+                nIdIx = airspaceToOam(as, oam, action,
                                       version, nIdIx);
                 int i = action == Action.CREATE ? -(nIdIx - 1) : (nIdIx - 1);
                 adRel.getMembers().add(

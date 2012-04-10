@@ -65,9 +65,9 @@ public class Aerodrome {
     private Frequency afis;
 
     /**
-     * The airspace related to the aerodrome.
+     * The airspaces related to the aerodrome.
      */
-    private Airspace airspace;
+    private List<Airspace> airspaces;
 
     /**
      * The runways at the aerodrome.
@@ -88,8 +88,9 @@ public class Aerodrome {
      * Default constructor.
      */
     public Aerodrome() {
-        runways = new Vector<Runway>();
-        navaids = new Vector<Navaid>();
+        runways   = new Vector<Runway>();
+        navaids   = new Vector<Navaid>();
+        airspaces = new Vector<Airspace>();
     }
 
     /**
@@ -219,17 +220,17 @@ public class Aerodrome {
     }
 
     /**
-     * @return the airspace
+     * @return the airspaces
      */
-    public Airspace getAirspace() {
-        return airspace;
+    public List<Airspace> getAirspaces() {
+        return airspaces;
     }
 
     /**
-     * @param airspace the airspace to set
+     * @param airspaces the airspaces to set
      */
-    public void setAirspace(Airspace airspace) {
-        this.airspace = airspace;
+    public void setAirspaces(List<Airspace> airspaces) {
+        this.airspaces = airspaces;
     }
 
     /**
@@ -269,7 +270,7 @@ public class Aerodrome {
         int result = 1;
         result = prime * result + ((afis == null) ? 0 : afis.hashCode());
         result = prime * result
-                + ((airspace == null) ? 0 : airspace.hashCode());
+                + ((airspaces == null) ? 0 : airspaces.hashCode());
         result = prime * result + ((arp == null) ? 0 : arp.hashCode());
         result = prime * result
                 + ((elevation == null) ? 0 : elevation.hashCode());
@@ -306,11 +307,11 @@ public class Aerodrome {
         } else if (!afis.equals(other.afis)) {
             return false;
         }
-        if (airspace == null) {
-            if (other.airspace != null) {
+        if (airspaces == null) {
+            if (other.airspaces != null) {
                 return false;
             }
-        } else if (!airspace.equals(other.airspace)) {
+        } else if (!airspaces.equals(other.airspaces)) {
             return false;
         }
         if (arp == null) {

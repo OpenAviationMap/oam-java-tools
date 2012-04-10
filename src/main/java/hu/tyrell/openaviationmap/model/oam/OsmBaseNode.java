@@ -118,6 +118,19 @@ public class OsmBaseNode {
     }
 
     /**
+     * Limit the lenght of tag values to 255 characters, as the OSM schema
+     * doesn't take more.
+     */
+    public void limitTagLength() {
+        for (String key : tags.keySet()) {
+            String value = tags.get(key);
+            if (value.length() > 255) {
+                tags.put(key, value.substring(0, 255));
+            }
+        }
+    }
+
+    /**
      * @return the tags
      */
     public Map<String, String> getTags() {

@@ -151,6 +151,22 @@ public class Oam {
     }
 
     /**
+     * Limit the lenght of tag values to 255 characters, as the OSM schema
+     * doesn't take more.
+     */
+    public void limitTagLength() {
+        for (OsmNode node : nodes.values()) {
+            node.limitTagLength();
+        }
+        for (Way way : ways.values()) {
+            way.limitTagLength();
+        }
+        for (Relation relation : relations.values()) {
+            relation.limitTagLength();
+        }
+    }
+
+    /**
      * @return the nodes
      */
     public Map<Integer, OsmNode> getNodes() {

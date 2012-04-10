@@ -46,6 +46,21 @@ public class Navaid extends Point {
         VORDME,
 
         /**
+         * A marker beacon.
+         */
+        MARKER,
+
+        /**
+         * The localizer of an ILS facility.
+         */
+        LOC,
+
+        /**
+         * The glidepath localizer of an ILS facility.
+         */
+        GP,
+
+        /**
          * A designated point / GPS reporting point.
          */
         DESIGNATED
@@ -95,6 +110,11 @@ public class Navaid extends Point {
      * The elevation of the navaid.
      */
     private Elevation elevation;
+
+    /**
+     * The glide path angle, if applicable.
+     */
+    private double angle;
 
     /**
      * The coverage of the navaid.
@@ -288,9 +308,11 @@ public class Navaid extends Point {
         int result = super.hashCode();
         result = prime * result
                 + ((activetime == null) ? 0 : activetime.hashCode());
+        long temp;
+        temp = Double.doubleToLongBits(angle);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
         result = prime * result
                 + ((coverage == null) ? 0 : coverage.hashCode());
-        long temp;
         temp = Double.doubleToLongBits(declination);
         result = prime * result + (int) (temp ^ (temp >>> 32));
         result = prime * result
@@ -329,6 +351,10 @@ public class Navaid extends Point {
                 return false;
             }
         } else if (!activetime.equals(other.activetime)) {
+            return false;
+        }
+        if (Double.doubleToLongBits(angle) != Double
+                .doubleToLongBits(other.angle)) {
             return false;
         }
         if (coverage == null) {
@@ -402,6 +428,20 @@ public class Navaid extends Point {
             return false;
         }
         return true;
+    }
+
+    /**
+     * @return the angle
+     */
+    public double getAngle() {
+        return angle;
+    }
+
+    /**
+     * @param angle the angle to set
+     */
+    public void setAngle(double angle) {
+        this.angle = angle;
     }
 
 }

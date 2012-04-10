@@ -620,7 +620,7 @@ public class OAMReader {
                 }
 
                 Way apWay = oam.getWays().get(m.getRef());
-                ad.setAirspace(wayToAirspace(apWay, oam.getNodes()));
+                ad.getAirspaces().add(wayToAirspace(apWay, oam.getNodes()));
                 for (int i : apWay.getNodeList()) {
                     oam.getNodes().remove(i);
                 }
@@ -856,8 +856,14 @@ public class OAMReader {
                 navaid.setType(Navaid.Type.VORDME);
             } else if ("DME".equals(s)) {
                 navaid.setType(Navaid.Type.DME);
-            } else if ("NDB".equals(s)) {
+            } else if ("NDB".equals(s) || "L".equals(s)) {
                 navaid.setType(Navaid.Type.NDB);
+            } else if ("LOC".equals(s)) {
+                navaid.setType(Navaid.Type.LOC);
+            } else if ("GP".equals(s)) {
+                navaid.setType(Navaid.Type.GP);
+            } else if ("MARKER".equals(s)) {
+                navaid.setType(Navaid.Type.MARKER);
             } else if ("DESIGNATED".equals(s)) {
                 navaid.setType(Navaid.Type.DESIGNATED);
             }
@@ -895,6 +901,21 @@ public class OAMReader {
         }
 
         k = "navaid:ndb";
+        if (tags.containsKey(k)) {
+            navaid.setFrequency(Frequency.fromString(tags.get(k)));
+        }
+
+        k = "navaid:loc";
+        if (tags.containsKey(k)) {
+            navaid.setFrequency(Frequency.fromString(tags.get(k)));
+        }
+
+        k = "navaid:gp";
+        if (tags.containsKey(k)) {
+            navaid.setFrequency(Frequency.fromString(tags.get(k)));
+        }
+
+        k = "navaid:marker";
         if (tags.containsKey(k)) {
             navaid.setFrequency(Frequency.fromString(tags.get(k)));
         }

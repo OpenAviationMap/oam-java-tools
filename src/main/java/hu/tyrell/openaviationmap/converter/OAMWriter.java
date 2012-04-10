@@ -112,7 +112,11 @@ public class OAMWriter {
             Element tagElement = nodeElement.getOwnerDocument()
                                                     .createElement("tag");
             tagElement.setAttribute("k", tag);
-            tagElement.setAttribute("v", node.getTags().get(tag));
+            String tagValue = node.getTags().get(tag);
+            if (tagValue.length() > 255) {
+                tagValue = tagValue.substring(0, 255);
+            }
+            tagElement.setAttribute("v", tagValue);
             nodeElement.appendChild(tagElement);
         }
     }

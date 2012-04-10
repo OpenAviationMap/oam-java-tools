@@ -32,6 +32,7 @@ import hu.tyrell.openaviationmap.model.SurfaceType;
 import hu.tyrell.openaviationmap.model.UOM;
 
 import java.util.List;
+import java.util.StringTokenizer;
 
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
@@ -63,7 +64,12 @@ public class EAipProcessorAd extends EAipProcessor {
                 int i = str.indexOf(' ');
                 String latStr = str.substring(0, i).trim();
                 int j = str.indexOf(' ', i + 1);
-                String lonStr = str.substring(i, j).trim();
+                String lonStr;
+                if (j == -1) {
+                    lonStr = str.substring(i).trim();
+                } else {
+                    lonStr = str.substring(i, j).trim();
+                }
 
                 Point arp = new Point();
 
@@ -150,7 +156,7 @@ public class EAipProcessorAd extends EAipProcessor {
             xpath.reset();
             str = xpath.evaluate("td[4]", node).trim();
             if (str != null && !str.isEmpty()) {
-                if (str.endsWith("ASPH")) {
+                if (str.endsWith("ASPH") || str.endsWith("CONC")) {
                     runway.setSurface(SurfaceType.ASPHALT);
                 } else if (str.endsWith("GRASS")) {
                     runway.setSurface(SurfaceType.GRASS);
@@ -161,26 +167,30 @@ public class EAipProcessorAd extends EAipProcessor {
             str = xpath.evaluate("td[5]/text()[1]", node).trim();
             if (str != null && !str.isEmpty()) {
                 int sp = str.indexOf(' ');
-                String latStr = str.substring(0, sp).trim();
-                String lonStr = str.substring(sp + 1).trim();
+                if (sp != -1) {
+                    String latStr = str.substring(0, sp).trim();
+                    String lonStr = str.substring(sp + 1).trim();
 
-                Point threshold = new Point();
-                threshold.setLatitude(processLat(designator, latStr));
-                threshold.setLongitude(processLon(designator, lonStr));
-                runway.setThreshold(threshold);
+                    Point threshold = new Point();
+                    threshold.setLatitude(processLat(designator, latStr));
+                    threshold.setLongitude(processLon(designator, lonStr));
+                    runway.setThreshold(threshold);
+                }
             }
 
             xpath.reset();
             str = xpath.evaluate("td[5]/text()[2]", node).trim();
             if (str != null && !str.isEmpty()) {
                 int sp = str.indexOf(' ');
-                String latStr = str.substring(0, sp).trim();
-                String lonStr = str.substring(sp + 1).trim();
+                if (sp != -1) {
+                    String latStr = str.substring(0, sp).trim();
+                    String lonStr = str.substring(sp + 1).trim();
 
-                Point end = new Point();
-                end.setLatitude(processLat(designator, latStr));
-                end.setLongitude(processLon(designator, lonStr));
-                runway.setEnd(end);
+                    Point end = new Point();
+                    end.setLatitude(processLat(designator, latStr));
+                    end.setLongitude(processLon(designator, lonStr));
+                    runway.setEnd(end);
+                }
             }
 
             xpath.reset();
@@ -306,7 +316,7 @@ public class EAipProcessorAd extends EAipProcessor {
             XPath xpath = XPathFactory.newInstance().newXPath();
 
             Frequency f;
-            String str = xpath.evaluate("td[3]", node).trim();
+            String str = xpath.evaluate("td[3]/text()", node).trim();
             if (str != null && !str.isEmpty()) {
                 int i = str.indexOf('\n');
                 // process only the first frequency available
@@ -327,6 +337,8 @@ public class EAipProcessorAd extends EAipProcessor {
             if (str != null && !str.isEmpty()) {
                 if (str.endsWith("AFIS")) {
                     ad.setAfis(f);
+                } else if (str.endsWith("TWR")) {
+                    ad.setTower(f);
                 }
             }
 
@@ -349,35 +361,64 @@ public class EAipProcessorAd extends EAipProcessor {
         try {
             XPath xpath = XPathFactory.newInstance().newXPath();
 
+            NodeList row1;
+            NodeList row2;
+
             NodeList nodes = (NodeList) xpath.evaluate(
+                                        "table/tfoot/tr[contains(., 'Slope')]",
+                                        node, XPathConstants.NODESET);
+            if (nodes.getLength() != 0) {
+                // if the node descriptions are held in a thead and tfoot
+                // element, and thus all the data is in tbody rows
+                row1 = (NodeList) xpath.evaluate("table/tbody/tr",
+                                                 node, XPathConstants.NODESET);
+
+                row2 = (NodeList) xpath.evaluate(
+                                "table/tfoot/tr"
+                              + "[preceding-sibling::tr[contains(., 'Slope')]]"
+                              + "[position() > 1]",
+                              node, XPathConstants.NODESET);
+            } else {
+                // if the node descriptions are scattered among the data rows
+                // thus split the content to be above and below the second
+                // description row
+                row1 = (NodeList) xpath.evaluate(
                             "table/tbody/tr"
                           + "[following-sibling::tr[contains(., 'Slope')] "
                                                  + "and not(descendant::th)]",
                           node, XPathConstants.NODESET);
 
-            for (int i = 0; i < nodes.getLength(); ++i) {
-                Runway rwy = processRunwayNode(ad, nodes.item(i));
+                row2 = (NodeList) xpath.evaluate(
+                                "table/tbody/tr"
+                              + "[preceding-sibling::tr[contains(., 'Slope')]]"
+                              + "[position() > 1]",
+                              node, XPathConstants.NODESET);
+            }
+
+            for (int i = 0; i < row1.getLength(); ++i) {
+                Node n = row1.item(i);
+
+                String str = xpath.evaluate("td[2]", n).trim();
+                if (str != null && str.toLowerCase().contains("closed")) {
+                    continue;
+                }
+
+                Runway rwy = processRunwayNode(ad, n);
 
                 ad.getRunways().add(rwy);
             }
 
-            nodes = (NodeList) xpath.evaluate(
-                            "table/tbody/tr"
-                          + "[preceding-sibling::tr[contains(., 'Slope')]]"
-                          + "[position() > 1]",
-                          node, XPathConstants.NODESET);
-
-            if (nodes.getLength() != ad.getRunways().size()) {
+            if (ad.getRunways().size() < row2.getLength()) {
                 throw new ParseException(ad.getIcao(),
                         "AD-2.12 runway definition incorrect second part"
                       + " (" + ad.getRunways().size() + " vs. "
-                             + nodes.getLength() + ")");
+                             + row2.getLength() + ")");
             }
 
-            for (int i = 0; i < nodes.getLength(); ++i) {
-                processRunwayNode2(ad, ad.getRunways().get(i), nodes.item(i));
-            }
 
+            for (int i = 0; i < row2.getLength(); ++i) {
+                processRunwayNode2(ad, ad.getRunways().get(i), row2.item(i));
+            }
 
         } catch (ParseException e) {
             throw e;
@@ -427,6 +468,30 @@ public class EAipProcessorAd extends EAipProcessor {
                       List<Point>       borderPoints,
                       List<Airspace>    airspaces,
                       Node              node) throws ParseException {
+
+        if ("LHBC".equals(ad.getIcao()) || "LHUD".equals(ad.getIcao())) {
+            processAd217LhbcLhud(ad, borderPoints, airspaces, node);
+        } else if ("LHDC".equals(ad.getIcao())) {
+            processAd217Lhdc(ad, borderPoints, airspaces, node);
+        }
+    }
+
+    /**
+     *  Process section AD-2.17 of an AD definition for the following airport
+     *  definitions: LHBC, LHUD.
+     *
+     *  @param ad the aerodrome to collect the information into
+     *  @param borderPoints points of the national border, in case an airspace
+     *         definition refers to a border
+     *  @param airspaces a list of airspaces. the newly processed airspace
+     *         will be put into this map.
+     *  @param node the AD-2.17 node of an AD eAIP document
+     *  @throws ParseException on input parsing errors.
+     */
+    void processAd217LhbcLhud(Aerodrome         ad,
+                              List<Point>       borderPoints,
+                              List<Airspace>    airspaces,
+                              Node              node) throws ParseException {
 
         try {
             XPath xpath = XPathFactory.newInstance().newXPath();
@@ -532,7 +597,144 @@ public class EAipProcessorAd extends EAipProcessor {
                 airspace.setAirspaceClass(str);
             }
 
-            ad.setAirspace(airspace);
+            ad.getAirspaces().add(airspace);
+
+        } catch (ParseException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new ParseException(ad.getIcao(), e);
+        }
+    }
+
+    /**
+     *  Process section AD-2.17 of an AD definition for the following airport
+     *  definitions: LHDC.
+     *
+     *  @param ad the aerodrome to collect the information into
+     *  @param borderPoints points of the national border, in case an airspace
+     *         definition refers to a border
+     *  @param airspaces a list of airspaces. the newly processed airspace
+     *         will be put into this map.
+     *  @param node the AD-2.17 node of an AD eAIP document
+     *  @throws ParseException on input parsing errors.
+     */
+    void processAd217Lhdc(Aerodrome         ad,
+                          List<Point>       borderPoints,
+                          List<Airspace>    airspaces,
+                          Node              node) throws ParseException {
+
+        try {
+            XPath xpath = XPathFactory.newInstance().newXPath();
+
+            NodeList row1 = (NodeList) xpath.evaluate(
+                                            "table/tbody/tr[1]/td[3]/text()",
+                                            node, XPathConstants.NODESET);
+
+            NodeList row2 = (NodeList) xpath.evaluate(
+                                            "table/tbody/tr[2]/td[3]/text()",
+                                            node, XPathConstants.NODESET);
+
+            NodeList row3 = (NodeList) xpath.evaluate(
+                                            "table/tbody/tr[3]/td[3]/text()",
+                                            node, XPathConstants.NODESET);
+
+            if (row1.getLength() != row2.getLength()) {
+                throw new ParseException(ad.getIcao(),
+                        "airspace definition and vertical limits don't match");
+            }
+
+
+            for (int i = 0; i < row1.getLength(); ++i) {
+                // process the airspace names & boundaries
+                String str  = row1.item(i).getNodeValue();
+                int    fffd = str.indexOf('\ufffd');
+                if (fffd == -1) {
+                    throw new ParseException(ad.getIcao(),
+                      "airspace definition missing name - airspace separator");
+                }
+                String names        = str.substring(0, fffd);
+                String boundaryDesc = str.substring(fffd + 1);
+
+                StringTokenizer st = new StringTokenizer(names, " ");
+                if (4 != st.countTokens()) {
+                    throw new ParseException(ad.getIcao(),
+                                    "airspace definition bad token count: "
+                                    + st.countTokens());
+                }
+                String baseName = st.nextToken();
+                str = st.nextToken();
+                String tizName = baseName + " " + str;
+                // determine the type
+                String tizType = null;
+                for (int j = 0; j < row3.getLength(); ++j) {
+                    String s = row3.item(j).getNodeValue();
+                    if (s.contains(str)) {
+                        tizType = s.substring(s.length() - 1);
+                        break;
+                    }
+                }
+
+                if (!"and".equals(st.nextToken())) {
+                    throw new ParseException(ad.getIcao(),
+                            "airspace definition name format missing 'and'");
+                }
+
+                str = st.nextToken();
+                String ctaName = baseName + " " + str;
+                // determine the type
+                String ctaType = null;
+                for (int j = 0; j < row3.getLength(); ++j) {
+                    String s = row3.item(j).getNodeValue();
+                    if (s.contains(str)) {
+                        ctaType = s.substring(s.length() - 1);
+                        break;
+                    }
+                }
+
+                Boundary boundary;
+
+                if (boundaryDesc.startsWith(CIRCLE_PREFIX)) {
+                    boundary = processCircle(boundaryDesc, boundaryDesc);
+                } else {
+                    boundary = processPointList(names, boundaryDesc,
+                                                borderPoints);
+                }
+
+                // process the vertical limits
+                str  = row2.item(i).getNodeValue();
+                if (!str.startsWith(names)) {
+                    throw new ParseException(ad.getIcao(),
+                            "airspace vertical limit names don't match");
+                }
+                str = str.substring(names.length()).trim();
+                int j = str.indexOf("/");
+                Elevation upperLimit = processElevation(names,
+                                                    str.substring(0, j).trim());
+
+                Elevation lowerLimit = null;
+                if (j + 1 < str.length()) {
+                    lowerLimit = processElevation(names,
+                                                  str.substring(j + 1).trim());
+                }
+
+                // create the two airspaces
+                Airspace tiz = new Airspace();
+                tiz.setName(tizName);
+                tiz.setType(tizType);
+                tiz.setBoundary(boundary);
+                tiz.setUpperLimit(upperLimit);
+                tiz.setLowerLimit(lowerLimit);
+
+                Airspace cta = new Airspace();
+                cta.setName(ctaName);
+                cta.setType(ctaType);
+                cta.setBoundary(boundary);
+                cta.setUpperLimit(upperLimit);
+                cta.setLowerLimit(lowerLimit);
+
+                ad.getAirspaces().add(tiz);
+                ad.getAirspaces().add(cta);
+            }
 
         } catch (ParseException e) {
             throw e;
@@ -573,11 +775,14 @@ public class EAipProcessorAd extends EAipProcessor {
      *  @param ad the aerodrome to collect the information into
      *  @param navaids a list of navaids. the newly processed navaids will
      *         be put into this list.
+     *  @param ilsName the name of the ILS if this node is part of an ILS
+     *         navaid set
      *  @param node the tr element, a row describing a runway
      *  @throws ParseException on input parsing errors.
      */
     void processRNavNode(Aerodrome      ad,
                          List<Navaid>   navaids,
+                         String         ilsName,
                          Node           node) throws ParseException {
         try {
             Navaid navaid = new Navaid();
@@ -586,12 +791,20 @@ public class EAipProcessorAd extends EAipProcessor {
 
             // get the type
             String str = xpath.evaluate("td[1]/text()[1]", node).trim();
+            String typeStr = str;
+
             if ("DVOR/DME".equals(str)) {
                 navaid.setType(Navaid.Type.VORDME);
-            } else if ("DME".equals(str)) {
+            } else if ("DME".equals(str) || "PDME".equals(str)) {
                 navaid.setType(Navaid.Type.DME);
             } else if ("NDB".equals(str) || "L".equals(str)) {
                 navaid.setType(Navaid.Type.NDB);
+            } else if ("LLZ".equals(str)) {
+                navaid.setType(Navaid.Type.LOC);
+            } else if ("GP".equals(str)) {
+                navaid.setType(Navaid.Type.GP);
+            } else if ("MM".equals(str)) {
+                navaid.setType(Navaid.Type.MARKER);
             } else {
                 throw new ParseException(ad.getIcao(),
                                          "unknown navaid type " + str);
@@ -620,6 +833,16 @@ public class EAipProcessorAd extends EAipProcessor {
             str = xpath.evaluate("td[2]", node).trim();
             if (str != null && !str.isEmpty()) {
                 navaid.setIdent(str);
+            }
+
+            if (ilsName == null && navaid.getIdent() != null) {
+                navaid.setName(navaid.getIdent());
+            } else {
+                str = ilsName;
+                if (typeStr != null) {
+                    str += " " + typeStr;
+                }
+
                 navaid.setName(str);
             }
 
@@ -668,7 +891,7 @@ public class EAipProcessorAd extends EAipProcessor {
             // get the elevation
             xpath.reset();
             str = xpath.evaluate("td[6]", node).trim();
-            if (str != null && !str.isEmpty()) {
+            if (str != null && !str.isEmpty() && !"Nil".equals(str)) {
                 Elevation elevation = processElevation(navaid.getIdent(), str);
                 if (elevation.getReference() == null) {
                     elevation.setReference(ElevationReference.MSL);
@@ -679,7 +902,7 @@ public class EAipProcessorAd extends EAipProcessor {
             // get the remarks
             xpath.reset();
             str = xpath.evaluate("td[7]", node).trim();
-            if (str != null && !str.isEmpty()) {
+            if (str != null && !str.isEmpty() && !"Nil".equals(str)) {
                 navaid.setRemarks(str);
             }
 
@@ -689,6 +912,20 @@ public class EAipProcessorAd extends EAipProcessor {
                 for (int i = 0; i < s.length; ++i) {
                     if ("Coverage".equals(s[i]) && i + 1 < s.length) {
                         navaid.setCoverage(Distance.fromString(s[i + 1]));
+                        break;
+                    }
+                }
+            }
+
+            // extract the glide path from the remarks, if there
+            if (str.contains("angle")) {
+                String[] s = str.split(":[ \t\r\n]");
+                for (int i = 0; i < s.length; ++i) {
+                    if ("angle".equals(s[i]) && i + 1 < s.length) {
+                        String ss = s[i + 1];
+                        int degSign = ss.indexOf("\u00b0");
+                        navaid.setAngle(Double.parseDouble(
+                                                    ss.substring(0, degSign)));
                         break;
                     }
                 }
@@ -722,14 +959,74 @@ public class EAipProcessorAd extends EAipProcessor {
             NodeList nodes = (NodeList) xpath.evaluate("table/tbody/tr",
                                             node, XPathConstants.NODESET);
 
+            String ilsName = null;
+
             for (int i = 0; i < nodes.getLength(); ++i) {
-                processRNavNode(ad, navaids, nodes.item(i));
+                Node n = nodes.item(i);
+
+                String str = xpath.evaluate("td[1]/text()[1]", n).trim();
+                if (str.contains("ILS")) {
+                    ilsName = str;
+                    continue;
+                }
+
+                processRNavNode(ad, navaids, ilsName, n);
             }
 
         } catch (ParseException e) {
             throw e;
         } catch (Exception e) {
             throw new ParseException(ad.getIcao(), e);
+        }
+    }
+
+    /**
+     * Match the end of a specific runway by looking up the oppositve runway
+     * and using that runways threshold.
+     *
+     * @param ad the aerodrome to match the runway end for.
+     * @param rwy the runway to find the end for.
+     */
+    void matchRunwayEnd(Aerodrome ad, Runway rwy) {
+        // calculate the runway we're looking for
+        String rwyName = rwy.getDesignator();
+        String postfix = "";
+        if (rwyName.endsWith("R")) {
+            postfix = "L";
+        } else if (rwyName.endsWith("L")) {
+            postfix = "R";
+        } else if (rwyName.endsWith("C")) {
+            postfix = "C";
+        }
+
+        int dir = Integer.parseInt(rwyName.substring(0,
+                                        rwyName.length() - postfix.length()));
+        dir = (dir + 18) % 36;
+        String targetName = Integer.toString(dir) + postfix;
+
+        // now find the target runway
+        for (Runway r : ad.getRunways()) {
+            if (targetName.equals(r.getDesignator())) {
+                if (r.getThreshold() != null) {
+                    rwy.setEnd(new Point(r.getThreshold()));
+                    break;
+                }
+            }
+        }
+    }
+
+    /**
+     * Make sure all runways have an end point, which is sometimes missing from
+     * the eAIP. try to determine the endpoint by finding the threshold of the
+     * opposite runway.
+     *
+     * @param ad the aerodrome th match the runway endings for.
+     */
+    void matchRunwayEnds(Aerodrome ad) {
+        for (Runway rwy : ad.getRunways()) {
+            if (rwy.getEnd() == null) {
+                matchRunwayEnd(ad, rwy);
+            }
         }
     }
 
@@ -796,6 +1093,8 @@ public class EAipProcessorAd extends EAipProcessor {
             Node node = (Node) xpath.evaluate("//Aerodrome/AD-2.12", eAipNode,
                                               XPathConstants.NODE);
             processAd212(ad, node);
+
+            matchRunwayEnds(ad);
         } catch (XPathExpressionException e) {
             errors.add(new ParseException(icao, e));
         } catch (ParseException e) {

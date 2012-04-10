@@ -422,8 +422,9 @@ public class EAIPHungaryReaderTest {
         assertEquals("Prior permission required.", ad.getRemarks());
 
         // check the related TIZ
-        assertNotNull(ad.getAirspace());
-        Airspace ap = ad.getAirspace();
+        assertNotNull(ad.getAirspaces());
+        assertEquals(1, ad.getAirspaces().size());
+        Airspace ap = ad.getAirspaces().get(0);
         assertEquals("Békéscsaba TIZ", ap.getName());
         assertEquals("TIZ", ap.getType());
         assertEquals("F", ap.getAirspaceClass());

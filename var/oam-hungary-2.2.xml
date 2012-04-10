@@ -829,7 +829,7 @@
 <tag k="height:lower:class" v="agl"/>
 <tag k="comm:ctrl" v="119.85MHZ / STD"/>
 <tag k="height:lower" v="1000"/>
-<tag k="remarks" v="TMA 2 available only for civil aircraft approaching RWY 01. Aircraft has to be equipped with SSR transponder. Using TMA 2 by State aircraft is excluded unless they have received a diplomatic clearance from the Ministry of Foreign Affairs of the Republic of Hungary."/>
+<tag k="remarks" v="TMA 2 available only for civil aircraft approaching RWY 01. Aircraft has to be equipped with SSR transponder. Using TMA 2 by State aircraft is excluded unless they have received a diplomatic clearance from the Ministry of Foreign Affairs of the Republic o"/>
 <tag k="height:upper:class" v="amsl"/>
 <tag k="height:lower:unit" v="ft"/>
 <tag k="name" v="KOSICE TMA 2"/>

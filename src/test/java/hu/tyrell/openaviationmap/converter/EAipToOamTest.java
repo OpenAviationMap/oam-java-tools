@@ -149,6 +149,14 @@ public class EAipToOamTest {
         assertEquals(noNavaids, navaids.size());
         assertEquals(noAerodromes, aerodromes.size());
 
+        // reduce the remarks field in airspaces to 255 characters, as
+        // the OAM format cannot handle more
+        for (Airspace as : airspaces) {
+            if (as.getRemarks() != null && as.getRemarks().length() > 255) {
+                as.setRemarks(as.getRemarks().substring(0, 255));
+            }
+        }
+
         // convert the airspaces into an Oam object
         Oam oam = new Oam();
 
@@ -431,6 +439,29 @@ public class EAipToOamTest {
 
         testEAipToOam("var/LH-AD-LHBC-en-HU.xml",
                       "var/oam-hungary-lhbc.xml",
+                      "var/hungary.osm",
+                      "var/LH-AD-1.3-en-HU.xml",
+                      0, 0, 0, 1);
+    }
+
+    /**
+     * Test converting an eAIP section AD-LHDC element to OAM.
+     *
+     * @throws ParserConfigurationException on XML parser configuration errors.
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing errors
+     * @throws ParseException on OAM parsing errors
+     * @throws TransformerException on XML serialization errors
+     */
+    @Test
+    public void testEAipAdLhdcToOam() throws ParserConfigurationException,
+                                             SAXException,
+                                             IOException,
+                                             ParseException,
+                                             TransformerException {
+
+        testEAipToOam("var/LH-AD-LHDC-en-HU.xml",
+                      "var/oam-hungary-lhdc.xml",
                       "var/hungary.osm",
                       "var/LH-AD-1.3-en-HU.xml",
                       0, 0, 0, 1);

@@ -343,11 +343,12 @@ public class EAipProcessor {
             String uom = ed.substring(i, j).trim();
             if ("FT".equals(uom)) {
                 elevation.setUom(UOM.FT);
-            } else if ("M".equals(uom)) {
+            } else if ("M".equals(uom) || "MM".equals(uom)) {
+                // yes, sometimes its misspelled as MM
                 elevation.setUom(UOM.M);
             } else {
                 throw new ParseException(designator,
-                              "unknown elevation unit if measurement" + uom);
+                              "unknown elevation unit if measurement " + uom);
             }
 
             // get the reference
