@@ -1175,7 +1175,7 @@ public class EAipProcessorAd extends EAipProcessor {
                     ilsLast = false;
                 }
 
-                ilsLast = (boolean) xpath.evaluate(
+                ilsLast = (Boolean) xpath.evaluate(
                                             "contains(td[1]/@class, 'bbottom')",
                                             n, XPathConstants.BOOLEAN);
 
