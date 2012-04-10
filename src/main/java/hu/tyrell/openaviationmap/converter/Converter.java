@@ -631,6 +631,10 @@ public final class Converter {
                 node.getTags().put("navaid:type", "VOR");
                 break;
 
+            case VOT:
+                node.getTags().put("navaid:type", "VOT");
+                break;
+
             case VORDME:
                 node.getTags().put("navaid:type", "VOR/DME");
                 break;
@@ -678,6 +682,11 @@ public final class Converter {
                 switch (navaid.getType()) {
                 case VOR:
                     node.getTags().put("navaid:vor",
+                                        navaid.getFrequency().toString());
+                    break;
+
+                case VOT:
+                    node.getTags().put("navaid:vot",
                                         navaid.getFrequency().toString());
                     break;
 
@@ -964,11 +973,18 @@ public final class Converter {
             if (ad.getTower() != null) {
                 adRel.getTags().put("comm:twr", ad.getTower().toString());
             }
-            if (ad.getGround() != null) {
-                adRel.getTags().put("comm:gnd", ad.getGround().toString());
+            if (ad.getApron() != null) {
+                adRel.getTags().put("comm:apron", ad.getApron().toString());
             }
             if (ad.getAfis() != null) {
                 adRel.getTags().put("comm:afis", ad.getAfis().toString());
+            }
+            if (ad.getAtis() != null) {
+                adRel.getTags().put("comm:atis", ad.getAtis().toString());
+            }
+            if (ad.getApproach() != null) {
+                adRel.getTags().put("comm:approach",
+                                    ad.getApproach().toString());
             }
 
             oam.getRelations().put(adRel.getId(), adRel);

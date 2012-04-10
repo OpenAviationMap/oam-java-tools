@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<osm version="0.6">
+<node action="create" id="-61" lat="47.43932777777778" lon="19.261808333333335" version="1">
+<tag k="height:unit" v="m"/>
+<tag k="height" v="151.3"/>
+<tag k="height:class" v="amsl"/>
+<tag k="name" v="BUDAPEST LISZT FERENC INTERNATIONAL AIRPORT ARP"/>
+</node>
+<node action="create" id="-48" lat="47.43931666666666" lon="19.231363888888886" version="1">
+<tag k="navaid:vot" v="113MHz"/>
+<tag k="navaid:type" v="VOT"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="E"/>
+<tag k="navaid:ident" v="E"/>
+<tag k="navaid:remarks" v="VOR airborn equipment test facility"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-47" lat="47.49338888888889" lon="19.445722222222223" version="1">
+<tag k="navaid:type" v="NDB"/>
+<tag k="navaid:coverage" v="60.0"/>
+<tag k="navaid:coverage:unit" v="nm"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="TPS"/>
+<tag k="navaid:ndb" v="306kHz"/>
+<tag k="navaid:ident" v="TPS"/>
+<tag k="navaid:remarks" v="Coverage: 60NM/110km"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-46" lat="47.49325" lon="19.44622222222222" version="1">
+<tag k="navaid:type" v="VOR/DME"/>
+<tag k="navaid:vor" v="115.9MHz"/>
+<tag k="navaid:coverage" v="100.0"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="navaid:remarks" v="Coverage: 100 NM/185 kmDME COORD:472935.8N 0192645.8E"/>
+<tag k="navaid" v="yes"/>
+<tag k="height:unit" v="m"/>
+<tag k="height" v="252.0"/>
+<tag k="navaid:declination" v="3.9"/>
+<tag k="height:class" v="amsl"/>
+<tag k="navaid:coverage:unit" v="nm"/>
+<tag k="name" v="TPS"/>
+<tag k="navaid:ident" v="TPS"/>
+<tag k="navaid:dme" v="106X"/>
+</node>
+<node action="create" id="-45" lat="47.15222222222222" lon="18.742305555555557" version="1">
+<tag k="navaid:type" v="VOR/DME"/>
+<tag k="navaid:vor" v="117.1MHz"/>
+<tag k="navaid:coverage" v="100.0"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="navaid:remarks" v="Coverage: 100 NM/185 kmDME COORD:470907.6N 0184432.1E"/>
+<tag k="navaid" v="yes"/>
+<tag k="height:unit" v="m"/>
+<tag k="height" v="138.0"/>
+<tag k="navaid:declination" v="3.5"/>
+<tag k="height:class" v="amsl"/>
+<tag k="navaid:coverage:unit" v="nm"/>
+<tag k="name" v="PTB"/>
+<tag k="navaid:ident" v="PTB"/>
+<tag k="navaid:dme" v="118X"/>
+</node>
+<node action="create" id="-44" lat="47.337805555555555" lon="19.39977777777778" version="1">
+<tag k="navaid:type" v="NDB"/>
+<tag k="navaid:coverage" v="60.0"/>
+<tag k="navaid:coverage:unit" v="nm"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="MNR"/>
+<tag k="navaid:ndb" v="288kHz"/>
+<tag k="navaid:ident" v="MNR"/>
+<tag k="navaid:remarks" v="Coverage: 60NM/110km"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-43" lat="47.334722222222226" lon="19.40544444444444" version="1">
+<tag k="navaid:type" v="VOR/DME"/>
+<tag k="navaid:vor" v="112.5MHz"/>
+<tag k="navaid:coverage" v="100.0"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="navaid:remarks" v="Coverage: 100 NM/185 kmDME COORD:472004.7N 0192420.1E"/>
+<tag k="navaid" v="yes"/>
+<tag k="height:unit" v="m"/>
+<tag k="height" v="138.0"/>
+<tag k="navaid:declination" v="4.3"/>
+<tag k="height:class" v="amsl"/>
+<tag k="navaid:coverage:unit" v="nm"/>
+<tag k="name" v="MNR"/>
+<tag k="navaid:ident" v="MNR"/>
+<tag k="navaid:dme" v="72X"/>
+</node>
+<node action="create" id="-42" lat="47.49375" lon="19.89461111111111" version="1">
+<tag k="navaid:type" v="NDB"/>
+<tag k="navaid:coverage" v="30.0"/>
+<tag k="navaid:coverage:unit" v="nm"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="JBR"/>
+<tag k="navaid:ndb" v="517kHz"/>
+<tag k="navaid:ident" v="JBR"/>
+<tag k="navaid:remarks" v="Coverage: 30NM/55km"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-41" lat="47.45044444444445" lon="19.249444444444446" version="1">
+<tag k="navaid:type" v="VOR/DME"/>
+<tag k="navaid:vor" v="117.3MHz"/>
+<tag k="navaid:coverage" v="100.0"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="navaid:remarks" v="Coverage: 100 NM/185 km&#10;ATIS is also transmitted.DME COORD:472701.4N 0191457.5E"/>
+<tag k="navaid" v="yes"/>
+<tag k="height:unit" v="m"/>
+<tag k="height" v="162.0"/>
+<tag k="navaid:declination" v="4.4"/>
+<tag k="height:class" v="amsl"/>
+<tag k="navaid:coverage:unit" v="nm"/>
+<tag k="name" v="BUD"/>
+<tag k="navaid:ident" v="BUD"/>
+<tag k="navaid:dme" v="120X"/>
+</node>
+<node action="create" id="-40" lat="47.416777777777774" lon="19.303805555555556" version="1">
+<tag k="navaid:type" v="MARKER"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 31R (CAT IIIA) MM"/>
+<tag k="navaid:marker" v="75MHz"/>
+<tag k="navaid:ident" v="Dots-Dashes"/>
+<tag k="navaid:remarks" v="128 MAG/1000 m from RWY 31R"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-39" lat="47.376666666666665" lon="19.36841666666667" version="1">
+<tag k="navaid:type" v="MARKER"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 31R (CAT IIIA) OM"/>
+<tag k="navaid:marker" v="75MHz"/>
+<tag k="navaid:ident" v="Dashes-Dashes"/>
+<tag k="navaid:remarks" v="128 MAG/7600 m from RWY 31R"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-38" lat="47.42377777777777" lon="19.289805555555557" version="1">
+<tag k="height:unit" v="m"/>
+<tag k="navaid:type" v="DME"/>
+<tag k="height" v="131.0"/>
+<tag k="height:class" v="amsl"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 31R (CAT IIIA) PDME"/>
+<tag k="navaid:ident" v="BPR"/>
+<tag k="navaid:remarks" v="290m from RWY 31R"/>
+<tag k="navaid:dme" v="32X"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-37" lat="47.42377777777777" lon="19.289805555555557" version="1">
+<tag k="navaid:type" v="GP"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 31R (CAT IIIA) GP"/>
+<tag k="navaid:remarks" v="GP Angle: 3°; ILS RDH: 15 M"/>
+<tag k="navaid:gp" v="332.6MHz"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-36" lat="47.4475" lon="19.254166666666666" version="1">
+<tag k="navaid:type" v="LOC"/>
+<tag k="navaid:declination" v="3.0"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 31R (CAT IIIA) LOC"/>
+<tag k="navaid:ident" v="BPR"/>
+<tag k="navaid:remarks" v="308 MAG/340 m from RWY 13L"/>
+<tag k="navaid:loc" v="109.5MHz"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-35" lat="47.45202777777778" lon="19.246861111111112" version="1">
+<tag k="navaid:type" v="MARKER"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 13L (CAT II) MM"/>
+<tag k="navaid:marker" v="75MHz"/>
+<tag k="navaid:ident" v="Dots-Dashes"/>
+<tag k="navaid:remarks" v="308 MAG/1100 m from RWY 13L"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-34" lat="47.48880555555556" lon="19.186083333333332" version="1">
+<tag k="navaid:type" v="MARKER"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 13L (CAT II) OM"/>
+<tag k="navaid:marker" v="75MHz"/>
+<tag k="navaid:ident" v="Dashes-Dashes"/>
+<tag k="navaid:remarks" v="308 MAG/7200 m from RWY 13L"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-33" lat="47.44436111111111" lon="19.261861111111113" version="1">
+<tag k="height:unit" v="m"/>
+<tag k="navaid:type" v="DME"/>
+<tag k="height" v="155.0"/>
+<tag k="height:class" v="amsl"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 13L (CAT II) PDME"/>
+<tag k="navaid:ident" v="BPL"/>
+<tag k="navaid:dme" v="28Y"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-32" lat="47.44436111111111" lon="19.261861111111113" version="1">
+<tag k="navaid:type" v="GP"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 13L (CAT II) GP"/>
+<tag k="navaid:remarks" v="GP Angle: 3°; 320 m from RWY 13L"/>
+<tag k="navaid:gp" v="331.25MHz"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-31" lat="47.42086111111111" lon="19.297222222222224" version="1">
+<tag k="navaid:type" v="LOC"/>
+<tag k="navaid:declination" v="3.0"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 13L (CAT II) LOC"/>
+<tag k="navaid:ident" v="BPL"/>
+<tag k="navaid:remarks" v="128 MAG/340 m from RWY 31R"/>
+<tag k="navaid:loc" v="109.15MHz"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-30" lat="47.42391666666666" lon="19.260833333333334" version="1">
+<tag k="navaid:type" v="MARKER"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 31L (CAT II) MM"/>
+<tag k="navaid:marker" v="75MHz"/>
+<tag k="navaid:ident" v="Dots-Dashes"/>
+<tag k="navaid:remarks" v="128 MAG/1100 m from RWY 31L"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-29" lat="47.386583333333334" lon="19.32111111111111" version="1">
+<tag k="navaid:type" v="MARKER"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 31L (CAT II) OM"/>
+<tag k="navaid:marker" v="75MHz"/>
+<tag k="navaid:ident" v="Dashes-Dashes"/>
+<tag k="navaid:remarks" v="128 MAG/7200 m from RWY 31L"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-28" lat="47.43194444444444" lon="19.24527777777778" version="1">
+<tag k="height:unit" v="m"/>
+<tag k="navaid:type" v="DME"/>
+<tag k="height" v="134.5"/>
+<tag k="height:class" v="amsl"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 31L (CAT II) PDME"/>
+<tag k="navaid:ident" v="FHL"/>
+<tag k="navaid:remarks" v="390m from RWY 31L"/>
+<tag k="navaid:dme" v="52X"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-27" lat="47.43194444444444" lon="19.24527777777778" version="1">
+<tag k="navaid:type" v="GP"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 31L (CAT II) GP"/>
+<tag k="navaid:remarks" v="GP Angle: 3°;  RDH: 15 M"/>
+<tag k="navaid:gp" v="332.9MHz"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-26" lat="47.450611111111115" lon="19.217666666666666" version="1">
+<tag k="navaid:type" v="LOC"/>
+<tag k="navaid:declination" v="3.0"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 31L (CAT II) LOC"/>
+<tag k="navaid:ident" v="FHL"/>
+<tag k="navaid:remarks" v="308 MAG/310 m from RWY 13R"/>
+<tag k="navaid:loc" v="111.5MHz"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-25" lat="47.455000000000005" lon="19.210583333333332" version="1">
+<tag k="navaid:type" v="MARKER"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 13R (CAT II) MM"/>
+<tag k="navaid:marker" v="75MHz"/>
+<tag k="navaid:ident" v="Dots-Dashes"/>
+<tag k="navaid:remarks" v="308 MAG/1100 m from RWY 13R"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-24" lat="47.490833333333335" lon="19.149666666666665" version="1">
+<tag k="navaid:type" v="MARKER"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 13R (CAT II) OM"/>
+<tag k="navaid:marker" v="75MHz"/>
+<tag k="navaid:ident" v="Dashes-Dashes"/>
+<tag k="navaid:remarks" v="308 MAG/7200 m from RWY 13R"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-23" lat="47.44772222222222" lon="19.224944444444443" version="1">
+<tag k="height:unit" v="m"/>
+<tag k="navaid:type" v="DME"/>
+<tag k="height" v="138.0"/>
+<tag k="height:class" v="amsl"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 13R (CAT II) PDME"/>
+<tag k="navaid:ident" v="FER"/>
+<tag k="navaid:remarks" v="310 m from RWY 13R"/>
+<tag k="navaid:dme" v="42X"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-22" lat="47.44772222222222" lon="19.224944444444443" version="1">
+<tag k="navaid:type" v="GP"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 13R (CAT II) GP"/>
+<tag k="navaid:remarks" v="GP Angle: 3°;  RDH: 15 M"/>
+<tag k="navaid:gp" v="329.6MHz"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-21" lat="47.42819444444444" lon="19.253916666666665" version="1">
+<tag k="navaid:type" v="LOC"/>
+<tag k="navaid:declination" v="3.0"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="ILS 13R (CAT II) LOC"/>
+<tag k="navaid:ident" v="FER"/>
+<tag k="navaid:remarks" v="128 MAG/370 m from RWY 31L"/>
+<tag k="navaid:loc" v="110.5MHz"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-20" lat="47.376805555555556" lon="19.368222222222222" version="1">
+<tag k="navaid:type" v="NDB"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="BR"/>
+<tag k="navaid:ndb" v="395kHz"/>
+<tag k="navaid:ident" v="BR"/>
+<tag k="navaid:remarks" v="LO 31R: 128 MAG/7600m from THR,&#10;coverage 25NM/45km"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-19" lat="47.416916666666665" lon="19.303611111111113" version="1">
+<tag k="navaid:type" v="NDB"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="R"/>
+<tag k="navaid:ndb" v="381kHz"/>
+<tag k="navaid:ident" v="R"/>
+<tag k="navaid:remarks" v="LI 31R: 128 MAG/990m from THR,&#10;coverage 25NM/45km"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-18" lat="47.45177777777778" lon="19.24727777777778" version="1">
+<tag k="navaid:type" v="NDB"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="L"/>
+<tag k="navaid:ndb" v="357kHz"/>
+<tag k="navaid:ident" v="L"/>
+<tag k="navaid:remarks" v="LI 13L: 308 MAG/1050m from THR,&#10;coverage 25NM/45km"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-17" lat="47.489000000000004" lon="19.186194444444446" version="1">
+<tag k="navaid:type" v="NDB"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="BL"/>
+<tag k="navaid:ndb" v="335kHz"/>
+<tag k="navaid:ident" v="BL"/>
+<tag k="navaid:remarks" v="LO 13L: 308 MAG/7250m from THR,&#10;coverage 25NM/45km"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-16" lat="47.40541666666667" lon="19.29063888888889" version="1">
+<tag k="navaid:type" v="NDB"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="HM"/>
+<tag k="navaid:ndb" v="420kHz"/>
+<tag k="navaid:ident" v="HM"/>
+<tag k="navaid:remarks" v="LO 31L: 128 MAG/4150m from THR,&#10;coverage 25NM/45km"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-15" lat="47.423944444444444" lon="19.26075" version="1">
+<tag k="navaid:type" v="NDB"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="M"/>
+<tag k="navaid:ndb" v="403kHz"/>
+<tag k="navaid:ident" v="M"/>
+<tag k="navaid:remarks" v="LI 31L: 128 MAG/1250m from THR,&#10;coverage 25NM/45km"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-14" lat="47.45505555555556" lon="19.2105" version="1">
+<tag k="navaid:type" v="NDB"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="A"/>
+<tag k="navaid:ndb" v="343kHz"/>
+<tag k="navaid:ident" v="A"/>
+<tag k="navaid:remarks" v="LO 13R: 308 MAG/1000m from THR,&#10;coverage 25NM/45km"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-13" lat="47.49086111111111" lon="19.149444444444445" version="1">
+<tag k="navaid:type" v="NDB"/>
+<tag k="navaid:activetime" v="H24"/>
+<tag k="name" v="HA"/>
+<tag k="navaid:ndb" v="329kHz"/>
+<tag k="navaid:ident" v="HA"/>
+<tag k="navaid:remarks" v="LO 13R: 308 MAG/7200m from THR,&#10;coverage 25NM/45km"/>
+<tag k="navaid" v="yes"/>
+</node>
+<node action="create" id="-11" lat="47.44542222222222" lon="19.25755" version="1"/>
+<node action="create" id="-10" lat="47.42295" lon="19.293855555555556" version="1"/>
+<node action="create" id="-8" lat="47.42295" lon="19.293855555555556" version="1"/>
+<node action="create" id="-7" lat="47.44542222222222" lon="19.25755" version="1"/>
+<node action="create" id="-5" lat="47.448705555555556" lon="19.220758333333333" version="1"/>
+<node action="create" id="-4" lat="47.430474999999994" lon="19.25024722222222" version="1"/>
+<node action="create" id="-2" lat="47.430474999999994" lon="19.25024722222222" version="1"/>
+<node action="create" id="-1" lat="47.448705555555556" lon="19.220758333333333" version="1"/>
+<node action="create" id="-49" lat="47.596111111111114" lon="19.08972222222222" version="1"/>
+<node action="create" id="-50" lat="47.566111111111105" lon="19.171666666666667" version="1"/>
+<node action="create" id="-51" lat="47.52444444444444" lon="19.240833333333335" version="1"/>
+<node action="create" id="-52" lat="47.541666666666664" lon="19.325" version="1"/>
+<node action="create" id="-53" lat="47.4" lon="19.566666666666666" version="1"/>
+<node action="create" id="-54" lat="47.25" lon="19.358333333333334" version="1"/>
+<node action="create" id="-55" lat="47.4" lon="19.125" version="1"/>
+<node action="create" id="-56" lat="47.45" lon="19.108333333333334" version="1"/>
+<node action="create" id="-57" lat="47.46888888888889" lon="19.073888888888888" version="1"/>
+<node action="create" id="-58" lat="47.494166666666665" lon="19.060000000000002" version="1"/>
+<node action="create" id="-59" lat="47.50611111111111" lon="19.056944444444444" version="1"/>
+<way action="create" id="-60" version="1">
+<tag k="height:lower:class" v="agl"/>
+<tag k="height:lower" v="0.0"/>
+<tag k="height:upper:class" v="amsl"/>
+<tag k="height:lower:unit" v="ft"/>
+<tag k="name" v="BUDAPEST CTR"/>
+<tag k="airspace" v="yes"/>
+<tag k="airspace:type" v="CTR"/>
+<tag k="airspace:class" v="C"/>
+<tag k="height:upper:unit" v="ft"/>
+<tag k="height:upper" v="2000.0"/>
+<nd ref="-49"/>
+<nd ref="-50"/>
+<nd ref="-51"/>
+<nd ref="-52"/>
+<nd ref="-53"/>
+<nd ref="-54"/>
+<nd ref="-55"/>
+<nd ref="-56"/>
+<nd ref="-57"/>
+<nd ref="-58"/>
+<nd ref="-59"/>
+<nd ref="-49"/>
+</way>
+<way action="create" id="-12" version="1">
+<tag k="aeroway" v="runway"/>
+<tag k="surface" v="asphalt"/>
+<tag k="width" v="45.0m"/>
+<tag k="lda" v="3707.0m"/>
+<tag k="height:unit" v="m"/>
+<tag k="tora" v="3707.0m"/>
+<tag k="asda" v="3707.0m"/>
+<tag k="height" v="126.9"/>
+<tag k="height:class" v="amsl"/>
+<tag k="name" v="31R"/>
+<tag k="length" v="3707.0m"/>
+<tag k="bearing" v="312.5"/>
+<tag k="toda" v="3707.0m"/>
+<nd ref="-10"/>
+<nd ref="-11"/>
+</way>
+<way action="create" id="-9" version="1">
+<tag k="aeroway" v="runway"/>
+<tag k="surface" v="asphalt"/>
+<tag k="width" v="45.0m"/>
+<tag k="lda" v="3707.0m"/>
+<tag k="height:unit" v="m"/>
+<tag k="tora" v="3707.0m"/>
+<tag k="asda" v="3707.0m"/>
+<tag k="height" v="151.3"/>
+<tag k="height:class" v="amsl"/>
+<tag k="slope" v="-0.6"/>
+<tag k="name" v="13L"/>
+<tag k="length" v="3707.0m"/>
+<tag k="bearing" v="132.5"/>
+<tag k="toda" v="3707.0m"/>
+<nd ref="-7"/>
+<nd ref="-8"/>
+</way>
+<way action="create" id="-6" version="1">
+<tag k="aeroway" v="runway"/>
+<tag k="surface" v="asphalt"/>
+<tag k="width" v="45.0m"/>
+<tag k="lda" v="3010.0m"/>
+<tag k="height:unit" v="m"/>
+<tag k="tora" v="3010.0m"/>
+<tag k="asda" v="3010.0m"/>
+<tag k="height" v="136.7"/>
+<tag k="height:class" v="amsl"/>
+<tag k="name" v="31L"/>
+<tag k="length" v="3010.0m"/>
+<tag k="bearing" v="312.5"/>
+<tag k="toda" v="3010.0m"/>
+<nd ref="-4"/>
+<nd ref="-5"/>
+</way>
+<way action="create" id="-3" version="1">
+<tag k="aeroway" v="runway"/>
+<tag k="surface" v="asphalt"/>
+<tag k="width" v="45.0m"/>
+<tag k="lda" v="3010.0m"/>
+<tag k="height:unit" v="m"/>
+<tag k="tora" v="3010.0m"/>
+<tag k="asda" v="3010.0m"/>
+<tag k="height" v="136.6"/>
+<tag k="height:class" v="amsl"/>
+<tag k="slope" v="-0.3"/>
+<tag k="name" v="13R"/>
+<tag k="length" v="3010.0m"/>
+<tag k="bearing" v="132.5"/>
+<tag k="toda" v="3010.0m"/>
+<nd ref="-1"/>
+<nd ref="-2"/>
+</way>
+<relation action="create" id="-62" version="1">
+<tag k="aerodrome" v="yes"/>
+<tag k="runway:designator" v="13R, 31L, 13L, 31R"/>
+<tag k="runway:surface" v="asphalt, asphalt, asphalt, asphalt"/>
+<tag k="runway:length" v="3010.0m, 3010.0m, 3707.0m, 3707.0m"/>
+<tag k="comm:atis" v="132.375MHz"/>
+<tag k="height:unit" v="m"/>
+<tag k="height" v="151.3"/>
+<tag k="height:class" v="amsl"/>
+<tag k="icao" v="LHBP"/>
+<tag k="comm:apron" v="131.55MHz"/>
+<tag k="name" v="BUDAPEST LISZT FERENC INTERNATIONAL AIRPORT"/>
+<tag k="comm:approach" v="129.7MHz"/>
+<tag k="comm:twr" v="118.1MHz"/>
+<member ref="-3" role="runway" type="way"/>
+<member ref="-6" role="runway" type="way"/>
+<member ref="-9" role="runway" type="way"/>
+<member ref="-12" role="runway" type="way"/>
+<member ref="-13" role="navaid" type="node"/>
+<member ref="-14" role="navaid" type="node"/>
+<member ref="-15" role="navaid" type="node"/>
+<member ref="-16" role="navaid" type="node"/>
+<member ref="-17" role="navaid" type="node"/>
+<member ref="-18" role="navaid" type="node"/>
+<member ref="-19" role="navaid" type="node"/>
+<member ref="-20" role="navaid" type="node"/>
+<member ref="-21" role="navaid" type="node"/>
+<member ref="-22" role="navaid" type="node"/>
+<member ref="-23" role="navaid" type="node"/>
+<member ref="-24" role="navaid" type="node"/>
+<member ref="-25" role="navaid" type="node"/>
+<member ref="-26" role="navaid" type="node"/>
+<member ref="-27" role="navaid" type="node"/>
+<member ref="-28" role="navaid" type="node"/>
+<member ref="-29" role="navaid" type="node"/>
+<member ref="-30" role="navaid" type="node"/>
+<member ref="-31" role="navaid" type="node"/>
+<member ref="-32" role="navaid" type="node"/>
+<member ref="-33" role="navaid" type="node"/>
+<member ref="-34" role="navaid" type="node"/>
+<member ref="-35" role="navaid" type="node"/>
+<member ref="-36" role="navaid" type="node"/>
+<member ref="-37" role="navaid" type="node"/>
+<member ref="-38" role="navaid" type="node"/>
+<member ref="-39" role="navaid" type="node"/>
+<member ref="-40" role="navaid" type="node"/>
+<member ref="-41" role="navaid" type="node"/>
+<member ref="-42" role="navaid" type="node"/>
+<member ref="-43" role="navaid" type="node"/>
+<member ref="-44" role="navaid" type="node"/>
+<member ref="-45" role="navaid" type="node"/>
+<member ref="-46" role="navaid" type="node"/>
+<member ref="-47" role="navaid" type="node"/>
+<member ref="-48" role="navaid" type="node"/>
+<member ref="-60" role="airspace" type="way"/>
+<member ref="-61" role="arp" type="node"/>
+</relation>
+</osm>

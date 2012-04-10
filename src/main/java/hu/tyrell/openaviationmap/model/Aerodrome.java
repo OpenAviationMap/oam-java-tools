@@ -50,9 +50,19 @@ public class Aerodrome {
     private Elevation elevation;
 
     /**
-     * The ground frequency.
+     * The apron frequency.
      */
-    private Frequency ground;
+    private Frequency apron;
+
+    /**
+     * The ATIS frequency.
+     */
+    private Frequency atis;
+
+    /**
+     * The approach frequency.
+     */
+    private Frequency approach;
 
     /**
      * The tower frequency.
@@ -164,20 +174,6 @@ public class Aerodrome {
     }
 
     /**
-     * @return the ground
-     */
-    public Frequency getGround() {
-        return ground;
-    }
-
-    /**
-     * @param ground the ground to set
-     */
-    public void setGround(Frequency ground) {
-        this.ground = ground;
-    }
-
-    /**
      * @return the tower
      */
     public Frequency getTower() {
@@ -271,10 +267,13 @@ public class Aerodrome {
         result = prime * result + ((afis == null) ? 0 : afis.hashCode());
         result = prime * result
                 + ((airspaces == null) ? 0 : airspaces.hashCode());
+        result = prime * result
+                + ((approach == null) ? 0 : approach.hashCode());
+        result = prime * result + ((apron == null) ? 0 : apron.hashCode());
         result = prime * result + ((arp == null) ? 0 : arp.hashCode());
+        result = prime * result + ((atis == null) ? 0 : atis.hashCode());
         result = prime * result
                 + ((elevation == null) ? 0 : elevation.hashCode());
-        result = prime * result + ((ground == null) ? 0 : ground.hashCode());
         result = prime * result + ((iata == null) ? 0 : iata.hashCode());
         result = prime * result + ((icao == null) ? 0 : icao.hashCode());
         result = prime * result + ((name == null) ? 0 : name.hashCode());
@@ -314,6 +313,20 @@ public class Aerodrome {
         } else if (!airspaces.equals(other.airspaces)) {
             return false;
         }
+        if (approach == null) {
+            if (other.approach != null) {
+                return false;
+            }
+        } else if (!approach.equals(other.approach)) {
+            return false;
+        }
+        if (apron == null) {
+            if (other.apron != null) {
+                return false;
+            }
+        } else if (!apron.equals(other.apron)) {
+            return false;
+        }
         if (arp == null) {
             if (other.arp != null) {
                 return false;
@@ -321,18 +334,18 @@ public class Aerodrome {
         } else if (!arp.equals(other.arp)) {
             return false;
         }
+        if (atis == null) {
+            if (other.atis != null) {
+                return false;
+            }
+        } else if (!atis.equals(other.atis)) {
+            return false;
+        }
         if (elevation == null) {
             if (other.elevation != null) {
                 return false;
             }
         } else if (!elevation.equals(other.elevation)) {
-            return false;
-        }
-        if (ground == null) {
-            if (other.ground != null) {
-                return false;
-            }
-        } else if (!ground.equals(other.ground)) {
             return false;
         }
         if (iata == null) {
@@ -385,6 +398,48 @@ public class Aerodrome {
             return false;
         }
         return true;
+    }
+
+    /**
+     * @return the apron
+     */
+    public Frequency getApron() {
+        return apron;
+    }
+
+    /**
+     * @param apron the apron to set
+     */
+    public void setApron(Frequency apron) {
+        this.apron = apron;
+    }
+
+    /**
+     * @return the atis
+     */
+    public Frequency getAtis() {
+        return atis;
+    }
+
+    /**
+     * @param atis the atis to set
+     */
+    public void setAtis(Frequency atis) {
+        this.atis = atis;
+    }
+
+    /**
+     * @return the approach
+     */
+    public Frequency getApproach() {
+        return approach;
+    }
+
+    /**
+     * @param approach the approach to set
+     */
+    public void setApproach(Frequency approach) {
+        this.approach = approach;
     }
 
 }

@@ -31,6 +31,11 @@ public class Navaid extends Point {
         VOR,
 
         /**
+         * A VOT, a VOR Test facility.
+         */
+        VOT,
+
+        /**
          * A DME.
          */
         DME,

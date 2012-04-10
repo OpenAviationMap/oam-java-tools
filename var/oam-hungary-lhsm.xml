@@ -9,7 +9,7 @@
 <node action="create" id="-11" lat="46.66580555555555" lon="17.166861111111114" version="1">
 <tag k="navaid:type" v="NDB"/>
 <tag k="navaid:activetime" v="H24"/>
-<tag k="name" v="ILS 16 (CAT I) L"/>
+<tag k="name" v="SME"/>
 <tag k="navaid:ndb" v="436kHz"/>
 <tag k="navaid:ident" v="SME"/>
 <tag k="navaid:remarks" v="1km from THR RWY 34"/>
@@ -21,7 +21,7 @@
 <tag k="height" v="453.0"/>
 <tag k="height:class" v="amsl"/>
 <tag k="navaid:activetime" v="H24"/>
-<tag k="name" v="ILS 16 (CAT I) DME"/>
+<tag k="name" v="SME"/>
 <tag k="navaid:ident" v="SME"/>
 <tag k="navaid:remarks" v="Co-located with L/SME."/>
 <tag k="navaid:dme" v="79X"/>

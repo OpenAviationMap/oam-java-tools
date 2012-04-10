@@ -576,9 +576,19 @@ public class OAMReader {
             ad.setTower(Frequency.fromString(tags.get(k)));
         }
 
-        k = "comm:gnd";
+        k = "comm:apron";
         if (tags.containsKey(k)) {
-            ad.setGround(Frequency.fromString(tags.get(k)));
+            ad.setApron(Frequency.fromString(tags.get(k)));
+        }
+
+        k = "comm:atis";
+        if (tags.containsKey(k)) {
+            ad.setAtis(Frequency.fromString(tags.get(k)));
+        }
+
+        k = "comm:approach";
+        if (tags.containsKey(k)) {
+            ad.setApproach(Frequency.fromString(tags.get(k)));
         }
 
         if (tags.containsKey("height")
@@ -852,6 +862,8 @@ public class OAMReader {
             String s = tags.get(k);
             if ("VOR".equals(s)) {
                 navaid.setType(Navaid.Type.VOR);
+            } else if ("VOT".equals(s)) {
+                navaid.setType(Navaid.Type.VOT);
             } else if ("VOR/DME".equals(s)) {
                 navaid.setType(Navaid.Type.VORDME);
             } else if ("DME".equals(s)) {
@@ -896,6 +908,11 @@ public class OAMReader {
         }
 
         k = "navaid:vor";
+        if (tags.containsKey(k)) {
+            navaid.setFrequency(Frequency.fromString(tags.get(k)));
+        }
+
+        k = "navaid:vot";
         if (tags.containsKey(k)) {
             navaid.setFrequency(Frequency.fromString(tags.get(k)));
         }

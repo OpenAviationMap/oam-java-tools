@@ -229,8 +229,8 @@ public class EAipProcessorAd extends EAipProcessor {
                 int i = str.indexOf('%');
                 if (i != -1) {
                     str = str.substring(0, i);
+                    runway.setSlope(Double.parseDouble(str));
                 }
-                runway.setSlope(Double.parseDouble(str));
             }
 
         } catch (Exception e) {
@@ -339,6 +339,12 @@ public class EAipProcessorAd extends EAipProcessor {
                     ad.setAfis(f);
                 } else if (str.endsWith("TWR")) {
                     ad.setTower(f);
+                } else if (str.endsWith("ATIS")) {
+                    ad.setAtis(f);
+                } else if (str.endsWith("APP")) {
+                    ad.setApproach(f);
+                } else if (str.endsWith("APRON")) {
+                    ad.setApron(f);
                 }
             }
 
@@ -993,12 +999,14 @@ public class EAipProcessorAd extends EAipProcessor {
                 navaid.setType(Navaid.Type.DME);
             } else if ("NDB".equals(str) || "L".equals(str)) {
                 navaid.setType(Navaid.Type.NDB);
-            } else if ("LLZ".equals(str)) {
+            } else if ("LLZ".equals(str) || "LOC".equals(str)) {
                 navaid.setType(Navaid.Type.LOC);
             } else if ("GP".equals(str)) {
                 navaid.setType(Navaid.Type.GP);
-            } else if ("MM".equals(str)) {
+            } else if ("MM".equals(str) || "OM".equals(str)) {
                 navaid.setType(Navaid.Type.MARKER);
+            } else if ("VOT".equals(str)) {
+                navaid.setType(Navaid.Type.VOT);
             } else {
                 throw new ParseException(ad.getIcao(),
                                          "unknown navaid type " + str);
@@ -1018,8 +1026,9 @@ public class EAipProcessorAd extends EAipProcessor {
                     str = str.substring(0, str.length() - 1);
                 }
                 // remove the trailing degree sign
-                if (str.endsWith("\u00b0")) {
-                    str = str.substring(0, str.length() - 1);
+                int deg = str.indexOf('\u00b0');
+                if (deg != -1) {
+                    str = str.substring(0, deg);
                 }
                 navaid.setDeclination(Double.parseDouble(str));
             }
@@ -1104,7 +1113,7 @@ public class EAipProcessorAd extends EAipProcessor {
 
             // extract the coverage from the remarks, if there
             if (str.contains("Coverage")) {
-                String[] s = str.split(":[ \t\r\n]");
+                String[] s = str.split(":[ \t\r\n]|/");
                 for (int i = 0; i < s.length; ++i) {
                     if ("Coverage".equals(s[i]) && i + 1 < s.length) {
                         navaid.setCoverage(Distance.fromString(s[i + 1]));
@@ -1155,14 +1164,25 @@ public class EAipProcessorAd extends EAipProcessor {
             NodeList nodes = (NodeList) xpath.evaluate("table/tbody/tr",
                                             node, XPathConstants.NODESET);
 
-            String ilsName = null;
+            String  ilsName = null;
+            boolean ilsLast = false;
 
             for (int i = 0; i < nodes.getLength(); ++i) {
                 Node n = nodes.item(i);
 
+                if (ilsLast) {
+                    ilsName = null;
+                    ilsLast = false;
+                }
+
+                ilsLast = (boolean) xpath.evaluate(
+                                            "contains(td[1]/@class, 'bbottom')",
+                                            n, XPathConstants.BOOLEAN);
+
                 String str = xpath.evaluate("td[1]/text()[1]", n).trim();
                 if (str.contains("ILS")) {
                     ilsName = str;
+                    ilsLast = false;
                     continue;
                 }
 
