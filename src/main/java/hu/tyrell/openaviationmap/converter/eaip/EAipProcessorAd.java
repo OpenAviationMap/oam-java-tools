@@ -567,7 +567,7 @@ public class EAipProcessorAd extends EAipProcessor {
                 boundaryStr = str;
             }
 
-            if (boundaryStr.startsWith(CIRCLE_PREFIX)) {
+            if (boundaryStr.startsWith(CIRCLE_PREFIX_GENERIC)) {
                 boundary = processCircle(name, boundaryStr);
             } else {
                 boundary = processPointList(name, boundaryStr, borderPoints);
@@ -606,6 +606,11 @@ public class EAipProcessorAd extends EAipProcessor {
             } else if (t != -1) {
                 upperStr = str.substring(0, t).trim();
                 lowerStr = str.substring(t + 2).trim();
+            } else {
+                if (str.endsWith("GND")) {
+                    upperStr = str.substring(0, str.length() - 3).trim();
+                    lowerStr = "GND";
+                }
             }
 
             airspace.setUpperLimit(processElevation(name, upperStr));
@@ -819,7 +824,7 @@ public class EAipProcessorAd extends EAipProcessor {
             String str = xpath.evaluate("td[1]/text()[1]", node).trim();
             String typeStr = str;
 
-            if ("DVOR/DME".equals(str)) {
+            if ("DVOR/DME".equals(str) || "VOR/DME".equals(str)) {
                 navaid.setType(Navaid.Type.VORDME);
             } else if ("DME".equals(str) || "PDME".equals(str)) {
                 navaid.setType(Navaid.Type.DME);

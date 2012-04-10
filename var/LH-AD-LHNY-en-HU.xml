@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?eAIP-locales ../locales.xml?>
+<e:Aerodrome id = "AD-2.LHNY" xmlns:x = "http://www.w3.org/1999/xhtml" xmlns:e = "http://www.eurocontrol.int/xmlns/AIM/eAIP" xmlns:xlink = "http://www.w3.org/1999/xlink" Ref = "LOCK-DEF-LHNY"><?FM MARKER [FrameAPS Content] PM-0.1,1857713,415060?>
+<e:Title id = "AD0812170723000"></e:Title>
+<e:Blank-section-note>Note: The following sections in this chapter are intentionally left blank: AD-2.7, AD-2.16, AD-2.20, AD-2.23</e:Blank-section-note>
+<e:AD-2.1 id = "AD0812170723001"><e:Title id = "AD0812170723002">AERODROME LOCATION INDICATOR - NAME</e:Title>
+<e:Generated  class="Body"/></e:AD-2.1>
+<e:AD-2.2 id = "AD0812170723004"><e:Title id = "AD0812170723005">AERODROME GEOGRAPHICAL DATA AND ADMINISTRATION</e:Title><x:table id = "AD0706130918382213" frame = "border" align = "center">
+<x:tbody id = "AD0706130918382214">
+<x:tr id = "AD0706130918382215">
+<x:td id = "AD0706130918382216" class = "bleft btop bright bbottom " align = "center"><?FM MARKER [FrameAPS Content] CM-0.1,765114,655360?>1</x:td>
+<x:td id = "AD0706130918382217" class = "bleft btop bright bbottom ">ARP coordinates and site at AD</x:td>
+<x:td id = "AD0706130918382218" class = "bleft btop bright bbottom ">475846N 0214132E at RWY 36 THR</x:td>
+</x:tr>
+<x:tr id = "AD0706130918382219">
+<x:td id = "AD0706130918382220" class = "bleft btop bright bbottom " align = "center">2</x:td>
+<x:td id = "AD0706130918382221" class = "bleft btop bright bbottom ">Direction and distance from (city)</x:td>
+<x:td id = "AD0706130918382222" class = "bleft btop bright bbottom ">3 km NNE from centre of Nyiregyhaza city</x:td>
+</x:tr>
+<x:tr id = "AD0706130918382223">
+<x:td id = "AD0706130918382224" class = "bleft btop bright bbottom " align = "center">3</x:td>
+<x:td id = "AD0706130918382225" class = "bleft btop bright bbottom ">Elevation/Reference temperature</x:td>
+<x:td id = "AD0706130918382226" class = "bleft btop bright bbottom ">103 M / 21° C</x:td>
+</x:tr>
+<x:tr id = "AD0706130918382227">
+<x:td id = "AD0706130918382228" class = "bleft btop bright bbottom " align = "center">4</x:td>
+<x:td id = "AD0706130918382229" class = "bleft btop bright bbottom ">Geoid undulation</x:td>
+<x:td id = "AD0706130918382230" class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr id = "AD0706130918382231">
+<x:td id = "AD0706130918382232" class = "bleft btop bright bbottom " align = "center">5</x:td>
+<x:td id = "AD0706130918382233" class = "bleft btop bright bbottom ">MAG VAR/ annual change</x:td>
+<x:td id = "AD0706130918382234" class = "bleft btop bright bbottom ">4° E (2009) / 0.1° increasing</x:td>
+</x:tr>
+<x:tr id = "AD0706130918382235">
+<x:td id = "AD0706130918382236" class = "bleft btop bright bbottom " align = "center">6</x:td>
+<x:td id = "AD0706130918382237" class = "bleft btop bright bbottom ">AD Administration, address, telephone, telefax, AFS</x:td>
+<x:td id = "AD0706130918382238" class = "bleft btop bright bbottom "><e:Address id = "AD0706130918382240" class = "Address-part-Post"><e:Address-part id = "AD0706130918382241" Type = "Post">TRENER Kft.
+H-4400 Nyiregyhaza Repuloter ut 1.</e:Address-part>
+<e:Address-part id = "AD0706130918382242" Type = "Phone" class = "Address-part-Phone">+36 42-430-138</e:Address-part>
+<e:Address-part id = "AD0706130918382243" Type = "Fax" class = "Address-part-Fax">+36 42-430-138</e:Address-part>
+<e:Address-part id = "AD0706130918382244" Type = "AFS" class = "Address-part-AFS">LHNYZPZX</e:Address-part>
+<e:Address-part id = "AD0706130918382245" Type = "Email" class = "Address-part-Email">trenerkft@vnet.hu</e:Address-part>
+<e:Address-part id = "AD0802211044540" Type = "URL" class = "Address-part-URL">http://www.trenerkft.hu</e:Address-part></e:Address><x:p id = "AD0706130918382246" class = "Body">AFIS</x:p><e:Address id = "AD0706130918382247" class = "Address-part-Phone"><e:Address-part id = "AD0903061141500" Type = "Phone" Updated = "No">+36 305962437</e:Address-part>
+<e:Address-part id = "AD0706130918382248" Type = "Phone" class = "Cell-body">+36 42-430-203</e:Address-part></e:Address></x:td>
+</x:tr>
+<x:tr id = "AD0706130918382252">
+<x:td id = "AD0706130918382253" class = "bleft btop bright bbottom " align = "center">7</x:td>
+<x:td id = "AD0706130918382254" class = "bleft btop bright bbottom ">Types of traffic permitted (IFR/VFR)</x:td>
+<x:td id = "AD0706130918382255" class = "bleft btop bright bbottom ">VFR</x:td>
+</x:tr>
+<x:tr id = "AD0706130918382256">
+<x:td id = "AD0706130918382257" class = "bleft btop bright bbottom " align = "center">8</x:td>
+<x:td id = "AD0706130918382258" class = "bleft btop bright bbottom ">Remarks</x:td>
+<x:td id = "AD0706130918382259" class = "bleft btop bright bbottom ">Nil</x:td>
+</x:tr>
+</x:tbody>
+</x:table></e:AD-2.2>
+<e:AD-2.3 id = "AD0812170723007"><e:Title id = "AD0812170723008">OPERATIONAL HOURS</e:Title><x:table id = "AD0706130918382262" frame = "border" align = "center">
+<x:tbody id = "AD0706130918382263">
+<x:tr id = "AD0706130918382264">
+<x:td id = "AD0706130918382265" class = "bleft btop bright bbottom " align = "center">1</x:td>
+<x:td id = "AD0706130918382266" class = "bleft btop bright bbottom ">AD Administration</x:td>
+<x:td id = "AD0706130918382267" class = "bleft btop bright bbottom ">From MON till FRI 0730-1600 LT</x:td>
+</x:tr>
+<x:tr id = "AD0706130918382268">
+<x:td id = "AD0706130918382269" class = "bleft btop bright bbottom " align = "center">2</x:td>
+<x:td id = "AD0706130918382270" class = "bleft btop bright bbottom ">Customs and immigration</x:td>
+<x:td id = "AD0706130918382271" class = "bleft btop bright bbottom ">PPR24</x:td>
+</x:tr>
+<x:tr id = "AD0706130918382272">
+<x:td id = "AD0706130918382273" class = "bleft btop bright bbottom " align = "center">3</x:td>
+<x:td id = "AD0706130918382274" class = "bleft btop bright bbottom ">Health and sanitation</x:td>
+<x:td id = "AD0706130918382275" class = "bleft btop bright bbottom ">As Administration</x:td>
+</x:tr>
+<x:tr id = "AD0706130918382276">
+<x:td id = "AD0706130918382277" class = "bleft btop bright bbottom " align = "center">4</x:td>
+<x:td id = "AD0706130918382278" class = "bleft btop bright bbottom ">AIS Briefing Office</x:td>
+<x:td id = "AD0706130918382279" class = "bleft btop bright bbottom ">As Administration</x:td>
+</x:tr>
+<x:tr id = "AD0706130918382280">
+<x:td id = "AD0706130918382281" class = "bleft btop bright bbottom " align = "center">5</x:td>
+<x:td id = "AD0706130918382282" class = "bleft btop bright bbottom ">ATS Reporting Office (ARO)</x:td>
+<x:td id = "AD0706130918382283" class = "bleft btop bright bbottom ">Nil</x:td>
+</x:tr>
+<x:tr id = "AD0706130918382284">
+<x:td id = "AD0706130918382285" class = "bleft btop bright bbottom " align = "center">6</x:td>
+<x:td id = "AD0706130918382286" class = "bleft btop bright bbottom ">MET Briefing Office</x:td>
+<x:td id = "AD0706130918382287" class = "bleft btop bright bbottom ">Nil</x:td>
+</x:tr>
+<x:tr id = "AD0706130918382288">
+<x:td id = "AD0706130918382289" class = "bleft btop bright bbottom " align = "center">7</x:td>
+<x:td id = "AD0706130918382290" class = "bleft btop bright bbottom ">ATS</x:td>
+<x:td id = "AD0706130918382291" class = "bleft btop bright bbottom ">As Administration</x:td>
+</x:tr>
+<x:tr id = "AD0706130918382292">
+<x:td id = "AD0706130918382293" class = "bleft btop bright bbottom " align = "center">8</x:td>
+<x:td id = "AD0706130918382294" class = "bleft btop bright bbottom ">Fuelling</x:td>
+<x:td id = "AD0706130918382295" class = "bleft btop bright bbottom ">As Administration</x:td>
+</x:tr>
+<x:tr id = "AD0706130918382296">
+<x:td id = "AD0706130918382297" class = "bleft btop bright bbottom " align = "center">9</x:td>
+<x:td id = "AD0706130918382298" class = "bleft btop bright bbottom ">Handling</x:td>
+<x:td id = "AD0706130918382299" class = "bleft btop bright bbottom ">As Administration</x:td>
+</x:tr>
+<x:tr id = "AD0706130918382300">
+<x:td id = "AD0706130918382301" class = "bleft btop bright bbottom " align = "center">10</x:td>
+<x:td id = "AD0706130918382302" class = "bleft btop bright bbottom ">Security</x:td>
+<x:td id = "AD0706130918382303" class = "bleft btop bright bbottom ">H24</x:td>
+</x:tr>
+<x:tr id = "AD0706130918382304">
+<x:td id = "AD0706130918382305" class = "bleft btop bright bbottom " align = "center">11</x:td>
+<x:td id = "AD0706130918382306" class = "bleft btop bright bbottom ">De-icing</x:td>
+<x:td id = "AD0706130918382307" class = "bleft btop bright bbottom ">Nil</x:td>
+</x:tr>
+<x:tr id = "AD0706130918382308">
+<x:td id = "AD0706130918382309" class = "bleft btop bright bbottom " align = "center">12</x:td>
+<x:td id = "AD0706130918382310" class = "bleft btop bright bbottom ">Remarks</x:td>
+<x:td id = "AD0706130918382311" class = "bleft btop bright bbottom ">Beyond operational hours and weekends: on request<?FM MARKER [FrameAPS Content] CU-0.1,13914850,655360?></x:td>
+</x:tr>
+</x:tbody>
+</x:table></e:AD-2.3><?FM MARKER [FrameAPS Content] PU-0.1,13613379,30181549?>
+
+<?FM MARKER [FrameAPS Content] PM-1.1,557313,1595223?>
+<e:AD-2.4 id = "AD0812170723009"><e:Title id = "AD08121707230010">HANDLING SERVICES AND FACILITIES</e:Title><x:table id = "AD0706130918382314" frame = "border" align = "center">
+<x:tbody id = "AD0706130918382315">
+<x:tr id = "AD0706130918382316">
+<x:td id = "AD0706130918382317" class = "bleft btop bright bbottom " align = "center"><?FM MARKER [FrameAPS Content] CM-1.1,765114,655360?>1</x:td>
+<x:td id = "AD0706130918382318" class = "bleft btop bright bbottom ">Cargo-handling facilities</x:td>
+<x:td id = "AD0706130918382319" class = "bleft btop bright bbottom ">Nil</x:td>
+</x:tr>
+<x:tr id = "AD0706130918382320">
+<x:td id = "AD0706130918382321" class = "bleft btop bright bbottom " align = "center">2</x:td>
+<x:td id = "AD0706130918382322" class = "bleft btop bright bbottom ">Fuel/oil types</x:td>
+<x:td id = "AD0706130918382323" class = "bleft btop bright bbottom ">JET-A1 kerosene, AVGAS 100LL petrol, Aeroshell W100 oil</x:td>
+</x:tr>
+<x:tr id = "AD0706130918382324">
+<x:td id = "AD0706130918382325" class = "bleft btop bright bbottom " align = "center">3</x:td>
+<x:td id = "AD0706130918382326" class = "bleft btop bright bbottom ">Fuelling facilities/capacity</x:td>
+<x:td id = "AD0706130918382327" class = "bleft btop bright bbottom ">JET-A1/20.000 litres, AVGAS 100LL / 20.000 litres</x:td>
+</x:tr>
+<x:tr id = "AD0706130918382328">
+<x:td id = "AD0706130918382329" class = "bleft btop bright bbottom " align = "center">4</x:td>
+<x:td id = "AD0706130918382330" class = "bleft btop bright bbottom ">De-icing facilities</x:td>
+<x:td id = "AD0706130918382331" class = "bleft btop bright bbottom ">Nil</x:td>
+</x:tr>
+<x:tr id = "AD0706130918382332">
+<x:td id = "AD0706130918382333" class = "bleft btop bright bbottom " align = "center">5</x:td>
+<x:td id = "AD0706130918382334" class = "bleft btop bright bbottom ">Hangar space for visiting aircraft</x:td>
+<x:td id = "AD0706130918382335" class = "bleft btop bright bbottom ">Limited by prior arrangement</x:td>
+</x:tr>
+<x:tr id = "AD0706130918382336">
+<x:td id = "AD0706130918382337" class = "bleft btop bright bbottom " align = "center">6</x:td>
+<x:td id = "AD0706130918382338" class = "bleft btop bright bbottom ">Repair facilities for visiting aircraft</x:td>
+<x:td id = "AD0706130918382339" class = "bleft btop bright bbottom ">By prior arrangement.</x:td>
+</x:tr>
+<x:tr id = "AD0706130918382340">
+<x:td id = "AD0706130918382341" class = "bleft btop bright bbottom " align = "center">7</x:td>
+<x:td id = "AD0706130918382342" class = "bleft btop bright bbottom ">Remarks</x:td>
+<x:td id = "AD0706130918382343" class = "bleft btop bright bbottom ">Nil</x:td>
+</x:tr>
+</x:tbody>
+</x:table></e:AD-2.4>
+<e:AD-2.5 id = "AD08121707230011"><e:Title id = "AD08121707230012">PASSENGER FACILITIES</e:Title><x:table id = "AD0706130918382346" frame = "border" align = "center">
+<x:tbody id = "AD0706130918382347">
+<x:tr id = "AD0706130918382348">
+<x:td id = "AD0706130918382349" class = "bleft btop bright bbottom " align = "center">1</x:td>
+<x:td id = "AD0706130918382350" class = "bleft btop bright bbottom ">Hotels</x:td>
+<x:td id = "AD0706130918392351" class = "bleft btop bright bbottom ">in the city</x:td>
+</x:tr>
+<x:tr id = "AD0706130918392352">
+<x:td id = "AD0706130918392353" class = "bleft btop bright bbottom " align = "center">2</x:td>
+<x:td id = "AD0706130918392354" class = "bleft btop bright bbottom ">Restaurants in the city</x:td>
+<x:td id = "AD0706130918392355" class = "bleft btop bright bbottom ">in the city</x:td>
+</x:tr>
+<x:tr id = "AD0706130918392356">
+<x:td id = "AD0706130918392357" class = "bleft btop bright bbottom " align = "center">3</x:td>
+<x:td id = "AD0706130918392358" class = "bleft btop bright bbottom ">Transportation</x:td>
+<x:td id = "AD0706130918392359" class = "bleft btop bright bbottom ">taxi</x:td>
+</x:tr>
+<x:tr id = "AD0706130918392360">
+<x:td id = "AD0706130918392361" class = "bleft btop bright bbottom " align = "center">4</x:td>
+<x:td id = "AD0706130918392362" class = "bleft btop bright bbottom ">Medical facilities</x:td>
+<x:td id = "AD0706130918392363" class = "bleft btop bright bbottom ">first aid at AD, hospitals in the city</x:td>
+</x:tr>
+<x:tr id = "AD0706130918392364">
+<x:td id = "AD0706130918392365" class = "bleft btop bright bbottom " align = "center">5</x:td>
+<x:td id = "AD0706130918392366" class = "bleft btop bright bbottom ">Bank and Post Office</x:td>
+<x:td id = "AD0706130918392367" class = "bleft btop bright bbottom ">Nil</x:td>
+</x:tr>
+<x:tr id = "AD0706130918392368">
+<x:td id = "AD0706130918392369" class = "bleft btop bright bbottom " align = "center">6</x:td>
+<x:td id = "AD0706130918392370" class = "bleft btop bright bbottom ">Tourist Office</x:td>
+<x:td id = "AD0706130918392371" class = "bleft btop bright bbottom ">in the city</x:td>
+</x:tr>
+<x:tr id = "AD0706130918392372">
+<x:td id = "AD0706130918392373" class = "bleft btop bright bbottom " align = "center">7</x:td>
+<x:td id = "AD0706130918392374" class = "bleft btop bright bbottom ">Remarks</x:td>
+<x:td id = "AD0706130918392375" class = "bleft btop bright bbottom ">Nil</x:td>
+</x:tr>
+</x:tbody>
+</x:table></e:AD-2.5>
+<e:AD-2.6 id = "AD08121707230013"><e:Title id = "AD08121707230014">RESCUE AND FIRE FIGHTING SERVICES</e:Title><x:table id = "AD0706130918392378" frame = "border" align = "center">
+<x:tbody id = "AD0706130918392379">
+<x:tr id = "AD0706130918392380">
+<x:td id = "AD0706130918392381" class = "bleft btop bright bbottom " align = "center">1</x:td>
+<x:td id = "AD0706130918392382" class = "bleft btop bright bbottom ">AD category for fire fighting</x:td>
+<x:td id = "AD0706130918392383" class = "bleft btop bright bbottom ">A2</x:td>
+</x:tr>
+<x:tr id = "AD0706130918392384">
+<x:td id = "AD0706130918392385" class = "bleft btop bright bbottom " align = "center">2</x:td>
+<x:td id = "AD0706130918392386" class = "bleft btop bright bbottom ">Rescue equipment</x:td>
+<x:td id = "AD0706130918392387" class = "bleft btop bright bbottom ">Nil</x:td>
+</x:tr>
+<x:tr id = "AD0706130918392388">
+<x:td id = "AD0706130918392389" class = "bleft btop bright bbottom " align = "center">3</x:td>
+<x:td id = "AD0706130918392390" class = "bleft btop bright bbottom ">Capability for removal of disabled aircraft</x:td>
+<x:td id = "AD0706130918392391" class = "bleft btop bright bbottom ">tractor </x:td>
+</x:tr>
+<x:tr id = "AD0706130918392392">
+<x:td id = "AD0706130918392393" class = "bleft btop bright bbottom " align = "center">4</x:td>
+<x:td id = "AD0706130918392394" class = "bleft btop bright bbottom ">Remarks</x:td>
+<x:td id = "AD0706130918392395" class = "bleft btop bright bbottom ">Local fire fighting service<?FM MARKER [FrameAPS Content] CU-1.1,6612428,655360?></x:td>
+</x:tr>
+</x:tbody>
+</x:table></e:AD-2.6><?FM MARKER [FrameAPS Content] PU-1.1,19654899,25626803?>
+
+<?FM MARKER [FrameAPS Content] PM-2.1,557313,1595223?>
+<e:AD-2.8 id = "AD08121707230017"><e:Title id = "AD08121707230018">APRONS, TAXIWAYS AND CHECK LOCATIONS/POSITIONS DATA</e:Title><x:table id = "AD0706130918392414" frame = "border" align = "center">
+<x:tbody id = "AD0706130918392415">
+<x:tr id = "AD0706130918392416">
+<x:td id = "AD0706130918392417" class = "bleft btop bright bbottom " rowspan = "2" align = "center"><?FM MARKER [FrameAPS Content] CM-2.1,765114,655360?>1</x:td>
+<x:td id = "AD0706130918392418" class = "bleft btop bright bbottom " rowspan = "2">Apron surface and strength</x:td>
+<x:td id = "AD0706130918392419" class = "bleft btop ">Surface:</x:td>
+<x:td id = "AD0706130918392420" class = "btop bright ">ASPH</x:td>
+</x:tr>
+<x:tr id = "AD0706130918392421">
+<x:td id = "AD0706130918392422" class = "bleft bbottom ">Strength:</x:td>
+<x:td id = "AD0706130918392423" class = "bright bbottom ">AUW 20 T</x:td>
+</x:tr>
+<x:tr id = "AD0706130918392424">
+<x:td id = "AD0706130918392425" class = "bleft btop bright bbottom " rowspan = "3" align = "center">2</x:td>
+<x:td id = "AD0706130918392426" class = "bleft btop bright bbottom " rowspan = "3">Taxiway width, surface and strength</x:td>
+<x:td id = "AD0706130918392427" class = "bleft btop ">Width: </x:td>
+<x:td id = "AD0706130918392428" class = "btop bright ">9 M, except TWY A1: 11 M and TWY B: 13 M</x:td>
+</x:tr>
+<x:tr id = "AD0706130918392429">
+<x:td id = "AD0706130918392430" class = "bleft ">Surface: </x:td>
+<x:td id = "AD0706130918392431" class = "bright ">TWYs A1 and B: Asphalt,
+others concrete</x:td>
+</x:tr>
+<x:tr id = "AD0706130918392432">
+<x:td id = "AD0706130918392433" class = "bleft bbottom ">Strength:</x:td>
+<x:td id = "AD0706130918392434" class = "bright bbottom ">TWYs A1and B: PCN 15/F/C/W/U
+others: PCN 8/R/C/W/U</x:td>
+</x:tr>
+<x:tr id = "AD0706130918392435">
+<x:td id = "AD0706130918392436" class = "bleft btop bright bbottom " rowspan = "2" align = "center">3</x:td>
+<x:td id = "AD0706130918392437" class = "bleft btop bright bbottom " rowspan = "2">Altimeter checkpoint location and elevation</x:td>
+<x:td id = "AD0706130918392438" class = "bleft btop bright ">Location:</x:td>
+<x:td id = "AD0706130918392439" class = "btop bright ">at THRs</x:td>
+</x:tr>
+<x:tr id = "AD0706130918392440">
+<x:td id = "AD0706130918392441" class = "bleft bbottom ">Elevation:</x:td>
+<x:td id = "AD0706130918392442" class = "bright bbottom ">103 M</x:td>
+</x:tr>
+<x:tr id = "AD0706130918392443">
+<x:td id = "AD0706130918392444" class = "bleft btop bright bbottom " align = "center">4</x:td>
+<x:td id = "AD0706130918392445" class = "bleft btop bright bbottom ">VOR checkpoints</x:td>
+<x:td id = "AD0706130918392446" class = "bleft btop bright bbottom " colspan = "2">Nil</x:td>
+</x:tr>
+<x:tr id = "AD0706130918392447">
+<x:td id = "AD0706130918392448" class = "bleft btop bright bbottom " align = "center">5</x:td>
+<x:td id = "AD0706130918392449" class = "bleft btop bright bbottom ">INS checkpoints</x:td>
+<x:td id = "AD0706130918392450" class = "bleft btop bright bbottom " colspan = "2">Nil</x:td>
+</x:tr>
+<x:tr id = "AD0706130918392451">
+<x:td id = "AD0706130918392452" class = "bleft btop bright bbottom " align = "center">6</x:td>
+<x:td id = "AD0706130918392453" class = "bleft btop bright bbottom ">Remarks</x:td>
+<x:td id = "AD0706130918392454" class = "bleft btop bright bbottom " colspan = "2">16 pcs separated concrete aircraft stands</x:td>
+</x:tr>
+</x:tbody>
+</x:table></e:AD-2.8>
+<e:AD-2.9 id = "AD08121707230019"><e:Title id = "AD08121707230020">SURFACE MOVEMENT GUIDANCE AND CONTROL SYSTEM AND MARKINGS</e:Title><x:table id = "AD0706130918392457" frame = "border" align = "center">
+<x:tbody id = "AD0706130918392458">
+<x:tr id = "AD0706130918392459">
+<x:td id = "AD0706130918392460" class = "bleft btop bright bbottom " align = "center">1</x:td>
+<x:td id = "AD0706130918392461" class = "bleft btop bright bbottom ">Use of aircraft stand ID signs, TWY guide lines and visual docking/parking guidance system of aircraft stands</x:td>
+<x:td id = "AD0706130918392462" class = "bleft btop bright bbottom ">Nil</x:td>
+</x:tr>
+<x:tr id = "AD0706130918392463">
+<x:td id = "AD0706130918392464" class = "bleft btop bright bbottom " align = "center">2</x:td>
+<x:td id = "AD0706130918392465" class = "bleft btop bright bbottom ">RWY and TWY markings and LGT</x:td>
+<x:td id = "AD0706130918392466" class = "bleft btop bright bbottom ">RWYs: Designator, threshold, centreline, edge
+TWYs: centre line</x:td>
+</x:tr>
+<x:tr id = "AD0706130918392467">
+<x:td id = "AD0706130918392468" class = "bleft btop bright bbottom " align = "center">3</x:td>
+<x:td id = "AD0706130918392469" class = "bleft btop bright bbottom ">Stop bars</x:td>
+<x:td id = "AD0706130918392470" class = "bleft btop bright bbottom ">Nil</x:td>
+</x:tr>
+<x:tr id = "AD0706130918392471">
+<x:td id = "AD0706130918392472" class = "bleft btop bright bbottom " align = "center">4</x:td>
+<x:td id = "AD0706130918392473" class = "bleft btop bright bbottom ">Remarks</x:td>
+<x:td id = "AD0706130918392474" class = "bleft btop bright bbottom ">Nil</x:td>
+</x:tr>
+</x:tbody>
+</x:table></e:AD-2.9>
+<e:AD-2.10 id = "AD08121707230021"><e:Title id = "AD08121707230022">AERODROME OBSTACLES</e:Title><x:table id = "AD0706130918392477" frame = "border" align = "center">
+<x:thead id = "AD0706130918392478">
+<x:tr id = "AD0706130918392479" class = "Table-row-type-1">
+<x:th id = "AD0706130918392480" class = "bleft btop bright bbottom " colspan = "3" align = "center"><x:strong id = "AD0707310744200" class = "Cell-heading">In approach/TKOF areas</x:strong></x:th>
+<x:th id = "AD0706130918392481" class = "bleft btop bright bbottom " colspan = "2" align = "center"><x:strong id = "AD0707310744261" class = "Cell-heading">In circling area and at AD</x:strong></x:th>
+<x:th id = "AD0706130918392482" class = "bleft btop bright bbottom " align = "center"><x:strong id = "AD0707310744312" class = "Cell-heading">Remarks</x:strong></x:th>
+</x:tr>
+<x:tr id = "AD0706130918392483" class = "Table-row-type-2" align = "center" valign = "middle">
+<x:th id = "AD0706130918392484" class = "bleft btop bright bbottom " colspan = "3" align = "center"><x:strong id = "AD0707310744363" class = "Cell-heading">1</x:strong></x:th>
+<x:th id = "AD0706130918392485" class = "bleft btop bright bbottom " colspan = "2"><x:strong id = "AD0707310744414" class = "Cell-heading">2</x:strong></x:th>
+<x:th id = "AD0706130918392486" class = "bleft btop bright bbottom " align = "center"><x:strong id = "AD0707310744455" class = "Cell-heading">3</x:strong></x:th>
+</x:tr>
+<x:tr id = "AD0706130918392487" class = "Table-row-type-2">
+<x:th id = "AD0706130918392488" class = "bleft btop bbottom "><x:strong id = "AD0707310744556" class = "Cell-heading">RWY NR/Area affected</x:strong></x:th>
+<x:th id = "AD0706130918392489" class = "btop bbottom "><x:strong id = "AD0707310745007" class = "Cell-heading">Obstacle type Elevation Markings/LGT</x:strong></x:th>
+<x:th id = "AD0706130918392490" class = "btop bright bbottom "><x:strong id = "AD0707310745098" class = "Cell-heading">Location Direction (GEO) Distance (M)</x:strong></x:th>
+<x:th id = "AD0706130918392491" class = "bleft btop bbottom "><x:strong id = "AD0707310745159" class = "Cell-heading">Obstacle type Elevation Markings/LGT</x:strong></x:th>
+<x:th id = "AD0706130918392492" class = "btop bright bbottom "><x:strong id = "AD07073107452010" class = "Cell-heading">Location Direction (GEO) Distance (M)</x:strong></x:th>
+<x:th id = "AD0706130918392493" class = "bleft btop bright bbottom " rowspan = "2"></x:th>
+</x:tr>
+<x:tr id = "AD0706130918392494" class = "Table-row-type-2" align = "center">
+<x:th id = "AD0706130918392495" class = "bleft btop bright bbottom "><x:strong id = "AD07073107452811" class = "Cell-heading">a</x:strong></x:th>
+<x:th id = "AD0706130918392496" class = "bleft btop bright bbottom "><x:strong id = "AD07073107454412" class = "Cell-heading">b</x:strong></x:th>
+<x:th id = "AD0706130918392497" class = "bleft btop bright bbottom "><x:strong id = "AD07073107454813" class = "Cell-heading">c</x:strong></x:th>
+<x:th id = "AD0706130918392498" class = "bleft btop bright bbottom "><x:strong id = "AD07073107455214" class = "Cell-heading">a</x:strong></x:th>
+<x:th id = "AD0706130918392499" class = "bleft btop bright bbottom "><x:strong id = "AD07073107455715" class = "Cell-heading">b</x:strong></x:th>
+</x:tr>
+</x:thead>
+<x:tbody id = "AD0706130918392500">
+<x:tr id = "AD0706130918402501">
+<x:td id = "AD0706130918402502" class = "bleft btop bright bbottom ">36 APCH</x:td>
+<x:td id = "AD0706130918402503" class = "bleft btop bright bbottom ">Chimneys
+188 M
+Lighted</x:td>
+<x:td id = "AD0706130918402504" class = "bleft btop bright bbottom ">167
+2550 M
+FM THR</x:td>
+<x:td id = "AD0706130918402505" class = "bleft btop bright bbottom " align = "left" valign = "middle">Chimneys
+188 M
+Lighted</x:td>
+<x:td id = "AD0706130918402506" class = "bleft btop bright bbottom ">158
+1840 M
+FM THR</x:td>
+<x:td id = "AD0706130918402507" class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr id = "AD0706130918402508">
+<x:td id = "AD0706130918402509" class = "bleft btop bright bbottom ">36 APCH</x:td>
+<x:td id = "AD0706130918402510" class = "bleft btop bright bbottom ">Broadcasting antenna
+233 M
+Lighted</x:td>
+<x:td id = "AD0706130918402511" class = "bleft btop bright bbottom ">142
+7500 M
+FM THR</x:td>
+<x:td id = "AD0706130918402512" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD0706130918402513" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD0706130918402514" class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CU-2.1,131072,655360?></x:td>
+</x:tr>
+<x:tr id = "AD0706130918402515">
+<x:td id = "AD0706130918402516" class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CM-3.1,131072,655360?>36 APCH</x:td>
+<x:td id = "AD0706130918402517" class = "bleft btop bright bbottom ">GSM antenna<x:br id = "AD1004231425360"/>163 M<x:br id = "AD1004231503150"/>Lighted</x:td>
+<x:td id = "AD0706130918402518" class = "bleft btop bright bbottom ">174<x:br id = "AD1004231503151"/>3750 M<x:br id = "AD1004231503152"/>FM THR</x:td>
+<x:td id = "AD0706130918402519" class = "bleft btop bright bbottom ">Chimneys<x:br id = "AD1004231503153"/>188 M<x:br id = "AD1004231503154"/>Lighted</x:td>
+<x:td id = "AD0706130918402520" class = "bleft btop bright bbottom ">158<x:br id = "AD1004231503155"/>1840 M<x:br id = "AD1004231503156"/>FM THR</x:td>
+<x:td id = "AD0706130918402521" class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr id = "AD0706130918402522">
+<x:td id = "AD0706130918402523" class = "bleft btop bright bbottom ">36 APCH</x:td>
+<x:td id = "AD0706130918402524" class = "bleft btop bright bbottom ">GSM antenna<x:br id = "AD1004231503157"/>182 M<x:br id = "AD1004231503158"/>Lighted</x:td>
+<x:td id = "AD0706130918402525" class = "bleft btop bright bbottom ">170<x:br id = "AD1004231503159"/>4425 M<x:br id = "AD10042315031510"/>FM THR</x:td>
+<x:td id = "AD0706130918402526" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD0706130918402527" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD0706130918402528" class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr id = "AD0706130918402529">
+<x:td id = "AD0706130918402530" class = "bleft btop bright bbottom ">36 APCH</x:td>
+<x:td id = "AD0706130918402531" class = "bleft btop bright bbottom ">GSM antenna<x:br id = "AD10042315031511"/>179 M<x:br id = "AD10042315031512"/>Lighted</x:td>
+<x:td id = "AD0706130918402532" class = "bleft btop bright bbottom ">162<x:br id = "AD10042315031513"/>4575 M<x:br id = "AD10042315031514"/>FM THR</x:td>
+<x:td id = "AD0706130918402533" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD0706130918402534" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD0706130918402535" class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr id = "AD0706130918402536">
+<x:td id = "AD0706130918402537" class = "bleft btop bright bbottom ">36 APCH</x:td>
+<x:td id = "AD0706130918402538" class = "bleft btop bright bbottom ">Grain elevator<x:br id = "AD10042315031515"/>179 M<x:br id = "AD10042315031516"/>Lighted</x:td>
+<x:td id = "AD0706130918402539" class = "bleft btop bright bbottom ">162<x:br id = "AD10042315031517"/>5175 M<x:br id = "AD10042315031518"/>FM THR</x:td>
+<x:td id = "AD0706130918402540" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD0706130918402541" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD0706130918402542" class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr id = "AD0706130918402543">
+<x:td id = "AD0706130918402544" class = "bleft btop bright bbottom ">36 APCH</x:td>
+<x:td id = "AD0706130918402545" class = "bleft btop bright bbottom ">GSM antenna<x:br id = "AD10042315031519"/>179 M<x:br id = "AD10042315031520"/>Lighted</x:td>
+<x:td id = "AD0706130918402546" class = "bleft btop bright bbottom ">187<x:br id = "AD10042315031521"/>5700 M<x:br id = "AD10042315031522"/>FM THR</x:td>
+<x:td id = "AD0706130918402547" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD0706130918402548" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD0706130918402549" class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr id = "AD0706130918402550">
+<x:td id = "AD0706130918402551" class = "bleft btop bright bbottom ">18 APCH</x:td>
+<x:td id = "AD0706130918402552" class = "bleft btop bright bbottom ">VOR antenna<x:br id = "AD10042315031523"/>108 M<x:br id = "AD10042315031524"/>Lighted</x:td>
+<x:td id = "AD0706130918402553" class = "bleft btop bright bbottom ">359<x:br id = "AD10042315031525"/>300 M<x:br id = "AD10042315031526"/>FM THR</x:td>
+<x:td id = "AD0706130918402554" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD0706130918402555" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD0706130918402556" class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr id = "AD10042315031527">
+<x:td id = "AD10042315031528" class = "bleft btop bright bbottom ">GRASS/APCH</x:td>
+<x:td id = "AD10042315031529" class = "bleft btop bright bbottom ">chimney<x:br id = "AD1004231429590" Updated = "No"/>188 M<x:br id = "AD1004231430120" Updated = "No"/>Lighted</x:td>
+<x:td id = "AD10042315031531" class = "bleft btop bright bbottom ">158<x:br id = "AD1004231430500" Updated = "No"/>1840 M<x:br id = "AD1004231431000" Updated = "No"/>FM THR</x:td>
+<x:td id = "AD10042315031533" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD10042315031535" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD10042315031537" class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr id = "AD10042315031538">
+<x:td id = "AD10042315031539" class = "bleft btop bright bbottom ">GRASS/APCH</x:td>
+<x:td id = "AD10042315031541" class = "bleft btop bright bbottom ">broadcasting antenna<x:br id = "AD1004231432020" Updated = "No"/>233 M<x:br id = "AD1004231432120" Updated = "No"/>Lighted</x:td>
+<x:td id = "AD10042315031543" class = "bleft btop bright bbottom ">142<x:br id = "AD1004231432400" Updated = "No"/>7500 M<x:br id = "AD1004231432500" Updated = "No"/>FM THR</x:td>
+<x:td id = "AD10042315031545" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD10042315031547" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD10042315031549" class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr id = "AD10042315031550">
+<x:td id = "AD10042315031551" class = "bleft btop bright bbottom ">GRASS/APCH</x:td>
+<x:td id = "AD10042315031553" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD10042315031555" class = "bleft btop bright bbottom "></x:td>
+<x:td id = "AD10042315031557" class = "bleft btop bright bbottom ">broadcasting antenna<x:br id = "AD1004231433450" Updated = "No"/>233 M<x:br id = "AD1004231434020" Updated = "No"/>Lighted</x:td>
+<x:td id = "AD10042315031558" class = "bleft btop bright bbottom ">142<x:br id = "AD1004231434350" Updated = "No"/>7500 M<x:br id = "AD1004231434460" Updated = "No"/>FM THR</x:td>
+<x:td id = "AD10042315031560" class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+</x:tbody>
+</x:table></e:AD-2.10><?FM MARKER [FrameAPS Content] PU-2.1,14973459,30673073?>
+
+<?FM MARKER [FrameAPS Content] PM-3.1,557313,31512407?>
+<e:AD-2.11 id = "AD08121707230023"><e:Title id = "AD08121707230124">METEOROLOGICAL INFORMATION PROVIDED</e:Title><x:table id = "AD0706130918402559" frame = "border" align = "center">
+<x:tbody id = "AD0706130918402560">
+<x:tr id = "AD0706130918402561">
+<x:td id = "AD0706130918402562" class = "bleft btop bright bbottom " align = "center">1</x:td>
+<x:td id = "AD0706130918402563" class = "bleft btop bright bbottom ">Associated MET Office</x:td>
+<x:td id = "AD0706130918402564" class = "bleft btop bright bbottom ">National Meteorological Service, Aeronautical Meteorological Centre</x:td>
+</x:tr>
+<x:tr id = "AD0706130918402565">
+<x:td id = "AD0706130918402566" class = "bleft btop bright bbottom " align = "center">2</x:td>
+<x:td id = "AD0706130918402567" class = "bleft btop bright bbottom ">Hours of service</x:td>
+<x:td id = "AD0706130918402568" class = "bleft btop bright bbottom ">H24</x:td>
+</x:tr>
+<x:tr id = "AD0706130918402569">
+<x:td id = "AD0706130918402570" class = "bleft btop bright bbottom " align = "center">3</x:td>
+<x:td id = "AD0706130918402571" class = "bleft btop bright bbottom ">Office responsible for TAF preparation Periods of validity</x:td>
+<x:td id = "AD0706130918402572" class = "bleft btop bright bbottom ">National Meteorological Service, Aeronautical Meteorological Centre
+TAF 9 HR on request</x:td>
+</x:tr>
+<x:tr id = "AD0706130918402573">
+<x:td id = "AD0706130918402574" class = "bleft btop bright bbottom " align = "center">4</x:td>
+<x:td id = "AD0706130918402575" class = "bleft btop bright bbottom ">Type of landing forecast<x:p id = "AD0706130918402577" class = "Body">Interval of issuance</x:p></x:td>
+<x:td id = "AD0706130918402578" class = "bleft btop bright bbottom ">Nil</x:td>
+</x:tr>
+<x:tr id = "AD0706130918402579">
+<x:td id = "AD0706130918402580" class = "bleft btop bright bbottom " align = "center">5</x:td>
+<x:td id = "AD0706130918402581" class = "bleft btop bright bbottom ">Briefing/consultation provided</x:td>
+<x:td id = "AD0706130918402582" class = "bleft btop bright bbottom ">Consultation via phone, fax or telex. <x:a id = "AD0706130918402584" href = "LH-GEN-3.5-en-HU.html#GEN-3.5">See GEN 3.5</x:a></x:td>
+</x:tr>
+<x:tr id = "AD0706130918402586">
+<x:td id = "AD0706130918402587" class = "bleft btop bright bbottom " align = "center">6</x:td>
+<x:td id = "AD0706130918402588" class = "bleft btop bright bbottom ">Flight documentation<x:p id = "AD0706130918402590" class = "Body">Language(s) used</x:p></x:td>
+<x:td id = "AD0706130918402591" class = "bleft btop bright bbottom ">Charts, abbreviated plain language text
+Hungarian, English<?FM MARKER [FrameAPS Content] CU-3.1,5106944,1376256?></x:td>
+</x:tr>
+<x:tr id = "AD0706130918402592">
+<x:td id = "AD0706130918402593" class = "bleft btop bright bbottom " align = "center"><?FM MARKER [FrameAPS Content] CM-4.1,765114,655360?>7</x:td>
+<x:td id = "AD0706130918402594" class = "bleft btop bright bbottom ">Charts and other information available for briefing or consultation</x:td>
+<x:td id = "AD0706130918402595" class = "bleft btop bright bbottom ">Aerodrome reports and broadcasts for EUR. Area forecasts, met. observations and warnings in Budapest FIR.</x:td>
+</x:tr>
+<x:tr id = "AD0706130918402596">
+<x:td id = "AD0706130918402597" class = "bleft btop bright bbottom " align = "center">8</x:td>
+<x:td id = "AD0706130918402598" class = "bleft btop bright bbottom ">Supplementary equipment available for providing information</x:td>
+<x:td id = "AD0706130918402599" class = "bleft btop bright bbottom ">Nil</x:td>
+</x:tr>
+<x:tr id = "AD0706130918402600">
+<x:td id = "AD0706130918402601" class = "bleft btop bright bbottom " align = "center">9</x:td>
+<x:td id = "AD0706130918402602" class = "bleft btop bright bbottom ">ATS Units provided with information</x:td>
+<x:td id = "AD0706130918402603" class = "bleft btop bright bbottom ">Budapest FIC</x:td>
+</x:tr>
+<x:tr id = "AD0706130918402604">
+<x:td id = "AD0706130918402605" class = "bleft btop bright bbottom " align = "center">10</x:td>
+<x:td id = "AD0706130918402606" class = "bleft btop bright bbottom ">Additional information</x:td>
+<x:td id = "AD0706130918402607" class = "bleft btop bright bbottom ">Nil</x:td>
+</x:tr>
+</x:tbody>
+</x:table></e:AD-2.11><?FM MARKER [FrameAPS Content] PU-3.1,21693939,31512407?>
+
+<?FM MARKER [FrameAPS Content] PM-4.1,557313,8247127?>
+<e:AD-2.12 id = "AD08121707230129"><e:Title id = "AD08121707230130">RUNWAY PHYSICAL CHARACTERISTICS</e:Title><x:table id = "AD0706130918402610" frame = "border" align = "center">
+<x:thead id = "AD0706130918402611">
+<x:tr id = "AD0706130918402612" class = "Table-row-type-1">
+<x:th id = "AD0706130918402613" class = "bleft btop bbottom "><x:strong id = "AD07073107462816" class = "Cell-heading">Designations RWY NR</x:strong></x:th>
+<x:th id = "AD0706130918402614" class = "btop bbottom "><x:strong id = "AD07073107463317" class = "Cell-heading">TRUE BRG</x:strong></x:th>
+<x:th id = "AD0706130918402615" class = "btop bbottom "><x:strong id = "AD07073107463818" class = "Cell-heading">Dimensions of RWY (M)</x:strong></x:th>
+<x:th id = "AD0706130918402616" class = "btop bbottom "><x:strong id = "AD07073107464319" class = "Cell-heading">Strength (PCN) and surface of RWY and SWY</x:strong></x:th>
+<x:th id = "AD0706130918402617" class = "btop bbottom "><x:strong id = "AD07073107210220" class = "Cell-heading">THR coordinates</x:strong><x:br id = "AD0812080812390"/>RWY end coordinates<x:br id = "AD0812080813071" Updated = "No"/>THR geoid undulation</x:th>
+<x:th id = "AD0706130918402618" class = "btop bright bbottom "><x:strong id = "AD07073107465321" class = "Cell-heading">THR elevation and highest elevation of TDZ of precision APP RWY</x:strong></x:th>
+</x:tr>
+<x:tr id = "AD0706130918402619" class = "Table-row-type-2" align = "center" valign = "middle">
+<x:th id = "AD0706130918402620" class = "bleft btop bbottom "><x:strong id = "AD07073107465822" class = "Cell-heading">1</x:strong></x:th>
+<x:th id = "AD0706130918402621" class = "btop bbottom "><x:strong id = "AD07073107470123" class = "Cell-heading">2</x:strong></x:th>
+<x:th id = "AD0706130918402622" class = "btop bbottom "><x:strong id = "AD07073107470624" class = "Cell-heading">3</x:strong></x:th>
+<x:th id = "AD0706130918402623" class = "btop bbottom "><x:strong id = "AD07073107471025" class = "Cell-heading">4</x:strong></x:th>
+<x:th id = "AD0706130918402624" class = "btop bbottom "><x:strong id = "AD07073107471426" class = "Cell-heading">5</x:strong></x:th>
+<x:th id = "AD0706130918402625" class = "btop bright bbottom "><x:strong id = "AD07073107471927" class = "Cell-heading">6</x:strong></x:th>
+</x:tr>
+</x:thead>
+<x:tbody id = "AD0706130918402626">
+<x:tr id = "AD0706130918412655">
+<x:td id = "AD0706130918412656" class = "bleft btop bbottom ">18</x:td>
+<x:td id = "AD0706130918412657" class = "btop bbottom ">181.32° GEO</x:td>
+<x:td id = "AD0706130918412658" class = "btop bbottom ">1000 x 20</x:td>
+<x:td id = "AD0706130918412659" class = "btop bbottom ">20/F/C/W/U<x:br id = "AD1004151424160"/>ASPH</x:td>
+<x:td id = "AD0706130918412660" class = "btop bbottom ">475918.65N 0214132.88E<x:br id = "AD1004151504510"/>475846.22N 0214131.77E<x:br id = "AD1004151511380"/>NA</x:td>
+<x:td id = "AD0706130918412661" class = "btop bright bbottom ">103 M</x:td>
+</x:tr>
+<x:tr id = "AD0706130918412669">
+<x:td id = "AD0706130918412670" class = "bleft btop bbottom ">36</x:td>
+<x:td id = "AD0706130918412671" class = "btop bbottom ">1.32° GEO</x:td>
+<x:td id = "AD0706130918412672" class = "btop bbottom ">1000 x 20</x:td>
+<x:td id = "AD0706130918412673" class = "btop bbottom ">20/F/C/W/U<x:br id = "AD10042315031562"/>ASPH</x:td>
+<x:td id = "AD0706130918412674" class = "btop bbottom ">475846.22N 0214131.77E<x:br id = "AD1004151519310"/>475918.65N 0214132.88E<x:br id = "AD1004151519590"/>NA</x:td>
+<x:td id = "AD0706130918412675" class = "btop bright bbottom ">103 M</x:td>
+</x:tr>
+<x:tr id = "AD0706130918412683" class = "Table-row-type-1">
+<x:th id = "AD0706130918412684" class = "bleft btop bbottom "><x:strong id = "AD07073107472828" class = "Cell-heading">Slope of <x:br id = "AD07073108484568"/><x:strong id = "AD0706130918412686">RWY - SWY</x:strong></x:strong></x:th>
+<x:th id = "AD0706130918412687" class = "btop bbottom "><x:strong id = "AD07073107473329" class = "Cell-heading">SWY dimensions (M)</x:strong></x:th>
+<x:th id = "AD0706130918412688" class = "btop bbottom "><x:strong id = "AD07073107473730" class = "Cell-heading">CWY dimensions (M)</x:strong></x:th>
+<x:th id = "AD0706130918412689" class = "btop bbottom "><x:strong id = "AD07073107474331" class = "Cell-heading">Strip dimensions (M)</x:strong></x:th>
+<x:th id = "AD0706130918412690" class = "btop bbottom "><x:strong id = "AD07073107474832" class = "Cell-heading">OFZ</x:strong></x:th>
+<x:th id = "AD0706130918412691" class = "btop bright bbottom "><x:strong id = "AD07073107475233" class = "Cell-heading">Remarks</x:strong></x:th>
+</x:tr>
+<x:tr id = "AD0706130918412692" class = "Table-row-type-2" align = "center" valign = "middle">
+<x:th id = "AD0706130918412693" class = "bleft btop bbottom "><x:strong id = "AD07073107475734" class = "Cell-heading">7</x:strong></x:th>
+<x:th id = "AD0706130918412694" class = "btop bbottom "><x:strong id = "AD07073107480135" class = "Cell-heading">8</x:strong></x:th>
+<x:th id = "AD0706130918412695" class = "btop bbottom "><x:strong id = "AD07073107480536" class = "Cell-heading">9</x:strong></x:th>
+<x:th id = "AD0706130918412696" class = "btop bbottom "><x:strong id = "AD07073107480937" class = "Cell-heading">10</x:strong></x:th>
+<x:th id = "AD0706130918412697" class = "btop bbottom "><x:strong id = "AD07073107481338" class = "Cell-heading">11</x:strong></x:th>
+<x:th id = "AD0706130918412698" class = "btop bright bbottom "><x:strong id = "AD07073107481739" class = "Cell-heading">12</x:strong></x:th>
+</x:tr>
+<x:tr id = "AD0706130918412713">
+<x:td id = "AD0706130918412714" class = "bleft btop bbottom ">0%</x:td>
+<x:td id = "AD0706130918412715" class = "btop bbottom "></x:td>
+<x:td id = "AD0706130918412716" class = "btop bbottom "></x:td>
+<x:td id = "AD0706130918412717" class = "btop bbottom "></x:td>
+<x:td id = "AD0706130918412718" class = "btop bbottom "></x:td>
+<x:td id = "AD0706130918412719" class = "btop bright bbottom ">Nil</x:td>
+</x:tr>
+<x:tr id = "AD0706130918412720">
+<x:td id = "AD0706130918412721" class = "bleft btop bbottom ">0%</x:td>
+<x:td id = "AD0706130918412722" class = "btop bbottom "></x:td>
+<x:td id = "AD0706130918412723" class = "btop bbottom "></x:td>
+<x:td id = "AD0706130918412724" class = "btop bbottom "></x:td>
+<x:td id = "AD0706130918412725" class = "btop bbottom "></x:td>
+<x:td id = "AD0706130918412726" class = "btop bright bbottom ">Nil</x:td>
+</x:tr>
+</x:tbody>
+</x:table></e:AD-2.12>
+<e:AD-2.13 id = "AD08121707230132"><e:Title id = "AD08121707230133">DECLARED DISTANCES</e:Title><x:table id = "AD0706130918412729" frame = "border" align = "center">
+<x:thead id = "AD0706130918412730">
+<x:tr id = "AD0706130918412731" class = "Table-row-type-1" align = "center" valign = "middle">
+<x:th id = "AD0706130918412732" class = "bleft btop bbottom "><x:strong id = "AD07073107483240" class = "Cell-heading">RWY Designator</x:strong></x:th>
+<x:th id = "AD0706130918412733" class = "btop bbottom "><x:strong id = "AD07073107483641" class = "Cell-heading">TORA (M)</x:strong></x:th>
+<x:th id = "AD0706130918412734" class = "btop bbottom "><x:strong id = "AD07073107484142" class = "Cell-heading">TODA (M)</x:strong></x:th>
+<x:th id = "AD0706130918412735" class = "btop bbottom "><x:strong id = "AD07073107484443" class = "Cell-heading">ASDA (M)</x:strong></x:th>
+<x:th id = "AD0706130918412736" class = "btop bbottom "><x:strong id = "AD07073107484944" class = "Cell-heading">LDA (M)</x:strong></x:th>
+<x:th id = "AD0706130918412737" class = "btop bright bbottom "><x:strong id = "AD07073107485245" class = "Cell-heading">Remarks</x:strong></x:th>
+</x:tr>
+<x:tr id = "AD0706130918412738" class = "Table-row-type-2" align = "center" valign = "middle">
+<x:th id = "AD0706130918412739" class = "bleft btop bbottom "><x:strong id = "AD07073107485646" class = "Cell-heading">1</x:strong></x:th>
+<x:th id = "AD0706130918412740" class = "btop bbottom "><x:strong id = "AD07073107490047" class = "Cell-heading">2</x:strong></x:th>
+<x:th id = "AD0706130918412741" class = "btop bbottom "><x:strong id = "AD07073107490348" class = "Cell-heading">3</x:strong></x:th>
+<x:th id = "AD0706130918412742" class = "btop bbottom "><x:strong id = "AD07073107490649" class = "Cell-heading">4</x:strong></x:th>
+<x:th id = "AD0706130918412743" class = "btop bbottom "><x:strong id = "AD07073107490950" class = "Cell-heading">5</x:strong></x:th>
+<x:th id = "AD0706130918412744" class = "btop bright bbottom "><x:strong id = "AD07073107491351" class = "Cell-heading">6</x:strong></x:th>
+</x:tr>
+</x:thead>
+<x:tbody id = "AD0706130918412745" align = "center" valign = "middle">
+<x:tr id = "AD0706130918412760">
+<x:td id = "AD0706130918412761" class = "bleft btop bright bbottom ">18</x:td>
+<x:td id = "AD0706130918412762" class = "bleft btop bright bbottom ">1000</x:td>
+<x:td id = "AD0706130918412763" class = "bleft btop bright bbottom ">1000</x:td>
+<x:td id = "AD0706130918412764" class = "bleft btop bright bbottom ">1000</x:td>
+<x:td id = "AD0706130918412765" class = "bleft btop bright bbottom ">1000</x:td>
+<x:td id = "AD0706130918412766" class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr id = "AD0706130918412767">
+<x:td id = "AD0706130918412768" class = "bleft btop bright bbottom ">36</x:td>
+<x:td id = "AD0706130918412769" class = "bleft btop bright bbottom ">1000</x:td>
+<x:td id = "AD0706130918412770" class = "bleft btop bright bbottom ">1000</x:td>
+<x:td id = "AD0706130918412771" class = "bleft btop bright bbottom ">1000</x:td>
+<x:td id = "AD0706130918412772" class = "bleft btop bright bbottom ">1000</x:td>
+<x:td id = "AD0706130918412773" class = "bleft btop bright bbottom "><?FM MARKER [FrameAPS Content] CU-4.1,2631760,655360?></x:td>
+</x:tr>
+</x:tbody>
+</x:table></e:AD-2.13><?FM MARKER [FrameAPS Content] PU-4.1,13933059,27013125?>
+
+<?FM MARKER [FrameAPS Content] PM-5.1,557313,1595223?>
+<e:AD-2.14 id = "AD08121707230134"><e:Title id = "AD08121707230135">APPROACH AND RUNWAY LIGHTING</e:Title><x:table id = "AD0706130918412776" frame = "border" align = "center">
+<x:thead id = "AD0706130918412777">
+<x:tr id = "AD0706130918412778" class = "Table-row-type-1" valign = "middle">
+<x:th id = "AD0706130918412779" class = "bleft btop bbottom "><?FM MARKER [FrameAPS Content] CM-5.1,1077758,2457600?><x:strong id = "AD07073107494052">RWY Designator</x:strong></x:th>
+<x:th id = "AD0706130918412780" class = "btop bbottom "><x:strong id = "AD07073107494453" class = "Cell-heading">APCH LGT type LEN INTST</x:strong></x:th>
+<x:th id = "AD0706130918412781" class = "btop bbottom "><x:strong id = "AD07073107494854" class = "Cell-heading">THR LGT colour WBAR</x:strong></x:th>
+<x:th id = "AD0706130918412782" class = "btop bbottom "><x:strong id = "AD07073107495255" class = "Cell-heading">VASIS (MEHT) PAPI</x:strong></x:th>
+<x:th id = "AD0706130918412783" class = "btop bbottom "><x:strong id = "AD07073107495656" class = "Cell-heading">TDZ LGT LEN</x:strong></x:th>
+<x:th id = "AD0706130918412784" class = "btop bbottom "><x:strong id = "AD07073107500057" class = "Cell-heading">RWY Centre Line LGT Length, spacing, colour, INTST</x:strong></x:th>
+<x:th id = "AD0706130918412785" class = "btop bbottom "><x:strong id = "AD07073107512658" class = "Cell-heading">RWY edge LGT LEN, spacing colour INTST</x:strong></x:th>
+<x:th id = "AD0706130918412786" class = "btop bbottom "><x:strong id = "AD07073107513059" class = "Cell-heading">RWY End LGT colour WBAR</x:strong></x:th>
+<x:th id = "AD0706130918412787" class = "btop bbottom "><x:strong id = "AD07073107513560" class = "Cell-heading">SWY LGT LEN (M) colour</x:strong></x:th>
+<x:th id = "AD0706130918412788" class = "btop bright bbottom "><x:strong id = "AD07073107514261" class = "Cell-heading">Remarks</x:strong></x:th>
+</x:tr>
+<x:tr id = "AD0706130918412789" class = "Table-row-type-2" align = "center" valign = "middle">
+<x:th id = "AD0706130918412790" class = "bleft btop bbottom "><x:strong id = "AD07073107521862" class = "Cell-heading">1</x:strong></x:th>
+<x:th id = "AD0706130918412791" class = "btop bbottom "><x:strong id = "AD07073107522263" class = "Cell-heading">2</x:strong></x:th>
+<x:th id = "AD0706130918412792" class = "btop bbottom "><x:strong id = "AD07073107522764" class = "Cell-heading">3</x:strong></x:th>
+<x:th id = "AD0706130918412793" class = "btop bbottom "><x:strong id = "AD07073107523165" class = "Cell-heading">4</x:strong></x:th>
+<x:th id = "AD0706130918412794" class = "btop bbottom "><x:strong id = "AD07073107523666" class = "Cell-heading">5</x:strong></x:th>
+<x:th id = "AD0706130918412795" class = "btop bbottom "><x:strong id = "AD07073107524067" class = "Cell-heading">6</x:strong></x:th>
+<x:th id = "AD0706130918412796" class = "btop bbottom "><x:strong id = "AD07073107524568" class = "Cell-heading">7</x:strong></x:th>
+<x:th id = "AD0706130918412797" class = "btop bbottom "><x:strong id = "AD07073107524969" class = "Cell-heading">8</x:strong></x:th>
+<x:th id = "AD0706130918412798" class = "btop bbottom "><x:strong id = "AD07073107525370" class = "Cell-heading">9</x:strong></x:th>
+<x:th id = "AD0706130918412799" class = "btop bright bbottom "><x:strong id = "AD07073107525871" class = "Cell-heading">10</x:strong></x:th>
+</x:tr>
+</x:thead>
+<x:tbody id = "AD0706130918412800">
+<x:tr id = "AD0706130918422823">
+<x:td id = "AD0706130918422824" class = "bleft btop bbottom ">18</x:td>
+<x:td id = "AD0706130918422825" class = "btop bbottom ">E - SALS<x:br id = "AD1004190954070"/>420 M<x:br id = "AD1004190955530"/>LIM</x:td>
+<x:td id = "AD0706130918422826" class = "btop bbottom ">GRN</x:td>
+<x:td id = "AD0706130918422827" class = "btop bbottom ">PAPI<x:br id = "AD1004161004270"/>3.2°<x:br id = "AD1004161001370"/>(8.62 M)</x:td>
+<x:td id = "AD0706130918422828" class = "btop bbottom ">Nil</x:td>
+<x:td id = "AD0706130918422829" class = "btop bbottom ">Nil</x:td>
+<x:td id = "AD0706130918422830" class = "btop bbottom ">1000 M 60 M<x:br id = "AD1004160914490"/>WHI</x:td>
+<x:td id = "AD0706130918422831" class = "btop bbottom ">RED</x:td>
+<x:td id = "AD0706130918422832" class = "btop bbottom ">Nil</x:td>
+<x:td id = "AD0706130918422833" class = "btop bright bbottom ">Nil</x:td>
+</x:tr>
+<x:tr id = "AD0706130918422834">
+<x:td id = "AD0706130918422835" class = "bleft btop bbottom ">36</x:td>
+<x:td id = "AD0706130918422836" class = "btop bbottom ">E - SALS<x:br id = "AD1004190956330"/>420 M<x:br id = "AD1004190958370"/>LIM<x:br id = "AD1004191001440"/>Sequenced flashing</x:td>
+<x:td id = "AD0706130918422837" class = "btop bbottom ">GRN</x:td>
+<x:td id = "AD0706130918422838" class = "btop bbottom ">PAPI<x:br id = "AD1004161008120"/>3.2°<x:br id = "AD1004161009320"/>(8.62 M)</x:td>
+<x:td id = "AD0706130918422839" class = "btop bbottom ">Nil</x:td>
+<x:td id = "AD0706130918422840" class = "btop bbottom ">Nil</x:td>
+<x:td id = "AD0706130918422841" class = "btop bbottom ">1000 M 60 M<x:br id = "AD1004160925400"/>WHI</x:td>
+<x:td id = "AD0706130918422842" class = "btop bbottom ">RED</x:td>
+<x:td id = "AD0706130918422843" class = "btop bbottom ">Nil</x:td>
+<x:td id = "AD0706130918422844" class = "btop bright bbottom ">Nil</x:td>
+</x:tr>
+</x:tbody>
+</x:table></e:AD-2.14>
+<e:AD-2.15 id = "AD08121707230136"><e:Title id = "AD08121707230137">OTHER LIGHTING, SECONDARY POWER SUPPLY</e:Title><x:table id = "AD0706130918422847" frame = "border" align = "center">
+<x:tbody id = "AD0706130918422848">
+<x:tr id = "AD0706130918422849">
+<x:td id = "AD0706130918422850" class = "bleft btop bright bbottom " align = "center">1</x:td>
+<x:td id = "AD0706130918422851" class = "bleft btop bright bbottom ">ABN/IBN location, characteristics and hours of operation</x:td>
+<x:td id = "AD0706130918422852" class = "bleft btop bright bbottom ">Nil</x:td>
+</x:tr>
+<x:tr id = "AD0706130918422853">
+<x:td id = "AD0706130918422854" class = "bleft btop bright bbottom " align = "center">2</x:td>
+<x:td id = "AD0706130918422855" class = "bleft btop bright bbottom ">LDI location and LGT Anemometer location and LGT</x:td>
+<x:td id = "AD0706130918422856" class = "bleft btop bright bbottom "></x:td>
+</x:tr>
+<x:tr id = "AD0706130918422857">
+<x:td id = "AD0706130918422858" class = "bleft btop bright bbottom " align = "center">3</x:td>
+<x:td id = "AD0706130918422859" class = "bleft btop bright bbottom ">TWY edge and centre line lighting</x:td>
+<x:td id = "AD0706130918422860" class = "bleft btop bright bbottom ">Nil</x:td>
+</x:tr>
+<x:tr id = "AD0706130918422861">
+<x:td id = "AD0706130918422862" class = "bleft btop bright bbottom " align = "center">4</x:td>
+<x:td id = "AD0706130918422863" class = "bleft btop bright bbottom ">Secondary power supply</x:td>
+<x:td id = "AD0706130918422864" class = "bleft btop bright bbottom ">Yes</x:td>
+</x:tr>
+<x:tr id = "AD0706130918422865">
+<x:td id = "AD0706130918422866" class = "bleft btop bright bbottom " align = "center">5</x:td>
+<x:td id = "AD0706130918422867" class = "bleft btop bright bbottom ">Remarks</x:td>
+<x:td id = "AD0706130918422868" class = "bleft btop bright bbottom ">Nil</x:td>
+</x:tr>
+</x:tbody>
+</x:table></e:AD-2.15>
+<e:AD-2.17 id = "AD08121707230140"><e:Title id = "AD08121707230141">ATS AIRSPACE</e:Title><x:table id = "AD0706130918422903" frame = "border" align = "center">
+<x:tbody id = "AD0706130918422904">
+<x:tr id = "AD0706130918422905">
+<x:td id = "AD0706130918422906" class = "bleft btop bright bbottom " align = "center">1</x:td>
+<x:td id = "AD0706130918422907" class = "bleft btop bright bbottom ">Designation and lateral limits</x:td>
+<x:td id = "AD0706130918422908" class = "bleft btop bright bbottom ">Nyíregyháza TIZ<x:br id = "AD1004191008040"/>A circle with 10 KM radius centred at 475856N 0214100E</x:td>
+</x:tr>
+<x:tr id = "AD0706130918422909">
+<x:td id = "AD0706130918422910" class = "bleft btop bright bbottom " align = "center">2</x:td>
+<x:td id = "AD0706130918422911" class = "bleft btop bright bbottom ">Vertical limits</x:td>
+<x:td id = "AD0706130918422912" class = "bleft btop bright bbottom ">4000 FT ALT GND</x:td>
+</x:tr>
+<x:tr id = "AD0706130918422913">
+<x:td id = "AD0706130918422914" class = "bleft btop bright bbottom " align = "center">3</x:td>
+<x:td id = "AD0706130918422915" class = "bleft btop bright bbottom ">Airspace classification</x:td>
+<x:td id = "AD0706130918422916" class = "bleft btop bright bbottom ">F</x:td>
+</x:tr>
+<x:tr id = "AD0706130918422917">
+<x:td id = "AD0706130918422918" class = "bleft btop bright bbottom " align = "center">4</x:td>
+<x:td id = "AD0706130918422919" class = "bleft btop bright bbottom ">ATS unit call sign <x:p id = "AD0706130918422921" class = "Body">Language(s)</x:p></x:td>
+<x:td id = "AD0706130918422922" class = "bleft btop bright bbottom ">Nyíregyháza Info
+English, Hungarian</x:td>
+</x:tr>
+<x:tr id = "AD0706130918422923">
+<x:td id = "AD0706130918422924" class = "bleft btop bright bbottom " align = "center">5</x:td>
+<x:td id = "AD0706130918422925" class = "bleft btop bright bbottom ">Transition altitude</x:td>
+<x:td id = "AD0706130918422926" class = "bleft btop bright bbottom ">9000 FT </x:td>
+</x:tr>
+<x:tr id = "AD0706130918422927">
+<x:td id = "AD0706130918422928" class = "bleft btop bright bbottom " align = "center">6</x:td>
+<x:td id = "AD0706130918422929" class = "bleft btop bright bbottom ">Remarks</x:td>
+<x:td id = "AD0706130918422930" class = "bleft btop bright bbottom ">Nil<?FM MARKER [FrameAPS Content] CU-5.1,817846,655360?></x:td>
+</x:tr>
+</x:tbody>
+</x:table></e:AD-2.17><?FM MARKER [FrameAPS Content] PU-5.1,10933539,30804147?>
+
+<?FM MARKER [FrameAPS Content] PM-6.1,557313,1595223?>
+<e:AD-2.18 id = "AD08121707230143"><e:Title id = "AD08121707230144">ATS COMMUNICATION FACILITIES </e:Title><x:table id = "AD0706130918422933" frame = "border" align = "center">
+<x:thead id = "AD0706130918422934">
+<x:tr id = "AD0706130918422935" class = "Table-row-type-1">
+<x:th id = "AD0706130918422936" class = "bleft btop bbottom "><?FM MARKER [FrameAPS Content] CM-6.1,1490692,655360?><x:strong id = "AD07073107531472">Service designation</x:strong></x:th>
+<x:th id = "AD0706130918422937" class = "btop bbottom "><x:strong id = "AD07073107531873" class = "Cell-heading">Call sign</x:strong></x:th>
+<x:th id = "AD0706130918422938" class = "btop bbottom "><x:strong id = "AD07073107532274" class = "Cell-heading">Frequency</x:strong></x:th>
+<x:th id = "AD0706130918422939" class = "btop bbottom "><x:strong id = "AD07073107532975" class = "Cell-heading">Hours of operation</x:strong></x:th>
+<x:th id = "AD0706130918422940" class = "btop bright bbottom "><x:strong id = "AD07073107533476" class = "Cell-heading">Remarks</x:strong></x:th>
+</x:tr>
+<x:tr id = "AD0706130918422941" class = "Table-row-type-2" align = "center" valign = "middle">
+<x:th id = "AD0706130918422942" class = "bleft btop bbottom "><x:strong id = "AD07073107533777" class = "Cell-heading">1</x:strong></x:th>
+<x:th id = "AD0706130918422943" class = "btop bbottom "><x:strong id = "AD07073107534378" class = "Cell-heading">2</x:strong></x:th>
+<x:th id = "AD0706130918422944" class = "btop bbottom "><x:strong id = "AD07073107534779" class = "Cell-heading">3</x:strong></x:th>
+<x:th id = "AD0706130918422945" class = "btop bbottom "><x:strong id = "AD07073107535080" class = "Cell-heading">4</x:strong></x:th>
+<x:th id = "AD0706130918422946" class = "btop bright bbottom "><x:strong id = "AD07073107535481" class = "Cell-heading">5</x:strong></x:th>
+</x:tr>
+</x:thead>
+<x:tbody id = "AD0706130918422947">
+<x:tr id = "AD0706130918422948">
+<x:td id = "AD0706130918422949" class = "bleft btop bbottom ">AFIS</x:td>
+<x:td id = "AD0706130918422950" class = "btop bbottom ">NYIREGYHAZA INFO</x:td>
+<x:td id = "AD0706130918422951" class = "btop bbottom ">127.6 MHZ</x:td>
+<x:td id = "AD0706130918422952" class = "btop bbottom ">as AD</x:td>
+<x:td id = "AD0706130918422953" class = "btop bright bbottom ">Nil</x:td>
+</x:tr>
+</x:tbody>
+</x:table></e:AD-2.18>
+<e:AD-2.19 id = "AD08121707230145"><e:Title id = "AD08121707230146">RADIO NAVIGATION/LANDING FACILITIES</e:Title><x:table id = "AD0706130918422956" frame = "border" align = "center">
+<x:thead id = "AD0706130918432957">
+<x:tr id = "AD0706130923265020" class = "Table-row-type-1">
+<x:th id = "AD0706130923265021" class = "bleft btop bbottom "><x:strong id = "AD07073107292782" class = "Cell-heading">Type of aid<x:br id = "AD0907101042030"/>MAG VAR<x:br id = "AD0907101042551"/>Type of supported OP<x:br id = "AD0907101045112"/>(for VOR/ILS/MLS, give declination)</x:strong></x:th>
+<x:th id = "AD0706130923265022" class = "btop bbottom "><x:strong id = "AD07073107293383" class = "Cell-heading">ID</x:strong></x:th>
+<x:th id = "AD0706130923265023" class = "btop bbottom "><x:strong id = "AD07073107293884" class = "Cell-heading">Frequency</x:strong></x:th>
+<x:th id = "AD0706130923265024" class = "btop bbottom "><x:strong id = "AD07073107294385" class = "Cell-heading">Hours of operation</x:strong></x:th>
+<x:th id = "AD0706130923265025" class = "btop bbottom "><x:strong id = "AD07073107294986" class = "Cell-heading">Position of transmitting antenna coordinates</x:strong></x:th>
+<x:th id = "AD0706130923265026" class = "btop bbottom "><x:strong id = "AD07073107295587" class = "Cell-heading">Elevation of DME transmitting antenna</x:strong></x:th>
+<x:th id = "AD0706130923265027" class = "btop bright bbottom "><x:strong id = "AD07073107300188" class = "Cell-heading">Remarks</x:strong></x:th>
+</x:tr>
+<x:tr id = "AD0706130923265028" class = "Table-row-type-2" align = "center" valign = "middle">
+<x:th id = "AD0706130923265029" class = "bleft btop bbottom "><x:strong id = "AD07073107301089" class = "Cell-heading">1</x:strong></x:th>
+<x:th id = "AD0706130923265030" class = "btop bbottom "><x:strong id = "AD07073107301490" class = "Cell-heading">2</x:strong></x:th>
+<x:th id = "AD0706130923265031" class = "btop bbottom "><x:strong id = "AD07073107301891" class = "Cell-heading">3</x:strong></x:th>
+<x:th id = "AD0706130923265032" class = "btop bbottom "><x:strong id = "AD07073107302292" class = "Cell-heading">4</x:strong></x:th>
+<x:th id = "AD0706130923265033" class = "btop bbottom "><x:strong id = "AD07073107302693" class = "Cell-heading">5</x:strong></x:th>
+<x:th id = "AD0706130923265034" class = "btop bbottom "><x:strong id = "AD07073107303094" class = "Cell-heading">6</x:strong></x:th>
+<x:th id = "AD0706130923265035" class = "btop bright bbottom "><x:strong id = "AD07073107303495" class = "Cell-heading">7</x:strong></x:th>
+</x:tr>
+</x:thead>
+<x:tbody id = "AD0706130918432974">
+<x:tr id = "AD0706130918432975">
+<x:td id = "AD0706130918432976" class = "bleft btop ">L</x:td>
+<x:td id = "AD0706130918432977" class = "btop ">Y</x:td>
+<x:td id = "AD0706130918432978" class = "btop ">346 KHZ</x:td>
+<x:td id = "AD0706130918432979" class = "btop ">H24</x:td>
+<x:td id = "AD0706130918432980" class = "btop ">475805.2N 0214134.4E</x:td>
+<x:td id = "AD0706130918432981" class = "btop "></x:td>
+<x:td id = "AD0706130918432982" class = "btop bright ">1294m from RWY 36 THR</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft ">L</x:td>
+<x:td>NY</x:td>
+<x:td>330 KHZ</x:td>
+<x:td>H24</x:td>
+<x:td>475443.4N 0214121.0E</x:td>
+<x:td></x:td>
+<x:td class = "bright ">7532 M FM RWY 36 THR</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft bbottom ">L</x:td>
+<x:td class = "bbottom ">P</x:td>
+<x:td class = "bbottom ">522 KHZ</x:td>
+<x:td class = "bbottom ">H24</x:td>
+<x:td class = "bbottom ">480005.5N 0214138.5E</x:td>
+<x:td class = "bbottom "></x:td>
+<x:td class = "bright bbottom ">1422 M FM RWY 18 THR</x:td>
+</x:tr>
+<x:tr id = "AD0706130918432983">
+<x:td id = "AD0706130918432984" class = "bleft btop bbottom ">VOR/DME</x:td>
+<x:td id = "AD0706130918432985" class = "btop bbottom ">NYR</x:td>
+<x:td id = "AD0706130918432986" class = "btop bbottom ">116.1 MHZ<x:br id = "AD1005131333120"/>108X</x:td>
+<x:td id = "AD0706130918432987" class = "btop bbottom ">H24</x:td>
+<x:td id = "AD0706130918432988" class = "btop bbottom ">475928.3N 0214133.2E </x:td>
+<x:td id = "AD0706130918432989" class = "btop bbottom "></x:td>
+<x:td id = "AD0706130918432990" class = "btop bright bbottom ">300 M from RWY 18 THR</x:td>
+</x:tr>
+</x:tbody>
+</x:table></e:AD-2.19>
+<e:AD-2.21 id = "AD08121707230149"><e:Title id = "AD08121707230150">NOISE ABATEMENT PROVISIONS</e:Title>
+<x:p id = "AD0706130918432996" class = "Body">Motor planes shall not overfly the town area.</x:p></e:AD-2.21>
+<e:AD-2.22 id = "AD08121707230151"><e:Title id = "AD08121707230152">FLIGHT PROCEDURE</e:Title>
+<x:p id = "AD0706130918432999" class = "Body">Motor planes shall fly left hand traffic pattern in case of 360° landing direction and right hand pattern in case of 180° landing direction.</x:p></e:AD-2.22>
+<e:AD-2.24 id = "AD08121707230155"><e:Title id = "AD08121707230156">CHARTS RELATED TO THE AERODROME</e:Title><x:table id = "AD0706130918433005" frame = "border" align = "center">
+<x:tbody id = "AD0706130918433006">
+<x:tr id = "AD0706130918433007">
+<x:td id = "AD0706130918433008" class = "bleft btop bright bbottom " rowspan = "2" align = "left" valign = "top">AD 2-LHNY-GMC</x:td>
+<x:td id = "AD0706130918433009" class = "bleft btop bright bbottom ">	AERODROME GROUND MOVEMENT CHART - ICAO</x:td>
+</x:tr>
+<x:tr>
+<x:td class = "bleft btop bright bbottom "><e:Graphic-file id = "ADC2010111712473602650000" class = "Cell-body" xlink:show = "replace" xlink:href = "../graphics/eAIP/LH_AD_2_LHNY_GMC_en.pdf" Type = "application/pdf" Page-name = "Aerodrome-chart-1"/></x:td>
+</x:tr>
+</x:tbody>
+</x:table></e:AD-2.24><?FM MARKER [FrameAPS Content] PU-6.1,19973139,39729673?>
+</e:Aerodrome>

@@ -46,9 +46,20 @@ import org.w3c.dom.NodeList;
  */
 public class EAipProcessor {
     /**
+     * The generic prefix for a circle description, the common denominator
+     * for all circle prefixes.
+     */
+    protected static final String CIRCLE_PREFIX_GENERIC = "A circle";
+
+    /**
      * The prefix string for a circle description.
      */
     protected static final String CIRCLE_PREFIX = "A circle radius";
+
+    /**
+     * The prefix string for a circle description.
+     */
+    protected static final String CIRCLE_PREFIX2 = "A circle with";
 
     /**
      * The infix string for a circle description, between radius an center
@@ -67,6 +78,12 @@ public class EAipProcessor {
      * point. note: it's not a typo, this is how it is in the document
      */
     protected static final String CIRCLE_INFIX_SIC2 = "entered on";
+
+    /**
+     * The infix string for a circle description, between radius an center
+     * point.
+     */
+    protected static final String CIRCLE_INFIX_SIC3 = "radius centred at";
 
     /**
      * Convert a latitude string into a latitude value.
@@ -403,30 +420,54 @@ public class EAipProcessor {
         String cd = circleDesc.trim();
 
         Circle circle = new Circle();
+        String prefix = null;
+        String infix  = null;
 
-        int i = cd.indexOf(CIRCLE_PREFIX);
-        int j = cd.indexOf(CIRCLE_INFIX);
-        int infixLen = CIRCLE_INFIX.length();
-        if (i < 0) {
-            throw new ParseException(designator,
-                                     "Circle description missing prefix");
+        // find the prefix string
+        int p = cd.indexOf(CIRCLE_PREFIX);
+        if (p != -1) {
+            prefix = CIRCLE_PREFIX;
+        } else {
+            p = cd.indexOf(CIRCLE_PREFIX2);
+            if (p != -1) {
+                prefix = CIRCLE_PREFIX2;
+            } else {
+                throw new ParseException(designator,
+                                         "Circle description missing prefix");
+            }
         }
-        if (j < 0) {
-            j = cd.indexOf(CIRCLE_INFIX_SIC);
-            infixLen = CIRCLE_INFIX_SIC.length();
-            if (j < 0) {
-                j = cd.indexOf(CIRCLE_INFIX_SIC2);
-                infixLen = CIRCLE_INFIX_SIC2.length();
-                if (j < 0) {
-                    throw new ParseException(designator,
-                                           "Circle description missing infix");
+
+        // find the infix string
+        int i = cd.indexOf(CIRCLE_INFIX);
+        if (i != -1) {
+            infix = CIRCLE_INFIX;
+        } else {
+            i = cd.indexOf(CIRCLE_INFIX_SIC);
+            if (i != -1) {
+                infix = CIRCLE_INFIX_SIC;
+            } else {
+                i = cd.indexOf(CIRCLE_INFIX_SIC2);
+                if (i != -1) {
+                    infix = CIRCLE_INFIX_SIC2;
+                } else {
+                    i = cd.indexOf(CIRCLE_INFIX_SIC3);
+                    if (i != -1) {
+                        infix = CIRCLE_INFIX_SIC3;
+                    } else {
+                        throw new ParseException(designator,
+                                            "Circle description missing infix");
+                    }
                 }
             }
         }
-        String radiusStr = cd.substring(i + CIRCLE_PREFIX.length(), j).trim();
+
+        int prefixLen = prefix.length();
+        int infixLen  = infix.length();
+
+        String radiusStr = cd.substring(p + prefixLen, i).trim();
         circle.setRadius(processDistance(radiusStr));
 
-        String centerStr = cd.substring(j + infixLen + 1).trim();
+        String centerStr = cd.substring(i + infixLen + 1).trim();
         circle.setCenter(processPoint(designator, centerStr));
 
         return circle;
