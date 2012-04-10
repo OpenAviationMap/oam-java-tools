@@ -320,7 +320,7 @@ public class EAipProcessor {
 
         Elevation elevation = new Elevation();
 
-        if ("GND".equals(ed) || "0 FT".equals(ed)) {
+        if ("GND".equals(ed) || "SFC".equals(ed) || "0 FT".equals(ed)) {
             elevation.setElevation(0);
             elevation.setReference(ElevationReference.SFC);
             elevation.setUom(UOM.FT);

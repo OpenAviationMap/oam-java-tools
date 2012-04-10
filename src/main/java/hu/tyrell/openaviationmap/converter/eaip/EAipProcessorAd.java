@@ -469,16 +469,15 @@ public class EAipProcessorAd extends EAipProcessor {
                       List<Airspace>    airspaces,
                       Node              node) throws ParseException {
 
-        if ("LHBC".equals(ad.getIcao()) || "LHUD".equals(ad.getIcao())) {
-            processAd217LhbcLhud(ad, borderPoints, airspaces, node);
-        } else if ("LHDC".equals(ad.getIcao())) {
+        if ("LHDC".equals(ad.getIcao())) {
             processAd217Lhdc(ad, borderPoints, airspaces, node);
+        } else {
+            processAd217Generic(ad, borderPoints, airspaces, node);
         }
     }
 
     /**
-     *  Process section AD-2.17 of an AD definition for the following airport
-     *  definitions: LHBC, LHUD.
+     *  Process section AD-2.17 of an AD definition for generic small airports.
      *
      *  @param ad the aerodrome to collect the information into
      *  @param borderPoints points of the national border, in case an airspace
@@ -488,36 +487,50 @@ public class EAipProcessorAd extends EAipProcessor {
      *  @param node the AD-2.17 node of an AD eAIP document
      *  @throws ParseException on input parsing errors.
      */
-    void processAd217LhbcLhud(Aerodrome         ad,
-                              List<Point>       borderPoints,
-                              List<Airspace>    airspaces,
-                              Node              node) throws ParseException {
+    void processAd217Generic(Aerodrome         ad,
+                             List<Point>       borderPoints,
+                             List<Airspace>    airspaces,
+                             Node              node) throws ParseException {
 
         try {
             XPath xpath = XPathFactory.newInstance().newXPath();
 
-            Airspace airspace = new Airspace();
-            String   name     = null;
+            Airspace airspace    = new Airspace();
+            String   name        = null;
+            String   boundaryStr = null;
 
             String str = xpath.evaluate(
                             "table/tbody/tr[1]/td[3]/text()[1]", node).trim();
             if (str != null && !str.isEmpty()) {
 
-                String type = xpath.evaluate(
-                            "table/tbody/tr[1]/td[3]/Abbreviation/@Ref", node)
-                            .trim();
-                if (type != null && !type.isEmpty()) {
-                    if (type.startsWith("ABBR-")) {
-                        type = type.substring(5).trim();
+                String type = null;
 
-                        name = str + " " + type;
+                if (str.contains("\n")) {
+                    int n = str.indexOf('\n');
+                    name        = str.substring(0, n).trim();
+                    boundaryStr = str.substring(n + 1).trim();
+
+                    n = name.lastIndexOf(' ');
+                    if (n != -1) {
+                        type = name.substring(n).trim();
                     }
                 } else {
-                    int i = str.lastIndexOf(' ');
-                    if (i != -1) {
-                        type = str.substring(i + 1);
+                    type = xpath.evaluate(
+                            "table/tbody/tr[1]/td[3]/Abbreviation/@Ref", node)
+                            .trim();
+                    if (type != null && !type.isEmpty()) {
+                        if (type.startsWith("ABBR-")) {
+                            type = type.substring(5).trim();
+
+                            name = str + " " + type;
+                        }
+                    } else {
+                        int i = str.lastIndexOf(' ');
+                        if (i != -1) {
+                            type = str.substring(i + 1);
+                        }
+                        name = str;
                     }
-                    name = str;
                 }
 
                 airspace.setName(name);
@@ -528,31 +541,36 @@ public class EAipProcessorAd extends EAipProcessor {
 
             // get the boundary
             Boundary boundary = null;
-            xpath.reset();
-            // the airspace definition might simply be in the first row
-            str = xpath.evaluate(
-                            "table/tbody/tr[1]/td[3]/text()[2]", node).trim();
-            // or, it may be scattered in a number of rows
-            if (str == null || str.isEmpty()) {
-                NodeList nl = (NodeList) xpath.evaluate(
+            if (boundaryStr == null) {
+                xpath.reset();
+                // the airspace definition might simply be in the first row
+                str = xpath.evaluate(
+                              "table/tbody/tr[1]/td[3]/text()[2]", node).trim();
+                // or, it may be scattered in a number of rows
+                if (str == null || str.isEmpty()) {
+                    NodeList nl = (NodeList) xpath.evaluate(
                    "table/tbody/tr[position() > 1 "
                  + "and following-sibling::tr[contains(., 'Vertical limits')]]"
                  + "/td/text()",
                     node,
                     XPathConstants.NODESET);
 
-                str = "";
-                for (int i = 0; i < nl.getLength(); ++i) {
-                    str += nl.item(i).getNodeValue() + " ";
-                    if ((i % 2) == 1 && i != nl.getLength() - 1) {
-                        str += "- ";
+                    str = "";
+                    for (int i = 0; i < nl.getLength(); ++i) {
+                        str += nl.item(i).getNodeValue() + " ";
+                        if ((i % 2) == 1 && i != nl.getLength() - 1) {
+                            str += "- ";
+                        }
                     }
                 }
+
+                boundaryStr = str;
             }
-            if (str.startsWith(CIRCLE_PREFIX)) {
-                boundary = processCircle(name, str);
+
+            if (boundaryStr.startsWith(CIRCLE_PREFIX)) {
+                boundary = processCircle(name, boundaryStr);
             } else {
-                boundary = processPointList(name, str, borderPoints);
+                boundary = processPointList(name, boundaryStr, borderPoints);
             }
 
             airspace.setBoundary(boundary);
@@ -564,28 +582,36 @@ public class EAipProcessorAd extends EAipProcessor {
                 + "[preceding-sibling::td[contains(., 'Vertical limits')]]"
                 + "/text()",
                    node).trim();
-            int i   = str.indexOf("/");
-            Elevation upperLimit = processElevation(name,
-                                                str.substring(0, i).trim());
-            airspace.setUpperLimit(upperLimit);
 
-            if (i + 1 < str.length()) {
-                Elevation lowerLimit = processElevation(name,
-                                                str.substring(i + 1).trim());
-                airspace.setLowerLimit(lowerLimit);
-            } else {
-                xpath.reset();
-                str = xpath.evaluate(
+            String lowerStr = null;
+            String upperStr = null;
+
+            int i   = str.indexOf("/");
+            int t   = str.indexOf("to");
+            if (i != -1) {
+                upperStr = str.substring(0, i).trim();
+                if (i + 1 < str.length()) {
+                    lowerStr = str.substring(i + 1).trim();
+                } else {
+                    xpath.reset();
+                    str = xpath.evaluate(
                        "table/tbody/tr/td "
                      + "[preceding-sibling::td[contains(., 'Vertical limits')]]"
                      + "/Abbreviation/@Ref",
                         node).trim();
-                if ("ABBR-GND".equals(str)) {
-                    airspace.setLowerLimit(
-                              new Elevation(0, UOM.FT, ElevationReference.SFC));
+                    if ("ABBR-GND".equals(str)) {
+                        lowerStr = "GND";
+                    }
                 }
+            } else if (t != -1) {
+                upperStr = str.substring(0, t).trim();
+                lowerStr = str.substring(t + 2).trim();
             }
 
+            airspace.setUpperLimit(processElevation(name, upperStr));
+            airspace.setLowerLimit(processElevation(name, lowerStr));
+
+            // get the airspace class
             xpath.reset();
             str = xpath.evaluate(
                        "table/tbody/tr/td "
