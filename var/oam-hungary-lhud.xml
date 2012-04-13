@@ -16,7 +16,7 @@
 <tag k="navaid:activetime" v="H24"/>
 <tag k="name" v="SEG"/>
 <tag k="navaid:ident" v="SEG"/>
-<tag k="navaid:remarks" v="Coverage: 25NM"/>
+<tag k="remarks" v="Coverage: 25NM"/>
 <tag k="navaid:dme" v="85X"/>
 <tag k="navaid" v="yes"/>
 </node>
@@ -29,7 +29,7 @@
 <tag k="name" v="SEG"/>
 <tag k="navaid:ndb" v="456kHz"/>
 <tag k="navaid:ident" v="SEG"/>
-<tag k="navaid:remarks" v="Coverage: 25NM"/>
+<tag k="remarks" v="Coverage: 25NM"/>
 <tag k="navaid" v="yes"/>
 </node>
 <node action="create" id="-17" lat="46.248602777777776" lon="20.09075" version="1"/>

@@ -10,7 +10,7 @@
 <tag k="name" v="TÁPIÓSÁP"/>
 <tag k="navaid:ndb" v="306kHz"/>
 <tag k="navaid:ident" v="TPS"/>
-<tag k="navaid:remarks" v="Coverage: 60NM/110km"/>
+<tag k="remarks" v="Coverage: 60NM/110km"/>
 <tag k="navaid:variation" v="3.8"/>
 <tag k="navaid" v="yes"/>
 </node>
@@ -19,7 +19,7 @@
 <tag k="navaid:vor" v="115.9MHz"/>
 <tag k="navaid:coverage" v="100.0"/>
 <tag k="navaid:activetime" v="H24"/>
-<tag k="navaid:remarks" v="Coverage: 100 NM/185 km DME COORD: 472936N 0192646E"/>
+<tag k="remarks" v="Coverage: 100 NM/185 km DME COORD: 472936N 0192646E"/>
 <tag k="navaid" v="yes"/>
 <tag k="id" v="TPS-DVORDME"/>
 <tag k="height:unit" v="m"/>
@@ -41,7 +41,7 @@
 <tag k="name" v="SÁGVÁR"/>
 <tag k="navaid:ndb" v="348kHz"/>
 <tag k="navaid:ident" v="SVR"/>
-<tag k="navaid:remarks" v="Coverage: 60NM/110km"/>
+<tag k="remarks" v="Coverage: 60NM/110km"/>
 <tag k="navaid:variation" v="4.3"/>
 <tag k="navaid" v="yes"/>
 </node>
@@ -50,7 +50,7 @@
 <tag k="navaid:vor" v="117.7MHz"/>
 <tag k="navaid:coverage" v="100.0"/>
 <tag k="navaid:activetime" v="H24"/>
-<tag k="navaid:remarks" v="Coverage: 100 NM/185 km DME COORD: 464941N 0180705E"/>
+<tag k="remarks" v="Coverage: 100 NM/185 km DME COORD: 464941N 0180705E"/>
 <tag k="navaid" v="yes"/>
 <tag k="id" v="SVR-DVORDME"/>
 <tag k="height:unit" v="m"/>
@@ -72,7 +72,7 @@
 <tag k="name" v="SAJÓHÍDVÉG"/>
 <tag k="navaid:ndb" v="390kHz"/>
 <tag k="navaid:ident" v="SAG"/>
-<tag k="navaid:remarks" v="Coverage: 60NM/110km"/>
+<tag k="remarks" v="Coverage: 60NM/110km"/>
 <tag k="navaid:variation" v="4.3"/>
 <tag k="navaid" v="yes"/>
 </node>
@@ -81,7 +81,7 @@
 <tag k="navaid:vor" v="114.4MHz"/>
 <tag k="navaid:coverage" v="100.0"/>
 <tag k="navaid:activetime" v="H24"/>
-<tag k="navaid:remarks" v="Coverage: 100 NM/185 km DME COORD: 480029N 0205947E"/>
+<tag k="remarks" v="Coverage: 100 NM/185 km DME COORD: 480029N 0205947E"/>
 <tag k="navaid" v="yes"/>
 <tag k="id" v="SAG-DVORDME"/>
 <tag k="height:unit" v="m"/>
@@ -103,7 +103,7 @@
 <tag k="name" v="PUSZTASZABOLCS"/>
 <tag k="navaid:ndb" v="386kHz"/>
 <tag k="navaid:ident" v="PTB"/>
-<tag k="navaid:remarks" v="Coverage: 60NM/110km"/>
+<tag k="remarks" v="Coverage: 60NM/110km"/>
 <tag k="navaid:variation" v="3.4"/>
 <tag k="navaid" v="yes"/>
 </node>
@@ -112,7 +112,7 @@
 <tag k="navaid:vor" v="117.1MHz"/>
 <tag k="navaid:coverage" v="100.0"/>
 <tag k="navaid:activetime" v="H24"/>
-<tag k="navaid:remarks" v="Coverage: 100 NM/185 km DME COORD: 470908N 0184432E"/>
+<tag k="remarks" v="Coverage: 100 NM/185 km DME COORD: 470908N 0184432E"/>
 <tag k="navaid" v="yes"/>
 <tag k="id" v="PTB-DVORDME"/>
 <tag k="height:unit" v="m"/>
@@ -133,7 +133,7 @@
 <tag k="name" v="MONOR"/>
 <tag k="navaid:ndb" v="288kHz"/>
 <tag k="navaid:ident" v="MNR"/>
-<tag k="navaid:remarks" v="Coverage: 60NM/110km"/>
+<tag k="remarks" v="Coverage: 60NM/110km"/>
 <tag k="navaid" v="yes"/>
 </node>
 <node action="create" id="-9" lat="47.334722222222226" lon="19.405555555555555" version="1">
@@ -141,7 +141,7 @@
 <tag k="navaid:vor" v="112.5MHz"/>
 <tag k="navaid:coverage" v="100.0"/>
 <tag k="navaid:activetime" v="H24"/>
-<tag k="navaid:remarks" v="Coverage: 100 NM/185 km DME COORD: 472005N 0192420E"/>
+<tag k="remarks" v="Coverage: 100 NM/185 km DME COORD: 472005N 0192420E"/>
 <tag k="navaid" v="yes"/>
 <tag k="id" v="MNR-DVORDME"/>
 <tag k="height:unit" v="m"/>
@@ -163,7 +163,7 @@
 <tag k="name" v="JÁSZBERÉNY"/>
 <tag k="navaid:ndb" v="517kHz"/>
 <tag k="navaid:ident" v="JBR"/>
-<tag k="navaid:remarks" v="Coverage: 30NM/55km"/>
+<tag k="remarks" v="Coverage: 30NM/55km"/>
 <tag k="navaid:variation" v="3.9"/>
 <tag k="navaid" v="yes"/>
 </node>
@@ -177,7 +177,7 @@
 <tag k="name" v="GYŐR"/>
 <tag k="navaid:ndb" v="354kHz"/>
 <tag k="navaid:ident" v="GYR"/>
-<tag k="navaid:remarks" v="Coverage: 60NM/110km"/>
+<tag k="remarks" v="Coverage: 60NM/110km"/>
 <tag k="navaid:variation" v="3.5"/>
 <tag k="navaid" v="yes"/>
 </node>
@@ -186,7 +186,7 @@
 <tag k="navaid:vor" v="115.1MHz"/>
 <tag k="navaid:coverage" v="100.0"/>
 <tag k="navaid:activetime" v="H24"/>
-<tag k="navaid:remarks" v="Coverage: 100 NM/185 km DME COORD: 473932N 0174328E"/>
+<tag k="remarks" v="Coverage: 100 NM/185 km DME COORD: 473932N 0174328E"/>
 <tag k="navaid" v="yes"/>
 <tag k="id" v="GYR-DVORDME"/>
 <tag k="height:unit" v="m"/>
@@ -208,7 +208,7 @@
 <tag k="name" v="BUGAC"/>
 <tag k="navaid:ndb" v="430kHz"/>
 <tag k="navaid:ident" v="BUG"/>
-<tag k="navaid:remarks" v="Coverage: 60NM/110km"/>
+<tag k="remarks" v="Coverage: 60NM/110km"/>
 <tag k="navaid:variation" v="3.9"/>
 <tag k="navaid" v="yes"/>
 </node>
@@ -217,7 +217,7 @@
 <tag k="navaid:vor" v="113.4MHz"/>
 <tag k="navaid:coverage" v="100.0"/>
 <tag k="navaid:activetime" v="H24"/>
-<tag k="navaid:remarks" v="Coverage: 100 NM/185 km DME COORD: 464040N 0194054E"/>
+<tag k="remarks" v="Coverage: 100 NM/185 km DME COORD: 464040N 0194054E"/>
 <tag k="navaid" v="yes"/>
 <tag k="id" v="BUG-DVORDME"/>
 <tag k="height:unit" v="m"/>
@@ -234,7 +234,7 @@
 <tag k="navaid:vor" v="117.3MHz"/>
 <tag k="navaid:coverage" v="100.0"/>
 <tag k="navaid:activetime" v="H24"/>
-<tag k="navaid:remarks" v="Coverage: 100 NM/185 km&#10;ATIS is also transmitted. DME COORD: 472701N 0191458E"/>
+<tag k="remarks" v="Coverage: 100 NM/185 km&#10;ATIS is also transmitted. DME COORD: 472701N 0191458E"/>
 <tag k="navaid" v="yes"/>
 <tag k="id" v="BUD-DVORDME"/>
 <tag k="height:unit" v="m"/>
@@ -256,7 +256,7 @@
 <tag k="name" v="BÉKÉS"/>
 <tag k="navaid:ndb" v="374kHz"/>
 <tag k="navaid:ident" v="BKS"/>
-<tag k="navaid:remarks" v="Coverage: 60NM/110km"/>
+<tag k="remarks" v="Coverage: 60NM/110km"/>
 <tag k="navaid:variation" v="4.1"/>
 <tag k="navaid" v="yes"/>
 </node>
@@ -265,7 +265,7 @@
 <tag k="navaid:vor" v="115.8MHz"/>
 <tag k="navaid:coverage" v="100.0"/>
 <tag k="navaid:activetime" v="H24"/>
-<tag k="navaid:remarks" v="Coverage: 100 NM/185 km DME COORD: 464759.9N 0210426.0E"/>
+<tag k="remarks" v="Coverage: 100 NM/185 km DME COORD: 464759.9N 0210426.0E"/>
 <tag k="navaid" v="yes"/>
 <tag k="id" v="BKS-DVORDME"/>
 <tag k="height:unit" v="m"/>

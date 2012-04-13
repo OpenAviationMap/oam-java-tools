@@ -12,7 +12,7 @@
 <tag k="name" v="SME"/>
 <tag k="navaid:ndb" v="436kHz"/>
 <tag k="navaid:ident" v="SME"/>
-<tag k="navaid:remarks" v="1km from THR RWY 34"/>
+<tag k="remarks" v="1km from THR RWY 34"/>
 <tag k="navaid" v="yes"/>
 </node>
 <node action="create" id="-10" lat="46.66572222222222" lon="17.166361111111108" version="1">
@@ -23,7 +23,7 @@
 <tag k="navaid:activetime" v="H24"/>
 <tag k="name" v="SME"/>
 <tag k="navaid:ident" v="SME"/>
-<tag k="navaid:remarks" v="Co-located with L/SME."/>
+<tag k="remarks" v="Co-located with L/SME."/>
 <tag k="navaid:dme" v="79X"/>
 <tag k="navaid" v="yes"/>
 </node>
@@ -35,7 +35,7 @@
 <tag k="navaid:activetime" v="H24"/>
 <tag k="name" v="ILS 16 (CAT I) DME"/>
 <tag k="navaid:ident" v="SMK"/>
-<tag k="navaid:remarks" v="Co-located with GP 16"/>
+<tag k="remarks" v="Co-located with GP 16"/>
 <tag k="navaid:dme" v="24Y"/>
 <tag k="navaid" v="yes"/>
 </node>
@@ -43,7 +43,7 @@
 <tag k="navaid:type" v="GP"/>
 <tag k="navaid:activetime" v="H24"/>
 <tag k="name" v="ILS 16 (CAT I) GP"/>
-<tag k="navaid:remarks" v="GP angle: 3°"/>
+<tag k="remarks" v="GP angle: 3°"/>
 <tag k="navaid:gp" v="330.35MHz"/>
 <tag k="navaid" v="yes"/>
 </node>

@@ -16,7 +16,7 @@
 <tag k="navaid:activetime" v="H24"/>
 <tag k="name" v="GYR"/>
 <tag k="navaid:ident" v="GYR"/>
-<tag k="navaid:remarks" v="DME COORD:473932.4N 0174327.6E"/>
+<tag k="remarks" v="DME COORD:473932.4N 0174327.6E"/>
 <tag k="navaid:dme" v="98X"/>
 <tag k="navaid" v="yes"/>
 </node>

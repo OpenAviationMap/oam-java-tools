@@ -74,6 +74,27 @@ public class Member {
     }
 
     /**
+     * Compare two member objects by value. That is, by their type & role,
+     * but not by the ref id.
+     *
+     * @param other the other Member object to compare this one to.
+     * @return true if this object equals the other by value.
+     */
+    public boolean compare(Member other) {
+        if (type != other.type) {
+            return false;
+        }
+        if (role == null && other.role != null) {
+            return false;
+        }
+        if (!role.equals(other.role)) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
      * @return the role
      */
     public String getRole() {

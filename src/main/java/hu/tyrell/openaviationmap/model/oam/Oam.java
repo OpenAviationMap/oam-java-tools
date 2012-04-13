@@ -77,12 +77,44 @@ public class Oam {
      *
      * @param way the Way object to import the nodes for.
      * @param nodeMap a map of OsmNode objects, into which the Way objects
-     *        supplied points to.
+     *        supplied references point to.
      */
     public void importWayNodes(Way way, Map<Integer, OsmNode> nodeMap) {
         for (Integer i : way.getNodeList()) {
             OsmNode n = new OsmNode(nodeMap.get(i));
             nodes.put(n.getId(), n);
+        }
+    }
+
+    /**
+     * Import nodes and ways related to a Relation object.
+     * Note: it is assumed that the Relation & associated nodes and ways have
+     * ids that will not collide with ids in this Oam.
+     *
+     * @param relation the Relation object to import the nodes for.
+     * @param nodeMap a map of OsmNode objects, into which the Relation objects
+     *        supplied references point to.
+     * @param wayMap a map of Way objects, into which the Relation objects
+     *        supplied references point to.
+     */
+    public void importRelNodesWays(Relation              relation,
+                                   Map<Integer, OsmNode> nodeMap,
+                                   Map<Integer, Way>     wayMap) {
+        for (Member m : relation.getMembers()) {
+            switch (m.getType()) {
+            case NODE:
+                OsmNode n = new OsmNode(nodeMap.get(m.getRef()));
+                nodes.put(n.getId(), n);
+                break;
+
+            case WAY:
+                Way w = new Way(wayMap.get(m.getRef()));
+                ways.put(w.getId(), w);
+                importWayNodes(w, nodeMap);
+                break;
+
+            default:
+            }
         }
     }
 
@@ -99,6 +131,37 @@ public class Oam {
      */
     public boolean compare(Oam other, String idTag) {
 
+        // compare the nodes
+        Map<String, OsmNode> tagNodeMap      = new HashMap<String, OsmNode>();
+        Map<String, OsmNode> otherTagNodeMap = new HashMap<String, OsmNode>();
+
+        for (OsmNode n : nodes.values()) {
+            if (n.getTags().containsKey(idTag)) {
+                tagNodeMap.put(n.getTags().get(idTag), n);
+            }
+        }
+
+        for (OsmNode n : other.nodes.values()) {
+            if (n.getTags().containsKey(idTag)) {
+                otherTagNodeMap.put(n.getTags().get(idTag), n);
+            }
+        }
+
+        if (!tagNodeMap.keySet().containsAll(otherTagNodeMap.keySet())
+         || !otherTagNodeMap.keySet().containsAll(tagNodeMap.keySet())) {
+             return false;
+         }
+
+        for (String tag : tagNodeMap.keySet()) {
+            OsmNode n1 = tagNodeMap.get(tag);
+            OsmNode n2 = otherTagNodeMap.get(tag);
+
+            if (!n1.compare(n2)) {
+                return false;
+            }
+        }
+
+        // compare the ways
         Map<String, Way> tagWayMap      = new HashMap<String, Way>();
         Map<String, Way> otherTagWayMap = new HashMap<String, Way>();
 
@@ -127,6 +190,8 @@ public class Oam {
                 return false;
             }
         }
+
+        // TODO: compare the relations
 
         return true;
     }

@@ -972,7 +972,7 @@ public class OAMReader {
             navaid.setCoverage(coverage);
         }
 
-        k = "navaid:remarks";
+        k = "remarks";
         if (tags.containsKey(k)) {
             navaid.setRemarks(tags.get(k));
         }

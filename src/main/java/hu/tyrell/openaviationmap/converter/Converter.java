@@ -70,61 +70,48 @@ public final class Converter {
             "usage:");
         System.out.println("");
         System.out.println(
-            "  -i | --input <input.file>");
+            "  -i | --input <input.file>    specify the input file, required");
         System.out.println(
-            "                             specify the input file, required");
+            "  -f | --input-format <input.format>  specify the input format,");
         System.out.println(
-            "  -f | --input-format <input.format>");
+            "                               required");
         System.out.println(
-            "                             specify the input format, required");
+            "                               supported formats: eAIP.Hungary");
         System.out.println(
-            "                             supported formats: eAIP.Hungary");
+            "  -o | --output <output.file>  specify the output file, required");
         System.out.println(
-            "  -o | --output <output.file>");
+          "  -F | --output-format <output.format>  specify the output format,");
         System.out.println(
-            "                             specify the output file, required");
+            "                               required");
         System.out.println(
-            "  -F | --output-format <output.format>");
+            "                               supported formats: OAM");
         System.out.println(
-            "                             specify the output format, required");
+            "  -c | --create                if specified, the OAM output file");
         System.out.println(
-            "                             supported formats: OAM");
+            "                               is created in 'create' mode, for");
         System.out.println(
-            "  -c | --create");
+            "                               adding new OAM nodes & ways");
         System.out.println(
-            "                             if specified, the OAM output file");
+            "  -b | --border                a border polygon file in OSM");
         System.out.println(
-            "                             is created in 'create' mode, for");
+            "                               format to be used for airspaces");
         System.out.println(
-            "                             adding new OAM nodes & ways");
+            "                               that refer to national borders. "
+                                                                 + "optional");
         System.out.println(
-                "  -b | --border");
+            "  -a | --aerodromes            an aerodrome index file, in the");
         System.out.println(
-                "                         a border polygon file in OSM format");
+            "                               eAIP section AD 1.3 format. used");
         System.out.println(
-                "                         to be used for airspaces that refer");
+            "                               when processing aerodromes from");
         System.out.println(
-                "                         to national borders. optional");
+            "                               eAIP. optional.");
         System.out.println(
-                "  -a | --aerodromes");
+            "  -v | --version               specify the OAM node versions");
         System.out.println(
-                "                         an aerodrome index file, in the");
+            "                               required if output format is OAM");
         System.out.println(
-                "                         eAIP section AD 1.3 format. used");
-        System.out.println(
-                "                         when processing aerodromes from");
-        System.out.println(
-                "                         eAIP. optional.");
-        System.out.println(
-            "  -v | --version");
-        System.out.println(
-            "                             specify the OAM node versions");
-        System.out.println(
-            "                             required if output format is OAM");
-        System.out.println(
-            "  -h | --help");
-        System.out.println(
-            "                             show this usage page");
+            "  -h | --help                  show this usage page");
     }
 
     /**
@@ -744,7 +731,7 @@ public final class Converter {
             }
 
             if (navaid.getRemarks() != null) {
-                node.getTags().put("navaid:remarks", navaid.getRemarks());
+                node.getTags().put("remarks", navaid.getRemarks());
             }
 
 

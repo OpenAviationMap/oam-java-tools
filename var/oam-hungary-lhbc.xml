@@ -16,7 +16,7 @@
 <tag k="navaid:activetime" v="H24"/>
 <tag k="name" v="BKS"/>
 <tag k="navaid:ident" v="BKS"/>
-<tag k="navaid:remarks" v="DME COORD:464759.9N 0210426.0E"/>
+<tag k="remarks" v="DME COORD:464759.9N 0210426.0E"/>
 <tag k="navaid:dme" v="105X"/>
 <tag k="navaid" v="yes"/>
 </node>
@@ -26,7 +26,7 @@
 <tag k="name" v="BC"/>
 <tag k="navaid:ndb" v="400kHz"/>
 <tag k="navaid:ident" v="BC"/>
-<tag k="navaid:remarks" v="LI 35R"/>
+<tag k="remarks" v="LI 35R"/>
 <tag k="navaid" v="yes"/>
 </node>
 <node action="create" id="-11" lat="46.682944444444445" lon="21.15738888888889" version="1"/>

@@ -12,7 +12,7 @@
 <tag k="navaid:activetime" v="H24"/>
 <tag k="name" v="NYR"/>
 <tag k="navaid:ident" v="NYR"/>
-<tag k="navaid:remarks" v="300 M from RWY 18 THR"/>
+<tag k="remarks" v="300 M from RWY 18 THR"/>
 <tag k="navaid:dme" v="108X"/>
 <tag k="navaid" v="yes"/>
 </node>
@@ -22,7 +22,7 @@
 <tag k="name" v="P"/>
 <tag k="navaid:ndb" v="522kHz"/>
 <tag k="navaid:ident" v="P"/>
-<tag k="navaid:remarks" v="1422 M FM RWY 18 THR"/>
+<tag k="remarks" v="1422 M FM RWY 18 THR"/>
 <tag k="navaid" v="yes"/>
 </node>
 <node action="create" id="-8" lat="47.912055555555554" lon="21.689166666666665" version="1">
@@ -31,7 +31,7 @@
 <tag k="name" v="NY"/>
 <tag k="navaid:ndb" v="330kHz"/>
 <tag k="navaid:ident" v="NY"/>
-<tag k="navaid:remarks" v="7532 M FM RWY 36 THR"/>
+<tag k="remarks" v="7532 M FM RWY 36 THR"/>
 <tag k="navaid" v="yes"/>
 </node>
 <node action="create" id="-7" lat="47.968111111111114" lon="21.692888888888888" version="1">
@@ -40,7 +40,7 @@
 <tag k="name" v="Y"/>
 <tag k="navaid:ndb" v="346kHz"/>
 <tag k="navaid:ident" v="Y"/>
-<tag k="navaid:remarks" v="1294m from RWY 36 THR"/>
+<tag k="remarks" v="1294m from RWY 36 THR"/>
 <tag k="navaid" v="yes"/>
 </node>
 <node action="create" id="-5" lat="47.98851388888889" lon="21.692466666666668" version="1"/>

@@ -21,7 +21,7 @@
 <tag k="navaid:type" v="GP"/>
 <tag k="navaid:activetime" v="H24"/>
 <tag k="name" v="ILS 34 (CATI.) GP"/>
-<tag k="navaid:remarks" v="GP angle: 3°"/>
+<tag k="remarks" v="GP angle: 3°"/>
 <tag k="navaid:gp" v="333.95MHz"/>
 <tag k="navaid" v="yes"/>
 </node>
