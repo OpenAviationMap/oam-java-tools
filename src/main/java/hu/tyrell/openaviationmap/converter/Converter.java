@@ -1072,7 +1072,7 @@ public final class Converter {
             // convert the airspaces to OAM
             Oam oam = new Oam();
 
-            airspacesToOam(airspaces, oam, action, version, 0);
+            airspacesToOam(airspaces, oam, action, version, 1);
             navaidsToOam(navaids, oam, action, version, oam.getMaxNodeId() + 1);
             aerodromesToOam(aerodromes, oam, action, version,
                             oam.getMaxNodeId() + 1);

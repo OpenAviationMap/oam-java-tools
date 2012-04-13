@@ -166,4 +166,63 @@ public class EAipProcessorTest {
         assertEquals("Nuclear Power Plant", airspace.getRemarks());
     }
 
+    /**
+     * Test an airspace that is a list of points and contains part of a circle
+     * as well.
+     *
+     * @throws ParserConfigurationException on XML parser configuration errors
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing issues
+     * @throws ParseException on eAIP parsing errors
+     */
+    @Test
+    public void testMixedAirspace() throws ParserConfigurationException,
+                                           SAXException,
+                                           IOException,
+                                           ParseException {
+        Node airspaceNode = null;
+
+        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        DocumentBuilder        db  = dbf.newDocumentBuilder();
+
+        Document   d = db.parse(new FileInputStream("var/lhb18_eAIP_raw.xml"));
+        airspaceNode = d.getDocumentElement();
+
+        assertNotNull(airspaceNode);
+
+        EAipProcessor processor = new EAipProcessorEnr56();
+        Airspace airspace = processor.processAirspace(airspaceNode, null);
+
+        assertNotNull(airspace);
+        assertEquals("LHB18", airspace.getDesignator());
+        assertEquals("FERTŐ", airspace.getName());
+        assertEquals("B", airspace.getType());
+
+        assertEquals(Boundary.Type.RING, airspace.getBoundary().getType());
+        Ring ring = (Ring) airspace.getBoundary();
+        assertEquals(23, ring.getPointList().size());
+        List<Point> points = ring.getPointList();
+        assertEquals(47.6419444444, points.get(0).getLatitude(), 1.0 / 3600.0);
+        assertEquals(16.8661111111, points.get(0).getLongitude(), 1.0 / 3600.0);
+        assertEquals(47.6083333333, points.get(1).getLatitude(), 1.0 / 3600.0);
+        assertEquals(16.7249999999, points.get(1).getLongitude(), 1.0 / 3600.0);
+        assertEquals(47.6247319994, points.get(9).getLatitude(), 1.0 / 3600.0);
+        assertEquals(16.6760527881, points.get(9).getLongitude(), 1.0 / 3600.0);
+
+        assertNotNull(airspace.getUpperLimit());
+        Elevation ul = airspace.getUpperLimit();
+        assertEquals(1500, ul.getElevation(), 0.0);
+        assertEquals(UOM.FT, ul.getUom());
+        assertEquals(ElevationReference.SFC, ul.getReference());
+
+        assertNotNull(airspace.getLowerLimit());
+        Elevation ll = airspace.getLowerLimit();
+        assertEquals(0, ll.getElevation(), 0.0);
+        assertEquals(UOM.FT, ll.getUom());
+        assertEquals(ElevationReference.SFC, ll.getReference());
+
+        assertEquals("Sensitive fauna", airspace.getRemarks());
+        assertEquals("H24", airspace.getActiveTime());
+    }
+
 }

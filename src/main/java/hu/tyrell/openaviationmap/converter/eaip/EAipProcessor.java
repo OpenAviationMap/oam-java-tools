@@ -86,6 +86,16 @@ public class EAipProcessor {
     protected static final String CIRCLE_INFIX_SIC3 = "radius centred at";
 
     /**
+     * The prefix of a clockwise arc definition.
+     */
+    protected static final String ARC_PREFIX_CW = "then a clockwise arc radius";
+
+    /**
+     * The infix of an arc definition.
+     */
+    protected static final String ARC_INFIX = "centered on";
+
+    /**
      * Convert a latitude string into a latitude value.
      *
      * @param designator the airspace designator for the point list,
@@ -245,6 +255,111 @@ public class EAipProcessor {
     }
 
     /**
+     * Process an arc definition.
+     *
+     * @param designator the airspace designator for the point list,
+     *                   used to display warnings about the incompleteness
+     *                   of the airspace.
+     * @param arcDef textual arc definition
+     * @return a series of points representing the arc
+     * @throws ParseException on parsing errors
+     */
+    List<Point> processArc(String designator,
+                           String arcDef) throws ParseException {
+        if (!arcDef.startsWith(ARC_PREFIX_CW)) {
+            throw new ParseException(designator,
+                                     "arc definition prefix missing");
+        }
+
+        String str = arcDef.substring(ARC_PREFIX_CW.length()).trim();
+        int    ix  = str.indexOf(ARC_INFIX);
+        if (ix == -1) {
+            throw new ParseException(designator,
+                                     "arc definition infix missing");
+        }
+
+        String  radiusStr = str.substring(0, ix);
+        Distance radius = processDistance(radiusStr);
+
+        String centerStr = str.substring(ix + ARC_INFIX.length());
+        Point  center    = processPoint(designator, centerStr);
+
+        // generate a circle with the above center & radius
+        Vector<Point> arc = new Vector<Point>();
+
+        double radiusInNm  = radius.inUom(UOM.NM).getDistance();
+        double radiusInDeg = radiusInNm / 60.0;
+        double radiusLat   = radiusInDeg;
+        double radiusLon   = radiusInDeg / Math.cos(
+                              Math.toRadians(center.getLatitude()));
+
+        // FIXME: calculate number of points on some required precision metric
+        int totalPoints = 32;
+        double tpHalf = totalPoints / 2.0;
+        for (int i = 0; i < totalPoints; ++i) {
+            double theta = Math.PI * i / tpHalf;
+            double x = center.getLongitude()
+                    + (radiusLon * Math.cos(theta));
+            double y = center.getLatitude()
+                    + (radiusLat * Math.sin(theta));
+
+            Point p = new Point();
+            p.setLongitude(x);
+            p.setLatitude(y);
+
+            arc.add(p);
+        }
+
+        return arc;
+    }
+
+    /**
+     * Insert the points of an arc between the last point in the point list
+     * and the additional point specified. The points are currently inserted
+     * in a clockwise direction.
+     *
+     * @param arcPoints the points of the arc
+     * @param pointList the list to insert the arc points into
+     * @param point the point after the arc
+     */
+    private void insertArcPoints(List<Point> arcPoints,
+                                 List<Point> pointList,
+                                 Point       point) {
+        // find the closes point on the arc to the last point in the list
+        Point  lastPoint = pointList.get(pointList.size() - 1);
+        double dist      = Double.MAX_VALUE;
+        int    startIx   = 0;
+        for (int ix = 0; ix < arcPoints.size(); ++ix) {
+            Point  p = arcPoints.get(ix);
+            double d = lastPoint.distance(p);
+            if (d < dist) {
+                dist    = d;
+                startIx = ix;
+            }
+        }
+
+        // find the closes point on the arc to the additional point
+        dist         = Double.MAX_VALUE;
+        int  endIx   = 0;
+        for (int ix = 0; ix < arcPoints.size(); ++ix) {
+            Point  p = arcPoints.get(ix);
+            double d = point.distance(p);
+            if (d < dist) {
+                dist    = d;
+                endIx   = ix;
+            }
+        }
+
+        // insert points between the found ones, in a clockwise direction
+        for (int ix = startIx; ix != endIx; --ix) {
+            if (ix < 0) {
+                ix += arcPoints.size();
+            }
+            pointList.add(arcPoints.get(ix));
+        }
+    }
+
+    /**
      * Parse an eAIP point list into a Boundary.
      *
      * @param designator the airspace designator for the point list,
@@ -272,6 +387,7 @@ public class EAipProcessor {
         }
 
         Vector<Point> pointList          = new Vector<Point>();
+        List<Point>   arcPoints          = null;
         Point         borderSectionStart = null;
 
         StringTokenizer tokenizer = new StringTokenizer(boundaryDesc, "-");
@@ -307,10 +423,24 @@ public class EAipProcessor {
                 borderSectionStart = p;
             }
 
+
+            if (arcPoints != null) {
+                // put in the arc points between the last point and this one
+                insertArcPoints(arcPoints, pointList, p);
+                arcPoints = null;
+            }
+
             pointList.add(p);
+
+            int ix = str.indexOf(ARC_PREFIX_CW);
+            if (str.contains(ARC_INFIX) && ix != -1) {
+                // this is a point definition that refers to a partial arc
+                // as part of the airspace definition
+                arcPoints = processArc(designator, str.substring(ix).trim());
+            }
         }
 
-        // at the first point to close the ring, if not so already
+        // add the first point to close the ring, if not so already
         if (!pointList.get(0).equals(pointList.get(pointList.size() - 1))) {
             pointList.add(new Point(pointList.get(0)));
         }

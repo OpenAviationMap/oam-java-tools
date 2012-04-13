@@ -257,7 +257,7 @@ public class OamDiffTest {
         assertTrue(newOam.getWays().isEmpty());
         assertTrue(newOam.getRelations().isEmpty());
 
-        assertEquals(1490, deletedOam.getNodes().size());
+        assertEquals(1522, deletedOam.getNodes().size());
         assertEquals(143, deletedOam.getWays().size());
         assertEquals(9, deletedOam.getRelations().size());
 
@@ -755,7 +755,7 @@ public class OamDiffTest {
         assertTrue(newOam.getWays().isEmpty());
         assertTrue(newOam.getRelations().isEmpty());
 
-        assertEquals(2182, deletedOam.getNodes().size());
+        assertEquals(2214, deletedOam.getNodes().size());
         assertEquals(168, deletedOam.getWays().size());
         assertEquals(8, deletedOam.getRelations().size());
 
