@@ -333,7 +333,7 @@ public final class OamDiff {
             Member m = relation.getMembers().get(ix);
             int    i = m.getRef();
 
-            if (m.getType() == Member.Type.WAY &&ways.containsKey(i)) {
+            if (m.getType() == Member.Type.WAY && ways.containsKey(i)) {
                 Way w = ways.get(i);
 
                 w.setAction(action);

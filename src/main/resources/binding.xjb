@@ -1,0 +1,205 @@
+<jaxb:bindings version="2.0" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" 
+    jaxb:extensionBindingPrefixes="xjc">
+
+    <jaxb:globalBindings
+        fixedAttributeAsConstantProperty="true"
+        typesafeEnumBase="xs:string"
+        typesafeEnumMemberName="generateName" 
+        generateIsSetMethod="true">
+        <xjc:noValidator />
+        <xjc:noValidatingUnmarshaller />
+    </jaxb:globalBindings>
+
+    <jaxb:bindings schemaLocation="schema/AIXM_Features.xsd" node="/xs:schema">
+        <jaxb:bindings>
+            <jaxb:bindings node="//xs:group[@name='AerialRefuellingPropertyGroup']//xs:element[@name='name']">
+                <jaxb:property name="aixmName"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:group[@name='ApronPropertyGroup']//xs:element[@name='name']">
+                <jaxb:property name="aixmName"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:group[@name='CityPropertyGroup']//xs:element[@name='name']">
+                <jaxb:property name="aixmName"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:group[@name='AirportHeliportPropertyGroup']//xs:element[@name='name']">
+                <jaxb:property name="aixmName"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:group[@name='AirspacePropertyGroup']//xs:element[@name='name']">
+                <jaxb:property name="aixmName"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:group[@name='GeoBorderPropertyGroup']//xs:element[@name='name']">
+                <jaxb:property name="aixmName"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:group[@name='RadarEquipmentPropertyGroup']//xs:element[@name='name']">
+                <jaxb:property name="aixmName"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:group[@name='StandardLevelTablePropertyGroup']//xs:element[@name='name']">
+                <jaxb:property name="aixmName"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:group[@name='ContactInformationPropertyGroup']//xs:element[@name='name']">
+                <jaxb:property name="aixmName"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:group[@name='SpecialDatePropertyGroup']//xs:element[@name='name']">
+                <jaxb:property name="aixmName"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:group[@name='ServicePropertyGroup']//xs:element[@name='name']">
+                <jaxb:property name="aixmName"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:group[@name='NavaidPropertyGroup']//xs:element[@name='name']">
+                <jaxb:property name="aixmName"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:group[@name='NavaidEquipmentPropertyGroup']//xs:element[@name='name']">
+                <jaxb:property name="aixmName"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:group[@name='SpecialNavigationStationPropertyGroup']//xs:element[@name='name']">
+                <jaxb:property name="aixmName"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:group[@name='SpecialNavigationSystemPropertyGroup']//xs:element[@name='name']">
+                <jaxb:property name="aixmName"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:group[@name='DesignatedPointPropertyGroup']//xs:element[@name='name']">
+                <jaxb:property name="aixmName"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:group[@name='AeronauticalGroundLightPropertyGroup']//xs:element[@name='name']">
+                <jaxb:property name="aixmName"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:group[@name='OrganisationAuthorityPropertyGroup']//xs:element[@name='name']">
+                <jaxb:property name="aixmName"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:group[@name='UnitPropertyGroup']//xs:element[@name='name']">
+                <jaxb:property name="aixmName"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:group[@name='VerticalStructurePropertyGroup']//xs:element[@name='name']">
+                <jaxb:property name="aixmName"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:group[@name='ProcedurePropertyGroup']//xs:element[@name='name']">
+                <jaxb:property name="aixmName"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:group[@name='RoutePropertyGroup']//xs:element[@name='name']">
+                <jaxb:property name="aixmName"/>
+            </jaxb:bindings>
+        </jaxb:bindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="schema/ISO_19136_Schemas/gml.xsd" node="/xs:schema">
+        <jaxb:schemaBindings>
+            <jaxb:nameXmlTransform>
+                <jaxb:elementName suffix="Element"/>
+            </jaxb:nameXmlTransform>
+        </jaxb:schemaBindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="schema/ISO_19136_Schemas/geometryPrimitives.xsd" node="/xs:schema">
+        <jaxb:bindings>
+            <jaxb:nameXmlTransform>
+                <jaxb:elementName suffix="Element"/>
+            </jaxb:nameXmlTransform>
+            <jaxb:bindings node="//xs:group[@name='PointGrid']/xs:sequence/xs:element[@name='rows']">
+                <jaxb:property name="Arows"/>
+            </jaxb:bindings>
+        </jaxb:bindings>
+    </jaxb:bindings>
+    
+    <jaxb:bindings schemaLocation="schema/ISO_19136_Schemas/datums.xsd" node="/xs:schema">
+        <jaxb:bindings>
+            <jaxb:bindings node="//xs:element[@name='SecondDefiningParameter']">
+                <jaxb:class name="SecondDefiningParameterUpperCase"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:element[@name='ImageDatum']">
+                <jaxb:class name="ImageDatumUpperCase"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:element[@name='GeodeticDatum']">
+                <jaxb:class name="GeodeticDatumUpperCase"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:element[@name='TemporalDatum']">
+                <jaxb:class name="TemporalDatumUpperCase"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:element[@name='Ellipsoid']">
+                <jaxb:class name="EllipsoidUpperCase"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:element[@name='EngineeringDatum']">
+                <jaxb:class name="EngineeringDatumUpperCase"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:element[@name='PrimeMeridian']">
+                <jaxb:class name="PrimeMeridianUpperCase"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:element[@name='VerticalDatum']">
+                <jaxb:class name="VerticalDatumUpperCase"/>
+            </jaxb:bindings>
+        </jaxb:bindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="schema/ISO_19136_Schemas/coordinateSystems.xsd" node="/xs:schema">
+        <jaxb:bindings>
+            <jaxb:bindings node="//xs:element[@name='UserDefinedCS']">
+                <jaxb:class name="UserDefinedCSUpperCase"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:element[@name='CartesianCS']">
+                <jaxb:class name="CartesianCSUpperCase"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:element[@name='SphericalCS']">
+                <jaxb:class name="SphericalCSUpperCase"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:element[@name='PolarCS']">
+                <jaxb:class name="PolarCSUpperCase"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:element[@name='LinearCS']">
+                <jaxb:class name="LinearCSUpperCase"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:element[@name='VerticalCS']">
+                <jaxb:class name="VerticalCSUpperCase"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:element[@name='CylindricalCS']">
+                <jaxb:class name="CylindricalCSUpperCase"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:element[@name='EllipsoidalCS']">
+                <jaxb:class name="EllipsoidalCSUpperCase"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:element[@name='AffineCS']">
+                <jaxb:class name="AffineCSUpperCase"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:element[@name='TimeCS']">
+                <jaxb:class name="TimeCSUpperCase"/>
+            </jaxb:bindings>
+        </jaxb:bindings>
+    </jaxb:bindings>
+    
+    <jaxb:bindings schemaLocation="schema/ISO_19136_Schemas/coordinateOperations.xsd" node="/xs:schema">
+        <jaxb:bindings>
+            <jaxb:bindings node="//xs:element[@name='coordinateOperationAccuracy']//xs:element[@ref='gmd:AbstractDQ_PositionalAccuracy']">
+                <xjc:dom/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:element[@name='formulaCitation']//xs:element[@ref='gmd:CI_Citation']">
+                <xjc:dom/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:element[@name='Conversion']">
+                <jaxb:class name="ConversionUpperCase"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:element[@name='ParameterValue']">
+                <jaxb:class name="ParameterValueUpperCase"/>
+            </jaxb:bindings>
+            <jaxb:bindings node="//xs:element[@name='OperationParameter']">
+                <jaxb:class name="OperationParameterUpperCase"/>
+            </jaxb:bindings>
+        </jaxb:bindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="schema/ISO_19136_Schemas/referenceSystems.xsd" node="/xs:schema">
+        <jaxb:bindings>
+            <jaxb:bindings node="//xs:element[@name='domainOfValidity']//xs:element[@ref='gmd:EX_Extent']">
+                <xjc:dom/>
+            </jaxb:bindings>
+        </jaxb:bindings>
+    </jaxb:bindings>
+
+    <jaxb:bindings schemaLocation="schema/ISO_19136_Schemas/grids.xsd" node="/xs:schema">
+        <jaxb:bindings>
+            <jaxb:bindings node="//xs:complexType[@name='GridType']//xs:element[@name='axisLabels']">
+                <jaxb:property name="axisLabelsLimit"/>
+            </jaxb:bindings>
+        </jaxb:bindings>
+    </jaxb:bindings>
+
+</jaxb:bindings>

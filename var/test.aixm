@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message:AIXMBasicMessage xmlns:message="http://www.aixm.aero/schema/5.1/message" xmlns:aixm="http://www.aixm.aero/schema/5.1" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.aixm.aero/schema/5.1/message http://www.aixm.aero/schema/5.1/message/AIXM_BasicMessage.xsd" gml:id="uniqueid">
+	<gml:boundedBy>
+		<gml:Envelope srsName="urn:ogc:def:crs:EPSG::4326">
+			<gml:lowerCorner>45.747829 16.111049</gml:lowerCorner>
+            <gml:upperCorner>48.586376 22.905585</gml:upperCorner>
+		</gml:Envelope>
+	</gml:boundedBy>
+	<message:hasMember>
+		<aixm:Airspace gml:id="urn.uuid.4fd9f4be-8c65-43f6-b083-3ced9a4b2a7f">
+			<gml:identifier codeSpace="urn:uuid:">4fd9f4be-8c65-43f6-b083-3ced9a4b2a7f</gml:identifier>
+			<aixm:timeSlice>
+				<aixm:AirspaceTimeSlice gml:id="asptsAlertACR001">
+					<gml:validTime>
+						<gml:TimePeriod gml:id="vtAlertACR00129">
+							<gml:beginPosition>2009-01-01T00:00:00.000</gml:beginPosition>
+							<gml:endPosition indeterminatePosition="unknown"/>
+						</gml:TimePeriod>
+					</gml:validTime>
+					<aixm:interpretation>BASELINE</aixm:interpretation>
+					<aixm:sequenceNumber>1</aixm:sequenceNumber>
+					<aixm:featureLifetime>
+						<gml:TimePeriod gml:id="ltAlertACR00129">
+							<gml:beginPosition>2009-01-01T00:00:00.000</gml:beginPosition>
+							<gml:endPosition indeterminatePosition="unknown"/>
+						</gml:TimePeriod>
+					</aixm:featureLifetime>
+					<aixm:type>R</aixm:type>
+					<aixm:designator>LHR1</aixm:designator>
+					<aixm:geometryComponent>
+						<aixm:AirspaceGeometryComponent gml:id="A-d4933e30">
+							<aixm:theAirspaceVolume>
+								<aixm:AirspaceVolume gml:id="A-a072fe65">
+									<aixm:horizontalProjection>
+										<aixm:Surface gml:id="CAlertACR001">
+											<gml:patches>
+                                                <gml:PolygonPatch>
+                                                    <gml:exterior>
+                                                        <gml:LinearRing>
+                                                            <gml:posList>47.3059 018.5828 47.3055 019.0118 47.3054 019.0159 47.3053 019.0237 47.3038 019.0321 47.3022 019.0325 47.2941 019.0336 47.2859 019.0147 47.2910 019.0047 47.2931 018.5846 47.3002 018.5812 47.3059 018.5828</gml:posList>
+                                                        </gml:LinearRing>
+                                                    </gml:exterior>
+                                                </gml:PolygonPatch>
+											</gml:patches>
+										</aixm:Surface>
+									</aixm:horizontalProjection>
+								</aixm:AirspaceVolume>
+							</aixm:theAirspaceVolume>
+						</aixm:AirspaceGeometryComponent>
+					</aixm:geometryComponent>
+				</aixm:AirspaceTimeSlice>
+			</aixm:timeSlice>
+		</aixm:Airspace>
+	</message:hasMember>
+</message:AIXMBasicMessage>
+
