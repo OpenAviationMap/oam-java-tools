@@ -243,7 +243,7 @@ public class OAMReaderTest {
         // convert the airspaces into an Oam object
         Oam oam = new Oam();
 
-        Converter.airspacesToOam(airspaces, oam, Action.CREATE, 1, 0);
+        OamConverter.airspacesToOam(airspaces, oam, Action.CREATE, 1, 0);
 
         // serialize the Oam object into a stream
         OAMWriter writer = new OAMWriter();

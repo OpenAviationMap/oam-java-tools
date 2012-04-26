@@ -29,7 +29,12 @@ public enum ElevationReference {
     /**
      * Elevation above the surface - SFC, aka Above Ground Level - AGL.
      */
-    SFC;
+    SFC,
+
+    /**
+     * Elevation according to the standard atmosphere. Used for flight levels.
+     */
+    STD;
 
     /**
      * Return an elevation reference value based on a string description.
@@ -42,12 +47,12 @@ public enum ElevationReference {
 
         if ("amsl".equals(s) || "msl".equals(s)) {
             return MSL;
-        }
-        if ("agl".equals(s) || "sfc".equals(s)) {
+        } else if ("agl".equals(s) || "sfc".equals(s)) {
             return SFC;
+        } else if ("std".equals(s)) {
+            return STD;
         }
 
         throw new IllegalArgumentException();
     }
-
 }

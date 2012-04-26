@@ -24,7 +24,6 @@ import hu.tyrell.openaviationmap.model.Aerodrome;
 import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Navaid;
 import hu.tyrell.openaviationmap.model.Point;
-import hu.tyrell.openaviationmap.model.oam.Action;
 import hu.tyrell.openaviationmap.model.oam.Oam;
 
 import java.io.FileInputStream;
@@ -32,35 +31,41 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.TimeZone;
 import java.util.Vector;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import org.custommonkey.xmlunit.Diff;
+import org.custommonkey.xmlunit.XMLUnit;
 import org.junit.Test;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
+import aero.aixm.schema._5_1.message.AIXMBasicMessageType;
+
 /**
- * Test cases for testing conversions of specific eAIP sections to OAM.
+ * Test cases for testing conversions of specific eAIP sections to AIXM.
  */
-public class EAipToOamTest {
+public class EAipToAixmTest {
 
     /**
-     * Test converting an eAIP section to OAM.
+     * Test converting an eAIP section to AIXM.
      *
      * @param eAipDocumentName the eAIP document to process.
-     * @param oamDocumentName the OAM document to verify against.
-     * @param borderDocumentName the name of the OAM document describing the
+     * @param aixmDocumentName the AIXM document to verify against.
+     * @param borderDocumentName the name of the AIXM document describing the
      *        border line.
      * @param ad13DocumentName the name of an aerodrome list eAIP document
      * @param knownErrors the know number of parse errors
@@ -70,22 +75,24 @@ public class EAipToOamTest {
      * @throws ParserConfigurationException on XML parser configuration errors.
      * @throws IOException on I/O errors
      * @throws SAXException on XML parsing errors
-     * @throws ParseException on OAM parsing errors
+     * @throws ParseException on AIXM parsing errors
      * @throws TransformerException on XML serialization errors
+     * @throws JAXBException on JAXB errors
      */
-    public void testEAipToOam(String eAipDocumentName,
-                              String oamDocumentName,
-                              String borderDocumentName,
-                              String ad13DocumentName,
-                              int    knownErrors,
-                              int    noAirspaces,
-                              int    noNavaids,
-                              int    noAerodromes)
+    public void testEAipToAixm(String eAipDocumentName,
+                              String  aixmDocumentName,
+                              String  borderDocumentName,
+                              String  ad13DocumentName,
+                              int     knownErrors,
+                              int     noAirspaces,
+                              int     noNavaids,
+                              int     noAerodromes)
                                      throws ParserConfigurationException,
                                             SAXException,
                                             IOException,
                                             ParseException,
-                                            TransformerException {
+                                            TransformerException,
+                                            JAXBException {
 
         List<Airspace>       airspaces  = new Vector<Airspace>();
         List<Navaid>         navaids    = new Vector<Navaid>();
@@ -136,6 +143,7 @@ public class EAipToOamTest {
         // first, get an airspace definitions from a eAIP file
         Document   d = db.parse(new FileInputStream(eAipDocumentName));
         EAIPHungaryReader reader   = new EAIPHungaryReader();
+        String messageName = d.getDocumentElement().getNodeName();
 
         reader.processEAIP(d.getDocumentElement(),
                            borderPoints,
@@ -149,36 +157,29 @@ public class EAipToOamTest {
         assertEquals(noNavaids, navaids.size());
         assertEquals(noAerodromes, aerodromes.size());
 
-        // reduce the remarks field in airspaces to 255 characters, as
-        // the OAM format cannot handle more
-        for (Airspace as : airspaces) {
-            if (as.getRemarks() != null && as.getRemarks().length() > 255) {
-                as.setRemarks(as.getRemarks().substring(0, 255));
-            }
-        }
+        // convert the airspaces into an Aixm object
+        GregorianCalendar vStart =
+                            new GregorianCalendar(TimeZone.getTimeZone("UTC"));
+        vStart.set(2012, 3, 8, 0, 0, 0);
 
-        // convert the airspaces into an Oam object
-        Oam oam = new Oam();
+        JAXBElement<AIXMBasicMessageType> m =
+                                AixmConverter.convertToAixm(airspaces,
+                                                            messageName,
+                                                            "eAIP.Hungary",
+                                                            vStart,
+                                                            null,
+                                                            "BASELINE",
+                                                            1L,
+                                                            0L);
 
-        OamConverter.airspacesToOam(airspaces, oam, Action.CREATE, 1, 0);
-        OamConverter.navaidsToOam(navaids, oam, Action.CREATE, 1,
-                                  oam.getMaxNodeId());
-        OamConverter.aerodromesToOam(aerodromes, oam, Action.CREATE, 1,
-                                     oam.getMaxNodeId());
-
-        // serialize the Oam into a stream
-        OAMWriter writer = new OAMWriter();
-        d = db.newDocument();
-        d = writer.processOam(d, oam);
-
-        TransformerFactory tFactory = TransformerFactory.newInstance();
-        Transformer transformer = tFactory.newTransformer();
-        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-
-        DOMSource source = new DOMSource(d);
+        // serialize the Aixm into a stream
+        JAXBContext  ctx = JAXBContext.newInstance(
+                                              "aero.aixm.schema._5_1.message");
+        Marshaller   marsh = ctx.createMarshaller();
+        marsh.setProperty("jaxb.formatted.output", true);
         StringWriter strWriter = new StringWriter();
         StreamResult result = new StreamResult(strWriter);
-        transformer.transform(source, result);
+        marsh.marshal(m, result);
 
         // and now, parse the resulting XML file
         // and compare the two airspace definitions
@@ -186,445 +187,454 @@ public class EAipToOamTest {
         InputSource  strSource = new InputSource(strReader);
         d = db.parse(strSource);
 
-        errors.clear();
-        OAMReader oamReader = new OAMReader();
-        List<Airspace>  oamAirspaces  = new Vector<Airspace>();
-        List<Navaid>    oamNavaids    = new Vector<Navaid>();
-        List<Aerodrome> oamAerodromes = new Vector<Aerodrome>();
-        oamReader.processOam(d.getDocumentElement(),
-                             oamAirspaces,
-                             oamNavaids,
-                             oamAerodromes,
-                             errors);
 
-        assertTrue(errors.isEmpty());
-        assertEquals(airspaces.size(), oamAirspaces.size());
-        assertTrue(airspaces.containsAll(oamAirspaces));
-        assertTrue(oamAirspaces.containsAll(airspaces));
-        assertEquals(navaids.size(), oamNavaids.size());
-        assertTrue(navaids.containsAll(oamNavaids));
-        assertTrue(oamNavaids.containsAll(navaids));
-        assertEquals(aerodromes.size(), oamAerodromes.size());
-        assertTrue(aerodromes.containsAll(oamAerodromes));
-        assertTrue(oamAerodromes.containsAll(aerodromes));
+        // TODO: create an AXIM document parser, parse the serialized
+        //       result, and compare with the original
 
-        // parse a stored OAM file and compare the airspace definitions
+
+        // read a stored AIXM file and compare the airspace definitions
         // with that one as well
-        FileReader fReader = new FileReader(oamDocumentName);
+        FileReader fReader = new FileReader(aixmDocumentName);
         InputSource  fSource = new InputSource(fReader);
-        d = db.parse(fSource);
+        Document dd = db.parse(fSource);
 
-        errors.clear();
-        OAMReader fOamReader = new OAMReader();
-        List<Airspace>  fOamAirspaces  = new Vector<Airspace>();
-        List<Navaid>    fOamNavaids    = new Vector<Navaid>();
-        List<Aerodrome> fOamAerodromes = new Vector<Aerodrome>();
-        fOamReader.processOam(d.getDocumentElement(),
-                              fOamAirspaces,
-                              fOamNavaids,
-                              fOamAerodromes,
-                              errors);
 
-        assertTrue(errors.isEmpty());
-        assertEquals(airspaces.size(), fOamAirspaces.size());
-        assertTrue(airspaces.containsAll(fOamAirspaces));
-        assertTrue(fOamAirspaces.containsAll(airspaces));
-        assertEquals(navaids.size(), fOamNavaids.size());
-        assertTrue(navaids.containsAll(fOamNavaids));
-        assertTrue(fOamNavaids.containsAll(navaids));
-        assertEquals(aerodromes.size(), fOamAerodromes.size());
-        assertTrue(aerodromes.containsAll(fOamAerodromes));
-        assertTrue(fOamAerodromes.containsAll(aerodromes));
+        // TODO: create an AXIM document parser, parse the loaded
+        //       result, and compare with the original
+
+
+        // for now, just compare the loaded XML document with the generated
+        // one
+        d.normalizeDocument();
+        dd.normalizeDocument();
+        XMLUnit.setXSLTVersion("2.0");
+        XMLUnit.setIgnoreWhitespace(true);
+        Diff diff = new Diff(dd, d);
+        assertTrue(diff.identical());
     }
 
     /**
-     * Test converting an eAIP section ENR-5.1 element to OAM.
+     * Test converting an eAIP section ENR-5.1 element to AIXM.
      *
      * @throws ParserConfigurationException on XML parser configuration errors.
      * @throws IOException on I/O errors
      * @throws SAXException on XML parsing errors
-     * @throws ParseException on OAM parsing errors
+     * @throws ParseException on AIXM parsing errors
      * @throws TransformerException on XML serialization errors
+     * @throws JAXBException on JAXB errors
      */
     @Test
-    public void testEAipEnr51ToOam() throws ParserConfigurationException,
+    public void testEAipEnr51ToAixm() throws ParserConfigurationException,
+                                            SAXException,
+                                            IOException,
+                                            ParseException,
+                                            TransformerException,
+                                            JAXBException {
+
+        testEAipToAixm("var/LH-ENR-5.1-en-HU.xml",
+                       "var/hungary-5.1.aixm51",
+                       "var/hungary.osm",
+                       "var/LH-AD-1.3-en-HU.xml",
+                       4, 47, 0, 0);
+    }
+
+    /**
+     * Test converting an eAIP section ENR-5.2 element to AIXM.
+     *
+     * @throws ParserConfigurationException on XML parser configuration errors.
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing errors
+     * @throws ParseException on AIXM parsing errors
+     * @throws TransformerException on XML serialization errors
+     * @throws JAXBException on JAXB errors
+     */
+    @Test
+    public void testEAipEnr52ToAixm() throws ParserConfigurationException,
+                                            SAXException,
+                                            IOException,
+                                            ParseException,
+                                            TransformerException,
+                                            JAXBException {
+
+        testEAipToAixm("var/LH-ENR-5.2-en-HU.xml",
+                       "var/hungary-5.2.aixm51",
+                       "var/hungary.osm",
+                       "var/LH-AD-1.3-en-HU.xml",
+                       0, 34, 0, 0);
+    }
+
+    /**
+     * Test converting an eAIP section ENR-5.5 element to AIXM.
+     *
+     * @throws ParserConfigurationException on XML parser configuration errors.
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing errors
+     * @throws ParseException on AIXM parsing errors
+     * @throws TransformerException on XML serialization errors
+     * @throws JAXBException on JAXB errors
+     */
+    @Test
+    public void testEAipEnr55ToAixm() throws ParserConfigurationException,
+                                            SAXException,
+                                            IOException,
+                                            ParseException,
+                                            TransformerException,
+                                            JAXBException {
+
+        testEAipToAixm("var/LH-ENR-5.5-en-HU.xml",
+                       "var/hungary-5.5.aixm51",
+                       "var/hungary.osm",
+                       "var/LH-AD-1.3-en-HU.xml",
+                       0, 15, 0, 0);
+    }
+
+    /**
+     * Test converting an eAIP section ENR-5.6 element to AIXM.
+     *
+     * @throws ParserConfigurationException on XML parser configuration errors.
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing errors
+     * @throws ParseException on AIXM parsing errors
+     * @throws TransformerException on XML serialization errors
+     * @throws JAXBException on JAXB errors
+     */
+    @Test
+    public void testEAipEnr56ToAixm() throws ParserConfigurationException,
+                                            SAXException,
+                                            IOException,
+                                            ParseException,
+                                            TransformerException,
+                                            JAXBException {
+
+        testEAipToAixm("var/LH-ENR-5.6-en-HU.xml",
+                       "var/hungary-5.6.aixm51",
+                       "var/hungary.osm",
+                       "var/LH-AD-1.3-en-HU.xml",
+                       0, 37, 0, 0);
+    }
+
+    /**
+     * Test converting an eAIP section ENR-2.1 element to AIXM.
+     *
+     * @throws ParserConfigurationException on XML parser configuration errors.
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing errors
+     * @throws ParseException on AIXM parsing errors
+     * @throws TransformerException on XML serialization errors
+     * @throws JAXBException on JAXB errors
+     */
+    @Test
+    public void testEAipEnr21ToAixm() throws ParserConfigurationException,
+                                            SAXException,
+                                            IOException,
+                                            ParseException,
+                                            TransformerException,
+                                            JAXBException {
+
+        testEAipToAixm("var/LH-ENR-2.1-en-HU.xml",
+                       "var/hungary-2.1.aixm51",
+                       "var/hungary.osm",
+                       "var/LH-AD-1.3-en-HU.xml",
+                       0, 20, 0, 0);
+    }
+
+    /**
+     * Test converting an eAIP section ENR-2.2 element to AIXM.
+     *
+     * @throws ParserConfigurationException on XML parser configuration errors.
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing errors
+     * @throws ParseException on AIXM parsing errors
+     * @throws TransformerException on XML serialization errors
+     * @throws JAXBException on JAXB errors
+     */
+    @Test
+    public void testEAipEnr22ToAixm() throws ParserConfigurationException,
+                                            SAXException,
+                                            IOException,
+                                            ParseException,
+                                            TransformerException,
+                                            JAXBException {
+
+        testEAipToAixm("var/LH-ENR-2.2-en-HU.xml",
+                       "var/hungary-2.2.aixm51",
+                       "var/hungary.osm",
+                       "var/LH-AD-1.3-en-HU.xml",
+                       0, 3, 0, 0);
+    }
+
+    /**
+     * Test converting an eAIP section ENR-4.1 element to AIXM.
+     *
+     * @throws ParserConfigurationException on XML parser configuration errors.
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing errors
+     * @throws ParseException on AIXM parsing errors
+     * @throws TransformerException on XML serialization errors
+     */
+    /* TODO
+    @Test
+    public void testEAipEnr41ToAixm() throws ParserConfigurationException,
                                             SAXException,
                                             IOException,
                                             ParseException,
                                             TransformerException {
 
-        testEAipToOam("var/LH-ENR-5.1-en-HU.xml",
-                      "var/oam-hungary-5.1.xml",
-                      "var/hungary.osm",
-                      "var/LH-AD-1.3-en-HU.xml",
-                      4, 47, 0, 0);
-    }
-
-    /**
-     * Test converting an eAIP section ENR-5.2 element to OAM.
-     *
-     * @throws ParserConfigurationException on XML parser configuration errors.
-     * @throws IOException on I/O errors
-     * @throws SAXException on XML parsing errors
-     * @throws ParseException on OAM parsing errors
-     * @throws TransformerException on XML serialization errors
-     */
-    @Test
-    public void testEAipEnr52ToOam() throws ParserConfigurationException,
-                                            SAXException,
-                                            IOException,
-                                            ParseException,
-                                            TransformerException {
-
-        testEAipToOam("var/LH-ENR-5.2-en-HU.xml",
-                      "var/oam-hungary-5.2.xml",
-                      "var/hungary.osm",
-                      "var/LH-AD-1.3-en-HU.xml",
-                      0, 34, 0, 0);
-    }
-
-    /**
-     * Test converting an eAIP section ENR-5.5 element to OAM.
-     *
-     * @throws ParserConfigurationException on XML parser configuration errors.
-     * @throws IOException on I/O errors
-     * @throws SAXException on XML parsing errors
-     * @throws ParseException on OAM parsing errors
-     * @throws TransformerException on XML serialization errors
-     */
-    @Test
-    public void testEAipEnr55ToOam() throws ParserConfigurationException,
-                                            SAXException,
-                                            IOException,
-                                            ParseException,
-                                            TransformerException {
-
-        testEAipToOam("var/LH-ENR-5.5-en-HU.xml",
-                      "var/oam-hungary-5.5.xml",
-                      "var/hungary.osm",
-                      "var/LH-AD-1.3-en-HU.xml",
-                      0, 15, 0, 0);
-    }
-
-    /**
-     * Test converting an eAIP section ENR-5.6 element to OAM.
-     *
-     * @throws ParserConfigurationException on XML parser configuration errors.
-     * @throws IOException on I/O errors
-     * @throws SAXException on XML parsing errors
-     * @throws ParseException on OAM parsing errors
-     * @throws TransformerException on XML serialization errors
-     */
-    @Test
-    public void testEAipEnr56ToOam() throws ParserConfigurationException,
-                                            SAXException,
-                                            IOException,
-                                            ParseException,
-                                            TransformerException {
-
-        testEAipToOam("var/LH-ENR-5.6-en-HU.xml",
-                      "var/oam-hungary-5.6.xml",
-                      "var/hungary.osm",
-                      "var/LH-AD-1.3-en-HU.xml",
-                      0, 37, 0, 0);
-    }
-
-    /**
-     * Test converting an eAIP section ENR-2.1 element to OAM.
-     *
-     * @throws ParserConfigurationException on XML parser configuration errors.
-     * @throws IOException on I/O errors
-     * @throws SAXException on XML parsing errors
-     * @throws ParseException on OAM parsing errors
-     * @throws TransformerException on XML serialization errors
-     */
-    @Test
-    public void testEAipEnr21ToOam() throws ParserConfigurationException,
-                                            SAXException,
-                                            IOException,
-                                            ParseException,
-                                            TransformerException {
-
-        testEAipToOam("var/LH-ENR-2.1-en-HU.xml",
-                      "var/oam-hungary-2.1.xml",
-                      "var/hungary.osm",
-                      "var/LH-AD-1.3-en-HU.xml",
-                      0, 20, 0, 0);
-    }
-
-    /**
-     * Test converting an eAIP section ENR-2.2 element to OAM.
-     *
-     * @throws ParserConfigurationException on XML parser configuration errors.
-     * @throws IOException on I/O errors
-     * @throws SAXException on XML parsing errors
-     * @throws ParseException on OAM parsing errors
-     * @throws TransformerException on XML serialization errors
-     */
-    @Test
-    public void testEAipEnr22ToOam() throws ParserConfigurationException,
-                                            SAXException,
-                                            IOException,
-                                            ParseException,
-                                            TransformerException {
-
-        testEAipToOam("var/LH-ENR-2.2-en-HU.xml",
-                      "var/oam-hungary-2.2.xml",
-                      "var/hungary.osm",
-                      "var/LH-AD-1.3-en-HU.xml",
-                      0, 3, 0, 0);
-    }
-
-    /**
-     * Test converting an eAIP section ENR-4.1 element to OAM.
-     *
-     * @throws ParserConfigurationException on XML parser configuration errors.
-     * @throws IOException on I/O errors
-     * @throws SAXException on XML parsing errors
-     * @throws ParseException on OAM parsing errors
-     * @throws TransformerException on XML serialization errors
-     */
-    @Test
-    public void testEAipEnr41ToOam() throws ParserConfigurationException,
-                                            SAXException,
-                                            IOException,
-                                            ParseException,
-                                            TransformerException {
-
-        testEAipToOam("var/LH-ENR-4.1-en-HU.xml",
-                      "var/oam-hungary-4.1.xml",
+        testEAipToAixm("var/LH-ENR-4.1-en-HU.xml",
+                      "var/aixm-hungary-4.1.xml",
                       "var/hungary.osm",
                       "var/LH-AD-1.3-en-HU.xml",
                       1, 0, 18, 0);
     }
+    */
 
     /**
-     * Test converting an eAIP section ENR-4.4 element to OAM.
+     * Test converting an eAIP section ENR-4.4 element to AIXM.
      *
      * @throws ParserConfigurationException on XML parser configuration errors.
      * @throws IOException on I/O errors
      * @throws SAXException on XML parsing errors
-     * @throws ParseException on OAM parsing errors
+     * @throws ParseException on AIXM parsing errors
      * @throws TransformerException on XML serialization errors
      */
+    /* TODO
     @Test
-    public void testEAipEnr44ToOam() throws ParserConfigurationException,
+    public void testEAipEnr44ToAixm() throws ParserConfigurationException,
                                             SAXException,
                                             IOException,
                                             ParseException,
                                             TransformerException {
 
-        testEAipToOam("var/LH-ENR-4.4-en-HU.xml",
-                      "var/oam-hungary-4.4.xml",
+        testEAipToAixm("var/LH-ENR-4.4-en-HU.xml",
+                      "var/aixm-hungary-4.4.xml",
                       "var/hungary.osm",
                       "var/LH-AD-1.3-en-HU.xml",
                       0, 0, 81, 0);
     }
+    */
 
     /**
-     * Test converting an eAIP section AD-LHBC element to OAM.
+     * Test converting an eAIP section AD-LHBC element to AIXM.
      *
      * @throws ParserConfigurationException on XML parser configuration errors.
      * @throws IOException on I/O errors
      * @throws SAXException on XML parsing errors
-     * @throws ParseException on OAM parsing errors
+     * @throws ParseException on AIXM parsing errors
      * @throws TransformerException on XML serialization errors
      */
+    /* TODO
     @Test
-    public void testEAipAdLhbcToOam() throws ParserConfigurationException,
+    public void testEAipAdLhbcToAixm() throws ParserConfigurationException,
                                              SAXException,
                                              IOException,
                                              ParseException,
                                              TransformerException {
 
-        testEAipToOam("var/LH-AD-LHBC-en-HU.xml",
-                      "var/oam-hungary-lhbc.xml",
+        testEAipToAixm("var/LH-AD-LHBC-en-HU.xml",
+                      "var/aixm-hungary-lhbc.xml",
                       "var/hungary.osm",
                       "var/LH-AD-1.3-en-HU.xml",
                       0, 0, 0, 1);
     }
+    */
 
     /**
-     * Test converting an eAIP section AD-LHBP element to OAM.
+     * Test converting an eAIP section AD-LHBP element to AIXM.
      *
      * @throws ParserConfigurationException on XML parser configuration errors.
      * @throws IOException on I/O errors
      * @throws SAXException on XML parsing errors
-     * @throws ParseException on OAM parsing errors
+     * @throws ParseException on AIXM parsing errors
      * @throws TransformerException on XML serialization errors
      */
+    /* TODO
     @Test
-    public void testEAipAdLhbpToOam() throws ParserConfigurationException,
+    public void testEAipAdLhbpToAixm() throws ParserConfigurationException,
                                              SAXException,
                                              IOException,
                                              ParseException,
                                              TransformerException {
 
-        testEAipToOam("var/LH-AD-LHBP-en-HU.xml",
-                      "var/oam-hungary-lhbp.xml",
+        testEAipToAixm("var/LH-AD-LHBP-en-HU.xml",
+                      "var/aixm-hungary-lhbp.xml",
                       "var/hungary.osm",
                       "var/LH-AD-1.3-en-HU.xml",
                       0, 0, 0, 1);
     }
+    */
 
     /**
-     * Test converting an eAIP section AD-LHDC element to OAM.
+     * Test converting an eAIP section AD-LHDC element to AIXM.
      *
      * @throws ParserConfigurationException on XML parser configuration errors.
      * @throws IOException on I/O errors
      * @throws SAXException on XML parsing errors
-     * @throws ParseException on OAM parsing errors
+     * @throws ParseException on AIXM parsing errors
      * @throws TransformerException on XML serialization errors
      */
+    /* TODO
     @Test
-    public void testEAipAdLhdcToOam() throws ParserConfigurationException,
+    public void testEAipAdLhdcToAixm() throws ParserConfigurationException,
                                              SAXException,
                                              IOException,
                                              ParseException,
                                              TransformerException {
 
-        testEAipToOam("var/LH-AD-LHDC-en-HU.xml",
-                      "var/oam-hungary-lhdc.xml",
+        testEAipToAixm("var/LH-AD-LHDC-en-HU.xml",
+                      "var/aixm-hungary-lhdc.xml",
                       "var/hungary.osm",
                       "var/LH-AD-1.3-en-HU.xml",
                       0, 0, 0, 1);
     }
+    */
 
     /**
-     * Test converting an eAIP section AD-LHFM element to OAM.
+     * Test converting an eAIP section AD-LHFM element to AIXM.
      *
      * @throws ParserConfigurationException on XML parser configuration errors.
      * @throws IOException on I/O errors
      * @throws SAXException on XML parsing errors
-     * @throws ParseException on OAM parsing errors
+     * @throws ParseException on AIXM parsing errors
      * @throws TransformerException on XML serialization errors
      */
+    /* TODO
     @Test
-    public void testEAipAdLhfmToOam() throws ParserConfigurationException,
+    public void testEAipAdLhfmToAixm() throws ParserConfigurationException,
                                              SAXException,
                                              IOException,
                                              ParseException,
                                              TransformerException {
 
-        testEAipToOam("var/LH-AD-LHFM-en-HU.xml",
-                      "var/oam-hungary-lhfm.xml",
+        testEAipToAixm("var/LH-AD-LHFM-en-HU.xml",
+                      "var/aixm-hungary-lhfm.xml",
                       "var/hungary.osm",
                       "var/LH-AD-1.3-en-HU.xml",
                       0, 0, 0, 1);
     }
+    */
 
     /**
-     * Test converting an eAIP section AD-LHNY element to OAM.
+     * Test converting an eAIP section AD-LHNY element to AIXM.
      *
      * @throws ParserConfigurationException on XML parser configuration errors.
      * @throws IOException on I/O errors
      * @throws SAXException on XML parsing errors
-     * @throws ParseException on OAM parsing errors
+     * @throws ParseException on AIXM parsing errors
      * @throws TransformerException on XML serialization errors
      */
+    /* TODO
     @Test
-    public void testEAipAdLhnyToOam() throws ParserConfigurationException,
+    public void testEAipAdLhnyToAixm() throws ParserConfigurationException,
                                              SAXException,
                                              IOException,
                                              ParseException,
                                              TransformerException {
 
-        testEAipToOam("var/LH-AD-LHNY-en-HU.xml",
-                      "var/oam-hungary-lhny.xml",
+        testEAipToAixm("var/LH-AD-LHNY-en-HU.xml",
+                      "var/aixm-hungary-lhny.xml",
                       "var/hungary.osm",
                       "var/LH-AD-1.3-en-HU.xml",
                       0, 0, 0, 1);
     }
+    */
 
     /**
-     * Test converting an eAIP section AD-LHPP element to OAM.
+     * Test converting an eAIP section AD-LHPP element to AIXM.
      *
      * @throws ParserConfigurationException on XML parser configuration errors.
      * @throws IOException on I/O errors
      * @throws SAXException on XML parsing errors
-     * @throws ParseException on OAM parsing errors
+     * @throws ParseException on AIXM parsing errors
      * @throws TransformerException on XML serialization errors
      */
+    /* TODO
     @Test
-    public void testEAipAdLhppToOam() throws ParserConfigurationException,
+    public void testEAipAdLhppToAixm() throws ParserConfigurationException,
                                              SAXException,
                                              IOException,
                                              ParseException,
                                              TransformerException {
 
-        testEAipToOam("var/LH-AD-LHPP-en-HU.xml",
-                      "var/oam-hungary-lhpp.xml",
+        testEAipToAixm("var/LH-AD-LHPP-en-HU.xml",
+                      "var/aixm-hungary-lhpp.xml",
                       "var/hungary.osm",
                       "var/LH-AD-1.3-en-HU.xml",
                       0, 0, 0, 1);
     }
+    */
 
     /**
-     * Test converting an eAIP section AD-LHPR element to OAM.
+     * Test converting an eAIP section AD-LHPR element to AIXM.
      *
      * @throws ParserConfigurationException on XML parser configuration errors.
      * @throws IOException on I/O errors
      * @throws SAXException on XML parsing errors
-     * @throws ParseException on OAM parsing errors
+     * @throws ParseException on AIXM parsing errors
      * @throws TransformerException on XML serialization errors
      */
+    /* TODO
     @Test
-    public void testEAipAdLhprToOam() throws ParserConfigurationException,
+    public void testEAipAdLhprToAixm() throws ParserConfigurationException,
                                              SAXException,
                                              IOException,
                                              ParseException,
                                              TransformerException {
 
-        testEAipToOam("var/LH-AD-LHPR-en-HU.xml",
-                      "var/oam-hungary-lhpr.xml",
+        testEAipToAixm("var/LH-AD-LHPR-en-HU.xml",
+                      "var/aixm-hungary-lhpr.xml",
                       "var/hungary.osm",
                       "var/LH-AD-1.3-en-HU.xml",
                       0, 0, 0, 1);
     }
+    */
 
     /**
-     * Test converting an eAIP section AD-LHSM element to OAM.
+     * Test converting an eAIP section AD-LHSM element to AIXM.
      *
      * @throws ParserConfigurationException on XML parser configuration errors.
      * @throws IOException on I/O errors
      * @throws SAXException on XML parsing errors
-     * @throws ParseException on OAM parsing errors
+     * @throws ParseException on AIXM parsing errors
      * @throws TransformerException on XML serialization errors
      */
+    /* TODO
     @Test
-    public void testEAipAdLhsmToOam() throws ParserConfigurationException,
+    public void testEAipAdLhsmToAixm() throws ParserConfigurationException,
                                              SAXException,
                                              IOException,
                                              ParseException,
                                              TransformerException {
 
-        testEAipToOam("var/LH-AD-LHSM-en-HU.xml",
-                      "var/oam-hungary-lhsm.xml",
+        testEAipToAixm("var/LH-AD-LHSM-en-HU.xml",
+                      "var/aixm-hungary-lhsm.xml",
                       "var/hungary.osm",
                       "var/LH-AD-1.3-en-HU.xml",
                       0, 0, 0, 1);
     }
+    */
 
     /**
-     * Test converting an eAIP section AD-LHUD element to OAM.
+     * Test converting an eAIP section AD-LHUD element to AIXM.
      *
      * @throws ParserConfigurationException on XML parser configuration errors.
      * @throws IOException on I/O errors
      * @throws SAXException on XML parsing errors
-     * @throws ParseException on OAM parsing errors
+     * @throws ParseException on AIXM parsing errors
      * @throws TransformerException on XML serialization errors
      */
+    /* TODO
     @Test
-    public void testEAipAdLhudToOam() throws ParserConfigurationException,
+    public void testEAipAdLhudToAixm() throws ParserConfigurationException,
                                              SAXException,
                                              IOException,
                                              ParseException,
                                              TransformerException {
 
-        testEAipToOam("var/LH-AD-LHUD-en-HU.xml",
-                      "var/oam-hungary-lhud.xml",
+        testEAipToAixm("var/LH-AD-LHUD-en-HU.xml",
+                      "var/aixm-hungary-lhud.xml",
                       "var/hungary.osm",
                       "var/LH-AD-1.3-en-HU.xml",
                       0, 0, 0, 1);
     }
+    */
 }

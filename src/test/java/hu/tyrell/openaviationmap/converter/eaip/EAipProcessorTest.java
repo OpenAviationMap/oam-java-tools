@@ -155,7 +155,7 @@ public class EAipProcessorTest {
         Elevation ul = airspace.getUpperLimit();
         assertEquals(195, ul.getElevation(), 0.0);
         assertEquals(UOM.FL, ul.getUom());
-        assertEquals(ElevationReference.MSL, ul.getReference());
+        assertEquals(ElevationReference.STD, ul.getReference());
 
         assertNotNull(airspace.getLowerLimit());
         Elevation ll = airspace.getLowerLimit();

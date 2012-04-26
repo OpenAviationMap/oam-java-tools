@@ -1,0 +1,2758 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns7:AIXMBasicMessage xmlns:ns1="http://www.opengis.net/gml/3.2" xmlns:ns2="http://www.w3.org/1999/xlink" xmlns:ns3="http://www.aixm.aero/schema/5.1" xmlns:ns4="http://www.isotc211.org/2005/gco" xmlns:ns5="http://www.isotc211.org/2005/gmd" xmlns:ns6="http://www.isotc211.org/2005/gts" xmlns:ns7="http://www.aixm.aero/schema/5.1/message" ns1:id="e:ENR-5.2">
+    <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA11A:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA11A</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA11A:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA11A</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>PAPA ALPHA</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="FL">125.0</ns3:upperLimit>
+    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>47.499722222222225 17.8375 47.499722222222225 18.258055555555554 47.22527777777778 18.251944444444444 47.21638888888889 17.983333333333334 47.499722222222225 17.8375</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA11B:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA11B</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA11B:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA11B</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>PAPA BRAVO</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="ft">9500.0</ns3:upperLimit>
+    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="ft">4000.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>47.21638888888889 17.983333333333334 47.22527777777778 18.251944444444444 47.03666666666666 18.249166666666667 46.92472222222222 17.859722222222224 47.11277777777778 17.726388888888888 47.21638888888889 17.983333333333334</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA11C:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA11C</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA11C:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA11C</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>PAPA CHARLIE</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="ft">4000.0</ns3:upperLimit>
+    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>47.21638888888889 17.983333333333334 47.22527777777778 18.251944444444444 47.03666666666666 18.249166666666667 46.92472222222222 17.859722222222224 47.11277777777778 17.726388888888888 47.21638888888889 17.983333333333334</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA12:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA12</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA12:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA12</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>KUNSAG</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="FL">115.0</ns3:upperLimit>
+    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>46.99583333333334 19.045 47.0675 19.275 46.827222222222225 19.498333333333335 46.66638888888889 19.498333333333335 46.66583333333333 19.37027777777778 46.99583333333334 19.045</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA13:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA13</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA13:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA13</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>TISZA</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="FL">145.0</ns3:upperLimit>
+    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="ft">9500.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>47.37 20.152777777777775 47.34388888888889 20.29527777777778 47.308055555555555 20.49138888888889 47.17916666666667 20.425555555555558 47.00222222222222 20.335555555555555 46.900277777777774 20.284166666666668 46.933055555555555 20.12472222222222 47.04472222222222 20.074444444444445 47.200833333333335 19.998055555555556 47.37 20.152777777777775</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA14A:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA14A</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA14A:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA14A</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>MEZO ALPHA</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="ft">4500.0</ns3:upperLimit>
+    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>47.308055555555555 20.49138888888889 47.212500000000006 20.758055555555554 47.10277777777778 20.720555555555553 47.17916666666667 20.425555555555558 47.308055555555555 20.49138888888889</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA14B:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA14B</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA14B:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA14B</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>MEZO BRAVO</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="ft">4500.0</ns3:upperLimit>
+    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>47.17916666666667 20.425555555555558 47.10277777777778 20.720555555555553 46.93694444444444 20.664166666666667 47.00222222222222 20.335555555555555 47.17916666666667 20.425555555555558</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA14C:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA14C</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA14C:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA14C</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>MEZO CHARLIE</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="ft">4500.0</ns3:upperLimit>
+    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>47.00222222222222 20.335555555555555 46.93694444444444 20.664166666666667 46.828611111111115 20.62777777777778 46.900277777777774 20.284166666666668 47.00222222222222 20.335555555555555</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA15A:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA15A</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA15A:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA15A</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>SZARVAS ALPHA</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="ft">9500.0</ns3:upperLimit>
+    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="ft">4500.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>47.308055555555555 20.49138888888889 47.212500000000006 20.758055555555554 47.10277777777778 20.720555555555553 47.17916666666667 20.425555555555558 47.308055555555555 20.49138888888889</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA15B:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA15B</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA15B:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA15B</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>SZARVAS BRAVO</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="ft">9500.0</ns3:upperLimit>
+    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="ft">4500.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>47.17916666666667 20.425555555555558 47.10277777777778 20.720555555555553 46.93694444444444 20.664166666666667 47.00222222222222 20.335555555555555 47.17916666666667 20.425555555555558</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA15C:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA15C</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA15C:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA15C</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>SZARVAS CHARLIE</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="ft">9500.0</ns3:upperLimit>
+    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="ft">4500.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>47.00222222222222 20.335555555555555 46.93694444444444 20.664166666666667 46.828611111111115 20.62777777777778 46.900277777777774 20.284166666666668 47.00222222222222 20.335555555555555</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA16:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA16</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA16:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA16</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>ARPAD</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="FL">115.0</ns3:upperLimit>
+    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>46.828611111111115 20.62777777777778 46.75138888888889 20.899166666666666 46.49444444444445 20.732777777777777 46.534166666666664 20.393055555555556 46.828611111111115 20.62777777777778</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA21A:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA21A</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA21A:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA21A</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>WEST ALPHA</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="FL">245.0</ns3:upperLimit>
+    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="ft">9500.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>46.85138888888889 16.357222222222223 46.56444444444444 18.001666666666665 46.14833333333333 18.07361111111111 46.07916666666667 17.445833333333333 46.382222222222225 17.020555555555553 46.49166666666667 16.61722222222222 46.683611111111105 16.422777777777778 46.85138888888889 16.357222222222223</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA21B:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA21B</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA21B:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA21B</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>WEST BRAVO</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="FL">215.0</ns3:upperLimit>
+    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="FL">135.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>STD</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>46.85138888888889 16.357222222222223 46.75055555555556 17.969166666666666 46.56444444444444 18.001666666666665 46.85138888888889 16.357222222222223</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA21C:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA21C</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA21C:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA21C</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>WEST CHARLIE</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="FL">175.0</ns3:upperLimit>
+    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="FL">135.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>STD</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>46.75055555555556 17.969166666666666 46.62388888888889 18.226388888888888 45.96027777777778 18.3975 45.92472222222222 17.881666666666668 46.07916666666667 17.445833333333333 46.14833333333333 18.07361111111111 46.75055555555556 17.969166666666666</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA21D:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA21D</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA21D:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA21D</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>WEST DELTA</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="ft">9500.0</ns3:upperLimit>
+    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="ft">4000.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>46.44944444444444 17.42361111111111 46.24638888888889 17.978055555555553 45.92472222222222 17.881666666666668 46.07916666666667 17.445833333333333 46.382222222222225 17.020555555555553 46.44944444444444 17.42361111111111</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA21E:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA21E</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA21E:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA21E</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>WEST ECHO</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="ft">4000.0</ns3:upperLimit>
+    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>46.44944444444444 17.42361111111111 46.24638888888889 17.978055555555553 45.92472222222222 17.881666666666668 46.07916666666667 17.445833333333333 46.382222222222225 17.020555555555553 46.44944444444444 17.42361111111111</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA22A:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA22A</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA22A:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA22A</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>SOUTH ALPHA</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="FL">175.0</ns3:upperLimit>
+    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="FL">125.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>STD</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>47.06166666666666 19.396944444444443 47.04472222222222 20.074444444444445 46.933055555555555 20.12472222222222 46.828611111111115 20.62777777777778 46.534166666666664 20.393055555555556 46.62444444444444 19.78805555555556 47.06166666666666 19.396944444444443</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA22B:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA22B</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA22B:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA22B</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>SOUTH BRAVO</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="FL">175.0</ns3:upperLimit>
+    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="ft">9500.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>46.828611111111115 20.62777777777778 46.661944444444444 21.209444444444443 46.38861111111111 21.094444444444445 46.361111111111114 20.921944444444446 46.446666666666665 19.94472222222222 46.62444444444444 19.78805555555556 46.534166666666664 20.393055555555556 46.828611111111115 20.62777777777778</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA22C:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA22C</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA22C:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA22C</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>SOUTH CHARLIE</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="FL">245.0</ns3:upperLimit>
+    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="FL">175.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>STD</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>47.06166666666666 19.396944444444443 47.04472222222222 20.074444444444445 46.933055555555555 20.12472222222222 46.828611111111115 20.62777777777778 46.661944444444444 21.209444444444443 46.38861111111111 21.094444444444445 46.361111111111114 20.921944444444446 46.446666666666665 19.94472222222222 47.06166666666666 19.396944444444443</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA22D:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA22D</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA22D:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA22D</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>SOUTH DELTA</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="FL">145.0</ns3:upperLimit>
+    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="ft">9500.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>46.99583333333334 19.045 46.36194444444445 19.66444444444444 46.24138888888889 19.149722222222223 46.51555555555556 18.829722222222223 46.56027777777778 18.941944444444445 46.652499999999996 18.86722222222222 46.6 18.734722222222224 46.814166666666665 18.476388888888888 46.99583333333334 19.045</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA22E:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA22E</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA22E:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA22E</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>SOUTH ECHO</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="FL">125.0</ns3:upperLimit>
+    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="ft">9500.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>46.66583333333333 19.37027777777778 46.66638888888889 19.498333333333335 46.62444444444444 19.78805555555556 46.446666666666665 19.94472222222222 46.36194444444445 19.66444444444444 46.66583333333333 19.37027777777778</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA22F:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA22F</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA22F:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA22F</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>SOUTH FOXTROT</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="ft">9500.0</ns3:upperLimit>
+    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="ft">4000.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>46.846111111111114 19.192777777777778 46.36194444444445 19.66444444444444 46.25333333333333 19.198888888888888 46.73111111111111 18.803055555555556 46.846111111111114 19.192777777777778</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA23A:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA23A</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA23A:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA23A</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>EAST ALPHA</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="FL">245.0</ns3:upperLimit>
+    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="ft">9500.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>48.1875 20.42361111111111 47.76638888888889 21.560833333333335 47.36694444444444 21.720277777777778 47.20277777777778 21.55027777777778 47.085 21.468888888888888 47.49527777777778 20.268055555555556 47.96666666666667 19.9375 48.1875 20.42361111111111</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA23B:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA23B</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA23B:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA23B</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>EAST BRAVO</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="FL">175.0</ns3:upperLimit>
+    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="FL">135.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>STD</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>47.36694444444444 21.720277777777778 47.19027777777777 21.79138888888889 47.03861111111111 21.613611111111112 46.864444444444445 21.5075 47.263333333333335 20.515 47.49527777777778 20.268055555555556 47.085 21.468888888888888 47.20277777777778 21.55027777777778 47.36694444444444 21.720277777777778</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA23C:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA23C</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA23C:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA23C</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>EAST CHARLIE</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="FL">175.0</ns3:upperLimit>
+    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="FL">135.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>STD</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>47.96666666666667 19.9375 48.11944444444445 19.91444444444444 48.299166666666665 20.455 47.97916666666667 21.46944444444444 47.76638888888889 21.560833333333335 48.1875 20.42361111111111 47.96666666666667 19.9375</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA23D:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA23D</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA23D:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA23D</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>EAST DELTA</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="ft">9500.0</ns3:upperLimit>
+    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="ft">4000.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>48.1875 20.42361111111111 47.83833333333334 21.3675 47.38111111111111 21.036944444444448 47.69027777777777 20.13222222222222 47.96666666666667 19.9375 48.1875 20.42361111111111</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA23E:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA23E</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA23E:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA23E</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>EAST ECHO</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="ft">4000.0</ns3:upperLimit>
+    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>48.1875 20.42361111111111 47.83833333333334 21.3675 47.38111111111111 21.036944444444448 47.69027777777777 20.13222222222222 47.96666666666667 19.9375 48.1875 20.42361111111111</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA31A:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA31A</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA31A:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA31A</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>UPPER WEST ALPHA</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="FL">285.0</ns3:upperLimit>
+    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="FL">245.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>STD</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>46.56444444444444 18.001666666666665 46.474722222222226 18.691388888888888 46.166666666666664 19.091388888888886 46.04972222222222 18.668055555555558 45.96027777777778 18.3975 45.92472222222222 17.881666666666668 46.07916666666667 17.445833333333333 46.56444444444444 18.001666666666665</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA31B:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA31B</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA31B:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA31B</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>UPPER WEST BRAVO</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="FL">285.0</ns3:upperLimit>
+    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="FL">245.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>STD</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>46.70277777777778 16.783055555555556 46.56444444444444 18.001666666666665 46.07916666666667 17.445833333333333 46.60138888888889 16.702777777777776 46.70277777777778 16.783055555555556</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA32A:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA32A</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA32A:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA32A</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>UPPER EAST ALPHA</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="FL">305.0</ns3:upperLimit>
+    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="FL">245.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>STD</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>47.96555555555556 21.119444444444444 47.319722222222225 21.67138888888889 47.20277777777778 21.55027777777778 46.84722222222222 21.305833333333332 47.263333333333335 20.514166666666668 47.49527777777778 20.268055555555556 47.69027777777777 20.13222222222222 47.96555555555556 21.119444444444444</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA32B:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA32B</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA32B:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA32B</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>UPPER EAST BRAVO</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="FL">305.0</ns3:upperLimit>
+    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="FL">245.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>STD</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>48.13611111111111 21.752777777777776 47.87861111111111 22.25888888888889 47.319722222222225 21.67138888888889 47.96555555555556 21.119444444444444 48.13611111111111 21.752777777777776</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA33A:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA33A</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA33A:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA33A</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>TOP EAST ALPHA</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="FL">420.0</ns3:upperLimit>
+    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="FL">365.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>STD</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>47.96555555555556 21.119444444444444 47.319722222222225 21.67138888888889 47.20277777777778 21.55027777777778 46.84722222222222 21.305833333333332 47.263333333333335 20.514166666666668 47.49527777777778 20.268055555555556 47.69027777777777 20.13222222222222 47.96555555555556 21.119444444444444</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Airspace ns1:id="eAIP.Hungary:LHTRA33B:1">
+            <ns1:identifier codeSpace="eAIP.Hungary">LHTRA33B</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHTRA33B:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>TRA</ns3:type>
+                    <ns3:designator>LHTRA33B</ns3:designator>
+                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:name>TOP EAST BRAVO</ns3:name>
+                    <ns3:designatorICAO>yes</ns3:designatorICAO>
+                    <ns3:controlType>CIVIL</ns3:controlType>
+                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:geometryComponent>
+                        <ns3:AirspaceGeometryComponent>
+                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theAirspaceVolume>
+<ns3:AirspaceVolume>
+    <ns3:upperLimit uom="FL">420.0</ns3:upperLimit>
+    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
+    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:lowerLimit uom="FL">365.0</ns3:lowerLimit>
+    <ns3:lowerLimitReference>STD</ns3:lowerLimitReference>
+    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:horizontalProjection>
+        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+            <ns1:patches>
+                <ns1:PolygonPatch interpolation="planar">
+                    <ns1:exterior>
+                        <ns1:Ring>
+                            <ns1:curveMember ns2:type="simple">
+<ns1:Curve>
+    <ns1:segments>
+        <ns1:GeodesicString interpolation="geodesic">
+            <ns1:posList>48.13611111111111 21.752777777777776 47.87861111111111 22.25888888888889 47.319722222222225 21.67138888888889 47.96555555555556 21.119444444444444 48.13611111111111 21.752777777777776</ns1:posList>
+        </ns1:GeodesicString>
+    </ns1:segments>
+</ns1:Curve>
+                            </ns1:curveMember>
+                        </ns1:Ring>
+                    </ns1:exterior>
+                </ns1:PolygonPatch>
+            </ns1:patches>
+            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+        </ns3:Surface>
+    </ns3:horizontalProjection>
+    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+</ns3:AirspaceVolume>
+                            </ns3:theAirspaceVolume>
+                        </ns3:AirspaceGeometryComponent>
+                    </ns3:geometryComponent>
+                    <ns3:annotation>
+                        <ns3:Note>
+                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:purpose>REMARK</ns3:purpose>
+                            <ns3:translatedNote>
+<ns3:LinguisticNote>
+    <ns3:note lang="eng"/>
+</ns3:LinguisticNote>
+                            </ns3:translatedNote>
+                        </ns3:Note>
+                    </ns3:annotation>
+                </ns3:AirspaceTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Airspace>
+    </ns7:hasMember>
+</ns7:AIXMBasicMessage>

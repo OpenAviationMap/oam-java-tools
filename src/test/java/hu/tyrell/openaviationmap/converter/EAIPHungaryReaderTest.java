@@ -110,7 +110,7 @@ public class EAIPHungaryReaderTest {
         Elevation ul = airspaces.get(0).getUpperLimit();
         assertEquals(195, ul.getElevation(), 0.0);
         assertEquals(UOM.FL, ul.getUom());
-        assertEquals(ElevationReference.MSL, ul.getReference());
+        assertEquals(ElevationReference.STD, ul.getReference());
 
         assertNotNull(airspaces.get(0).getLowerLimit());
         Elevation ll = airspaces.get(0).getLowerLimit();

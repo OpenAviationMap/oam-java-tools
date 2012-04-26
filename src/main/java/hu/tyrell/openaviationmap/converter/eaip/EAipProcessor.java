@@ -474,7 +474,7 @@ public class EAipProcessor {
         } else if (ed.startsWith("FL")) {
             elevation.setElevation(
                     Double.parseDouble(ed.substring(2).trim()));
-            elevation.setReference(ElevationReference.MSL);
+            elevation.setReference(ElevationReference.STD);
             elevation.setUom(UOM.FL);
         } else {
             // get the elevation

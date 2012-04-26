@@ -66,6 +66,8 @@ public class ConverterTest {
                           action,
                           borderFile,
                           adFile,
+                          null,
+                          null,
                           version,
                           errors);
 

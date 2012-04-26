@@ -15,7 +15,7 @@
     You should have received a copy of the GNU Affero General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package hu.tyrell.openaviationmap;
+package hu.tyrell.openaviationmap.converter.aixm;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -52,7 +52,7 @@ import aero.aixm.schema._5_1.message.BasicMessageMemberAIXMPropertyType;
 
 
 /**
- * Unit test for simple App.
+ * Generic AIXM tests.
  */
 public class AixmTest {
     /**
@@ -68,7 +68,7 @@ public class AixmTest {
         Unmarshaller unm = ctx.createUnmarshaller();
         JAXBElement<AIXMBasicMessageType>  root =
             (JAXBElement<AIXMBasicMessageType>)
-            unm.unmarshal(new FileInputStream("var/test.aixm"));
+                        unm.unmarshal(new FileInputStream("var/test.aixm"));
 
         assertNotNull(root);
         assertEquals(AIXMBasicMessageType.class, root.getDeclaredType());
@@ -116,10 +116,10 @@ public class AixmTest {
         assertNotNull("UNKNOWN",
                       tp.getEndPosition().getIndeterminatePosition());
 
-        CodeAirspaceType type = asts.getType().getValue();
+        CodeAirspaceType type = asts.getType();
         assertEquals("R", type.getValue());
 
-        assertEquals("LHR1", asts.getDesignator().getValue().getValue());
+        assertEquals("LHR1", asts.getDesignator().getValue());
 
         List<AirspaceGeometryComponentPropertyType> gl =
                                                 asts.getGeometryComponent();
@@ -129,7 +129,7 @@ public class AixmTest {
         AirspaceGeometryComponentType ag = g.getAirspaceGeometryComponent();
         AirspaceVolumeType av = ag.getTheAirspaceVolume().getAirspaceVolume();
         SurfaceType surface =
-                av.getHorizontalProjection().getValue().getSurface().getValue();
+                av.getHorizontalProjection().getSurface().getValue();
         assertNotNull(surface);
 
         SurfacePatchArrayPropertyType patches = surface.getPatches().getValue();
