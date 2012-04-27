@@ -1,0 +1,1579 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns7:AIXMBasicMessage xmlns:ns1="http://www.opengis.net/gml/3.2" xmlns:ns2="http://www.w3.org/1999/xlink" xmlns:ns3="http://www.aixm.aero/schema/5.1" xmlns:ns4="http://www.isotc211.org/2005/gco" xmlns:ns5="http://www.isotc211.org/2005/gmd" xmlns:ns6="http://www.isotc211.org/2005/gts" xmlns:ns7="http://www.aixm.aero/schema/5.1/message" ns1:id="e:ENR-4.1">
+    <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:VOR ns1:id="eAIP.Hungary:VOR:BKS:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:BKS</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:VORTimeSlice ns1:id="eAIP.Hungary:VOR:BKS:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>BKS</ns3:designator>
+                    <ns3:name>BÉKÉS</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:VOR:BKS:1">
+                            <ns1:pos>46.8 21.073888888888888</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">95.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:type>VOR</ns3:type>
+                    <ns3:frequency uom="MHz">115.8000000000000</ns3:frequency>
+                    <ns3:zeroBearingDirection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:declination>4.200000000000000</ns3:declination>
+                </ns3:VORTimeSlice>
+            </ns3:timeSlice>
+        </ns3:VOR>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DME ns1:id="eAIP.Hungary:DME:BKS:">
+            <ns1:identifier codeSpace="eAIP.Hungary">DME:BKS</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DMETimeSlice ns1:id="eAIP.Hungary:DME:BKS:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>BKS</ns3:designator>
+                    <ns3:name>BÉKÉS</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DME:BKS:1">
+                            <ns1:pos>46.8 21.073888888888888</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">95.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:type>DME</ns3:type>
+                    <ns3:channel>105X</ns3:channel>
+                    <ns3:ghostFrequency xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:displace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DMETimeSlice>
+            </ns3:timeSlice>
+        </ns3:DME>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Navaid ns1:id="eAIP.Hungary:VOR_DME:BKS:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:BKS</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:NavaidTimeSlice ns1:id="eAIP.Hungary:VOR_DME:BKS:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>VOR_DME</ns3:type>
+                    <ns3:designator>BKS</ns3:designator>
+                    <ns3:name>BÉKÉS</ns3:name>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:purpose xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:signalPerformance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:courseQuality xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:integrityLevel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:navaidEquipment>
+                        <ns3:NavaidComponent>
+                            <ns3:collocationGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:markerPosition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:providesNavigableLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theNavaidEquipment ns2:type="simple" ns2:href="VOR:BKS"/>
+                        </ns3:NavaidComponent>
+                    </ns3:navaidEquipment>
+                    <ns3:navaidEquipment>
+                        <ns3:NavaidComponent>
+                            <ns3:collocationGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:markerPosition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:providesNavigableLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theNavaidEquipment ns2:type="simple" ns2:href="DME:BKS"/>
+                        </ns3:NavaidComponent>
+                    </ns3:navaidEquipment>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:VOR_DME:BKS:1">
+                            <ns1:pos>46.8 21.073888888888888</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">95.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                </ns3:NavaidTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Navaid>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:NDB ns1:id="eAIP.Hungary:NDB:BKS:">
+            <ns1:identifier codeSpace="eAIP.Hungary">NDB:BKS</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:NDBTimeSlice ns1:id="eAIP.Hungary:NDB:BKS:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>BKS</ns3:designator>
+                    <ns3:name>BÉKÉS</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation>4.100000000000000</ns3:magneticVariation>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation>2009</ns3:dateMagneticVariation>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:NDB:BKS:1">
+                            <ns1:pos>46.794999999999995 21.078055555555554</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:geoidUndulation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:frequency uom="kHz">374</ns3:frequency>
+                    <ns3:class xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:emissionBand xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:NDBTimeSlice>
+            </ns3:timeSlice>
+        </ns3:NDB>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:VOR ns1:id="eAIP.Hungary:VOR:BUD:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:BUD</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:VORTimeSlice ns1:id="eAIP.Hungary:VOR:BUD:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>BUD</ns3:designator>
+                    <ns3:name>BUDAPEST</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:VOR:BUD:1">
+                            <ns1:pos>47.45055555555556 19.249444444444446</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">162.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:type>VOR</ns3:type>
+                    <ns3:frequency uom="MHz">117.3000000000000</ns3:frequency>
+                    <ns3:zeroBearingDirection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:declination>4.400000000000000</ns3:declination>
+                </ns3:VORTimeSlice>
+            </ns3:timeSlice>
+        </ns3:VOR>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DME ns1:id="eAIP.Hungary:DME:BUD:">
+            <ns1:identifier codeSpace="eAIP.Hungary">DME:BUD</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DMETimeSlice ns1:id="eAIP.Hungary:DME:BUD:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>BUD</ns3:designator>
+                    <ns3:name>BUDAPEST</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DME:BUD:1">
+                            <ns1:pos>47.45055555555556 19.249444444444446</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">162.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:type>DME</ns3:type>
+                    <ns3:channel>120X</ns3:channel>
+                    <ns3:ghostFrequency xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:displace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DMETimeSlice>
+            </ns3:timeSlice>
+        </ns3:DME>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Navaid ns1:id="eAIP.Hungary:VOR_DME:BUD:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:BUD</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:NavaidTimeSlice ns1:id="eAIP.Hungary:VOR_DME:BUD:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>VOR_DME</ns3:type>
+                    <ns3:designator>BUD</ns3:designator>
+                    <ns3:name>BUDAPEST</ns3:name>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:purpose xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:signalPerformance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:courseQuality xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:integrityLevel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:navaidEquipment>
+                        <ns3:NavaidComponent>
+                            <ns3:collocationGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:markerPosition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:providesNavigableLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theNavaidEquipment ns2:type="simple" ns2:href="VOR:BUD"/>
+                        </ns3:NavaidComponent>
+                    </ns3:navaidEquipment>
+                    <ns3:navaidEquipment>
+                        <ns3:NavaidComponent>
+                            <ns3:collocationGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:markerPosition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:providesNavigableLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theNavaidEquipment ns2:type="simple" ns2:href="DME:BUD"/>
+                        </ns3:NavaidComponent>
+                    </ns3:navaidEquipment>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:VOR_DME:BUD:1">
+                            <ns1:pos>47.45055555555556 19.249444444444446</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">162.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                </ns3:NavaidTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Navaid>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:VOR ns1:id="eAIP.Hungary:VOR:BUG:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:BUG</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:VORTimeSlice ns1:id="eAIP.Hungary:VOR:BUG:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>BUG</ns3:designator>
+                    <ns3:name>BUGAC</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:VOR:BUG:1">
+                            <ns1:pos>46.67777777777778 19.68166666666667</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">123.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:type>VOR</ns3:type>
+                    <ns3:frequency uom="MHz">113.4000000000000</ns3:frequency>
+                    <ns3:zeroBearingDirection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:declination>4</ns3:declination>
+                </ns3:VORTimeSlice>
+            </ns3:timeSlice>
+        </ns3:VOR>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DME ns1:id="eAIP.Hungary:DME:BUG:">
+            <ns1:identifier codeSpace="eAIP.Hungary">DME:BUG</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DMETimeSlice ns1:id="eAIP.Hungary:DME:BUG:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>BUG</ns3:designator>
+                    <ns3:name>BUGAC</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DME:BUG:1">
+                            <ns1:pos>46.67777777777778 19.68166666666667</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">123.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:type>DME</ns3:type>
+                    <ns3:channel>81X</ns3:channel>
+                    <ns3:ghostFrequency xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:displace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DMETimeSlice>
+            </ns3:timeSlice>
+        </ns3:DME>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Navaid ns1:id="eAIP.Hungary:VOR_DME:BUG:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:BUG</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:NavaidTimeSlice ns1:id="eAIP.Hungary:VOR_DME:BUG:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>VOR_DME</ns3:type>
+                    <ns3:designator>BUG</ns3:designator>
+                    <ns3:name>BUGAC</ns3:name>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:purpose xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:signalPerformance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:courseQuality xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:integrityLevel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:navaidEquipment>
+                        <ns3:NavaidComponent>
+                            <ns3:collocationGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:markerPosition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:providesNavigableLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theNavaidEquipment ns2:type="simple" ns2:href="VOR:BUG"/>
+                        </ns3:NavaidComponent>
+                    </ns3:navaidEquipment>
+                    <ns3:navaidEquipment>
+                        <ns3:NavaidComponent>
+                            <ns3:collocationGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:markerPosition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:providesNavigableLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theNavaidEquipment ns2:type="simple" ns2:href="DME:BUG"/>
+                        </ns3:NavaidComponent>
+                    </ns3:navaidEquipment>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:VOR_DME:BUG:1">
+                            <ns1:pos>46.67777777777778 19.68166666666667</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">123.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                </ns3:NavaidTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Navaid>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:NDB ns1:id="eAIP.Hungary:NDB:BUG:">
+            <ns1:identifier codeSpace="eAIP.Hungary">NDB:BUG</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:NDBTimeSlice ns1:id="eAIP.Hungary:NDB:BUG:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>BUG</ns3:designator>
+                    <ns3:name>BUGAC</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation>3.900000000000000</ns3:magneticVariation>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation>2009</ns3:dateMagneticVariation>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:NDB:BUG:1">
+                            <ns1:pos>46.677499999999995 19.682222222222222</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:geoidUndulation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:frequency uom="kHz">430</ns3:frequency>
+                    <ns3:class xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:emissionBand xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:NDBTimeSlice>
+            </ns3:timeSlice>
+        </ns3:NDB>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:VOR ns1:id="eAIP.Hungary:VOR:GYR:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:GYR</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:VORTimeSlice ns1:id="eAIP.Hungary:VOR:GYR:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>GYR</ns3:designator>
+                    <ns3:name>GYŐR</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:VOR:GYR:1">
+                            <ns1:pos>47.659166666666664 17.724444444444444</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">157.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:type>VOR</ns3:type>
+                    <ns3:frequency uom="MHz">115.1000000000000</ns3:frequency>
+                    <ns3:zeroBearingDirection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:declination>3.400000000000000</ns3:declination>
+                </ns3:VORTimeSlice>
+            </ns3:timeSlice>
+        </ns3:VOR>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DME ns1:id="eAIP.Hungary:DME:GYR:">
+            <ns1:identifier codeSpace="eAIP.Hungary">DME:GYR</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DMETimeSlice ns1:id="eAIP.Hungary:DME:GYR:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>GYR</ns3:designator>
+                    <ns3:name>GYŐR</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DME:GYR:1">
+                            <ns1:pos>47.659166666666664 17.724444444444444</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">157.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:type>DME</ns3:type>
+                    <ns3:channel>98X</ns3:channel>
+                    <ns3:ghostFrequency xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:displace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DMETimeSlice>
+            </ns3:timeSlice>
+        </ns3:DME>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Navaid ns1:id="eAIP.Hungary:VOR_DME:GYR:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:GYR</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:NavaidTimeSlice ns1:id="eAIP.Hungary:VOR_DME:GYR:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>VOR_DME</ns3:type>
+                    <ns3:designator>GYR</ns3:designator>
+                    <ns3:name>GYŐR</ns3:name>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:purpose xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:signalPerformance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:courseQuality xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:integrityLevel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:navaidEquipment>
+                        <ns3:NavaidComponent>
+                            <ns3:collocationGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:markerPosition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:providesNavigableLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theNavaidEquipment ns2:type="simple" ns2:href="VOR:GYR"/>
+                        </ns3:NavaidComponent>
+                    </ns3:navaidEquipment>
+                    <ns3:navaidEquipment>
+                        <ns3:NavaidComponent>
+                            <ns3:collocationGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:markerPosition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:providesNavigableLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theNavaidEquipment ns2:type="simple" ns2:href="DME:GYR"/>
+                        </ns3:NavaidComponent>
+                    </ns3:navaidEquipment>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:VOR_DME:GYR:1">
+                            <ns1:pos>47.659166666666664 17.724444444444444</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">157.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                </ns3:NavaidTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Navaid>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:NDB ns1:id="eAIP.Hungary:NDB:GYR:">
+            <ns1:identifier codeSpace="eAIP.Hungary">NDB:GYR</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:NDBTimeSlice ns1:id="eAIP.Hungary:NDB:GYR:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>GYR</ns3:designator>
+                    <ns3:name>GYŐR</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation>3.5</ns3:magneticVariation>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation>2009</ns3:dateMagneticVariation>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:NDB:GYR:1">
+                            <ns1:pos>47.66 17.718055555555555</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:geoidUndulation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:frequency uom="kHz">354</ns3:frequency>
+                    <ns3:class xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:emissionBand xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:NDBTimeSlice>
+            </ns3:timeSlice>
+        </ns3:NDB>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:NDB ns1:id="eAIP.Hungary:NDB:JBR:">
+            <ns1:identifier codeSpace="eAIP.Hungary">NDB:JBR</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:NDBTimeSlice ns1:id="eAIP.Hungary:NDB:JBR:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>JBR</ns3:designator>
+                    <ns3:name>JÁSZBERÉNY</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation>3.900000000000000</ns3:magneticVariation>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation>2009</ns3:dateMagneticVariation>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:NDB:JBR:1">
+                            <ns1:pos>47.49388888888889 19.89472222222222</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:geoidUndulation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:frequency uom="kHz">517</ns3:frequency>
+                    <ns3:class xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:emissionBand xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:NDBTimeSlice>
+            </ns3:timeSlice>
+        </ns3:NDB>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:VOR ns1:id="eAIP.Hungary:VOR:MNR:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:MNR</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:VORTimeSlice ns1:id="eAIP.Hungary:VOR:MNR:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>MNR</ns3:designator>
+                    <ns3:name>MONOR</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:VOR:MNR:1">
+                            <ns1:pos>47.334722222222226 19.405555555555555</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">138.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:type>VOR</ns3:type>
+                    <ns3:frequency uom="MHz">112.5</ns3:frequency>
+                    <ns3:zeroBearingDirection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:declination>4.300000000000000</ns3:declination>
+                </ns3:VORTimeSlice>
+            </ns3:timeSlice>
+        </ns3:VOR>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DME ns1:id="eAIP.Hungary:DME:MNR:">
+            <ns1:identifier codeSpace="eAIP.Hungary">DME:MNR</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DMETimeSlice ns1:id="eAIP.Hungary:DME:MNR:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>MNR</ns3:designator>
+                    <ns3:name>MONOR</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DME:MNR:1">
+                            <ns1:pos>47.334722222222226 19.405555555555555</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">138.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:type>DME</ns3:type>
+                    <ns3:channel>72X</ns3:channel>
+                    <ns3:ghostFrequency xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:displace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DMETimeSlice>
+            </ns3:timeSlice>
+        </ns3:DME>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Navaid ns1:id="eAIP.Hungary:VOR_DME:MNR:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:MNR</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:NavaidTimeSlice ns1:id="eAIP.Hungary:VOR_DME:MNR:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>VOR_DME</ns3:type>
+                    <ns3:designator>MNR</ns3:designator>
+                    <ns3:name>MONOR</ns3:name>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:purpose xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:signalPerformance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:courseQuality xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:integrityLevel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:navaidEquipment>
+                        <ns3:NavaidComponent>
+                            <ns3:collocationGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:markerPosition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:providesNavigableLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theNavaidEquipment ns2:type="simple" ns2:href="VOR:MNR"/>
+                        </ns3:NavaidComponent>
+                    </ns3:navaidEquipment>
+                    <ns3:navaidEquipment>
+                        <ns3:NavaidComponent>
+                            <ns3:collocationGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:markerPosition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:providesNavigableLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theNavaidEquipment ns2:type="simple" ns2:href="DME:MNR"/>
+                        </ns3:NavaidComponent>
+                    </ns3:navaidEquipment>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:VOR_DME:MNR:1">
+                            <ns1:pos>47.334722222222226 19.405555555555555</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">138.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                </ns3:NavaidTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Navaid>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:NDB ns1:id="eAIP.Hungary:NDB:MNR:">
+            <ns1:identifier codeSpace="eAIP.Hungary">NDB:MNR</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:NDBTimeSlice ns1:id="eAIP.Hungary:NDB:MNR:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>MNR</ns3:designator>
+                    <ns3:name>MONOR</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:NDB:MNR:1">
+                            <ns1:pos>47.33777777777778 19.399722222222223</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:geoidUndulation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:frequency uom="kHz">288</ns3:frequency>
+                    <ns3:class xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:emissionBand xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:NDBTimeSlice>
+            </ns3:timeSlice>
+        </ns3:NDB>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:VOR ns1:id="eAIP.Hungary:VOR:PTB:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:PTB</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:VORTimeSlice ns1:id="eAIP.Hungary:VOR:PTB:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>PTB</ns3:designator>
+                    <ns3:name>PUSZTASZABOLCS</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:VOR:PTB:1">
+                            <ns1:pos>47.15222222222222 18.742222222222225</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">138.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:type>VOR</ns3:type>
+                    <ns3:frequency uom="MHz">117.1000000000000</ns3:frequency>
+                    <ns3:zeroBearingDirection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:declination>3.5</ns3:declination>
+                </ns3:VORTimeSlice>
+            </ns3:timeSlice>
+        </ns3:VOR>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DME ns1:id="eAIP.Hungary:DME:PTB:">
+            <ns1:identifier codeSpace="eAIP.Hungary">DME:PTB</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DMETimeSlice ns1:id="eAIP.Hungary:DME:PTB:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>PTB</ns3:designator>
+                    <ns3:name>PUSZTASZABOLCS</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DME:PTB:1">
+                            <ns1:pos>47.15222222222222 18.742222222222225</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">138.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:type>DME</ns3:type>
+                    <ns3:channel>118X</ns3:channel>
+                    <ns3:ghostFrequency xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:displace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DMETimeSlice>
+            </ns3:timeSlice>
+        </ns3:DME>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Navaid ns1:id="eAIP.Hungary:VOR_DME:PTB:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:PTB</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:NavaidTimeSlice ns1:id="eAIP.Hungary:VOR_DME:PTB:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>VOR_DME</ns3:type>
+                    <ns3:designator>PTB</ns3:designator>
+                    <ns3:name>PUSZTASZABOLCS</ns3:name>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:purpose xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:signalPerformance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:courseQuality xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:integrityLevel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:navaidEquipment>
+                        <ns3:NavaidComponent>
+                            <ns3:collocationGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:markerPosition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:providesNavigableLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theNavaidEquipment ns2:type="simple" ns2:href="VOR:PTB"/>
+                        </ns3:NavaidComponent>
+                    </ns3:navaidEquipment>
+                    <ns3:navaidEquipment>
+                        <ns3:NavaidComponent>
+                            <ns3:collocationGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:markerPosition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:providesNavigableLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theNavaidEquipment ns2:type="simple" ns2:href="DME:PTB"/>
+                        </ns3:NavaidComponent>
+                    </ns3:navaidEquipment>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:VOR_DME:PTB:1">
+                            <ns1:pos>47.15222222222222 18.742222222222225</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">138.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                </ns3:NavaidTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Navaid>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:NDB ns1:id="eAIP.Hungary:NDB:PTB:">
+            <ns1:identifier codeSpace="eAIP.Hungary">NDB:PTB</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:NDBTimeSlice ns1:id="eAIP.Hungary:NDB:PTB:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>PTB</ns3:designator>
+                    <ns3:name>PUSZTASZABOLCS</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation>3.400000000000000</ns3:magneticVariation>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation>2009</ns3:dateMagneticVariation>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:NDB:PTB:1">
+                            <ns1:pos>47.152499999999996 18.74277777777778</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:geoidUndulation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:frequency uom="kHz">386</ns3:frequency>
+                    <ns3:class xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:emissionBand xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:NDBTimeSlice>
+            </ns3:timeSlice>
+        </ns3:NDB>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:VOR ns1:id="eAIP.Hungary:VOR:SAG:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:SAG</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:VORTimeSlice ns1:id="eAIP.Hungary:VOR:SAG:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>SAG</ns3:designator>
+                    <ns3:name>SAJÓHÍDVÉG</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:VOR:SAG:1">
+                            <ns1:pos>48.00805555555556 20.99638888888889</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">114.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:type>VOR</ns3:type>
+                    <ns3:frequency uom="MHz">114.4000000000000</ns3:frequency>
+                    <ns3:zeroBearingDirection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:declination>4.400000000000000</ns3:declination>
+                </ns3:VORTimeSlice>
+            </ns3:timeSlice>
+        </ns3:VOR>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DME ns1:id="eAIP.Hungary:DME:SAG:">
+            <ns1:identifier codeSpace="eAIP.Hungary">DME:SAG</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DMETimeSlice ns1:id="eAIP.Hungary:DME:SAG:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>SAG</ns3:designator>
+                    <ns3:name>SAJÓHÍDVÉG</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DME:SAG:1">
+                            <ns1:pos>48.00805555555556 20.99638888888889</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">114.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:type>DME</ns3:type>
+                    <ns3:channel>91X</ns3:channel>
+                    <ns3:ghostFrequency xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:displace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DMETimeSlice>
+            </ns3:timeSlice>
+        </ns3:DME>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Navaid ns1:id="eAIP.Hungary:VOR_DME:SAG:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:SAG</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:NavaidTimeSlice ns1:id="eAIP.Hungary:VOR_DME:SAG:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>VOR_DME</ns3:type>
+                    <ns3:designator>SAG</ns3:designator>
+                    <ns3:name>SAJÓHÍDVÉG</ns3:name>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:purpose xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:signalPerformance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:courseQuality xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:integrityLevel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:navaidEquipment>
+                        <ns3:NavaidComponent>
+                            <ns3:collocationGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:markerPosition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:providesNavigableLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theNavaidEquipment ns2:type="simple" ns2:href="VOR:SAG"/>
+                        </ns3:NavaidComponent>
+                    </ns3:navaidEquipment>
+                    <ns3:navaidEquipment>
+                        <ns3:NavaidComponent>
+                            <ns3:collocationGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:markerPosition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:providesNavigableLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theNavaidEquipment ns2:type="simple" ns2:href="DME:SAG"/>
+                        </ns3:NavaidComponent>
+                    </ns3:navaidEquipment>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:VOR_DME:SAG:1">
+                            <ns1:pos>48.00805555555556 20.99638888888889</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">114.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                </ns3:NavaidTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Navaid>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:NDB ns1:id="eAIP.Hungary:NDB:SAG:">
+            <ns1:identifier codeSpace="eAIP.Hungary">NDB:SAG</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:NDBTimeSlice ns1:id="eAIP.Hungary:NDB:SAG:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>SAG</ns3:designator>
+                    <ns3:name>SAJÓHÍDVÉG</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation>4.300000000000000</ns3:magneticVariation>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation>2009</ns3:dateMagneticVariation>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:NDB:SAG:1">
+                            <ns1:pos>47.99722222222222 20.98777777777778</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:geoidUndulation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:frequency uom="kHz">390</ns3:frequency>
+                    <ns3:class xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:emissionBand xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:NDBTimeSlice>
+            </ns3:timeSlice>
+        </ns3:NDB>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:VOR ns1:id="eAIP.Hungary:VOR:SVR:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:SVR</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:VORTimeSlice ns1:id="eAIP.Hungary:VOR:SVR:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>SVR</ns3:designator>
+                    <ns3:name>SÁGVÁR</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:VOR:SVR:1">
+                            <ns1:pos>46.82805555555556 18.11777777777778</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">153.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:type>VOR</ns3:type>
+                    <ns3:frequency uom="MHz">117.7000000000000</ns3:frequency>
+                    <ns3:zeroBearingDirection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:declination>3.600000000000000</ns3:declination>
+                </ns3:VORTimeSlice>
+            </ns3:timeSlice>
+        </ns3:VOR>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DME ns1:id="eAIP.Hungary:DME:SVR:">
+            <ns1:identifier codeSpace="eAIP.Hungary">DME:SVR</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DMETimeSlice ns1:id="eAIP.Hungary:DME:SVR:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>SVR</ns3:designator>
+                    <ns3:name>SÁGVÁR</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DME:SVR:1">
+                            <ns1:pos>46.82805555555556 18.11777777777778</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">153.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:type>DME</ns3:type>
+                    <ns3:channel>124X</ns3:channel>
+                    <ns3:ghostFrequency xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:displace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DMETimeSlice>
+            </ns3:timeSlice>
+        </ns3:DME>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Navaid ns1:id="eAIP.Hungary:VOR_DME:SVR:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:SVR</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:NavaidTimeSlice ns1:id="eAIP.Hungary:VOR_DME:SVR:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>VOR_DME</ns3:type>
+                    <ns3:designator>SVR</ns3:designator>
+                    <ns3:name>SÁGVÁR</ns3:name>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:purpose xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:signalPerformance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:courseQuality xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:integrityLevel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:navaidEquipment>
+                        <ns3:NavaidComponent>
+                            <ns3:collocationGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:markerPosition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:providesNavigableLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theNavaidEquipment ns2:type="simple" ns2:href="VOR:SVR"/>
+                        </ns3:NavaidComponent>
+                    </ns3:navaidEquipment>
+                    <ns3:navaidEquipment>
+                        <ns3:NavaidComponent>
+                            <ns3:collocationGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:markerPosition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:providesNavigableLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theNavaidEquipment ns2:type="simple" ns2:href="DME:SVR"/>
+                        </ns3:NavaidComponent>
+                    </ns3:navaidEquipment>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:VOR_DME:SVR:1">
+                            <ns1:pos>46.82805555555556 18.11777777777778</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">153.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                </ns3:NavaidTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Navaid>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:NDB ns1:id="eAIP.Hungary:NDB:SVR:">
+            <ns1:identifier codeSpace="eAIP.Hungary">NDB:SVR</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:NDBTimeSlice ns1:id="eAIP.Hungary:NDB:SVR:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>SVR</ns3:designator>
+                    <ns3:name>SÁGVÁR</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation>4.300000000000000</ns3:magneticVariation>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation>2009</ns3:dateMagneticVariation>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:NDB:SVR:1">
+                            <ns1:pos>46.82972222222222 18.11722222222222</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:geoidUndulation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:frequency uom="kHz">348</ns3:frequency>
+                    <ns3:class xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:emissionBand xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:NDBTimeSlice>
+            </ns3:timeSlice>
+        </ns3:NDB>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:VOR ns1:id="eAIP.Hungary:VOR:TPS:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:TPS</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:VORTimeSlice ns1:id="eAIP.Hungary:VOR:TPS:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>TPS</ns3:designator>
+                    <ns3:name>TÁPIÓSÁP</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:VOR:TPS:1">
+                            <ns1:pos>47.49333333333333 19.44611111111111</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">252.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:type>VOR</ns3:type>
+                    <ns3:frequency uom="MHz">115.9000000000000</ns3:frequency>
+                    <ns3:zeroBearingDirection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:declination>3.900000000000000</ns3:declination>
+                </ns3:VORTimeSlice>
+            </ns3:timeSlice>
+        </ns3:VOR>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DME ns1:id="eAIP.Hungary:DME:TPS:">
+            <ns1:identifier codeSpace="eAIP.Hungary">DME:TPS</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DMETimeSlice ns1:id="eAIP.Hungary:DME:TPS:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>TPS</ns3:designator>
+                    <ns3:name>TÁPIÓSÁP</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DME:TPS:1">
+                            <ns1:pos>47.49333333333333 19.44611111111111</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">252.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:type>DME</ns3:type>
+                    <ns3:channel>106X</ns3:channel>
+                    <ns3:ghostFrequency xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:displace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DMETimeSlice>
+            </ns3:timeSlice>
+        </ns3:DME>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:Navaid ns1:id="eAIP.Hungary:VOR_DME:TPS:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:TPS</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:NavaidTimeSlice ns1:id="eAIP.Hungary:VOR_DME:TPS:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:type>VOR_DME</ns3:type>
+                    <ns3:designator>TPS</ns3:designator>
+                    <ns3:name>TÁPIÓSÁP</ns3:name>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:purpose xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:signalPerformance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:courseQuality xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:integrityLevel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:navaidEquipment>
+                        <ns3:NavaidComponent>
+                            <ns3:collocationGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:markerPosition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:providesNavigableLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theNavaidEquipment ns2:type="simple" ns2:href="VOR:TPS"/>
+                        </ns3:NavaidComponent>
+                    </ns3:navaidEquipment>
+                    <ns3:navaidEquipment>
+                        <ns3:NavaidComponent>
+                            <ns3:collocationGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:markerPosition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:providesNavigableLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:theNavaidEquipment ns2:type="simple" ns2:href="DME:TPS"/>
+                        </ns3:NavaidComponent>
+                    </ns3:navaidEquipment>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:VOR_DME:TPS:1">
+                            <ns1:pos>47.49333333333333 19.44611111111111</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation uom="M">252.0</ns3:elevation>
+                            <ns3:geoidUndulation uom="M">0</ns3:geoidUndulation>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                </ns3:NavaidTimeSlice>
+            </ns3:timeSlice>
+        </ns3:Navaid>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:NDB ns1:id="eAIP.Hungary:NDB:TPS:">
+            <ns1:identifier codeSpace="eAIP.Hungary">NDB:TPS</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:NDBTimeSlice ns1:id="eAIP.Hungary:NDB:TPS:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>TPS</ns3:designator>
+                    <ns3:name>TÁPIÓSÁP</ns3:name>
+                    <ns3:emissionClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:mobile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:magneticVariation>3.800000000000000</ns3:magneticVariation>
+                    <ns3:magneticVariationAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:dateMagneticVariation>2009</ns3:dateMagneticVariation>
+                    <ns3:flightChecked xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:location>
+                        <ns3:ElevatedPoint srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:NDB:TPS:1">
+                            <ns1:pos>47.49333333333333 19.445833333333333</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:elevation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:geoidUndulation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalDatum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                            <ns3:verticalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:ElevatedPoint>
+                    </ns3:location>
+                    <ns3:frequency uom="kHz">306</ns3:frequency>
+                    <ns3:class xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:emissionBand xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:NDBTimeSlice>
+            </ns3:timeSlice>
+        </ns3:NDB>
+    </ns7:hasMember>
+</ns7:AIXMBasicMessage>

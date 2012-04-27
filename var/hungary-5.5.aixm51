@@ -30,11 +30,11 @@
                             <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
                             <ns3:theAirspaceVolume>
 <ns3:AirspaceVolume>
-    <ns3:upperLimit uom="ft">6000.0</ns3:upperLimit>
+    <ns3:upperLimit uom="FT">6000.0</ns3:upperLimit>
     <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">3000.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">3000.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -111,11 +111,11 @@
                             <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
                             <ns3:theAirspaceVolume>
 <ns3:AirspaceVolume>
-    <ns3:upperLimit uom="ft">3500.0</ns3:upperLimit>
+    <ns3:upperLimit uom="FT">3500.0</ns3:upperLimit>
     <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">550.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">550.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -131,7 +131,7 @@
     <ns1:segments>
         <ns1:CircleByCenterPoint interpolation="circularArcCenterPointWithRadius" numArc="1">
             <ns1:pos>47.345555555555556 18.980833333333333</ns1:pos>
-            <ns1:radius uom="m">1500.0</ns1:radius>
+            <ns1:radius uom="M">1500.0</ns1:radius>
         </ns1:CircleByCenterPoint>
     </ns1:segments>
 </ns1:Curve>
@@ -193,11 +193,11 @@
                             <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
                             <ns3:theAirspaceVolume>
 <ns3:AirspaceVolume>
-    <ns3:upperLimit uom="ft">3500.0</ns3:upperLimit>
+    <ns3:upperLimit uom="FT">3500.0</ns3:upperLimit>
     <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -275,11 +275,11 @@ Above 2500 FT AMSL prior permission required by Budapest ATS Centre.</ns3:note>
                             <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
                             <ns3:theAirspaceVolume>
 <ns3:AirspaceVolume>
-    <ns3:upperLimit uom="ft">6500.0</ns3:upperLimit>
+    <ns3:upperLimit uom="FT">6500.0</ns3:upperLimit>
     <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -357,11 +357,11 @@ Above 3500 FT AMSL prior permission required by Budapest ATS Centre.</ns3:note>
                             <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
                             <ns3:theAirspaceVolume>
 <ns3:AirspaceVolume>
-    <ns3:upperLimit uom="ft">6500.0</ns3:upperLimit>
+    <ns3:upperLimit uom="FT">6500.0</ns3:upperLimit>
     <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -439,11 +439,11 @@ Above 3500 FT AMSL prior permission required by Budapest ATS Centre.</ns3:note>
                             <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
                             <ns3:theAirspaceVolume>
 <ns3:AirspaceVolume>
-    <ns3:upperLimit uom="ft">6500.0</ns3:upperLimit>
+    <ns3:upperLimit uom="FT">6500.0</ns3:upperLimit>
     <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -521,11 +521,11 @@ Above 3500 FT AMSL prior permission required by Budapest ATS Centre.</ns3:note>
                             <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
                             <ns3:theAirspaceVolume>
 <ns3:AirspaceVolume>
-    <ns3:upperLimit uom="ft">6500.0</ns3:upperLimit>
+    <ns3:upperLimit uom="FT">6500.0</ns3:upperLimit>
     <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -603,11 +603,11 @@ Above 4500 FT AMSL prior permission required by Budapest ATS Centre.</ns3:note>
                             <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
                             <ns3:theAirspaceVolume>
 <ns3:AirspaceVolume>
-    <ns3:upperLimit uom="ft">3000.0</ns3:upperLimit>
+    <ns3:upperLimit uom="FT">3000.0</ns3:upperLimit>
     <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -685,11 +685,11 @@ Above 2000 FT AMSL prior permission required by Budapest ATS Centre.</ns3:note>
                             <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
                             <ns3:theAirspaceVolume>
 <ns3:AirspaceVolume>
-    <ns3:upperLimit uom="ft">4000.0</ns3:upperLimit>
+    <ns3:upperLimit uom="FT">4000.0</ns3:upperLimit>
     <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">2000.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">2000.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -705,7 +705,7 @@ Above 2000 FT AMSL prior permission required by Budapest ATS Centre.</ns3:note>
     <ns1:segments>
         <ns1:CircleByCenterPoint interpolation="circularArcCenterPointWithRadius" numArc="1">
             <ns1:pos>47.617777777777775 19.143333333333334</ns1:pos>
-            <ns1:radius uom="m">2000.0</ns1:radius>
+            <ns1:radius uom="M">2000.0</ns1:radius>
         </ns1:CircleByCenterPoint>
     </ns1:segments>
 </ns1:Curve>
@@ -767,11 +767,11 @@ Above 2000 FT AMSL prior permission required by Budapest ATS Centre.</ns3:note>
                             <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
                             <ns3:theAirspaceVolume>
 <ns3:AirspaceVolume>
-    <ns3:upperLimit uom="ft">5000.0</ns3:upperLimit>
+    <ns3:upperLimit uom="FT">5000.0</ns3:upperLimit>
     <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -849,11 +849,11 @@ Above 2500 FT AMSL prior permission required by Budapest ATS Centre.</ns3:note>
                             <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
                             <ns3:theAirspaceVolume>
 <ns3:AirspaceVolume>
-    <ns3:upperLimit uom="ft">6500.0</ns3:upperLimit>
+    <ns3:upperLimit uom="FT">6500.0</ns3:upperLimit>
     <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -931,11 +931,11 @@ Above 3000 FT AMSL prior permission required by Budapest ATS Centre.</ns3:note>
                             <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
                             <ns3:theAirspaceVolume>
 <ns3:AirspaceVolume>
-    <ns3:upperLimit uom="ft">7500.0</ns3:upperLimit>
+    <ns3:upperLimit uom="FT">7500.0</ns3:upperLimit>
     <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -1017,7 +1017,7 @@ Above 6500 FT AMSL prior permission required by Budapest ATS Centre.</ns3:note>
     <ns3:upperLimitReference>STD</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -1105,7 +1105,7 @@ Mountain wave glider flights.</ns3:note>
     <ns3:upperLimitReference>STD</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -1193,7 +1193,7 @@ Mountain wave glider flights.</ns3:note>
     <ns3:upperLimitReference>STD</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>

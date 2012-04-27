@@ -1,0 +1,2515 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns7:AIXMBasicMessage xmlns:ns1="http://www.opengis.net/gml/3.2" xmlns:ns2="http://www.w3.org/1999/xlink" xmlns:ns3="http://www.aixm.aero/schema/5.1" xmlns:ns4="http://www.isotc211.org/2005/gco" xmlns:ns5="http://www.isotc211.org/2005/gmd" xmlns:ns6="http://www.isotc211.org/2005/gts" xmlns:ns7="http://www.aixm.aero/schema/5.1/message" ns1:id="e:ENR-4.4">
+    <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:ABETI:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:ABETI</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:ABETI:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>ABETI</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>ABETI</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:ABETI:1">
+                            <ns1:pos>47.67777777777778 17.012777777777778</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:ABONY:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:ABONY</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:ABONY:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>ABONY</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>ABONY</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:ABONY:1">
+                            <ns1:pos>47.270833333333336 19.979166666666664</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:ABULI:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:ABULI</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:ABULI:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>ABULI</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>ABULI</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:ABULI:1">
+                            <ns1:pos>48.48416666666667 20.486666666666668</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:AGMAS:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:AGMAS</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:AGMAS:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>AGMAS</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>AGMAS</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:AGMAS:1">
+                            <ns1:pos>47.48416666666667 19.691666666666666</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:ALAMU:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:ALAMU</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:ALAMU:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>ALAMU</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>ALAMU</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:ALAMU:1">
+                            <ns1:pos>47.73694444444445 18.33</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:AMRAX:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:AMRAX</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:AMRAX:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>AMRAX</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>AMRAX</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:AMRAX:1">
+                            <ns1:pos>48.09138888888889 19.366111111111113</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:ARSIN:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:ARSIN</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:ARSIN:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>ARSIN</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>ARSIN</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:ARSIN:1">
+                            <ns1:pos>47.56722222222223 16.753611111111113</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:BABIT:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:BABIT</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:BABIT:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>BABIT</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>BABIT</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:BABIT:1">
+                            <ns1:pos>45.931666666666665 18.92888888888889</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:BABOX:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:BABOX</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:BABOX:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>BABOX</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>BABOX</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:BABOX:1">
+                            <ns1:pos>46.895833333333336 19.68305555555556</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:BADOR:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:BADOR</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:BADOR:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>BADOR</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>BADOR</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:BADOR:1">
+                            <ns1:pos>47.57361111111111 22.108055555555556</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:BADOV:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:BADOV</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:BADOV:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>BADOV</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>BADOV</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:BADOV:1">
+                            <ns1:pos>48.02111111111111 18.815833333333334</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:BALAP:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:BALAP</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:BALAP:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>BALAP</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>BALAP</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:BALAP:1">
+                            <ns1:pos>48.06805555555556 19.25</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:BALUX:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:BALUX</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:BALUX:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>BALUX</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>BALUX</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:BALUX:1">
+                            <ns1:pos>47.340833333333336 19.129444444444445</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:BAREB:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:BAREB</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:BAREB:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>BAREB</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>BAREB</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:BAREB:1">
+                            <ns1:pos>45.74611111111111 18.41333333333333</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:BEGLA:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:BEGLA</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:BEGLA:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>BEGLA</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>BEGLA</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:BEGLA:1">
+                            <ns1:pos>47.83083333333334 17.114444444444445</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:BINKU:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:BINKU</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:BINKU:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>BINKU</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>BINKU</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:BINKU:1">
+                            <ns1:pos>46.92611111111111 20.459166666666665</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:BOKSI:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:BOKSI</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:BOKSI:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>BOKSI</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>BOKSI</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:BOKSI:1">
+                            <ns1:pos>46.63527777777778 19.830833333333334</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:BUDOP:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:BUDOP</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:BUDOP:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>BUDOP</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>BUDOP</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:BUDOP:1">
+                            <ns1:pos>46.6875 21.496666666666666</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:DEGET:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:DEGET</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:DEGET:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>DEGET</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>DEGET</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:DEGET:1">
+                            <ns1:pos>46.493611111111115 21.26722222222222</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:DEMOP:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:DEMOP</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:DEMOP:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>DEMOP</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>DEMOP</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:DEMOP:1">
+                            <ns1:pos>48.17472222222222 20.056944444444444</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:DIMLO:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:DIMLO</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:DIMLO:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>DIMLO</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>DIMLO</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:DIMLO:1">
+                            <ns1:pos>46.683611111111105 16.422777777777778</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:DODAR:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:DODAR</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:DODAR:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>DODAR</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>DODAR</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:DODAR:1">
+                            <ns1:pos>47.214444444444446 19.5275</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:EBORO:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:EBORO</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:EBORO:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>EBORO</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>EBORO</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:EBORO:1">
+                            <ns1:pos>46.35583333333334 19.9875</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:EPARI:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:EPARI</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:EPARI:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>EPARI</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>EPARI</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:EPARI:1">
+                            <ns1:pos>47.686388888888885 18.978055555555553</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:ERGOM:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:ERGOM</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:ERGOM:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>ERGOM</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>ERGOM</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:ERGOM:1">
+                            <ns1:pos>47.80833333333333 18.733055555555556</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:ERLOS:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:ERLOS</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:ERLOS:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>ERLOS</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>ERLOS</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:ERLOS:1">
+                            <ns1:pos>47.0675 19.275</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:EVAXI:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:EVAXI</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:EVAXI:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>EVAXI</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>EVAXI</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:EVAXI:1">
+                            <ns1:pos>47.77777777777778 17.100555555555555</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:GELKA:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:GELKA</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:GELKA:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>GELKA</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>GELKA</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:GELKA:1">
+                            <ns1:pos>48.10138888888889 20.233055555555556</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:GIGOR:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:GIGOR</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:GIGOR:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>GIGOR</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>GIGOR</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:GIGOR:1">
+                            <ns1:pos>47.75944444444445 17.67666666666667</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:GILEP:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:GILEP</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:GILEP:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>GILEP</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>GILEP</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:GILEP:1">
+                            <ns1:pos>47.483333333333334 18.25888888888889</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:GITAS:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:GITAS</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:GITAS:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>GITAS</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>GITAS</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:GITAS:1">
+                            <ns1:pos>47.05472222222222 18.174166666666668</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:GOTAR:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:GOTAR</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:GOTAR:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>GOTAR</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>GOTAR</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:GOTAR:1">
+                            <ns1:pos>46.99777777777778 16.22472222222222</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:INVED:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:INVED</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:INVED:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>INVED</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>INVED</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:INVED:1">
+                            <ns1:pos>46.157777777777774 20.40138888888889</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:KARIL:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:KARIL</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:KARIL:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>KARIL</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>KARIL</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:KARIL:1">
+                            <ns1:pos>47.79388888888889 22.442222222222224</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:KEKED:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:KEKED</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:KEKED:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>KEKED</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>KEKED</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:KEKED:1">
+                            <ns1:pos>48.52305555555555 21.29138888888889</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:KENIN:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:KENIN</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:KENIN:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>KENIN</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>KENIN</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:KENIN:1">
+                            <ns1:pos>48.361666666666665 21.927222222222223</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:KEROP:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:KEROP</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:KEROP:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>KEROP</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>KEROP</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:KEROP:1">
+                            <ns1:pos>46.18444444444444 19.696666666666665</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:KOPRY:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:KOPRY</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:KOPRY:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>KOPRY</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>KOPRY</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:KOPRY:1">
+                            <ns1:pos>46.24027777777778 16.962777777777777</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:KOVEK:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:KOVEK</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:KOVEK:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>KOVEK</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>KOVEK</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:KOVEK:1">
+                            <ns1:pos>47.84722222222222 20.502777777777776</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:KUNET:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:KUNET</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:KUNET:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>KUNET</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>KUNET</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:KUNET:1">
+                            <ns1:pos>47.946666666666665 17.32638888888889</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:LITKU:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:LITKU</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:LITKU:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>LITKU</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>LITKU</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:LITKU:1">
+                            <ns1:pos>48.230555555555554 19.59861111111111</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:LONLA:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:LONLA</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:LONLA:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>LONLA</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>LONLA</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:LONLA:1">
+                            <ns1:pos>48.34 22.31972222222222</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:MAVIR:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:MAVIR</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:MAVIR:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>MAVIR</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>MAVIR</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:MAVIR:1">
+                            <ns1:pos>46.39833333333333 19.825277777777778</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:MEGIK:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:MEGIK</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:MEGIK:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>MEGIK</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>MEGIK</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:MEGIK:1">
+                            <ns1:pos>47.208333333333336 21.861111111111114</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:MIRLU:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:MIRLU</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:MIRLU:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>MIRLU</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>MIRLU</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:MIRLU:1">
+                            <ns1:pos>47.93444444444444 17.141666666666666</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:MOPUG:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:MOPUG</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:MOPUG:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>MOPUG</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>MOPUG</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:MOPUG:1">
+                            <ns1:pos>46.16361111111111 20.708055555555553</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:NALAG:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:NALAG</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:NALAG:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>NALAG</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>NALAG</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:NALAG:1">
+                            <ns1:pos>48.0425 19.765833333333333</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:NALOX:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:NALOX</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:NALOX:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>NALOX</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>NALOX</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:NALOX:1">
+                            <ns1:pos>46.86972222222222 16.82</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:NARKA:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:NARKA</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:NARKA:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>NARKA</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>NARKA</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:NARKA:1">
+                            <ns1:pos>47.248333333333335 21.860000000000003</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:NIKAB:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:NIKAB</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:NIKAB:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>NIKAB</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>NIKAB</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:NIKAB:1">
+                            <ns1:pos>46.619166666666665 17.545555555555556</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:NORAH:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:NORAH</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:NORAH:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>NORAH</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>NORAH</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:NORAH:1">
+                            <ns1:pos>47.61611111111111 19.808055555555555</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:NUBRA:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:NUBRA</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:NUBRA:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>NUBRA</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>NUBRA</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:NUBRA:1">
+                            <ns1:pos>47.86666666666667 17.5</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:OKORA:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:OKORA</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:OKORA:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>OKORA</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>OKORA</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:OKORA:1">
+                            <ns1:pos>46.76638888888889 18.37138888888889</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:OLATI:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:OLATI</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:OLATI:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>OLATI</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>OLATI</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:OLATI:1">
+                            <ns1:pos>46.98722222222222 17.479166666666664</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:OSLEN:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:OSLEN</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:OSLEN:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>OSLEN</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>OSLEN</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:OSLEN:1">
+                            <ns1:pos>46.72666666666667 20.3625</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:PATAK:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:PATAK</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:PATAK:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>PATAK</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>PATAK</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:PATAK:1">
+                            <ns1:pos>48.073055555555555 19.127222222222223</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:PARAK:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:PARAK</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:PARAK:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>PARAK</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>PARAK</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:PARAK:1">
+                            <ns1:pos>46.163888888888884 20.094166666666666</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:PERIT:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:PERIT</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:PERIT:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>PERIT</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>PERIT</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:PERIT:1">
+                            <ns1:pos>47.788333333333334 21.622777777777777</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:PESAT:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:PESAT</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:PESAT:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>PESAT</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>PESAT</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:PESAT:1">
+                            <ns1:pos>47.715 17.053055555555556</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:PIDON:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:PIDON</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:PIDON:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>PIDON</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>PIDON</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:PIDON:1">
+                            <ns1:pos>46.12222222222222 18.069444444444443</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:PITOK:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:PITOK</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:PITOK:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>PITOK</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>PITOK</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:PITOK:1">
+                            <ns1:pos>48.32472222222223 20.371666666666666</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:PUSTA:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:PUSTA</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:PUSTA:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>PUSTA</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>PUSTA</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:PUSTA:1">
+                            <ns1:pos>47.15222222222222 18.742222222222225</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:RIGSA:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:RIGSA</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:RIGSA:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>RIGSA</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>RIGSA</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:RIGSA:1">
+                            <ns1:pos>48.16444444444444 20.751666666666665</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:ROMKA:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:ROMKA</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:ROMKA:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>ROMKA</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>ROMKA</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:ROMKA:1">
+                            <ns1:pos>48.221944444444446 21.840277777777775</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:SASAL:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:SASAL</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:SASAL:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>SASAL</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>SASAL</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:SASAL:1">
+                            <ns1:pos>47.28472222222222 16.474444444444444</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:SIRDU:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:SIRDU</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:SIRDU:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>SIRDU</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>SIRDU</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:SIRDU:1">
+                            <ns1:pos>47.25472222222222 17.331944444444446</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:SOGMO:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:SOGMO</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:SOGMO:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>SOGMO</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>SOGMO</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:SOGMO:1">
+                            <ns1:pos>46.61027777777778 17.684166666666666</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:SOPRO:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:SOPRO</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:SOPRO:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>SOPRO</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>SOPRO</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:SOPRO:1">
+                            <ns1:pos>47.58777777777778 16.802500000000002</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:STEIN:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:STEIN</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:STEIN:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>STEIN</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>STEIN</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:STEIN:1">
+                            <ns1:pos>47.427499999999995 16.599722222222223</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:SUBES:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:SUBES</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:SUBES:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>SUBES</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>SUBES</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:SUBES:1">
+                            <ns1:pos>47.42111111111111 17.42666666666667</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:SUNIS:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:SUNIS</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:SUNIS:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>SUNIS</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>SUNIS</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:SUNIS:1">
+                            <ns1:pos>47.14194444444444 16.349722222222223</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:SUNOR:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:SUNOR</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:SUNOR:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>SUNOR</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>SUNOR</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:SUNOR:1">
+                            <ns1:pos>46.47972222222222 17.297222222222224</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:TEGRI:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:TEGRI</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:TEGRI:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>TEGRI</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>TEGRI</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:TEGRI:1">
+                            <ns1:pos>46.26277777777778 21.104444444444447</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:TEKNO:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:TEKNO</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:TEKNO:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>TEKNO</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>TEKNO</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:TEKNO:1">
+                            <ns1:pos>47.62388888888889 17.40888888888889</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:TONDO:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:TONDO</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:TONDO:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>TONDO</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>TONDO</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:TONDO:1">
+                            <ns1:pos>46.04722222222222 19.355833333333333</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:TORNO:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:TORNO</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:TORNO:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>TORNO</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>TORNO</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:TORNO:1">
+                            <ns1:pos>47.53972222222222 18.490000000000002</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:VAMOG:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:VAMOG</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:VAMOG:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>VAMOG</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>VAMOG</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:VAMOG:1">
+                            <ns1:pos>47.78722222222222 17.662499999999998</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:VEBAL:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:VEBAL</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:VEBAL:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>VEBAL</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>VEBAL</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:VEBAL:1">
+                            <ns1:pos>45.99138888888889 17.296666666666667</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:VEBOS:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:VEBOS</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:VEBOS:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>VEBOS</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>VEBOS</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:VEBOS:1">
+                            <ns1:pos>47.30638888888888 18.63722222222222</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:VERIG:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:VERIG</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:VERIG:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>VERIG</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>VERIG</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:VERIG:1">
+                            <ns1:pos>47.17222222222222 21.72472222222222</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+    <ns7:hasMember ns2:type="simple">
+        <ns3:DesignatedPoint ns1:id="eAIP.Hungary:DESIGNATED:XOMBA:">
+            <ns1:identifier codeSpace="eAIP.Hungary">VOR:XOMBA</ns1:identifier>
+            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns3:timeSlice>
+                <ns3:DesignatedPointTimeSlice ns1:id="eAIP.Hungary:DESIGNATED:XOMBA:2">
+                    <ns1:validTime ns2:type="simple">
+                        <ns1:TimePeriod>
+                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
+                            <ns1:endPosition indeterminatePosition="unknown"/>
+                        </ns1:TimePeriod>
+                    </ns1:validTime>
+                    <ns3:interpretation>BASELINE</ns3:interpretation>
+                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
+                    <ns3:correctionNumber>0</ns3:correctionNumber>
+                    <ns3:designator>XOMBA</ns3:designator>
+                    <ns3:type>ICAO</ns3:type>
+                    <ns3:name>XOMBA</ns3:name>
+                    <ns3:location>
+                        <ns3:Point srsName="urn:ogc:def:crs:EPSG:4326" ns1:id="eAIP.Hungary:DESIGNATED:XOMBA:1">
+                            <ns1:pos>47.75666666666667 18.061944444444446</ns1:pos>
+                            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                        </ns3:Point>
+                    </ns3:location>
+                    <ns3:aimingPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:airportHeliport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <ns3:runwayPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                </ns3:DesignatedPointTimeSlice>
+            </ns3:timeSlice>
+        </ns3:DesignatedPoint>
+    </ns7:hasMember>
+</ns7:AIXMBasicMessage>

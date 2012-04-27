@@ -427,6 +427,7 @@ public final class Converter {
             // convert
             JAXBElement<AIXMBasicMessageType> m =
                                     AixmConverter.convertToAixm(airspaces,
+                                                                navaids,
                                                                 messageName,
                                                                 inputFormat,
                                                                 validityStart,

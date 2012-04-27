@@ -30,11 +30,11 @@
                             <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
                             <ns3:theAirspaceVolume>
 <ns3:AirspaceVolume>
-    <ns3:upperLimit uom="ft">9500.0</ns3:upperLimit>
+    <ns3:upperLimit uom="FT">9500.0</ns3:upperLimit>
     <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">1000.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">1000.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -115,7 +115,7 @@
     <ns3:upperLimitReference>STD</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">5500.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">5500.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>

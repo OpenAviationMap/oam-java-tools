@@ -34,7 +34,7 @@
     <ns3:upperLimitReference>STD</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -140,7 +140,7 @@
     <ns3:upperLimitReference>STD</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">9500.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">9500.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -246,7 +246,7 @@
     <ns3:upperLimitReference>STD</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">7500.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">7500.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -327,7 +327,7 @@
     <ns3:upperLimitReference>STD</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">6500.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">6500.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -408,7 +408,7 @@
     <ns3:upperLimitReference>STD</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">3500.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">3500.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -489,7 +489,7 @@
     <ns3:upperLimitReference>STD</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">2500.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">2500.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -570,7 +570,7 @@
     <ns3:upperLimitReference>STD</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">6500.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">6500.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -651,7 +651,7 @@
     <ns3:upperLimitReference>STD</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">2000.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">2000.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -732,7 +732,7 @@
     <ns3:upperLimitReference>STD</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">5500.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">5500.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -813,7 +813,7 @@
     <ns3:upperLimitReference>STD</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">9500.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">9500.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -894,7 +894,7 @@
     <ns3:upperLimitReference>STD</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">2000.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">2000.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -975,7 +975,7 @@
     <ns3:upperLimitReference>STD</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">2000.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">2000.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -1056,7 +1056,7 @@
     <ns3:upperLimitReference>STD</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">5000.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">5000.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -1133,11 +1133,11 @@
                             <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
                             <ns3:theAirspaceVolume>
 <ns3:AirspaceVolume>
-    <ns3:upperLimit uom="ft">9500.0</ns3:upperLimit>
+    <ns3:upperLimit uom="FT">9500.0</ns3:upperLimit>
     <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">2000.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">2000.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -1214,11 +1214,11 @@
                             <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
                             <ns3:theAirspaceVolume>
 <ns3:AirspaceVolume>
-    <ns3:upperLimit uom="ft">9500.0</ns3:upperLimit>
+    <ns3:upperLimit uom="FT">9500.0</ns3:upperLimit>
     <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">2000.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">2000.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -1295,11 +1295,11 @@
                             <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
                             <ns3:theAirspaceVolume>
 <ns3:AirspaceVolume>
-    <ns3:upperLimit uom="ft">4000.0</ns3:upperLimit>
+    <ns3:upperLimit uom="FT">4000.0</ns3:upperLimit>
     <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -1376,11 +1376,11 @@
                             <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
                             <ns3:theAirspaceVolume>
 <ns3:AirspaceVolume>
-    <ns3:upperLimit uom="ft">4000.0</ns3:upperLimit>
+    <ns3:upperLimit uom="FT">4000.0</ns3:upperLimit>
     <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -1396,7 +1396,7 @@
     <ns1:segments>
         <ns1:CircleByCenterPoint interpolation="circularArcCenterPointWithRadius" numArc="1">
             <ns1:pos>46.91777777777777 19.750833333333333</ns1:pos>
-            <ns1:radius uom="m">10000.0</ns1:radius>
+            <ns1:radius uom="M">10000.0</ns1:radius>
         </ns1:CircleByCenterPoint>
     </ns1:segments>
 </ns1:Curve>
@@ -1458,11 +1458,11 @@
                             <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
                             <ns3:theAirspaceVolume>
 <ns3:AirspaceVolume>
-    <ns3:upperLimit uom="ft">4000.0</ns3:upperLimit>
+    <ns3:upperLimit uom="FT">4000.0</ns3:upperLimit>
     <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -1539,11 +1539,11 @@
                             <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
                             <ns3:theAirspaceVolume>
 <ns3:AirspaceVolume>
-    <ns3:upperLimit uom="ft">4000.0</ns3:upperLimit>
+    <ns3:upperLimit uom="FT">4000.0</ns3:upperLimit>
     <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
@@ -1559,7 +1559,7 @@
     <ns1:segments>
         <ns1:CircleByCenterPoint interpolation="circularArcCenterPointWithRadius" numArc="1">
             <ns1:pos>47.36388888888889 17.500555555555554</ns1:pos>
-            <ns1:radius uom="m">10000.0</ns1:radius>
+            <ns1:radius uom="M">10000.0</ns1:radius>
         </ns1:CircleByCenterPoint>
     </ns1:segments>
 </ns1:Curve>
@@ -1621,11 +1621,11 @@
                             <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
                             <ns3:theAirspaceVolume>
 <ns3:AirspaceVolume>
-    <ns3:upperLimit uom="ft">4000.0</ns3:upperLimit>
+    <ns3:upperLimit uom="FT">4000.0</ns3:upperLimit>
     <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
     <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="ft">0.0</ns3:lowerLimit>
+    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
     <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
     <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
     <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>

@@ -164,6 +164,7 @@ public class EAipToAixmTest {
 
         JAXBElement<AIXMBasicMessageType> m =
                                 AixmConverter.convertToAixm(airspaces,
+                                                            navaids,
                                                             messageName,
                                                             "eAIP.Hungary",
                                                             vStart,
@@ -371,22 +372,22 @@ public class EAipToAixmTest {
      * @throws SAXException on XML parsing errors
      * @throws ParseException on AIXM parsing errors
      * @throws TransformerException on XML serialization errors
+     * @throws JAXBException on JAXB errors
      */
-    /* TODO
     @Test
     public void testEAipEnr41ToAixm() throws ParserConfigurationException,
                                             SAXException,
                                             IOException,
                                             ParseException,
-                                            TransformerException {
+                                            TransformerException,
+                                            JAXBException {
 
         testEAipToAixm("var/LH-ENR-4.1-en-HU.xml",
-                      "var/aixm-hungary-4.1.xml",
-                      "var/hungary.osm",
-                      "var/LH-AD-1.3-en-HU.xml",
-                      1, 0, 18, 0);
+                       "var/hungary-4.1.aixm51",
+                       "var/hungary.osm",
+                       "var/LH-AD-1.3-en-HU.xml",
+                       1, 0, 18, 0);
     }
-    */
 
     /**
      * Test converting an eAIP section ENR-4.4 element to AIXM.
@@ -396,22 +397,22 @@ public class EAipToAixmTest {
      * @throws SAXException on XML parsing errors
      * @throws ParseException on AIXM parsing errors
      * @throws TransformerException on XML serialization errors
+     * @throws JAXBException on JAXB errors
      */
-    /* TODO
     @Test
     public void testEAipEnr44ToAixm() throws ParserConfigurationException,
                                             SAXException,
                                             IOException,
                                             ParseException,
-                                            TransformerException {
+                                            TransformerException,
+                                            JAXBException {
 
         testEAipToAixm("var/LH-ENR-4.4-en-HU.xml",
-                      "var/aixm-hungary-4.4.xml",
+                      "var/hungary-4.4.aixm51",
                       "var/hungary.osm",
                       "var/LH-AD-1.3-en-HU.xml",
                       0, 0, 81, 0);
     }
-    */
 
     /**
      * Test converting an eAIP section AD-LHBC element to AIXM.

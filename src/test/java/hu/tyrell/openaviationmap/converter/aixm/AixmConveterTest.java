@@ -45,9 +45,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
-import aero.aixm.schema._5.AirspaceType;
 import aero.aixm.schema._5_1.message.AIXMBasicMessageType;
-import aero.aixm.schema._5_1.message.BasicMessageMemberAIXMPropertyType;
 
 /**
  * AIXM conveter tests.
@@ -93,10 +91,14 @@ public class AixmConveterTest {
         List<Airspace> aps = new Vector<Airspace>();
         aps.add(ap);
 
-        List<AirspaceType>  aixmAirspaces = new Vector<AirspaceType>();
         GregorianCalendar   start =
                             new GregorianCalendar(TimeZone.getTimeZone("UTC"));
         start.set(2012, 4, 1, 0, 0, 0);
+
+        aero.aixm.schema._5_1.message.ObjectFactory messageFactory =
+                        new aero.aixm.schema._5_1.message.ObjectFactory();
+        AIXMBasicMessageType message =
+                                messageFactory.createAIXMBasicMessageType();
 
         AixmConverter.airspacesToAixm(aps,
                                       "eAIP.Hungary",
@@ -104,30 +106,11 @@ public class AixmConveterTest {
                                       null,
                                       "BASELINE",
                                       1L, 0L,
-                                      aixmAirspaces);
-        assertEquals(1, aixmAirspaces.size());
+                                      message.getHasMember());
+        assertEquals(1, message.getHasMember().size());
 
 
         // package the airspace into an AIXM message
-        aero.aixm.schema._5_1.message.ObjectFactory messageFactory =
-                              new aero.aixm.schema._5_1.message.ObjectFactory();
-        aero.aixm.schema._5.ObjectFactory aixmFactory =
-                              new aero.aixm.schema._5.ObjectFactory();
-
-
-
-
-        JAXBElement<AirspaceType> e = aixmFactory.createAirspace(
-                                                        aixmAirspaces.get(0));
-
-        BasicMessageMemberAIXMPropertyType p =
-                    messageFactory.createBasicMessageMemberAIXMPropertyType();
-        p.setAbstractAIXMFeature(e);
-
-        AIXMBasicMessageType message =
-                                messageFactory.createAIXMBasicMessageType();
-        message.getHasMember().add(p);
-
         JAXBElement<AIXMBasicMessageType> m =
                                 messageFactory.createAIXMBasicMessage(message);
         m.getValue().setId("uniqueid");
@@ -176,10 +159,15 @@ public class AixmConveterTest {
         // extract a single airspace for conversion
         assertEquals("LHR1", airspaces.get(2).getDesignator());
 
-        List<AirspaceType>  aixmAirspaces = new Vector<AirspaceType>();
         GregorianCalendar   start =
                             new GregorianCalendar(TimeZone.getTimeZone("UTC"));
         start.set(2012, 4, 1, 0, 0, 0);
+
+        aero.aixm.schema._5_1.message.ObjectFactory messageFactory =
+                            new aero.aixm.schema._5_1.message.ObjectFactory();
+        AIXMBasicMessageType message =
+                                messageFactory.createAIXMBasicMessageType();
+
 
         AixmConverter.airspacesToAixm(airspaces,
                                       "eAIP.Hungary",
@@ -187,29 +175,11 @@ public class AixmConveterTest {
                                       null,
                                       "BASELINE",
                                       1L, 0L,
-                                      aixmAirspaces);
-        assertEquals(47, aixmAirspaces.size());
+                                      message.getHasMember());
+        assertEquals(47, message.getHasMember().size());
 
 
         // package the airspace into an AIXM message
-        aero.aixm.schema._5_1.message.ObjectFactory messageFactory =
-                              new aero.aixm.schema._5_1.message.ObjectFactory();
-        aero.aixm.schema._5.ObjectFactory aixmFactory =
-                              new aero.aixm.schema._5.ObjectFactory();
-
-
-        AIXMBasicMessageType message =
-                                messageFactory.createAIXMBasicMessageType();
-        for (AirspaceType apt : aixmAirspaces) {
-            JAXBElement<AirspaceType> e = aixmFactory.createAirspace(apt);
-
-            BasicMessageMemberAIXMPropertyType p =
-                      messageFactory.createBasicMessageMemberAIXMPropertyType();
-            p.setAbstractAIXMFeature(e);
-
-            message.getHasMember().add(p);
-        }
-
         JAXBElement<AIXMBasicMessageType> m =
                                 messageFactory.createAIXMBasicMessage(message);
         m.getValue().setId("uniqueid");
