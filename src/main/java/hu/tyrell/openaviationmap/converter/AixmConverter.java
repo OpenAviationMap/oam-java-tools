@@ -35,6 +35,7 @@ import java.util.List;
 import java.util.TimeZone;
 
 import javax.xml.bind.JAXBElement;
+import javax.xml.namespace.NamespaceContext;
 
 import net.opengis.gml._3.AbstractRingPropertyType;
 import net.opengis.gml._3.CircleByCenterPointType;
@@ -53,6 +54,9 @@ import net.opengis.gml._3.TimeIndeterminateValueType;
 import net.opengis.gml._3.TimePeriodType;
 import net.opengis.gml._3.TimePositionType;
 import net.opengis.gml._3.TimePrimitivePropertyType;
+
+import org.apache.ws.commons.util.NamespaceContextImpl;
+
 import aero.aixm.schema._5.AirspaceActivationPropertyType;
 import aero.aixm.schema._5.AirspaceActivationType;
 import aero.aixm.schema._5.AirspaceGeometryComponentPropertyType;
@@ -124,6 +128,92 @@ import aero.aixm.schema._5_1.message.BasicMessageMemberAIXMPropertyType;
  */
 public final class AixmConverter {
     /**
+     * Namespace URI of the XLink namespace.
+     */
+    public static final String XLINK_NS_URI = "http://www.w3.org/1999/xlink";
+
+    /**
+     * Preferred namespace prefix for the XLink namespace.
+     */
+    public static final String XLINK_NS_PREFIX = "xlink";
+
+    /**
+     * Preferred URI of the XSI namespace.
+     */
+    public static final String XSI_NS_URI =
+                                    "http://www.w3.org/2001/XMLSchema-instance";
+
+    /**
+     * Preferred namespace prefix for the XSI namespace.
+     */
+    public static final String XSI_NS_PREFIX = "xsi";
+
+    /**
+     * Namespace URI of the GML namespace.
+     */
+    public static final String GML_NS_URI = "http://www.opengis.net/gml/3.2";
+
+    /**
+     * Preferred namespace prefix for the GML namespace.
+     */
+    public static final String GML_NS_PREFIX = "gml";
+
+    /**
+     * Namespace URI of the GCO namespace.
+     */
+    public static final String GCO_NS_URI =
+                                            "http://www.isotc211.org/2005/gco";
+
+    /**
+     * Preferred namespace prefix for the GCO namespace.
+     */
+    public static final String GCO_NS_PREFIX = "gco";
+
+    /**
+     * Namespace URI of the GMD namespace.
+     */
+    public static final String GMD_NS_URI =
+                                            "http://www.isotc211.org/2005/gmd";
+
+    /**
+     * Preferred namespace prefix for the GMD namespace.
+     */
+    public static final String GMD_NS_PREFIX = "gmd";
+
+    /**
+     * Namespace URI of the GTS namespace.
+     */
+    public static final String GTS_NS_URI =
+                                           "http://www.isotc211.org/2005/gts";
+
+    /**
+     * Preferred namespace prefix for the GTS namespace.
+     */
+    public static final String GTS_NS_PREFIX = "gts";
+
+    /**
+     * Namespace URI of the AIXM namespace.
+     */
+    public static final String AIXM_NS_URI =
+                                            "http://www.aixm.aero/schema/5.1";
+
+    /**
+     * Preferred namespace prefix for the AIXM namespace.
+     */
+    public static final String AIXM_NS_PREFIX = "aixm";
+
+    /**
+     * Namespace URI of the AIXM Message namespace.
+     */
+    public static final String AIXM_MESSAGE_NS_URI =
+                                    "http://www.aixm.aero/schema/5.1/message";
+
+    /**
+     * Preferred namespace prefix for the AIXM Message namespace.
+     */
+    public static final String AIXM_MESSAGE_NS_PREFIX = "message";
+
+    /**
      * A GML object factory, used to create GML related objects.
      */
     private static net.opengis.gml._3.ObjectFactory gmlFactory =
@@ -152,6 +242,27 @@ public final class AixmConverter {
      * Private default constructor.
      */
     private AixmConverter() {
+    }
+
+    /**
+     * Return a namespace context with the used namespaces and their
+     * preferred prefixes.
+     *
+     * @return a namespace context with namespaces used by AIXM documents.
+     */
+    public static NamespaceContext getNsCtx() {
+        NamespaceContextImpl nsCtx = new NamespaceContextImpl();
+
+        nsCtx.startPrefixMapping(XLINK_NS_PREFIX, XLINK_NS_URI);
+        nsCtx.startPrefixMapping(XSI_NS_PREFIX, XSI_NS_URI);
+        nsCtx.startPrefixMapping(GML_NS_PREFIX, GML_NS_URI);
+        nsCtx.startPrefixMapping(GCO_NS_PREFIX, GCO_NS_URI);
+        nsCtx.startPrefixMapping(GMD_NS_PREFIX, GMD_NS_URI);
+        nsCtx.startPrefixMapping(GTS_NS_PREFIX, GTS_NS_URI);
+        nsCtx.startPrefixMapping(AIXM_NS_PREFIX, AIXM_NS_URI);
+        nsCtx.startPrefixMapping(AIXM_MESSAGE_NS_PREFIX, AIXM_MESSAGE_NS_URI);
+
+        return nsCtx;
     }
 
     /**

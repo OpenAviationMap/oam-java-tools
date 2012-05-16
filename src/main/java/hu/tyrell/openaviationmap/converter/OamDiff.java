@@ -382,7 +382,7 @@ public final class OamDiff {
      *        but is present in the input OAM
      * @param deletedOam an Oam containing content that is in the baseline, but
      *        not in the input
-     * @param updatedOam an Oam containing contant that is present both in the
+     * @param updatedOam an Oam containing content that is present both in the
      *        baseline and in the input, but has changed
      * @param unchangedOam an Oam containing content that is both present in
      *        the baseline and the input, and is in fact the same.
