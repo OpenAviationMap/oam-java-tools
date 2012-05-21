@@ -17,6 +17,7 @@
  */
 package hu.tyrell.openaviationmap.converter;
 
+import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -148,7 +149,8 @@ public final class ConverterUtil {
                                   null, true);
 
         for (Node n = it.nextNode(); n != null; n = it.nextNode()) {
-            if (prefixMap.containsKey(n.getPrefix())) {
+            if (n.getPrefix() != null
+             && prefixMap.containsKey(n.getPrefix())) {
                 n.setPrefix(prefixMap.get(n.getPrefix()));
             }
 
@@ -160,7 +162,8 @@ public final class ConverterUtil {
                                             XMLConstants.XMLNS_ATTRIBUTE_NS_URI,
                                             a.getLocalName());
                     --i;
-                } else if (prefixMap.containsKey(a.getPrefix())) {
+                } else if (a.getPrefix() != null
+                         && prefixMap.containsKey(a.getPrefix())) {
                     a.setPrefix(prefixMap.get(a.getPrefix()));
                 }
             }
@@ -181,6 +184,17 @@ public final class ConverterUtil {
      * @param document the document to print
      */
     public static void printDocument(Document document) {
+        serializeDocument(document, System.out);
+    }
+
+    /**
+     * Serialize a DOM document to an output stream.
+     *
+     * @param document the document to print
+     * @param os the output stream to serialize to.
+     */
+    public static void
+    serializeDocument(Document document, OutputStream os) {
         try {
             // write the XML document into a file
             TransformerFactory tFactory = TransformerFactory.newInstance();
@@ -188,7 +202,7 @@ public final class ConverterUtil {
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 
             DOMSource source = new DOMSource(document);
-            StreamResult result = new StreamResult(System.out);
+            StreamResult result = new StreamResult(os);
             transformer.transform(source, result);
         } catch (TransformerException e) {
             e.printStackTrace();

@@ -1,1252 +1,1260 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ns7:AIXMBasicMessage xmlns:ns1="http://www.opengis.net/gml/3.2" xmlns:ns2="http://www.w3.org/1999/xlink" xmlns:ns3="http://www.aixm.aero/schema/5.1" xmlns:ns4="http://www.isotc211.org/2005/gco" xmlns:ns5="http://www.isotc211.org/2005/gmd" xmlns:ns6="http://www.isotc211.org/2005/gts" xmlns:ns7="http://www.aixm.aero/schema/5.1/message" ns1:id="e:ENR-5.5">
-    <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns7:hasMember ns2:type="simple">
-        <ns3:Airspace ns1:id="eAIP.Hungary:LHSA1:1">
-            <ns1:identifier codeSpace="eAIP.Hungary">LHSA1</ns1:identifier>
-            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns3:timeSlice>
-                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHSA1:2">
-                    <ns1:validTime ns2:type="simple">
-                        <ns1:TimePeriod>
-                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
-                            <ns1:endPosition indeterminatePosition="unknown"/>
-                        </ns1:TimePeriod>
-                    </ns1:validTime>
-                    <ns3:interpretation>BASELINE</ns3:interpretation>
-                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
-                    <ns3:correctionNumber>0</ns3:correctionNumber>
-                    <ns3:type>SA</ns3:type>
-                    <ns3:designator>LHSA1</ns3:designator>
-                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:name>AEROBATICS AREA1</ns3:name>
-                    <ns3:designatorICAO>yes</ns3:designatorICAO>
-                    <ns3:controlType>CIVIL</ns3:controlType>
-                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:geometryComponent>
-                        <ns3:AirspaceGeometryComponent>
-                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:theAirspaceVolume>
-<ns3:AirspaceVolume>
-    <ns3:upperLimit uom="FT">6000.0</ns3:upperLimit>
-    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
-    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="FT">3000.0</ns3:lowerLimit>
-    <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
-    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:horizontalProjection>
-        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
-            <ns1:patches>
-                <ns1:PolygonPatch interpolation="planar">
-                    <ns1:exterior>
-                        <ns1:Ring>
-                            <ns1:curveMember ns2:type="simple">
-<ns1:Curve>
-    <ns1:segments>
-        <ns1:GeodesicString interpolation="geodesic">
-            <ns1:posList>47.442499999999995 18.748333333333335 47.40083333333333 18.815 47.450833333333335 18.798333333333336 47.450833333333335 18.773333333333333 47.442499999999995 18.748333333333335</ns1:posList>
-        </ns1:GeodesicString>
-    </ns1:segments>
-</ns1:Curve>
-                            </ns1:curveMember>
-                        </ns1:Ring>
-                    </ns1:exterior>
-                </ns1:PolygonPatch>
-            </ns1:patches>
-            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-        </ns3:Surface>
-    </ns3:horizontalProjection>
-    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-</ns3:AirspaceVolume>
-                            </ns3:theAirspaceVolume>
-                        </ns3:AirspaceGeometryComponent>
-                    </ns3:geometryComponent>
-                    <ns3:annotation>
-                        <ns3:Note>
-                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:purpose>REMARK</ns3:purpose>
-                            <ns3:translatedNote>
-<ns3:LinguisticNote>
-    <ns3:note lang="eng">Above 3000 FT AMSL prior permission required by Budapest ATS Centre. Not available when LH-D30 activated</ns3:note>
-</ns3:LinguisticNote>
-                            </ns3:translatedNote>
-                        </ns3:Note>
-                    </ns3:annotation>
-                </ns3:AirspaceTimeSlice>
-            </ns3:timeSlice>
-        </ns3:Airspace>
-    </ns7:hasMember>
-    <ns7:hasMember ns2:type="simple">
-        <ns3:Airspace ns1:id="eAIP.Hungary:LHSA2:1">
-            <ns1:identifier codeSpace="eAIP.Hungary">LHSA2</ns1:identifier>
-            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns3:timeSlice>
-                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHSA2:2">
-                    <ns1:validTime ns2:type="simple">
-                        <ns1:TimePeriod>
-                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
-                            <ns1:endPosition indeterminatePosition="unknown"/>
-                        </ns1:TimePeriod>
-                    </ns1:validTime>
-                    <ns3:interpretation>BASELINE</ns3:interpretation>
-                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
-                    <ns3:correctionNumber>0</ns3:correctionNumber>
-                    <ns3:type>SA</ns3:type>
-                    <ns3:designator>LHSA2</ns3:designator>
-                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:name>AEROBATICS AREA2</ns3:name>
-                    <ns3:designatorICAO>yes</ns3:designatorICAO>
-                    <ns3:controlType>CIVIL</ns3:controlType>
-                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:geometryComponent>
-                        <ns3:AirspaceGeometryComponent>
-                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:theAirspaceVolume>
-<ns3:AirspaceVolume>
-    <ns3:upperLimit uom="FT">3500.0</ns3:upperLimit>
-    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
-    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="FT">550.0</ns3:lowerLimit>
-    <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
-    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:horizontalProjection>
-        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
-            <ns1:patches>
-                <ns1:PolygonPatch interpolation="planar">
-                    <ns1:exterior>
-                        <ns1:Ring>
-                            <ns1:curveMember ns2:type="simple">
-<ns1:Curve>
-    <ns1:segments>
-        <ns1:CircleByCenterPoint interpolation="circularArcCenterPointWithRadius" numArc="1">
-            <ns1:pos>47.345555555555556 18.980833333333333</ns1:pos>
-            <ns1:radius uom="M">1500.0</ns1:radius>
-        </ns1:CircleByCenterPoint>
-    </ns1:segments>
-</ns1:Curve>
-                            </ns1:curveMember>
-                        </ns1:Ring>
-                    </ns1:exterior>
-                </ns1:PolygonPatch>
-            </ns1:patches>
-            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-        </ns3:Surface>
-    </ns3:horizontalProjection>
-    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-</ns3:AirspaceVolume>
-                            </ns3:theAirspaceVolume>
-                        </ns3:AirspaceGeometryComponent>
-                    </ns3:geometryComponent>
-                    <ns3:annotation>
-                        <ns3:Note>
-                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:purpose>REMARK</ns3:purpose>
-                            <ns3:translatedNote>
-<ns3:LinguisticNote>
-    <ns3:note lang="eng">Prior permission required by Budapest ATS Centre.</ns3:note>
-</ns3:LinguisticNote>
-                            </ns3:translatedNote>
-                        </ns3:Note>
-                    </ns3:annotation>
-                </ns3:AirspaceTimeSlice>
-            </ns3:timeSlice>
-        </ns3:Airspace>
-    </ns7:hasMember>
-    <ns7:hasMember ns2:type="simple">
-        <ns3:Airspace ns1:id="eAIP.Hungary:LHSG1:1">
-            <ns1:identifier codeSpace="eAIP.Hungary">LHSG1</ns1:identifier>
-            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns3:timeSlice>
-                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHSG1:2">
-                    <ns1:validTime ns2:type="simple">
-                        <ns1:TimePeriod>
-                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
-                            <ns1:endPosition indeterminatePosition="unknown"/>
-                        </ns1:TimePeriod>
-                    </ns1:validTime>
-                    <ns3:interpretation>BASELINE</ns3:interpretation>
-                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
-                    <ns3:correctionNumber>0</ns3:correctionNumber>
-                    <ns3:type>SG</ns3:type>
-                    <ns3:designator>LHSG1</ns3:designator>
-                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:name>GLIDER AREA1</ns3:name>
-                    <ns3:designatorICAO>yes</ns3:designatorICAO>
-                    <ns3:controlType>CIVIL</ns3:controlType>
-                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:geometryComponent>
-                        <ns3:AirspaceGeometryComponent>
-                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:theAirspaceVolume>
-<ns3:AirspaceVolume>
-    <ns3:upperLimit uom="FT">3500.0</ns3:upperLimit>
-    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
-    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
-    <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
-    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:horizontalProjection>
-        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
-            <ns1:patches>
-                <ns1:PolygonPatch interpolation="planar">
-                    <ns1:exterior>
-                        <ns1:Ring>
-                            <ns1:curveMember ns2:type="simple">
-<ns1:Curve>
-    <ns1:segments>
-        <ns1:GeodesicString interpolation="geodesic">
-            <ns1:posList>47.62222222222222 18.90694444444444 47.550555555555555 18.985833333333336 47.538888888888884 18.982777777777777 47.583333333333336 18.883333333333333 47.62222222222222 18.90694444444444</ns1:posList>
-        </ns1:GeodesicString>
-    </ns1:segments>
-</ns1:Curve>
-                            </ns1:curveMember>
-                        </ns1:Ring>
-                    </ns1:exterior>
-                </ns1:PolygonPatch>
-            </ns1:patches>
-            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-        </ns3:Surface>
-    </ns3:horizontalProjection>
-    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-</ns3:AirspaceVolume>
-                            </ns3:theAirspaceVolume>
-                        </ns3:AirspaceGeometryComponent>
-                    </ns3:geometryComponent>
-                    <ns3:annotation>
-                        <ns3:Note>
-                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:purpose>REMARK</ns3:purpose>
-                            <ns3:translatedNote>
-<ns3:LinguisticNote>
-    <ns3:note lang="eng">Only for VFR flights.
-Above 2500 FT AMSL prior permission required by Budapest ATS Centre.</ns3:note>
-</ns3:LinguisticNote>
-                            </ns3:translatedNote>
-                        </ns3:Note>
-                    </ns3:annotation>
-                </ns3:AirspaceTimeSlice>
-            </ns3:timeSlice>
-        </ns3:Airspace>
-    </ns7:hasMember>
-    <ns7:hasMember ns2:type="simple">
-        <ns3:Airspace ns1:id="eAIP.Hungary:LHSG2S:1">
-            <ns1:identifier codeSpace="eAIP.Hungary">LHSG2S</ns1:identifier>
-            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns3:timeSlice>
-                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHSG2S:2">
-                    <ns1:validTime ns2:type="simple">
-                        <ns1:TimePeriod>
-                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
-                            <ns1:endPosition indeterminatePosition="unknown"/>
-                        </ns1:TimePeriod>
-                    </ns1:validTime>
-                    <ns3:interpretation>BASELINE</ns3:interpretation>
-                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
-                    <ns3:correctionNumber>0</ns3:correctionNumber>
-                    <ns3:type>SG</ns3:type>
-                    <ns3:designator>LHSG2S</ns3:designator>
-                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:name>GLIDER AREA2/S</ns3:name>
-                    <ns3:designatorICAO>yes</ns3:designatorICAO>
-                    <ns3:controlType>CIVIL</ns3:controlType>
-                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:geometryComponent>
-                        <ns3:AirspaceGeometryComponent>
-                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:theAirspaceVolume>
-<ns3:AirspaceVolume>
-    <ns3:upperLimit uom="FT">6500.0</ns3:upperLimit>
-    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
-    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
-    <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
-    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:horizontalProjection>
-        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
-            <ns1:patches>
-                <ns1:PolygonPatch interpolation="planar">
-                    <ns1:exterior>
-                        <ns1:Ring>
-                            <ns1:curveMember ns2:type="simple">
-<ns1:Curve>
-    <ns1:segments>
-        <ns1:GeodesicString interpolation="geodesic">
-            <ns1:posList>47.583333333333336 18.883333333333333 47.538888888888884 18.982777777777777 47.50055555555556 18.97 47.49194444444444 18.979444444444443 47.486111111111114 19.013055555555557 47.42361111111111 18.994444444444447 47.42194444444444 18.92527777777778 47.44333333333333 18.954722222222223 47.55777777777777 18.76833333333333 47.583333333333336 18.883333333333333</ns1:posList>
-        </ns1:GeodesicString>
-    </ns1:segments>
-</ns1:Curve>
-                            </ns1:curveMember>
-                        </ns1:Ring>
-                    </ns1:exterior>
-                </ns1:PolygonPatch>
-            </ns1:patches>
-            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-        </ns3:Surface>
-    </ns3:horizontalProjection>
-    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-</ns3:AirspaceVolume>
-                            </ns3:theAirspaceVolume>
-                        </ns3:AirspaceGeometryComponent>
-                    </ns3:geometryComponent>
-                    <ns3:annotation>
-                        <ns3:Note>
-                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:purpose>REMARK</ns3:purpose>
-                            <ns3:translatedNote>
-<ns3:LinguisticNote>
-    <ns3:note lang="eng">Only for VFR flights.
-Above 3500 FT AMSL prior permission required by Budapest ATS Centre.</ns3:note>
-</ns3:LinguisticNote>
-                            </ns3:translatedNote>
-                        </ns3:Note>
-                    </ns3:annotation>
-                </ns3:AirspaceTimeSlice>
-            </ns3:timeSlice>
-        </ns3:Airspace>
-    </ns7:hasMember>
-    <ns7:hasMember ns2:type="simple">
-        <ns3:Airspace ns1:id="eAIP.Hungary:LHSG2V:1">
-            <ns1:identifier codeSpace="eAIP.Hungary">LHSG2V</ns1:identifier>
-            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns3:timeSlice>
-                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHSG2V:2">
-                    <ns1:validTime ns2:type="simple">
-                        <ns1:TimePeriod>
-                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
-                            <ns1:endPosition indeterminatePosition="unknown"/>
-                        </ns1:TimePeriod>
-                    </ns1:validTime>
-                    <ns3:interpretation>BASELINE</ns3:interpretation>
-                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
-                    <ns3:correctionNumber>0</ns3:correctionNumber>
-                    <ns3:type>SG</ns3:type>
-                    <ns3:designator>LHSG2V</ns3:designator>
-                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:name>GLIDER AREA2/V</ns3:name>
-                    <ns3:designatorICAO>yes</ns3:designatorICAO>
-                    <ns3:controlType>CIVIL</ns3:controlType>
-                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:geometryComponent>
-                        <ns3:AirspaceGeometryComponent>
-                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:theAirspaceVolume>
-<ns3:AirspaceVolume>
-    <ns3:upperLimit uom="FT">6500.0</ns3:upperLimit>
-    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
-    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
-    <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
-    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:horizontalProjection>
-        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
-            <ns1:patches>
-                <ns1:PolygonPatch interpolation="planar">
-                    <ns1:exterior>
-                        <ns1:Ring>
-                            <ns1:curveMember ns2:type="simple">
-<ns1:Curve>
-    <ns1:segments>
-        <ns1:GeodesicString interpolation="geodesic">
-            <ns1:posList>47.583333333333336 18.883333333333333 47.538888888888884 18.982777777777777 47.50055555555556 18.97 47.49194444444444 18.979444444444443 47.486111111111114 19.013055555555557 47.42361111111111 18.994444444444447 47.42194444444444 18.92527777777778 47.44333333333333 18.954722222222223 47.55777777777777 18.76833333333333 47.583333333333336 18.883333333333333</ns1:posList>
-        </ns1:GeodesicString>
-    </ns1:segments>
-</ns1:Curve>
-                            </ns1:curveMember>
-                        </ns1:Ring>
-                    </ns1:exterior>
-                </ns1:PolygonPatch>
-            </ns1:patches>
-            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-        </ns3:Surface>
-    </ns3:horizontalProjection>
-    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-</ns3:AirspaceVolume>
-                            </ns3:theAirspaceVolume>
-                        </ns3:AirspaceGeometryComponent>
-                    </ns3:geometryComponent>
-                    <ns3:annotation>
-                        <ns3:Note>
-                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:purpose>REMARK</ns3:purpose>
-                            <ns3:translatedNote>
-<ns3:LinguisticNote>
-    <ns3:note lang="eng">Only for VFR flights.
-Above 3500 FT AMSL prior permission required by Budapest ATS Centre.</ns3:note>
-</ns3:LinguisticNote>
-                            </ns3:translatedNote>
-                        </ns3:Note>
-                    </ns3:annotation>
-                </ns3:AirspaceTimeSlice>
-            </ns3:timeSlice>
-        </ns3:Airspace>
-    </ns7:hasMember>
-    <ns7:hasMember ns2:type="simple">
-        <ns3:Airspace ns1:id="eAIP.Hungary:LHSG3:1">
-            <ns1:identifier codeSpace="eAIP.Hungary">LHSG3</ns1:identifier>
-            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns3:timeSlice>
-                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHSG3:2">
-                    <ns1:validTime ns2:type="simple">
-                        <ns1:TimePeriod>
-                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
-                            <ns1:endPosition indeterminatePosition="unknown"/>
-                        </ns1:TimePeriod>
-                    </ns1:validTime>
-                    <ns3:interpretation>BASELINE</ns3:interpretation>
-                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
-                    <ns3:correctionNumber>0</ns3:correctionNumber>
-                    <ns3:type>SG</ns3:type>
-                    <ns3:designator>LHSG3</ns3:designator>
-                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:name>GLIDER AREA3</ns3:name>
-                    <ns3:designatorICAO>yes</ns3:designatorICAO>
-                    <ns3:controlType>CIVIL</ns3:controlType>
-                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:geometryComponent>
-                        <ns3:AirspaceGeometryComponent>
-                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:theAirspaceVolume>
-<ns3:AirspaceVolume>
-    <ns3:upperLimit uom="FT">6500.0</ns3:upperLimit>
-    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
-    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
-    <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
-    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:horizontalProjection>
-        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
-            <ns1:patches>
-                <ns1:PolygonPatch interpolation="planar">
-                    <ns1:exterior>
-                        <ns1:Ring>
-                            <ns1:curveMember ns2:type="simple">
-<ns1:Curve>
-    <ns1:segments>
-        <ns1:GeodesicString interpolation="geodesic">
-            <ns1:posList>47.55777777777777 18.76833333333333 47.44333333333333 18.954722222222223 47.42194444444444 18.92527777777778 47.42111111111111 18.89611111111111 47.5425 18.698888888888888 47.55777777777777 18.76833333333333</ns1:posList>
-        </ns1:GeodesicString>
-    </ns1:segments>
-</ns1:Curve>
-                            </ns1:curveMember>
-                        </ns1:Ring>
-                    </ns1:exterior>
-                </ns1:PolygonPatch>
-            </ns1:patches>
-            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-        </ns3:Surface>
-    </ns3:horizontalProjection>
-    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-</ns3:AirspaceVolume>
-                            </ns3:theAirspaceVolume>
-                        </ns3:AirspaceGeometryComponent>
-                    </ns3:geometryComponent>
-                    <ns3:annotation>
-                        <ns3:Note>
-                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:purpose>REMARK</ns3:purpose>
-                            <ns3:translatedNote>
-<ns3:LinguisticNote>
-    <ns3:note lang="eng">Only for VFR flights.
- Above 4500 FT AMSL prior permission required by Budapest ATS Centre.</ns3:note>
-</ns3:LinguisticNote>
-                            </ns3:translatedNote>
-                        </ns3:Note>
-                    </ns3:annotation>
-                </ns3:AirspaceTimeSlice>
-            </ns3:timeSlice>
-        </ns3:Airspace>
-    </ns7:hasMember>
-    <ns7:hasMember ns2:type="simple">
-        <ns3:Airspace ns1:id="eAIP.Hungary:LHSG10:1">
-            <ns1:identifier codeSpace="eAIP.Hungary">LHSG10</ns1:identifier>
-            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns3:timeSlice>
-                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHSG10:2">
-                    <ns1:validTime ns2:type="simple">
-                        <ns1:TimePeriod>
-                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
-                            <ns1:endPosition indeterminatePosition="unknown"/>
-                        </ns1:TimePeriod>
-                    </ns1:validTime>
-                    <ns3:interpretation>BASELINE</ns3:interpretation>
-                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
-                    <ns3:correctionNumber>0</ns3:correctionNumber>
-                    <ns3:type>SG</ns3:type>
-                    <ns3:designator>LHSG10</ns3:designator>
-                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:name>GLIDER AREA10</ns3:name>
-                    <ns3:designatorICAO>yes</ns3:designatorICAO>
-                    <ns3:controlType>CIVIL</ns3:controlType>
-                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:geometryComponent>
-                        <ns3:AirspaceGeometryComponent>
-                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:theAirspaceVolume>
-<ns3:AirspaceVolume>
-    <ns3:upperLimit uom="FT">6500.0</ns3:upperLimit>
-    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
-    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
-    <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
-    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:horizontalProjection>
-        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
-            <ns1:patches>
-                <ns1:PolygonPatch interpolation="planar">
-                    <ns1:exterior>
-                        <ns1:Ring>
-                            <ns1:curveMember ns2:type="simple">
-<ns1:Curve>
-    <ns1:segments>
-        <ns1:GeodesicString interpolation="geodesic">
-            <ns1:posList>47.7575 18.618055555555557 47.62277777777778 18.668055555555558 47.78972222222222 18.864444444444445 47.79722222222222 18.730833333333333 47.797528 18.72883 47.791425 18.725734 47.77613 18.697569 47.765705 18.674675 47.761345 18.662953 47.7575 18.618055555555557</ns1:posList>
-        </ns1:GeodesicString>
-    </ns1:segments>
-</ns1:Curve>
-                            </ns1:curveMember>
-                        </ns1:Ring>
-                    </ns1:exterior>
-                </ns1:PolygonPatch>
-            </ns1:patches>
-            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-        </ns3:Surface>
-    </ns3:horizontalProjection>
-    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-</ns3:AirspaceVolume>
-                            </ns3:theAirspaceVolume>
-                        </ns3:AirspaceGeometryComponent>
-                    </ns3:geometryComponent>
-                    <ns3:annotation>
-                        <ns3:Note>
-                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:purpose>REMARK</ns3:purpose>
-                            <ns3:translatedNote>
-<ns3:LinguisticNote>
-    <ns3:note lang="eng">Available only for VFR flights
-Above 4500 FT AMSL prior permission required by Budapest ATS Centre.</ns3:note>
-</ns3:LinguisticNote>
-                            </ns3:translatedNote>
-                        </ns3:Note>
-                    </ns3:annotation>
-                </ns3:AirspaceTimeSlice>
-            </ns3:timeSlice>
-        </ns3:Airspace>
-    </ns7:hasMember>
-    <ns7:hasMember ns2:type="simple">
-        <ns3:Airspace ns1:id="eAIP.Hungary:LHSG20:1">
-            <ns1:identifier codeSpace="eAIP.Hungary">LHSG20</ns1:identifier>
-            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns3:timeSlice>
-                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHSG20:2">
-                    <ns1:validTime ns2:type="simple">
-                        <ns1:TimePeriod>
-                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
-                            <ns1:endPosition indeterminatePosition="unknown"/>
-                        </ns1:TimePeriod>
-                    </ns1:validTime>
-                    <ns3:interpretation>BASELINE</ns3:interpretation>
-                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
-                    <ns3:correctionNumber>0</ns3:correctionNumber>
-                    <ns3:type>SG</ns3:type>
-                    <ns3:designator>LHSG20</ns3:designator>
-                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:name>GLIDER AREA20</ns3:name>
-                    <ns3:designatorICAO>yes</ns3:designatorICAO>
-                    <ns3:controlType>CIVIL</ns3:controlType>
-                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:geometryComponent>
-                        <ns3:AirspaceGeometryComponent>
-                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:theAirspaceVolume>
-<ns3:AirspaceVolume>
-    <ns3:upperLimit uom="FT">3000.0</ns3:upperLimit>
-    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
-    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
-    <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
-    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:horizontalProjection>
-        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
-            <ns1:patches>
-                <ns1:PolygonPatch interpolation="planar">
-                    <ns1:exterior>
-                        <ns1:Ring>
-                            <ns1:curveMember ns2:type="simple">
-<ns1:Curve>
-    <ns1:segments>
-        <ns1:GeodesicString interpolation="geodesic">
-            <ns1:posList>47.65 19.05 47.63333333333333 19.35 47.6 19.175 47.61666666666667 19.066666666666666 47.65 19.05</ns1:posList>
-        </ns1:GeodesicString>
-    </ns1:segments>
-</ns1:Curve>
-                            </ns1:curveMember>
-                        </ns1:Ring>
-                    </ns1:exterior>
-                </ns1:PolygonPatch>
-            </ns1:patches>
-            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-        </ns3:Surface>
-    </ns3:horizontalProjection>
-    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-</ns3:AirspaceVolume>
-                            </ns3:theAirspaceVolume>
-                        </ns3:AirspaceGeometryComponent>
-                    </ns3:geometryComponent>
-                    <ns3:annotation>
-                        <ns3:Note>
-                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:purpose>REMARK</ns3:purpose>
-                            <ns3:translatedNote>
-<ns3:LinguisticNote>
-    <ns3:note lang="eng">Available only for VFR flights.
-Above 2000 FT AMSL prior permission required by Budapest ATS Centre.</ns3:note>
-</ns3:LinguisticNote>
-                            </ns3:translatedNote>
-                        </ns3:Note>
-                    </ns3:annotation>
-                </ns3:AirspaceTimeSlice>
-            </ns3:timeSlice>
-        </ns3:Airspace>
-    </ns7:hasMember>
-    <ns7:hasMember ns2:type="simple">
-        <ns3:Airspace ns1:id="eAIP.Hungary:LHSG20A:1">
-            <ns1:identifier codeSpace="eAIP.Hungary">LHSG20A</ns1:identifier>
-            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns3:timeSlice>
-                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHSG20A:2">
-                    <ns1:validTime ns2:type="simple">
-                        <ns1:TimePeriod>
-                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
-                            <ns1:endPosition indeterminatePosition="unknown"/>
-                        </ns1:TimePeriod>
-                    </ns1:validTime>
-                    <ns3:interpretation>BASELINE</ns3:interpretation>
-                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
-                    <ns3:correctionNumber>0</ns3:correctionNumber>
-                    <ns3:type>SG</ns3:type>
-                    <ns3:designator>LHSG20A</ns3:designator>
-                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:name>GLIDER AREA20A</ns3:name>
-                    <ns3:designatorICAO>yes</ns3:designatorICAO>
-                    <ns3:controlType>CIVIL</ns3:controlType>
-                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:geometryComponent>
-                        <ns3:AirspaceGeometryComponent>
-                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:theAirspaceVolume>
-<ns3:AirspaceVolume>
-    <ns3:upperLimit uom="FT">4000.0</ns3:upperLimit>
-    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
-    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="FT">2000.0</ns3:lowerLimit>
-    <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
-    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:horizontalProjection>
-        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
-            <ns1:patches>
-                <ns1:PolygonPatch interpolation="planar">
-                    <ns1:exterior>
-                        <ns1:Ring>
-                            <ns1:curveMember ns2:type="simple">
-<ns1:Curve>
-    <ns1:segments>
-        <ns1:CircleByCenterPoint interpolation="circularArcCenterPointWithRadius" numArc="1">
-            <ns1:pos>47.617777777777775 19.143333333333334</ns1:pos>
-            <ns1:radius uom="M">2000.0</ns1:radius>
-        </ns1:CircleByCenterPoint>
-    </ns1:segments>
-</ns1:Curve>
-                            </ns1:curveMember>
-                        </ns1:Ring>
-                    </ns1:exterior>
-                </ns1:PolygonPatch>
-            </ns1:patches>
-            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-        </ns3:Surface>
-    </ns3:horizontalProjection>
-    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-</ns3:AirspaceVolume>
-                            </ns3:theAirspaceVolume>
-                        </ns3:AirspaceGeometryComponent>
-                    </ns3:geometryComponent>
-                    <ns3:annotation>
-                        <ns3:Note>
-                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:purpose>REMARK</ns3:purpose>
-                            <ns3:translatedNote>
-<ns3:LinguisticNote>
-    <ns3:note lang="eng">Above 2000 FT AMSL prior permission required by Budapest ATS Centre.</ns3:note>
-</ns3:LinguisticNote>
-                            </ns3:translatedNote>
-                        </ns3:Note>
-                    </ns3:annotation>
-                </ns3:AirspaceTimeSlice>
-            </ns3:timeSlice>
-        </ns3:Airspace>
-    </ns7:hasMember>
-    <ns7:hasMember ns2:type="simple">
-        <ns3:Airspace ns1:id="eAIP.Hungary:LHSG21:1">
-            <ns1:identifier codeSpace="eAIP.Hungary">LHSG21</ns1:identifier>
-            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns3:timeSlice>
-                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHSG21:2">
-                    <ns1:validTime ns2:type="simple">
-                        <ns1:TimePeriod>
-                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
-                            <ns1:endPosition indeterminatePosition="unknown"/>
-                        </ns1:TimePeriod>
-                    </ns1:validTime>
-                    <ns3:interpretation>BASELINE</ns3:interpretation>
-                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
-                    <ns3:correctionNumber>0</ns3:correctionNumber>
-                    <ns3:type>SG</ns3:type>
-                    <ns3:designator>LHSG21</ns3:designator>
-                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:name>GLIDER AREA21</ns3:name>
-                    <ns3:designatorICAO>yes</ns3:designatorICAO>
-                    <ns3:controlType>CIVIL</ns3:controlType>
-                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:geometryComponent>
-                        <ns3:AirspaceGeometryComponent>
-                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:theAirspaceVolume>
-<ns3:AirspaceVolume>
-    <ns3:upperLimit uom="FT">5000.0</ns3:upperLimit>
-    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
-    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
-    <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
-    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:horizontalProjection>
-        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
-            <ns1:patches>
-                <ns1:PolygonPatch interpolation="planar">
-                    <ns1:exterior>
-                        <ns1:Ring>
-                            <ns1:curveMember ns2:type="simple">
-<ns1:Curve>
-    <ns1:segments>
-        <ns1:GeodesicString interpolation="geodesic">
-            <ns1:posList>47.68333333333333 19.075 47.663333333333334 19.754166666666666 47.63333333333333 19.35 47.65 19.05 47.68333333333333 19.075</ns1:posList>
-        </ns1:GeodesicString>
-    </ns1:segments>
-</ns1:Curve>
-                            </ns1:curveMember>
-                        </ns1:Ring>
-                    </ns1:exterior>
-                </ns1:PolygonPatch>
-            </ns1:patches>
-            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-        </ns3:Surface>
-    </ns3:horizontalProjection>
-    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-</ns3:AirspaceVolume>
-                            </ns3:theAirspaceVolume>
-                        </ns3:AirspaceGeometryComponent>
-                    </ns3:geometryComponent>
-                    <ns3:annotation>
-                        <ns3:Note>
-                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:purpose>REMARK</ns3:purpose>
-                            <ns3:translatedNote>
-<ns3:LinguisticNote>
-    <ns3:note lang="eng">Available only for VFR flights
-Above 2500 FT AMSL prior permission required by Budapest ATS Centre.</ns3:note>
-</ns3:LinguisticNote>
-                            </ns3:translatedNote>
-                        </ns3:Note>
-                    </ns3:annotation>
-                </ns3:AirspaceTimeSlice>
-            </ns3:timeSlice>
-        </ns3:Airspace>
-    </ns7:hasMember>
-    <ns7:hasMember ns2:type="simple">
-        <ns3:Airspace ns1:id="eAIP.Hungary:LHSG22:1">
-            <ns1:identifier codeSpace="eAIP.Hungary">LHSG22</ns1:identifier>
-            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns3:timeSlice>
-                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHSG22:2">
-                    <ns1:validTime ns2:type="simple">
-                        <ns1:TimePeriod>
-                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
-                            <ns1:endPosition indeterminatePosition="unknown"/>
-                        </ns1:TimePeriod>
-                    </ns1:validTime>
-                    <ns3:interpretation>BASELINE</ns3:interpretation>
-                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
-                    <ns3:correctionNumber>0</ns3:correctionNumber>
-                    <ns3:type>SG</ns3:type>
-                    <ns3:designator>LHSG22</ns3:designator>
-                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:name>GLIDER AREA22</ns3:name>
-                    <ns3:designatorICAO>yes</ns3:designatorICAO>
-                    <ns3:controlType>CIVIL</ns3:controlType>
-                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:geometryComponent>
-                        <ns3:AirspaceGeometryComponent>
-                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:theAirspaceVolume>
-<ns3:AirspaceVolume>
-    <ns3:upperLimit uom="FT">6500.0</ns3:upperLimit>
-    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
-    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
-    <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
-    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:horizontalProjection>
-        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
-            <ns1:patches>
-                <ns1:PolygonPatch interpolation="planar">
-                    <ns1:exterior>
-                        <ns1:Ring>
-                            <ns1:curveMember ns2:type="simple">
-<ns1:Curve>
-    <ns1:segments>
-        <ns1:GeodesicString interpolation="geodesic">
-            <ns1:posList>47.776666666666664 19.15138888888889 47.75083333333333 19.68138888888889 47.663333333333334 19.754166666666666 47.68333333333333 19.075 47.776666666666664 19.15138888888889</ns1:posList>
-        </ns1:GeodesicString>
-    </ns1:segments>
-</ns1:Curve>
-                            </ns1:curveMember>
-                        </ns1:Ring>
-                    </ns1:exterior>
-                </ns1:PolygonPatch>
-            </ns1:patches>
-            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-        </ns3:Surface>
-    </ns3:horizontalProjection>
-    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-</ns3:AirspaceVolume>
-                            </ns3:theAirspaceVolume>
-                        </ns3:AirspaceGeometryComponent>
-                    </ns3:geometryComponent>
-                    <ns3:annotation>
-                        <ns3:Note>
-                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:purpose>REMARK</ns3:purpose>
-                            <ns3:translatedNote>
-<ns3:LinguisticNote>
-    <ns3:note lang="eng">Available only for VFR flights.
-Above 3000 FT AMSL prior permission required by Budapest ATS Centre.</ns3:note>
-</ns3:LinguisticNote>
-                            </ns3:translatedNote>
-                        </ns3:Note>
-                    </ns3:annotation>
-                </ns3:AirspaceTimeSlice>
-            </ns3:timeSlice>
-        </ns3:Airspace>
-    </ns7:hasMember>
-    <ns7:hasMember ns2:type="simple">
-        <ns3:Airspace ns1:id="eAIP.Hungary:LHSG23:1">
-            <ns1:identifier codeSpace="eAIP.Hungary">LHSG23</ns1:identifier>
-            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns3:timeSlice>
-                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHSG23:2">
-                    <ns1:validTime ns2:type="simple">
-                        <ns1:TimePeriod>
-                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
-                            <ns1:endPosition indeterminatePosition="unknown"/>
-                        </ns1:TimePeriod>
-                    </ns1:validTime>
-                    <ns3:interpretation>BASELINE</ns3:interpretation>
-                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
-                    <ns3:correctionNumber>0</ns3:correctionNumber>
-                    <ns3:type>SG</ns3:type>
-                    <ns3:designator>LHSG23</ns3:designator>
-                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:name>GLIDER AREA23</ns3:name>
-                    <ns3:designatorICAO>yes</ns3:designatorICAO>
-                    <ns3:controlType>CIVIL</ns3:controlType>
-                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:geometryComponent>
-                        <ns3:AirspaceGeometryComponent>
-                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:theAirspaceVolume>
-<ns3:AirspaceVolume>
-    <ns3:upperLimit uom="FT">7500.0</ns3:upperLimit>
-    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
-    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
-    <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
-    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:horizontalProjection>
-        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
-            <ns1:patches>
-                <ns1:PolygonPatch interpolation="planar">
-                    <ns1:exterior>
-                        <ns1:Ring>
-                            <ns1:curveMember ns2:type="simple">
-<ns1:Curve>
-    <ns1:segments>
-        <ns1:GeodesicString interpolation="geodesic">
-            <ns1:posList>47.92972222222222 19.529999999999998 47.75083333333333 19.68138888888889 47.776666666666664 19.15138888888889 47.92972222222222 19.529999999999998</ns1:posList>
-        </ns1:GeodesicString>
-    </ns1:segments>
-</ns1:Curve>
-                            </ns1:curveMember>
-                        </ns1:Ring>
-                    </ns1:exterior>
-                </ns1:PolygonPatch>
-            </ns1:patches>
-            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-        </ns3:Surface>
-    </ns3:horizontalProjection>
-    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-</ns3:AirspaceVolume>
-                            </ns3:theAirspaceVolume>
-                        </ns3:AirspaceGeometryComponent>
-                    </ns3:geometryComponent>
-                    <ns3:annotation>
-                        <ns3:Note>
-                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:purpose>REMARK</ns3:purpose>
-                            <ns3:translatedNote>
-<ns3:LinguisticNote>
-    <ns3:note lang="eng">Available only for VFR flights.
-Above 6500 FT AMSL prior permission required by Budapest ATS Centre.</ns3:note>
-</ns3:LinguisticNote>
-                            </ns3:translatedNote>
-                        </ns3:Note>
-                    </ns3:annotation>
-                </ns3:AirspaceTimeSlice>
-            </ns3:timeSlice>
-        </ns3:Airspace>
-    </ns7:hasMember>
-    <ns7:hasMember ns2:type="simple">
-        <ns3:Airspace ns1:id="eAIP.Hungary:LHSG24:1">
-            <ns1:identifier codeSpace="eAIP.Hungary">LHSG24</ns1:identifier>
-            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns3:timeSlice>
-                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHSG24:2">
-                    <ns1:validTime ns2:type="simple">
-                        <ns1:TimePeriod>
-                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
-                            <ns1:endPosition indeterminatePosition="unknown"/>
-                        </ns1:TimePeriod>
-                    </ns1:validTime>
-                    <ns3:interpretation>BASELINE</ns3:interpretation>
-                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
-                    <ns3:correctionNumber>0</ns3:correctionNumber>
-                    <ns3:type>SG</ns3:type>
-                    <ns3:designator>LHSG24</ns3:designator>
-                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:name>GLIDER AREA24</ns3:name>
-                    <ns3:designatorICAO>yes</ns3:designatorICAO>
-                    <ns3:controlType>CIVIL</ns3:controlType>
-                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:geometryComponent>
-                        <ns3:AirspaceGeometryComponent>
-                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:theAirspaceVolume>
-<ns3:AirspaceVolume>
-    <ns3:upperLimit uom="FL">285.0</ns3:upperLimit>
-    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
-    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
-    <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
-    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:horizontalProjection>
-        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
-            <ns1:patches>
-                <ns1:PolygonPatch interpolation="planar">
-                    <ns1:exterior>
-                        <ns1:Ring>
-                            <ns1:curveMember ns2:type="simple">
-<ns1:Curve>
-    <ns1:segments>
-        <ns1:GeodesicString interpolation="geodesic">
-            <ns1:posList>47.82944444444445 18.960555555555555 47.72777777777778 19.245833333333334 47.65 19.05 47.82944444444445 18.960555555555555</ns1:posList>
-        </ns1:GeodesicString>
-    </ns1:segments>
-</ns1:Curve>
-                            </ns1:curveMember>
-                        </ns1:Ring>
-                    </ns1:exterior>
-                </ns1:PolygonPatch>
-            </ns1:patches>
-            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-        </ns3:Surface>
-    </ns3:horizontalProjection>
-    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-</ns3:AirspaceVolume>
-                            </ns3:theAirspaceVolume>
-                        </ns3:AirspaceGeometryComponent>
-                    </ns3:geometryComponent>
-                    <ns3:activation>
-                        <ns3:AirspaceActivation>
-                            <ns3:activity>GLIDER</ns3:activity>
-                            <ns3:status xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                        </ns3:AirspaceActivation>
-                    </ns3:activation>
-                    <ns3:annotation>
-                        <ns3:Note>
-                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:purpose>REMARK</ns3:purpose>
-                            <ns3:translatedNote>
-<ns3:LinguisticNote>
-    <ns3:note lang="eng">Prior permission required by Budapest ATS Centre.
-Mountain wave glider flights.</ns3:note>
-</ns3:LinguisticNote>
-                            </ns3:translatedNote>
-                        </ns3:Note>
-                    </ns3:annotation>
-                </ns3:AirspaceTimeSlice>
-            </ns3:timeSlice>
-        </ns3:Airspace>
-    </ns7:hasMember>
-    <ns7:hasMember ns2:type="simple">
-        <ns3:Airspace ns1:id="eAIP.Hungary:LHSG25:1">
-            <ns1:identifier codeSpace="eAIP.Hungary">LHSG25</ns1:identifier>
-            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns3:timeSlice>
-                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHSG25:2">
-                    <ns1:validTime ns2:type="simple">
-                        <ns1:TimePeriod>
-                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
-                            <ns1:endPosition indeterminatePosition="unknown"/>
-                        </ns1:TimePeriod>
-                    </ns1:validTime>
-                    <ns3:interpretation>BASELINE</ns3:interpretation>
-                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
-                    <ns3:correctionNumber>0</ns3:correctionNumber>
-                    <ns3:type>SG</ns3:type>
-                    <ns3:designator>LHSG25</ns3:designator>
-                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:name>GLIDER AREA25</ns3:name>
-                    <ns3:designatorICAO>yes</ns3:designatorICAO>
-                    <ns3:controlType>CIVIL</ns3:controlType>
-                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:geometryComponent>
-                        <ns3:AirspaceGeometryComponent>
-                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:theAirspaceVolume>
-<ns3:AirspaceVolume>
-    <ns3:upperLimit uom="FL">285.0</ns3:upperLimit>
-    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
-    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
-    <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
-    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:horizontalProjection>
-        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
-            <ns1:patches>
-                <ns1:PolygonPatch interpolation="planar">
-                    <ns1:exterior>
-                        <ns1:Ring>
-                            <ns1:curveMember ns2:type="simple">
-<ns1:Curve>
-    <ns1:segments>
-        <ns1:GeodesicString interpolation="geodesic">
-            <ns1:posList>48.0 19.133333333333333 47.72777777777778 19.245833333333334 47.82944444444445 18.960555555555555 47.88333333333333 18.933333333333334 48.0 19.133333333333333</ns1:posList>
-        </ns1:GeodesicString>
-    </ns1:segments>
-</ns1:Curve>
-                            </ns1:curveMember>
-                        </ns1:Ring>
-                    </ns1:exterior>
-                </ns1:PolygonPatch>
-            </ns1:patches>
-            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-        </ns3:Surface>
-    </ns3:horizontalProjection>
-    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-</ns3:AirspaceVolume>
-                            </ns3:theAirspaceVolume>
-                        </ns3:AirspaceGeometryComponent>
-                    </ns3:geometryComponent>
-                    <ns3:activation>
-                        <ns3:AirspaceActivation>
-                            <ns3:activity>GLIDER</ns3:activity>
-                            <ns3:status xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                        </ns3:AirspaceActivation>
-                    </ns3:activation>
-                    <ns3:annotation>
-                        <ns3:Note>
-                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:purpose>REMARK</ns3:purpose>
-                            <ns3:translatedNote>
-<ns3:LinguisticNote>
-    <ns3:note lang="eng">Prior permission required by Budapest ATS Centre.
-Mountain wave glider flights.</ns3:note>
-</ns3:LinguisticNote>
-                            </ns3:translatedNote>
-                        </ns3:Note>
-                    </ns3:annotation>
-                </ns3:AirspaceTimeSlice>
-            </ns3:timeSlice>
-        </ns3:Airspace>
-    </ns7:hasMember>
-    <ns7:hasMember ns2:type="simple">
-        <ns3:Airspace ns1:id="eAIP.Hungary:LHSG30:1">
-            <ns1:identifier codeSpace="eAIP.Hungary">LHSG30</ns1:identifier>
-            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns3:timeSlice>
-                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LHSG30:2">
-                    <ns1:validTime ns2:type="simple">
-                        <ns1:TimePeriod>
-                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
-                            <ns1:endPosition indeterminatePosition="unknown"/>
-                        </ns1:TimePeriod>
-                    </ns1:validTime>
-                    <ns3:interpretation>BASELINE</ns3:interpretation>
-                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
-                    <ns3:correctionNumber>0</ns3:correctionNumber>
-                    <ns3:type>SG</ns3:type>
-                    <ns3:designator>LHSG30</ns3:designator>
-                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:name>GLIDER AREA30</ns3:name>
-                    <ns3:designatorICAO>yes</ns3:designatorICAO>
-                    <ns3:controlType>CIVIL</ns3:controlType>
-                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:geometryComponent>
-                        <ns3:AirspaceGeometryComponent>
-                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:theAirspaceVolume>
-<ns3:AirspaceVolume>
-    <ns3:upperLimit uom="FL">285.0</ns3:upperLimit>
-    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
-    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="FT">0.0</ns3:lowerLimit>
-    <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
-    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:horizontalProjection>
-        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
-            <ns1:patches>
-                <ns1:PolygonPatch interpolation="planar">
-                    <ns1:exterior>
-                        <ns1:Ring>
-                            <ns1:curveMember ns2:type="simple">
-<ns1:Curve>
-    <ns1:segments>
-        <ns1:GeodesicString interpolation="geodesic">
-            <ns1:posList>47.958333333333336 19.7 47.95 20.022222222222222 47.833333333333336 20.116666666666667 47.74166666666667 19.766666666666666 47.825 19.641666666666666 47.958333333333336 19.7</ns1:posList>
-        </ns1:GeodesicString>
-    </ns1:segments>
-</ns1:Curve>
-                            </ns1:curveMember>
-                        </ns1:Ring>
-                    </ns1:exterior>
-                </ns1:PolygonPatch>
-            </ns1:patches>
-            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-        </ns3:Surface>
-    </ns3:horizontalProjection>
-    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-</ns3:AirspaceVolume>
-                            </ns3:theAirspaceVolume>
-                        </ns3:AirspaceGeometryComponent>
-                    </ns3:geometryComponent>
-                    <ns3:activation>
-                        <ns3:AirspaceActivation>
-                            <ns3:activity>GLIDER</ns3:activity>
-                            <ns3:status xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                        </ns3:AirspaceActivation>
-                    </ns3:activation>
-                    <ns3:annotation>
-                        <ns3:Note>
-                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:purpose>REMARK</ns3:purpose>
-                            <ns3:translatedNote>
-<ns3:LinguisticNote>
-    <ns3:note lang="eng">Available only for VFR flights.
+<?xml version="1.0" encoding="UTF-8"?>
+<message:AIXMBasicMessage xmlns:message="http://www.aixm.aero/schema/5.1/message"
+                          xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                          xmlns:gco="http://www.isotc211.org/2005/gco"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          xmlns:gml="http://www.opengis.net/gml/3.2"
+                          xmlns:gts="http://www.isotc211.org/2005/gts"
+                          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:aixm="http://www.aixm.aero/schema/5.1"
+                          gml:id="uuid.d7367cc4-8485-47e7-b7b6-7d27afcbde90">
+   <gml:boundedBy xsi:nil="true"/>
+   <message:hasMember xlink:type="simple">
+      <aixm:Airspace gml:id="uuid.05900a57-2749-450c-896f-cb995e6cb8ad">
+         <gml:identifier codeSpace="urn:uuid:">05900a57-2749-450c-896f-cb995e6cb8ad</gml:identifier>
+         <gml:boundedBy xsi:nil="true"/>
+         <aixm:timeSlice>
+            <aixm:AirspaceTimeSlice gml:id="uuid.cee55ab9-f1ea-4b4f-918f-423464a6eb27">
+               <gml:validTime xlink:type="simple">
+                  <gml:TimePeriod>
+                     <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
+                     <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+               </gml:validTime>
+               <aixm:interpretation>BASELINE</aixm:interpretation>
+               <aixm:sequenceNumber>1</aixm:sequenceNumber>
+               <aixm:correctionNumber>0</aixm:correctionNumber>
+               <aixm:type>SA</aixm:type>
+               <aixm:designator>LHSA1</aixm:designator>
+               <aixm:localType xsi:nil="true"/>
+               <aixm:name>AEROBATICS AREA1</aixm:name>
+               <aixm:designatorICAO>yes</aixm:designatorICAO>
+               <aixm:controlType>CIVIL</aixm:controlType>
+               <aixm:upperLowerSeparation xsi:nil="true"/>
+               <aixm:protectedRoute xsi:nil="true"/>
+               <aixm:geometryComponent>
+                  <aixm:AirspaceGeometryComponent>
+                     <aixm:operation xsi:nil="true"/>
+                     <aixm:operationSequence xsi:nil="true"/>
+                     <aixm:theAirspaceVolume>
+                        <aixm:AirspaceVolume>
+                           <aixm:upperLimit uom="FT">6000.0</aixm:upperLimit>
+                           <aixm:upperLimitReference>MSL</aixm:upperLimitReference>
+                           <aixm:maximumLimit xsi:nil="true"/>
+                           <aixm:maximumLimitReference xsi:nil="true"/>
+                           <aixm:lowerLimit uom="FT">3000.0</aixm:lowerLimit>
+                           <aixm:lowerLimitReference>MSL</aixm:lowerLimitReference>
+                           <aixm:minimumLimit xsi:nil="true"/>
+                           <aixm:minimumLimitReference xsi:nil="true"/>
+                           <aixm:width xsi:nil="true"/>
+                           <aixm:horizontalProjection>
+                              <aixm:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+                                 <gml:patches>
+                                    <gml:PolygonPatch interpolation="planar">
+                                       <gml:exterior>
+                                          <gml:Ring>
+                                             <gml:curveMember xlink:type="simple">
+                                                <gml:Curve>
+                                                   <gml:segments>
+                                                      <gml:GeodesicString interpolation="geodesic">
+                                                         <gml:posList>47.442499999999995 18.748333333333335 47.40083333333333 18.815 47.450833333333335 18.798333333333336 47.450833333333335 18.773333333333333 47.442499999999995 18.748333333333335</gml:posList>
+                                                      </gml:GeodesicString>
+                                                   </gml:segments>
+                                                </gml:Curve>
+                                             </gml:curveMember>
+                                          </gml:Ring>
+                                       </gml:exterior>
+                                    </gml:PolygonPatch>
+                                 </gml:patches>
+                                 <aixm:horizontalAccuracy xsi:nil="true"/>
+                              </aixm:Surface>
+                           </aixm:horizontalProjection>
+                           <aixm:centreline xsi:nil="true"/>
+                           <aixm:contributorAirspace xsi:nil="true"/>
+                        </aixm:AirspaceVolume>
+                     </aixm:theAirspaceVolume>
+                  </aixm:AirspaceGeometryComponent>
+               </aixm:geometryComponent>
+               <aixm:annotation>
+                  <aixm:Note>
+                     <aixm:propertyName xsi:nil="true"/>
+                     <aixm:purpose>REMARK</aixm:purpose>
+                     <aixm:translatedNote>
+                        <aixm:LinguisticNote>
+                           <aixm:note lang="eng">Above 3000 FT AMSL prior permission required by Budapest ATS Centre. Not available when LH-D30 activated</aixm:note>
+                        </aixm:LinguisticNote>
+                     </aixm:translatedNote>
+                  </aixm:Note>
+               </aixm:annotation>
+            </aixm:AirspaceTimeSlice>
+         </aixm:timeSlice>
+      </aixm:Airspace>
+   </message:hasMember>
+   <message:hasMember xlink:type="simple">
+      <aixm:Airspace gml:id="uuid.e248823f-06a4-49e6-bb70-477b938f60a2">
+         <gml:identifier codeSpace="urn:uuid:">e248823f-06a4-49e6-bb70-477b938f60a2</gml:identifier>
+         <gml:boundedBy xsi:nil="true"/>
+         <aixm:timeSlice>
+            <aixm:AirspaceTimeSlice gml:id="uuid.6ea6127e-f330-480f-8fb4-74c13409b898">
+               <gml:validTime xlink:type="simple">
+                  <gml:TimePeriod>
+                     <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
+                     <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+               </gml:validTime>
+               <aixm:interpretation>BASELINE</aixm:interpretation>
+               <aixm:sequenceNumber>1</aixm:sequenceNumber>
+               <aixm:correctionNumber>0</aixm:correctionNumber>
+               <aixm:type>SA</aixm:type>
+               <aixm:designator>LHSA2</aixm:designator>
+               <aixm:localType xsi:nil="true"/>
+               <aixm:name>AEROBATICS AREA2</aixm:name>
+               <aixm:designatorICAO>yes</aixm:designatorICAO>
+               <aixm:controlType>CIVIL</aixm:controlType>
+               <aixm:upperLowerSeparation xsi:nil="true"/>
+               <aixm:protectedRoute xsi:nil="true"/>
+               <aixm:geometryComponent>
+                  <aixm:AirspaceGeometryComponent>
+                     <aixm:operation xsi:nil="true"/>
+                     <aixm:operationSequence xsi:nil="true"/>
+                     <aixm:theAirspaceVolume>
+                        <aixm:AirspaceVolume>
+                           <aixm:upperLimit uom="FT">3500.0</aixm:upperLimit>
+                           <aixm:upperLimitReference>MSL</aixm:upperLimitReference>
+                           <aixm:maximumLimit xsi:nil="true"/>
+                           <aixm:maximumLimitReference xsi:nil="true"/>
+                           <aixm:lowerLimit uom="FT">550.0</aixm:lowerLimit>
+                           <aixm:lowerLimitReference>MSL</aixm:lowerLimitReference>
+                           <aixm:minimumLimit xsi:nil="true"/>
+                           <aixm:minimumLimitReference xsi:nil="true"/>
+                           <aixm:width xsi:nil="true"/>
+                           <aixm:horizontalProjection>
+                              <aixm:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+                                 <gml:patches>
+                                    <gml:PolygonPatch interpolation="planar">
+                                       <gml:exterior>
+                                          <gml:Ring>
+                                             <gml:curveMember xlink:type="simple">
+                                                <gml:Curve>
+                                                   <gml:segments>
+                                                      <gml:CircleByCenterPoint interpolation="circularArcCenterPointWithRadius" numArc="1">
+                                                         <gml:pos>47.345555555555556 18.980833333333333</gml:pos>
+                                                         <gml:radius uom="M">1500.0</gml:radius>
+                                                      </gml:CircleByCenterPoint>
+                                                   </gml:segments>
+                                                </gml:Curve>
+                                             </gml:curveMember>
+                                          </gml:Ring>
+                                       </gml:exterior>
+                                    </gml:PolygonPatch>
+                                 </gml:patches>
+                                 <aixm:horizontalAccuracy xsi:nil="true"/>
+                              </aixm:Surface>
+                           </aixm:horizontalProjection>
+                           <aixm:centreline xsi:nil="true"/>
+                           <aixm:contributorAirspace xsi:nil="true"/>
+                        </aixm:AirspaceVolume>
+                     </aixm:theAirspaceVolume>
+                  </aixm:AirspaceGeometryComponent>
+               </aixm:geometryComponent>
+               <aixm:annotation>
+                  <aixm:Note>
+                     <aixm:propertyName xsi:nil="true"/>
+                     <aixm:purpose>REMARK</aixm:purpose>
+                     <aixm:translatedNote>
+                        <aixm:LinguisticNote>
+                           <aixm:note lang="eng">Prior permission required by Budapest ATS Centre.</aixm:note>
+                        </aixm:LinguisticNote>
+                     </aixm:translatedNote>
+                  </aixm:Note>
+               </aixm:annotation>
+            </aixm:AirspaceTimeSlice>
+         </aixm:timeSlice>
+      </aixm:Airspace>
+   </message:hasMember>
+   <message:hasMember xlink:type="simple">
+      <aixm:Airspace gml:id="uuid.a8c84d06-e4df-4204-b59f-49f8e1916bd2">
+         <gml:identifier codeSpace="urn:uuid:">a8c84d06-e4df-4204-b59f-49f8e1916bd2</gml:identifier>
+         <gml:boundedBy xsi:nil="true"/>
+         <aixm:timeSlice>
+            <aixm:AirspaceTimeSlice gml:id="uuid.d2334c0a-d3fc-43df-ad52-9803d214b08f">
+               <gml:validTime xlink:type="simple">
+                  <gml:TimePeriod>
+                     <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
+                     <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+               </gml:validTime>
+               <aixm:interpretation>BASELINE</aixm:interpretation>
+               <aixm:sequenceNumber>1</aixm:sequenceNumber>
+               <aixm:correctionNumber>0</aixm:correctionNumber>
+               <aixm:type>SG</aixm:type>
+               <aixm:designator>LHSG1</aixm:designator>
+               <aixm:localType xsi:nil="true"/>
+               <aixm:name>GLIDER AREA1</aixm:name>
+               <aixm:designatorICAO>yes</aixm:designatorICAO>
+               <aixm:controlType>CIVIL</aixm:controlType>
+               <aixm:upperLowerSeparation xsi:nil="true"/>
+               <aixm:protectedRoute xsi:nil="true"/>
+               <aixm:geometryComponent>
+                  <aixm:AirspaceGeometryComponent>
+                     <aixm:operation xsi:nil="true"/>
+                     <aixm:operationSequence xsi:nil="true"/>
+                     <aixm:theAirspaceVolume>
+                        <aixm:AirspaceVolume>
+                           <aixm:upperLimit uom="FT">3500.0</aixm:upperLimit>
+                           <aixm:upperLimitReference>MSL</aixm:upperLimitReference>
+                           <aixm:maximumLimit xsi:nil="true"/>
+                           <aixm:maximumLimitReference xsi:nil="true"/>
+                           <aixm:lowerLimit uom="FT">0.0</aixm:lowerLimit>
+                           <aixm:lowerLimitReference>SFC</aixm:lowerLimitReference>
+                           <aixm:minimumLimit xsi:nil="true"/>
+                           <aixm:minimumLimitReference xsi:nil="true"/>
+                           <aixm:width xsi:nil="true"/>
+                           <aixm:horizontalProjection>
+                              <aixm:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+                                 <gml:patches>
+                                    <gml:PolygonPatch interpolation="planar">
+                                       <gml:exterior>
+                                          <gml:Ring>
+                                             <gml:curveMember xlink:type="simple">
+                                                <gml:Curve>
+                                                   <gml:segments>
+                                                      <gml:GeodesicString interpolation="geodesic">
+                                                         <gml:posList>47.62222222222222 18.90694444444444 47.550555555555555 18.985833333333336 47.538888888888884 18.982777777777777 47.583333333333336 18.883333333333333 47.62222222222222 18.90694444444444</gml:posList>
+                                                      </gml:GeodesicString>
+                                                   </gml:segments>
+                                                </gml:Curve>
+                                             </gml:curveMember>
+                                          </gml:Ring>
+                                       </gml:exterior>
+                                    </gml:PolygonPatch>
+                                 </gml:patches>
+                                 <aixm:horizontalAccuracy xsi:nil="true"/>
+                              </aixm:Surface>
+                           </aixm:horizontalProjection>
+                           <aixm:centreline xsi:nil="true"/>
+                           <aixm:contributorAirspace xsi:nil="true"/>
+                        </aixm:AirspaceVolume>
+                     </aixm:theAirspaceVolume>
+                  </aixm:AirspaceGeometryComponent>
+               </aixm:geometryComponent>
+               <aixm:annotation>
+                  <aixm:Note>
+                     <aixm:propertyName xsi:nil="true"/>
+                     <aixm:purpose>REMARK</aixm:purpose>
+                     <aixm:translatedNote>
+                        <aixm:LinguisticNote>
+                           <aixm:note lang="eng">Only for VFR flights.
+Above 2500 FT AMSL prior permission required by Budapest ATS Centre.</aixm:note>
+                        </aixm:LinguisticNote>
+                     </aixm:translatedNote>
+                  </aixm:Note>
+               </aixm:annotation>
+            </aixm:AirspaceTimeSlice>
+         </aixm:timeSlice>
+      </aixm:Airspace>
+   </message:hasMember>
+   <message:hasMember xlink:type="simple">
+      <aixm:Airspace gml:id="uuid.50bbb716-ccf3-4d78-9e09-612e43e71a33">
+         <gml:identifier codeSpace="urn:uuid:">50bbb716-ccf3-4d78-9e09-612e43e71a33</gml:identifier>
+         <gml:boundedBy xsi:nil="true"/>
+         <aixm:timeSlice>
+            <aixm:AirspaceTimeSlice gml:id="uuid.7ef01219-95f1-432b-a108-1e5159bcfd6f">
+               <gml:validTime xlink:type="simple">
+                  <gml:TimePeriod>
+                     <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
+                     <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+               </gml:validTime>
+               <aixm:interpretation>BASELINE</aixm:interpretation>
+               <aixm:sequenceNumber>1</aixm:sequenceNumber>
+               <aixm:correctionNumber>0</aixm:correctionNumber>
+               <aixm:type>SG</aixm:type>
+               <aixm:designator>LHSG2S</aixm:designator>
+               <aixm:localType xsi:nil="true"/>
+               <aixm:name>GLIDER AREA2/S</aixm:name>
+               <aixm:designatorICAO>yes</aixm:designatorICAO>
+               <aixm:controlType>CIVIL</aixm:controlType>
+               <aixm:upperLowerSeparation xsi:nil="true"/>
+               <aixm:protectedRoute xsi:nil="true"/>
+               <aixm:geometryComponent>
+                  <aixm:AirspaceGeometryComponent>
+                     <aixm:operation xsi:nil="true"/>
+                     <aixm:operationSequence xsi:nil="true"/>
+                     <aixm:theAirspaceVolume>
+                        <aixm:AirspaceVolume>
+                           <aixm:upperLimit uom="FT">6500.0</aixm:upperLimit>
+                           <aixm:upperLimitReference>MSL</aixm:upperLimitReference>
+                           <aixm:maximumLimit xsi:nil="true"/>
+                           <aixm:maximumLimitReference xsi:nil="true"/>
+                           <aixm:lowerLimit uom="FT">0.0</aixm:lowerLimit>
+                           <aixm:lowerLimitReference>SFC</aixm:lowerLimitReference>
+                           <aixm:minimumLimit xsi:nil="true"/>
+                           <aixm:minimumLimitReference xsi:nil="true"/>
+                           <aixm:width xsi:nil="true"/>
+                           <aixm:horizontalProjection>
+                              <aixm:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+                                 <gml:patches>
+                                    <gml:PolygonPatch interpolation="planar">
+                                       <gml:exterior>
+                                          <gml:Ring>
+                                             <gml:curveMember xlink:type="simple">
+                                                <gml:Curve>
+                                                   <gml:segments>
+                                                      <gml:GeodesicString interpolation="geodesic">
+                                                         <gml:posList>47.583333333333336 18.883333333333333 47.538888888888884 18.982777777777777 47.50055555555556 18.97 47.49194444444444 18.979444444444443 47.486111111111114 19.013055555555557 47.42361111111111 18.994444444444447 47.42194444444444 18.92527777777778 47.44333333333333 18.954722222222223 47.55777777777777 18.76833333333333 47.583333333333336 18.883333333333333</gml:posList>
+                                                      </gml:GeodesicString>
+                                                   </gml:segments>
+                                                </gml:Curve>
+                                             </gml:curveMember>
+                                          </gml:Ring>
+                                       </gml:exterior>
+                                    </gml:PolygonPatch>
+                                 </gml:patches>
+                                 <aixm:horizontalAccuracy xsi:nil="true"/>
+                              </aixm:Surface>
+                           </aixm:horizontalProjection>
+                           <aixm:centreline xsi:nil="true"/>
+                           <aixm:contributorAirspace xsi:nil="true"/>
+                        </aixm:AirspaceVolume>
+                     </aixm:theAirspaceVolume>
+                  </aixm:AirspaceGeometryComponent>
+               </aixm:geometryComponent>
+               <aixm:annotation>
+                  <aixm:Note>
+                     <aixm:propertyName xsi:nil="true"/>
+                     <aixm:purpose>REMARK</aixm:purpose>
+                     <aixm:translatedNote>
+                        <aixm:LinguisticNote>
+                           <aixm:note lang="eng">Only for VFR flights.
+Above 3500 FT AMSL prior permission required by Budapest ATS Centre.</aixm:note>
+                        </aixm:LinguisticNote>
+                     </aixm:translatedNote>
+                  </aixm:Note>
+               </aixm:annotation>
+            </aixm:AirspaceTimeSlice>
+         </aixm:timeSlice>
+      </aixm:Airspace>
+   </message:hasMember>
+   <message:hasMember xlink:type="simple">
+      <aixm:Airspace gml:id="uuid.eaadb350-0a8a-48bd-ae79-3f0b2bd72813">
+         <gml:identifier codeSpace="urn:uuid:">eaadb350-0a8a-48bd-ae79-3f0b2bd72813</gml:identifier>
+         <gml:boundedBy xsi:nil="true"/>
+         <aixm:timeSlice>
+            <aixm:AirspaceTimeSlice gml:id="uuid.eaad57c1-9355-4b29-b0c2-3707d84ec007">
+               <gml:validTime xlink:type="simple">
+                  <gml:TimePeriod>
+                     <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
+                     <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+               </gml:validTime>
+               <aixm:interpretation>BASELINE</aixm:interpretation>
+               <aixm:sequenceNumber>1</aixm:sequenceNumber>
+               <aixm:correctionNumber>0</aixm:correctionNumber>
+               <aixm:type>SG</aixm:type>
+               <aixm:designator>LHSG2V</aixm:designator>
+               <aixm:localType xsi:nil="true"/>
+               <aixm:name>GLIDER AREA2/V</aixm:name>
+               <aixm:designatorICAO>yes</aixm:designatorICAO>
+               <aixm:controlType>CIVIL</aixm:controlType>
+               <aixm:upperLowerSeparation xsi:nil="true"/>
+               <aixm:protectedRoute xsi:nil="true"/>
+               <aixm:geometryComponent>
+                  <aixm:AirspaceGeometryComponent>
+                     <aixm:operation xsi:nil="true"/>
+                     <aixm:operationSequence xsi:nil="true"/>
+                     <aixm:theAirspaceVolume>
+                        <aixm:AirspaceVolume>
+                           <aixm:upperLimit uom="FT">6500.0</aixm:upperLimit>
+                           <aixm:upperLimitReference>MSL</aixm:upperLimitReference>
+                           <aixm:maximumLimit xsi:nil="true"/>
+                           <aixm:maximumLimitReference xsi:nil="true"/>
+                           <aixm:lowerLimit uom="FT">0.0</aixm:lowerLimit>
+                           <aixm:lowerLimitReference>SFC</aixm:lowerLimitReference>
+                           <aixm:minimumLimit xsi:nil="true"/>
+                           <aixm:minimumLimitReference xsi:nil="true"/>
+                           <aixm:width xsi:nil="true"/>
+                           <aixm:horizontalProjection>
+                              <aixm:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+                                 <gml:patches>
+                                    <gml:PolygonPatch interpolation="planar">
+                                       <gml:exterior>
+                                          <gml:Ring>
+                                             <gml:curveMember xlink:type="simple">
+                                                <gml:Curve>
+                                                   <gml:segments>
+                                                      <gml:GeodesicString interpolation="geodesic">
+                                                         <gml:posList>47.583333333333336 18.883333333333333 47.538888888888884 18.982777777777777 47.50055555555556 18.97 47.49194444444444 18.979444444444443 47.486111111111114 19.013055555555557 47.42361111111111 18.994444444444447 47.42194444444444 18.92527777777778 47.44333333333333 18.954722222222223 47.55777777777777 18.76833333333333 47.583333333333336 18.883333333333333</gml:posList>
+                                                      </gml:GeodesicString>
+                                                   </gml:segments>
+                                                </gml:Curve>
+                                             </gml:curveMember>
+                                          </gml:Ring>
+                                       </gml:exterior>
+                                    </gml:PolygonPatch>
+                                 </gml:patches>
+                                 <aixm:horizontalAccuracy xsi:nil="true"/>
+                              </aixm:Surface>
+                           </aixm:horizontalProjection>
+                           <aixm:centreline xsi:nil="true"/>
+                           <aixm:contributorAirspace xsi:nil="true"/>
+                        </aixm:AirspaceVolume>
+                     </aixm:theAirspaceVolume>
+                  </aixm:AirspaceGeometryComponent>
+               </aixm:geometryComponent>
+               <aixm:annotation>
+                  <aixm:Note>
+                     <aixm:propertyName xsi:nil="true"/>
+                     <aixm:purpose>REMARK</aixm:purpose>
+                     <aixm:translatedNote>
+                        <aixm:LinguisticNote>
+                           <aixm:note lang="eng">Only for VFR flights.
+Above 3500 FT AMSL prior permission required by Budapest ATS Centre.</aixm:note>
+                        </aixm:LinguisticNote>
+                     </aixm:translatedNote>
+                  </aixm:Note>
+               </aixm:annotation>
+            </aixm:AirspaceTimeSlice>
+         </aixm:timeSlice>
+      </aixm:Airspace>
+   </message:hasMember>
+   <message:hasMember xlink:type="simple">
+      <aixm:Airspace gml:id="uuid.daa7a0ff-5c94-44e8-9cdc-8768e588d482">
+         <gml:identifier codeSpace="urn:uuid:">daa7a0ff-5c94-44e8-9cdc-8768e588d482</gml:identifier>
+         <gml:boundedBy xsi:nil="true"/>
+         <aixm:timeSlice>
+            <aixm:AirspaceTimeSlice gml:id="uuid.827fa0a4-7d24-4907-88a6-74f22301b57f">
+               <gml:validTime xlink:type="simple">
+                  <gml:TimePeriod>
+                     <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
+                     <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+               </gml:validTime>
+               <aixm:interpretation>BASELINE</aixm:interpretation>
+               <aixm:sequenceNumber>1</aixm:sequenceNumber>
+               <aixm:correctionNumber>0</aixm:correctionNumber>
+               <aixm:type>SG</aixm:type>
+               <aixm:designator>LHSG3</aixm:designator>
+               <aixm:localType xsi:nil="true"/>
+               <aixm:name>GLIDER AREA3</aixm:name>
+               <aixm:designatorICAO>yes</aixm:designatorICAO>
+               <aixm:controlType>CIVIL</aixm:controlType>
+               <aixm:upperLowerSeparation xsi:nil="true"/>
+               <aixm:protectedRoute xsi:nil="true"/>
+               <aixm:geometryComponent>
+                  <aixm:AirspaceGeometryComponent>
+                     <aixm:operation xsi:nil="true"/>
+                     <aixm:operationSequence xsi:nil="true"/>
+                     <aixm:theAirspaceVolume>
+                        <aixm:AirspaceVolume>
+                           <aixm:upperLimit uom="FT">6500.0</aixm:upperLimit>
+                           <aixm:upperLimitReference>MSL</aixm:upperLimitReference>
+                           <aixm:maximumLimit xsi:nil="true"/>
+                           <aixm:maximumLimitReference xsi:nil="true"/>
+                           <aixm:lowerLimit uom="FT">0.0</aixm:lowerLimit>
+                           <aixm:lowerLimitReference>SFC</aixm:lowerLimitReference>
+                           <aixm:minimumLimit xsi:nil="true"/>
+                           <aixm:minimumLimitReference xsi:nil="true"/>
+                           <aixm:width xsi:nil="true"/>
+                           <aixm:horizontalProjection>
+                              <aixm:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+                                 <gml:patches>
+                                    <gml:PolygonPatch interpolation="planar">
+                                       <gml:exterior>
+                                          <gml:Ring>
+                                             <gml:curveMember xlink:type="simple">
+                                                <gml:Curve>
+                                                   <gml:segments>
+                                                      <gml:GeodesicString interpolation="geodesic">
+                                                         <gml:posList>47.55777777777777 18.76833333333333 47.44333333333333 18.954722222222223 47.42194444444444 18.92527777777778 47.42111111111111 18.89611111111111 47.5425 18.698888888888888 47.55777777777777 18.76833333333333</gml:posList>
+                                                      </gml:GeodesicString>
+                                                   </gml:segments>
+                                                </gml:Curve>
+                                             </gml:curveMember>
+                                          </gml:Ring>
+                                       </gml:exterior>
+                                    </gml:PolygonPatch>
+                                 </gml:patches>
+                                 <aixm:horizontalAccuracy xsi:nil="true"/>
+                              </aixm:Surface>
+                           </aixm:horizontalProjection>
+                           <aixm:centreline xsi:nil="true"/>
+                           <aixm:contributorAirspace xsi:nil="true"/>
+                        </aixm:AirspaceVolume>
+                     </aixm:theAirspaceVolume>
+                  </aixm:AirspaceGeometryComponent>
+               </aixm:geometryComponent>
+               <aixm:annotation>
+                  <aixm:Note>
+                     <aixm:propertyName xsi:nil="true"/>
+                     <aixm:purpose>REMARK</aixm:purpose>
+                     <aixm:translatedNote>
+                        <aixm:LinguisticNote>
+                           <aixm:note lang="eng">Only for VFR flights.
+ Above 4500 FT AMSL prior permission required by Budapest ATS Centre.</aixm:note>
+                        </aixm:LinguisticNote>
+                     </aixm:translatedNote>
+                  </aixm:Note>
+               </aixm:annotation>
+            </aixm:AirspaceTimeSlice>
+         </aixm:timeSlice>
+      </aixm:Airspace>
+   </message:hasMember>
+   <message:hasMember xlink:type="simple">
+      <aixm:Airspace gml:id="uuid.22007c90-71b1-4edf-953a-3cb581691bb8">
+         <gml:identifier codeSpace="urn:uuid:">22007c90-71b1-4edf-953a-3cb581691bb8</gml:identifier>
+         <gml:boundedBy xsi:nil="true"/>
+         <aixm:timeSlice>
+            <aixm:AirspaceTimeSlice gml:id="uuid.f1dcea6c-afcf-4477-bafe-5b2340ebaf5c">
+               <gml:validTime xlink:type="simple">
+                  <gml:TimePeriod>
+                     <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
+                     <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+               </gml:validTime>
+               <aixm:interpretation>BASELINE</aixm:interpretation>
+               <aixm:sequenceNumber>1</aixm:sequenceNumber>
+               <aixm:correctionNumber>0</aixm:correctionNumber>
+               <aixm:type>SG</aixm:type>
+               <aixm:designator>LHSG10</aixm:designator>
+               <aixm:localType xsi:nil="true"/>
+               <aixm:name>GLIDER AREA10</aixm:name>
+               <aixm:designatorICAO>yes</aixm:designatorICAO>
+               <aixm:controlType>CIVIL</aixm:controlType>
+               <aixm:upperLowerSeparation xsi:nil="true"/>
+               <aixm:protectedRoute xsi:nil="true"/>
+               <aixm:geometryComponent>
+                  <aixm:AirspaceGeometryComponent>
+                     <aixm:operation xsi:nil="true"/>
+                     <aixm:operationSequence xsi:nil="true"/>
+                     <aixm:theAirspaceVolume>
+                        <aixm:AirspaceVolume>
+                           <aixm:upperLimit uom="FT">6500.0</aixm:upperLimit>
+                           <aixm:upperLimitReference>MSL</aixm:upperLimitReference>
+                           <aixm:maximumLimit xsi:nil="true"/>
+                           <aixm:maximumLimitReference xsi:nil="true"/>
+                           <aixm:lowerLimit uom="FT">0.0</aixm:lowerLimit>
+                           <aixm:lowerLimitReference>SFC</aixm:lowerLimitReference>
+                           <aixm:minimumLimit xsi:nil="true"/>
+                           <aixm:minimumLimitReference xsi:nil="true"/>
+                           <aixm:width xsi:nil="true"/>
+                           <aixm:horizontalProjection>
+                              <aixm:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+                                 <gml:patches>
+                                    <gml:PolygonPatch interpolation="planar">
+                                       <gml:exterior>
+                                          <gml:Ring>
+                                             <gml:curveMember xlink:type="simple">
+                                                <gml:Curve>
+                                                   <gml:segments>
+                                                      <gml:GeodesicString interpolation="geodesic">
+                                                         <gml:posList>47.7575 18.618055555555557 47.62277777777778 18.668055555555558 47.78972222222222 18.864444444444445 47.79722222222222 18.730833333333333 47.797528 18.72883 47.791425 18.725734 47.77613 18.697569 47.765705 18.674675 47.761345 18.662953 47.7575 18.618055555555557</gml:posList>
+                                                      </gml:GeodesicString>
+                                                   </gml:segments>
+                                                </gml:Curve>
+                                             </gml:curveMember>
+                                          </gml:Ring>
+                                       </gml:exterior>
+                                    </gml:PolygonPatch>
+                                 </gml:patches>
+                                 <aixm:horizontalAccuracy xsi:nil="true"/>
+                              </aixm:Surface>
+                           </aixm:horizontalProjection>
+                           <aixm:centreline xsi:nil="true"/>
+                           <aixm:contributorAirspace xsi:nil="true"/>
+                        </aixm:AirspaceVolume>
+                     </aixm:theAirspaceVolume>
+                  </aixm:AirspaceGeometryComponent>
+               </aixm:geometryComponent>
+               <aixm:annotation>
+                  <aixm:Note>
+                     <aixm:propertyName xsi:nil="true"/>
+                     <aixm:purpose>REMARK</aixm:purpose>
+                     <aixm:translatedNote>
+                        <aixm:LinguisticNote>
+                           <aixm:note lang="eng">Available only for VFR flights
+Above 4500 FT AMSL prior permission required by Budapest ATS Centre.</aixm:note>
+                        </aixm:LinguisticNote>
+                     </aixm:translatedNote>
+                  </aixm:Note>
+               </aixm:annotation>
+            </aixm:AirspaceTimeSlice>
+         </aixm:timeSlice>
+      </aixm:Airspace>
+   </message:hasMember>
+   <message:hasMember xlink:type="simple">
+      <aixm:Airspace gml:id="uuid.5233f5a5-930a-40e8-89bb-461c73a48d0c">
+         <gml:identifier codeSpace="urn:uuid:">5233f5a5-930a-40e8-89bb-461c73a48d0c</gml:identifier>
+         <gml:boundedBy xsi:nil="true"/>
+         <aixm:timeSlice>
+            <aixm:AirspaceTimeSlice gml:id="uuid.bba6a465-1d85-4a3e-912b-ae7f3b8d394a">
+               <gml:validTime xlink:type="simple">
+                  <gml:TimePeriod>
+                     <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
+                     <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+               </gml:validTime>
+               <aixm:interpretation>BASELINE</aixm:interpretation>
+               <aixm:sequenceNumber>1</aixm:sequenceNumber>
+               <aixm:correctionNumber>0</aixm:correctionNumber>
+               <aixm:type>SG</aixm:type>
+               <aixm:designator>LHSG20</aixm:designator>
+               <aixm:localType xsi:nil="true"/>
+               <aixm:name>GLIDER AREA20</aixm:name>
+               <aixm:designatorICAO>yes</aixm:designatorICAO>
+               <aixm:controlType>CIVIL</aixm:controlType>
+               <aixm:upperLowerSeparation xsi:nil="true"/>
+               <aixm:protectedRoute xsi:nil="true"/>
+               <aixm:geometryComponent>
+                  <aixm:AirspaceGeometryComponent>
+                     <aixm:operation xsi:nil="true"/>
+                     <aixm:operationSequence xsi:nil="true"/>
+                     <aixm:theAirspaceVolume>
+                        <aixm:AirspaceVolume>
+                           <aixm:upperLimit uom="FT">3000.0</aixm:upperLimit>
+                           <aixm:upperLimitReference>MSL</aixm:upperLimitReference>
+                           <aixm:maximumLimit xsi:nil="true"/>
+                           <aixm:maximumLimitReference xsi:nil="true"/>
+                           <aixm:lowerLimit uom="FT">0.0</aixm:lowerLimit>
+                           <aixm:lowerLimitReference>SFC</aixm:lowerLimitReference>
+                           <aixm:minimumLimit xsi:nil="true"/>
+                           <aixm:minimumLimitReference xsi:nil="true"/>
+                           <aixm:width xsi:nil="true"/>
+                           <aixm:horizontalProjection>
+                              <aixm:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+                                 <gml:patches>
+                                    <gml:PolygonPatch interpolation="planar">
+                                       <gml:exterior>
+                                          <gml:Ring>
+                                             <gml:curveMember xlink:type="simple">
+                                                <gml:Curve>
+                                                   <gml:segments>
+                                                      <gml:GeodesicString interpolation="geodesic">
+                                                         <gml:posList>47.65 19.05 47.63333333333333 19.35 47.6 19.175 47.61666666666667 19.066666666666666 47.65 19.05</gml:posList>
+                                                      </gml:GeodesicString>
+                                                   </gml:segments>
+                                                </gml:Curve>
+                                             </gml:curveMember>
+                                          </gml:Ring>
+                                       </gml:exterior>
+                                    </gml:PolygonPatch>
+                                 </gml:patches>
+                                 <aixm:horizontalAccuracy xsi:nil="true"/>
+                              </aixm:Surface>
+                           </aixm:horizontalProjection>
+                           <aixm:centreline xsi:nil="true"/>
+                           <aixm:contributorAirspace xsi:nil="true"/>
+                        </aixm:AirspaceVolume>
+                     </aixm:theAirspaceVolume>
+                  </aixm:AirspaceGeometryComponent>
+               </aixm:geometryComponent>
+               <aixm:annotation>
+                  <aixm:Note>
+                     <aixm:propertyName xsi:nil="true"/>
+                     <aixm:purpose>REMARK</aixm:purpose>
+                     <aixm:translatedNote>
+                        <aixm:LinguisticNote>
+                           <aixm:note lang="eng">Available only for VFR flights.
+Above 2000 FT AMSL prior permission required by Budapest ATS Centre.</aixm:note>
+                        </aixm:LinguisticNote>
+                     </aixm:translatedNote>
+                  </aixm:Note>
+               </aixm:annotation>
+            </aixm:AirspaceTimeSlice>
+         </aixm:timeSlice>
+      </aixm:Airspace>
+   </message:hasMember>
+   <message:hasMember xlink:type="simple">
+      <aixm:Airspace gml:id="uuid.998e1e4e-1976-4e18-ad38-a95011f29548">
+         <gml:identifier codeSpace="urn:uuid:">998e1e4e-1976-4e18-ad38-a95011f29548</gml:identifier>
+         <gml:boundedBy xsi:nil="true"/>
+         <aixm:timeSlice>
+            <aixm:AirspaceTimeSlice gml:id="uuid.7305d8c7-1be2-4a4b-ba24-8e0e4653991f">
+               <gml:validTime xlink:type="simple">
+                  <gml:TimePeriod>
+                     <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
+                     <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+               </gml:validTime>
+               <aixm:interpretation>BASELINE</aixm:interpretation>
+               <aixm:sequenceNumber>1</aixm:sequenceNumber>
+               <aixm:correctionNumber>0</aixm:correctionNumber>
+               <aixm:type>SG</aixm:type>
+               <aixm:designator>LHSG20A</aixm:designator>
+               <aixm:localType xsi:nil="true"/>
+               <aixm:name>GLIDER AREA20A</aixm:name>
+               <aixm:designatorICAO>yes</aixm:designatorICAO>
+               <aixm:controlType>CIVIL</aixm:controlType>
+               <aixm:upperLowerSeparation xsi:nil="true"/>
+               <aixm:protectedRoute xsi:nil="true"/>
+               <aixm:geometryComponent>
+                  <aixm:AirspaceGeometryComponent>
+                     <aixm:operation xsi:nil="true"/>
+                     <aixm:operationSequence xsi:nil="true"/>
+                     <aixm:theAirspaceVolume>
+                        <aixm:AirspaceVolume>
+                           <aixm:upperLimit uom="FT">4000.0</aixm:upperLimit>
+                           <aixm:upperLimitReference>MSL</aixm:upperLimitReference>
+                           <aixm:maximumLimit xsi:nil="true"/>
+                           <aixm:maximumLimitReference xsi:nil="true"/>
+                           <aixm:lowerLimit uom="FT">2000.0</aixm:lowerLimit>
+                           <aixm:lowerLimitReference>MSL</aixm:lowerLimitReference>
+                           <aixm:minimumLimit xsi:nil="true"/>
+                           <aixm:minimumLimitReference xsi:nil="true"/>
+                           <aixm:width xsi:nil="true"/>
+                           <aixm:horizontalProjection>
+                              <aixm:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+                                 <gml:patches>
+                                    <gml:PolygonPatch interpolation="planar">
+                                       <gml:exterior>
+                                          <gml:Ring>
+                                             <gml:curveMember xlink:type="simple">
+                                                <gml:Curve>
+                                                   <gml:segments>
+                                                      <gml:CircleByCenterPoint interpolation="circularArcCenterPointWithRadius" numArc="1">
+                                                         <gml:pos>47.617777777777775 19.143333333333334</gml:pos>
+                                                         <gml:radius uom="M">2000.0</gml:radius>
+                                                      </gml:CircleByCenterPoint>
+                                                   </gml:segments>
+                                                </gml:Curve>
+                                             </gml:curveMember>
+                                          </gml:Ring>
+                                       </gml:exterior>
+                                    </gml:PolygonPatch>
+                                 </gml:patches>
+                                 <aixm:horizontalAccuracy xsi:nil="true"/>
+                              </aixm:Surface>
+                           </aixm:horizontalProjection>
+                           <aixm:centreline xsi:nil="true"/>
+                           <aixm:contributorAirspace xsi:nil="true"/>
+                        </aixm:AirspaceVolume>
+                     </aixm:theAirspaceVolume>
+                  </aixm:AirspaceGeometryComponent>
+               </aixm:geometryComponent>
+               <aixm:annotation>
+                  <aixm:Note>
+                     <aixm:propertyName xsi:nil="true"/>
+                     <aixm:purpose>REMARK</aixm:purpose>
+                     <aixm:translatedNote>
+                        <aixm:LinguisticNote>
+                           <aixm:note lang="eng">Above 2000 FT AMSL prior permission required by Budapest ATS Centre.</aixm:note>
+                        </aixm:LinguisticNote>
+                     </aixm:translatedNote>
+                  </aixm:Note>
+               </aixm:annotation>
+            </aixm:AirspaceTimeSlice>
+         </aixm:timeSlice>
+      </aixm:Airspace>
+   </message:hasMember>
+   <message:hasMember xlink:type="simple">
+      <aixm:Airspace gml:id="uuid.56803b7f-0401-4c58-bf00-ac8309757f3c">
+         <gml:identifier codeSpace="urn:uuid:">56803b7f-0401-4c58-bf00-ac8309757f3c</gml:identifier>
+         <gml:boundedBy xsi:nil="true"/>
+         <aixm:timeSlice>
+            <aixm:AirspaceTimeSlice gml:id="uuid.21b03fe1-20a4-4edc-bb20-62358d768032">
+               <gml:validTime xlink:type="simple">
+                  <gml:TimePeriod>
+                     <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
+                     <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+               </gml:validTime>
+               <aixm:interpretation>BASELINE</aixm:interpretation>
+               <aixm:sequenceNumber>1</aixm:sequenceNumber>
+               <aixm:correctionNumber>0</aixm:correctionNumber>
+               <aixm:type>SG</aixm:type>
+               <aixm:designator>LHSG21</aixm:designator>
+               <aixm:localType xsi:nil="true"/>
+               <aixm:name>GLIDER AREA21</aixm:name>
+               <aixm:designatorICAO>yes</aixm:designatorICAO>
+               <aixm:controlType>CIVIL</aixm:controlType>
+               <aixm:upperLowerSeparation xsi:nil="true"/>
+               <aixm:protectedRoute xsi:nil="true"/>
+               <aixm:geometryComponent>
+                  <aixm:AirspaceGeometryComponent>
+                     <aixm:operation xsi:nil="true"/>
+                     <aixm:operationSequence xsi:nil="true"/>
+                     <aixm:theAirspaceVolume>
+                        <aixm:AirspaceVolume>
+                           <aixm:upperLimit uom="FT">5000.0</aixm:upperLimit>
+                           <aixm:upperLimitReference>MSL</aixm:upperLimitReference>
+                           <aixm:maximumLimit xsi:nil="true"/>
+                           <aixm:maximumLimitReference xsi:nil="true"/>
+                           <aixm:lowerLimit uom="FT">0.0</aixm:lowerLimit>
+                           <aixm:lowerLimitReference>SFC</aixm:lowerLimitReference>
+                           <aixm:minimumLimit xsi:nil="true"/>
+                           <aixm:minimumLimitReference xsi:nil="true"/>
+                           <aixm:width xsi:nil="true"/>
+                           <aixm:horizontalProjection>
+                              <aixm:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+                                 <gml:patches>
+                                    <gml:PolygonPatch interpolation="planar">
+                                       <gml:exterior>
+                                          <gml:Ring>
+                                             <gml:curveMember xlink:type="simple">
+                                                <gml:Curve>
+                                                   <gml:segments>
+                                                      <gml:GeodesicString interpolation="geodesic">
+                                                         <gml:posList>47.68333333333333 19.075 47.663333333333334 19.754166666666666 47.63333333333333 19.35 47.65 19.05 47.68333333333333 19.075</gml:posList>
+                                                      </gml:GeodesicString>
+                                                   </gml:segments>
+                                                </gml:Curve>
+                                             </gml:curveMember>
+                                          </gml:Ring>
+                                       </gml:exterior>
+                                    </gml:PolygonPatch>
+                                 </gml:patches>
+                                 <aixm:horizontalAccuracy xsi:nil="true"/>
+                              </aixm:Surface>
+                           </aixm:horizontalProjection>
+                           <aixm:centreline xsi:nil="true"/>
+                           <aixm:contributorAirspace xsi:nil="true"/>
+                        </aixm:AirspaceVolume>
+                     </aixm:theAirspaceVolume>
+                  </aixm:AirspaceGeometryComponent>
+               </aixm:geometryComponent>
+               <aixm:annotation>
+                  <aixm:Note>
+                     <aixm:propertyName xsi:nil="true"/>
+                     <aixm:purpose>REMARK</aixm:purpose>
+                     <aixm:translatedNote>
+                        <aixm:LinguisticNote>
+                           <aixm:note lang="eng">Available only for VFR flights
+Above 2500 FT AMSL prior permission required by Budapest ATS Centre.</aixm:note>
+                        </aixm:LinguisticNote>
+                     </aixm:translatedNote>
+                  </aixm:Note>
+               </aixm:annotation>
+            </aixm:AirspaceTimeSlice>
+         </aixm:timeSlice>
+      </aixm:Airspace>
+   </message:hasMember>
+   <message:hasMember xlink:type="simple">
+      <aixm:Airspace gml:id="uuid.f81367ef-da9e-4328-bc41-6160269bf516">
+         <gml:identifier codeSpace="urn:uuid:">f81367ef-da9e-4328-bc41-6160269bf516</gml:identifier>
+         <gml:boundedBy xsi:nil="true"/>
+         <aixm:timeSlice>
+            <aixm:AirspaceTimeSlice gml:id="uuid.fd370ee4-c893-478b-8dda-c67be2c4d58c">
+               <gml:validTime xlink:type="simple">
+                  <gml:TimePeriod>
+                     <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
+                     <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+               </gml:validTime>
+               <aixm:interpretation>BASELINE</aixm:interpretation>
+               <aixm:sequenceNumber>1</aixm:sequenceNumber>
+               <aixm:correctionNumber>0</aixm:correctionNumber>
+               <aixm:type>SG</aixm:type>
+               <aixm:designator>LHSG22</aixm:designator>
+               <aixm:localType xsi:nil="true"/>
+               <aixm:name>GLIDER AREA22</aixm:name>
+               <aixm:designatorICAO>yes</aixm:designatorICAO>
+               <aixm:controlType>CIVIL</aixm:controlType>
+               <aixm:upperLowerSeparation xsi:nil="true"/>
+               <aixm:protectedRoute xsi:nil="true"/>
+               <aixm:geometryComponent>
+                  <aixm:AirspaceGeometryComponent>
+                     <aixm:operation xsi:nil="true"/>
+                     <aixm:operationSequence xsi:nil="true"/>
+                     <aixm:theAirspaceVolume>
+                        <aixm:AirspaceVolume>
+                           <aixm:upperLimit uom="FT">6500.0</aixm:upperLimit>
+                           <aixm:upperLimitReference>MSL</aixm:upperLimitReference>
+                           <aixm:maximumLimit xsi:nil="true"/>
+                           <aixm:maximumLimitReference xsi:nil="true"/>
+                           <aixm:lowerLimit uom="FT">0.0</aixm:lowerLimit>
+                           <aixm:lowerLimitReference>SFC</aixm:lowerLimitReference>
+                           <aixm:minimumLimit xsi:nil="true"/>
+                           <aixm:minimumLimitReference xsi:nil="true"/>
+                           <aixm:width xsi:nil="true"/>
+                           <aixm:horizontalProjection>
+                              <aixm:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+                                 <gml:patches>
+                                    <gml:PolygonPatch interpolation="planar">
+                                       <gml:exterior>
+                                          <gml:Ring>
+                                             <gml:curveMember xlink:type="simple">
+                                                <gml:Curve>
+                                                   <gml:segments>
+                                                      <gml:GeodesicString interpolation="geodesic">
+                                                         <gml:posList>47.776666666666664 19.15138888888889 47.75083333333333 19.68138888888889 47.663333333333334 19.754166666666666 47.68333333333333 19.075 47.776666666666664 19.15138888888889</gml:posList>
+                                                      </gml:GeodesicString>
+                                                   </gml:segments>
+                                                </gml:Curve>
+                                             </gml:curveMember>
+                                          </gml:Ring>
+                                       </gml:exterior>
+                                    </gml:PolygonPatch>
+                                 </gml:patches>
+                                 <aixm:horizontalAccuracy xsi:nil="true"/>
+                              </aixm:Surface>
+                           </aixm:horizontalProjection>
+                           <aixm:centreline xsi:nil="true"/>
+                           <aixm:contributorAirspace xsi:nil="true"/>
+                        </aixm:AirspaceVolume>
+                     </aixm:theAirspaceVolume>
+                  </aixm:AirspaceGeometryComponent>
+               </aixm:geometryComponent>
+               <aixm:annotation>
+                  <aixm:Note>
+                     <aixm:propertyName xsi:nil="true"/>
+                     <aixm:purpose>REMARK</aixm:purpose>
+                     <aixm:translatedNote>
+                        <aixm:LinguisticNote>
+                           <aixm:note lang="eng">Available only for VFR flights.
+Above 3000 FT AMSL prior permission required by Budapest ATS Centre.</aixm:note>
+                        </aixm:LinguisticNote>
+                     </aixm:translatedNote>
+                  </aixm:Note>
+               </aixm:annotation>
+            </aixm:AirspaceTimeSlice>
+         </aixm:timeSlice>
+      </aixm:Airspace>
+   </message:hasMember>
+   <message:hasMember xlink:type="simple">
+      <aixm:Airspace gml:id="uuid.e0ab6a9a-9cd8-46b3-8989-0aa9aba0448d">
+         <gml:identifier codeSpace="urn:uuid:">e0ab6a9a-9cd8-46b3-8989-0aa9aba0448d</gml:identifier>
+         <gml:boundedBy xsi:nil="true"/>
+         <aixm:timeSlice>
+            <aixm:AirspaceTimeSlice gml:id="uuid.ced57863-bef5-4cf6-99a4-60b26820b406">
+               <gml:validTime xlink:type="simple">
+                  <gml:TimePeriod>
+                     <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
+                     <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+               </gml:validTime>
+               <aixm:interpretation>BASELINE</aixm:interpretation>
+               <aixm:sequenceNumber>1</aixm:sequenceNumber>
+               <aixm:correctionNumber>0</aixm:correctionNumber>
+               <aixm:type>SG</aixm:type>
+               <aixm:designator>LHSG23</aixm:designator>
+               <aixm:localType xsi:nil="true"/>
+               <aixm:name>GLIDER AREA23</aixm:name>
+               <aixm:designatorICAO>yes</aixm:designatorICAO>
+               <aixm:controlType>CIVIL</aixm:controlType>
+               <aixm:upperLowerSeparation xsi:nil="true"/>
+               <aixm:protectedRoute xsi:nil="true"/>
+               <aixm:geometryComponent>
+                  <aixm:AirspaceGeometryComponent>
+                     <aixm:operation xsi:nil="true"/>
+                     <aixm:operationSequence xsi:nil="true"/>
+                     <aixm:theAirspaceVolume>
+                        <aixm:AirspaceVolume>
+                           <aixm:upperLimit uom="FT">7500.0</aixm:upperLimit>
+                           <aixm:upperLimitReference>MSL</aixm:upperLimitReference>
+                           <aixm:maximumLimit xsi:nil="true"/>
+                           <aixm:maximumLimitReference xsi:nil="true"/>
+                           <aixm:lowerLimit uom="FT">0.0</aixm:lowerLimit>
+                           <aixm:lowerLimitReference>SFC</aixm:lowerLimitReference>
+                           <aixm:minimumLimit xsi:nil="true"/>
+                           <aixm:minimumLimitReference xsi:nil="true"/>
+                           <aixm:width xsi:nil="true"/>
+                           <aixm:horizontalProjection>
+                              <aixm:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+                                 <gml:patches>
+                                    <gml:PolygonPatch interpolation="planar">
+                                       <gml:exterior>
+                                          <gml:Ring>
+                                             <gml:curveMember xlink:type="simple">
+                                                <gml:Curve>
+                                                   <gml:segments>
+                                                      <gml:GeodesicString interpolation="geodesic">
+                                                         <gml:posList>47.92972222222222 19.529999999999998 47.75083333333333 19.68138888888889 47.776666666666664 19.15138888888889 47.92972222222222 19.529999999999998</gml:posList>
+                                                      </gml:GeodesicString>
+                                                   </gml:segments>
+                                                </gml:Curve>
+                                             </gml:curveMember>
+                                          </gml:Ring>
+                                       </gml:exterior>
+                                    </gml:PolygonPatch>
+                                 </gml:patches>
+                                 <aixm:horizontalAccuracy xsi:nil="true"/>
+                              </aixm:Surface>
+                           </aixm:horizontalProjection>
+                           <aixm:centreline xsi:nil="true"/>
+                           <aixm:contributorAirspace xsi:nil="true"/>
+                        </aixm:AirspaceVolume>
+                     </aixm:theAirspaceVolume>
+                  </aixm:AirspaceGeometryComponent>
+               </aixm:geometryComponent>
+               <aixm:annotation>
+                  <aixm:Note>
+                     <aixm:propertyName xsi:nil="true"/>
+                     <aixm:purpose>REMARK</aixm:purpose>
+                     <aixm:translatedNote>
+                        <aixm:LinguisticNote>
+                           <aixm:note lang="eng">Available only for VFR flights.
+Above 6500 FT AMSL prior permission required by Budapest ATS Centre.</aixm:note>
+                        </aixm:LinguisticNote>
+                     </aixm:translatedNote>
+                  </aixm:Note>
+               </aixm:annotation>
+            </aixm:AirspaceTimeSlice>
+         </aixm:timeSlice>
+      </aixm:Airspace>
+   </message:hasMember>
+   <message:hasMember xlink:type="simple">
+      <aixm:Airspace gml:id="uuid.2ed18972-dbac-43da-86f8-33d487237ac4">
+         <gml:identifier codeSpace="urn:uuid:">2ed18972-dbac-43da-86f8-33d487237ac4</gml:identifier>
+         <gml:boundedBy xsi:nil="true"/>
+         <aixm:timeSlice>
+            <aixm:AirspaceTimeSlice gml:id="uuid.81e926fe-51e4-481b-92a8-f4f26ea8c474">
+               <gml:validTime xlink:type="simple">
+                  <gml:TimePeriod>
+                     <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
+                     <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+               </gml:validTime>
+               <aixm:interpretation>BASELINE</aixm:interpretation>
+               <aixm:sequenceNumber>1</aixm:sequenceNumber>
+               <aixm:correctionNumber>0</aixm:correctionNumber>
+               <aixm:type>SG</aixm:type>
+               <aixm:designator>LHSG24</aixm:designator>
+               <aixm:localType xsi:nil="true"/>
+               <aixm:name>GLIDER AREA24</aixm:name>
+               <aixm:designatorICAO>yes</aixm:designatorICAO>
+               <aixm:controlType>CIVIL</aixm:controlType>
+               <aixm:upperLowerSeparation xsi:nil="true"/>
+               <aixm:protectedRoute xsi:nil="true"/>
+               <aixm:geometryComponent>
+                  <aixm:AirspaceGeometryComponent>
+                     <aixm:operation xsi:nil="true"/>
+                     <aixm:operationSequence xsi:nil="true"/>
+                     <aixm:theAirspaceVolume>
+                        <aixm:AirspaceVolume>
+                           <aixm:upperLimit uom="FL">285.0</aixm:upperLimit>
+                           <aixm:upperLimitReference>STD</aixm:upperLimitReference>
+                           <aixm:maximumLimit xsi:nil="true"/>
+                           <aixm:maximumLimitReference xsi:nil="true"/>
+                           <aixm:lowerLimit uom="FT">0.0</aixm:lowerLimit>
+                           <aixm:lowerLimitReference>SFC</aixm:lowerLimitReference>
+                           <aixm:minimumLimit xsi:nil="true"/>
+                           <aixm:minimumLimitReference xsi:nil="true"/>
+                           <aixm:width xsi:nil="true"/>
+                           <aixm:horizontalProjection>
+                              <aixm:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+                                 <gml:patches>
+                                    <gml:PolygonPatch interpolation="planar">
+                                       <gml:exterior>
+                                          <gml:Ring>
+                                             <gml:curveMember xlink:type="simple">
+                                                <gml:Curve>
+                                                   <gml:segments>
+                                                      <gml:GeodesicString interpolation="geodesic">
+                                                         <gml:posList>47.82944444444445 18.960555555555555 47.72777777777778 19.245833333333334 47.65 19.05 47.82944444444445 18.960555555555555</gml:posList>
+                                                      </gml:GeodesicString>
+                                                   </gml:segments>
+                                                </gml:Curve>
+                                             </gml:curveMember>
+                                          </gml:Ring>
+                                       </gml:exterior>
+                                    </gml:PolygonPatch>
+                                 </gml:patches>
+                                 <aixm:horizontalAccuracy xsi:nil="true"/>
+                              </aixm:Surface>
+                           </aixm:horizontalProjection>
+                           <aixm:centreline xsi:nil="true"/>
+                           <aixm:contributorAirspace xsi:nil="true"/>
+                        </aixm:AirspaceVolume>
+                     </aixm:theAirspaceVolume>
+                  </aixm:AirspaceGeometryComponent>
+               </aixm:geometryComponent>
+               <aixm:activation>
+                  <aixm:AirspaceActivation>
+                     <aixm:activity>GLIDER</aixm:activity>
+                     <aixm:status xsi:nil="true"/>
+                  </aixm:AirspaceActivation>
+               </aixm:activation>
+               <aixm:annotation>
+                  <aixm:Note>
+                     <aixm:propertyName xsi:nil="true"/>
+                     <aixm:purpose>REMARK</aixm:purpose>
+                     <aixm:translatedNote>
+                        <aixm:LinguisticNote>
+                           <aixm:note lang="eng">Prior permission required by Budapest ATS Centre.
+Mountain wave glider flights.</aixm:note>
+                        </aixm:LinguisticNote>
+                     </aixm:translatedNote>
+                  </aixm:Note>
+               </aixm:annotation>
+            </aixm:AirspaceTimeSlice>
+         </aixm:timeSlice>
+      </aixm:Airspace>
+   </message:hasMember>
+   <message:hasMember xlink:type="simple">
+      <aixm:Airspace gml:id="uuid.65cfb6f6-5421-4bbe-8378-e3115a954fdb">
+         <gml:identifier codeSpace="urn:uuid:">65cfb6f6-5421-4bbe-8378-e3115a954fdb</gml:identifier>
+         <gml:boundedBy xsi:nil="true"/>
+         <aixm:timeSlice>
+            <aixm:AirspaceTimeSlice gml:id="uuid.b60afc9a-e66a-485d-b404-936a7cc8094f">
+               <gml:validTime xlink:type="simple">
+                  <gml:TimePeriod>
+                     <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
+                     <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+               </gml:validTime>
+               <aixm:interpretation>BASELINE</aixm:interpretation>
+               <aixm:sequenceNumber>1</aixm:sequenceNumber>
+               <aixm:correctionNumber>0</aixm:correctionNumber>
+               <aixm:type>SG</aixm:type>
+               <aixm:designator>LHSG25</aixm:designator>
+               <aixm:localType xsi:nil="true"/>
+               <aixm:name>GLIDER AREA25</aixm:name>
+               <aixm:designatorICAO>yes</aixm:designatorICAO>
+               <aixm:controlType>CIVIL</aixm:controlType>
+               <aixm:upperLowerSeparation xsi:nil="true"/>
+               <aixm:protectedRoute xsi:nil="true"/>
+               <aixm:geometryComponent>
+                  <aixm:AirspaceGeometryComponent>
+                     <aixm:operation xsi:nil="true"/>
+                     <aixm:operationSequence xsi:nil="true"/>
+                     <aixm:theAirspaceVolume>
+                        <aixm:AirspaceVolume>
+                           <aixm:upperLimit uom="FL">285.0</aixm:upperLimit>
+                           <aixm:upperLimitReference>STD</aixm:upperLimitReference>
+                           <aixm:maximumLimit xsi:nil="true"/>
+                           <aixm:maximumLimitReference xsi:nil="true"/>
+                           <aixm:lowerLimit uom="FT">0.0</aixm:lowerLimit>
+                           <aixm:lowerLimitReference>SFC</aixm:lowerLimitReference>
+                           <aixm:minimumLimit xsi:nil="true"/>
+                           <aixm:minimumLimitReference xsi:nil="true"/>
+                           <aixm:width xsi:nil="true"/>
+                           <aixm:horizontalProjection>
+                              <aixm:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+                                 <gml:patches>
+                                    <gml:PolygonPatch interpolation="planar">
+                                       <gml:exterior>
+                                          <gml:Ring>
+                                             <gml:curveMember xlink:type="simple">
+                                                <gml:Curve>
+                                                   <gml:segments>
+                                                      <gml:GeodesicString interpolation="geodesic">
+                                                         <gml:posList>48.0 19.133333333333333 47.72777777777778 19.245833333333334 47.82944444444445 18.960555555555555 47.88333333333333 18.933333333333334 48.0 19.133333333333333</gml:posList>
+                                                      </gml:GeodesicString>
+                                                   </gml:segments>
+                                                </gml:Curve>
+                                             </gml:curveMember>
+                                          </gml:Ring>
+                                       </gml:exterior>
+                                    </gml:PolygonPatch>
+                                 </gml:patches>
+                                 <aixm:horizontalAccuracy xsi:nil="true"/>
+                              </aixm:Surface>
+                           </aixm:horizontalProjection>
+                           <aixm:centreline xsi:nil="true"/>
+                           <aixm:contributorAirspace xsi:nil="true"/>
+                        </aixm:AirspaceVolume>
+                     </aixm:theAirspaceVolume>
+                  </aixm:AirspaceGeometryComponent>
+               </aixm:geometryComponent>
+               <aixm:activation>
+                  <aixm:AirspaceActivation>
+                     <aixm:activity>GLIDER</aixm:activity>
+                     <aixm:status xsi:nil="true"/>
+                  </aixm:AirspaceActivation>
+               </aixm:activation>
+               <aixm:annotation>
+                  <aixm:Note>
+                     <aixm:propertyName xsi:nil="true"/>
+                     <aixm:purpose>REMARK</aixm:purpose>
+                     <aixm:translatedNote>
+                        <aixm:LinguisticNote>
+                           <aixm:note lang="eng">Prior permission required by Budapest ATS Centre.
+Mountain wave glider flights.</aixm:note>
+                        </aixm:LinguisticNote>
+                     </aixm:translatedNote>
+                  </aixm:Note>
+               </aixm:annotation>
+            </aixm:AirspaceTimeSlice>
+         </aixm:timeSlice>
+      </aixm:Airspace>
+   </message:hasMember>
+   <message:hasMember xlink:type="simple">
+      <aixm:Airspace gml:id="uuid.73258895-0190-45d4-8e0c-8b1e20411ca2">
+         <gml:identifier codeSpace="urn:uuid:">73258895-0190-45d4-8e0c-8b1e20411ca2</gml:identifier>
+         <gml:boundedBy xsi:nil="true"/>
+         <aixm:timeSlice>
+            <aixm:AirspaceTimeSlice gml:id="uuid.c82e3dae-cc6d-48fd-a99a-76cd5524c0b0">
+               <gml:validTime xlink:type="simple">
+                  <gml:TimePeriod>
+                     <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
+                     <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+               </gml:validTime>
+               <aixm:interpretation>BASELINE</aixm:interpretation>
+               <aixm:sequenceNumber>1</aixm:sequenceNumber>
+               <aixm:correctionNumber>0</aixm:correctionNumber>
+               <aixm:type>SG</aixm:type>
+               <aixm:designator>LHSG30</aixm:designator>
+               <aixm:localType xsi:nil="true"/>
+               <aixm:name>GLIDER AREA30</aixm:name>
+               <aixm:designatorICAO>yes</aixm:designatorICAO>
+               <aixm:controlType>CIVIL</aixm:controlType>
+               <aixm:upperLowerSeparation xsi:nil="true"/>
+               <aixm:protectedRoute xsi:nil="true"/>
+               <aixm:geometryComponent>
+                  <aixm:AirspaceGeometryComponent>
+                     <aixm:operation xsi:nil="true"/>
+                     <aixm:operationSequence xsi:nil="true"/>
+                     <aixm:theAirspaceVolume>
+                        <aixm:AirspaceVolume>
+                           <aixm:upperLimit uom="FL">285.0</aixm:upperLimit>
+                           <aixm:upperLimitReference>STD</aixm:upperLimitReference>
+                           <aixm:maximumLimit xsi:nil="true"/>
+                           <aixm:maximumLimitReference xsi:nil="true"/>
+                           <aixm:lowerLimit uom="FT">0.0</aixm:lowerLimit>
+                           <aixm:lowerLimitReference>SFC</aixm:lowerLimitReference>
+                           <aixm:minimumLimit xsi:nil="true"/>
+                           <aixm:minimumLimitReference xsi:nil="true"/>
+                           <aixm:width xsi:nil="true"/>
+                           <aixm:horizontalProjection>
+                              <aixm:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+                                 <gml:patches>
+                                    <gml:PolygonPatch interpolation="planar">
+                                       <gml:exterior>
+                                          <gml:Ring>
+                                             <gml:curveMember xlink:type="simple">
+                                                <gml:Curve>
+                                                   <gml:segments>
+                                                      <gml:GeodesicString interpolation="geodesic">
+                                                         <gml:posList>47.958333333333336 19.7 47.95 20.022222222222222 47.833333333333336 20.116666666666667 47.74166666666667 19.766666666666666 47.825 19.641666666666666 47.958333333333336 19.7</gml:posList>
+                                                      </gml:GeodesicString>
+                                                   </gml:segments>
+                                                </gml:Curve>
+                                             </gml:curveMember>
+                                          </gml:Ring>
+                                       </gml:exterior>
+                                    </gml:PolygonPatch>
+                                 </gml:patches>
+                                 <aixm:horizontalAccuracy xsi:nil="true"/>
+                              </aixm:Surface>
+                           </aixm:horizontalProjection>
+                           <aixm:centreline xsi:nil="true"/>
+                           <aixm:contributorAirspace xsi:nil="true"/>
+                        </aixm:AirspaceVolume>
+                     </aixm:theAirspaceVolume>
+                  </aixm:AirspaceGeometryComponent>
+               </aixm:geometryComponent>
+               <aixm:activation>
+                  <aixm:AirspaceActivation>
+                     <aixm:activity>GLIDER</aixm:activity>
+                     <aixm:status xsi:nil="true"/>
+                  </aixm:AirspaceActivation>
+               </aixm:activation>
+               <aixm:annotation>
+                  <aixm:Note>
+                     <aixm:propertyName xsi:nil="true"/>
+                     <aixm:purpose>REMARK</aixm:purpose>
+                     <aixm:translatedNote>
+                        <aixm:LinguisticNote>
+                           <aixm:note lang="eng">Available only for VFR flights.
 Prior permission required by Budapest ATS Centre.
-Mountain wave glider flights.</ns3:note>
-</ns3:LinguisticNote>
-                            </ns3:translatedNote>
-                        </ns3:Note>
-                    </ns3:annotation>
-                </ns3:AirspaceTimeSlice>
-            </ns3:timeSlice>
-        </ns3:Airspace>
-    </ns7:hasMember>
-</ns7:AIXMBasicMessage>
+Mountain wave glider flights.</aixm:note>
+                        </aixm:LinguisticNote>
+                     </aixm:translatedNote>
+                  </aixm:Note>
+               </aixm:annotation>
+            </aixm:AirspaceTimeSlice>
+         </aixm:timeSlice>
+      </aixm:Airspace>
+   </message:hasMember>
+</message:AIXMBasicMessage>

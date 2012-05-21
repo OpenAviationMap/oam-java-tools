@@ -101,7 +101,6 @@ public class AixmConveterTest {
                                 messageFactory.createAIXMBasicMessageType();
 
         AixmConverter.airspacesToAixm(aps,
-                                      "eAIP.Hungary",
                                       start,
                                       null,
                                       "BASELINE",
@@ -170,7 +169,6 @@ public class AixmConveterTest {
 
 
         AixmConverter.airspacesToAixm(airspaces,
-                                      "eAIP.Hungary",
                                       start,
                                       null,
                                       "BASELINE",

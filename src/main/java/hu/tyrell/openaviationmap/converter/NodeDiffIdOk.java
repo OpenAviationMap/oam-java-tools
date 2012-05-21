@@ -17,6 +17,12 @@
  */
 package hu.tyrell.openaviationmap.converter;
 
+import javax.xml.namespace.NamespaceContext;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathException;
+import javax.xml.xpath.XPathFactory;
+
 import org.custommonkey.xmlunit.ComparisonController;
 import org.custommonkey.xmlunit.Difference;
 import org.custommonkey.xmlunit.DifferenceEngine;
@@ -24,6 +30,9 @@ import org.custommonkey.xmlunit.DifferenceListener;
 import org.custommonkey.xmlunit.ElementNameQualifier;
 import org.custommonkey.xmlunit.ElementQualifier;
 import org.custommonkey.xmlunit.MatchTracker;
+import org.w3c.dom.Attr;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
 /**
@@ -128,9 +137,9 @@ public class NodeDiffIdOk implements DifferenceListener, ComparisonController {
      * @param elementQualifier an external element qualifier, may be null.
      */
     public NodeDiffIdOk(Node               controlNode,
-                 Node                testNode,
-                 DifferenceEngine    comparator,
-                 ElementQualifier    elementQualifier) {
+                         Node                testNode,
+                         DifferenceEngine    comparator,
+                         ElementQualifier    elementQualifier) {
         this.controlNode = controlNode;
         this.testNode    = testNode;
         this.elementQualifierDelegate = elementQualifier;
@@ -202,7 +211,8 @@ public class NodeDiffIdOk implements DifferenceListener, ComparisonController {
 
     /**
      * DifferenceListener implementation.
-     * If the {@link NodeDiffIdOk#overrideDifferenceListener overrideDifferenceListener}
+     * If the
+     * {@link NodeDiffIdOk#overrideDifferenceListener overrideDifferenceListener}
      * method has been called then the interpretation of the difference
      * will be delegated.
      *
@@ -223,11 +233,54 @@ public class NodeDiffIdOk implements DifferenceListener, ComparisonController {
         Node tNode = difference.getTestNodeDetail().getNode();
 
         if (AixmConverter.GML_NS_URI.equals(cNode.getNamespaceURI())
-         && "id".equals(cNode.getLocalName())
+         && ("id".equals(cNode.getLocalName())
+          || "identifier".equals(cNode.getLocalName()))
          && AixmConverter.GML_NS_URI.equals(tNode.getNamespaceURI())
-         && "id".equals(tNode.getLocalName())) {
+         && ("id".equals(tNode.getLocalName())
+          || "identifier".equals(tNode.getLocalName()))) {
 
             returnValue = RETURN_IGNORE_DIFFERENCE_NODES_SIMILAR;
+
+        } else if (cNode.getNodeType() == Node.ATTRIBUTE_NODE
+                 && tNode.getNodeType() == Node.ATTRIBUTE_NODE) {
+
+            Element cOwner = ((Attr) cNode).getOwnerElement();
+            Element tOwner = ((Attr) tNode).getOwnerElement();
+
+            if (AixmConverter.GML_NS_URI.equals(cOwner.getNamespaceURI())
+             && "identifier".equals(cOwner.getLocalName())
+             && AixmConverter.GML_NS_URI.equals(tOwner.getNamespaceURI())
+             && "identifier".equals(tOwner.getLocalName())) {
+
+                returnValue = RETURN_IGNORE_DIFFERENCE_NODES_SIMILAR;
+            } else if (
+                  AixmConverter.XLINK_NS_URI.equals(cNode.getNamespaceURI())
+                  && "href".equals(cNode.getLocalName())
+                  && AixmConverter.XLINK_NS_URI.equals(tNode.getNamespaceURI())
+                  && "href".equals(tNode.getLocalName())) {
+
+                // go after XLinks, and compare the linked content for
+                // similarity
+                returnValue = compareLinks(cNode.getOwnerDocument(),
+                                           cNode.getNodeValue(),
+                                           tNode.getOwnerDocument(),
+                                           tNode.getNodeValue(),
+                                           AixmConverter.getNsCtx());
+            }
+
+        } else if (cNode.getNodeType() == Node.TEXT_NODE
+                 && tNode.getNodeType() == Node.TEXT_NODE) {
+
+            Node cParent = cNode.getParentNode();
+            Node tParent = tNode.getParentNode();
+
+            if (AixmConverter.GML_NS_URI.equals(cParent.getNamespaceURI())
+             && "identifier".equals(cParent.getLocalName())
+             && AixmConverter.GML_NS_URI.equals(tParent.getNamespaceURI())
+             && "identifier".equals(tParent.getLocalName())) {
+
+                returnValue = RETURN_IGNORE_DIFFERENCE_NODES_SIMILAR;
+            }
         }
 
         switch (returnValue) {
@@ -263,6 +316,65 @@ public class NodeDiffIdOk implements DifferenceListener, ComparisonController {
         appendDifference(messages, difference);
 
         return returnValue;
+    }
+
+    /**
+     * Compare two links (XLink hrefs), and tell if the linked elements
+     * are similar in content or not.
+     *
+     * @param cDocument the control document
+     * @param cHref the link id in the control document
+     * @param tDocument the test document
+     * @param tHref the link id in the test document
+     * @param nsContext the namespace context to use when working on the
+     *         documents
+     * @return a return value as per the {@link #differenceFound(Difference)}
+     *          function, showing the result.
+     */
+    private int compareLinks(Document          cDocument,
+                              String            cHref,
+                              Document          tDocument,
+                              String            tHref,
+                              NamespaceContext  nsContext) {
+
+        XPath xpath = XPathFactory.newInstance().newXPath();
+        xpath.setNamespaceContext(nsContext);
+
+        String cId;
+        String tId;
+
+        if (cHref.startsWith("#") && tHref.startsWith("#")) {
+            cId = cHref.substring(1);
+            tId = tHref.substring(1);
+        } else {
+            return RETURN_ACCEPT_DIFFERENCE;
+        }
+
+        try {
+            Node cN = (Node) xpath.evaluate(
+                    "/message:AIXMBasicMessage/message:hasMember/*[@gml:id='"
+                            + cId + "']/..",
+                    cDocument,
+                    XPathConstants.NODE);
+
+            Node tN = (Node) xpath.evaluate(
+                    "/message:AIXMBasicMessage/message:hasMember/*[@gml:id='"
+                            + tId + "']/..",
+                    tDocument,
+                    XPathConstants.NODE);
+
+            NodeDiffIdOk diff = new NodeDiffIdOk(cN, tN);
+            if (diff.identical()) {
+                return RETURN_IGNORE_DIFFERENCE_NODES_IDENTICAL;
+            } else if (diff.similar()) {
+                return RETURN_IGNORE_DIFFERENCE_NODES_SIMILAR;
+            }
+
+        } catch (XPathException e) {
+            return RETURN_ACCEPT_DIFFERENCE;
+        }
+
+        return RETURN_ACCEPT_DIFFERENCE;
     }
 
     /**

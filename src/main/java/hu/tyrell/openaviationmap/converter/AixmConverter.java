@@ -33,6 +33,7 @@ import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.TimeZone;
+import java.util.UUID;
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.namespace.NamespaceContext;
@@ -270,8 +271,6 @@ public final class AixmConverter {
      *
      * @param airspaces the airspaces to convert
      * @param navaids the navigation aids to convert
-     * @param messageId the unique id of the generated AIXM message
-     * @param codeSpace the code space to use when generating ids.
      * @param validStart the beginning of the validity period for the
      *        aerospace features. if null, this is unknown.
      * @param validEnd the end of the validity period for the
@@ -287,8 +286,6 @@ public final class AixmConverter {
     public static JAXBElement<AIXMBasicMessageType>
     convertToAixm(List<Airspace>     airspaces,
                   List<Navaid>       navaids,
-                  String             messageId,
-                  String             codeSpace,
                   GregorianCalendar  validStart,
                   GregorianCalendar  validEnd,
                   String             interpretation,
@@ -300,7 +297,6 @@ public final class AixmConverter {
 
 
         airspacesToAixm(airspaces,
-                        codeSpace,
                         validStart,
                         validEnd,
                         interpretation,
@@ -309,7 +305,6 @@ public final class AixmConverter {
                         message.getHasMember());
 
         navaidsToAixm(navaids,
-                      codeSpace,
                       validStart,
                       validEnd,
                       interpretation,
@@ -319,7 +314,7 @@ public final class AixmConverter {
 
         JAXBElement<AIXMBasicMessageType> m =
                             aixmMessageFactory.createAIXMBasicMessage(message);
-        m.getValue().setId(messageId);
+        m.getValue().setId("uuid." + UUID.randomUUID().toString());
 
         return m;
     }
@@ -328,7 +323,6 @@ public final class AixmConverter {
      * Convert a single airspace into an AIXM airspace.
      *
      * @param airspace the airspace to convert
-     * @param codeSpace the code space to use when generating ids.
      * @param validStart the beginning of the validity period for the
      *        aerospace features. if null, this is unknown.
      * @param validEnd the end of the validity period for the
@@ -344,7 +338,6 @@ public final class AixmConverter {
      */
     static void
     airspaceToAixm(Airspace                                 airspace,
-                   String                                   codeSpace,
                    GregorianCalendar                        validStart,
                    GregorianCalendar                        validEnd,
                    String                                   interpretation,
@@ -352,27 +345,20 @@ public final class AixmConverter {
                    long                                     correction,
                    List<BasicMessageMemberAIXMPropertyType> propList) {
 
-        String idBase = airspace.getDesignator() != null
-                      ? codeSpace + ":" + airspace.getDesignator() + ":"
-                      : codeSpace + ":"
-                                  + airspace.getName().replaceAll(" ", "")
-                                  + ":";
-        int    idIx   = 1;
+        UUID uuid = UUID.randomUUID();
 
         AirspaceType at = aixmFactory.createAirspaceType();
-        at.setId(idBase + Integer.toString(idIx++));
+        at.setId("uuid." + uuid.toString());
 
         CodeWithAuthorityType id = gmlFactory.createCodeWithAuthorityType();
-        id.setCodeSpace(codeSpace);
-        id.setValue(airspace.getDesignator() != null
-                                              ? airspace.getDesignator()
-                                              : airspace.getName());
+        id.setCodeSpace("urn:uuid:");
+        id.setValue(uuid.toString());
         at.setIdentifier(id);
 
         AirspaceTimeSlicePropertyType sliceProp =
                             aixmFactory.createAirspaceTimeSlicePropertyType();
         AirspaceTimeSliceType slice = aixmFactory.createAirspaceTimeSliceType();
-        slice.setId(idBase + Integer.toString(idIx++));
+        slice.setId("uuid." + UUID.randomUUID().toString());
 
         // set the validity time period
         TimePrimitivePropertyType validTP =
@@ -731,7 +717,6 @@ public final class AixmConverter {
      * Convert a list of airspaces into a list of AIXM Airspaces.
      *
      * @param airspaces the airspaces to convert
-     * @param codeSpace the code space to use when generating ids.
      * @param interpretation the AIXM time slice interpretation to set.
      *        if in doubt, use "BASELINE"
      * @param validStart the beginning of the validity period for the
@@ -747,7 +732,6 @@ public final class AixmConverter {
      */
     public static void
     airspacesToAixm(List<Airspace>                           airspaces,
-                    String                                   codeSpace,
                     GregorianCalendar                        validStart,
                     GregorianCalendar                        validEnd,
                     String                                   interpretation,
@@ -757,7 +741,6 @@ public final class AixmConverter {
 
         for (Airspace ap : airspaces) {
             airspaceToAixm(ap,
-                           codeSpace,
                            validStart,
                            validEnd,
                            interpretation,
@@ -771,7 +754,6 @@ public final class AixmConverter {
      * Convert a single navaid into an AIXM navaid.
      *
      * @param navaid the navigation aid to convert
-     * @param codeSpace the code space to use when generating ids.
      * @param validStart the beginning of the validity period for the
      *        aerospace features. if null, this is unknown.
      * @param validEnd the end of the validity period for the
@@ -786,7 +768,6 @@ public final class AixmConverter {
      */
     static void
     navaidToAixm(Navaid                                   navaid,
-                 String                                   codeSpace,
                  GregorianCalendar                        validStart,
                  GregorianCalendar                        validEnd,
                  String                                   interpretation,
@@ -797,7 +778,6 @@ public final class AixmConverter {
         switch (navaid.getType()) {
         case VORDME:
             vordmeToAixm(navaid,
-                         codeSpace,
                          validStart,
                          validEnd,
                          interpretation,
@@ -808,7 +788,6 @@ public final class AixmConverter {
 
         case VOR:
             vorToAixm(navaid,
-                      codeSpace,
                       validStart,
                       validEnd,
                       interpretation,
@@ -819,7 +798,6 @@ public final class AixmConverter {
 
         case DME:
             dmeToAixm(navaid,
-                      codeSpace,
                       validStart,
                       validEnd,
                       interpretation,
@@ -830,7 +808,6 @@ public final class AixmConverter {
 
         case NDB:
             ndbToAixm(navaid,
-                      codeSpace,
                       validStart,
                       validEnd,
                       interpretation,
@@ -841,7 +818,6 @@ public final class AixmConverter {
 
         case DESIGNATED:
             designatedToAixm(navaid,
-                             codeSpace,
                              validStart,
                              validEnd,
                              interpretation,
@@ -858,7 +834,6 @@ public final class AixmConverter {
      * Convert a VOR into an AIXM navaid.
      *
      * @param navaid the navigation aid to convert
-     * @param codeSpace the code space to use when generating ids.
      * @param validStart the beginning of the validity period for the
      *        aerospace features. if null, this is unknown.
      * @param validEnd the end of the validity period for the
@@ -873,16 +848,12 @@ public final class AixmConverter {
      */
     static void
     vorToAixm(Navaid                                   navaid,
-              String                                   codeSpace,
               GregorianCalendar                        validStart,
               GregorianCalendar                        validEnd,
               String                                   interpretation,
               long                                     sequence,
               long                                     correction,
               List<BasicMessageMemberAIXMPropertyType> propList) {
-
-        String idBase = codeSpace + ":VOR:" + navaid.getIdent() + ":";
-        int    idIx   = 1;
 
         // the location
         DirectPositionType p = gmlFactory.createDirectPositionType();
@@ -900,7 +871,7 @@ public final class AixmConverter {
         ep.setPos(p);
         ep.setElevation(elev);
         ep.setGeoidUndulation(u);
-        ep.setId(idBase + Integer.toString(idIx++));
+        ep.setId("uuid." + UUID.randomUUID().toString());
 
         ElevatedPointPropertyType epp =
                                 aixmFactory.createElevatedPointPropertyType();
@@ -934,8 +905,8 @@ public final class AixmConverter {
 
         // the unique id
         CodeWithAuthorityType id = gmlFactory.createCodeWithAuthorityType();
-        id.setCodeSpace(codeSpace);
-        id.setValue("VOR:" + navaid.getIdent());
+        id.setCodeSpace("urn:uuid:");
+        id.setValue(UUID.randomUUID().toString());
 
         // the type
         CodeVORType type = aixmFactory.createCodeVORType();
@@ -963,7 +934,7 @@ public final class AixmConverter {
         slice.setType(type);
         slice.setAixmName(name);
         slice.setFrequency(freq);
-        slice.setId(idBase + Integer.toString(idIx++));
+        slice.setId("uuid." + UUID.randomUUID().toString());
 
         VORTimeSlicePropertyType sliceProp =
                                   aixmFactory.createVORTimeSlicePropertyType();
@@ -972,7 +943,7 @@ public final class AixmConverter {
         VORType vor = aixmFactory.createVORType();
         vor.getTimeSlice().add(sliceProp);
         vor.setIdentifier(id);
-        vor.setId(idBase);
+        vor.setId("uuid." + id.getValue());
 
 
         BasicMessageMemberAIXMPropertyType prop =
@@ -986,7 +957,6 @@ public final class AixmConverter {
      * Convert a DME into an AIXM navaid.
      *
      * @param navaid the navigation aid to convert
-     * @param codeSpace the code space to use when generating ids.
      * @param validStart the beginning of the validity period for the
      *        aerospace features. if null, this is unknown.
      * @param validEnd the end of the validity period for the
@@ -1001,16 +971,12 @@ public final class AixmConverter {
      */
     static void
     dmeToAixm(Navaid                                   navaid,
-              String                                   codeSpace,
               GregorianCalendar                        validStart,
               GregorianCalendar                        validEnd,
               String                                   interpretation,
               long                                     sequence,
               long                                     correction,
               List<BasicMessageMemberAIXMPropertyType> propList) {
-
-        String idBase = codeSpace + ":DME:" + navaid.getIdent() + ":";
-        int    idIx   = 1;
 
         // the location
         DirectPositionType p = gmlFactory.createDirectPositionType();
@@ -1028,7 +994,7 @@ public final class AixmConverter {
         ep.setPos(p);
         ep.setElevation(elev);
         ep.setGeoidUndulation(u);
-        ep.setId(idBase + Integer.toString(idIx++));
+        ep.setId("uuid." + UUID.randomUUID().toString());
 
         ElevatedPointPropertyType epp =
                                 aixmFactory.createElevatedPointPropertyType();
@@ -1053,8 +1019,8 @@ public final class AixmConverter {
 
         // the unique id
         CodeWithAuthorityType id = gmlFactory.createCodeWithAuthorityType();
-        id.setCodeSpace(codeSpace);
-        id.setValue("DME:" + navaid.getIdent());
+        id.setCodeSpace("urn:uuid:");
+        id.setValue(UUID.randomUUID().toString());
 
         // the type
         CodeDMEType type = aixmFactory.createCodeDMEType();
@@ -1081,7 +1047,7 @@ public final class AixmConverter {
         slice.setType(type);
         slice.setAixmName(name);
         slice.setChannel(channel);
-        slice.setId(idBase + Integer.toString(idIx++));
+        slice.setId("uuid." + UUID.randomUUID().toString());
 
         DMETimeSlicePropertyType sliceProp =
                                   aixmFactory.createDMETimeSlicePropertyType();
@@ -1090,7 +1056,7 @@ public final class AixmConverter {
         DMEType dme = aixmFactory.createDMEType();
         dme.getTimeSlice().add(sliceProp);
         dme.setIdentifier(id);
-        dme.setId(idBase);
+        dme.setId("uuid." + id.getValue());
 
 
         BasicMessageMemberAIXMPropertyType prop =
@@ -1104,7 +1070,6 @@ public final class AixmConverter {
      * Convert an NDB into an AIXM navaid.
      *
      * @param navaid the navigation aid to convert
-     * @param codeSpace the code space to use when generating ids.
      * @param validStart the beginning of the validity period for the
      *        aerospace features. if null, this is unknown.
      * @param validEnd the end of the validity period for the
@@ -1119,16 +1084,12 @@ public final class AixmConverter {
      */
     static void
     ndbToAixm(Navaid                                   navaid,
-              String                                   codeSpace,
               GregorianCalendar                        validStart,
               GregorianCalendar                        validEnd,
               String                                   interpretation,
               long                                     sequence,
               long                                     correction,
               List<BasicMessageMemberAIXMPropertyType> propList) {
-
-        String idBase = codeSpace + ":NDB:" + navaid.getIdent() + ":";
-        int    idIx   = 1;
 
         // the location
         DirectPositionType p = gmlFactory.createDirectPositionType();
@@ -1150,7 +1111,7 @@ public final class AixmConverter {
         ep.setPos(p);
         ep.setElevation(elev);
         ep.setGeoidUndulation(u);
-        ep.setId(idBase + Integer.toString(idIx++));
+        ep.setId("uuid." + UUID.randomUUID().toString());
 
         ElevatedPointPropertyType epp =
                                 aixmFactory.createElevatedPointPropertyType();
@@ -1175,8 +1136,8 @@ public final class AixmConverter {
 
         // the unique id
         CodeWithAuthorityType id = gmlFactory.createCodeWithAuthorityType();
-        id.setCodeSpace(codeSpace);
-        id.setValue("NDB:" + navaid.getIdent());
+        id.setCodeSpace("urn:uuid:");
+        id.setValue(UUID.randomUUID().toString());
 
         // the name
         TextNameType name = aixmFactory.createTextNameType();
@@ -1197,7 +1158,7 @@ public final class AixmConverter {
         slice.setValidTime(convertTimePeriod(validStart, validEnd));
         slice.setAixmName(name);
         slice.setFrequency(freq);
-        slice.setId(idBase + Integer.toString(idIx++));
+        slice.setId("uuid." + UUID.randomUUID().toString());
 
         NDBTimeSlicePropertyType sliceProp =
                                   aixmFactory.createNDBTimeSlicePropertyType();
@@ -1206,7 +1167,7 @@ public final class AixmConverter {
         NDBType ndb = aixmFactory.createNDBType();
         ndb.getTimeSlice().add(sliceProp);
         ndb.setIdentifier(id);
-        ndb.setId(idBase);
+        ndb.setId("uuid." + id.getValue());
 
 
         BasicMessageMemberAIXMPropertyType prop =
@@ -1220,7 +1181,6 @@ public final class AixmConverter {
      * Convert a designated point into an AIXM navaid.
      *
      * @param navaid the navigation aid to convert
-     * @param codeSpace the code space to use when generating ids.
      * @param validStart the beginning of the validity period for the
      *        aerospace features. if null, this is unknown.
      * @param validEnd the end of the validity period for the
@@ -1235,16 +1195,12 @@ public final class AixmConverter {
      */
     static void
     designatedToAixm(Navaid                                   navaid,
-                     String                                   codeSpace,
                      GregorianCalendar                        validStart,
                      GregorianCalendar                        validEnd,
                      String                                   interpretation,
                      long                                     sequence,
                      long                                     correction,
                      List<BasicMessageMemberAIXMPropertyType> propList) {
-
-        String idBase = codeSpace + ":DESIGNATED:" + navaid.getIdent() + ":";
-        int    idIx   = 1;
 
         // the location
         DirectPositionType p = gmlFactory.createDirectPositionType();
@@ -1254,7 +1210,7 @@ public final class AixmConverter {
         PointType pt = aixmFactory.createPointType();
         pt.setSrsName("urn:ogc:def:crs:EPSG:4326");
         pt.setPos(p);
-        pt.setId(idBase + Integer.toString(idIx++));
+        pt.setId("uuid." + UUID.randomUUID().toString());
 
         PointPropertyType pp = aixmFactory.createPointPropertyType();
         pp.setPoint(aixmFactory.createPoint(pt));
@@ -1266,8 +1222,8 @@ public final class AixmConverter {
 
         // the unique id
         CodeWithAuthorityType id = gmlFactory.createCodeWithAuthorityType();
-        id.setCodeSpace(codeSpace);
-        id.setValue("VOR:" + navaid.getIdent());
+        id.setCodeSpace("urn:uuid:");
+        id.setValue(UUID.randomUUID().toString());
 
         // the type
         CodeDesignatedPointType type =
@@ -1289,7 +1245,7 @@ public final class AixmConverter {
         slice.setValidTime(convertTimePeriod(validStart, validEnd));
         slice.setType(type);
         slice.setAixmName(name);
-        slice.setId(idBase + Integer.toString(idIx++));
+        slice.setId("uuid." + UUID.randomUUID().toString());
 
         DesignatedPointTimeSlicePropertyType sliceProp =
                        aixmFactory.createDesignatedPointTimeSlicePropertyType();
@@ -1298,7 +1254,7 @@ public final class AixmConverter {
         DesignatedPointType dpt = aixmFactory.createDesignatedPointType();
         dpt.getTimeSlice().add(sliceProp);
         dpt.setIdentifier(id);
-        dpt.setId(idBase);
+        dpt.setId("uuid." + id.getValue());
 
 
         BasicMessageMemberAIXMPropertyType prop =
@@ -1382,7 +1338,6 @@ public final class AixmConverter {
      * Convert a VOR/DME into an AIXM navaid.
      *
      * @param navaid the navigation aid to convert
-     * @param codeSpace the code space to use when generating ids.
      * @param validStart the beginning of the validity period for the
      *        aerospace features. if null, this is unknown.
      * @param validEnd the end of the validity period for the
@@ -1397,7 +1352,6 @@ public final class AixmConverter {
      */
     static void
     vordmeToAixm(Navaid                                   navaid,
-                 String                                   codeSpace,
                  GregorianCalendar                        validStart,
                  GregorianCalendar                        validEnd,
                  String                                   interpretation,
@@ -1406,7 +1360,6 @@ public final class AixmConverter {
                  List<BasicMessageMemberAIXMPropertyType> propList) {
 
         vorToAixm(navaid,
-                  codeSpace,
                   validStart,
                   validEnd,
                   interpretation,
@@ -1418,22 +1371,18 @@ public final class AixmConverter {
                                         getAbstractAIXMFeature().getValue();
 
         dmeToAixm(navaid,
-                codeSpace,
-                validStart,
-                validEnd,
-                interpretation,
-                sequence,
-                correction,
-                propList);
+                  validStart,
+                  validEnd,
+                  interpretation,
+                  sequence,
+                  correction,
+                  propList);
 
         DMEType dme = (DMEType) propList.get(propList.size() - 1).
                                         getAbstractAIXMFeature().getValue();
 
 
         // now create a navaid object that refers to the VOR & DME
-        String idBase = codeSpace + ":VOR_DME:" + navaid.getIdent() + ":";
-        int    idIx   = 1;
-
         // the location
         DirectPositionType p = gmlFactory.createDirectPositionType();
         p.getValue().add(navaid.getLatitude());
@@ -1450,7 +1399,7 @@ public final class AixmConverter {
         ep.setPos(p);
         ep.setElevation(elev);
         ep.setGeoidUndulation(u);
-        ep.setId(idBase + Integer.toString(idIx++));
+        ep.setId("uuid." + UUID.randomUUID().toString());
 
         ElevatedPointPropertyType epp =
                                 aixmFactory.createElevatedPointPropertyType();
@@ -1463,8 +1412,8 @@ public final class AixmConverter {
 
         // the unique id
         CodeWithAuthorityType id = gmlFactory.createCodeWithAuthorityType();
-        id.setCodeSpace(codeSpace);
-        id.setValue("VOR:" + navaid.getIdent());
+        id.setCodeSpace("urn:uuid:");
+        id.setValue(UUID.randomUUID().toString());
 
         // the type
         CodeNavaidServiceType type = aixmFactory.createCodeNavaidServiceType();
@@ -1477,7 +1426,7 @@ public final class AixmConverter {
         // the related VOR
         NavaidEquipmentPropertyType peVor =
                             aixmFactory.createNavaidEquipmentPropertyType();
-        peVor.setHref(vor.getIdentifier().getValue());
+        peVor.setHref("#uuid." + vor.getIdentifier().getValue());
 
         NavaidComponentType tVor = aixmFactory.createNavaidComponentType();
         tVor.setTheNavaidEquipment(peVor);
@@ -1489,7 +1438,7 @@ public final class AixmConverter {
         // the related DME
         NavaidEquipmentPropertyType peDme =
                             aixmFactory.createNavaidEquipmentPropertyType();
-        peDme.setHref(dme.getIdentifier().getValue());
+        peDme.setHref("#uuid." + dme.getIdentifier().getValue());
 
         NavaidComponentType tDme = aixmFactory.createNavaidComponentType();
         tDme.setTheNavaidEquipment(peDme);
@@ -1509,7 +1458,7 @@ public final class AixmConverter {
         slice.setValidTime(convertTimePeriod(validStart, validEnd));
         slice.setType(type);
         slice.setAixmName(name);
-        slice.setId(idBase + Integer.toString(idIx++));
+        slice.setId("uuid." + UUID.randomUUID().toString());
 
         slice.getNavaidEquipment().add(pVor);
         slice.getNavaidEquipment().add(pDme);
@@ -1521,7 +1470,7 @@ public final class AixmConverter {
         NavaidType n = aixmFactory.createNavaidType();
         n.getTimeSlice().add(sliceProp);
         n.setIdentifier(id);
-        n.setId(idBase);
+        n.setId("uuid." + id.getValue());
 
 
         BasicMessageMemberAIXMPropertyType prop =
@@ -1535,7 +1484,6 @@ public final class AixmConverter {
      * Convert a list of navaidsinto a list of AIXM abstract features.
      *
      * @param navaids the navigation aids to convert
-     * @param codeSpace the code space to use when generating ids.
      * @param interpretation the AIXM time slice interpretation to set.
      *        if in doubt, use "BASELINE"
      * @param validStart the beginning of the validity period for the
@@ -1551,7 +1499,6 @@ public final class AixmConverter {
      */
     public static void
     navaidsToAixm(List<Navaid>                             navaids,
-                  String                                   codeSpace,
                   GregorianCalendar                        validStart,
                   GregorianCalendar                        validEnd,
                   String                                   interpretation,
@@ -1561,7 +1508,6 @@ public final class AixmConverter {
 
         for (Navaid navaid : navaids) {
             navaidToAixm(navaid,
-                         codeSpace,
                          validStart,
                          validEnd,
                          interpretation,

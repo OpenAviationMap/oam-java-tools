@@ -1,247 +1,255 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ns7:AIXMBasicMessage xmlns:ns1="http://www.opengis.net/gml/3.2" xmlns:ns2="http://www.w3.org/1999/xlink" xmlns:ns3="http://www.aixm.aero/schema/5.1" xmlns:ns4="http://www.isotc211.org/2005/gco" xmlns:ns5="http://www.isotc211.org/2005/gmd" xmlns:ns6="http://www.isotc211.org/2005/gts" xmlns:ns7="http://www.aixm.aero/schema/5.1/message" ns1:id="e:ENR-2.2">
-    <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns7:hasMember ns2:type="simple">
-        <ns3:Airspace ns1:id="eAIP.Hungary:KOSICETMA2:1">
-            <ns1:identifier codeSpace="eAIP.Hungary">KOSICE TMA 2</ns1:identifier>
-            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns3:timeSlice>
-                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:KOSICETMA2:2">
-                    <ns1:validTime ns2:type="simple">
-                        <ns1:TimePeriod>
-                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
-                            <ns1:endPosition indeterminatePosition="unknown"/>
-                        </ns1:TimePeriod>
-                    </ns1:validTime>
-                    <ns3:interpretation>BASELINE</ns3:interpretation>
-                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
-                    <ns3:correctionNumber>0</ns3:correctionNumber>
-                    <ns3:type/>
-                    <ns3:designator/>
-                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:name>KOSICE TMA 2</ns3:name>
-                    <ns3:designatorICAO>yes</ns3:designatorICAO>
-                    <ns3:controlType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:geometryComponent>
-                        <ns3:AirspaceGeometryComponent>
-                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:theAirspaceVolume>
-<ns3:AirspaceVolume>
-    <ns3:upperLimit uom="FT">9500.0</ns3:upperLimit>
-    <ns3:upperLimitReference>MSL</ns3:upperLimitReference>
-    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="FT">1000.0</ns3:lowerLimit>
-    <ns3:lowerLimitReference>SFC</ns3:lowerLimitReference>
-    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:horizontalProjection>
-        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
-            <ns1:patches>
-                <ns1:PolygonPatch interpolation="planar">
-                    <ns1:exterior>
-                        <ns1:Ring>
-                            <ns1:curveMember ns2:type="simple">
-<ns1:Curve>
-    <ns1:segments>
-        <ns1:GeodesicString interpolation="geodesic">
-            <ns1:posList>48.39611111111111 20.41638888888889 48.398819 20.416725 48.40657 20.420482 48.411322 20.413346 48.418736 20.416235 48.42585 20.427709 48.436603 20.441493 48.444764 20.445003 48.450296 20.45344 48.454177 20.468045 48.463189 20.465123 48.467601 20.477515 48.471421 20.485163 48.477322 20.490699 48.485581 20.495513 48.489643 20.501785 48.504888 20.505619 48.50892 20.509662 48.514317 20.507358 48.518032 20.501929 48.52597 20.504064 48.533085 20.507485 48.534642 20.518806 48.530845 20.527596 48.525899 20.536366 48.545887 20.546855 48.54454 20.555447 48.54446 20.564142 48.536251 20.590323 48.545586 20.606901 48.544495 20.6186 48.55228 20.623764 48.55339 20.632587 48.559097 20.639864 48.560348 20.651187 48.564357 20.656623 48.564519 20.668784 48.5667 20.678657 48.560863 20.683952 48.565449 20.694144 48.569595 20.707092 48.571172 20.720149 48.570447 20.743832 48.573499 20.742355 48.577089 20.743914 48.576801 20.798303 48.574164 20.807978 48.579422 20.818724 48.583744 20.830044 48.586376 20.840296 48.583402 20.849524 48.576712 20.848129 48.572052 20.845757 48.566281 20.844394 48.566682 20.854151 48.560054 20.862408 48.553638 20.867151 48.554498 20.876737 48.551216 20.878278 48.561292 20.914167 48.561547 20.920636 48.556866 20.928765 48.54826 20.934725 48.53928 20.938162 48.541172 20.94244 48.535854 20.942292 48.536281 20.948671 48.53219 20.959228 48.527034 20.959775 48.523267 20.963536 48.522866 20.971529 48.5262 20.983774 48.520539 20.986963 48.530441 20.99571 48.530049 21.012056 48.533227 21.018098 48.533313 21.024386 48.530562 21.028352 48.526608 21.053293 48.524673 21.056499 48.526624 21.067941 48.522458 21.075722 48.522674 21.083997 48.520062 21.094424 48.51258 21.101063 48.500614 21.101284 48.494297 21.10641 48.492496 21.115992 48.492745 21.126419 48.497043 21.137842 48.504165 21.147708 48.519317 21.155892 48.523137 21.160754 48.52192 21.180865 48.524719 21.188623 48.528137 21.193227 48.527928 21.203378 48.531251 21.210469 48.532727 21.21113 48.532281 21.21783 48.538163 21.222607 48.536258 21.230979 48.541466 21.234352 48.542179 21.243516 48.535759 21.250951 48.530425 21.262472 48.529395 21.27665 48.52697 21.288358 48.52721 21.29863 48.528625 21.306607 48.532486 21.308301 48.53598 21.318591 48.540944 21.316011 48.543601 21.321463 48.547389 21.321084 48.550689 21.322415 48.553939 21.319596 48.553554 21.325355 48.557511 21.328785 48.558235 21.322696 48.560754 21.319329 48.563213 21.322955 48.565205 21.330445 48.55814 21.332168 48.561105 21.363652 48.558659 21.382532 48.565383 21.404254 48.560795 21.411313 48.560841 21.418645 48.564034 21.422383 48.573086 21.425507 48.580958 21.427101 48.585578 21.431087 48.585346 21.441425 48.580735 21.44633 48.576503 21.449263 48.575894 21.46054 48.570012 21.469618 48.566051 21.482992 48.560756 21.493633 48.559829 21.500662 48.556458 21.503718 48.557267 21.509355 48.553406 21.514018 48.549851 21.520164 48.539269 21.519643 48.516304 21.538767 48.515201 21.545431 48.511502 21.547687 48.510513 21.560733 48.513603 21.566549 48.506848 21.572639 48.506572 21.581243 48.512183 21.587164 48.519764 21.598084 48.512459 21.605778 48.512917 21.614575 48.499577 21.617702 48.490326 21.622468 48.479225 21.624822 48.469937 21.625538 48.447907 21.633786 48.440286 21.646094 48.430526 21.656154 48.416316 21.666781 48.407291 21.667084 48.393538 21.676092 48.39133 21.689479 48.386815 21.703275 48.375754 21.709823 48.369503 21.709964 48.366811 21.718691 48.357911 21.720095 48.349922 21.732947 48.350406 21.745683 48.347801 21.75791 48.343163 21.766373 48.340842 21.773383 48.340576 21.785989 48.34185 21.796517 48.341893 21.80494 48.333333333333336 21.816944444444445 48.284166666666664 21.83138888888889 48.18611111111111 21.0975 48.39611111111111 20.41638888888889</ns1:posList>
-        </ns1:GeodesicString>
-    </ns1:segments>
-</ns1:Curve>
-                            </ns1:curveMember>
-                        </ns1:Ring>
-                    </ns1:exterior>
-                </ns1:PolygonPatch>
-            </ns1:patches>
-            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-        </ns3:Surface>
-    </ns3:horizontalProjection>
-    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-</ns3:AirspaceVolume>
-                            </ns3:theAirspaceVolume>
-                        </ns3:AirspaceGeometryComponent>
-                    </ns3:geometryComponent>
-                    <ns3:annotation>
-                        <ns3:Note>
-                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:purpose>REMARK</ns3:purpose>
-                            <ns3:translatedNote>
-<ns3:LinguisticNote>
-    <ns3:note lang="eng">TMA 2 available only for civil aircraft approaching RWY 01. Aircraft has to be equipped with SSR transponder. Using TMA 2 by State aircraft is excluded unless they have received a diplomatic clearance from the Ministry of Foreign Affairs of the Republic of Hungary.</ns3:note>
-</ns3:LinguisticNote>
-                            </ns3:translatedNote>
-                        </ns3:Note>
-                    </ns3:annotation>
-                </ns3:AirspaceTimeSlice>
-            </ns3:timeSlice>
-        </ns3:Airspace>
-    </ns7:hasMember>
-    <ns7:hasMember ns2:type="simple">
-        <ns3:Airspace ns1:id="eAIP.Hungary:LESMO_AREA:1">
-            <ns1:identifier codeSpace="eAIP.Hungary">LESMO_AREA</ns1:identifier>
-            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns3:timeSlice>
-                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:LESMO_AREA:2">
-                    <ns1:validTime ns2:type="simple">
-                        <ns1:TimePeriod>
-                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
-                            <ns1:endPosition indeterminatePosition="unknown"/>
-                        </ns1:TimePeriod>
-                    </ns1:validTime>
-                    <ns3:interpretation>BASELINE</ns3:interpretation>
-                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
-                    <ns3:correctionNumber>0</ns3:correctionNumber>
-                    <ns3:type/>
-                    <ns3:designator/>
-                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:name>LESMO_AREA</ns3:name>
-                    <ns3:designatorICAO>yes</ns3:designatorICAO>
-                    <ns3:controlType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:geometryComponent>
-                        <ns3:AirspaceGeometryComponent>
-                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:theAirspaceVolume>
-<ns3:AirspaceVolume>
-    <ns3:upperLimit uom="FL">245.0</ns3:upperLimit>
-    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
-    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="FT">5500.0</ns3:lowerLimit>
-    <ns3:lowerLimitReference>MSL</ns3:lowerLimitReference>
-    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:horizontalProjection>
-        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
-            <ns1:patches>
-                <ns1:PolygonPatch interpolation="planar">
-                    <ns1:exterior>
-                        <ns1:Ring>
-                            <ns1:curveMember ns2:type="simple">
-<ns1:Curve>
-    <ns1:segments>
-        <ns1:GeodesicString interpolation="geodesic">
-            <ns1:posList>47.818333333333335 17.61388888888889 47.746944444444445 17.5 47.599722222222226 17.488055555555558 47.59861111111111 16.668055555555558 47.59943 16.667041 47.607487 16.670898 47.610028 16.660471 47.624412 16.653695 47.62995 16.631122 47.628489 16.624431 47.624615 16.618865 47.619587 16.595586 47.61832 16.582802 47.625251 16.566655 47.634816 16.547678 47.641884 16.527535 47.647315 16.521377 47.646882 16.51596 47.63823 16.507898 47.64272 16.488435 47.650898 16.482851 47.652516 16.463683 47.658275 16.445138 47.659652 16.435873 47.664905 16.420726 47.670289 16.428815 47.674628 16.443449 47.6791 16.441797 47.696193 16.44935 47.696911 16.454519 47.684021 16.460078 47.68341 16.47468 47.691063 16.477401 47.692189 16.483678 47.697613 16.487443 47.70317 16.498182 47.705132 16.510476 47.707115 16.515629 47.712414 16.520263 47.711486 16.530038 47.713506 16.543517 47.719662 16.545757 47.724977 16.551159 47.739711 16.536857 47.743356 16.540994 47.744766 16.548453 47.750966 16.546626 47.752807 16.548745 47.752976 16.572444 47.755615 16.585685 47.752723 16.593437 47.762963 16.610359 47.757664 16.620846 47.761044 16.633739 47.755212 16.639393 47.74976 16.640952 47.748233 16.645795 47.742405 16.654586 47.737592 16.722741 47.723755 16.722629 47.684041 16.748067 47.683727 16.829612 47.705105 16.840857 47.708806 16.852399 47.721355 16.867165 47.720674 16.870222 47.691441 16.870509 47.690373 16.883233 47.688542 16.884086 47.69189 16.942464 47.707623 17.035186 47.711587 17.085958 47.728074 17.069457 47.760228 17.069473 47.779685 17.066298 47.788936 17.076955 47.802201 17.062114 47.811905 17.073714 47.825692 17.05929 47.830398 17.05054 47.833268 17.0548 47.835506 17.047741 47.840276 17.051835 47.853939 17.02872 47.869319 17.020319 47.869786 17.042203 47.874497 17.055933 47.880013 17.076648 47.878347 17.083891 47.898549 17.102197 47.905391 17.094632 47.926865 17.111512 47.936688 17.091423 47.951267 17.106659 47.963101 17.117713 47.972245 17.094272 47.985607 17.11687 47.993527 17.133719 48.001103 17.145968 48.00666666666667 17.160833333333333 48.008857 17.162361 48.012604 17.172652 48.017201 17.19176 48.017483 17.205241 48.02079 17.212726 48.018463 17.229145 48.020316 17.246332 48.016259 17.251109 48.009383 17.25089 48.001358 17.258445 47.997055 17.28626 47.99969 17.312235 47.99786 17.334514 47.991048 17.348036 47.972267 17.367755 47.961328 17.376185 47.959709 17.379248 47.963814 17.391403 47.955853 17.40268 47.938919 17.416583 47.930448 17.426468 47.919278 17.435397 47.904431 17.443413 47.893551 17.450715 47.885403 17.46238 47.881565 17.47631 47.870613 17.500043 47.867347 17.513464 47.867812 17.524621 47.860588 17.535093 47.845898 17.546152 47.833176 17.553393 47.816575 17.566958 47.81544 17.574436 47.819652 17.583081 47.823264 17.595723 47.818333333333335 17.61388888888889</ns1:posList>
-        </ns1:GeodesicString>
-    </ns1:segments>
-</ns1:Curve>
-                            </ns1:curveMember>
-                        </ns1:Ring>
-                    </ns1:exterior>
-                </ns1:PolygonPatch>
-            </ns1:patches>
-            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-        </ns3:Surface>
-    </ns3:horizontalProjection>
-    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-</ns3:AirspaceVolume>
-                            </ns3:theAirspaceVolume>
-                        </ns3:AirspaceGeometryComponent>
-                    </ns3:geometryComponent>
-                    <ns3:annotation>
-                        <ns3:Note>
-                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:purpose>REMARK</ns3:purpose>
-                            <ns3:translatedNote>
-<ns3:LinguisticNote>
-    <ns3:note lang="eng"/>
-</ns3:LinguisticNote>
-                            </ns3:translatedNote>
-                        </ns3:Note>
-                    </ns3:annotation>
-                </ns3:AirspaceTimeSlice>
-            </ns3:timeSlice>
-        </ns3:Airspace>
-    </ns7:hasMember>
-    <ns7:hasMember ns2:type="simple">
-        <ns3:Airspace ns1:id="eAIP.Hungary:RUTOLAREA:1">
-            <ns1:identifier codeSpace="eAIP.Hungary">RUTOL AREA</ns1:identifier>
-            <ns1:boundedBy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-            <ns3:timeSlice>
-                <ns3:AirspaceTimeSlice ns1:id="eAIP.Hungary:RUTOLAREA:2">
-                    <ns1:validTime ns2:type="simple">
-                        <ns1:TimePeriod>
-                            <ns1:beginPosition>2012-04-08T00:00:00Z</ns1:beginPosition>
-                            <ns1:endPosition indeterminatePosition="unknown"/>
-                        </ns1:TimePeriod>
-                    </ns1:validTime>
-                    <ns3:interpretation>BASELINE</ns3:interpretation>
-                    <ns3:sequenceNumber>1</ns3:sequenceNumber>
-                    <ns3:correctionNumber>0</ns3:correctionNumber>
-                    <ns3:type/>
-                    <ns3:designator/>
-                    <ns3:localType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:name>RUTOL AREA</ns3:name>
-                    <ns3:designatorICAO>yes</ns3:designatorICAO>
-                    <ns3:controlType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:upperLowerSeparation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:protectedRoute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                    <ns3:geometryComponent>
-                        <ns3:AirspaceGeometryComponent>
-                            <ns3:operation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:operationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:theAirspaceVolume>
-<ns3:AirspaceVolume>
-    <ns3:upperLimit uom="FL">195.0</ns3:upperLimit>
-    <ns3:upperLimitReference>STD</ns3:upperLimitReference>
-    <ns3:maximumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:maximumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:lowerLimit uom="FL">90.0</ns3:lowerLimit>
-    <ns3:lowerLimitReference>STD</ns3:lowerLimitReference>
-    <ns3:minimumLimit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:minimumLimitReference xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:width xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:horizontalProjection>
-        <ns3:Surface srsName="urn:ogc:def:crs:EPSG:4326">
-            <ns1:patches>
-                <ns1:PolygonPatch interpolation="planar">
-                    <ns1:exterior>
-                        <ns1:Ring>
-                            <ns1:curveMember ns2:type="simple">
-<ns1:Curve>
-    <ns1:segments>
-        <ns1:GeodesicString interpolation="geodesic">
-            <ns1:posList>48.03722222222222 18.82138888888889 48.036218 18.828305 48.030331 18.828163 48.023566 18.819054 48.01558 18.817235 48.007254 18.82079 47.999813 18.819181 47.996754 18.81744 47.998505 18.814172 47.995599 18.808588 47.992527 18.812827 47.990017 18.807321 47.988274 18.798133 47.989283 18.787873 47.986373 18.77616 47.98898 18.77209 47.986633 18.765991 47.983189 18.766408 47.983326 18.762388 47.978993 18.758292 47.975682 18.753314 47.970993 18.756658 47.966011 18.7716 47.958027 18.777551 47.95462 18.775481 47.954921 18.770365 47.948352 18.773391 47.940663 18.774048 47.936234 18.772347 47.930459 18.768612 47.922042 18.757873 47.91706 18.758643 47.912044 18.762584 47.907649 18.75934 47.903998 18.762141 47.898747 18.759001 47.889286 18.766091 47.883851 18.768325 47.882775 18.763411 47.873303 18.763329 47.871917 18.76855 47.869576 18.770643 47.869939 18.779151 47.867272 18.783198 47.866826 18.792315 47.859924 18.797049 47.854557 18.815364 47.849219 18.822178 47.842179 18.824865 47.833103 18.830727 47.830277 18.835965 47.82999 18.843718 47.830735 18.850597 47.828071 18.855661 47.822059 18.849382 47.817108 18.848199 47.819103 18.781986 47.818294 18.754363 47.815502 18.742258 47.810547 18.734441 47.803691 18.730673 47.797528 18.72883 47.791425 18.725734 47.77613 18.697569 47.765705 18.674675 47.761345 18.662953 47.759243 18.617118 47.760978 18.601453 47.767148 18.569953 47.768921 18.552413 47.766815 18.538526 47.758407 18.519354 47.754692 18.505433 47.753997 18.49381 47.75634 18.482621 47.7607 18.472399 47.76416666666667 18.465 47.85472222222222 18.48611111111111 47.95805555555556 18.51 48.03722222222222 18.82138888888889</ns1:posList>
-        </ns1:GeodesicString>
-    </ns1:segments>
-</ns1:Curve>
-                            </ns1:curveMember>
-                        </ns1:Ring>
-                    </ns1:exterior>
-                </ns1:PolygonPatch>
-            </ns1:patches>
-            <ns3:horizontalAccuracy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-        </ns3:Surface>
-    </ns3:horizontalProjection>
-    <ns3:centreline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-    <ns3:contributorAirspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-</ns3:AirspaceVolume>
-                            </ns3:theAirspaceVolume>
-                        </ns3:AirspaceGeometryComponent>
-                    </ns3:geometryComponent>
-                    <ns3:annotation>
-                        <ns3:Note>
-                            <ns3:propertyName xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                            <ns3:purpose>REMARK</ns3:purpose>
-                            <ns3:translatedNote>
-<ns3:LinguisticNote>
-    <ns3:note lang="eng"/>
-</ns3:LinguisticNote>
-                            </ns3:translatedNote>
-                        </ns3:Note>
-                    </ns3:annotation>
-                </ns3:AirspaceTimeSlice>
-            </ns3:timeSlice>
-        </ns3:Airspace>
-    </ns7:hasMember>
-</ns7:AIXMBasicMessage>
+<?xml version="1.0" encoding="UTF-8"?>
+<message:AIXMBasicMessage xmlns:message="http://www.aixm.aero/schema/5.1/message"
+                          xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                          xmlns:gco="http://www.isotc211.org/2005/gco"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          xmlns:gml="http://www.opengis.net/gml/3.2"
+                          xmlns:gts="http://www.isotc211.org/2005/gts"
+                          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xmlns:aixm="http://www.aixm.aero/schema/5.1"
+                          gml:id="uuid.606afc10-95ac-41f5-bc0b-f795e7c98e67">
+   <gml:boundedBy xsi:nil="true"/>
+   <message:hasMember xlink:type="simple">
+      <aixm:Airspace gml:id="uuid.157b8b18-becf-44f0-aec2-a6a2b1d95e91">
+         <gml:identifier codeSpace="urn:uuid:">157b8b18-becf-44f0-aec2-a6a2b1d95e91</gml:identifier>
+         <gml:boundedBy xsi:nil="true"/>
+         <aixm:timeSlice>
+            <aixm:AirspaceTimeSlice gml:id="uuid.386123d9-e8dc-490c-954a-e0df43e93233">
+               <gml:validTime xlink:type="simple">
+                  <gml:TimePeriod>
+                     <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
+                     <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+               </gml:validTime>
+               <aixm:interpretation>BASELINE</aixm:interpretation>
+               <aixm:sequenceNumber>1</aixm:sequenceNumber>
+               <aixm:correctionNumber>0</aixm:correctionNumber>
+               <aixm:type/>
+               <aixm:designator/>
+               <aixm:localType xsi:nil="true"/>
+               <aixm:name>KOSICE TMA 2</aixm:name>
+               <aixm:designatorICAO>yes</aixm:designatorICAO>
+               <aixm:controlType xsi:nil="true"/>
+               <aixm:upperLowerSeparation xsi:nil="true"/>
+               <aixm:protectedRoute xsi:nil="true"/>
+               <aixm:geometryComponent>
+                  <aixm:AirspaceGeometryComponent>
+                     <aixm:operation xsi:nil="true"/>
+                     <aixm:operationSequence xsi:nil="true"/>
+                     <aixm:theAirspaceVolume>
+                        <aixm:AirspaceVolume>
+                           <aixm:upperLimit uom="FT">9500.0</aixm:upperLimit>
+                           <aixm:upperLimitReference>MSL</aixm:upperLimitReference>
+                           <aixm:maximumLimit xsi:nil="true"/>
+                           <aixm:maximumLimitReference xsi:nil="true"/>
+                           <aixm:lowerLimit uom="FT">1000.0</aixm:lowerLimit>
+                           <aixm:lowerLimitReference>SFC</aixm:lowerLimitReference>
+                           <aixm:minimumLimit xsi:nil="true"/>
+                           <aixm:minimumLimitReference xsi:nil="true"/>
+                           <aixm:width xsi:nil="true"/>
+                           <aixm:horizontalProjection>
+                              <aixm:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+                                 <gml:patches>
+                                    <gml:PolygonPatch interpolation="planar">
+                                       <gml:exterior>
+                                          <gml:Ring>
+                                             <gml:curveMember xlink:type="simple">
+                                                <gml:Curve>
+                                                   <gml:segments>
+                                                      <gml:GeodesicString interpolation="geodesic">
+                                                         <gml:posList>48.39611111111111 20.41638888888889 48.398819 20.416725 48.40657 20.420482 48.411322 20.413346 48.418736 20.416235 48.42585 20.427709 48.436603 20.441493 48.444764 20.445003 48.450296 20.45344 48.454177 20.468045 48.463189 20.465123 48.467601 20.477515 48.471421 20.485163 48.477322 20.490699 48.485581 20.495513 48.489643 20.501785 48.504888 20.505619 48.50892 20.509662 48.514317 20.507358 48.518032 20.501929 48.52597 20.504064 48.533085 20.507485 48.534642 20.518806 48.530845 20.527596 48.525899 20.536366 48.545887 20.546855 48.54454 20.555447 48.54446 20.564142 48.536251 20.590323 48.545586 20.606901 48.544495 20.6186 48.55228 20.623764 48.55339 20.632587 48.559097 20.639864 48.560348 20.651187 48.564357 20.656623 48.564519 20.668784 48.5667 20.678657 48.560863 20.683952 48.565449 20.694144 48.569595 20.707092 48.571172 20.720149 48.570447 20.743832 48.573499 20.742355 48.577089 20.743914 48.576801 20.798303 48.574164 20.807978 48.579422 20.818724 48.583744 20.830044 48.586376 20.840296 48.583402 20.849524 48.576712 20.848129 48.572052 20.845757 48.566281 20.844394 48.566682 20.854151 48.560054 20.862408 48.553638 20.867151 48.554498 20.876737 48.551216 20.878278 48.561292 20.914167 48.561547 20.920636 48.556866 20.928765 48.54826 20.934725 48.53928 20.938162 48.541172 20.94244 48.535854 20.942292 48.536281 20.948671 48.53219 20.959228 48.527034 20.959775 48.523267 20.963536 48.522866 20.971529 48.5262 20.983774 48.520539 20.986963 48.530441 20.99571 48.530049 21.012056 48.533227 21.018098 48.533313 21.024386 48.530562 21.028352 48.526608 21.053293 48.524673 21.056499 48.526624 21.067941 48.522458 21.075722 48.522674 21.083997 48.520062 21.094424 48.51258 21.101063 48.500614 21.101284 48.494297 21.10641 48.492496 21.115992 48.492745 21.126419 48.497043 21.137842 48.504165 21.147708 48.519317 21.155892 48.523137 21.160754 48.52192 21.180865 48.524719 21.188623 48.528137 21.193227 48.527928 21.203378 48.531251 21.210469 48.532727 21.21113 48.532281 21.21783 48.538163 21.222607 48.536258 21.230979 48.541466 21.234352 48.542179 21.243516 48.535759 21.250951 48.530425 21.262472 48.529395 21.27665 48.52697 21.288358 48.52721 21.29863 48.528625 21.306607 48.532486 21.308301 48.53598 21.318591 48.540944 21.316011 48.543601 21.321463 48.547389 21.321084 48.550689 21.322415 48.553939 21.319596 48.553554 21.325355 48.557511 21.328785 48.558235 21.322696 48.560754 21.319329 48.563213 21.322955 48.565205 21.330445 48.55814 21.332168 48.561105 21.363652 48.558659 21.382532 48.565383 21.404254 48.560795 21.411313 48.560841 21.418645 48.564034 21.422383 48.573086 21.425507 48.580958 21.427101 48.585578 21.431087 48.585346 21.441425 48.580735 21.44633 48.576503 21.449263 48.575894 21.46054 48.570012 21.469618 48.566051 21.482992 48.560756 21.493633 48.559829 21.500662 48.556458 21.503718 48.557267 21.509355 48.553406 21.514018 48.549851 21.520164 48.539269 21.519643 48.516304 21.538767 48.515201 21.545431 48.511502 21.547687 48.510513 21.560733 48.513603 21.566549 48.506848 21.572639 48.506572 21.581243 48.512183 21.587164 48.519764 21.598084 48.512459 21.605778 48.512917 21.614575 48.499577 21.617702 48.490326 21.622468 48.479225 21.624822 48.469937 21.625538 48.447907 21.633786 48.440286 21.646094 48.430526 21.656154 48.416316 21.666781 48.407291 21.667084 48.393538 21.676092 48.39133 21.689479 48.386815 21.703275 48.375754 21.709823 48.369503 21.709964 48.366811 21.718691 48.357911 21.720095 48.349922 21.732947 48.350406 21.745683 48.347801 21.75791 48.343163 21.766373 48.340842 21.773383 48.340576 21.785989 48.34185 21.796517 48.341893 21.80494 48.333333333333336 21.816944444444445 48.284166666666664 21.83138888888889 48.18611111111111 21.0975 48.39611111111111 20.41638888888889</gml:posList>
+                                                      </gml:GeodesicString>
+                                                   </gml:segments>
+                                                </gml:Curve>
+                                             </gml:curveMember>
+                                          </gml:Ring>
+                                       </gml:exterior>
+                                    </gml:PolygonPatch>
+                                 </gml:patches>
+                                 <aixm:horizontalAccuracy xsi:nil="true"/>
+                              </aixm:Surface>
+                           </aixm:horizontalProjection>
+                           <aixm:centreline xsi:nil="true"/>
+                           <aixm:contributorAirspace xsi:nil="true"/>
+                        </aixm:AirspaceVolume>
+                     </aixm:theAirspaceVolume>
+                  </aixm:AirspaceGeometryComponent>
+               </aixm:geometryComponent>
+               <aixm:annotation>
+                  <aixm:Note>
+                     <aixm:propertyName xsi:nil="true"/>
+                     <aixm:purpose>REMARK</aixm:purpose>
+                     <aixm:translatedNote>
+                        <aixm:LinguisticNote>
+                           <aixm:note lang="eng">TMA 2 available only for civil aircraft approaching RWY 01. Aircraft has to be equipped with SSR transponder. Using TMA 2 by State aircraft is excluded unless they have received a diplomatic clearance from the Ministry of Foreign Affairs of the Republic of Hungary.</aixm:note>
+                        </aixm:LinguisticNote>
+                     </aixm:translatedNote>
+                  </aixm:Note>
+               </aixm:annotation>
+            </aixm:AirspaceTimeSlice>
+         </aixm:timeSlice>
+      </aixm:Airspace>
+   </message:hasMember>
+   <message:hasMember xlink:type="simple">
+      <aixm:Airspace gml:id="uuid.54aea3da-4cac-4e92-a9a5-56e362539a72">
+         <gml:identifier codeSpace="urn:uuid:">54aea3da-4cac-4e92-a9a5-56e362539a72</gml:identifier>
+         <gml:boundedBy xsi:nil="true"/>
+         <aixm:timeSlice>
+            <aixm:AirspaceTimeSlice gml:id="uuid.c46890eb-271d-4c8a-b981-6bd4f40d63cd">
+               <gml:validTime xlink:type="simple">
+                  <gml:TimePeriod>
+                     <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
+                     <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+               </gml:validTime>
+               <aixm:interpretation>BASELINE</aixm:interpretation>
+               <aixm:sequenceNumber>1</aixm:sequenceNumber>
+               <aixm:correctionNumber>0</aixm:correctionNumber>
+               <aixm:type/>
+               <aixm:designator/>
+               <aixm:localType xsi:nil="true"/>
+               <aixm:name>LESMO_AREA</aixm:name>
+               <aixm:designatorICAO>yes</aixm:designatorICAO>
+               <aixm:controlType xsi:nil="true"/>
+               <aixm:upperLowerSeparation xsi:nil="true"/>
+               <aixm:protectedRoute xsi:nil="true"/>
+               <aixm:geometryComponent>
+                  <aixm:AirspaceGeometryComponent>
+                     <aixm:operation xsi:nil="true"/>
+                     <aixm:operationSequence xsi:nil="true"/>
+                     <aixm:theAirspaceVolume>
+                        <aixm:AirspaceVolume>
+                           <aixm:upperLimit uom="FL">245.0</aixm:upperLimit>
+                           <aixm:upperLimitReference>STD</aixm:upperLimitReference>
+                           <aixm:maximumLimit xsi:nil="true"/>
+                           <aixm:maximumLimitReference xsi:nil="true"/>
+                           <aixm:lowerLimit uom="FT">5500.0</aixm:lowerLimit>
+                           <aixm:lowerLimitReference>MSL</aixm:lowerLimitReference>
+                           <aixm:minimumLimit xsi:nil="true"/>
+                           <aixm:minimumLimitReference xsi:nil="true"/>
+                           <aixm:width xsi:nil="true"/>
+                           <aixm:horizontalProjection>
+                              <aixm:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+                                 <gml:patches>
+                                    <gml:PolygonPatch interpolation="planar">
+                                       <gml:exterior>
+                                          <gml:Ring>
+                                             <gml:curveMember xlink:type="simple">
+                                                <gml:Curve>
+                                                   <gml:segments>
+                                                      <gml:GeodesicString interpolation="geodesic">
+                                                         <gml:posList>47.818333333333335 17.61388888888889 47.746944444444445 17.5 47.599722222222226 17.488055555555558 47.59861111111111 16.668055555555558 47.59943 16.667041 47.607487 16.670898 47.610028 16.660471 47.624412 16.653695 47.62995 16.631122 47.628489 16.624431 47.624615 16.618865 47.619587 16.595586 47.61832 16.582802 47.625251 16.566655 47.634816 16.547678 47.641884 16.527535 47.647315 16.521377 47.646882 16.51596 47.63823 16.507898 47.64272 16.488435 47.650898 16.482851 47.652516 16.463683 47.658275 16.445138 47.659652 16.435873 47.664905 16.420726 47.670289 16.428815 47.674628 16.443449 47.6791 16.441797 47.696193 16.44935 47.696911 16.454519 47.684021 16.460078 47.68341 16.47468 47.691063 16.477401 47.692189 16.483678 47.697613 16.487443 47.70317 16.498182 47.705132 16.510476 47.707115 16.515629 47.712414 16.520263 47.711486 16.530038 47.713506 16.543517 47.719662 16.545757 47.724977 16.551159 47.739711 16.536857 47.743356 16.540994 47.744766 16.548453 47.750966 16.546626 47.752807 16.548745 47.752976 16.572444 47.755615 16.585685 47.752723 16.593437 47.762963 16.610359 47.757664 16.620846 47.761044 16.633739 47.755212 16.639393 47.74976 16.640952 47.748233 16.645795 47.742405 16.654586 47.737592 16.722741 47.723755 16.722629 47.684041 16.748067 47.683727 16.829612 47.705105 16.840857 47.708806 16.852399 47.721355 16.867165 47.720674 16.870222 47.691441 16.870509 47.690373 16.883233 47.688542 16.884086 47.69189 16.942464 47.707623 17.035186 47.711587 17.085958 47.728074 17.069457 47.760228 17.069473 47.779685 17.066298 47.788936 17.076955 47.802201 17.062114 47.811905 17.073714 47.825692 17.05929 47.830398 17.05054 47.833268 17.0548 47.835506 17.047741 47.840276 17.051835 47.853939 17.02872 47.869319 17.020319 47.869786 17.042203 47.874497 17.055933 47.880013 17.076648 47.878347 17.083891 47.898549 17.102197 47.905391 17.094632 47.926865 17.111512 47.936688 17.091423 47.951267 17.106659 47.963101 17.117713 47.972245 17.094272 47.985607 17.11687 47.993527 17.133719 48.001103 17.145968 48.00666666666667 17.160833333333333 48.008857 17.162361 48.012604 17.172652 48.017201 17.19176 48.017483 17.205241 48.02079 17.212726 48.018463 17.229145 48.020316 17.246332 48.016259 17.251109 48.009383 17.25089 48.001358 17.258445 47.997055 17.28626 47.99969 17.312235 47.99786 17.334514 47.991048 17.348036 47.972267 17.367755 47.961328 17.376185 47.959709 17.379248 47.963814 17.391403 47.955853 17.40268 47.938919 17.416583 47.930448 17.426468 47.919278 17.435397 47.904431 17.443413 47.893551 17.450715 47.885403 17.46238 47.881565 17.47631 47.870613 17.500043 47.867347 17.513464 47.867812 17.524621 47.860588 17.535093 47.845898 17.546152 47.833176 17.553393 47.816575 17.566958 47.81544 17.574436 47.819652 17.583081 47.823264 17.595723 47.818333333333335 17.61388888888889</gml:posList>
+                                                      </gml:GeodesicString>
+                                                   </gml:segments>
+                                                </gml:Curve>
+                                             </gml:curveMember>
+                                          </gml:Ring>
+                                       </gml:exterior>
+                                    </gml:PolygonPatch>
+                                 </gml:patches>
+                                 <aixm:horizontalAccuracy xsi:nil="true"/>
+                              </aixm:Surface>
+                           </aixm:horizontalProjection>
+                           <aixm:centreline xsi:nil="true"/>
+                           <aixm:contributorAirspace xsi:nil="true"/>
+                        </aixm:AirspaceVolume>
+                     </aixm:theAirspaceVolume>
+                  </aixm:AirspaceGeometryComponent>
+               </aixm:geometryComponent>
+               <aixm:annotation>
+                  <aixm:Note>
+                     <aixm:propertyName xsi:nil="true"/>
+                     <aixm:purpose>REMARK</aixm:purpose>
+                     <aixm:translatedNote>
+                        <aixm:LinguisticNote>
+                           <aixm:note lang="eng"/>
+                        </aixm:LinguisticNote>
+                     </aixm:translatedNote>
+                  </aixm:Note>
+               </aixm:annotation>
+            </aixm:AirspaceTimeSlice>
+         </aixm:timeSlice>
+      </aixm:Airspace>
+   </message:hasMember>
+   <message:hasMember xlink:type="simple">
+      <aixm:Airspace gml:id="uuid.bbd62f0b-7fb2-4372-b65c-a012685b4ed4">
+         <gml:identifier codeSpace="urn:uuid:">bbd62f0b-7fb2-4372-b65c-a012685b4ed4</gml:identifier>
+         <gml:boundedBy xsi:nil="true"/>
+         <aixm:timeSlice>
+            <aixm:AirspaceTimeSlice gml:id="uuid.cc136f93-86e2-4e08-b0c1-2313da5ab9c0">
+               <gml:validTime xlink:type="simple">
+                  <gml:TimePeriod>
+                     <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
+                     <gml:endPosition indeterminatePosition="unknown"/>
+                  </gml:TimePeriod>
+               </gml:validTime>
+               <aixm:interpretation>BASELINE</aixm:interpretation>
+               <aixm:sequenceNumber>1</aixm:sequenceNumber>
+               <aixm:correctionNumber>0</aixm:correctionNumber>
+               <aixm:type/>
+               <aixm:designator/>
+               <aixm:localType xsi:nil="true"/>
+               <aixm:name>RUTOL AREA</aixm:name>
+               <aixm:designatorICAO>yes</aixm:designatorICAO>
+               <aixm:controlType xsi:nil="true"/>
+               <aixm:upperLowerSeparation xsi:nil="true"/>
+               <aixm:protectedRoute xsi:nil="true"/>
+               <aixm:geometryComponent>
+                  <aixm:AirspaceGeometryComponent>
+                     <aixm:operation xsi:nil="true"/>
+                     <aixm:operationSequence xsi:nil="true"/>
+                     <aixm:theAirspaceVolume>
+                        <aixm:AirspaceVolume>
+                           <aixm:upperLimit uom="FL">195.0</aixm:upperLimit>
+                           <aixm:upperLimitReference>STD</aixm:upperLimitReference>
+                           <aixm:maximumLimit xsi:nil="true"/>
+                           <aixm:maximumLimitReference xsi:nil="true"/>
+                           <aixm:lowerLimit uom="FL">90.0</aixm:lowerLimit>
+                           <aixm:lowerLimitReference>STD</aixm:lowerLimitReference>
+                           <aixm:minimumLimit xsi:nil="true"/>
+                           <aixm:minimumLimitReference xsi:nil="true"/>
+                           <aixm:width xsi:nil="true"/>
+                           <aixm:horizontalProjection>
+                              <aixm:Surface srsName="urn:ogc:def:crs:EPSG:4326">
+                                 <gml:patches>
+                                    <gml:PolygonPatch interpolation="planar">
+                                       <gml:exterior>
+                                          <gml:Ring>
+                                             <gml:curveMember xlink:type="simple">
+                                                <gml:Curve>
+                                                   <gml:segments>
+                                                      <gml:GeodesicString interpolation="geodesic">
+                                                         <gml:posList>48.03722222222222 18.82138888888889 48.036218 18.828305 48.030331 18.828163 48.023566 18.819054 48.01558 18.817235 48.007254 18.82079 47.999813 18.819181 47.996754 18.81744 47.998505 18.814172 47.995599 18.808588 47.992527 18.812827 47.990017 18.807321 47.988274 18.798133 47.989283 18.787873 47.986373 18.77616 47.98898 18.77209 47.986633 18.765991 47.983189 18.766408 47.983326 18.762388 47.978993 18.758292 47.975682 18.753314 47.970993 18.756658 47.966011 18.7716 47.958027 18.777551 47.95462 18.775481 47.954921 18.770365 47.948352 18.773391 47.940663 18.774048 47.936234 18.772347 47.930459 18.768612 47.922042 18.757873 47.91706 18.758643 47.912044 18.762584 47.907649 18.75934 47.903998 18.762141 47.898747 18.759001 47.889286 18.766091 47.883851 18.768325 47.882775 18.763411 47.873303 18.763329 47.871917 18.76855 47.869576 18.770643 47.869939 18.779151 47.867272 18.783198 47.866826 18.792315 47.859924 18.797049 47.854557 18.815364 47.849219 18.822178 47.842179 18.824865 47.833103 18.830727 47.830277 18.835965 47.82999 18.843718 47.830735 18.850597 47.828071 18.855661 47.822059 18.849382 47.817108 18.848199 47.819103 18.781986 47.818294 18.754363 47.815502 18.742258 47.810547 18.734441 47.803691 18.730673 47.797528 18.72883 47.791425 18.725734 47.77613 18.697569 47.765705 18.674675 47.761345 18.662953 47.759243 18.617118 47.760978 18.601453 47.767148 18.569953 47.768921 18.552413 47.766815 18.538526 47.758407 18.519354 47.754692 18.505433 47.753997 18.49381 47.75634 18.482621 47.7607 18.472399 47.76416666666667 18.465 47.85472222222222 18.48611111111111 47.95805555555556 18.51 48.03722222222222 18.82138888888889</gml:posList>
+                                                      </gml:GeodesicString>
+                                                   </gml:segments>
+                                                </gml:Curve>
+                                             </gml:curveMember>
+                                          </gml:Ring>
+                                       </gml:exterior>
+                                    </gml:PolygonPatch>
+                                 </gml:patches>
+                                 <aixm:horizontalAccuracy xsi:nil="true"/>
+                              </aixm:Surface>
+                           </aixm:horizontalProjection>
+                           <aixm:centreline xsi:nil="true"/>
+                           <aixm:contributorAirspace xsi:nil="true"/>
+                        </aixm:AirspaceVolume>
+                     </aixm:theAirspaceVolume>
+                  </aixm:AirspaceGeometryComponent>
+               </aixm:geometryComponent>
+               <aixm:annotation>
+                  <aixm:Note>
+                     <aixm:propertyName xsi:nil="true"/>
+                     <aixm:purpose>REMARK</aixm:purpose>
+                     <aixm:translatedNote>
+                        <aixm:LinguisticNote>
+                           <aixm:note lang="eng"/>
+                        </aixm:LinguisticNote>
+                     </aixm:translatedNote>
+                  </aixm:Note>
+               </aixm:annotation>
+            </aixm:AirspaceTimeSlice>
+         </aixm:timeSlice>
+      </aixm:Airspace>
+   </message:hasMember>
+</message:AIXMBasicMessage>

@@ -51,6 +51,6 @@ fi
 
 
 # off we go
-java -cp $BASEDIR/target/$JAR_FILE $MAIN_CLASS "$*"
+java -cp $BASEDIR/target/$JAR_FILE $MAIN_CLASS $*
 
 

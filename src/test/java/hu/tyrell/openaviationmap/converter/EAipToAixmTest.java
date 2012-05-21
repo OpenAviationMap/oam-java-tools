@@ -40,13 +40,13 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import javax.xml.namespace.NamespaceContext;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.stream.StreamResult;
 
-import org.custommonkey.xmlunit.Diff;
 import org.custommonkey.xmlunit.XMLUnit;
 import org.junit.Test;
 import org.w3c.dom.Document;
@@ -143,7 +143,6 @@ public class EAipToAixmTest {
         // first, get an airspace definitions from a eAIP file
         Document   d = db.parse(new FileInputStream(eAipDocumentName));
         EAIPHungaryReader reader   = new EAIPHungaryReader();
-        String messageName = d.getDocumentElement().getNodeName();
 
         reader.processEAIP(d.getDocumentElement(),
                            borderPoints,
@@ -165,8 +164,6 @@ public class EAipToAixmTest {
         JAXBElement<AIXMBasicMessageType> m =
                                 AixmConverter.convertToAixm(airspaces,
                                                             navaids,
-                                                            messageName,
-                                                            "eAIP.Hungary",
                                                             vStart,
                                                             null,
                                                             "BASELINE",
@@ -184,6 +181,11 @@ public class EAipToAixmTest {
 
         // and now, parse the resulting XML file
         // and compare the two airspace definitions
+        dbf.setNamespaceAware(true);
+        dbf.setIgnoringElementContentWhitespace(true);
+        db = dbf.newDocumentBuilder();
+
+
         StringReader strReader = new StringReader(strWriter.toString());
         InputSource  strSource = new InputSource(strReader);
         d = db.parse(strSource);
@@ -206,12 +208,18 @@ public class EAipToAixmTest {
 
         // for now, just compare the loaded XML document with the generated
         // one
+        NamespaceContext nsCtx = AixmConverter.getNsCtx();
+
         d.normalizeDocument();
+        ConverterUtil.canonizeNS(d, nsCtx);
+
         dd.normalizeDocument();
+        ConverterUtil.canonizeNS(dd, nsCtx);
+
         XMLUnit.setXSLTVersion("2.0");
         XMLUnit.setIgnoreWhitespace(true);
-        Diff diff = new Diff(dd, d);
-        assertTrue(diff.identical());
+        NodeDiffIdOk diff = new NodeDiffIdOk(dd, d);
+        assertTrue(diff.similar());
     }
 
     /**

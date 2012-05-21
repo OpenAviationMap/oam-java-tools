@@ -28,8 +28,8 @@ import hu.tyrell.openaviationmap.model.oam.Action;
 import hu.tyrell.openaviationmap.model.oam.Oam;
 import hu.tyrell.openaviationmap.model.oam.Way;
 
-import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -84,7 +84,7 @@ public final class Converter {
         System.out.println(
           "                               required");
         System.out.println(
-          "                               supported formats: OAM");
+          "                               supported formats: OAM, AIXM");
         System.out.println(
           "  -c | --create                if specified, the OAM output file");
         System.out.println(
@@ -283,6 +283,8 @@ public final class Converter {
             return;
         }
 
+        System.out.println("Converting " + inputFile + " to " + outputFile);
+
         try {
             convert(inputFile,
                     inputFormat,
@@ -355,9 +357,9 @@ public final class Converter {
         String          messageName  = null;
 
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        DocumentBuilder        db  = dbf.newDocumentBuilder();
 
         if (borderFile != null) {
-            DocumentBuilder db     = dbf.newDocumentBuilder();
             Document        d      = db.parse(new FileInputStream(borderFile));
             OAMReader       reader = new OAMReader();
             Oam             oam    = new Oam();
@@ -375,7 +377,6 @@ public final class Converter {
         }
 
         if (adFile != null) {
-            DocumentBuilder db     = dbf.newDocumentBuilder();
             Document        d      = db.parse(new FileInputStream(adFile));
 
             if ("e:AD-1.3".equals(d.getDocumentElement().getTagName())) {
@@ -393,8 +394,7 @@ public final class Converter {
         if ("eAIP.Hungary".equals(inputFormat)) {
             Node eAipNode;
 
-            DocumentBuilder db  = dbf.newDocumentBuilder();
-            Document   d = db.parse(new FileInputStream(inputFile));
+            Document d = db.parse(new FileInputStream(inputFile));
             eAipNode = d.getDocumentElement();
 
             EAIPHungaryReader reader = new EAIPHungaryReader();
@@ -428,8 +428,6 @@ public final class Converter {
             JAXBElement<AIXMBasicMessageType> m =
                                     AixmConverter.convertToAixm(airspaces,
                                                                 navaids,
-                                                                messageName,
-                                                                inputFormat,
                                                                 validityStart,
                                                                 validityEnd,
                                                                 "BASELINE",
@@ -439,9 +437,15 @@ public final class Converter {
             // marshal the data into XML using the JAXB marshaller
             JAXBContext  ctx = JAXBContext.newInstance(
                                               "aero.aixm.schema._5_1.message");
-            Marshaller   marsh = ctx.createMarshaller();
-            marsh.setProperty("jaxb.formatted.output", true);
-            marsh.marshal(m, new File(outputFile));
+            Marshaller marsh = ctx.createMarshaller();
+
+            Document document = db.newDocument();
+            marsh.marshal(m, document);
+
+            ConverterUtil.canonizeNS(document, AixmConverter.getNsCtx());
+
+            ConverterUtil.serializeDocument(document,
+                                            new FileOutputStream(outputFile));
 
         } else {
             throw new Exception("output format " + outputFormat
