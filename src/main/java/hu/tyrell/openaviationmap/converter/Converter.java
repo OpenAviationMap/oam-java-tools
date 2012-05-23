@@ -354,7 +354,6 @@ public final class Converter {
         List<Navaid>    navaids      = new Vector<Navaid>();
         List<Aerodrome> aerodromes   = new Vector<Aerodrome>();
         List<Point>     borderPoints = null;
-        String          messageName  = null;
 
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder        db  = dbf.newDocumentBuilder();
@@ -404,8 +403,6 @@ public final class Converter {
                                navaids,
                                aerodromes,
                                errors);
-
-            messageName = d.getDocumentElement().getNodeName();
         } else {
             throw new Exception("input format " + inputFormat
                               + " not recognized");
@@ -428,6 +425,7 @@ public final class Converter {
             JAXBElement<AIXMBasicMessageType> m =
                                     AixmConverter.convertToAixm(airspaces,
                                                                 navaids,
+                                                                aerodromes,
                                                                 validityStart,
                                                                 validityEnd,
                                                                 "BASELINE",

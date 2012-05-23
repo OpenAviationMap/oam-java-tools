@@ -164,6 +164,7 @@ public class EAipToAixmTest {
         JAXBElement<AIXMBasicMessageType> m =
                                 AixmConverter.convertToAixm(airspaces,
                                                             navaids,
+                                                            aerodromes,
                                                             vStart,
                                                             null,
                                                             "BASELINE",
@@ -430,22 +431,22 @@ public class EAipToAixmTest {
      * @throws SAXException on XML parsing errors
      * @throws ParseException on AIXM parsing errors
      * @throws TransformerException on XML serialization errors
+     * @throws JAXBException on JAXB errors
      */
-    /* TODO
     @Test
     public void testEAipAdLhbcToAixm() throws ParserConfigurationException,
                                              SAXException,
                                              IOException,
                                              ParseException,
-                                             TransformerException {
+                                             TransformerException,
+                                             JAXBException {
 
         testEAipToAixm("var/LH-AD-LHBC-en-HU.xml",
-                      "var/aixm-hungary-lhbc.xml",
+                      "var/hungary-lhbc.aixm51",
                       "var/hungary.osm",
                       "var/LH-AD-1.3-en-HU.xml",
                       0, 0, 0, 1);
     }
-    */
 
     /**
      * Test converting an eAIP section AD-LHBP element to AIXM.
@@ -455,22 +456,22 @@ public class EAipToAixmTest {
      * @throws SAXException on XML parsing errors
      * @throws ParseException on AIXM parsing errors
      * @throws TransformerException on XML serialization errors
+     * @throws JAXBException on JAXB errors
      */
-    /* TODO
     @Test
     public void testEAipAdLhbpToAixm() throws ParserConfigurationException,
                                              SAXException,
                                              IOException,
                                              ParseException,
-                                             TransformerException {
+                                             TransformerException,
+                                             JAXBException {
 
         testEAipToAixm("var/LH-AD-LHBP-en-HU.xml",
-                      "var/aixm-hungary-lhbp.xml",
+                      "var/hungary-lhbp.aixm51",
                       "var/hungary.osm",
                       "var/LH-AD-1.3-en-HU.xml",
                       0, 0, 0, 1);
     }
-    */
 
     /**
      * Test converting an eAIP section AD-LHDC element to AIXM.
@@ -480,22 +481,22 @@ public class EAipToAixmTest {
      * @throws SAXException on XML parsing errors
      * @throws ParseException on AIXM parsing errors
      * @throws TransformerException on XML serialization errors
+     * @throws JAXBException on JAXB errors
      */
-    /* TODO
     @Test
     public void testEAipAdLhdcToAixm() throws ParserConfigurationException,
                                              SAXException,
                                              IOException,
                                              ParseException,
-                                             TransformerException {
+                                             TransformerException,
+                                             JAXBException {
 
         testEAipToAixm("var/LH-AD-LHDC-en-HU.xml",
-                      "var/aixm-hungary-lhdc.xml",
+                      "var/hungary-lhdc.aixm51",
                       "var/hungary.osm",
                       "var/LH-AD-1.3-en-HU.xml",
                       0, 0, 0, 1);
     }
-    */
 
     /**
      * Test converting an eAIP section AD-LHFM element to AIXM.
@@ -505,22 +506,22 @@ public class EAipToAixmTest {
      * @throws SAXException on XML parsing errors
      * @throws ParseException on AIXM parsing errors
      * @throws TransformerException on XML serialization errors
+     * @throws JAXBException on JAXB errors
      */
-    /* TODO
     @Test
     public void testEAipAdLhfmToAixm() throws ParserConfigurationException,
                                              SAXException,
                                              IOException,
                                              ParseException,
-                                             TransformerException {
+                                             TransformerException,
+                                             JAXBException {
 
         testEAipToAixm("var/LH-AD-LHFM-en-HU.xml",
-                      "var/aixm-hungary-lhfm.xml",
+                      "var/hungary-lhfm.aixm51",
                       "var/hungary.osm",
                       "var/LH-AD-1.3-en-HU.xml",
                       0, 0, 0, 1);
     }
-    */
 
     /**
      * Test converting an eAIP section AD-LHNY element to AIXM.
@@ -530,22 +531,22 @@ public class EAipToAixmTest {
      * @throws SAXException on XML parsing errors
      * @throws ParseException on AIXM parsing errors
      * @throws TransformerException on XML serialization errors
+     * @throws JAXBException on JAXB errors
      */
-    /* TODO
     @Test
     public void testEAipAdLhnyToAixm() throws ParserConfigurationException,
                                              SAXException,
                                              IOException,
                                              ParseException,
-                                             TransformerException {
+                                             TransformerException,
+                                             JAXBException {
 
         testEAipToAixm("var/LH-AD-LHNY-en-HU.xml",
-                      "var/aixm-hungary-lhny.xml",
+                      "var/hungary-lhny.aixm51",
                       "var/hungary.osm",
                       "var/LH-AD-1.3-en-HU.xml",
                       0, 0, 0, 1);
     }
-    */
 
     /**
      * Test converting an eAIP section AD-LHPP element to AIXM.
@@ -555,22 +556,22 @@ public class EAipToAixmTest {
      * @throws SAXException on XML parsing errors
      * @throws ParseException on AIXM parsing errors
      * @throws TransformerException on XML serialization errors
+     * @throws JAXBException on JAXB errors
      */
-    /* TODO
     @Test
     public void testEAipAdLhppToAixm() throws ParserConfigurationException,
                                              SAXException,
                                              IOException,
                                              ParseException,
-                                             TransformerException {
+                                             TransformerException,
+                                             JAXBException {
 
         testEAipToAixm("var/LH-AD-LHPP-en-HU.xml",
-                      "var/aixm-hungary-lhpp.xml",
+                      "var/hungary-lhpp.aixm51",
                       "var/hungary.osm",
                       "var/LH-AD-1.3-en-HU.xml",
                       0, 0, 0, 1);
     }
-    */
 
     /**
      * Test converting an eAIP section AD-LHPR element to AIXM.
@@ -580,22 +581,22 @@ public class EAipToAixmTest {
      * @throws SAXException on XML parsing errors
      * @throws ParseException on AIXM parsing errors
      * @throws TransformerException on XML serialization errors
+     * @throws JAXBException on JAXB errors
      */
-    /* TODO
     @Test
     public void testEAipAdLhprToAixm() throws ParserConfigurationException,
                                              SAXException,
                                              IOException,
                                              ParseException,
-                                             TransformerException {
+                                             TransformerException,
+                                             JAXBException {
 
         testEAipToAixm("var/LH-AD-LHPR-en-HU.xml",
-                      "var/aixm-hungary-lhpr.xml",
+                      "var/hungary-lhpr.aixm51",
                       "var/hungary.osm",
                       "var/LH-AD-1.3-en-HU.xml",
                       0, 0, 0, 1);
     }
-    */
 
     /**
      * Test converting an eAIP section AD-LHSM element to AIXM.
@@ -605,22 +606,22 @@ public class EAipToAixmTest {
      * @throws SAXException on XML parsing errors
      * @throws ParseException on AIXM parsing errors
      * @throws TransformerException on XML serialization errors
+     * @throws JAXBException on JAXB errors
      */
-    /* TODO
     @Test
     public void testEAipAdLhsmToAixm() throws ParserConfigurationException,
                                              SAXException,
                                              IOException,
                                              ParseException,
-                                             TransformerException {
+                                             TransformerException,
+                                             JAXBException {
 
         testEAipToAixm("var/LH-AD-LHSM-en-HU.xml",
-                      "var/aixm-hungary-lhsm.xml",
+                      "var/hungary-lhsm.aixm51",
                       "var/hungary.osm",
                       "var/LH-AD-1.3-en-HU.xml",
                       0, 0, 0, 1);
     }
-    */
 
     /**
      * Test converting an eAIP section AD-LHUD element to AIXM.
@@ -630,20 +631,20 @@ public class EAipToAixmTest {
      * @throws SAXException on XML parsing errors
      * @throws ParseException on AIXM parsing errors
      * @throws TransformerException on XML serialization errors
+     * @throws JAXBException on JAXB errors
      */
-    /* TODO
     @Test
     public void testEAipAdLhudToAixm() throws ParserConfigurationException,
                                              SAXException,
                                              IOException,
                                              ParseException,
-                                             TransformerException {
+                                             TransformerException,
+                                             JAXBException {
 
         testEAipToAixm("var/LH-AD-LHUD-en-HU.xml",
-                      "var/aixm-hungary-lhud.xml",
+                      "var/hungary-lhud.aixm51",
                       "var/hungary.osm",
                       "var/LH-AD-1.3-en-HU.xml",
                       0, 0, 0, 1);
     }
-    */
 }
