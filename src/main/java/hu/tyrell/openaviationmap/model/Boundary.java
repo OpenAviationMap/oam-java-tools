@@ -31,7 +31,12 @@ public interface Boundary {
         /**
          * A boundary which is a circle, with a center point and a radius.
          */
-        CIRCLE;
+        CIRCLE,
+
+        /**
+         * A boundary made up of a number of other boundaries.
+         */
+        COMPOUND;
     }
 
     /**

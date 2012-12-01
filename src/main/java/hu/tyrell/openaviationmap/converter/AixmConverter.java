@@ -21,6 +21,7 @@ import hu.tyrell.openaviationmap.model.Aerodrome;
 import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Boundary;
 import hu.tyrell.openaviationmap.model.Circle;
+import hu.tyrell.openaviationmap.model.CompoundBoundary;
 import hu.tyrell.openaviationmap.model.Distance;
 import hu.tyrell.openaviationmap.model.Elevation;
 import hu.tyrell.openaviationmap.model.Frequency;
@@ -590,38 +591,32 @@ public final class AixmConverter {
         switch (boundary.getType()) {
         case RING:
             Ring r = (Ring) boundary;
-
-            DirectPositionListType directPosList =
-                                    gmlFactory.createDirectPositionListType();
-            for (Point p : r.getPointList()) {
-                directPosList.getValue().add(p.getLatitude());
-                directPosList.getValue().add(p.getLongitude());
-            }
-
-            GeodesicStringType geoString =
-                                        gmlFactory.createGeodesicStringType();
-            geoString.setPosList(directPosList);
-
-            curveSegment.getAbstractCurveSegment().add(
-                            gmlFactory.createGeodesicString(geoString));
+            addRingToCurveSegment(r, curveSegment);
             break;
 
         case CIRCLE:
             Circle c = (Circle) boundary;
+            addCircleToCurveSegment(c, curveSegment);
+            break;
 
-            DirectPositionType center = convertPoint(c.getCenter());
+        case COMPOUND:
+            CompoundBoundary cb = (CompoundBoundary) boundary;
+            for (Boundary b : cb.getBoundaryList()) {
+                switch (b.getType()) {
+                case RING:
+                    Ring rr = (Ring) b;
+                    addRingToCurveSegment(rr, curveSegment);
+                    break;
 
-            LengthType radius = gmlFactory.createLengthType();
-            radius.setUom(convertUom(c.getRadius().getUom()));
-            radius.setValue(c.getRadius().getDistance());
+                case CIRCLE:
+                    Circle cc = (Circle) b;
+                    addCircleToCurveSegment(cc, curveSegment);
+                    break;
 
-            CircleByCenterPointType ccp =
-                                    gmlFactory.createCircleByCenterPointType();
-            ccp.setPos(center);
-            ccp.setRadius(radius);
-
-            curveSegment.getAbstractCurveSegment().add(
-                              gmlFactory.createCircleByCenterPoint(ccp));
+                default:
+                    // TODO: handle recursive compound boundaries
+                }
+            }
             break;
 
         default:
@@ -657,6 +652,54 @@ public final class AixmConverter {
                                     aixmFactory.createSurfacePropertyType();
         surfacePropType.setSurface(aixmFactory.createSurface(surfaceType));
         airspaceVolume.setHorizontalProjection(surfacePropType);
+    }
+
+    /**
+     * Add a circle object to an AIXM curve segment.
+     *
+     * @param circle the circle to add
+     * @param curveSegment the curve segment to add the circle to.
+     */
+    private static void
+    addCircleToCurveSegment(Circle                        circle,
+                            CurveSegmentArrayPropertyType curveSegment) {
+        DirectPositionType center = convertPoint(circle.getCenter());
+
+        LengthType radius = gmlFactory.createLengthType();
+        radius.setUom(convertUom(circle.getRadius().getUom()));
+        radius.setValue(circle.getRadius().getDistance());
+
+        CircleByCenterPointType ccp =
+                                gmlFactory.createCircleByCenterPointType();
+        ccp.setPos(center);
+        ccp.setRadius(radius);
+
+        curveSegment.getAbstractCurveSegment().add(
+                          gmlFactory.createCircleByCenterPoint(ccp));
+    }
+
+    /**
+     * Add a ring object to an AIXM curve segment.
+     *
+     * @param ring the ring to add
+     * @param curveSegment the curve segment to add the ring to.
+     */
+    private static void
+    addRingToCurveSegment(Ring                          ring,
+                          CurveSegmentArrayPropertyType curveSegment) {
+        DirectPositionListType directPosList =
+                                gmlFactory.createDirectPositionListType();
+        for (Point p : ring.getPointList()) {
+            directPosList.getValue().add(p.getLatitude());
+            directPosList.getValue().add(p.getLongitude());
+        }
+
+        GeodesicStringType geoString =
+                                    gmlFactory.createGeodesicStringType();
+        geoString.setPosList(directPosList);
+
+        curveSegment.getAbstractCurveSegment().add(
+                        gmlFactory.createGeodesicString(geoString));
     }
 
     /**

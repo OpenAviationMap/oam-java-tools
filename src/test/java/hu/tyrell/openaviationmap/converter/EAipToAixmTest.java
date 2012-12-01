@@ -345,7 +345,7 @@ public class EAipToAixmTest {
                        "var/hungary-2.1.aixm51",
                        "var/hungary.osm",
                        "var/LH-AD-1.3-en-HU.xml",
-                       0, 20, 0, 0);
+                       0, 18, 0, 0);
     }
 
     /**

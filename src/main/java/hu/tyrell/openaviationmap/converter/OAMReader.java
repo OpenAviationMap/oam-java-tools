@@ -19,7 +19,9 @@ package hu.tyrell.openaviationmap.converter;
 
 import hu.tyrell.openaviationmap.model.Aerodrome;
 import hu.tyrell.openaviationmap.model.Airspace;
+import hu.tyrell.openaviationmap.model.Boundary;
 import hu.tyrell.openaviationmap.model.Circle;
+import hu.tyrell.openaviationmap.model.CompoundBoundary;
 import hu.tyrell.openaviationmap.model.Distance;
 import hu.tyrell.openaviationmap.model.Elevation;
 import hu.tyrell.openaviationmap.model.ElevationReference;
@@ -43,6 +45,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
@@ -736,49 +739,8 @@ public class OAMReader {
         }
 
         Airspace airspace = new Airspace();
-        String   k;
 
-        k = "icao";
-        if (tags.containsKey(k)) {
-            airspace.setDesignator(tags.get(k));
-        }
-
-        k = "name";
-        if (tags.containsKey(k)) {
-            airspace.setName(tags.get(k));
-        }
-
-        k = "remarks";
-        if (tags.containsKey(k)) {
-            airspace.setRemarks(tags.get(k));
-        }
-
-        k = "operator";
-        if (tags.containsKey(k)) {
-            airspace.setOperator(tags.get(k));
-        }
-
-        k = "activetime";
-        if (tags.containsKey(k)) {
-            airspace.setActiveTime(tags.get(k));
-        }
-
-        k = "comm:ctrl";
-        if (tags.containsKey(k)) {
-            airspace.setCommFrequency(tags.get(k));
-        }
-
-        k = "airspace:type";
-        if (tags.containsKey(k)) {
-            airspace.setType(tags.get(k));
-        }
-
-        k = "airspace:class";
-        if (tags.containsKey(k)) {
-            airspace.setAirspaceClass(tags.get(k));
-        }
-
-        setElevationLimits(tags, airspace);
+        processAirspaceTags(tags, airspace);
 
         if (tags.containsKey("airspace:center:lat")
          && tags.containsKey("airspace:center:lon")
@@ -826,6 +788,111 @@ public class OAMReader {
         }
 
         return airspace;
+    }
+
+    /**
+     * Convert an OAM 'relation' element into an Airspace object, with a
+     * compound boundary.
+     *
+     * @param relation the OAM 'relation' to convert
+     * @param oam the oam object that contains the relation
+     * @return the airspace corresponding to the supplied 'way' element.
+     * @throws ParseException on parsing errors
+     */
+    Airspace relationToAirspace(Relation    relation,
+                                Oam         oam)
+                                                       throws ParseException {
+        Map<String, String> tags = relation.getTags();
+
+        if (!tags.containsKey("airspace")
+         || !"yes".equals(tags.get("airspace"))) {
+
+            throw new ParseException("relation is not an airspace");
+        }
+
+        Airspace airspace = new Airspace();
+
+        processAirspaceTags(tags, airspace);
+
+        // get the parts of the airspace from the relation
+        ArrayList<Boundary> bl =
+                    new ArrayList<Boundary>(relation.getMembers().size() - 1);
+
+        for (Member m : relation.getMembers()) {
+            if (m.getType() == Member.Type.WAY
+             && "airspace".equals(m.getRole())) {
+
+                Way w = oam.getWays().get(m.getRef());
+
+                if (w.getTags().containsKey("compound")
+                 && "original".equals(w.getTags().get("compound"))) {
+
+                    // this is a bit redundant, as it will process the
+                    // tags as well, which we'll throw away
+                    Airspace as = wayToAirspace(w, oam.getNodes());
+                    bl.add(as.getBoundary());
+                }
+            }
+        }
+        CompoundBoundary cb = new CompoundBoundary();
+        cb.setBoundaryList(bl);
+
+        airspace.setBoundary(cb);
+
+        return airspace;
+    }
+
+    /**
+     * Process tags of an OAM node and add them to an Airspace object.
+     *
+     * @param tags the tags to process
+     * @param airspace the airspace to add the tag contents to
+     */
+    private void processAirspaceTags(Map<String, String> tags,
+                                     Airspace            airspace) {
+        String   k;
+
+        k = "icao";
+        if (tags.containsKey(k)) {
+            airspace.setDesignator(tags.get(k));
+        }
+
+        k = "name";
+        if (tags.containsKey(k)) {
+            airspace.setName(tags.get(k));
+        }
+
+        k = "remarks";
+        if (tags.containsKey(k)) {
+            airspace.setRemarks(tags.get(k));
+        }
+
+        k = "operator";
+        if (tags.containsKey(k)) {
+            airspace.setOperator(tags.get(k));
+        }
+
+        k = "activetime";
+        if (tags.containsKey(k)) {
+            airspace.setActiveTime(tags.get(k));
+        }
+
+        k = "comm:ctrl";
+        if (tags.containsKey(k)) {
+            airspace.setCommFrequency(tags.get(k));
+        }
+
+        k = "airspace:type";
+        if (tags.containsKey(k)) {
+            airspace.setType(tags.get(k));
+        }
+
+        k = "airspace:class";
+        if (tags.containsKey(k)) {
+            airspace.setAirspaceClass(tags.get(k));
+        }
+
+        setElevationLimits(tags, airspace);
     }
 
     /**
@@ -1002,11 +1069,20 @@ public class OAMReader {
         processOsm(root, oam, errors);
 
         for (Relation relation : oam.getRelations().values()) {
-            try {
-                Aerodrome ad = relationToAerodrome(relation, oam);
-                aerodromes.add(ad);
-            } catch (ParseException e) {
-                errors.add(e);
+            if (relation.getTags().containsKey("aerodrome")) {
+                try {
+                    Aerodrome ad = relationToAerodrome(relation, oam);
+                    aerodromes.add(ad);
+                } catch (ParseException e) {
+                    errors.add(e);
+                }
+            } else if (relation.getTags().containsKey("airspace")) {
+                try {
+                    Airspace as = relationToAirspace(relation, oam);
+                    airspaces.add(as);
+                } catch (ParseException e) {
+                    errors.add(e);
+                }
             }
         }
 
@@ -1024,7 +1100,8 @@ public class OAMReader {
         for (Way way : oam.getWays().values()) {
             try {
                 if (way.getTags().containsKey("airspace")
-                 && "yes".equals(way.getTags().get("airspace"))) {
+                 && "yes".equals(way.getTags().get("airspace"))
+                 && !way.getTags().containsKey("compound")) {
 
                     Airspace airspace = wayToAirspace(way, oam.getNodes());
                     airspaces.add(airspace);

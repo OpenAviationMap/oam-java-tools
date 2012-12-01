@@ -285,32 +285,15 @@ public class EAipProcessor {
         Point  center    = processPoint(designator, centerStr);
 
         // generate a circle with the above center & radius
-        Vector<Point> arc = new Vector<Point>();
+        Circle c = new Circle();
+        c.setCenter(center);
+        c.setRadius(radius);
 
-        double radiusInNm  = radius.inUom(UOM.NM).getDistance();
-        double radiusInDeg = radiusInNm / 60.0;
-        double radiusLat   = radiusInDeg;
-        double radiusLon   = radiusInDeg / Math.cos(
-                              Math.toRadians(center.getLatitude()));
+        Ring r = c.approximate();
 
-        // FIXME: calculate number of points on some required precision metric
-        int totalPoints = 32;
-        double tpHalf = totalPoints / 2.0;
-        for (int i = 0; i < totalPoints; ++i) {
-            double theta = Math.PI * i / tpHalf;
-            double x = center.getLongitude()
-                    + (radiusLon * Math.cos(theta));
-            double y = center.getLatitude()
-                    + (radiusLat * Math.sin(theta));
-
-            Point p = new Point();
-            p.setLongitude(x);
-            p.setLatitude(y);
-
-            arc.add(p);
-        }
-
-        return arc;
+        // remove the last element, as the returned ring has a duplicate
+        // for that
+        return r.getPointList().subList(0, r.getPointList().size() - 1);
     }
 
     /**

@@ -29,6 +29,7 @@ import hu.tyrell.openaviationmap.model.oam.Oam;
 
 import java.io.FileInputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
@@ -179,6 +180,14 @@ public class EAipToOamTest {
         StringWriter strWriter = new StringWriter();
         StreamResult result = new StreamResult(strWriter);
         transformer.transform(source, result);
+
+        {
+            DOMSource ssource = new DOMSource(d);
+            FileWriter sstrWriter = new FileWriter("/tmp/ize.xml");
+            StreamResult sresult = new StreamResult(sstrWriter);
+            transformer.transform(ssource, sresult);
+
+        }
 
         // and now, parse the resulting XML file
         // and compare the two airspace definitions
@@ -349,7 +358,7 @@ public class EAipToOamTest {
                       "var/oam-hungary-2.1.xml",
                       "var/hungary.osm",
                       "var/LH-AD-1.3-en-HU.xml",
-                      0, 20, 0, 0);
+                      0, 18, 0, 0);
     }
 
     /**

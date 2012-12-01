@@ -17,11 +17,18 @@
  */
 package hu.tyrell.openaviationmap.model;
 
+import java.util.ArrayList;
+
 /**
  * A boundary type described as a circle of some radius around a center
  * point.
  */
 public class Circle implements Boundary {
+    /**
+     * The number of points used to approximate a circle with a polygon.
+     */
+    private static final int POLY_POINTS = 32;
+
     /**
      * The center point of the circle.
      */
@@ -31,6 +38,46 @@ public class Circle implements Boundary {
      * The radius of the circle.
      */
     private Distance radius;
+
+    /**
+     * Create a polygon approximation of the circle.
+     *
+     * @return a polygon approximation of the circle.
+     */
+    public Ring approximate() {
+        double radiusInNm  = radius.inUom(UOM.NM).getDistance();
+        double radiusInDeg = radiusInNm / 60.0;
+        double radiusLat   = radiusInDeg;
+        double radiusLon   = radiusInDeg / Math.cos(
+                                       Math.toRadians(center.getLatitude()));
+
+        double       tpHalf      = POLY_POINTS / 2.0;
+        ArrayList<Point> points  = new ArrayList<Point>(POLY_POINTS + 1);
+        for (int i = 0; i < POLY_POINTS; ++i) {
+            double theta = Math.PI * i / tpHalf;
+            double x = center.getLongitude()
+                    + (radiusLon * Math.cos(theta));
+            double y = center.getLatitude()
+                    + (radiusLat * Math.sin(theta));
+
+            Point p = new Point();
+            p.setLongitude(x);
+            p.setLatitude(y);
+
+            points.add(p);
+        }
+
+        // close the ring
+        Point p = new Point();
+        p.setLongitude(points.get(0).getLongitude());
+        p.setLatitude(points.get(0).getLatitude());
+        points.add(p);
+
+        Ring r = new Ring();
+        r.setPointList(points);
+
+        return r;
+    }
 
     /**
      * Return the type of this boundary.

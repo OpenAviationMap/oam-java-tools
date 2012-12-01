@@ -21,21 +21,28 @@ import hu.tyrell.openaviationmap.model.Aerodrome;
 import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Boundary;
 import hu.tyrell.openaviationmap.model.Circle;
+import hu.tyrell.openaviationmap.model.CompoundBoundary;
 import hu.tyrell.openaviationmap.model.Elevation;
 import hu.tyrell.openaviationmap.model.Navaid;
 import hu.tyrell.openaviationmap.model.Point;
 import hu.tyrell.openaviationmap.model.Ring;
 import hu.tyrell.openaviationmap.model.Runway;
-import hu.tyrell.openaviationmap.model.UOM;
 import hu.tyrell.openaviationmap.model.oam.Action;
 import hu.tyrell.openaviationmap.model.oam.Member;
 import hu.tyrell.openaviationmap.model.oam.Oam;
+import hu.tyrell.openaviationmap.model.oam.OsmBaseNode;
 import hu.tyrell.openaviationmap.model.oam.OsmNode;
 import hu.tyrell.openaviationmap.model.oam.Relation;
 import hu.tyrell.openaviationmap.model.oam.Way;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import com.vividsolutions.jts.geom.Coordinate;
+import com.vividsolutions.jts.geom.Geometry;
+import com.vividsolutions.jts.geom.GeometryFactory;
+import com.vividsolutions.jts.geom.Polygon;
 
 /**
  * Class that converts aviation data into OAM.
@@ -97,32 +104,92 @@ public final class OamConverter {
                                      Action              action,
                                      int                 version) {
 
-        int nodeIx = nodeIdIx;
+        Ring r = circle.approximate();
 
-        double radiusInNm  = circle.getRadius().inUom(UOM.NM).getDistance();
-        double radiusInDeg = radiusInNm / 60.0;
-        double radiusLat   = radiusInDeg;
-        double radiusLon   = radiusInDeg / Math.cos(
-                              Math.toRadians(circle.getCenter().getLatitude()));
+        return processRing(oam, r, nodeIdIx, action, version);
+    }
 
-        // FIXME: calculate number of points on some required precision metric
-        int totalPoints = 32;
-        double tpHalf = totalPoints / 2.0;
-        for (int i = 0; i < totalPoints; ++i, ++nodeIx) {
-            double theta = Math.PI * i / tpHalf;
-            double x = circle.getCenter().getLongitude()
-                    + (radiusLon * Math.cos(theta));
-            double y = circle.getCenter().getLatitude()
-                    + (radiusLat * Math.sin(theta));
+    /**
+     * Process a Compund boundary object, by joining the boundaries and creating
+     * a single series of nodes.
+     *
+     * @param oam the OAM object that will contain the nodes
+     * @param compoundBoundary the compound boundary to process
+     * @param nodeIdIx the last valid node id used, only ids above
+     *        this one will be used for node ids
+     * @param action specify this action for each created node
+     * @param version the version of the node
+     * @return the highest used node id
+     */
+    private static int processCompoundBoundary(Oam              oam,
+                                              CompoundBoundary compoundBoundary,
+                                              int              nodeIdIx,
+                                              Action           action,
+                                              int              version) {
+
+        // first calculate the union of the embedded boundaries
+        // using JTS
+        GeometryFactory gf = new GeometryFactory();
+        Polygon[]       gs = new Polygon[
+                                    compoundBoundary.getBoundaryList().size()];
+        int             ix = 0;
+
+        for (Boundary b : compoundBoundary.getBoundaryList()) {
+            Ring r = null;
+
+            switch (b.getType()) {
+            case CIRCLE:
+                r = ((Circle) b).approximate();
+                break;
+
+            case RING:
+                r  = (Ring) b;
+            break;
+
+            default:
+                // TODO: handle nested compound boundaries
+            }
+
+            if (r != null) {
+                List<Point>  pl = r.getPointList();
+
+                Coordinate[] cs = new Coordinate[pl.size()];
+                int          i  = 0;
+                for (Point p : pl) {
+                    cs[i++] = new Coordinate(p.getLongitude(),
+                                             p.getLatitude());
+                }
+
+                gs[ix++] = gf.createPolygon(gf.createLinearRing(cs), null);
+            }
+        }
+
+
+        // if no geometries, don't proceed
+        if (gs.length == 0) {
+            return nodeIdIx;
+        }
+
+        // create a union of all the geometries available
+        Geometry union = gs[0];
+        for (int i = 1; i < gs.length; ++i) {
+            union = union.union(gs[i]);
+        }
+
+        int                nodeIx = nodeIdIx;
+        // as we have the union, export these as points
+        // disregard the last one, as it will be the same as the first one
+        for (int i = 0; i < union.getCoordinates().length - 1; ++i) {
+            Coordinate c = union.getCoordinates()[i];
 
             OsmNode node = new OsmNode();
-            node.setLongitude(x);
-            node.setLatitude(y);
+            node.setLongitude(c.x);
+            node.setLatitude(c.y);
             node.setId(action == Action.CREATE ? -nodeIx : nodeIx);
             node.setVersion(version);
             node.setAction(action);
 
-            oam.getNodes().put(nodeIx, node);
+            oam.getNodes().put(nodeIx++, node);
         }
 
         return nodeIx;
@@ -193,6 +260,10 @@ public final class OamConverter {
             return processCircle(oam, (Circle) boundary,
                                  nodeIdIx, action, version);
 
+        case COMPOUND:
+            return processCompoundBoundary(oam, (CompoundBoundary) boundary,
+                                           nodeIdIx, action, version);
+
         default:
             return nodeIdIx;
         }
@@ -202,21 +273,21 @@ public final class OamConverter {
      * Add OAM tags related to elevation limits.
      *
      * @param airspace the airspace the limits are about
-     * @param way the OAM way to add the limits to.
+     * @param node the OAM node to add the limits to.
      */
-    private static void addElevationLimits(Airspace airspace,
-                                           Way      way) {
+    private static void addElevationLimits(Airspace     airspace,
+                                           OsmBaseNode  node) {
 
         if (airspace.getLowerLimit() != null) {
             addElevationTags(airspace.getLowerLimit(),
                              "height:lower",
-                             way.getTags());
+                             node.getTags());
         }
 
         if (airspace.getUpperLimit() != null) {
             addElevationTags(airspace.getUpperLimit(),
                              "height:upper",
-                             way.getTags());
+                             node.getTags());
         }
     }
 
@@ -259,10 +330,90 @@ public final class OamConverter {
                                      Action   action,
                                      int      version,
                                      int      nodeIdIx) {
+
+        Boundary b = airspace.getBoundary();
+
+        // if a simple airspace, just create an OAM way
+        if (b.getType() == Boundary.Type.RING
+         || b.getType() == Boundary.Type.CIRCLE) {
+            return airspaceBoundaryToOam(airspace, b,
+                                         oam, action, version, nodeIdIx);
+        }
+
+        // otherwise, create an OAM relation, with the original ways
+        // and a generated union way
+        CompoundBoundary cb   = (CompoundBoundary) b;
+        ArrayList<Way>   ways = new ArrayList<Way>(cb.getBoundaryList().size());
+        int              nodeIx = nodeIdIx;
+
+        // add the original ways
+        for (Boundary bb : cb.getBoundaryList()) {
+            // NOTE: this code implies that the airspaceBoundaryToOam()
+            //       call uses the returned node index - 1 to create the way
+            //       object
+            nodeIx = airspaceBoundaryToOam(airspace, bb,
+                                           oam, action, version, nodeIx);
+            int wayIx = action == Action.CREATE ? -(nodeIx - 1) : (nodeIx - 1);
+            Way w = oam.getWays().get(wayIx);
+            // mark this way as not to be rendered
+            w.getTags().put("compound", "original");
+
+            ways.add(w);
+        }
+
+        // add the unionized way based on parts of the compound boundary
+        // NOTE: this code implies that the airspaceBoundaryToOam()
+        //       call uses the returned node index - 1 to create the way
+        //       object
+        nodeIx = airspaceBoundaryToOam(airspace, cb,
+                                       oam, action, version, nodeIx);
+        int wayIx = action == Action.CREATE ? -(nodeIx - 1) : (nodeIx - 1);
+        Way cbWay = oam.getWays().get(wayIx);
+        cbWay.getTags().put("compound", "union");
+
+        // now create the relation that combines these ways
+        Relation rel = new Relation();
+
+        rel.setId(action == Action.CREATE ? -nodeIx : nodeIx);
+        rel.setVersion(version);
+        addAirspaceTags(airspace, rel);
+
+        for (Way w : ways) {
+            rel.getMembers().add(
+                            new Member(Member.Type.WAY, w.getId(), "airspace"));
+        }
+        rel.getMembers().add(
+                        new Member(Member.Type.WAY, cbWay.getId(), "airspace"));
+
+        oam.getRelations().put(rel.getId(), rel);
+
+        return nodeIx + 1;
+    }
+
+    /**
+     * Convert an airspace and a boundary into an OAM object.
+     *
+     * @param airspace the airspace to convert
+     * @param boundary the boundary to convert. if this is a compound boundary,
+     *        a union will be created and this generated boundary rendered
+     * @param oam the Oam object to put the airspaces into
+     * @param action the OAM action to set for each object
+     * @param version the version to set of reach object
+     * @param nodeIdIx the minimal index of unique node ids. it is assumed
+     *        that any id above this index can be given to OAM nodes
+     * @return the highest used node id during the process
+     */
+    private static int
+    airspaceBoundaryToOam(Airspace airspace,
+                          Boundary boundary,
+                          Oam      oam,
+                          Action   action,
+                          int      version,
+                          int      nodeIdIx) {
         // create a node for each point in the airspace
-        int nIdIx = nodeIdIx;
+        int nIdIx  = nodeIdIx;
         int minIx  = nIdIx;
-        int nodeIx = processBoundary(oam, airspace.getBoundary(),
+        int nodeIx = processBoundary(oam, boundary,
                                      nIdIx, action, version);
 
         // create a 'way' object for the airspace itself
@@ -288,58 +439,11 @@ public final class OamConverter {
         nIdIx = nodeIx;
 
         // insert the airspace metadata
-        way.getTags().put("airspace", "yes");
+        addAirspaceTags(airspace, way);
 
-        if (airspace.getDesignator() != null
-         && !airspace.getDesignator().isEmpty()) {
-
-            way.getTags().put("icao", airspace.getDesignator());
-        }
-
-        if (airspace.getName() != null && !airspace.getName().isEmpty()) {
-
-            way.getTags().put("name", airspace.getName());
-        }
-
-        if (airspace.getRemarks() != null
-         && !airspace.getRemarks().isEmpty()) {
-
-            way.getTags().put("remarks", airspace.getRemarks());
-        }
-
-        if (airspace.getOperator() != null
-         && !airspace.getOperator().isEmpty()) {
-
-            way.getTags().put("operator", airspace.getOperator());
-        }
-
-        if (airspace.getActiveTime() != null
-         && !airspace.getActiveTime().isEmpty()) {
-
-            way.getTags().put("activetime", airspace.getActiveTime());
-        }
-
-        if (airspace.getType() != null) {
-
-            way.getTags().put("airspace:type", airspace.getType());
-        }
-
-        if (airspace.getAirspaceClass() != null) {
-
-            way.getTags().put("airspace:class",
-                              airspace.getAirspaceClass());
-        }
-
-        if (airspace.getCommFrequency() != null) {
-
-            way.getTags().put("comm:ctrl",
-                              airspace.getCommFrequency());
-        }
-
-        addElevationLimits(airspace, way);
-
-        if (airspace.getBoundary().getType() == Boundary.Type.CIRCLE) {
-            Circle c = (Circle) airspace.getBoundary();
+        // store the original info about a circle definition
+        if (boundary.getType() == Boundary.Type.CIRCLE) {
+            Circle c = (Circle) boundary;
 
             way.getTags().put("airspace:center:lat",
                     Double.toString(c.getCenter().getLatitude()));
@@ -354,6 +458,64 @@ public final class OamConverter {
         oam.getWays().put(way.getId(), way);
 
         return nIdIx + 1;
+    }
+
+    /**
+     * Add tags to an OSM node which related to airspaces.
+     *
+     * @param airspace the airspace to get the info from
+     * @param node the node to add the tags to
+     */
+    private static void addAirspaceTags(Airspace airspace, OsmBaseNode node) {
+        node.getTags().put("airspace", "yes");
+
+        if (airspace.getDesignator() != null
+         && !airspace.getDesignator().isEmpty()) {
+
+            node.getTags().put("icao", airspace.getDesignator());
+        }
+
+        if (airspace.getName() != null && !airspace.getName().isEmpty()) {
+
+            node.getTags().put("name", airspace.getName());
+        }
+
+        if (airspace.getRemarks() != null
+         && !airspace.getRemarks().isEmpty()) {
+
+            node.getTags().put("remarks", airspace.getRemarks());
+        }
+
+        if (airspace.getOperator() != null
+         && !airspace.getOperator().isEmpty()) {
+
+            node.getTags().put("operator", airspace.getOperator());
+        }
+
+        if (airspace.getActiveTime() != null
+         && !airspace.getActiveTime().isEmpty()) {
+
+            node.getTags().put("activetime", airspace.getActiveTime());
+        }
+
+        if (airspace.getType() != null) {
+
+            node.getTags().put("airspace:type", airspace.getType());
+        }
+
+        if (airspace.getAirspaceClass() != null) {
+
+            node.getTags().put("airspace:class",
+                              airspace.getAirspaceClass());
+        }
+
+        if (airspace.getCommFrequency() != null) {
+
+            node.getTags().put("comm:ctrl",
+                              airspace.getCommFrequency());
+        }
+
+        addElevationLimits(airspace, node);
     }
 
     /**

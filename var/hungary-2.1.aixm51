@@ -7,14 +7,14 @@
                           xmlns:gts="http://www.isotc211.org/2005/gts"
                           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                           xmlns:aixm="http://www.aixm.aero/schema/5.1"
-                          gml:id="uuid.8faf40e8-bf87-4168-adf4-77530b1ff2e3">
+                          gml:id="uuid.276bd246-3b9c-4a13-a0c0-931898093141">
    <gml:boundedBy xsi:nil="true"/>
    <message:hasMember xlink:type="simple">
-      <aixm:Airspace gml:id="uuid.4b1a4a85-7c25-4db1-bbc5-3b0742704722">
-         <gml:identifier codeSpace="urn:uuid:">4b1a4a85-7c25-4db1-bbc5-3b0742704722</gml:identifier>
+      <aixm:Airspace gml:id="uuid.ed467a3f-54e5-4cd8-81b3-4a7f168c1c05">
+         <gml:identifier codeSpace="urn:uuid:">ed467a3f-54e5-4cd8-81b3-4a7f168c1c05</gml:identifier>
          <gml:boundedBy xsi:nil="true"/>
          <aixm:timeSlice>
-            <aixm:AirspaceTimeSlice gml:id="uuid.36b52ec7-82be-40c7-a230-2147b75ee41c">
+            <aixm:AirspaceTimeSlice gml:id="uuid.2735d551-42e9-4206-a51f-9446a3cb25b3">
                <gml:validTime xlink:type="simple">
                   <gml:TimePeriod>
                      <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
@@ -116,11 +116,11 @@
       </aixm:Airspace>
    </message:hasMember>
    <message:hasMember xlink:type="simple">
-      <aixm:Airspace gml:id="uuid.83a46248-7bb2-46a0-a09e-f039be05d362">
-         <gml:identifier codeSpace="urn:uuid:">83a46248-7bb2-46a0-a09e-f039be05d362</gml:identifier>
+      <aixm:Airspace gml:id="uuid.8abc073d-2f85-4d18-a419-470a0279fad9">
+         <gml:identifier codeSpace="urn:uuid:">8abc073d-2f85-4d18-a419-470a0279fad9</gml:identifier>
          <gml:boundedBy xsi:nil="true"/>
          <aixm:timeSlice>
-            <aixm:AirspaceTimeSlice gml:id="uuid.4ede08f3-033d-497c-a9a5-49129a4692d4">
+            <aixm:AirspaceTimeSlice gml:id="uuid.f5e8e9f1-bd92-45e4-97e4-fa166cf30f62">
                <gml:validTime xlink:type="simple">
                   <gml:TimePeriod>
                      <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
@@ -222,11 +222,11 @@
       </aixm:Airspace>
    </message:hasMember>
    <message:hasMember xlink:type="simple">
-      <aixm:Airspace gml:id="uuid.eb036313-352c-4b38-ae82-ca0ef41b1d9c">
-         <gml:identifier codeSpace="urn:uuid:">eb036313-352c-4b38-ae82-ca0ef41b1d9c</gml:identifier>
+      <aixm:Airspace gml:id="uuid.efef9289-26c7-46f8-b153-a492f267d232">
+         <gml:identifier codeSpace="urn:uuid:">efef9289-26c7-46f8-b153-a492f267d232</gml:identifier>
          <gml:boundedBy xsi:nil="true"/>
          <aixm:timeSlice>
-            <aixm:AirspaceTimeSlice gml:id="uuid.cd0f3bf7-6fb3-4d8e-8b27-8a36f994eec3">
+            <aixm:AirspaceTimeSlice gml:id="uuid.9b30063d-6368-43e2-afcf-699c04351db7">
                <gml:validTime xlink:type="simple">
                   <gml:TimePeriod>
                      <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
@@ -303,11 +303,11 @@
       </aixm:Airspace>
    </message:hasMember>
    <message:hasMember xlink:type="simple">
-      <aixm:Airspace gml:id="uuid.ae9b6fcc-f136-4659-92d2-4e9c0954fca5">
-         <gml:identifier codeSpace="urn:uuid:">ae9b6fcc-f136-4659-92d2-4e9c0954fca5</gml:identifier>
+      <aixm:Airspace gml:id="uuid.4747aaba-3fd3-4e4e-bf3a-91fb044ddc75">
+         <gml:identifier codeSpace="urn:uuid:">4747aaba-3fd3-4e4e-bf3a-91fb044ddc75</gml:identifier>
          <gml:boundedBy xsi:nil="true"/>
          <aixm:timeSlice>
-            <aixm:AirspaceTimeSlice gml:id="uuid.6ecc93db-6398-43f5-bb0f-539a815c0b67">
+            <aixm:AirspaceTimeSlice gml:id="uuid.0bb49838-8e01-4392-a66b-2321fcd7fa02">
                <gml:validTime xlink:type="simple">
                   <gml:TimePeriod>
                      <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
@@ -384,11 +384,11 @@
       </aixm:Airspace>
    </message:hasMember>
    <message:hasMember xlink:type="simple">
-      <aixm:Airspace gml:id="uuid.905c58fa-37b4-4e59-a8ea-c04c4e7bf503">
-         <gml:identifier codeSpace="urn:uuid:">905c58fa-37b4-4e59-a8ea-c04c4e7bf503</gml:identifier>
+      <aixm:Airspace gml:id="uuid.932cac1d-5f6b-409b-a0e0-ca2cbcf44a7e">
+         <gml:identifier codeSpace="urn:uuid:">932cac1d-5f6b-409b-a0e0-ca2cbcf44a7e</gml:identifier>
          <gml:boundedBy xsi:nil="true"/>
          <aixm:timeSlice>
-            <aixm:AirspaceTimeSlice gml:id="uuid.810cebd5-0ef8-4bda-8610-9698f37a317a">
+            <aixm:AirspaceTimeSlice gml:id="uuid.3f7c5785-61d0-48c1-ac24-88177e141727">
                <gml:validTime xlink:type="simple">
                   <gml:TimePeriod>
                      <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
@@ -465,11 +465,11 @@
       </aixm:Airspace>
    </message:hasMember>
    <message:hasMember xlink:type="simple">
-      <aixm:Airspace gml:id="uuid.c3ffd1a8-e7f5-40df-ac55-750691e88031">
-         <gml:identifier codeSpace="urn:uuid:">c3ffd1a8-e7f5-40df-ac55-750691e88031</gml:identifier>
+      <aixm:Airspace gml:id="uuid.11407943-d989-4582-9efb-52c550287531">
+         <gml:identifier codeSpace="urn:uuid:">11407943-d989-4582-9efb-52c550287531</gml:identifier>
          <gml:boundedBy xsi:nil="true"/>
          <aixm:timeSlice>
-            <aixm:AirspaceTimeSlice gml:id="uuid.1db3bbc8-ded7-4537-9332-d5944db007f9">
+            <aixm:AirspaceTimeSlice gml:id="uuid.502d65f1-264d-4ee4-96fa-73cec434d968">
                <gml:validTime xlink:type="simple">
                   <gml:TimePeriod>
                      <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
@@ -546,11 +546,11 @@
       </aixm:Airspace>
    </message:hasMember>
    <message:hasMember xlink:type="simple">
-      <aixm:Airspace gml:id="uuid.184ee62b-9e40-4a48-9bb3-c827af43aaad">
-         <gml:identifier codeSpace="urn:uuid:">184ee62b-9e40-4a48-9bb3-c827af43aaad</gml:identifier>
+      <aixm:Airspace gml:id="uuid.df1edfdc-0577-4eb5-ad4f-50611209084e">
+         <gml:identifier codeSpace="urn:uuid:">df1edfdc-0577-4eb5-ad4f-50611209084e</gml:identifier>
          <gml:boundedBy xsi:nil="true"/>
          <aixm:timeSlice>
-            <aixm:AirspaceTimeSlice gml:id="uuid.356d687d-dcdf-412a-8c54-e71dab6687d6">
+            <aixm:AirspaceTimeSlice gml:id="uuid.56fa387e-008c-4a03-a1cd-2f65c3c734a5">
                <gml:validTime xlink:type="simple">
                   <gml:TimePeriod>
                      <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
@@ -627,11 +627,11 @@
       </aixm:Airspace>
    </message:hasMember>
    <message:hasMember xlink:type="simple">
-      <aixm:Airspace gml:id="uuid.1108987d-8359-45fa-a905-3eecec6cfde4">
-         <gml:identifier codeSpace="urn:uuid:">1108987d-8359-45fa-a905-3eecec6cfde4</gml:identifier>
+      <aixm:Airspace gml:id="uuid.1ce0694c-0c4e-4c29-af42-0c2c2d759844">
+         <gml:identifier codeSpace="urn:uuid:">1ce0694c-0c4e-4c29-af42-0c2c2d759844</gml:identifier>
          <gml:boundedBy xsi:nil="true"/>
          <aixm:timeSlice>
-            <aixm:AirspaceTimeSlice gml:id="uuid.08168496-2f40-4f0a-85ed-a68a419eb992">
+            <aixm:AirspaceTimeSlice gml:id="uuid.298cc537-cc4f-4a41-80e3-fc93e9a659eb">
                <gml:validTime xlink:type="simple">
                   <gml:TimePeriod>
                      <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
@@ -708,11 +708,11 @@
       </aixm:Airspace>
    </message:hasMember>
    <message:hasMember xlink:type="simple">
-      <aixm:Airspace gml:id="uuid.d566cdd3-e022-4b5c-8711-e3bdd77bca39">
-         <gml:identifier codeSpace="urn:uuid:">d566cdd3-e022-4b5c-8711-e3bdd77bca39</gml:identifier>
+      <aixm:Airspace gml:id="uuid.9fbf356f-cfa7-48ac-b55a-2e9166a03c02">
+         <gml:identifier codeSpace="urn:uuid:">9fbf356f-cfa7-48ac-b55a-2e9166a03c02</gml:identifier>
          <gml:boundedBy xsi:nil="true"/>
          <aixm:timeSlice>
-            <aixm:AirspaceTimeSlice gml:id="uuid.705c4129-a0b0-4379-ad31-0edcd817ec7d">
+            <aixm:AirspaceTimeSlice gml:id="uuid.d7e5c04f-cf58-443b-91a7-20747768051c">
                <gml:validTime xlink:type="simple">
                   <gml:TimePeriod>
                      <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
@@ -789,11 +789,11 @@
       </aixm:Airspace>
    </message:hasMember>
    <message:hasMember xlink:type="simple">
-      <aixm:Airspace gml:id="uuid.0db283f0-e4dc-4341-b65a-0f240417b3d0">
-         <gml:identifier codeSpace="urn:uuid:">0db283f0-e4dc-4341-b65a-0f240417b3d0</gml:identifier>
+      <aixm:Airspace gml:id="uuid.6ec01cd8-57c7-4232-b3a5-c81ea9152e7f">
+         <gml:identifier codeSpace="urn:uuid:">6ec01cd8-57c7-4232-b3a5-c81ea9152e7f</gml:identifier>
          <gml:boundedBy xsi:nil="true"/>
          <aixm:timeSlice>
-            <aixm:AirspaceTimeSlice gml:id="uuid.8c98f272-3ad5-4539-8bfb-a827ca6198f8">
+            <aixm:AirspaceTimeSlice gml:id="uuid.441d146e-c29b-4964-ba16-97b9b9a8c9e8">
                <gml:validTime xlink:type="simple">
                   <gml:TimePeriod>
                      <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
@@ -870,11 +870,11 @@
       </aixm:Airspace>
    </message:hasMember>
    <message:hasMember xlink:type="simple">
-      <aixm:Airspace gml:id="uuid.979dae09-7900-41d7-a179-eca5e4f1570e">
-         <gml:identifier codeSpace="urn:uuid:">979dae09-7900-41d7-a179-eca5e4f1570e</gml:identifier>
+      <aixm:Airspace gml:id="uuid.f6048787-f811-4741-becb-443d58ab8361">
+         <gml:identifier codeSpace="urn:uuid:">f6048787-f811-4741-becb-443d58ab8361</gml:identifier>
          <gml:boundedBy xsi:nil="true"/>
          <aixm:timeSlice>
-            <aixm:AirspaceTimeSlice gml:id="uuid.101aecdf-9000-4c60-b667-1758ab7b80a8">
+            <aixm:AirspaceTimeSlice gml:id="uuid.944027cc-8e01-42ea-ba10-381cf9afbd92">
                <gml:validTime xlink:type="simple">
                   <gml:TimePeriod>
                      <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
@@ -951,11 +951,11 @@
       </aixm:Airspace>
    </message:hasMember>
    <message:hasMember xlink:type="simple">
-      <aixm:Airspace gml:id="uuid.e84e5b82-9682-453f-b1f7-13cbc29eba94">
-         <gml:identifier codeSpace="urn:uuid:">e84e5b82-9682-453f-b1f7-13cbc29eba94</gml:identifier>
+      <aixm:Airspace gml:id="uuid.d28b8306-9b2b-4a78-a83e-a27fede26171">
+         <gml:identifier codeSpace="urn:uuid:">d28b8306-9b2b-4a78-a83e-a27fede26171</gml:identifier>
          <gml:boundedBy xsi:nil="true"/>
          <aixm:timeSlice>
-            <aixm:AirspaceTimeSlice gml:id="uuid.5e532c33-e260-4355-8eec-3789fb7927c8">
+            <aixm:AirspaceTimeSlice gml:id="uuid.f1441d6a-e09a-4e41-a55d-0dfcaffd6afd">
                <gml:validTime xlink:type="simple">
                   <gml:TimePeriod>
                      <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
@@ -1032,11 +1032,11 @@
       </aixm:Airspace>
    </message:hasMember>
    <message:hasMember xlink:type="simple">
-      <aixm:Airspace gml:id="uuid.00fd6274-fdfa-4022-94e3-bfdbf70954f3">
-         <gml:identifier codeSpace="urn:uuid:">00fd6274-fdfa-4022-94e3-bfdbf70954f3</gml:identifier>
+      <aixm:Airspace gml:id="uuid.3b1d2b6d-6fb5-44b3-8dda-2fe1392345d5">
+         <gml:identifier codeSpace="urn:uuid:">3b1d2b6d-6fb5-44b3-8dda-2fe1392345d5</gml:identifier>
          <gml:boundedBy xsi:nil="true"/>
          <aixm:timeSlice>
-            <aixm:AirspaceTimeSlice gml:id="uuid.cd704527-8943-4d63-9acc-080e42fba727">
+            <aixm:AirspaceTimeSlice gml:id="uuid.31157fe2-dbd1-4ea8-b4ac-acef42b04c56">
                <gml:validTime xlink:type="simple">
                   <gml:TimePeriod>
                      <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
@@ -1113,11 +1113,11 @@
       </aixm:Airspace>
    </message:hasMember>
    <message:hasMember xlink:type="simple">
-      <aixm:Airspace gml:id="uuid.577ff8ec-8100-4353-a701-032865e21011">
-         <gml:identifier codeSpace="urn:uuid:">577ff8ec-8100-4353-a701-032865e21011</gml:identifier>
+      <aixm:Airspace gml:id="uuid.d574af67-7da4-4f50-a3f9-044c2f129c22">
+         <gml:identifier codeSpace="urn:uuid:">d574af67-7da4-4f50-a3f9-044c2f129c22</gml:identifier>
          <gml:boundedBy xsi:nil="true"/>
          <aixm:timeSlice>
-            <aixm:AirspaceTimeSlice gml:id="uuid.4e7106bb-88c7-4abd-9540-65709a5b292c">
+            <aixm:AirspaceTimeSlice gml:id="uuid.3a69851a-80fa-458e-9843-afa8f76b850f">
                <gml:validTime xlink:type="simple">
                   <gml:TimePeriod>
                      <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
@@ -1194,11 +1194,11 @@
       </aixm:Airspace>
    </message:hasMember>
    <message:hasMember xlink:type="simple">
-      <aixm:Airspace gml:id="uuid.4ecc4f4f-735c-4804-8767-6ad4579418fa">
-         <gml:identifier codeSpace="urn:uuid:">4ecc4f4f-735c-4804-8767-6ad4579418fa</gml:identifier>
+      <aixm:Airspace gml:id="uuid.1ea619b9-f1fe-420e-bacd-53359921d655">
+         <gml:identifier codeSpace="urn:uuid:">1ea619b9-f1fe-420e-bacd-53359921d655</gml:identifier>
          <gml:boundedBy xsi:nil="true"/>
          <aixm:timeSlice>
-            <aixm:AirspaceTimeSlice gml:id="uuid.840a369a-3200-4876-8add-311794807858">
+            <aixm:AirspaceTimeSlice gml:id="uuid.ef731cde-ed16-4522-aac4-31cce4cc27d5">
                <gml:validTime xlink:type="simple">
                   <gml:TimePeriod>
                      <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
@@ -1275,11 +1275,11 @@
       </aixm:Airspace>
    </message:hasMember>
    <message:hasMember xlink:type="simple">
-      <aixm:Airspace gml:id="uuid.fa5a9f39-d414-4e57-a23c-8161a9287883">
-         <gml:identifier codeSpace="urn:uuid:">fa5a9f39-d414-4e57-a23c-8161a9287883</gml:identifier>
+      <aixm:Airspace gml:id="uuid.1a3c74da-36c7-4157-829f-79281b580bab">
+         <gml:identifier codeSpace="urn:uuid:">1a3c74da-36c7-4157-829f-79281b580bab</gml:identifier>
          <gml:boundedBy xsi:nil="true"/>
          <aixm:timeSlice>
-            <aixm:AirspaceTimeSlice gml:id="uuid.26f63b2f-560e-442b-bcd9-10856430b60f">
+            <aixm:AirspaceTimeSlice gml:id="uuid.bfaa2df1-a99f-4171-8bb8-a9c3fc79fe44">
                <gml:validTime xlink:type="simple">
                   <gml:TimePeriod>
                      <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
@@ -1324,84 +1324,6 @@
                                                       <gml:GeodesicString interpolation="geodesic">
                                                          <gml:posList>47.06166666666666 19.498333333333335 47.051111111111105 19.86888888888889 46.933055555555555 20.12472222222222 46.75805555555556 19.981666666666666 46.89138888888889 19.616388888888892 46.89138888888889 19.498333333333335 47.06166666666666 19.498333333333335</gml:posList>
                                                       </gml:GeodesicString>
-                                                   </gml:segments>
-                                                </gml:Curve>
-                                             </gml:curveMember>
-                                          </gml:Ring>
-                                       </gml:exterior>
-                                    </gml:PolygonPatch>
-                                 </gml:patches>
-                                 <aixm:horizontalAccuracy xsi:nil="true"/>
-                              </aixm:Surface>
-                           </aixm:horizontalProjection>
-                           <aixm:centreline xsi:nil="true"/>
-                           <aixm:contributorAirspace xsi:nil="true"/>
-                        </aixm:AirspaceVolume>
-                     </aixm:theAirspaceVolume>
-                  </aixm:AirspaceGeometryComponent>
-               </aixm:geometryComponent>
-               <aixm:annotation>
-                  <aixm:Note>
-                     <aixm:propertyName xsi:nil="true"/>
-                     <aixm:purpose>REMARK</aixm:purpose>
-                     <aixm:translatedNote>
-                        <aixm:LinguisticNote>
-                           <aixm:note lang="eng"/>
-                        </aixm:LinguisticNote>
-                     </aixm:translatedNote>
-                  </aixm:Note>
-               </aixm:annotation>
-            </aixm:AirspaceTimeSlice>
-         </aixm:timeSlice>
-      </aixm:Airspace>
-   </message:hasMember>
-   <message:hasMember xlink:type="simple">
-      <aixm:Airspace gml:id="uuid.65822b0b-106f-4c25-8ccc-098844ce1849">
-         <gml:identifier codeSpace="urn:uuid:">65822b0b-106f-4c25-8ccc-098844ce1849</gml:identifier>
-         <gml:boundedBy xsi:nil="true"/>
-         <aixm:timeSlice>
-            <aixm:AirspaceTimeSlice gml:id="uuid.7e9b80c7-7419-4522-8313-db4353358dfb">
-               <gml:validTime xlink:type="simple">
-                  <gml:TimePeriod>
-                     <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
-                     <gml:endPosition indeterminatePosition="unknown"/>
-                  </gml:TimePeriod>
-               </gml:validTime>
-               <aixm:interpretation>BASELINE</aixm:interpretation>
-               <aixm:sequenceNumber>1</aixm:sequenceNumber>
-               <aixm:correctionNumber>0</aixm:correctionNumber>
-               <aixm:type>MCTR</aixm:type>
-               <aixm:designator/>
-               <aixm:localType xsi:nil="true"/>
-               <aixm:name>KECSKEMET MCTR</aixm:name>
-               <aixm:designatorICAO>yes</aixm:designatorICAO>
-               <aixm:controlType>MIL</aixm:controlType>
-               <aixm:upperLowerSeparation xsi:nil="true"/>
-               <aixm:protectedRoute xsi:nil="true"/>
-               <aixm:geometryComponent>
-                  <aixm:AirspaceGeometryComponent>
-                     <aixm:operation xsi:nil="true"/>
-                     <aixm:operationSequence xsi:nil="true"/>
-                     <aixm:theAirspaceVolume>
-                        <aixm:AirspaceVolume>
-                           <aixm:upperLimit uom="FT">4000.0</aixm:upperLimit>
-                           <aixm:upperLimitReference>MSL</aixm:upperLimitReference>
-                           <aixm:maximumLimit xsi:nil="true"/>
-                           <aixm:maximumLimitReference xsi:nil="true"/>
-                           <aixm:lowerLimit uom="FT">0.0</aixm:lowerLimit>
-                           <aixm:lowerLimitReference>SFC</aixm:lowerLimitReference>
-                           <aixm:minimumLimit xsi:nil="true"/>
-                           <aixm:minimumLimitReference xsi:nil="true"/>
-                           <aixm:width xsi:nil="true"/>
-                           <aixm:horizontalProjection>
-                              <aixm:Surface srsName="urn:ogc:def:crs:EPSG:4326">
-                                 <gml:patches>
-                                    <gml:PolygonPatch interpolation="planar">
-                                       <gml:exterior>
-                                          <gml:Ring>
-                                             <gml:curveMember xlink:type="simple">
-                                                <gml:Curve>
-                                                   <gml:segments>
                                                       <gml:CircleByCenterPoint interpolation="circularArcCenterPointWithRadius" numArc="1">
                                                          <gml:pos>46.91777777777777 19.750833333333333</gml:pos>
                                                          <gml:radius uom="M">10000.0</gml:radius>
@@ -1438,11 +1360,11 @@
       </aixm:Airspace>
    </message:hasMember>
    <message:hasMember xlink:type="simple">
-      <aixm:Airspace gml:id="uuid.78900c5f-c98e-4cc7-bdd6-8ea39a3c37dc">
-         <gml:identifier codeSpace="urn:uuid:">78900c5f-c98e-4cc7-bdd6-8ea39a3c37dc</gml:identifier>
+      <aixm:Airspace gml:id="uuid.6cc881eb-1b1e-4631-9a4b-aa8ef70662e0">
+         <gml:identifier codeSpace="urn:uuid:">6cc881eb-1b1e-4631-9a4b-aa8ef70662e0</gml:identifier>
          <gml:boundedBy xsi:nil="true"/>
          <aixm:timeSlice>
-            <aixm:AirspaceTimeSlice gml:id="uuid.27554fe3-5127-4887-8864-364d374035cb">
+            <aixm:AirspaceTimeSlice gml:id="uuid.50c216aa-9b76-48be-80f7-fc26303ce3ea">
                <gml:validTime xlink:type="simple">
                   <gml:TimePeriod>
                      <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
@@ -1487,84 +1409,6 @@
                                                       <gml:GeodesicString interpolation="geodesic">
                                                          <gml:posList>47.594166666666666 17.481666666666666 47.17472222222222 17.715 47.12722222222222 17.523333333333333 47.54972222222222 17.298333333333336 47.594166666666666 17.481666666666666</gml:posList>
                                                       </gml:GeodesicString>
-                                                   </gml:segments>
-                                                </gml:Curve>
-                                             </gml:curveMember>
-                                          </gml:Ring>
-                                       </gml:exterior>
-                                    </gml:PolygonPatch>
-                                 </gml:patches>
-                                 <aixm:horizontalAccuracy xsi:nil="true"/>
-                              </aixm:Surface>
-                           </aixm:horizontalProjection>
-                           <aixm:centreline xsi:nil="true"/>
-                           <aixm:contributorAirspace xsi:nil="true"/>
-                        </aixm:AirspaceVolume>
-                     </aixm:theAirspaceVolume>
-                  </aixm:AirspaceGeometryComponent>
-               </aixm:geometryComponent>
-               <aixm:annotation>
-                  <aixm:Note>
-                     <aixm:propertyName xsi:nil="true"/>
-                     <aixm:purpose>REMARK</aixm:purpose>
-                     <aixm:translatedNote>
-                        <aixm:LinguisticNote>
-                           <aixm:note lang="eng"/>
-                        </aixm:LinguisticNote>
-                     </aixm:translatedNote>
-                  </aixm:Note>
-               </aixm:annotation>
-            </aixm:AirspaceTimeSlice>
-         </aixm:timeSlice>
-      </aixm:Airspace>
-   </message:hasMember>
-   <message:hasMember xlink:type="simple">
-      <aixm:Airspace gml:id="uuid.f9823c83-bad2-41e4-85ba-6d50cf89c5d2">
-         <gml:identifier codeSpace="urn:uuid:">f9823c83-bad2-41e4-85ba-6d50cf89c5d2</gml:identifier>
-         <gml:boundedBy xsi:nil="true"/>
-         <aixm:timeSlice>
-            <aixm:AirspaceTimeSlice gml:id="uuid.4e086908-222c-43d8-a8b1-744401b10143">
-               <gml:validTime xlink:type="simple">
-                  <gml:TimePeriod>
-                     <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>
-                     <gml:endPosition indeterminatePosition="unknown"/>
-                  </gml:TimePeriod>
-               </gml:validTime>
-               <aixm:interpretation>BASELINE</aixm:interpretation>
-               <aixm:sequenceNumber>1</aixm:sequenceNumber>
-               <aixm:correctionNumber>0</aixm:correctionNumber>
-               <aixm:type>MCTR</aixm:type>
-               <aixm:designator/>
-               <aixm:localType xsi:nil="true"/>
-               <aixm:name>PAPA MCTR</aixm:name>
-               <aixm:designatorICAO>yes</aixm:designatorICAO>
-               <aixm:controlType>MIL</aixm:controlType>
-               <aixm:upperLowerSeparation xsi:nil="true"/>
-               <aixm:protectedRoute xsi:nil="true"/>
-               <aixm:geometryComponent>
-                  <aixm:AirspaceGeometryComponent>
-                     <aixm:operation xsi:nil="true"/>
-                     <aixm:operationSequence xsi:nil="true"/>
-                     <aixm:theAirspaceVolume>
-                        <aixm:AirspaceVolume>
-                           <aixm:upperLimit uom="FT">4000.0</aixm:upperLimit>
-                           <aixm:upperLimitReference>MSL</aixm:upperLimitReference>
-                           <aixm:maximumLimit xsi:nil="true"/>
-                           <aixm:maximumLimitReference xsi:nil="true"/>
-                           <aixm:lowerLimit uom="FT">0.0</aixm:lowerLimit>
-                           <aixm:lowerLimitReference>SFC</aixm:lowerLimitReference>
-                           <aixm:minimumLimit xsi:nil="true"/>
-                           <aixm:minimumLimitReference xsi:nil="true"/>
-                           <aixm:width xsi:nil="true"/>
-                           <aixm:horizontalProjection>
-                              <aixm:Surface srsName="urn:ogc:def:crs:EPSG:4326">
-                                 <gml:patches>
-                                    <gml:PolygonPatch interpolation="planar">
-                                       <gml:exterior>
-                                          <gml:Ring>
-                                             <gml:curveMember xlink:type="simple">
-                                                <gml:Curve>
-                                                   <gml:segments>
                                                       <gml:CircleByCenterPoint interpolation="circularArcCenterPointWithRadius" numArc="1">
                                                          <gml:pos>47.36388888888889 17.500555555555554</gml:pos>
                                                          <gml:radius uom="M">10000.0</gml:radius>
@@ -1601,11 +1445,11 @@
       </aixm:Airspace>
    </message:hasMember>
    <message:hasMember xlink:type="simple">
-      <aixm:Airspace gml:id="uuid.16fa295c-b369-4ede-afa9-7177f64cf195">
-         <gml:identifier codeSpace="urn:uuid:">16fa295c-b369-4ede-afa9-7177f64cf195</gml:identifier>
+      <aixm:Airspace gml:id="uuid.a195314e-5330-46bd-a354-271301605020">
+         <gml:identifier codeSpace="urn:uuid:">a195314e-5330-46bd-a354-271301605020</gml:identifier>
          <gml:boundedBy xsi:nil="true"/>
          <aixm:timeSlice>
-            <aixm:AirspaceTimeSlice gml:id="uuid.c14aa29c-db5b-44f8-b451-4f4588136599">
+            <aixm:AirspaceTimeSlice gml:id="uuid.869ce0d9-b5bb-47c9-8732-6b4b984ad69c">
                <gml:validTime xlink:type="simple">
                   <gml:TimePeriod>
                      <gml:beginPosition>2012-04-08T00:00:00Z</gml:beginPosition>

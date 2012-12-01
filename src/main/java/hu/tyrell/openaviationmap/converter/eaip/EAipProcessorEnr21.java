@@ -21,11 +21,13 @@ import hu.tyrell.openaviationmap.converter.ParseException;
 import hu.tyrell.openaviationmap.model.Aerodrome;
 import hu.tyrell.openaviationmap.model.Airspace;
 import hu.tyrell.openaviationmap.model.Boundary;
+import hu.tyrell.openaviationmap.model.CompoundBoundary;
 import hu.tyrell.openaviationmap.model.Elevation;
 import hu.tyrell.openaviationmap.model.Navaid;
 import hu.tyrell.openaviationmap.model.Point;
 import hu.tyrell.openaviationmap.model.Ring;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
@@ -140,8 +142,6 @@ public class EAipProcessorEnr21 extends EAipProcessor {
                 boundary = processPointList(name, str, borderPoints);
             }
 
-            airspace.setBoundary(boundary);
-
             // get the vertical limits
             xpath.reset();
             str = xpath.evaluate("td[1]/text()[2]", airspaceNode);
@@ -163,21 +163,21 @@ public class EAipProcessorEnr21 extends EAipProcessor {
             // get the airspace type
             airspace.setType("MCTR");
 
-            airspaces.add(airspace);
-
             // let's see if there is a second airspace being defined here
             xpath.reset();
             str = xpath.evaluate("td[1]/text()[4]", airspaceNode);
             if (!"and".equals(str)) {
+                airspace.setBoundary(boundary);
+                airspaces.add(airspace);
+
                 return;
             }
 
-            airspace = new Airspace();
+            // otherwise, construct a compound boundary, and read the other
+            // airspace boundary as well
 
-            airspace.setName(name);
-            if (operator != null && !operator.isEmpty()) {
-                airspace.setOperator(operator.trim());
-            }
+            ArrayList<Boundary> boundaryList = new ArrayList<Boundary>();
+            boundaryList.add(boundary);
 
             // get the boundary
             boundary = null;
@@ -204,6 +204,11 @@ public class EAipProcessorEnr21 extends EAipProcessor {
 
             // get the airspace type
             airspace.setType("MCTR");
+
+            boundaryList.add(boundary);
+            CompoundBoundary cBoundary = new CompoundBoundary();
+            cBoundary.setBoundaryList(boundaryList);
+            airspace.setBoundary(cBoundary);
 
             airspaces.add(airspace);
 

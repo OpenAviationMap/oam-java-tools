@@ -161,7 +161,8 @@ public final class Converter {
         longopts[10] = new LongOpt("version", LongOpt.REQUIRED_ARGUMENT,
                 null, 'v');
 
-        Getopt g = new Getopt("Converter", args, "hi:f:o:F:cb:a:v:", longopts);
+        Getopt g = new Getopt("Converter", args, "hi:f:o:F:cb:a:s:e:v:",
+                              longopts);
 
         int c;
 
