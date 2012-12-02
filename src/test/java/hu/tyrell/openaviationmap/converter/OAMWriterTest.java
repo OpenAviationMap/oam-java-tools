@@ -182,7 +182,7 @@ public class OAMWriterTest {
         NodeList nodes = (NodeList) xpath.evaluate("//node",
                                                    root,
                                                    XPathConstants.NODESET);
-        assertEquals(nodes.getLength(), 929);
+        assertEquals(nodes.getLength(), 1033);
 
         nodes = (NodeList) xpath.evaluate("//node[@id='69']",
                                           root,
@@ -193,24 +193,24 @@ public class OAMWriterTest {
         attr = nodes.item(0).getAttributes().getNamedItem("version");
         assertEquals("1", attr.getNodeValue());
         attr = nodes.item(0).getAttributes().getNamedItem("lat");
-        assertEquals("47.514722222222225", attr.getNodeValue());
+        assertEquals("47.48682990936366", attr.getNodeValue());
         attr = nodes.item(0).getAttributes().getNamedItem("lon");
-        assertEquals("19.04361111111111", attr.getNodeValue());
+        assertEquals("18.957323316966633", attr.getNodeValue());
 
         xpath.reset();
         nodes = (NodeList) xpath.evaluate("//way", root,
                                           XPathConstants.NODESET);
         assertEquals(nodes.getLength(), 47);
         attr = nodes.item(0).getAttributes().getNamedItem("id");
-        assertEquals("32", attr.getNodeValue());
+        assertEquals("36", attr.getNodeValue());
 
         xpath.reset();
-        nodes = (NodeList) xpath.evaluate("//way[@id='77']/nd", root,
+        nodes = (NodeList) xpath.evaluate("//way[@id='85']/nd", root,
                                           XPathConstants.NODESET);
         assertEquals(nodes.getLength(), 12);
 
         xpath.reset();
-        nodes = (NodeList) xpath.evaluate("//way[@id='77']/tag[@k='icao']",
+        nodes = (NodeList) xpath.evaluate("//way[@id='85']/tag[@k='icao']",
                                           root,
                                           XPathConstants.NODESET);
         assertEquals(nodes.getLength(), 1);

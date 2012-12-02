@@ -1,272 +1,272 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <osm version="0.6">
-<node action="create" id="-48" lat="47.48888888888889" lon="21.61527777777778" version="1">
-<tag k="height:unit" v="m"/>
-<tag k="height" v="110.0"/>
-<tag k="height:class" v="amsl"/>
-<tag k="name" v="DEBRECEN ARP"/>
-</node>
-<node action="create" id="-13" lat="47.47530555555556" lon="21.59311111111111" version="1">
-<tag k="navaid:type" v="MARKER"/>
-<tag k="navaid:activetime" v="H24"/>
-<tag k="name" v="ILS 05R (CAT I) MM"/>
-<tag k="navaid:marker" v="75MHz"/>
-<tag k="navaid:ident" v="Dashes"/>
-<tag k="navaid" v="yes"/>
-</node>
-<node action="create" id="-12" lat="47.48405555555556" lon="21.605194444444447" version="1">
-<tag k="height:unit" v="m"/>
-<tag k="navaid:type" v="DME"/>
-<tag k="height" v="118.1"/>
-<tag k="height:class" v="amsl"/>
-<tag k="navaid:activetime" v="H24"/>
-<tag k="name" v="ILS 05R (CAT I) PDME"/>
-<tag k="navaid:ident" v="DCN"/>
-<tag k="remarks" v="DME shifted to THR 05R&#10;DME shift=320m (0.17NM)"/>
-<tag k="navaid:dme" v="38X"/>
-<tag k="navaid" v="yes"/>
-</node>
-<node action="create" id="-11" lat="47.48405555555556" lon="21.605194444444447" version="1">
-<tag k="navaid:type" v="GP"/>
-<tag k="navaid:activetime" v="H24"/>
-<tag k="name" v="ILS 05R (CAT I) GP"/>
-<tag k="remarks" v="GP angle: 3°"/>
-<tag k="navaid:gp" v="334.4MHz"/>
-<tag k="navaid" v="yes"/>
-</node>
-<node action="create" id="-10" lat="47.49816666666667" lon="21.630444444444446" version="1">
-<tag k="navaid:type" v="LOC"/>
-<tag k="navaid:activetime" v="H24"/>
-<tag k="name" v="ILS 05R (CAT I) LLZ"/>
-<tag k="navaid:ident" v="DCN"/>
-<tag k="navaid:loc" v="110.1MHz"/>
-<tag k="navaid" v="yes"/>
-</node>
-<node action="create" id="-9" lat="47.456722222222226" lon="21.56302777777778" version="1">
-<tag k="navaid:type" v="NDB"/>
-<tag k="navaid:activetime" v="H24"/>
-<tag k="name" v="DC"/>
-<tag k="navaid:ndb" v="295kHz"/>
-<tag k="navaid:ident" v="DC"/>
-<tag k="navaid" v="yes"/>
-</node>
-<node action="create" id="-8" lat="47.47530555555556" lon="21.59311111111111" version="1">
-<tag k="navaid:type" v="NDB"/>
-<tag k="navaid:activetime" v="H24"/>
-<tag k="name" v="C"/>
-<tag k="navaid:ndb" v="326kHz"/>
-<tag k="navaid:ident" v="C"/>
-<tag k="navaid" v="yes"/>
-</node>
-<node action="create" id="-7" lat="47.53325" lon="21.688055555555557" version="1">
-<tag k="navaid:type" v="NDB"/>
-<tag k="navaid:activetime" v="H24"/>
-<tag k="name" v="EN"/>
-<tag k="navaid:ndb" v="383kHz"/>
-<tag k="navaid:ident" v="EN"/>
-<tag k="navaid" v="yes"/>
-</node>
-<node action="create" id="-5" lat="47.481388888888894" lon="21.60301666666667" version="1"/>
-<node action="create" id="-4" lat="47.49464444444445" lon="21.62468611111111" version="1"/>
-<node action="create" id="-2" lat="47.49464444444445" lon="21.62468611111111" version="1"/>
-<node action="create" id="-1" lat="47.481388888888894" lon="21.60301666666667" version="1"/>
-<node action="create" id="-14" lat="47.65222222222222" lon="21.795555555555556" version="1"/>
-<node action="create" id="-15" lat="47.56055555555555" lon="21.9175" version="1"/>
-<node action="create" id="-16" lat="47.31194444444444" lon="21.510555555555555" version="1"/>
-<node action="create" id="-17" lat="47.409166666666664" lon="21.38111111111111" version="1"/>
-<node action="create" id="-19" lat="47.65222222222222" lon="21.795555555555556" version="1"/>
-<node action="create" id="-20" lat="47.56055555555555" lon="21.9175" version="1"/>
-<node action="create" id="-21" lat="47.31194444444444" lon="21.510555555555555" version="1"/>
-<node action="create" id="-22" lat="47.409166666666664" lon="21.38111111111111" version="1"/>
-<node action="create" id="-24" lat="47.69083333333333" lon="21.835833333333333" version="1"/>
-<node action="create" id="-25" lat="47.51722222222222" lon="22.01638888888889" version="1"/>
-<node action="create" id="-26" lat="47.17222222222222" lon="21.72472222222222" version="1"/>
-<node action="create" id="-27" lat="47.19833333333333" lon="21.43638888888889" version="1"/>
-<node action="create" id="-28" lat="47.400555555555556" lon="21.29527777777778" version="1"/>
-<node action="create" id="-29" lat="47.54527777777778" lon="21.54527777777778" version="1"/>
-<node action="create" id="-31" lat="47.69083333333333" lon="21.835833333333333" version="1"/>
-<node action="create" id="-32" lat="47.51722222222222" lon="22.01638888888889" version="1"/>
-<node action="create" id="-33" lat="47.17222222222222" lon="21.72472222222222" version="1"/>
-<node action="create" id="-34" lat="47.19833333333333" lon="21.43638888888889" version="1"/>
-<node action="create" id="-35" lat="47.400555555555556" lon="21.29527777777778" version="1"/>
-<node action="create" id="-36" lat="47.54527777777778" lon="21.54527777777778" version="1"/>
-<node action="create" id="-38" lat="47.788333333333334" lon="21.622777777777777" version="1"/>
-<node action="create" id="-39" lat="47.69083333333333" lon="21.835833333333333" version="1"/>
-<node action="create" id="-40" lat="47.54527777777778" lon="21.54527777777778" version="1"/>
-<node action="create" id="-41" lat="47.76638888888889" lon="21.560833333333335" version="1"/>
-<node action="create" id="-43" lat="47.788333333333334" lon="21.622777777777777" version="1"/>
-<node action="create" id="-44" lat="47.69083333333333" lon="21.835833333333333" version="1"/>
-<node action="create" id="-45" lat="47.54527777777778" lon="21.54527777777778" version="1"/>
-<node action="create" id="-46" lat="47.76638888888889" lon="21.560833333333335" version="1"/>
-<way action="create" id="-47" version="1">
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="5000.0"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="name" v="DEBRECEN CTA2"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="CTA"/>
-<tag k="airspace:class" v="D"/>
-<tag k="height:upper:unit" v="ft"/>
-<tag k="height:upper" v="9500.0"/>
-<nd ref="-43"/>
-<nd ref="-44"/>
-<nd ref="-45"/>
-<nd ref="-46"/>
-<nd ref="-43"/>
-</way>
-<way action="create" id="-42" version="1">
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="5000.0"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="name" v="DEBRECEN TIZ3"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TIZ"/>
-<tag k="airspace:class" v="F"/>
-<tag k="height:upper:unit" v="ft"/>
-<tag k="height:upper" v="9500.0"/>
-<nd ref="-38"/>
-<nd ref="-39"/>
-<nd ref="-40"/>
-<nd ref="-41"/>
-<nd ref="-38"/>
-</way>
-<way action="create" id="-37" version="1">
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="2000.0"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="name" v="DEBRECEN CTA1"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="CTA"/>
-<tag k="airspace:class" v="D"/>
-<tag k="height:upper:unit" v="ft"/>
-<tag k="height:upper" v="9500.0"/>
-<nd ref="-31"/>
-<nd ref="-32"/>
-<nd ref="-33"/>
-<nd ref="-34"/>
-<nd ref="-35"/>
-<nd ref="-36"/>
-<nd ref="-31"/>
-</way>
-<way action="create" id="-30" version="1">
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="2000.0"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="name" v="DEBRECEN TIZ2"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TIZ"/>
-<tag k="airspace:class" v="F"/>
-<tag k="height:upper:unit" v="ft"/>
-<tag k="height:upper" v="9500.0"/>
-<nd ref="-24"/>
-<nd ref="-25"/>
-<nd ref="-26"/>
-<nd ref="-27"/>
-<nd ref="-28"/>
-<nd ref="-29"/>
-<nd ref="-24"/>
-</way>
-<way action="create" id="-23" version="1">
-<tag k="height:lower:class" v="agl"/>
-<tag k="height:lower" v="0.0"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="name" v="DEBRECEN CTR"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="CTR"/>
-<tag k="airspace:class" v="D"/>
-<tag k="height:upper:unit" v="ft"/>
-<tag k="height:upper" v="2000.0"/>
-<nd ref="-19"/>
-<nd ref="-20"/>
-<nd ref="-21"/>
-<nd ref="-22"/>
-<nd ref="-19"/>
-</way>
-<way action="create" id="-18" version="1">
-<tag k="height:lower:class" v="agl"/>
-<tag k="height:lower" v="0.0"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="name" v="DEBRECEN TIZ1"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TIZ"/>
-<tag k="airspace:class" v="F"/>
-<tag k="height:upper:unit" v="ft"/>
-<tag k="height:upper" v="2000.0"/>
-<nd ref="-14"/>
-<nd ref="-15"/>
-<nd ref="-16"/>
-<nd ref="-17"/>
-<nd ref="-14"/>
-</way>
-<way action="create" id="-6" version="1">
-<tag k="aeroway" v="runway"/>
-<tag k="surface" v="asphalt"/>
-<tag k="width" v="40.0m"/>
-<tag k="lda" v="2200.0m"/>
-<tag k="height:unit" v="m"/>
-<tag k="tora" v="2500.0m"/>
-<tag k="asda" v="2515.0m"/>
-<tag k="height" v="109.5"/>
-<tag k="height:class" v="amsl"/>
-<tag k="slope" v="-0.0732"/>
-<tag k="name" v="23L"/>
-<tag k="length" v="2500.0m"/>
-<tag k="bearing" v="226.033"/>
-<tag k="toda" v="2500.0m"/>
-<nd ref="-4"/>
-<nd ref="-5"/>
-</way>
-<way action="create" id="-3" version="1">
-<tag k="aeroway" v="runway"/>
-<tag k="surface" v="asphalt"/>
-<tag k="width" v="40.0m"/>
-<tag k="lda" v="2500.0m"/>
-<tag k="height:unit" v="m"/>
-<tag k="tora" v="2500.0m"/>
-<tag k="asda" v="2515.0m"/>
-<tag k="height" v="108.2"/>
-<tag k="height:class" v="amsl"/>
-<tag k="slope" v="0.0732"/>
-<tag k="name" v="05R"/>
-<tag k="length" v="2500.0m"/>
-<tag k="bearing" v="46.033"/>
-<tag k="toda" v="2500.0m"/>
-<nd ref="-1"/>
-<nd ref="-2"/>
-</way>
-<relation action="create" id="-49" version="1">
-<tag k="height:unit" v="m"/>
-<tag k="comm:afis" v="125.9MHz"/>
-<tag k="height" v="110.0"/>
-<tag k="height:class" v="amsl"/>
-<tag k="icao" v="LHDC"/>
-<tag k="name" v="DEBRECEN"/>
-<tag k="aerodrome" v="yes"/>
-<tag k="runway:designator" v="05R, 23L"/>
-<tag k="comm:twr" v="125.9MHz"/>
-<tag k="runway:surface" v="asphalt, asphalt"/>
-<tag k="runway:length" v="2500.0m, 2500.0m"/>
-<member ref="-3" role="runway" type="way"/>
-<member ref="-6" role="runway" type="way"/>
-<member ref="-7" role="navaid" type="node"/>
-<member ref="-8" role="navaid" type="node"/>
-<member ref="-9" role="navaid" type="node"/>
-<member ref="-10" role="navaid" type="node"/>
-<member ref="-11" role="navaid" type="node"/>
-<member ref="-12" role="navaid" type="node"/>
-<member ref="-13" role="navaid" type="node"/>
-<member ref="-18" role="airspace" type="way"/>
-<member ref="-23" role="airspace" type="way"/>
-<member ref="-30" role="airspace" type="way"/>
-<member ref="-37" role="airspace" type="way"/>
-<member ref="-42" role="airspace" type="way"/>
-<member ref="-47" role="airspace" type="way"/>
-<member ref="-48" role="arp" type="node"/>
-</relation>
+   <node id="1" lat="47.481388888888894" lon="21.60301666666667" version="1"/>
+   <node id="2" lat="47.49464444444445" lon="21.62468611111111" version="1"/>
+   <node id="4" lat="47.49464444444445" lon="21.62468611111111" version="1"/>
+   <node id="5" lat="47.481388888888894" lon="21.60301666666667" version="1"/>
+   <node id="7" lat="47.53325" lon="21.688055555555557" version="1">
+      <tag k="navaid:type" v="NDB"/>
+      <tag k="navaid:activetime" v="H24"/>
+      <tag k="name" v="EN"/>
+      <tag k="navaid:ndb" v="383kHz"/>
+      <tag k="navaid:ident" v="EN"/>
+      <tag k="navaid" v="yes"/>
+   </node>
+   <node id="8" lat="47.47530555555556" lon="21.59311111111111" version="1">
+      <tag k="navaid:type" v="NDB"/>
+      <tag k="navaid:activetime" v="H24"/>
+      <tag k="name" v="C"/>
+      <tag k="navaid:ndb" v="326kHz"/>
+      <tag k="navaid:ident" v="C"/>
+      <tag k="navaid" v="yes"/>
+   </node>
+   <node id="9" lat="47.456722222222226" lon="21.56302777777778" version="1">
+      <tag k="navaid:type" v="NDB"/>
+      <tag k="navaid:activetime" v="H24"/>
+      <tag k="name" v="DC"/>
+      <tag k="navaid:ndb" v="295kHz"/>
+      <tag k="navaid:ident" v="DC"/>
+      <tag k="navaid" v="yes"/>
+   </node>
+   <node id="10" lat="47.49816666666667" lon="21.630444444444446" version="1">
+      <tag k="navaid:type" v="LOC"/>
+      <tag k="navaid:activetime" v="H24"/>
+      <tag k="name" v="ILS 05R (CAT I) LLZ"/>
+      <tag k="navaid:ident" v="DCN"/>
+      <tag k="navaid:loc" v="110.1MHz"/>
+      <tag k="navaid" v="yes"/>
+   </node>
+   <node id="11" lat="47.48405555555556" lon="21.605194444444447" version="1">
+      <tag k="navaid:type" v="GP"/>
+      <tag k="navaid:activetime" v="H24"/>
+      <tag k="name" v="ILS 05R (CAT I) GP"/>
+      <tag k="remarks" v="GP angle: 3°"/>
+      <tag k="navaid:gp" v="334.4MHz"/>
+      <tag k="navaid" v="yes"/>
+   </node>
+   <node id="12" lat="47.48405555555556" lon="21.605194444444447" version="1">
+      <tag k="height:unit" v="m"/>
+      <tag k="navaid:type" v="DME"/>
+      <tag k="height" v="118.1"/>
+      <tag k="height:class" v="amsl"/>
+      <tag k="navaid:activetime" v="H24"/>
+      <tag k="name" v="ILS 05R (CAT I) PDME"/>
+      <tag k="navaid:ident" v="DCN"/>
+      <tag k="remarks" v="DME shifted to THR 05R&#xA;DME shift=320m (0.17NM)"/>
+      <tag k="navaid:dme" v="38X"/>
+      <tag k="navaid" v="yes"/>
+   </node>
+   <node id="13" lat="47.47530555555556" lon="21.59311111111111" version="1">
+      <tag k="navaid:type" v="MARKER"/>
+      <tag k="navaid:activetime" v="H24"/>
+      <tag k="name" v="ILS 05R (CAT I) MM"/>
+      <tag k="navaid:marker" v="75MHz"/>
+      <tag k="navaid:ident" v="Dashes"/>
+      <tag k="navaid" v="yes"/>
+   </node>
+   <node id="14" lat="47.65222222222222" lon="21.795555555555556" version="1"/>
+   <node id="15" lat="47.56055555555555" lon="21.9175" version="1"/>
+   <node id="16" lat="47.31194444444444" lon="21.510555555555555" version="1"/>
+   <node id="17" lat="47.409166666666664" lon="21.38111111111111" version="1"/>
+   <node id="19" lat="47.65222222222222" lon="21.795555555555556" version="1"/>
+   <node id="20" lat="47.56055555555555" lon="21.9175" version="1"/>
+   <node id="21" lat="47.31194444444444" lon="21.510555555555555" version="1"/>
+   <node id="22" lat="47.409166666666664" lon="21.38111111111111" version="1"/>
+   <node id="24" lat="47.69083333333333" lon="21.835833333333333" version="1"/>
+   <node id="25" lat="47.51722222222222" lon="22.01638888888889" version="1"/>
+   <node id="26" lat="47.17222222222222" lon="21.72472222222222" version="1"/>
+   <node id="27" lat="47.19833333333333" lon="21.43638888888889" version="1"/>
+   <node id="28" lat="47.400555555555556" lon="21.29527777777778" version="1"/>
+   <node id="29" lat="47.54527777777778" lon="21.54527777777778" version="1"/>
+   <node id="31" lat="47.69083333333333" lon="21.835833333333333" version="1"/>
+   <node id="32" lat="47.51722222222222" lon="22.01638888888889" version="1"/>
+   <node id="33" lat="47.17222222222222" lon="21.72472222222222" version="1"/>
+   <node id="34" lat="47.19833333333333" lon="21.43638888888889" version="1"/>
+   <node id="35" lat="47.400555555555556" lon="21.29527777777778" version="1"/>
+   <node id="36" lat="47.54527777777778" lon="21.54527777777778" version="1"/>
+   <node id="38" lat="47.788333333333334" lon="21.622777777777777" version="1"/>
+   <node id="39" lat="47.69083333333333" lon="21.835833333333333" version="1"/>
+   <node id="40" lat="47.54527777777778" lon="21.54527777777778" version="1"/>
+   <node id="41" lat="47.76638888888889" lon="21.560833333333335" version="1"/>
+   <node id="43" lat="47.788333333333334" lon="21.622777777777777" version="1"/>
+   <node id="44" lat="47.69083333333333" lon="21.835833333333333" version="1"/>
+   <node id="45" lat="47.54527777777778" lon="21.54527777777778" version="1"/>
+   <node id="46" lat="47.76638888888889" lon="21.560833333333335" version="1"/>
+   <node id="48" lat="47.48888888888889" lon="21.61527777777778" version="1">
+      <tag k="height:unit" v="m"/>
+      <tag k="height" v="110.0"/>
+      <tag k="height:class" v="amsl"/>
+      <tag k="name" v="DEBRECEN ARP"/>
+   </node>
+   <way id="3" version="1">
+      <tag k="aeroway" v="runway"/>
+      <tag k="surface" v="asphalt"/>
+      <tag k="width" v="40.0m"/>
+      <tag k="lda" v="2500.0m"/>
+      <tag k="height:unit" v="m"/>
+      <tag k="asda" v="2515.0m"/>
+      <tag k="tora" v="2500.0m"/>
+      <tag k="height" v="108.2"/>
+      <tag k="height:class" v="amsl"/>
+      <tag k="slope" v="0.0732"/>
+      <tag k="name" v="05R"/>
+      <tag k="length" v="2500.0m"/>
+      <tag k="bearing" v="46.033"/>
+      <tag k="toda" v="2500.0m"/>
+      <nd ref="1"/>
+      <nd ref="2"/>
+   </way>
+   <way id="6" version="1">
+      <tag k="aeroway" v="runway"/>
+      <tag k="surface" v="asphalt"/>
+      <tag k="width" v="40.0m"/>
+      <tag k="lda" v="2200.0m"/>
+      <tag k="height:unit" v="m"/>
+      <tag k="asda" v="2515.0m"/>
+      <tag k="tora" v="2500.0m"/>
+      <tag k="height" v="109.5"/>
+      <tag k="height:class" v="amsl"/>
+      <tag k="slope" v="-0.0732"/>
+      <tag k="name" v="23L"/>
+      <tag k="length" v="2500.0m"/>
+      <tag k="bearing" v="226.033"/>
+      <tag k="toda" v="2500.0m"/>
+      <nd ref="4"/>
+      <nd ref="5"/>
+   </way>
+   <way id="18" version="1">
+      <tag k="height:lower:class" v="agl"/>
+      <tag k="height:lower" v="0.0"/>
+      <tag k="height:upper:class" v="amsl"/>
+      <tag k="height:lower:unit" v="ft"/>
+      <tag k="name" v="DEBRECEN TIZ1"/>
+      <tag k="airspace" v="yes"/>
+      <tag k="airspace:type" v="TIZ"/>
+      <tag k="airspace:class" v="F"/>
+      <tag k="height:upper:unit" v="ft"/>
+      <tag k="height:upper" v="2000.0"/>
+      <nd ref="14"/>
+      <nd ref="15"/>
+      <nd ref="16"/>
+      <nd ref="17"/>
+      <nd ref="14"/>
+   </way>
+   <way id="23" version="1">
+      <tag k="height:lower:class" v="agl"/>
+      <tag k="height:lower" v="0.0"/>
+      <tag k="height:upper:class" v="amsl"/>
+      <tag k="height:lower:unit" v="ft"/>
+      <tag k="name" v="DEBRECEN CTR"/>
+      <tag k="airspace" v="yes"/>
+      <tag k="airspace:type" v="CTR"/>
+      <tag k="airspace:class" v="D"/>
+      <tag k="height:upper:unit" v="ft"/>
+      <tag k="height:upper" v="2000.0"/>
+      <nd ref="19"/>
+      <nd ref="20"/>
+      <nd ref="21"/>
+      <nd ref="22"/>
+      <nd ref="19"/>
+   </way>
+   <way id="30" version="1">
+      <tag k="height:lower:class" v="amsl"/>
+      <tag k="height:lower" v="2000.0"/>
+      <tag k="height:upper:class" v="amsl"/>
+      <tag k="height:lower:unit" v="ft"/>
+      <tag k="name" v="DEBRECEN TIZ2"/>
+      <tag k="airspace" v="yes"/>
+      <tag k="airspace:type" v="TIZ"/>
+      <tag k="airspace:class" v="F"/>
+      <tag k="height:upper:unit" v="ft"/>
+      <tag k="height:upper" v="9500.0"/>
+      <nd ref="24"/>
+      <nd ref="25"/>
+      <nd ref="26"/>
+      <nd ref="27"/>
+      <nd ref="28"/>
+      <nd ref="29"/>
+      <nd ref="24"/>
+   </way>
+   <way id="37" version="1">
+      <tag k="height:lower:class" v="amsl"/>
+      <tag k="height:lower" v="2000.0"/>
+      <tag k="height:upper:class" v="amsl"/>
+      <tag k="height:lower:unit" v="ft"/>
+      <tag k="name" v="DEBRECEN CTA1"/>
+      <tag k="airspace" v="yes"/>
+      <tag k="airspace:type" v="CTA"/>
+      <tag k="airspace:class" v="D"/>
+      <tag k="height:upper:unit" v="ft"/>
+      <tag k="height:upper" v="9500.0"/>
+      <nd ref="31"/>
+      <nd ref="32"/>
+      <nd ref="33"/>
+      <nd ref="34"/>
+      <nd ref="35"/>
+      <nd ref="36"/>
+      <nd ref="31"/>
+   </way>
+   <way id="42" version="1">
+      <tag k="height:lower:class" v="amsl"/>
+      <tag k="height:lower" v="5000.0"/>
+      <tag k="height:upper:class" v="amsl"/>
+      <tag k="height:lower:unit" v="ft"/>
+      <tag k="name" v="DEBRECEN TIZ3"/>
+      <tag k="airspace" v="yes"/>
+      <tag k="airspace:type" v="TIZ"/>
+      <tag k="airspace:class" v="F"/>
+      <tag k="height:upper:unit" v="ft"/>
+      <tag k="height:upper" v="9500.0"/>
+      <nd ref="38"/>
+      <nd ref="39"/>
+      <nd ref="40"/>
+      <nd ref="41"/>
+      <nd ref="38"/>
+   </way>
+   <way id="47" version="1">
+      <tag k="height:lower:class" v="amsl"/>
+      <tag k="height:lower" v="5000.0"/>
+      <tag k="height:upper:class" v="amsl"/>
+      <tag k="height:lower:unit" v="ft"/>
+      <tag k="name" v="DEBRECEN CTA2"/>
+      <tag k="airspace" v="yes"/>
+      <tag k="airspace:type" v="CTA"/>
+      <tag k="airspace:class" v="D"/>
+      <tag k="height:upper:unit" v="ft"/>
+      <tag k="height:upper" v="9500.0"/>
+      <nd ref="43"/>
+      <nd ref="44"/>
+      <nd ref="45"/>
+      <nd ref="46"/>
+      <nd ref="43"/>
+   </way>
+   <relation id="49" version="1">
+      <tag k="height:unit" v="m"/>
+      <tag k="comm:afis" v="125.9MHz"/>
+      <tag k="height" v="110.0"/>
+      <tag k="height:class" v="amsl"/>
+      <tag k="icao" v="LHDC"/>
+      <tag k="name" v="DEBRECEN"/>
+      <tag k="aerodrome" v="yes"/>
+      <tag k="runway:designator" v="05R, 23L"/>
+      <tag k="comm:twr" v="125.9MHz"/>
+      <tag k="runway:surface" v="asphalt, asphalt"/>
+      <tag k="runway:length" v="2500.0m, 2500.0m"/>
+      <member ref="3" role="runway" type="way"/>
+      <member ref="6" role="runway" type="way"/>
+      <member ref="7" role="navaid" type="node"/>
+      <member ref="8" role="navaid" type="node"/>
+      <member ref="9" role="navaid" type="node"/>
+      <member ref="10" role="navaid" type="node"/>
+      <member ref="11" role="navaid" type="node"/>
+      <member ref="12" role="navaid" type="node"/>
+      <member ref="13" role="navaid" type="node"/>
+      <member ref="18" role="airspace" type="way"/>
+      <member ref="23" role="airspace" type="way"/>
+      <member ref="30" role="airspace" type="way"/>
+      <member ref="37" role="airspace" type="way"/>
+      <member ref="42" role="airspace" type="way"/>
+      <member ref="47" role="airspace" type="way"/>
+      <member ref="48" role="arp" type="node"/>
+   </relation>
 </osm>

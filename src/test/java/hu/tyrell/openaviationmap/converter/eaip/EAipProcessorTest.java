@@ -200,14 +200,14 @@ public class EAipProcessorTest {
 
         assertEquals(Boundary.Type.RING, airspace.getBoundary().getType());
         Ring ring = (Ring) airspace.getBoundary();
-        assertEquals(23, ring.getPointList().size());
+        assertEquals(25, ring.getPointList().size());
         List<Point> points = ring.getPointList();
         assertEquals(47.6419444444, points.get(0).getLatitude(), 1.0 / 3600.0);
         assertEquals(16.8661111111, points.get(0).getLongitude(), 1.0 / 3600.0);
         assertEquals(47.6083333333, points.get(1).getLatitude(), 1.0 / 3600.0);
         assertEquals(16.7249999999, points.get(1).getLongitude(), 1.0 / 3600.0);
-        assertEquals(47.6247319994, points.get(9).getLatitude(), 1.0 / 3600.0);
-        assertEquals(16.6760527881, points.get(9).getLongitude(), 1.0 / 3600.0);
+        assertEquals(47.6113888889, points.get(9).getLatitude(), 1.0 / 3600.0);
+        assertEquals(16.6741034136, points.get(9).getLongitude(), 1.0 / 3600.0);
 
         assertNotNull(airspace.getUpperLimit());
         Elevation ul = airspace.getUpperLimit();

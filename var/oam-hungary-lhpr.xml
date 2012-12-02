@@ -1,174 +1,174 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <osm version="0.6">
-<node action="create" id="-49" lat="47.62444444444444" lon="17.81388888888889" version="1">
-<tag k="height:unit" v="m"/>
-<tag k="height" v="130.0"/>
-<tag k="height:class" v="amsl"/>
-<tag k="name" v="GYŐR/PÉR ARP"/>
-</node>
-<node action="create" id="-7" lat="47.65911111111111" lon="17.724361111111108" version="1">
-<tag k="height:unit" v="m"/>
-<tag k="navaid:type" v="VOR/DME"/>
-<tag k="navaid:vor" v="115.1MHz"/>
-<tag k="height" v="157.0"/>
-<tag k="height:class" v="amsl"/>
-<tag k="navaid:declination" v="3.4"/>
-<tag k="navaid:activetime" v="H24"/>
-<tag k="name" v="GYR"/>
-<tag k="navaid:ident" v="GYR"/>
-<tag k="remarks" v="DME COORD:473932.4N 0174327.6E"/>
-<tag k="navaid:dme" v="98X"/>
-<tag k="navaid" v="yes"/>
-</node>
-<node action="create" id="-5" lat="47.63030833333333" lon="17.79995277777778" version="1"/>
-<node action="create" id="-4" lat="47.623894444444446" lon="17.81675" version="1"/>
-<node action="create" id="-2" lat="47.623894444444446" lon="17.81675" version="1"/>
-<node action="create" id="-1" lat="47.63030833333333" lon="17.79995277777778" version="1"/>
-<node action="create" id="-8" lat="47.818333333333335" lon="17.61416666666667" version="1"/>
-<node action="create" id="-9" lat="47.746944444444445" lon="17.5" version="1"/>
-<node action="create" id="-10" lat="47.599722222222226" lon="17.488333333333333" version="1"/>
-<node action="create" id="-11" lat="47.599722222222226" lon="17.598333333333333" version="1"/>
-<node action="create" id="-12" lat="47.499722222222225" lon="17.698333333333334" version="1"/>
-<node action="create" id="-13" lat="47.499722222222225" lon="18.165" version="1"/>
-<node action="create" id="-14" lat="47.58916666666667" lon="18.2575" version="1"/>
-<node action="create" id="-15" lat="47.73861111111111" lon="18.258333333333333" version="1"/>
-<node action="create" id="-16" lat="47.740185" lon="18.249217" version="1"/>
-<node action="create" id="-17" lat="47.742654" lon="18.219586" version="1"/>
-<node action="create" id="-18" lat="47.739438" lon="18.185796" version="1"/>
-<node action="create" id="-19" lat="47.742175" lon="18.171948" version="1"/>
-<node action="create" id="-20" lat="47.750642" lon="18.141774" version="1"/>
-<node action="create" id="-21" lat="47.753117" lon="18.126404" version="1"/>
-<node action="create" id="-22" lat="47.756901" lon="18.082954" version="1"/>
-<node action="create" id="-23" lat="47.757076" lon="18.041062" version="1"/>
-<node action="create" id="-24" lat="47.755704" lon="18.029634" version="1"/>
-<node action="create" id="-25" lat="47.747025" lon="18.003346" version="1"/>
-<node action="create" id="-26" lat="47.757653" lon="17.968761" version="1"/>
-<node action="create" id="-27" lat="47.75742" lon="17.962627" version="1"/>
-<node action="create" id="-28" lat="47.744529" lon="17.944346" version="1"/>
-<node action="create" id="-29" lat="47.744064" lon="17.924798" version="1"/>
-<node action="create" id="-30" lat="47.742512" lon="17.909977" version="1"/>
-<node action="create" id="-31" lat="47.738239" lon="17.898935" version="1"/>
-<node action="create" id="-32" lat="47.739258" lon="17.886206" version="1"/>
-<node action="create" id="-33" lat="47.744839" lon="17.8695" version="1"/>
-<node action="create" id="-34" lat="47.745006" lon="17.861933" version="1"/>
-<node action="create" id="-35" lat="47.74236" lon="17.848035" version="1"/>
-<node action="create" id="-36" lat="47.744388" lon="17.804485" version="1"/>
-<node action="create" id="-37" lat="47.741737" lon="17.780739" version="1"/>
-<node action="create" id="-38" lat="47.744618" lon="17.770503" version="1"/>
-<node action="create" id="-39" lat="47.749432" lon="17.763543" version="1"/>
-<node action="create" id="-40" lat="47.750678" lon="17.757528" version="1"/>
-<node action="create" id="-41" lat="47.75182" lon="17.740127" version="1"/>
-<node action="create" id="-42" lat="47.754268" lon="17.725039" version="1"/>
-<node action="create" id="-43" lat="47.760449" lon="17.709331" version="1"/>
-<node action="create" id="-44" lat="47.778926" lon="17.682941" version="1"/>
-<node action="create" id="-45" lat="47.795826" lon="17.649009" version="1"/>
-<node action="create" id="-46" lat="47.80463" lon="17.63443" version="1"/>
-<node action="create" id="-47" lat="47.813542" lon="17.622729" version="1"/>
-<way action="create" id="-48" version="1">
-<tag k="height:lower:class" v="agl"/>
-<tag k="height:lower" v="0.0"/>
-<tag k="height:upper:class" v="amsl"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="name" v="PER TIZ"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TIZ"/>
-<tag k="airspace:class" v="F"/>
-<tag k="height:upper:unit" v="ft"/>
-<tag k="height:upper" v="9500.0"/>
-<nd ref="-8"/>
-<nd ref="-9"/>
-<nd ref="-10"/>
-<nd ref="-11"/>
-<nd ref="-12"/>
-<nd ref="-13"/>
-<nd ref="-14"/>
-<nd ref="-15"/>
-<nd ref="-16"/>
-<nd ref="-17"/>
-<nd ref="-18"/>
-<nd ref="-19"/>
-<nd ref="-20"/>
-<nd ref="-21"/>
-<nd ref="-22"/>
-<nd ref="-23"/>
-<nd ref="-24"/>
-<nd ref="-25"/>
-<nd ref="-26"/>
-<nd ref="-27"/>
-<nd ref="-28"/>
-<nd ref="-29"/>
-<nd ref="-30"/>
-<nd ref="-31"/>
-<nd ref="-32"/>
-<nd ref="-33"/>
-<nd ref="-34"/>
-<nd ref="-35"/>
-<nd ref="-36"/>
-<nd ref="-37"/>
-<nd ref="-38"/>
-<nd ref="-39"/>
-<nd ref="-40"/>
-<nd ref="-41"/>
-<nd ref="-42"/>
-<nd ref="-43"/>
-<nd ref="-44"/>
-<nd ref="-45"/>
-<nd ref="-46"/>
-<nd ref="-47"/>
-<nd ref="-8"/>
-</way>
-<way action="create" id="-6" version="1">
-<tag k="aeroway" v="runway"/>
-<tag k="surface" v="asphalt"/>
-<tag k="width" v="30.0m"/>
-<tag k="lda" v="1450.0m"/>
-<tag k="height:unit" v="m"/>
-<tag k="tora" v="1450.0m"/>
-<tag k="asda" v="1450.0m"/>
-<tag k="height" v="130.0"/>
-<tag k="height:class" v="amsl"/>
-<tag k="slope" v="-0.166"/>
-<tag k="name" v="30"/>
-<tag k="length" v="1450.0m"/>
-<tag k="bearing" v="299.46"/>
-<tag k="toda" v="1450.0m"/>
-<nd ref="-4"/>
-<nd ref="-5"/>
-</way>
-<way action="create" id="-3" version="1">
-<tag k="aeroway" v="runway"/>
-<tag k="surface" v="asphalt"/>
-<tag k="width" v="30.0m"/>
-<tag k="lda" v="1450.0m"/>
-<tag k="height:unit" v="m"/>
-<tag k="tora" v="1450.0m"/>
-<tag k="asda" v="1450.0m"/>
-<tag k="height" v="127.0"/>
-<tag k="height:class" v="amsl"/>
-<tag k="slope" v="0.166"/>
-<tag k="name" v="12"/>
-<tag k="length" v="1450.0m"/>
-<tag k="bearing" v="119.46"/>
-<tag k="toda" v="1450.0m"/>
-<nd ref="-1"/>
-<nd ref="-2"/>
-</way>
-<relation action="create" id="-50" version="1">
-<tag k="height:unit" v="m"/>
-<tag k="comm:afis" v="129.9MHz"/>
-<tag k="height" v="130.0"/>
-<tag k="height:class" v="amsl"/>
-<tag k="icao" v="LHPR"/>
-<tag k="name" v="GYŐR/PÉR"/>
-<tag k="aerodrome" v="yes"/>
-<tag k="runway:designator" v="12, 30"/>
-<tag k="remarks" v="As AD Administration"/>
-<tag k="runway:surface" v="asphalt, asphalt"/>
-<tag k="runway:length" v="1450.0m, 1450.0m"/>
-<member ref="-3" role="runway" type="way"/>
-<member ref="-6" role="runway" type="way"/>
-<member ref="-7" role="navaid" type="node"/>
-<member ref="-48" role="airspace" type="way"/>
-<member ref="-49" role="arp" type="node"/>
-</relation>
+   <node id="1" lat="47.63030833333333" lon="17.79995277777778" version="1"/>
+   <node id="2" lat="47.623894444444446" lon="17.81675" version="1"/>
+   <node id="4" lat="47.623894444444446" lon="17.81675" version="1"/>
+   <node id="5" lat="47.63030833333333" lon="17.79995277777778" version="1"/>
+   <node id="7" lat="47.65911111111111" lon="17.724361111111108" version="1">
+      <tag k="height:unit" v="m"/>
+      <tag k="navaid:type" v="VOR/DME"/>
+      <tag k="navaid:vor" v="115.1MHz"/>
+      <tag k="height" v="157.0"/>
+      <tag k="height:class" v="amsl"/>
+      <tag k="navaid:declination" v="3.4"/>
+      <tag k="navaid:activetime" v="H24"/>
+      <tag k="name" v="GYR"/>
+      <tag k="navaid:ident" v="GYR"/>
+      <tag k="remarks" v="DME COORD:473932.4N 0174327.6E"/>
+      <tag k="navaid:dme" v="98X"/>
+      <tag k="navaid" v="yes"/>
+   </node>
+   <node id="8" lat="47.818333333333335" lon="17.61416666666667" version="1"/>
+   <node id="9" lat="47.746944444444445" lon="17.5" version="1"/>
+   <node id="10" lat="47.599722222222226" lon="17.488333333333333" version="1"/>
+   <node id="11" lat="47.599722222222226" lon="17.598333333333333" version="1"/>
+   <node id="12" lat="47.499722222222225" lon="17.698333333333334" version="1"/>
+   <node id="13" lat="47.499722222222225" lon="18.165" version="1"/>
+   <node id="14" lat="47.58916666666667" lon="18.2575" version="1"/>
+   <node id="15" lat="47.73861111111111" lon="18.258333333333333" version="1"/>
+   <node id="16" lat="47.740185" lon="18.249217" version="1"/>
+   <node id="17" lat="47.742654" lon="18.219586" version="1"/>
+   <node id="18" lat="47.739438" lon="18.185796" version="1"/>
+   <node id="19" lat="47.742175" lon="18.171948" version="1"/>
+   <node id="20" lat="47.750642" lon="18.141774" version="1"/>
+   <node id="21" lat="47.753117" lon="18.126404" version="1"/>
+   <node id="22" lat="47.756901" lon="18.082954" version="1"/>
+   <node id="23" lat="47.757076" lon="18.041062" version="1"/>
+   <node id="24" lat="47.755704" lon="18.029634" version="1"/>
+   <node id="25" lat="47.747025" lon="18.003346" version="1"/>
+   <node id="26" lat="47.757653" lon="17.968761" version="1"/>
+   <node id="27" lat="47.75742" lon="17.962627" version="1"/>
+   <node id="28" lat="47.744529" lon="17.944346" version="1"/>
+   <node id="29" lat="47.744064" lon="17.924798" version="1"/>
+   <node id="30" lat="47.742512" lon="17.909977" version="1"/>
+   <node id="31" lat="47.738239" lon="17.898935" version="1"/>
+   <node id="32" lat="47.739258" lon="17.886206" version="1"/>
+   <node id="33" lat="47.744839" lon="17.8695" version="1"/>
+   <node id="34" lat="47.745006" lon="17.861933" version="1"/>
+   <node id="35" lat="47.74236" lon="17.848035" version="1"/>
+   <node id="36" lat="47.744388" lon="17.804485" version="1"/>
+   <node id="37" lat="47.741737" lon="17.780739" version="1"/>
+   <node id="38" lat="47.744618" lon="17.770503" version="1"/>
+   <node id="39" lat="47.749432" lon="17.763543" version="1"/>
+   <node id="40" lat="47.750678" lon="17.757528" version="1"/>
+   <node id="41" lat="47.75182" lon="17.740127" version="1"/>
+   <node id="42" lat="47.754268" lon="17.725039" version="1"/>
+   <node id="43" lat="47.760449" lon="17.709331" version="1"/>
+   <node id="44" lat="47.778926" lon="17.682941" version="1"/>
+   <node id="45" lat="47.795826" lon="17.649009" version="1"/>
+   <node id="46" lat="47.80463" lon="17.63443" version="1"/>
+   <node id="47" lat="47.813542" lon="17.622729" version="1"/>
+   <node id="49" lat="47.62444444444444" lon="17.81388888888889" version="1">
+      <tag k="height:unit" v="m"/>
+      <tag k="height" v="130.0"/>
+      <tag k="height:class" v="amsl"/>
+      <tag k="name" v="GYŐR/PÉR ARP"/>
+   </node>
+   <way id="3" version="1">
+      <tag k="aeroway" v="runway"/>
+      <tag k="surface" v="asphalt"/>
+      <tag k="width" v="30.0m"/>
+      <tag k="lda" v="1450.0m"/>
+      <tag k="height:unit" v="m"/>
+      <tag k="asda" v="1450.0m"/>
+      <tag k="tora" v="1450.0m"/>
+      <tag k="height" v="127.0"/>
+      <tag k="height:class" v="amsl"/>
+      <tag k="slope" v="0.166"/>
+      <tag k="name" v="12"/>
+      <tag k="length" v="1450.0m"/>
+      <tag k="bearing" v="119.46"/>
+      <tag k="toda" v="1450.0m"/>
+      <nd ref="1"/>
+      <nd ref="2"/>
+   </way>
+   <way id="6" version="1">
+      <tag k="aeroway" v="runway"/>
+      <tag k="surface" v="asphalt"/>
+      <tag k="width" v="30.0m"/>
+      <tag k="lda" v="1450.0m"/>
+      <tag k="height:unit" v="m"/>
+      <tag k="asda" v="1450.0m"/>
+      <tag k="tora" v="1450.0m"/>
+      <tag k="height" v="130.0"/>
+      <tag k="height:class" v="amsl"/>
+      <tag k="slope" v="-0.166"/>
+      <tag k="name" v="30"/>
+      <tag k="length" v="1450.0m"/>
+      <tag k="bearing" v="299.46"/>
+      <tag k="toda" v="1450.0m"/>
+      <nd ref="4"/>
+      <nd ref="5"/>
+   </way>
+   <way id="48" version="1">
+      <tag k="height:lower:class" v="agl"/>
+      <tag k="height:lower" v="0.0"/>
+      <tag k="height:upper:class" v="amsl"/>
+      <tag k="height:lower:unit" v="ft"/>
+      <tag k="name" v="PER TIZ"/>
+      <tag k="airspace" v="yes"/>
+      <tag k="airspace:type" v="TIZ"/>
+      <tag k="airspace:class" v="F"/>
+      <tag k="height:upper:unit" v="ft"/>
+      <tag k="height:upper" v="9500.0"/>
+      <nd ref="8"/>
+      <nd ref="9"/>
+      <nd ref="10"/>
+      <nd ref="11"/>
+      <nd ref="12"/>
+      <nd ref="13"/>
+      <nd ref="14"/>
+      <nd ref="15"/>
+      <nd ref="16"/>
+      <nd ref="17"/>
+      <nd ref="18"/>
+      <nd ref="19"/>
+      <nd ref="20"/>
+      <nd ref="21"/>
+      <nd ref="22"/>
+      <nd ref="23"/>
+      <nd ref="24"/>
+      <nd ref="25"/>
+      <nd ref="26"/>
+      <nd ref="27"/>
+      <nd ref="28"/>
+      <nd ref="29"/>
+      <nd ref="30"/>
+      <nd ref="31"/>
+      <nd ref="32"/>
+      <nd ref="33"/>
+      <nd ref="34"/>
+      <nd ref="35"/>
+      <nd ref="36"/>
+      <nd ref="37"/>
+      <nd ref="38"/>
+      <nd ref="39"/>
+      <nd ref="40"/>
+      <nd ref="41"/>
+      <nd ref="42"/>
+      <nd ref="43"/>
+      <nd ref="44"/>
+      <nd ref="45"/>
+      <nd ref="46"/>
+      <nd ref="47"/>
+      <nd ref="8"/>
+   </way>
+   <relation id="50" version="1">
+      <tag k="height:unit" v="m"/>
+      <tag k="comm:afis" v="129.9MHz"/>
+      <tag k="height" v="130.0"/>
+      <tag k="height:class" v="amsl"/>
+      <tag k="icao" v="LHPR"/>
+      <tag k="name" v="GYŐR/PÉR"/>
+      <tag k="aerodrome" v="yes"/>
+      <tag k="runway:designator" v="12, 30"/>
+      <tag k="remarks" v="As AD Administration"/>
+      <tag k="runway:surface" v="asphalt, asphalt"/>
+      <tag k="runway:length" v="1450.0m, 1450.0m"/>
+      <member ref="3" role="runway" type="way"/>
+      <member ref="6" role="runway" type="way"/>
+      <member ref="7" role="navaid" type="node"/>
+      <member ref="48" role="airspace" type="way"/>
+      <member ref="49" role="arp" type="node"/>
+   </relation>
 </osm>

@@ -103,7 +103,7 @@ public class ConverterTest {
         assertEquals("B", airspace.getType());
         assertEquals(Boundary.Type.RING, airspace.getBoundary().getType());
         Ring r = (Ring) airspace.getBoundary();
-        assertEquals(23, r.getPointList().size());
+        assertEquals(25, r.getPointList().size());
 
         // look for & check LHB03
         airspace = null;

@@ -1,146 +1,154 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <osm version="0.6">
-<node action="create" id="-40" lat="47.58361111111111" lon="16.845" version="1">
-<tag k="height:unit" v="m"/>
-<tag k="height" v="134.0"/>
-<tag k="height:class" v="amsl"/>
-<tag k="name" v="FERTŐSZENTMIKLÓS ARP"/>
-</node>
-<node action="create" id="-5" lat="47.58695277777778" lon="16.843019444444444" version="1"/>
-<node action="create" id="-4" lat="47.57870833333334" lon="16.847813888888886" version="1"/>
-<node action="create" id="-2" lat="47.57870833333334" lon="16.847813888888886" version="1"/>
-<node action="create" id="-1" lat="47.58695277777778" lon="16.843019444444444" version="1"/>
-<node action="create" id="-7" lat="47.583333333333336" lon="16.911153495732" version="1"/>
-<node action="create" id="-8" lat="47.59211169555508" lon="16.909871700016947" version="1"/>
-<node action="create" id="-9" lat="47.60055271023961" lon="16.906075571562265" version="1"/>
-<node action="create" id="-10" lat="47.60833199392637" lon="16.89991099345558" version="1"/>
-<node action="create" id="-11" lat="47.61515059310595" lon="16.891614866976397" version="1"/>
-<node action="create" id="-12" lat="47.62074647283579" lon="16.88150600761279" version="1"/>
-<node action="create" id="-13" lat="47.62490458659608" lon="16.869972893160988" version="1"/>
-<node action="create" id="-14" lat="47.62746514040691" lon="16.857458734741524" version="1"/>
-<node action="create" id="-15" lat="47.628329733621314" lon="16.844444444444445" version="1"/>
-<node action="create" id="-16" lat="47.62746514040691" lon="16.831430154147366" version="1"/>
-<node action="create" id="-17" lat="47.62490458659608" lon="16.818915995727902" version="1"/>
-<node action="create" id="-18" lat="47.62074647283579" lon="16.8073828812761" version="1"/>
-<node action="create" id="-19" lat="47.61515059310595" lon="16.797274021912493" version="1"/>
-<node action="create" id="-20" lat="47.60833199392637" lon="16.78897789543331" version="1"/>
-<node action="create" id="-21" lat="47.60055271023961" lon="16.782813317326625" version="1"/>
-<node action="create" id="-22" lat="47.59211169555508" lon="16.779017188871943" version="1"/>
-<node action="create" id="-23" lat="47.583333333333336" lon="16.777735393156888" version="1"/>
-<node action="create" id="-24" lat="47.57455497111159" lon="16.779017188871943" version="1"/>
-<node action="create" id="-25" lat="47.56611395642706" lon="16.782813317326625" version="1"/>
-<node action="create" id="-26" lat="47.5583346727403" lon="16.78897789543331" version="1"/>
-<node action="create" id="-27" lat="47.55151607356072" lon="16.797274021912493" version="1"/>
-<node action="create" id="-28" lat="47.54592019383088" lon="16.8073828812761" version="1"/>
-<node action="create" id="-29" lat="47.54176208007059" lon="16.818915995727902" version="1"/>
-<node action="create" id="-30" lat="47.53920152625976" lon="16.831430154147366" version="1"/>
-<node action="create" id="-31" lat="47.53833693304536" lon="16.844444444444445" version="1"/>
-<node action="create" id="-32" lat="47.53920152625976" lon="16.857458734741524" version="1"/>
-<node action="create" id="-33" lat="47.54176208007059" lon="16.869972893160988" version="1"/>
-<node action="create" id="-34" lat="47.54592019383088" lon="16.88150600761279" version="1"/>
-<node action="create" id="-35" lat="47.55151607356072" lon="16.891614866976397" version="1"/>
-<node action="create" id="-36" lat="47.5583346727403" lon="16.89991099345558" version="1"/>
-<node action="create" id="-37" lat="47.56611395642706" lon="16.906075571562265" version="1"/>
-<node action="create" id="-38" lat="47.57455497111159" lon="16.909871700016947" version="1"/>
-<way action="create" id="-39" version="1">
-<tag k="height:lower:class" v="amsl"/>
-<tag k="height:lower" v="4000.0"/>
-<tag k="airspace" v="yes"/>
-<tag k="airspace:type" v="TIZ"/>
-<tag k="airspace:class" v="F"/>
-<tag k="airspace:center:unit" v="m"/>
-<tag k="height:lower:unit" v="ft"/>
-<tag k="height:upper:class" v="agl"/>
-<tag k="name" v="FERTOSZENTMIKLOS TIZ"/>
-<tag k="airspace:center:radius" v="5000.0"/>
-<tag k="airspace:center:lon" v="16.844444444444445"/>
-<tag k="airspace:center:lat" v="47.583333333333336"/>
-<tag k="height:upper" v="0.0"/>
-<tag k="height:upper:unit" v="ft"/>
-<nd ref="-7"/>
-<nd ref="-8"/>
-<nd ref="-9"/>
-<nd ref="-10"/>
-<nd ref="-11"/>
-<nd ref="-12"/>
-<nd ref="-13"/>
-<nd ref="-14"/>
-<nd ref="-15"/>
-<nd ref="-16"/>
-<nd ref="-17"/>
-<nd ref="-18"/>
-<nd ref="-19"/>
-<nd ref="-20"/>
-<nd ref="-21"/>
-<nd ref="-22"/>
-<nd ref="-23"/>
-<nd ref="-24"/>
-<nd ref="-25"/>
-<nd ref="-26"/>
-<nd ref="-27"/>
-<nd ref="-28"/>
-<nd ref="-29"/>
-<nd ref="-30"/>
-<nd ref="-31"/>
-<nd ref="-32"/>
-<nd ref="-33"/>
-<nd ref="-34"/>
-<nd ref="-35"/>
-<nd ref="-36"/>
-<nd ref="-37"/>
-<nd ref="-38"/>
-<nd ref="-7"/>
-</way>
-<way action="create" id="-6" version="1">
-<tag k="aeroway" v="runway"/>
-<tag k="surface" v="asphalt"/>
-<tag k="width" v="23.0m"/>
-<tag k="lda" v="985.0m"/>
-<tag k="height:unit" v="m"/>
-<tag k="tora" v="985.0m"/>
-<tag k="asda" v="985.0m"/>
-<tag k="height" v="134.0"/>
-<tag k="height:class" v="amsl"/>
-<tag k="name" v="34"/>
-<tag k="length" v="985.0m"/>
-<tag k="bearing" v="339.0"/>
-<tag k="toda" v="985.0m"/>
-<nd ref="-4"/>
-<nd ref="-5"/>
-</way>
-<way action="create" id="-3" version="1">
-<tag k="aeroway" v="runway"/>
-<tag k="surface" v="asphalt"/>
-<tag k="width" v="23.0m"/>
-<tag k="lda" v="985.0m"/>
-<tag k="height:unit" v="m"/>
-<tag k="tora" v="985.0m"/>
-<tag k="asda" v="985.0m"/>
-<tag k="height" v="132.0"/>
-<tag k="height:class" v="amsl"/>
-<tag k="slope" v="0.48"/>
-<tag k="name" v="16"/>
-<tag k="length" v="985.0m"/>
-<tag k="bearing" v="159.0"/>
-<tag k="toda" v="985.0m"/>
-<nd ref="-1"/>
-<nd ref="-2"/>
-</way>
-<relation action="create" id="-41" version="1">
-<tag k="height:unit" v="m"/>
-<tag k="comm:afis" v="118.925MHz"/>
-<tag k="height" v="134.0"/>
-<tag k="height:class" v="amsl"/>
-<tag k="icao" v="LHFM"/>
-<tag k="name" v="FERTŐSZENTMIKLÓS"/>
-<tag k="aerodrome" v="yes"/>
-<tag k="runway:designator" v="16, 34"/>
-<tag k="remarks" v="VMC minima: 5 KM"/>
-<tag k="runway:surface" v="asphalt, asphalt"/>
-<tag k="runway:length" v="985.0m, 985.0m"/>
-<member ref="-3" role="runway" type="way"/>
-<member ref="-6" role="runway" type="way"/>
-<member ref="-39" role="airspace" type="way"/>
-<member ref="-40" role="arp" type="node"/>
-</relation>
+   <node id="1" lat="47.58695277777778" lon="16.843019444444444" version="1"/>
+   <node id="2" lat="47.57870833333334" lon="16.847813888888886" version="1"/>
+   <node id="4" lat="47.57870833333334" lon="16.847813888888886" version="1"/>
+   <node id="5" lat="47.58695277777778" lon="16.843019444444444" version="1"/>
+   <node id="7" lat="47.583333333333336" lon="16.911153495732" version="1"/>
+   <node id="8" lat="47.59114687624491" lon="16.91014003534852" version="1"/>
+   <node id="9" lat="47.59872300860897" lon="16.90713044767899" version="1"/>
+   <node id="10" lat="47.60583153347732" lon="16.90221617752183" version="1"/>
+   <node id="11" lat="47.612256461918946" lon="16.89554654248902" version="1"/>
+   <node id="12" lat="47.617802575734295" lon="16.887324196066032" version="1"/>
+   <node id="13" lat="47.62230135906158" lon="16.877798970088225" version="1"/>
+   <node id="14" lat="47.62561611864588" lon="16.867260283726935" version="1"/>
+   <node id="15" lat="47.627646137194574" lon="16.856028349634418" version="1"/>
+   <node id="16" lat="47.628329733621314" lon="16.844444444444445" version="1"/>
+   <node id="17" lat="47.627646137194574" lon="16.832860539254472" version="1"/>
+   <node id="18" lat="47.62561611864588" lon="16.821628605161955" version="1"/>
+   <node id="19" lat="47.62230135906158" lon="16.811089918800665" version="1"/>
+   <node id="20" lat="47.617802575734295" lon="16.801564692822858" version="1"/>
+   <node id="21" lat="47.612256461918946" lon="16.79334234639987" version="1"/>
+   <node id="22" lat="47.60583153347732" lon="16.78667271136706" version="1"/>
+   <node id="23" lat="47.59872300860897" lon="16.7817584412099" version="1"/>
+   <node id="24" lat="47.59114687624491" lon="16.77874885354037" version="1"/>
+   <node id="25" lat="47.583333333333336" lon="16.777735393156888" version="1"/>
+   <node id="26" lat="47.57551979042176" lon="16.77874885354037" version="1"/>
+   <node id="27" lat="47.5679436580577" lon="16.7817584412099" version="1"/>
+   <node id="28" lat="47.56083513318935" lon="16.78667271136706" version="1"/>
+   <node id="29" lat="47.554410204747725" lon="16.79334234639987" version="1"/>
+   <node id="30" lat="47.548864090932376" lon="16.801564692822858" version="1"/>
+   <node id="31" lat="47.54436530760509" lon="16.811089918800665" version="1"/>
+   <node id="32" lat="47.54105054802079" lon="16.821628605161955" version="1"/>
+   <node id="33" lat="47.5390205294721" lon="16.832860539254472" version="1"/>
+   <node id="34" lat="47.53833693304536" lon="16.844444444444445" version="1"/>
+   <node id="35" lat="47.5390205294721" lon="16.856028349634418" version="1"/>
+   <node id="36" lat="47.54105054802079" lon="16.867260283726935" version="1"/>
+   <node id="37" lat="47.54436530760509" lon="16.877798970088225" version="1"/>
+   <node id="38" lat="47.548864090932376" lon="16.887324196066032" version="1"/>
+   <node id="39" lat="47.554410204747725" lon="16.89554654248902" version="1"/>
+   <node id="40" lat="47.56083513318935" lon="16.90221617752183" version="1"/>
+   <node id="41" lat="47.5679436580577" lon="16.90713044767899" version="1"/>
+   <node id="42" lat="47.57551979042176" lon="16.91014003534852" version="1"/>
+   <node id="44" lat="47.58361111111111" lon="16.845" version="1">
+      <tag k="height:unit" v="m"/>
+      <tag k="height" v="134.0"/>
+      <tag k="height:class" v="amsl"/>
+      <tag k="name" v="FERTŐSZENTMIKLÓS ARP"/>
+   </node>
+   <way id="3" version="1">
+      <tag k="aeroway" v="runway"/>
+      <tag k="surface" v="asphalt"/>
+      <tag k="width" v="23.0m"/>
+      <tag k="lda" v="985.0m"/>
+      <tag k="height:unit" v="m"/>
+      <tag k="asda" v="985.0m"/>
+      <tag k="tora" v="985.0m"/>
+      <tag k="height" v="132.0"/>
+      <tag k="height:class" v="amsl"/>
+      <tag k="slope" v="0.48"/>
+      <tag k="name" v="16"/>
+      <tag k="length" v="985.0m"/>
+      <tag k="bearing" v="159.0"/>
+      <tag k="toda" v="985.0m"/>
+      <nd ref="1"/>
+      <nd ref="2"/>
+   </way>
+   <way id="6" version="1">
+      <tag k="height:unit" v="m"/>
+      <tag k="asda" v="985.0m"/>
+      <tag k="tora" v="985.0m"/>
+      <tag k="height" v="134.0"/>
+      <tag k="surface" v="asphalt"/>
+      <tag k="aeroway" v="runway"/>
+      <tag k="height:class" v="amsl"/>
+      <tag k="width" v="23.0m"/>
+      <tag k="name" v="34"/>
+      <tag k="length" v="985.0m"/>
+      <tag k="bearing" v="339.0"/>
+      <tag k="toda" v="985.0m"/>
+      <tag k="lda" v="985.0m"/>
+      <nd ref="4"/>
+      <nd ref="5"/>
+   </way>
+   <way id="43" version="1">
+      <tag k="height:lower:class" v="amsl"/>
+      <tag k="height:lower" v="4000.0"/>
+      <tag k="airspace" v="yes"/>
+      <tag k="airspace:type" v="TIZ"/>
+      <tag k="airspace:class" v="F"/>
+      <tag k="airspace:center:unit" v="m"/>
+      <tag k="height:lower:unit" v="ft"/>
+      <tag k="height:upper:class" v="agl"/>
+      <tag k="name" v="FERTOSZENTMIKLOS TIZ"/>
+      <tag k="airspace:center:radius" v="5000.0"/>
+      <tag k="airspace:center:lon" v="16.844444444444445"/>
+      <tag k="airspace:center:lat" v="47.583333333333336"/>
+      <tag k="height:upper" v="0.0"/>
+      <tag k="height:upper:unit" v="ft"/>
+      <nd ref="7"/>
+      <nd ref="8"/>
+      <nd ref="9"/>
+      <nd ref="10"/>
+      <nd ref="11"/>
+      <nd ref="12"/>
+      <nd ref="13"/>
+      <nd ref="14"/>
+      <nd ref="15"/>
+      <nd ref="16"/>
+      <nd ref="17"/>
+      <nd ref="18"/>
+      <nd ref="19"/>
+      <nd ref="20"/>
+      <nd ref="21"/>
+      <nd ref="22"/>
+      <nd ref="23"/>
+      <nd ref="24"/>
+      <nd ref="25"/>
+      <nd ref="26"/>
+      <nd ref="27"/>
+      <nd ref="28"/>
+      <nd ref="29"/>
+      <nd ref="30"/>
+      <nd ref="31"/>
+      <nd ref="32"/>
+      <nd ref="33"/>
+      <nd ref="34"/>
+      <nd ref="35"/>
+      <nd ref="36"/>
+      <nd ref="37"/>
+      <nd ref="38"/>
+      <nd ref="39"/>
+      <nd ref="40"/>
+      <nd ref="41"/>
+      <nd ref="42"/>
+      <nd ref="7"/>
+   </way>
+   <relation id="45" version="1">
+      <tag k="height:unit" v="m"/>
+      <tag k="comm:afis" v="118.925MHz"/>
+      <tag k="height" v="134.0"/>
+      <tag k="height:class" v="amsl"/>
+      <tag k="icao" v="LHFM"/>
+      <tag k="name" v="FERTŐSZENTMIKLÓS"/>
+      <tag k="aerodrome" v="yes"/>
+      <tag k="runway:designator" v="16, 34"/>
+      <tag k="remarks" v="VMC minima: 5 KM"/>
+      <tag k="runway:surface" v="asphalt, asphalt"/>
+      <tag k="runway:length" v="985.0m, 985.0m"/>
+      <member ref="3" role="runway" type="way"/>
+      <member ref="6" role="runway" type="way"/>
+      <member ref="43" role="airspace" type="way"/>
+      <member ref="44" role="arp" type="node"/>
+   </relation>
 </osm>

@@ -27,7 +27,7 @@ public class Circle implements Boundary {
     /**
      * The number of points used to approximate a circle with a polygon.
      */
-    private static final int POLY_POINTS = 32;
+    private static final int POLY_POINTS = 36;
 
     /**
      * The center point of the circle.

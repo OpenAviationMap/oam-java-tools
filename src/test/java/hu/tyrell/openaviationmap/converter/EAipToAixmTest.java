@@ -191,7 +191,6 @@ public class EAipToAixmTest {
         InputSource  strSource = new InputSource(strReader);
         d = db.parse(strSource);
 
-
         // TODO: create an AXIM document parser, parse the serialized
         //       result, and compare with the original
 
@@ -220,6 +219,7 @@ public class EAipToAixmTest {
         XMLUnit.setXSLTVersion("2.0");
         XMLUnit.setIgnoreWhitespace(true);
         NodeDiffIdOk diff = new NodeDiffIdOk(dd, d);
+        System.out.println(diff.toString());
         assertTrue(diff.similar());
     }
 
