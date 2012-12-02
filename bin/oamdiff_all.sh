@@ -36,9 +36,10 @@ if [ ! -x $DIFF_SCRIPT ]; then
     exit 1;
 fi
 
-OAM_FILES_ICAO="oam-hungary-2.1.xml \
-                oam-hungary-2.2.xml \
-                oam-hungary-5.1.xml \
+OAM_FILES_NAME="oam-hungary-2.1.xml \
+                oam-hungary-2.2.xml"
+
+OAM_FILES_ICAO="oam-hungary-5.1.xml \
                 oam-hungary-5.2.xml \
                 oam-hungary-5.5.xml \
                 oam-hungary-5.6.xml \
@@ -106,6 +107,19 @@ for OAM_FILE in $OAM_FILES_ID; do
     $DIFF_SCRIPT --input $BASE_DIR/var/$OAM_FILE \
                  --base $BASE \
                  --idtag id \
+                 --output $BASE_DIR/var/$DIFF_FILE \
+                 --new --changed
+done
+
+for OAM_FILE in $OAM_FILES_NAME; do
+    echo "Creating diff of $BASE_DIR/var/$OAM_FILE";
+
+    FILE_BASE=$(basename $OAM_FILE .xml)
+    DIFF_FILE=$FILE_BASE-diff.xml
+
+    $DIFF_SCRIPT --input $BASE_DIR/var/$OAM_FILE \
+                 --base $BASE \
+                 --idtag name \
                  --output $BASE_DIR/var/$DIFF_FILE \
                  --new --changed
 done
