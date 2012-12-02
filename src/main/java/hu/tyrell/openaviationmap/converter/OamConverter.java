@@ -347,6 +347,7 @@ public final class OamConverter {
         int              nodeIx = nodeIdIx;
 
         // add the original ways
+        int i = 1;
         for (Boundary bb : cb.getBoundaryList()) {
             // NOTE: this code implies that the airspaceBoundaryToOam()
             //       call uses the returned node index - 1 to create the way
@@ -354,11 +355,18 @@ public final class OamConverter {
             nodeIx = airspaceBoundaryToOam(airspace, bb,
                                            oam, action, version, nodeIx);
             int wayIx = action == Action.CREATE ? -(nodeIx - 1) : (nodeIx - 1);
-            Way w = oam.getWays().get(wayIx);
+            Way                 w    = oam.getWays().get(wayIx);
+            Map<String, String> tags = w.getTags();
             // mark this way as not to be rendered
-            w.getTags().put("compound", "original");
+            tags.put("compound", "original");
+            // make the name of the way unique
+            if (tags.containsKey("name")) {
+                tags.put("name", tags.get("name") + " part " + i + " of "
+                         + cb.getBoundaryList().size());
+            }
 
             ways.add(w);
+            ++i;
         }
 
         // add the unionized way based on parts of the compound boundary

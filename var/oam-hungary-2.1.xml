@@ -9189,7 +9189,7 @@
       <tag k="height:lower" v="0.0"/>
       <tag k="height:upper:class" v="amsl"/>
       <tag k="height:lower:unit" v="ft"/>
-      <tag k="name" v="KECSKEMET MCTR"/>
+      <tag k="name" v="KECSKEMET MCTR part 1 of 2"/>
       <tag k="airspace" v="yes"/>
       <tag k="airspace:type" v="MCTR"/>
       <tag k="operator" v="KECSKEMET TWR"/>
@@ -9213,7 +9213,7 @@
       <tag k="airspace:center:unit" v="m"/>
       <tag k="height:lower:unit" v="ft"/>
       <tag k="height:upper:class" v="amsl"/>
-      <tag k="name" v="KECSKEMET MCTR"/>
+      <tag k="name" v="KECSKEMET MCTR part 2 of 2"/>
       <tag k="airspace:center:radius" v="10000.0"/>
       <tag k="airspace:center:lon" v="19.750833333333333"/>
       <tag k="airspace:center:lat" v="46.91777777777777"/>
@@ -9289,7 +9289,7 @@
       <tag k="height:lower" v="0.0"/>
       <tag k="height:upper:class" v="amsl"/>
       <tag k="height:lower:unit" v="ft"/>
-      <tag k="name" v="PAPA MCTR"/>
+      <tag k="name" v="PAPA MCTR part 1 of 2"/>
       <tag k="airspace" v="yes"/>
       <tag k="airspace:type" v="MCTR"/>
       <tag k="operator" v="PAPA TWR"/>
@@ -9311,7 +9311,7 @@
       <tag k="airspace:center:unit" v="m"/>
       <tag k="height:lower:unit" v="ft"/>
       <tag k="height:upper:class" v="amsl"/>
-      <tag k="name" v="PAPA MCTR"/>
+      <tag k="name" v="PAPA MCTR part 2 of 2"/>
       <tag k="airspace:center:radius" v="10000.0"/>
       <tag k="airspace:center:lon" v="17.500555555555554"/>
       <tag k="airspace:center:lat" v="47.36388888888889"/>
