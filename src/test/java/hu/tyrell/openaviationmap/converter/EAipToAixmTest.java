@@ -219,7 +219,6 @@ public class EAipToAixmTest {
         XMLUnit.setXSLTVersion("2.0");
         XMLUnit.setIgnoreWhitespace(true);
         NodeDiffIdOk diff = new NodeDiffIdOk(dd, d);
-        System.out.println(diff.toString());
         assertTrue(diff.similar());
     }
 
