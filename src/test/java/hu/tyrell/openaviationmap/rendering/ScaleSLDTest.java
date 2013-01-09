@@ -131,6 +131,39 @@ public class ScaleSLDTest {
     }
 
     /**
+     * Test when the input document already contains scaling information.
+     *
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing errors
+     * @throws ParserConfigurationException on XML parser configuration errors
+     * @throws TransformerException on XML transformation errors
+     * @throws RenderException on SLD scaling, rendering issues
+     * @throws XPathExpressionException on XPath errors
+     */
+    @Test
+    public void testAlreadyScaled() throws ParserConfigurationException,
+                                           SAXException,
+                                           IOException,
+                                           TransformerException,
+                                           XPathExpressionException,
+                                           RenderException {
+
+        FileReader      input  = new FileReader("var/proba-500000.sld");
+        List<Integer>   scales = new ArrayList<Integer>(0);
+        StringWriter    output = new StringWriter();
+        boolean         caught = false;
+
+        try {
+            ScaleSLD.scaleSld(input, scales, output);
+        } catch (RenderException e) {
+            // this is what we expected
+            caught = true;
+        }
+
+        assertTrue("expected RenderException not caught", caught);
+    }
+
+    /**
      * Test when there is one scale value applied. This will create two
      * rule elements for each rule element, split by the single scaling
      * that is provided.

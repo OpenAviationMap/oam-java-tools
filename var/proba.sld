@@ -42,7 +42,7 @@
                     <sld:PolygonSymbolizer>
                         <sld:Stroke>
                             <sld:CssParameter name="stroke">#FF0000</sld:CssParameter>
-                            <sld:CssParameter name="stroke-width">0.5</sld:CssParameter>
+                            <sld:CssParameter name="stroke-width">0.5mm</sld:CssParameter>
                         </sld:Stroke>
                     </sld:PolygonSymbolizer>
                 </sld:Rule>
@@ -75,15 +75,11 @@
                     </ogc:Filter>
                     <sld:PolygonSymbolizer>
                         <sld:Geometry>
-                            <ogc:Function name="buffer">
-                                <ogc:PropertyName>way</ogc:PropertyName>
-                                <ogc:Literal>-3000</ogc:Literal>
-                            </ogc:Function>
                             <ogc:Function name="difference">
                                 <ogc:PropertyName>way</ogc:PropertyName>
                                 <ogc:Function name="buffer">
                                     <ogc:PropertyName>way</ogc:PropertyName>
-                                    <ogc:Literal>-3000</ogc:Literal>
+                                    <ogc:Literal>-300m</ogc:Literal>
                                 </ogc:Function>
                             </ogc:Function>
                         </sld:Geometry>

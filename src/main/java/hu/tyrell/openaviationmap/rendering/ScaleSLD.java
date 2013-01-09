@@ -50,6 +50,7 @@ import org.w3c.dom.DocumentFragment;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.w3c.dom.Text;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
@@ -58,6 +59,9 @@ import org.xml.sax.SAXException;
  * for a particular DPI value, and a number of map scales.
  */
 public final class ScaleSLD {
+
+    /** The default DPI value. */
+    public static final double DEFAULT_DPI = 25.4d / .28d;
 
     /** Namespace prefix for the SLD namespace. */
     private static final String SLD_NS_PREFIX = "sld";
@@ -100,15 +104,22 @@ public final class ScaleSLD {
             "usage:");
         System.out.println();
         System.out.println(
+            "  -d | --dpi <value>           the target device dpi");
+        System.out.println(
+            "                               optional, defaults to "
+                                            + DEFAULT_DPI);
+        System.out.println(
             "  -i | --input <input.file>    specify the input file, required");
         System.out.println(
             "  -o | --output <output.file>  the output file");
         System.out.println(
             "  -s | --scales N,M,...        a comma-separated list of scales");
         System.out.println(
-            "                               to generate segments for in the");
+            "                               to generate rule segments in the");
         System.out.println(
             "                               output file, e.g. 50000,100000");
+        System.out.println(
+            "                               must be in increasing order!");
         System.out.println(
             "  -h | --help                  show this usage page");
         System.out.println();
@@ -121,26 +132,33 @@ public final class ScaleSLD {
      */
     public static void main(String[] args) {
 
-        LongOpt[] longopts = new LongOpt[4];
+        LongOpt[] longopts = new LongOpt[5];
 
         longopts[0] = new LongOpt("help", LongOpt.NO_ARGUMENT, null, 'h');
-        longopts[1] = new LongOpt("input", LongOpt.REQUIRED_ARGUMENT,
+        longopts[1] = new LongOpt("dpi", LongOpt.OPTIONAL_ARGUMENT,
+                null, 'd');
+        longopts[2] = new LongOpt("input", LongOpt.REQUIRED_ARGUMENT,
                 null, 'i');
-        longopts[2] = new LongOpt("output", LongOpt.REQUIRED_ARGUMENT,
+        longopts[3] = new LongOpt("output", LongOpt.REQUIRED_ARGUMENT,
                 null, 'o');
-        longopts[3] = new LongOpt("scales", LongOpt.REQUIRED_ARGUMENT,
+        longopts[4] = new LongOpt("scales", LongOpt.REQUIRED_ARGUMENT,
                 null, 's');
 
-        Getopt g = new Getopt("ScaleSLD", args, "hi:o:s:", longopts);
+        Getopt g = new Getopt("ScaleSLD", args, "hd:i:o:s:", longopts);
 
         int c;
 
         String      inputFile   = null;
         String      outputFile  = null;
         String      strScales   = null;
+        String      strDpi      = null;
 
         while ((c = g.getopt()) != -1) {
             switch (c) {
+            case 'd':
+                strDpi = g.getOptarg();
+                break;
+
             case 'i':
                 inputFile = g.getOptarg();
                 break;
@@ -184,6 +202,19 @@ public final class ScaleSLD {
             return;
         }
 
+        // parse the DPI value, if supplied
+        double dpi = DEFAULT_DPI;
+        if (strDpi != null) {
+            try {
+                dpi = Double.parseDouble(strDpi);
+            } catch (Exception e) {
+                System.out.println("Error parsing dpi value.");
+                System.out.println();
+                e.printStackTrace(System.out);
+                return;
+            }
+        }
+
         // parse the scales
         StringTokenizer tok    = new StringTokenizer(strScales, ",");
         List<Integer>   scales = new ArrayList<Integer>(tok.countTokens());
@@ -202,7 +233,7 @@ public final class ScaleSLD {
             FileReader   reader = new FileReader(inputFile);
             Writer       writer = new FileWriter(outputFile);
 
-            scaleSld(reader, scales, writer);
+            scaleSld(reader, scales, dpi, writer);
 
         } catch (Exception e) {
             System.out.println("Scaling failed.");
@@ -232,7 +263,7 @@ public final class ScaleSLD {
     }
 
     /**
-     * Scale an SLD file.
+     * Scale an SLD file, using the default DPI value.
      *
      * @param input the input file to scale
      * @param scales a list of scales, interpreted as 1:N, for which to generate
@@ -255,6 +286,36 @@ public final class ScaleSLD {
                                                TransformerException,
                                                XPathExpressionException,
                                                RenderException {
+
+        scaleSld(input, scales, DEFAULT_DPI, output);
+    }
+
+    /**
+     * Scale an SLD file.
+     *
+     * @param input the input file to scale
+     * @param scales a list of scales, interpreted as 1:N, for which to generate
+     *        different segments in the generated SLD output
+     * @param dpi dots per inch on the target rendering device
+     * @param output generate the scaled result into this output file
+     * @throws ParserConfigurationException on XML parser configuration errors
+     * @throws SAXException on XML parser errors
+     * @throws IOException on I/O errors
+     * @throws TransformerException on XML transformer errors
+     * @throws XPathExpressionException on XPath errors
+     * @throws RenderException on SLD scaling, rendering issues
+     */
+    static void
+    scaleSld(Reader         input,
+             List<Integer>  scales,
+             double         dpi,
+             Writer         output)
+                                        throws ParserConfigurationException,
+                                               SAXException,
+                                               IOException,
+                                               TransformerException,
+                                               XPathExpressionException,
+                                               RenderException {
         // read the input file
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         dbf.setNamespaceAware(true);
@@ -264,7 +325,7 @@ public final class ScaleSLD {
         Document     d = db.parse(fSource);
 
         // scale the loaded SLD
-        Document dd = scaleSld(d, scales);
+        Document dd = scaleSld(d, scales, dpi);
 
         // write the XML document into a file
         TransformerFactory tFactory = TransformerFactory.newInstance();
@@ -282,13 +343,15 @@ public final class ScaleSLD {
      * @param input the input document to scale
      * @param scales a list of scales, interpreted as 1:N, for which to generate
      *        different segments in the generated SLD output
+     * @param dpi the dpi value of the target device
      * @return the scaled result as an XML document
      * @throws XPathExpressionException on XPath errors
      * @throws RenderException on SLD parsing, scaling errors
      * @throws ParserConfigurationException on XML parser config errors
      */
     static Document scaleSld(Document        input,
-                             List<Integer>   scales)
+                             List<Integer>   scales,
+                             double          dpi)
                                       throws XPathExpressionException,
                                              RenderException,
                                              ParserConfigurationException {
@@ -324,9 +387,9 @@ public final class ScaleSLD {
 
         // now add scales, if any
         if (scales.size() == 1) {
-            scaleSldSingle(output, scales.get(0));
+            scaleSldSingle(output, scales.get(0), dpi);
         } else if (scales.size() > 1) {
-            scaleSldMultiple(output, scales);
+            scaleSldMultiple(output, scales, dpi);
         }
 
         return output;
@@ -340,11 +403,13 @@ public final class ScaleSLD {
      *
      * @param document the SLD document to scale.
      * @param scale the single scale point to split rendering by
+     * @param dpi the DPI value of the target device
      * @throws XPathExpressionException on XPath errors
      */
     private static void
     scaleSldSingle(Document document,
-                   int      scale) throws XPathExpressionException {
+                   int      scale,
+                   double   dpi) throws XPathExpressionException {
 
         XPath xpath = XPathFactory.newInstance().newXPath();
         xpath.setNamespaceContext(getNsCtx());
@@ -363,6 +428,10 @@ public final class ScaleSLD {
             insertMinScaleDenominator(rule, scale);
             insertMaxScaleDenominator(ruleCopy, scale);
 
+            // scale both old and new rule elements
+            scaleValues(rule, scale, dpi);
+            scaleValues(ruleCopy, scale, dpi);
+
             // insert the copied rule before the original one
             rule.getParentNode().insertBefore(ruleCopy, rule);
         }
@@ -375,17 +444,19 @@ public final class ScaleSLD {
      *
      * @param document the SLD document to scale.
      * @param scales the scaling points
+     * @param dpi the dpi value of the target device
      * @throws XPathExpressionException on XPath errors
      */
     private static void
     scaleSldMultiple(Document       document,
-                     List<Integer>  scales) throws XPathExpressionException {
+                     List<Integer>  scales,
+                     double         dpi)    throws XPathExpressionException {
 
         // don't solve this here if there are less than 2 scaling values
         if (scales.isEmpty()) {
             return;
         } else if (scales.size() == 1) {
-            scaleSldSingle(document, scales.get(0));
+            scaleSldSingle(document, scales.get(0), dpi);
             return;
         }
 
@@ -404,7 +475,12 @@ public final class ScaleSLD {
             Element ruleCopy = (Element) rule.cloneNode(true);
             int     sMax     = scales.get(0);
             int     nScales1 = scales.size() - 1;
+
+            // insert the max scale denominator
             insertMaxScaleDenominator(ruleCopy, sMax);
+            // scale the values
+            scaleValues(ruleCopy, sMax, dpi);
+            // store this node, will be added later
             df.appendChild(ruleCopy);
 
             // process the intermediate rules, that have box max and min scale
@@ -418,11 +494,16 @@ public final class ScaleSLD {
                 insertMaxScaleDenominator(ruleCopy, sMax);
                 insertMinScaleDenominator(ruleCopy, sMin);
 
+                // scale the values inside this rule
+                scaleValues(ruleCopy, (sMax + sMin) / 2, dpi);
+
                 df.appendChild(ruleCopy);
             }
 
             // update the original rule with a min scale denominator
-            insertMinScaleDenominator(rule, scales.get(nScales1));
+            int sMin = scales.get(nScales1);
+            insertMinScaleDenominator(rule, sMin);
+            scaleValues(rule, sMin, dpi);
 
             // insert the new rules before the original one
             rule.getParentNode().insertBefore(df, rule);
@@ -487,4 +568,42 @@ public final class ScaleSLD {
             rule.insertBefore(msd, rule.getFirstChild());
         }
     }
+
+    /**
+     * Scale the numeric values inside an element.
+     * Scaling is done according to the scaling factor and the target device
+     * DPI, and taking units of measurement into account.
+     *
+     * @param node the node in which to scale all values
+     * @param scale the scaling factor used
+     * @param dpi the DPI value of the target device
+     * @throws XPathExpressionException on XPath errors
+     */
+    private static void
+    scaleValues(Node node, int scale, double dpi)
+                                            throws XPathExpressionException {
+
+        XPath xpath = XPathFactory.newInstance().newXPath();
+        xpath.setNamespaceContext(getNsCtx());
+
+        NodeList nodes = (NodeList) xpath.evaluate(".//text()", node,
+                                                       XPathConstants.NODESET);
+
+        for (int i = 0; i < nodes.getLength(); ++i) {
+            Text   n = (Text) nodes.item(i);
+            String s = n.getNodeValue().trim();
+
+            if (s.isEmpty() || UOM.uomPostfix(s) == null) {
+                continue;
+            }
+
+            try {
+                double d = UOM.scaleValue(s, scale, dpi);
+                n.setTextContent(Long.toString(Math.round(d)));
+            } catch (RenderException e) {
+                // ignore
+            }
+        }
+    }
+
 }
