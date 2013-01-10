@@ -43,6 +43,7 @@
                         <sld:Stroke>
                             <sld:CssParameter name="stroke">#FF0000</sld:CssParameter>
                             <sld:CssParameter name="stroke-width">0.5mm</sld:CssParameter>
+                            <sld:CssParameter name="stroke-dasharray">20mm 20mm</sld:CssParameter>
                         </sld:Stroke>
                     </sld:PolygonSymbolizer>
                 </sld:Rule>

@@ -701,29 +701,47 @@ public final class ScaleSLD {
                                                        XPathConstants.NODESET);
 
         for (int i = 0; i < nodes.getLength(); ++i) {
-            Text   n = (Text) nodes.item(i);
-            String s = n.getNodeValue().trim();
+            Text         n  = (Text) nodes.item(i);
+            String       s  = n.getNodeValue().trim();
 
-            if (s.isEmpty() || UOM.uomPostfix(s) == null) {
+            if (s.isEmpty()) {
                 continue;
             }
 
-            try {
-                xpath.reset();
-                boolean inFunction = (Boolean) xpath.evaluate(
+            StringBuffer sb = new StringBuffer();
+
+            xpath.reset();
+            boolean inFunction = (Boolean) xpath.evaluate(
                         "count(ancestor::" + OGC_NS_PREFIX + ":Function) > 0",
                         n, XPathConstants.BOOLEAN);
 
-                if (inFunction) {
-                    double d = UOM.scaleValueCrs(s, scale, crs, refXY);
-                    n.setTextContent(Long.toString(Math.round(d)));
-                } else {
-                    double d = UOM.scaleValue(s, scale, dpi);
-                    n.setTextContent(Long.toString(Math.round(d)));
+            StringTokenizer tok = new StringTokenizer(s, " ");
+            while (tok.hasMoreTokens()) {
+                String t = tok.nextToken();
+
+                if (t.isEmpty() || UOM.uomPostfix(t) == null) {
+                    sb.append(t);
+                    sb.append(' ');
+                    continue;
                 }
-            } catch (RenderException e) {
-                // ignore
+
+                try {
+                    if (inFunction) {
+                        double d = UOM.scaleValueCrs(t, scale, crs, refXY);
+                        sb.append(Long.toString(Math.round(d)));
+                        sb.append(' ');
+                    } else {
+                        double d = UOM.scaleValue(t, scale, dpi);
+                        sb.append(Long.toString(Math.round(d)));
+                        sb.append(' ');
+                    }
+                } catch (RenderException e) {
+                    sb.append(t);
+                    sb.append(' ');
+                }
             }
+
+            n.setTextContent(sb.toString().trim());
         }
     }
 
