@@ -15,7 +15,7 @@
             <sld:FeatureTypeStyle>
                 <sld:Rule>
                     <sld:Name>prohibited airspaces rule 1</sld:Name>
-                    <sld:MaxScaleDenominator>250000</sld:MaxScaleDenominator>
+                    <sld:MaxScaleDenominator>250000.0</sld:MaxScaleDenominator>
                     <ogc:Filter>
                         <ogc:And>
                             <ogc:PropertyIsEqualTo>
@@ -49,8 +49,8 @@
                 </sld:Rule>
                 <sld:Rule>
                     <sld:Name>prohibited airspaces rule 1</sld:Name>
-                    <sld:MinScaleDenominator>250000</sld:MinScaleDenominator>
-                    <sld:MaxScaleDenominator>500000</sld:MaxScaleDenominator>
+                    <sld:MinScaleDenominator>250000.0</sld:MinScaleDenominator>
+                    <sld:MaxScaleDenominator>500000.0</sld:MaxScaleDenominator>
                     <ogc:Filter>
                         <ogc:And>
                             <ogc:PropertyIsEqualTo>
@@ -84,7 +84,7 @@
                 </sld:Rule>
                 <sld:Rule>
                     <sld:Name>prohibited airspaces rule 1</sld:Name>
-                    <sld:MinScaleDenominator>500000</sld:MinScaleDenominator>
+                    <sld:MinScaleDenominator>500000.0</sld:MinScaleDenominator>
                     <ogc:Filter>
                         <ogc:And>
                             <ogc:PropertyIsEqualTo>
@@ -119,7 +119,7 @@
 
                 <sld:Rule>
                     <sld:Name>prohibited airspaces rule 2</sld:Name>
-                    <sld:MaxScaleDenominator>250000</sld:MaxScaleDenominator>
+                    <sld:MaxScaleDenominator>250000.0</sld:MaxScaleDenominator>
                     <ogc:Filter>
                         <ogc:And>
                             <ogc:PropertyIsEqualTo>
@@ -150,7 +150,7 @@
                                 <ogc:PropertyName>way</ogc:PropertyName>
                                 <ogc:Function name="buffer">
                                     <ogc:PropertyName>way</ogc:PropertyName>
-                                    <ogc:Literal>-4</ogc:Literal>
+                                    <ogc:Literal>-439</ogc:Literal>
                                 </ogc:Function>
                             </ogc:Function>
                         </sld:Geometry>
@@ -162,8 +162,8 @@
                 </sld:Rule>
                 <sld:Rule>
                     <sld:Name>prohibited airspaces rule 2</sld:Name>
-                    <sld:MinScaleDenominator>250000</sld:MinScaleDenominator>
-                    <sld:MaxScaleDenominator>500000</sld:MaxScaleDenominator>
+                    <sld:MinScaleDenominator>250000.0</sld:MinScaleDenominator>
+                    <sld:MaxScaleDenominator>500000.0</sld:MaxScaleDenominator>
                     <ogc:Filter>
                         <ogc:And>
                             <ogc:PropertyIsEqualTo>
@@ -194,7 +194,7 @@
                                 <ogc:PropertyName>way</ogc:PropertyName>
                                 <ogc:Function name="buffer">
                                     <ogc:PropertyName>way</ogc:PropertyName>
-                                    <ogc:Literal>-3</ogc:Literal>
+                                    <ogc:Literal>-439</ogc:Literal>
                                 </ogc:Function>
                             </ogc:Function>
                         </sld:Geometry>
@@ -206,7 +206,7 @@
                 </sld:Rule>
                 <sld:Rule>
                     <sld:Name>prohibited airspaces rule 2</sld:Name>
-                    <sld:MinScaleDenominator>500000</sld:MinScaleDenominator>
+                    <sld:MinScaleDenominator>500000.0</sld:MinScaleDenominator>
                     <ogc:Filter>
                         <ogc:And>
                             <ogc:PropertyIsEqualTo>
@@ -237,7 +237,7 @@
                                 <ogc:PropertyName>way</ogc:PropertyName>
                                 <ogc:Function name="buffer">
                                     <ogc:PropertyName>way</ogc:PropertyName>
-                                    <ogc:Literal>-2</ogc:Literal>
+                                    <ogc:Literal>-439</ogc:Literal>
                                 </ogc:Function>
                             </ogc:Function>
                         </sld:Geometry>

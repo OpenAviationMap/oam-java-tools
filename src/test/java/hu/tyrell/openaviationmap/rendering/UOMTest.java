@@ -47,7 +47,16 @@ public class UOMTest {
             caught = true;
         }
         assertTrue("expected RenderingException not caught", caught);
-}
+
+        caught = false;
+        try {
+            UOM.scaleValue("1m", 0, 90);
+        } catch (RenderException e) {
+            caught = true;
+        }
+        assertTrue("expected RenderingException not caught", caught);
+
+    }
 
     /**
      * Test strange input.

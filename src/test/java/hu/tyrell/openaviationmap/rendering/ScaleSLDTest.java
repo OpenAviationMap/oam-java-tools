@@ -82,10 +82,12 @@ public class ScaleSLDTest {
                                       XPathExpressionException,
                                       RenderException {
         FileReader      input  = new FileReader("var/proba.sld");
-        List<Integer>   scales = new ArrayList<Integer>(0);
+        List<Double>    scales = new ArrayList<Double>(0);
         StringWriter    output = new StringWriter();
 
-        ScaleSLD.scaleSld(input, scales, output);
+        ScaleSLD.scaleSld(input, scales,
+                          ScaleSLD.DEFAULT_CRS, ScaleSLD.DEFAULT_REF_XY,
+                          output);
 
         // now check that the input and output are the same
         Node d  = readXml(new FileReader("var/proba.sld"));
@@ -116,12 +118,14 @@ public class ScaleSLDTest {
                                     RenderException {
 
         FileReader      input  = new FileReader("var/empty.aixm51");
-        List<Integer>   scales = new ArrayList<Integer>(0);
+        List<Double>    scales = new ArrayList<Double>(0);
         StringWriter    output = new StringWriter();
         boolean         caught = false;
 
         try {
-            ScaleSLD.scaleSld(input, scales, output);
+            ScaleSLD.scaleSld(input, scales,
+                              ScaleSLD.DEFAULT_CRS, ScaleSLD.DEFAULT_REF_XY,
+                              output);
         } catch (RenderException e) {
             // this is what we expected
             caught = true;
@@ -149,12 +153,14 @@ public class ScaleSLDTest {
                                            RenderException {
 
         FileReader      input  = new FileReader("var/proba-500000.sld");
-        List<Integer>   scales = new ArrayList<Integer>(0);
+        List<Double>    scales = new ArrayList<Double>(0);
         StringWriter    output = new StringWriter();
         boolean         caught = false;
 
         try {
-            ScaleSLD.scaleSld(input, scales, output);
+            ScaleSLD.scaleSld(input, scales,
+                              ScaleSLD.DEFAULT_CRS, ScaleSLD.DEFAULT_REF_XY,
+                              output);
         } catch (RenderException e) {
             // this is what we expected
             caught = true;
@@ -183,13 +189,15 @@ public class ScaleSLDTest {
                                       XPathExpressionException,
                                       RenderException {
 
-        FileReader      input  = new FileReader("var/proba.sld");
-        List<Integer>   scales = new ArrayList<Integer>(1);
+        FileReader      input  = new FileReader("var/proba.sldt");
+        List<Double>    scales = new ArrayList<Double>(1);
         StringWriter    output = new StringWriter();
 
-        scales.add(500000);
+        scales.add(500000d);
 
-        ScaleSLD.scaleSld(input, scales, output);
+        ScaleSLD.scaleSld(input, scales,
+                          ScaleSLD.DEFAULT_CRS, ScaleSLD.DEFAULT_REF_XY,
+                          output);
 
         // now check that the input and output are the same
         Node d  = readXml(new FileReader("var/proba-500000.sld"));
@@ -219,14 +227,16 @@ public class ScaleSLDTest {
                                        XPathExpressionException,
                                        RenderException {
 
-        FileReader      input  = new FileReader("var/proba.sld");
-        List<Integer>   scales = new ArrayList<Integer>(2);
+        FileReader      input  = new FileReader("var/proba.sldt");
+        List<Double>    scales = new ArrayList<Double>(2);
         StringWriter    output = new StringWriter();
 
-        scales.add(250000);
-        scales.add(500000);
+        scales.add(250000d);
+        scales.add(500000d);
 
-        ScaleSLD.scaleSld(input, scales, output);
+        ScaleSLD.scaleSld(input, scales,
+                          ScaleSLD.DEFAULT_CRS, ScaleSLD.DEFAULT_REF_XY,
+                          output);
 
         // now check that the input and output are the same
         Node d  = readXml(new FileReader("var/proba-250000_500000.sld"));
@@ -256,16 +266,18 @@ public class ScaleSLDTest {
                                         XPathExpressionException,
                                         RenderException {
 
-        FileReader      input  = new FileReader("var/proba.sld");
-        List<Integer>   scales = new ArrayList<Integer>(2);
+        FileReader      input  = new FileReader("var/proba.sldt");
+        List<Double>    scales = new ArrayList<Double>(2);
         StringWriter    output = new StringWriter();
 
-        scales.add(125000);
-        scales.add(250000);
-        scales.add(500000);
-        scales.add(1000000);
+        scales.add(125000d);
+        scales.add(250000d);
+        scales.add(500000d);
+        scales.add(1000000d);
 
-        ScaleSLD.scaleSld(input, scales, output);
+        ScaleSLD.scaleSld(input, scales,
+                          ScaleSLD.DEFAULT_CRS, ScaleSLD.DEFAULT_REF_XY,
+                          output);
 
         // now check that the input and output are the same
         Node d  = readXml(new FileReader(

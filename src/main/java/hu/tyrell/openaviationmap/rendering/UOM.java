@@ -17,6 +17,12 @@
  */
 package hu.tyrell.openaviationmap.rendering;
 
+import org.geotools.geometry.GeometryBuilder;
+import org.geotools.referencing.CRS;
+import org.geotools.referencing.GeodeticCalculator;
+import org.opengis.geometry.PositionFactory;
+import org.opengis.referencing.crs.CoordinateReferenceSystem;
+
 /**
  * Enumeration of units of measurements, like meters, nautical miles,
  * millimeters and inches.
@@ -77,6 +83,7 @@ public enum UOM {
 
     /**
      * Return a value scaled to pixels.
+     *
      * Scaling is done based on the provided scaling factor and, if needed,
      * the provided target device DPI value. For units of feet, meters and
      * nautical miles, a real-world size is expected. for units of mm and inch,
@@ -93,7 +100,7 @@ public enum UOM {
      *         or the numeric value cannot be parsed
      */
     public static double
-    scaleValue(String value, int scale, double dpi) throws RenderException {
+    scaleValue(String value, double scale, double dpi) throws RenderException {
         String v      = value.trim();
 
         // extract the unit of measurement
@@ -121,6 +128,9 @@ public enum UOM {
         case M:
         case NM:
         default:
+            if (scale == 0) {
+                throw new RenderException("no scale information provided");
+            }
             result = (uom.getInMeters() * d) / (dotInMeters * scale);
             break;
 
@@ -131,6 +141,111 @@ public enum UOM {
         }
 
         return result;
+    }
+
+    /**
+     * Return a value scaled to the specified CRS's scale.
+     *
+     * Scaling is done based on the provided scaling factor and, if needed,
+     * the provided target device DPI value. For units of feet, meters and
+     * nautical miles, a real-world size is expected. for units of mm and inch,
+     * a target-device size is expected.
+     *
+     * @param value a string representation of the value to convert. this is of
+     *        the form "numeric_value uom", e.g. "2mm" or "-3.5 ft"
+     * @param scale the scaling factor to use
+     * @param crsRef the CRS reference to use
+     * @param refXY the x and y coordinates as a reference point in CRS space
+     * @return the converted unit as a measure in the reference CRS
+     * @throws RenderException if the unit of measurement is not recognized,
+     *         or the numeric value cannot be parsed
+     */
+    public static double
+    scaleValueCrs(String value, double scale, String crsRef, double[] refXY)
+                                                    throws RenderException {
+        String v      = value.trim();
+
+        // extract the unit of measurement
+        String uomStr = uomPostfix(v);
+        if (uomStr == null) {
+            throw new RenderException("unrecognized unit of measurement");
+        }
+        UOM uom  = fromString(uomStr);
+
+        // extract the numeric value
+        v        = v.substring(0, v.length() - uomStr.length()).trim();
+        double d = 0;
+        try {
+            d = Double.valueOf(v);
+        } catch (NumberFormatException e) {
+            throw new RenderException(e);
+        }
+
+        // so far so good, now scale the value
+        double result;
+
+        switch (uom) {
+        case FT:
+        case M:
+        case NM:
+        default:
+            result = distanceInCrs(uom.inMeters * d, refXY, crsRef);
+            break;
+
+        case MM:
+        case INCH:
+            result = distanceInCrs(uom.inMeters * d * scale, refXY, crsRef);
+            break;
+        }
+
+        return result;
+    }
+
+
+    /**
+     * Calculate a distance in the specified CRS notation.
+     *
+     * @param inMeters the distance in meters that need to be calculated in
+     *        as a distance in the supplied CRS
+     * @param refXY the x and y coordinate of a reference coordinate, which is
+     *        used as a location to calculate the distance at
+     * @param refCrs the name of the CRS to use for the calculation
+     * @return a distance, measured relative to the CRS supplied, which is in
+     *         fact the same distance as the supplied inMeters parameter
+     */
+    private static double
+    distanceInCrs(double inMeters, double[] refXY, String refCrs) {
+        double dist = 0;
+
+        try {
+            // calculate the distance in meters of 0.01 * refY in the ref CRS
+            double[] sp = {refXY[0], refXY[1]};
+            double[] dp = {refXY[0], refXY[1] * 1.01};
+
+            CoordinateReferenceSystem crs = CRS.decode(refCrs);
+            GeodeticCalculator gc = new GeodeticCalculator(crs);
+            GeometryBuilder    gb = new GeometryBuilder(crs);
+            PositionFactory    pf = gb.getPositionFactory();
+
+            gc.setStartingPosition(pf.createDirectPosition(sp));
+            gc.setDestinationPosition(pf.createDirectPosition(dp));
+
+            double refY01InMeters = gc.getOrthodromicDistance();
+
+            // now, calculate the CRS distance as a proportional of 0.01 * refY
+            dist = inMeters * (refXY[1] * 0.01) / refY01InMeters;
+
+            double[] ssp = {refXY[0], refXY[1]};
+            double[] ddp = {refXY[0], refXY[1] + dist};
+
+            gc.setStartingPosition(pf.createDirectPosition(ssp));
+            gc.setDestinationPosition(pf.createDirectPosition(ddp));
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        return dist;
     }
 
     /**
