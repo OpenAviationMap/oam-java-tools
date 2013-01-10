@@ -235,12 +235,6 @@ public enum UOM {
             // now, calculate the CRS distance as a proportional of 0.01 * refY
             dist = inMeters * (refXY[1] * 0.01) / refY01InMeters;
 
-            double[] ssp = {refXY[0], refXY[1]};
-            double[] ddp = {refXY[0], refXY[1] + dist};
-
-            gc.setStartingPosition(pf.createDirectPosition(ssp));
-            gc.setDestinationPosition(pf.createDirectPosition(ddp));
-
         } catch (Exception e) {
             System.out.println(e);
         }
