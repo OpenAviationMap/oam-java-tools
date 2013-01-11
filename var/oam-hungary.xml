@@ -5952,6 +5952,7 @@
     <tag k='height:class' v='amsl' />
     <tag k='height:unit' v='m' />
     <tag k='name' v='FERTŐSZENTMIKLÓS ARP' />
+    <tag k='arp' v='yes' />
   </node>
   <node id='21924' timestamp='2012-04-10T18:12:22Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='192' lat='47.5383369' lon='16.8444444' />
   <node id='21925' timestamp='2012-04-10T18:12:23Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='192' lat='47.5392015' lon='16.8314302' />
@@ -7077,6 +7078,7 @@
     <tag k='height:class' v='amsl' />
     <tag k='height:unit' v='m' />
     <tag k='name' v='BÉKÉSCSABA ARP' />
+    <tag k='arp' v='yes' />
   </node>
   <node id='23865' timestamp='2012-04-13T14:45:57Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='202' lat='46.4247222' lon='20.9611111' />
   <node id='23866' timestamp='2012-04-13T14:45:57Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='202' lat='46.4413889' lon='21.2186111' />
@@ -7162,6 +7164,7 @@
     <tag k='height:class' v='amsl' />
     <tag k='height:unit' v='m' />
     <tag k='name' v='BUDAPEST LISZT FERENC INTERNATIONAL AIRPORT ARP' />
+    <tag k='arp' v='yes' />
   </node>
   <node id='23906' timestamp='2012-04-13T14:46:34Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='203' lat='47.4393167' lon='19.2313639'>
     <tag k='name' v='E' />
@@ -7529,6 +7532,7 @@
     <tag k='height:class' v='amsl' />
     <tag k='height:unit' v='m' />
     <tag k='name' v='DEBRECEN ARP' />
+    <tag k='arp' v='yes' />
   </node>
   <node id='23960' timestamp='2012-04-13T14:47:20Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='204' lat='47.53325' lon='21.6880556'>
     <tag k='name' v='EN' />
@@ -7630,6 +7634,7 @@
     <tag k='height:class' v='amsl' />
     <tag k='height:unit' v='m' />
     <tag k='name' v='NYÍREGYHÁZA ARP' />
+    <tag k='arp' v='yes' />
   </node>
   <node id='24000' timestamp='2012-04-13T14:48:40Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='205' lat='48.0015278' lon='21.6940278'>
     <tag k='name' v='P' />
@@ -7725,6 +7730,7 @@
     <tag k='height:class' v='amsl' />
     <tag k='height:unit' v='m' />
     <tag k='name' v='PÉCS-POGÁNY ARP' />
+    <tag k='arp' v='yes' />
   </node>
   <node id='24043' timestamp='2012-04-13T14:49:11Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='206' lat='45.7705556' lon='18.2522222' />
   <node id='24044' timestamp='2012-04-13T14:49:11Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='206' lat='45.8516667' lon='18.4722222' />
@@ -7755,6 +7761,7 @@
     <tag k='height:class' v='amsl' />
     <tag k='height:unit' v='m' />
     <tag k='name' v='GYŐR/PÉR ARP' />
+    <tag k='arp' v='yes' />
   </node>
   <node id='24055' timestamp='2012-04-13T14:49:41Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='207' lat='47.4997222' lon='17.6983333' />
   <node id='24056' timestamp='2012-04-13T14:49:41Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='207' lat='47.4997222' lon='18.165' />
@@ -7854,6 +7861,7 @@
     <tag k='height:class' v='amsl' />
     <tag k='height:unit' v='m' />
     <tag k='name' v='SÁRMELLÉK/BALATON ARP' />
+    <tag k='arp' v='yes' />
   </node>
   <node id='24105' timestamp='2012-04-13T14:50:10Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='208' lat='46.4275' lon='17.0086111' />
   <node id='24106' timestamp='2012-04-13T14:50:10Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='208' lat='46.4275' lon='17.0086111' />
@@ -7916,6 +7924,7 @@
     <tag k='height:class' v='amsl' />
     <tag k='height:unit' v='m' />
     <tag k='name' v='SZEGED ARP' />
+    <tag k='arp' v='yes' />
   </node>
   <node id='24138' timestamp='2012-04-13T14:50:51Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='209' lat='46.2047222' lon='20.0905556' />
   <node id='24139' timestamp='2012-04-13T14:50:51Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='209' lat='46.2403667' lon='20.0922556' />

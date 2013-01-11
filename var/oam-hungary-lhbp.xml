@@ -394,6 +394,7 @@
       <tag k="height" v="151.3"/>
       <tag k="height:class" v="amsl"/>
       <tag k="name" v="BUDAPEST LISZT FERENC INTERNATIONAL AIRPORT ARP"/>
+      <tag k="arp" v="yes"/>
    </node>
    <way id="3" version="1">
       <tag k="aeroway" v="runway"/>

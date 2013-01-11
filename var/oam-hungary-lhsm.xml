@@ -84,6 +84,7 @@
       <tag k="height" v="124.0"/>
       <tag k="height:class" v="amsl"/>
       <tag k="name" v="SÁRMELLÉK/BALATON ARP"/>
+      <tag k="arp" v="yes"/>
    </node>
    <way id="3" version="1">
       <tag k="height:unit" v="m"/>

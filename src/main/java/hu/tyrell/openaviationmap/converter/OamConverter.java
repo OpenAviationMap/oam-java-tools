@@ -859,6 +859,7 @@ public final class OamConverter {
             arpNode.setId(action == Action.CREATE ? -nIdIx : nIdIx);
             arpNode.setAction(action);
             arpNode.setVersion(version);
+            arpNode.getTags().put("arp", "yes");
             if (ad.getName() != null) {
                 arpNode.getTags().put("name", ad.getName() + " ARP");
             }

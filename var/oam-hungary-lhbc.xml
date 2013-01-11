@@ -64,6 +64,7 @@
       <tag k="height" v="87.0"/>
       <tag k="height:class" v="amsl"/>
       <tag k="name" v="BÉKÉSCSABA ARP"/>
+      <tag k="arp" v="yes"/>
    </node>
    <way id="3" version="1">
       <tag k="aeroway" v="runway"/>

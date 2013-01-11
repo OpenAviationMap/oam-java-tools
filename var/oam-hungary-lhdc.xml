@@ -97,6 +97,7 @@
       <tag k="height" v="110.0"/>
       <tag k="height:class" v="amsl"/>
       <tag k="name" v="DEBRECEN ARP"/>
+      <tag k="arp" v="yes"/>
    </node>
    <way id="3" version="1">
       <tag k="aeroway" v="runway"/>
