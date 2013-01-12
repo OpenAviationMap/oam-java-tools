@@ -83,7 +83,16 @@ public class EAipProcessorEnr22 extends EAipProcessor {
 
             airspace.setUpperLimit(upperLimit);
             airspace.setLowerLimit(lowerLimit);
+
+            // get the airspace class
             airspace.setAirspaceClass(str.substring(j + 1).trim());
+
+            // determine the airspace type
+            if (name.toLowerCase().contains("tma")) {
+                airspace.setType("TMA");
+            } else if (name.toLowerCase().contains("area")) {
+                airspace.setType("AREA");
+            }
 
             // get the operator
             xpath.reset();

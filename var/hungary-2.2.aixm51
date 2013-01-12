@@ -24,12 +24,12 @@
                <aixm:interpretation>BASELINE</aixm:interpretation>
                <aixm:sequenceNumber>1</aixm:sequenceNumber>
                <aixm:correctionNumber>0</aixm:correctionNumber>
-               <aixm:type/>
+               <aixm:type>TMA</aixm:type>
                <aixm:designator/>
                <aixm:localType xsi:nil="true"/>
                <aixm:name>KOSICE TMA 2</aixm:name>
                <aixm:designatorICAO>yes</aixm:designatorICAO>
-               <aixm:controlType xsi:nil="true"/>
+               <aixm:controlType>CIVIL</aixm:controlType>
                <aixm:upperLowerSeparation xsi:nil="true"/>
                <aixm:protectedRoute xsi:nil="true"/>
                <aixm:geometryComponent>
@@ -105,12 +105,12 @@
                <aixm:interpretation>BASELINE</aixm:interpretation>
                <aixm:sequenceNumber>1</aixm:sequenceNumber>
                <aixm:correctionNumber>0</aixm:correctionNumber>
-               <aixm:type/>
+               <aixm:type>AREA</aixm:type>
                <aixm:designator/>
                <aixm:localType xsi:nil="true"/>
                <aixm:name>LESMO_AREA</aixm:name>
                <aixm:designatorICAO>yes</aixm:designatorICAO>
-               <aixm:controlType xsi:nil="true"/>
+               <aixm:controlType>CIVIL</aixm:controlType>
                <aixm:upperLowerSeparation xsi:nil="true"/>
                <aixm:protectedRoute xsi:nil="true"/>
                <aixm:geometryComponent>
@@ -186,12 +186,12 @@
                <aixm:interpretation>BASELINE</aixm:interpretation>
                <aixm:sequenceNumber>1</aixm:sequenceNumber>
                <aixm:correctionNumber>0</aixm:correctionNumber>
-               <aixm:type/>
+               <aixm:type>AREA</aixm:type>
                <aixm:designator/>
                <aixm:localType xsi:nil="true"/>
                <aixm:name>RUTOL AREA</aixm:name>
                <aixm:designatorICAO>yes</aixm:designatorICAO>
-               <aixm:controlType xsi:nil="true"/>
+               <aixm:controlType>CIVIL</aixm:controlType>
                <aixm:upperLowerSeparation xsi:nil="true"/>
                <aixm:protectedRoute xsi:nil="true"/>
                <aixm:geometryComponent>
