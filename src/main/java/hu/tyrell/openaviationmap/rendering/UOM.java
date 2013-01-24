@@ -17,10 +17,9 @@
  */
 package hu.tyrell.openaviationmap.rendering;
 
-import org.geotools.geometry.GeometryBuilder;
+import org.geotools.geometry.DirectPosition2D;
 import org.geotools.referencing.CRS;
 import org.geotools.referencing.GeodeticCalculator;
-import org.opengis.geometry.PositionFactory;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
 /**
@@ -224,11 +223,9 @@ public enum UOM {
 
             CoordinateReferenceSystem crs = CRS.decode(refCrs);
             GeodeticCalculator gc = new GeodeticCalculator(crs);
-            GeometryBuilder    gb = new GeometryBuilder(crs);
-            PositionFactory    pf = gb.getPositionFactory();
 
-            gc.setStartingPosition(pf.createDirectPosition(sp));
-            gc.setDestinationPosition(pf.createDirectPosition(dp));
+            gc.setStartingPosition(new DirectPosition2D(crs, sp[0], sp[1]));
+            gc.setDestinationPosition(new DirectPosition2D(crs, dp[0], dp[1]));
 
             double refY01InMeters = gc.getOrthodromicDistance();
 
