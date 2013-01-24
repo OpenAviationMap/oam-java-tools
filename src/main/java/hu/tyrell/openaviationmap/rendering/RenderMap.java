@@ -38,6 +38,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
+import java.util.logging.Level;
 
 import javax.media.jai.JAI;
 import javax.xml.parsers.ParserConfigurationException;
@@ -47,6 +48,7 @@ import org.geotools.data.DataStoreFinder;
 import org.geotools.factory.CommonFactoryFinder;
 import org.geotools.geometry.DirectPosition2D;
 import org.geotools.geometry.jts.ReferencedEnvelope;
+import org.geotools.jdbc.JDBCDataStore;
 import org.geotools.map.FeatureLayer;
 import org.geotools.map.MapContent;
 import org.geotools.referencing.GeodeticCalculator;
@@ -299,6 +301,12 @@ public final class RenderMap {
             return;
         }
 
+        // set logging levels for the geotools APIs
+        ((JDBCDataStore) oamDataStore).getLogger().setLevel(Level.SEVERE);
+        ((JDBCDataStore) osmDataStore).getLogger().setLevel(Level.SEVERE);
+        org.geotools.util.logging.Logging.
+          getLogger("org.geotools.referencing.factory").setLevel(Level.SEVERE);
+
         System.out.println("Rendering map at scale 1:" + ((int) scale)
                          + " at " + ((int) dpi) + " dpi to " + outputFile);
 
@@ -367,9 +375,9 @@ public final class RenderMap {
         addLayer(oamDataStore, sldParser, sldUrl,
                 "planet_osm_polygon", "oam_airspaces.sldt", scale, dpi, map);
         addLayer(oamDataStore, sldParser, sldUrl,
-                 "planet_osm_point", "oam_navaids.sldt", scale, dpi, map);
+                "planet_osm_point", "oam_navaids.sldt", scale, dpi, map);
         addLayer(oamDataStore, sldParser, sldUrl,
-                "planet_osm_line", "oam_runways.sldt", scale, dpi, map);
+                "planet_osm_line", "oam_runways.sld", scale, dpi, map);
 
 
         // calculate map coverage and image size
@@ -478,6 +486,7 @@ public final class RenderMap {
                 map.addLayer(layer);
             } catch (Exception e) {
                 System.out.println("error scaling SLD template " + styleName);
+                System.out.println(e.getMessage());
             }
         } else {
             sldParser.setInput(new URL(urlBase + styleName));
@@ -561,6 +570,7 @@ public final class RenderMap {
                            new Boolean(true));
         rendererParams.put(StreamingRenderer.VECTOR_RENDERING_KEY,
                             new Boolean(true));
+        rendererParams.put("renderingBuffer", 100);
         renderer.setRendererHints(rendererParams);
 
         RenderingHints hints2D =
