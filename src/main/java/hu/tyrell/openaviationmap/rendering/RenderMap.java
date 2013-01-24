@@ -65,7 +65,7 @@ public final class RenderMap {
     public static final double DEFAULT_DPI = 300;
 
     /** Float formatter. */
-    private static final DecimalFormat floatFormat =
+    private static final DecimalFormat FLOAT_FORMAT =
                                                 new DecimalFormat("###.##");
 
     /**
@@ -376,11 +376,11 @@ public final class RenderMap {
                 mapBounds.transform(DefaultGeographicCRS.WGS84, false);
 
         System.out.println("Map coverage: "
-               + floatFormat.format(mapBoundsWgs84.getMinX())
-                   + "\u00b0," + floatFormat.format(mapBoundsWgs84.getMinY())
+               + FLOAT_FORMAT.format(mapBoundsWgs84.getMinX())
+                   + "\u00b0," + FLOAT_FORMAT.format(mapBoundsWgs84.getMinY())
                + "\u00b0 x "
-               + floatFormat.format(mapBoundsWgs84.getMaxX())
-                   + "\u00b0," + floatFormat.format(mapBoundsWgs84.getMaxY())
+               + FLOAT_FORMAT.format(mapBoundsWgs84.getMaxX())
+                   + "\u00b0," + FLOAT_FORMAT.format(mapBoundsWgs84.getMaxY())
                    + "\u00b0");
 
         Rectangle imageBounds = calcImageBounds(scale, dpi, mapBounds,
