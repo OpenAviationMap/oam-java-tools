@@ -27,9 +27,15 @@ import java.awt.RenderingHints;
 import java.awt.image.ColorModel;
 import java.awt.image.SampleModel;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.StringReader;
+import java.io.StringWriter;
 import java.net.URL;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 
@@ -55,6 +61,8 @@ import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.operation.TransformException;
 import org.xml.sax.SAXException;
+
+import com.vividsolutions.jts.geom.Coordinate;
 
 /**
  * Command line utility to render a map into a bitmap, possibly for printing.
@@ -338,30 +346,30 @@ public final class RenderMap {
 
         // add the ground layers
         addLayer(osmDataStore, sldParser, sldUrl,
-                "planet_osm_polygon", "oam_waters.sld", map);
+                "planet_osm_polygon", "oam_waters.sld", scale, dpi, map);
         addLayer(osmDataStore, sldParser, sldUrl,
-                "planet_osm_polygon", "oam_forests.sld", map);
+                "planet_osm_polygon", "oam_forests.sld", scale, dpi, map);
         addLayer(osmDataStore, sldParser, sldUrl,
-                "planet_osm_polygon", "oam_cities.sld", map);
+                "planet_osm_polygon", "oam_cities.sld", scale, dpi, map);
         addLayer(osmDataStore, sldParser, sldUrl,
-                "planet_osm_point", "oam_peaks.sld", map);
+                "planet_osm_point", "oam_peaks.sld", scale, dpi, map);
         addLayer(osmDataStore, sldParser, sldUrl,
-                "planet_osm_point", "oam_city_markers.sld", map);
+                "planet_osm_point", "oam_city_markers.sld", scale, dpi, map);
         addLayer(osmDataStore, sldParser, sldUrl,
-                "planet_osm_line", "oam_roads.sld", map);
+                "planet_osm_line", "oam_roads.sld", scale, dpi, map);
         addLayer(osmDataStore, sldParser, sldUrl,
-                "planet_osm_point", "oam_labels.sld", map);
+                "planet_osm_point", "oam_labels.sld", scale, dpi, map);
 
 
         System.out.println("Opening Open Aviation Map database...");
 
         // add the aviation layers
         addLayer(oamDataStore, sldParser, sldUrl,
-                "planet_osm_polygon", "oam_airspaces.sld", map);
+                "planet_osm_polygon", "oam_airspaces.sldt", scale, dpi, map);
         addLayer(oamDataStore, sldParser, sldUrl,
-                 "planet_osm_point", "oam_navaids.sld", map);
+                 "planet_osm_point", "oam_navaids.sldt", scale, dpi, map);
         addLayer(oamDataStore, sldParser, sldUrl,
-                "planet_osm_line", "oam_runways.sld", map);
+                "planet_osm_line", "oam_runways.sldt", scale, dpi, map);
 
 
         // calculate map coverage and image size
@@ -432,6 +440,8 @@ public final class RenderMap {
      * @param urlBase the base URL for the SLD & related resources
      * @param featureName the name of the feature from the data store
      * @param styleName the name of the SLD file to use
+     * @param scale the scale of the rendering, used to re-scale SLD templates
+     * @param dpi the target DPI, used to re-scale SLD templates
      * @param map the map to add the layer to
      * @throws IOException on I/O errors
      */
@@ -441,14 +451,82 @@ public final class RenderMap {
              final URL          urlBase,
              String             featureName,
              String             styleName,
+             double             scale,
+             double             dpi,
              MapContent         map) throws IOException {
 
-        sldParser.setInput(new URL(urlBase + styleName));
-        Style[] styles = sldParser.readXML();
-        FeatureLayer layer = new FeatureLayer(
-                                       dataStore.getFeatureSource(featureName),
-                                       styles[0]);
-        map.addLayer(layer);
+        if (styleName.endsWith(".sldt")) {
+
+            CoordinateReferenceSystem crs = map.getCoordinateReferenceSystem();
+            String crsName = crs.getIdentifiers().iterator().next().toString();
+
+            Coordinate centerPoint = map.getMaxBounds().centre();
+
+            try {
+                Reader scaledSld = scaleSld(urlBase,
+                                            styleName,
+                                            crsName,
+                                            scale,
+                                            dpi,
+                                            centerPoint);
+
+                sldParser.setInput(scaledSld);
+                Style[] styles = sldParser.readXML();
+                FeatureLayer layer = new FeatureLayer(
+                                     dataStore.getFeatureSource(featureName),
+                                     styles[0]);
+                map.addLayer(layer);
+            } catch (Exception e) {
+                System.out.println("error scaling SLD template " + styleName);
+            }
+        } else {
+            sldParser.setInput(new URL(urlBase + styleName));
+            Style[] styles = sldParser.readXML();
+            FeatureLayer layer = new FeatureLayer(
+                                     dataStore.getFeatureSource(featureName),
+                                     styles[0]);
+            map.addLayer(layer);
+        }
+    }
+
+    /**
+     * Scale an SLD template into an SLD, tailor made for the specified
+     * scale and DPI value.
+     *
+     * @param urlBase the base URL where to find the SLD template
+     * @param styleName the name of the SLD template, relative to urlBase
+     * @param crsName the name of the CRS to use for scaling
+     * @param scale the target scale, which is 1:scale
+     * @param dpi the target DPI
+     * @param centerPoint a reference point to calculate real-world scale,
+     *        in CRS notation
+     * @return the transformed SLD
+     * @throws Exception on scaling errors
+     */
+    private static Reader
+    scaleSld(URL        urlBase,
+            String      styleName,
+            String      crsName,
+            double      scale,
+            double      dpi,
+            Coordinate  centerPoint) throws Exception {
+
+        URL    url    = new URL(urlBase + styleName);
+        Reader reader = new InputStreamReader(url.openStream());
+
+        List<Double> scales = new ArrayList<Double>(2);
+        scales.add(scale * 0.75d);
+        scales.add(scale * 1.25d);
+
+        double[] refXY = {centerPoint.x, centerPoint.y};
+
+        StringWriter output = new StringWriter();
+
+        ScaleSLD.scaleSld(reader, scales, dpi, crsName, refXY, output);
+
+        StringReader result = new StringReader(output.toString());
+
+        return result;
     }
 
     /**
