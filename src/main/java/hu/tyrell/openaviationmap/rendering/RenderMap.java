@@ -647,11 +647,13 @@ public final class RenderMap {
                     "incorrect coverage string: " + coverageStr);
         }
 
+        double x1 = Double.parseDouble(tok.nextToken());
+        double y1 = Double.parseDouble(tok.nextToken());
+        double x2 = Double.parseDouble(tok.nextToken());
+        double y2 = Double.parseDouble(tok.nextToken());
+
         ReferencedEnvelope coverage = new ReferencedEnvelope(
-                                           Double.parseDouble(tok.nextToken()),
-                                           Double.parseDouble(tok.nextToken()),
-                                           Double.parseDouble(tok.nextToken()),
-                                           Double.parseDouble(tok.nextToken()),
+                                           x1, x2, y1, y2,
                                            DefaultGeographicCRS.WGS84);
 
         return coverage;
