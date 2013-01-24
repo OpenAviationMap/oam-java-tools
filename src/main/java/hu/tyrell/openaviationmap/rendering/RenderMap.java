@@ -278,7 +278,8 @@ public final class RenderMap {
         Map<String, Object> osmParams = parseDbParams(osmStr);
         DataStore osmDataStore = DataStoreFinder.getDataStore(osmParams);
         if (osmDataStore == null) {
-            System.out.println("can't connect to the Open Street Map database");
+            System.out.println(
+                    "can't connect to the Open Street Map database");
             return;
         }
 
@@ -445,8 +446,8 @@ public final class RenderMap {
         sldParser.setInput(new URL(urlBase + styleName));
         Style[] styles = sldParser.readXML();
         FeatureLayer layer = new FeatureLayer(
-                                        dataStore.getFeatureSource(featureName),
-                                        styles[0]);
+                                       dataStore.getFeatureSource(featureName),
+                                       styles[0]);
         map.addLayer(layer);
     }
 
@@ -496,8 +497,8 @@ public final class RenderMap {
         SampleModel sm = cm.createCompatibleSampleModel(1024, 1024);
 
         DiskMemImage image = new DiskMemImage(0, 0,
-                                          imageBounds.width, imageBounds.height,
-                                          0, 0, sm, cm);
+                                         imageBounds.width, imageBounds.height,
+                                         0, 0, sm, cm);
 
         Graphics2D gr = image.createGraphics();
         // TOOD: maybe we want this transparent
@@ -569,11 +570,11 @@ public final class RenderMap {
         }
 
         ReferencedEnvelope coverage = new ReferencedEnvelope(
-                                            Double.parseDouble(tok.nextToken()),
-                                            Double.parseDouble(tok.nextToken()),
-                                            Double.parseDouble(tok.nextToken()),
-                                            Double.parseDouble(tok.nextToken()),
-                                            DefaultGeographicCRS.WGS84);
+                                           Double.parseDouble(tok.nextToken()),
+                                           Double.parseDouble(tok.nextToken()),
+                                           Double.parseDouble(tok.nextToken()),
+                                           Double.parseDouble(tok.nextToken()),
+                                           DefaultGeographicCRS.WGS84);
 
         return coverage;
     }
