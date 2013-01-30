@@ -576,7 +576,7 @@ public final class RenderMap {
         renderer.setMapContent(map);
 
         Map<Object, Object> rendererParams = new HashMap<Object, Object>();
-        // don't add a DPI_KEY hint, as the rendered will try to re-scale
+        // don't add a DPI_KEY hint, as the renderer will try to re-scale
         // from your DPI to it's 'ideal' DPI of 90
         rendererParams.put(StreamingRenderer.SCALE_COMPUTATION_METHOD_KEY,
                            StreamingRenderer.SCALE_ACCURATE);
