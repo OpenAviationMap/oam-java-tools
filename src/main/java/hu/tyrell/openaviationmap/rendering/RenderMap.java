@@ -45,6 +45,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.geotools.data.DataStore;
 import org.geotools.data.DataStoreFinder;
+import org.geotools.data.simple.SimpleFeatureSource;
 import org.geotools.factory.CommonFactoryFinder;
 import org.geotools.geometry.DirectPosition2D;
 import org.geotools.geometry.jts.ReferencedEnvelope;
@@ -312,6 +313,10 @@ public final class RenderMap {
 
         renderMap(osmDataStore, oamDataStore, coverage, sldUrlStr, scale, dpi,
                   outputFile);
+
+        // cleaning up
+        oamDataStore.dispose();
+        osmDataStore.dispose();
     }
 
     /**
@@ -354,19 +359,19 @@ public final class RenderMap {
 
         // add the ground layers
         addLayer(osmDataStore, sldParser, sldUrl,
-                "planet_osm_polygon", "oam_waters.sld", scale, dpi, map);
+                "planet_osm_polygon", "oam_waters.sldt", scale, dpi, map);
         addLayer(osmDataStore, sldParser, sldUrl,
                 "planet_osm_polygon", "oam_forests.sld", scale, dpi, map);
         addLayer(osmDataStore, sldParser, sldUrl,
-                "planet_osm_polygon", "oam_cities.sld", scale, dpi, map);
+                "planet_osm_point", "oam_city_markers.sldt", scale, dpi, map);
         addLayer(osmDataStore, sldParser, sldUrl,
-                "planet_osm_point", "oam_peaks.sld", scale, dpi, map);
+                "planet_osm_polygon", "oam_cities.sldt", scale, dpi, map);
         addLayer(osmDataStore, sldParser, sldUrl,
-                "planet_osm_point", "oam_city_markers.sld", scale, dpi, map);
+                "planet_osm_point", "oam_peaks.sldt", scale, dpi, map);
         addLayer(osmDataStore, sldParser, sldUrl,
-                "planet_osm_line", "oam_roads.sld", scale, dpi, map);
+                "planet_osm_line", "oam_roads.sldt", scale, dpi, map);
         addLayer(osmDataStore, sldParser, sldUrl,
-                "planet_osm_point", "oam_labels.sld", scale, dpi, map);
+                "planet_osm_point", "oam_labels.sldt", scale, dpi, map);
 
 
         System.out.println("Opening Open Aviation Map database...");
@@ -378,6 +383,7 @@ public final class RenderMap {
                 "planet_osm_point", "oam_navaids.sldt", scale, dpi, map);
         addLayer(oamDataStore, sldParser, sldUrl,
                 "planet_osm_line", "oam_runways.sld", scale, dpi, map);
+
 
 
         // calculate map coverage and image size
@@ -408,7 +414,7 @@ public final class RenderMap {
                 + "x" + ((int) imageBounds.getHeight()) + " pixels");
 
 
-        saveMap(map, mapBounds, imageBounds, dpi, outputFile);
+        saveMap(map, mapBounds, imageBounds, scale, dpi, outputFile);
     }
 
     /**
@@ -465,10 +471,13 @@ public final class RenderMap {
 
         if (styleName.endsWith(".sldt")) {
 
-            CoordinateReferenceSystem crs = map.getCoordinateReferenceSystem();
+            SimpleFeatureSource fs = dataStore.getFeatureSource(featureName);
+            ReferencedEnvelope bounds = fs.getBounds();
+            CoordinateReferenceSystem crs =
+                                        bounds.getCoordinateReferenceSystem();
             String crsName = crs.getIdentifiers().iterator().next().toString();
 
-            Coordinate centerPoint = map.getMaxBounds().centre();
+            Coordinate centerPoint = bounds.centre();
 
             try {
                 Reader scaledSld = scaleSld(urlBase,
@@ -480,10 +489,12 @@ public final class RenderMap {
 
                 sldParser.setInput(scaledSld);
                 Style[] styles = sldParser.readXML();
-                FeatureLayer layer = new FeatureLayer(
-                                     dataStore.getFeatureSource(featureName),
-                                     styles[0]);
+                FeatureLayer layer = new FeatureLayer(fs, styles[0]);
                 map.addLayer(layer);
+            } catch (RuntimeException e) {
+                throw e;
+            } catch (IOException e) {
+                throw e;
             } catch (Exception e) {
                 System.out.println("error scaling SLD template " + styleName);
                 System.out.println(e.getMessage());
@@ -544,6 +555,7 @@ public final class RenderMap {
      * @param map the map to save
      * @param mapBounds the part of the map to render
      * @param imageBounds the size of the image to render
+     * @param scale the scale of the map
      * @param dpi the DPI of rendering
      * @param file the name of the file to save to
      * @throws FactoryException on CRS transformation errors
@@ -553,6 +565,7 @@ public final class RenderMap {
     saveMap(final MapContent          map,
             final ReferencedEnvelope  mapBounds,
             final Rectangle           imageBounds,
+            final double              scale,
             final double              dpi,
             final String              file)
                                                   throws TransformException,
@@ -563,13 +576,15 @@ public final class RenderMap {
         renderer.setMapContent(map);
 
         Map<Object, Object> rendererParams = new HashMap<Object, Object>();
-        rendererParams.put(StreamingRenderer.DPI_KEY, new Double(dpi));
+        // don't add a DPI_KEY hint, as the rendered will try to re-scale
+        // from your DPI to it's 'ideal' DPI of 90
         rendererParams.put(StreamingRenderer.SCALE_COMPUTATION_METHOD_KEY,
                            StreamingRenderer.SCALE_ACCURATE);
         rendererParams.put(StreamingRenderer.ADVANCED_PROJECTION_HANDLING_KEY,
                            new Boolean(true));
         rendererParams.put(StreamingRenderer.VECTOR_RENDERING_KEY,
                             new Boolean(true));
+        rendererParams.put(StreamingRenderer.DECLARED_SCALE_DENOM_KEY, scale);
         rendererParams.put("renderingBuffer", 100);
         renderer.setRendererHints(rendererParams);
 

@@ -728,11 +728,11 @@ public final class ScaleSLD {
                 try {
                     if (inFunction) {
                         double d = UOM.scaleValueCrs(t, scale, crs, refXY);
-                        sb.append(Long.toString(Math.round(d)));
+                        sb.append(Double.toString(d));
                         sb.append(' ');
                     } else {
                         double d = UOM.scaleValue(t, scale, dpi);
-                        sb.append(Long.toString(Math.round(d)));
+                        sb.append(Double.toString(d));
                         sb.append(' ');
                     }
                 } catch (RenderException e) {
