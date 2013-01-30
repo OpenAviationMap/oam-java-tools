@@ -24,6 +24,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.RenderingHints;
+import java.awt.geom.AffineTransform;
 import java.awt.image.ColorModel;
 import java.awt.image.SampleModel;
 import java.io.IOException;
@@ -41,6 +42,7 @@ import java.util.StringTokenizer;
 import java.util.logging.Level;
 
 import javax.media.jai.JAI;
+import javax.media.jai.PlanarImage;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.geotools.data.DataStore;
@@ -287,6 +289,42 @@ public final class RenderMap {
         }
 
         Map<String, Object> osmParams = parseDbParams(osmStr);
+        Map<String, Object> oamParams = parseDbParams(oamStr);
+
+        System.out.println("Rendering map at scale 1:" + ((int) scale)
+                         + " at " + ((int) dpi) + " dpi to " + outputFile);
+
+        renderMap(osmParams, oamParams, coverage, sldUrlStr, scale, dpi,
+                  outputFile);
+    }
+
+    /**
+     * Render a map.
+     *
+     * @param osmParams the parameters to create the Open Street Map DataStore
+     * @param oamParams the parameters to create the Open Aviaton Map DataStore
+     * @param coverage the coverage of the rendered map, if null, the whole
+     *        map area covered by the datastores is used
+     * @param sldUrlStr the base URL for SLD files &amp; related resources.
+     * @param scale the scale, that is, 1:scale will be used
+     * @param dpi the number of dots per inch on the target image
+     * @param outputFile the name of the output TIFF file to create
+     * @throws IOException on I/O errors
+     * @throws FactoryException on CRS transformation errors
+     * @throws TransformException on CRS transformation errors
+     */
+    private static void
+    renderMap(Map<String, Object>   osmParams,
+              Map<String, Object>   oamParams,
+              ReferencedEnvelope    coverage,
+              String                sldUrlStr,
+              double                scale,
+              double                dpi,
+              String                outputFile)    throws IOException,
+                                                          TransformException,
+                                                          FactoryException {
+
+        // create the data stores
         DataStore osmDataStore = DataStoreFinder.getDataStore(osmParams);
         if (osmDataStore == null) {
             System.out.println(
@@ -294,7 +332,6 @@ public final class RenderMap {
             return;
         }
 
-        Map<String, Object> oamParams = parseDbParams(oamStr);
         DataStore oamDataStore = DataStoreFinder.getDataStore(oamParams);
         if (oamDataStore == null) {
             System.out.println(
@@ -308,42 +345,6 @@ public final class RenderMap {
         org.geotools.util.logging.Logging.
           getLogger("org.geotools.referencing.factory").setLevel(Level.SEVERE);
 
-        System.out.println("Rendering map at scale 1:" + ((int) scale)
-                         + " at " + ((int) dpi) + " dpi to " + outputFile);
-
-        renderMap(osmDataStore, oamDataStore, coverage, sldUrlStr, scale, dpi,
-                  outputFile);
-
-        // cleaning up
-        oamDataStore.dispose();
-        osmDataStore.dispose();
-    }
-
-    /**
-     * Render a map.
-     *
-     * @param osmDataStore the Open Street Map datastore to use
-     * @param oamDataStore the Open Aviation Map datastore to use
-     * @param coverage the coverage of the rendered map, if null, the whole
-     *        map area covered by the datastores is used
-     * @param sldUrlStr the base URL for SLD files &amp; related resources.
-     * @param scale the scale, that is, 1:scale will be used
-     * @param dpi the number of dots per inch on the target image
-     * @param outputFile the name of the output TIFF file to create
-     * @throws IOException on I/O errors
-     * @throws FactoryException on CRS transformation errors
-     * @throws TransformException on CRS transformation errors
-     */
-    private static void
-    renderMap(DataStore             osmDataStore,
-              DataStore             oamDataStore,
-              ReferencedEnvelope    coverage,
-              String                sldUrlStr,
-              double                scale,
-              double                dpi,
-              String                outputFile)    throws IOException,
-                                                          TransformException,
-                                                          FactoryException {
 
         // create the parser with the sld configuration
         final URL sldUrl = new URL(sldUrlStr);
@@ -353,46 +354,56 @@ public final class RenderMap {
         rl.setSourceUrl(sldUrl);
         sldParser.setOnLineResourceLocator(rl);
 
-        MapContent map = new MapContent();
+        MapContent osmMap = new MapContent();
 
         System.out.println("Opening Open Street Map database...");
 
         // add the ground layers
         addLayer(osmDataStore, sldParser, sldUrl,
-                "planet_osm_polygon", "oam_waters.sldt", scale, dpi, map);
+                 "planet_osm_polygon", "oam_waters.sldt", scale, dpi, osmMap);
         addLayer(osmDataStore, sldParser, sldUrl,
-                "planet_osm_polygon", "oam_forests.sld", scale, dpi, map);
+                 "planet_osm_polygon", "oam_forests.sld", scale, dpi, osmMap);
         addLayer(osmDataStore, sldParser, sldUrl,
-                "planet_osm_point", "oam_city_markers.sldt", scale, dpi, map);
+                 "planet_osm_point", "oam_city_markers.sldt", scale, dpi,
+                 osmMap);
         addLayer(osmDataStore, sldParser, sldUrl,
-                "planet_osm_polygon", "oam_cities.sldt", scale, dpi, map);
+                 "planet_osm_polygon", "oam_cities.sldt", scale, dpi, osmMap);
         addLayer(osmDataStore, sldParser, sldUrl,
-                "planet_osm_point", "oam_peaks.sldt", scale, dpi, map);
+                 "planet_osm_point", "oam_peaks.sldt", scale, dpi, osmMap);
         addLayer(osmDataStore, sldParser, sldUrl,
-                "planet_osm_line", "oam_roads.sldt", scale, dpi, map);
+                 "planet_osm_line", "oam_roads.sldt", scale, dpi, osmMap);
         addLayer(osmDataStore, sldParser, sldUrl,
-                "planet_osm_point", "oam_labels.sldt", scale, dpi, map);
+                 "planet_osm_point", "oam_labels.sldt", scale, dpi, osmMap);
 
 
         System.out.println("Opening Open Aviation Map database...");
 
+        MapContent oamMap = new MapContent();
+
         // add the aviation layers
         addLayer(oamDataStore, sldParser, sldUrl,
-                "planet_osm_polygon", "oam_airspaces.sldt", scale, dpi, map);
+                "planet_osm_polygon", "oam_airspaces.sldt", scale, dpi, oamMap);
         addLayer(oamDataStore, sldParser, sldUrl,
-                "planet_osm_point", "oam_navaids.sldt", scale, dpi, map);
+                "planet_osm_point", "oam_navaids.sldt", scale, dpi, oamMap);
         addLayer(oamDataStore, sldParser, sldUrl,
-                "planet_osm_line", "oam_runways.sld", scale, dpi, map);
+                "planet_osm_line", "oam_runways.sld", scale, dpi, oamMap);
 
 
+        if (!osmMap.getCoordinateReferenceSystem().equals(
+                oamMap.getCoordinateReferenceSystem())) {
+            throw new IllegalArgumentException(
+                                    "the OSM and OAM CRSs are different");
+        }
+
+        CoordinateReferenceSystem crs = osmMap.getCoordinateReferenceSystem();
 
         // calculate map coverage and image size
         ReferencedEnvelope mapBounds;
         if (coverage == null) {
-            mapBounds = map.getMaxBounds();
+            mapBounds = new ReferencedEnvelope(osmMap.getMaxBounds());
+            mapBounds.include(oamMap.getMaxBounds());
         } else {
-            mapBounds = coverage.transform(map.getCoordinateReferenceSystem(),
-                                           false);
+            mapBounds = coverage.transform(crs, false);
         }
 
         ReferencedEnvelope mapBoundsWgs84 =
@@ -406,15 +417,66 @@ public final class RenderMap {
                    + "\u00b0," + FLOAT_FORMAT.format(mapBoundsWgs84.getMaxY())
                    + "\u00b0");
 
-        Rectangle imageBounds = calcImageBounds(scale, dpi, mapBounds,
-                                        map.getCoordinateReferenceSystem());
+        Rectangle imageBounds = calcImageBounds(scale, dpi, mapBounds, crs);
 
 
         System.out.println("Image size: " + ((int) imageBounds.getWidth())
                 + "x" + ((int) imageBounds.getHeight()) + " pixels");
 
+        // first, generate the ground map
+        System.out.println("Rendering ground map...");
+        PlanarImage osmImage =
+                          renderMap(osmMap, mapBounds, imageBounds, scale, dpi);
+        osmDataStore.dispose();
 
-        saveMap(map, mapBounds, imageBounds, scale, dpi, outputFile);
+
+        // second, generate the aviation map
+        System.out.println("Rendering aviation map...");
+        PlanarImage oamImage =
+                          renderMap(oamMap, mapBounds, imageBounds, scale, dpi);
+        oamDataStore.dispose();
+
+        // third, combine these together and into outputFile
+        System.out.println("Saving map...");
+        combineImages(imageBounds, osmImage, oamImage, outputFile);
+
+        System.out.println("Map saved to " + outputFile);
+    }
+
+    /**
+     * Combine two image files into a third one, but superimposing the two
+     * images with each other.
+     *
+     * @param imageBounds the bounds of the image to combine into
+     * @param osmImage the lower layer to combine
+     * @param oamImage the upper layer to combine
+     * @param outputFile the output file
+     * @throws IOException on I/O errors
+     */
+    private static void
+    combineImages(Rectangle     imageBounds,
+                  PlanarImage   osmImage,
+                  PlanarImage   oamImage,
+                  String        outputFile)
+                                                        throws IOException {
+
+        ColorModel cm = ColorModel.getRGBdefault();
+        SampleModel sm = cm.createCompatibleSampleModel(1024, 1024);
+
+        DiskMemImage image = new DiskMemImage(0, 0,
+                                    osmImage.getWidth(), osmImage.getHeight(),
+                                    0, 0, sm, cm);
+
+        Graphics2D gr = image.createGraphics();
+        gr.setPaint(Color.WHITE);
+        gr.fill(imageBounds);
+
+        gr.drawRenderedImage(osmImage, new AffineTransform());
+        gr.drawRenderedImage(oamImage, new AffineTransform());
+
+        JAI.create("filestore", image, outputFile, "TIFF", null);
+
+        gr.dispose();
     }
 
     /**
@@ -550,24 +612,23 @@ public final class RenderMap {
     }
 
     /**
-     * Save a map image.
+     * Render a map into an image.
      *
      * @param map the map to save
      * @param mapBounds the part of the map to render
      * @param imageBounds the size of the image to render
      * @param scale the scale of the map
      * @param dpi the DPI of rendering
-     * @param file the name of the file to save to
+     * @return the image containing the rendered map
      * @throws FactoryException on CRS transformation errors
      * @throws TransformException on CRS transformation errors
      */
-    public static void
-    saveMap(final MapContent          map,
-            final ReferencedEnvelope  mapBounds,
-            final Rectangle           imageBounds,
-            final double              scale,
-            final double              dpi,
-            final String              file)
+    public static PlanarImage
+    renderMap(final MapContent          map,
+              final ReferencedEnvelope  mapBounds,
+              final Rectangle           imageBounds,
+              final double              scale,
+              final double              dpi)
                                                   throws TransformException,
                                                          FactoryException {
 
@@ -604,17 +665,12 @@ public final class RenderMap {
                                          0, 0, sm, cm);
 
         Graphics2D gr = image.createGraphics();
-        // TOOD: maybe we want this transparent
-        gr.setPaint(Color.WHITE);
-        gr.fill(imageBounds);
-
-        System.out.println("Rendering map...");
 
         renderer.paint(gr, imageBounds, mapBounds);
 
-        JAI.create("filestore", image, file, "TIFF", null);
+        gr.dispose();
 
-        System.out.println("Map saved to " + file);
+        return image;
     }
 
     /**
