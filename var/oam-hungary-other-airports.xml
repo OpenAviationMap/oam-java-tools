@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <osm version="0.6">
-   <node action="create" id="-9533" lat="46.53333333333333" lon="17.166666666666668"
+   <node id="39533" lat="46.53333333333333" lon="17.166666666666668"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -9,7 +9,7 @@
       <tag k="name" v="Zalakaros ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-9500" lat="46.884166666666665" lon="16.789166666666667"
+   <node id="39500" lat="46.884166666666665" lon="16.789166666666667"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -18,7 +18,7 @@
       <tag k="name" v="Zalaegerszeg-Andráshida ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-9467" lat="47.12638888888889" lon="18.311666666666667"
+   <node id="39467" lat="47.12638888888889" lon="18.311666666666667"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -27,7 +27,7 @@
       <tag k="name" v="Úrhida ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-9434" lat="47.345555555555556" lon="18.980833333333333"
+   <node id="39434" lat="47.345555555555556" lon="18.980833333333333"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -36,7 +36,7 @@
       <tag k="name" v="Tököl ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-9401" lat="47.27222222222222" lon="17.108055555555556"
+   <node id="39401" lat="47.27222222222222" lon="17.108055555555556"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -45,7 +45,7 @@
       <tag k="name" v="Tokorcs ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-9368" lat="46.39333333333333" lon="17.918333333333333"
+   <node id="39368" lat="46.39333333333333" lon="17.918333333333333"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -54,7 +54,7 @@
       <tag k="name" v="Taszár (Kaland) ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-9335" lat="47.28333333333333" lon="16.633333333333333"
+   <node id="39335" lat="47.28333333333333" lon="16.633333333333333"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -63,7 +63,7 @@
       <tag k="name" v="Szombathely ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-9280" lat="47.14085298703322" lon="20.196636820699393"
+   <node id="39280" lat="47.14085298703322" lon="20.196636820699393"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -72,7 +72,7 @@
       <tag k="name" v="Szolnok-Szandaszőlős ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-9247" lat="47.12277777777778" lon="20.235555555555557"
+   <node id="39247" lat="47.12277777777778" lon="20.235555555555557"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -81,7 +81,7 @@
       <tag k="name" v="Szolnok (Opera) ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-9214" lat="47.07805555555556" lon="17.97" version="0"
+   <node id="39214" lat="47.07805555555556" lon="17.97" version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
       <tag k="height" v="280"/>
@@ -89,7 +89,7 @@
       <tag k="name" v="Szentkirályszabadja ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-9181" lat="46.611666666666665" lon="20.283055555555556"
+   <node id="39181" lat="46.611666666666665" lon="20.283055555555556"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -98,7 +98,7 @@
       <tag k="name" v="Szentes ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-9148" lat="46.325" lon="20.052222222222223" version="0"
+   <node id="39148" lat="46.325" lon="20.052222222222223" version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
       <tag k="height" v="81"/>
@@ -106,7 +106,7 @@
       <tag k="name" v="Szatymaz ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-9115" lat="46.86027777777778" lon="18.09361111111111"
+   <node id="39115" lat="46.86027777777778" lon="18.09361111111111"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -115,7 +115,7 @@
       <tag k="name" v="Siófok-Kiliti ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-9082" lat="48.31777777777778" lon="21.58972222222222"
+   <node id="39082" lat="48.31777777777778" lon="21.58972222222222"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -124,7 +124,7 @@
       <tag k="name" v="Sárospatak ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-9048" lat="47.36388888888889" lon="17.500555555555554"
+   <node id="39048" lat="47.36388888888889" lon="17.500555555555554"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -133,7 +133,7 @@
       <tag k="name" v="Pápa (Párduc) ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-9015" lat="47.49777777777778" lon="16.895" version="0"
+   <node id="39015" lat="47.49777777777778" lon="16.895" version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
       <tag k="height" v="152"/>
@@ -141,7 +141,7 @@
       <tag k="name" v="Pusztacsalád ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8982" lat="46.87861111111111" lon="18.03666666666667"
+   <node id="38982" lat="46.87861111111111" lon="18.03666666666667"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -150,7 +150,7 @@
       <tag k="name" v="Papkutapuszta ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8947" lat="46.30183349654422" lon="18.766306553719204"
+   <node id="38947" lat="46.30183349654422" lon="18.766306553719204"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -159,7 +159,7 @@
       <tag k="name" v="Õcsény ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8911" lat="46.44166666666666" lon="16.95138888888889"
+   <node id="38911" lat="46.44166666666666" lon="16.95138888888889"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -168,7 +168,7 @@
       <tag k="name" v="Nagykanizsa ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8878" lat="48.138888888888886" lon="20.794444444444448"
+   <node id="38878" lat="48.138888888888886" lon="20.794444444444448"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -177,7 +177,7 @@
       <tag k="name" v="Miskolc ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8845" lat="46.79906910077992" lon="19.681619141815293"
+   <node id="38845" lat="46.79906910077992" lon="19.681619141815293"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -186,7 +186,7 @@
       <tag k="name" v="Matkópuszta ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8810" lat="47.81076755735525" lon="20.427816898263355"
+   <node id="38810" lat="47.81076755735525" lon="20.427816898263355"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -195,7 +195,7 @@
       <tag k="name" v="Maklár ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8777" lat="47.17833333333333" lon="19.06861111111111"
+   <node id="38777" lat="47.17833333333333" lon="19.06861111111111"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -204,7 +204,7 @@
       <tag k="name" v="Kiskunlacháza ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8742" lat="46.725" lon="19.871666666666666" version="0"
+   <node id="38742" lat="46.725" lon="19.871666666666666" version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
       <tag k="height" v="97"/>
@@ -212,7 +212,7 @@
       <tag k="name" v="Kiskunfélegyháza ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8709" lat="46.86027777777778" lon="19.55777777777778"
+   <node id="38709" lat="46.86027777777778" lon="19.55777777777778"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -221,7 +221,7 @@
       <tag k="name" v="Ballószög ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8675" lat="47.31666666666667" lon="19.769444444444442"
+   <node id="38675" lat="47.31666666666667" lon="19.769444444444442"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -230,7 +230,7 @@
       <tag k="name" v="Kincsem ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8642" lat="46.9175" lon="19.749166666666667" version="0"
+   <node id="38642" lat="46.9175" lon="19.749166666666667" version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
       <tag k="height" v="114"/>
@@ -238,7 +238,7 @@
       <tag k="name" v="Kecskemét (Titán) ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8609" lat="47.514722222222225" lon="18.326666666666668"
+   <node id="38609" lat="47.514722222222225" lon="18.326666666666668"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -247,7 +247,7 @@
       <tag k="name" v="Kecskéd ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8576" lat="46.38869740124402" lon="17.733009123123008"
+   <node id="38576" lat="46.38869740124402" lon="17.733009123123008"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -256,7 +256,7 @@
       <tag k="name" v="Kaposújlak ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8543" lat="46.55416666666667" lon="18.943333333333335"
+   <node id="38543" lat="46.55416666666667" lon="18.943333333333335"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -265,7 +265,7 @@
       <tag k="name" v="Kalocsa ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8510" lat="46.80416666666667" lon="20.5275" version="0"
+   <node id="38510" lat="46.80416666666667" lon="20.5275" version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
       <tag k="height" v="83"/>
@@ -273,7 +273,7 @@
       <tag k="name" v="Kákahalom ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8476" lat="46.74805555555556" lon="19.60527777777778"
+   <node id="38476" lat="46.74805555555556" lon="19.60527777777778"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -282,7 +282,7 @@
       <tag k="name" v="Jakabszállás ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8443" lat="47.552499999999995" lon="18.973333333333333"
+   <node id="38443" lat="47.552499999999995" lon="18.973333333333333"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -291,7 +291,7 @@
       <tag k="name" v="Hármashatárhegy ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8410" lat="47.460803727109145" lon="21.387531119961235"
+   <node id="38410" lat="47.460803727109145" lon="21.387531119961235"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -300,7 +300,7 @@
       <tag k="name" v="Hajdúszoboszló ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8377" lat="47.39111111111111" lon="18.7575" version="0"
+   <node id="38377" lat="47.39111111111111" lon="18.7575" version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
       <tag k="height" v="199"/>
@@ -308,7 +308,7 @@
       <tag k="name" v="Gyúró ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8340" lat="47.66722222222222" lon="17.784722222222225"
+   <node id="38340" lat="47.66722222222222" lon="17.784722222222225"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -317,7 +317,7 @@
       <tag k="name" v="Gyõrszentiván-Bõny ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8279" lat="47.812777777777775" lon="19.97694444444444"
+   <node id="38279" lat="47.812777777777775" lon="19.97694444444444"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -326,7 +326,7 @@
       <tag k="name" v="Gyöngyös/Pipishegy ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8246" lat="47.57361111111111" lon="19.3325" version="0"
+   <node id="38246" lat="47.57361111111111" lon="19.3325" version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
       <tag k="height" v="218"/>
@@ -334,7 +334,7 @@
       <tag k="name" v="Gödöllő ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8207" lat="47.48972222222222" lon="18.910277777777775"
+   <node id="38207" lat="47.48972222222222" lon="18.910277777777775"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -343,7 +343,7 @@
       <tag k="name" v="Farkashegy ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8174" lat="47.756979468464785" lon="18.72823971525805"
+   <node id="38174" lat="47.756979468464785" lon="18.72823971525805"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -352,7 +352,7 @@
       <tag k="name" v="Esztergom ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8141" lat="47.90555555555555" lon="20.40833333333333"
+   <node id="38141" lat="47.90555555555555" lon="20.40833333333333"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -361,7 +361,7 @@
       <tag k="name" v="Eger ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8108" lat="46.89504513397258" lon="18.917542593935977"
+   <node id="38108" lat="46.89504513397258" lon="18.917542593935977"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -370,7 +370,7 @@
       <tag k="name" v="Dunaújváros ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8050" lat="47.61283678023358" lon="19.14337172567173"
+   <node id="38050" lat="47.61283678023358" lon="19.14337172567173"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -379,7 +379,7 @@
       <tag k="name" v="Dunakeszi ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-8010" lat="47.27166666666667" lon="17.410833333333333"
+   <node id="38010" lat="47.27166666666667" lon="17.410833333333333"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -388,7 +388,7 @@
       <tag k="name" v="Dáka ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-7972" lat="47.4510433928493" lon="18.981571675280808"
+   <node id="37972" lat="47.4510433928493" lon="18.981571675280808"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -397,7 +397,7 @@
       <tag k="name" v="Budaörs ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-7938" lat="47.12861111111111" lon="18.50027777777778"
+   <node id="37938" lat="47.12861111111111" lon="18.50027777777778"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -406,7 +406,7 @@
       <tag k="name" v="Börgönd ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-7884" lat="46.37277777777778" lon="17.428333333333335"
+   <node id="37884" lat="46.37277777777778" lon="17.428333333333335"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -415,7 +415,7 @@
       <tag k="name" v="Hertelendy Kastély ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-7834" lat="46.693370256737474" lon="17.397143049167486"
+   <node id="37834" lat="46.693370256737474" lon="17.397143049167486"
          version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
@@ -424,7 +424,7 @@
       <tag k="name" v="Balatonkeresztúr ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <node action="create" id="-7753" lat="46.0851" lon="19.0233" version="0"
+   <node id="37753" lat="46.0851" lon="19.0233" version="0"
          visible="true">
       <tag k="height:unit" v="m"/>
       <tag k="height" v="90"/>
@@ -432,7 +432,7 @@
       <tag k="name" v="BAJA ARP"/>
       <tag k="arp" v="yes"/>
    </node>
-   <relation action="create" id="-9565" version="0" visible="true">
+   <relation id="39565" version="0" visible="true">
       <tag k="icao" v="LHZK"/>
       <tag k="aerodrome" v="yes"/>
       <tag k="name" v="Zalakaros"/>
@@ -440,9 +440,9 @@
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="comm:unicom" v="135.7MHz"/>
       <tag k="runway:length" v="795m, 795m"/>
-      <member ref="-9533" role="arp" type="node"/>
+      <member ref="39533" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-9532" version="0" visible="true">
+   <relation id="39532" version="0" visible="true">
       <tag k="icao" v="LHZA"/>
       <tag k="aerodrome" v="yes"/>
       <tag k="name" v="Zalaegerszeg-Andráshida"/>
@@ -450,35 +450,35 @@
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="comm:unicom" v="133.425MHz"/>
       <tag k="runway:length" v="1500m, 1500m"/>
-      <member ref="-9500" role="arp" type="node"/>
+      <member ref="39500" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-9499" version="0" visible="true">
+   <relation id="39499" version="0" visible="true">
       <tag k="aerodrome" v="yes"/>
       <tag k="name" v="Úrhida"/>
       <tag k="runway:designator" v="06, 24"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="runway:length" v="600m, 600m"/>
-      <member ref="-9467" role="arp" type="node"/>
+      <member ref="39467" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-9433" version="0" visible="true">
+   <relation id="39433" version="0" visible="true">
       <tag k="aerodrome" v="yes"/>
       <tag k="name" v="Tokorcs"/>
       <tag k="runway:designator" v="15, 33"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="comm:unicom" v="131.1MHz"/>
       <tag k="runway:length" v="1000m, 1000m"/>
-      <member ref="-9401" role="arp" type="node"/>
+      <member ref="39401" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-9400" version="0" visible="true">
+   <relation id="39400" version="0" visible="true">
       <tag k="icao" v="LHTA"/>
       <tag k="aerodrome" v="yes"/>
       <tag k="name" v="Taszár (Kaland)"/>
       <tag k="runway:designator" v="16, 34"/>
       <tag k="runway:surface" v="concrete, concrete"/>
       <tag k="runway:length" v="2500m, 2500m"/>
-      <member ref="-9368" role="arp" type="node"/>
+      <member ref="39368" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-9312" version="0" visible="true">
+   <relation id="39312" version="0" visible="true">
       <tag k="comm:afis" v="134.3MHz"/>
       <tag k="icao" v="LHSS"/>
       <tag k="aerodrome" v="yes"/>
@@ -486,9 +486,9 @@
       <tag k="runway:designator" v="01, 19"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="runway:length" v="1050m, 1050m"/>
-      <member ref="-9280" role="arp" type="node"/>
+      <member ref="39280" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-9279" version="0" visible="true">
+   <relation id="39279" version="0" visible="true">
       <tag k="icao" v="LHSN"/>
       <tag k="aerodrome" v="yes"/>
       <tag k="name" v="Szolnok (Opera)"/>
@@ -496,9 +496,9 @@
       <tag k="comm:twr" v="130.250MHz"/>
       <tag k="runway:surface" v="asphalt, asphalt, grass, grass"/>
       <tag k="runway:length" v="2000m, 2000m, 2000m, 2000m"/>
-      <member ref="-9247" role="arp" type="node"/>
+      <member ref="39247" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-9246" version="0" visible="true">
+   <relation id="39246" version="0" visible="true">
       <tag k="icao" v="LHSA"/>
       <tag k="aerodrome" v="yes"/>
       <tag k="name" v="Szentkirályszabadja"/>
@@ -506,9 +506,9 @@
       <tag k="runway:surface" v="asphalt, asphalt"/>
       <tag k="comm:unicom" v="133.425MHz"/>
       <tag k="runway:length" v="2000m, 2000m"/>
-      <member ref="-9214" role="arp" type="node"/>
+      <member ref="39214" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-9213" version="0" visible="true">
+   <relation id="39213" version="0" visible="true">
       <tag k="comm:afis" v="123.950MHz"/>
       <tag k="icao" v="LHSZ"/>
       <tag k="aerodrome" v="yes"/>
@@ -516,9 +516,9 @@
       <tag k="runway:designator" v="15, 33"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="runway:length" v="750m, 750m"/>
-      <member ref="-9181" role="arp" type="node"/>
+      <member ref="39181" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-9180" version="0" visible="true">
+   <relation id="39180" version="0" visible="true">
       <tag k="icao" v="LHST"/>
       <tag k="aerodrome" v="yes"/>
       <tag k="name" v="Szatymaz"/>
@@ -526,9 +526,9 @@
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="comm:unicom" v="123.2MHz"/>
       <tag k="runway:length" v="800m, 800m"/>
-      <member ref="-9148" role="arp" type="node"/>
+      <member ref="39148" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-9147" version="0" visible="true">
+   <relation id="39147" version="0" visible="true">
       <tag k="comm:afis" v="125.8MHz"/>
       <tag k="icao" v="LHSK"/>
       <tag k="aerodrome" v="yes"/>
@@ -536,18 +536,18 @@
       <tag k="runway:designator" v="15, 33"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="runway:length" v="1250m, 1250m"/>
-      <member ref="-9115" role="arp" type="node"/>
+      <member ref="39115" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-9114" version="0" visible="true">
+   <relation id="39114" version="0" visible="true">
       <tag k="comm:afis" v="123.2MHz"/>
       <tag k="aerodrome" v="yes"/>
       <tag k="name" v="Sárospatak"/>
       <tag k="runway:designator" v="13, 31"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="runway:length" v="1000m, 1000m"/>
-      <member ref="-9082" role="arp" type="node"/>
+      <member ref="39082" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-9081" version="0" visible="true">
+   <relation id="39081" version="0" visible="true">
       <tag k="icao" v="LHPA"/>
       <tag k="aerodrome" v="yes"/>
       <tag k="name" v="Pápa (Párduc)"/>
@@ -556,26 +556,26 @@
       <tag k="comm:twr" v="129.5MHz"/>
       <tag k="runway:surface" v="concrete, concrete"/>
       <tag k="runway:length" v="2399m, 2399m"/>
-      <member ref="-9048" role="arp" type="node"/>
+      <member ref="39048" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-9047" version="0" visible="true">
+   <relation id="39047" version="0" visible="true">
       <tag k="aerodrome" v="yes"/>
       <tag k="name" v="Pusztacsalád"/>
       <tag k="runway:designator" v="17, 35"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="comm:unicom" v="131.1MHz"/>
       <tag k="runway:length" v="900m, 900m"/>
-      <member ref="-9015" role="" type="node"/>
+      <member ref="39015" role="" type="node"/>
    </relation>
-   <relation action="create" id="-9014" version="0" visible="true">
+   <relation id="39014" version="0" visible="true">
       <tag k="aerodrome" v="yes"/>
       <tag k="name" v="Papkutapuszta"/>
       <tag k="runway:designator" v="17, 35"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="runway:length" v="620m, 620m"/>
-      <member ref="-8982" role="arp" type="node"/>
+      <member ref="38982" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8979" version="0" visible="true">
+   <relation id="38979" version="0" visible="true">
       <tag k="comm:afis" v="127.9MHz"/>
       <tag k="icao" v="LHOY"/>
       <tag k="aerodrome" v="yes"/>
@@ -583,9 +583,9 @@
       <tag k="runway:designator" v="17, 35"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="runway:length" v="1200m, 1200m"/>
-      <member ref="-8947" role="arp" type="node"/>
+      <member ref="38947" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8943" version="0" visible="true">
+   <relation id="38943" version="0" visible="true">
       <tag k="comm:afis" v="135.7MHz"/>
       <tag k="icao" v="LHNK"/>
       <tag k="aerodrome" v="yes"/>
@@ -593,9 +593,9 @@
       <tag k="runway:designator" v="01, 19"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="runway:length" v="1000m, 1000m"/>
-      <member ref="-8911" role="arp" type="node"/>
+      <member ref="38911" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8910" version="0" visible="true">
+   <relation id="38910" version="0" visible="true">
       <tag k="comm:afis" v="132.2MHz"/>
       <tag k="icao" v="LHMC"/>
       <tag k="aerodrome" v="yes"/>
@@ -603,9 +603,9 @@
       <tag k="runway:designator" v="16, 34"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="runway:length" v="800m, 800m"/>
-      <member ref="-8878" role="arp" type="node"/>
+      <member ref="38878" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8877" version="0" visible="true">
+   <relation id="38877" version="0" visible="true">
       <tag k="icao" v="LHMP"/>
       <tag k="aerodrome" v="yes"/>
       <tag k="name" v="Matkópuszta"/>
@@ -613,9 +613,9 @@
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="comm:unicom" v="134.8MHz"/>
       <tag k="runway:length" v="1200m, 1200m"/>
-      <member ref="-8845" role="arp" type="node"/>
+      <member ref="38845" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8844" version="0" visible="true">
+   <relation id="38844" version="0" visible="true">
       <tag k="icao" v="LHMR"/>
       <tag k="aerodrome" v="yes"/>
       <tag k="name" v="Maklár"/>
@@ -623,9 +623,9 @@
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="comm:unicom" v="134.8MHz"/>
       <tag k="runway:length" v="800m, 800m"/>
-      <member ref="-8810" role="arp" type="node"/>
+      <member ref="38810" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8809" version="0" visible="true">
+   <relation id="38809" version="0" visible="true">
       <tag k="comm:afis" v="124.025MHz"/>
       <tag k="icao" v="LHKK"/>
       <tag k="aerodrome" v="yes"/>
@@ -633,9 +633,9 @@
       <tag k="runway:designator" v="13, 31"/>
       <tag k="runway:surface" v="concrete, concrete"/>
       <tag k="runway:length" v="2500m, 2500m"/>
-      <member ref="-8777" role="arp" type="node"/>
+      <member ref="38777" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8776" version="0" visible="true">
+   <relation id="38776" version="0" visible="true">
       <tag k="comm:afis" v="118.85MHz"/>
       <tag k="icao" v="LHKH"/>
       <tag k="aerodrome" v="yes"/>
@@ -643,26 +643,26 @@
       <tag k="runway:designator" v="01, 19, 17, 35"/>
       <tag k="runway:surface" v="grass, grass, grass, grass"/>
       <tag k="runway:length" v="758m, 758m, 536m, 536m"/>
-      <member ref="-8742" role="arp" type="node"/>
+      <member ref="38742" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8741" version="0" visible="true">
+   <relation id="38741" version="0" visible="true">
       <tag k="aerodrome" v="yes"/>
       <tag k="name" v="Ballószög"/>
       <tag k="runway:designator" v="14, 32"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="comm:unicom" v="134.8MHz"/>
       <tag k="runway:length" v="850m, 850m"/>
-      <member ref="-8709" role="arp" type="node"/>
+      <member ref="38709" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8708" version="0" visible="true">
+   <relation id="38708" version="0" visible="true">
       <tag k="aerodrome" v="yes"/>
       <tag k="name" v="Kincsem"/>
       <tag k="runway:designator" v="13, 31"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="runway:length" v="800m, 800m"/>
-      <member ref="-8675" role="arp" type="node"/>
+      <member ref="38675" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8674" version="0" visible="true">
+   <relation id="38674" version="0" visible="true">
       <tag k="icao" v="LHKE"/>
       <tag k="aerodrome" v="yes"/>
       <tag k="name" v="Kecskemét (Titán)"/>
@@ -671,9 +671,9 @@
       <tag k="comm:twr" v="135.750MHz"/>
       <tag k="runway:surface" v="concrete, concrete, grass, grass"/>
       <tag k="runway:length" v="2499m, 2499m, 2450m, 2450m"/>
-      <member ref="-8642" role="arp" type="node"/>
+      <member ref="38642" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8641" version="0" visible="true">
+   <relation id="38641" version="0" visible="true">
       <tag k="comm:afis" v="120.6MHz"/>
       <tag k="icao" v="LHKD"/>
       <tag k="aerodrome" v="yes"/>
@@ -681,9 +681,9 @@
       <tag k="runway:designator" v="15, 33"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="runway:length" v="1200m, 1200m"/>
-      <member ref="-8609" role="arp" type="node"/>
+      <member ref="38609" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8608" version="0" visible="true">
+   <relation id="38608" version="0" visible="true">
       <tag k="comm:afis" v="124.5MHz"/>
       <tag k="icao" v="LHKV"/>
       <tag k="aerodrome" v="yes"/>
@@ -691,9 +691,9 @@
       <tag k="runway:designator" v="17, 35, 17, 35"/>
       <tag k="runway:surface" v="concrete, concrete, grass, grass"/>
       <tag k="runway:length" v="620m, 620m, 1200m, 1200m"/>
-      <member ref="-8576" role="arp" type="node"/>
+      <member ref="38576" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8575" version="0" visible="true">
+   <relation id="38575" version="0" visible="true">
       <tag k="comm:afis" v="134.8MHz"/>
       <tag k="icao" v="LHKA"/>
       <tag k="aerodrome" v="yes"/>
@@ -701,17 +701,17 @@
       <tag k="runway:designator" v="17, 35, 17, 35"/>
       <tag k="runway:surface" v="concrete, concrete, grass, grass"/>
       <tag k="runway:length" v="2500m, 2500m, 1900m, 1900m"/>
-      <member ref="-8543" role="arp" type="node"/>
+      <member ref="38543" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8542" version="0" visible="true">
+   <relation id="38542" version="0" visible="true">
       <tag k="aerodrome" v="yes"/>
       <tag k="name" v="Kákahalom"/>
       <tag k="runway:designator" v="09, 27"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="runway:length" v="650m, 650m"/>
-      <member ref="-8510" role="arp" type="node"/>
+      <member ref="38510" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8508" version="0" visible="true">
+   <relation id="38508" version="0" visible="true">
       <tag k="comm:afis" v="125.2MHz"/>
       <tag k="icao" v="LHJK"/>
       <tag k="aerodrome" v="yes"/>
@@ -719,9 +719,9 @@
       <tag k="runway:designator" v="14L, 32R, 14R, 32L"/>
       <tag k="runway:surface" v="asphalt, asphalt, grass, grass"/>
       <tag k="runway:length" v="600m, 600m, 1000m, 1000m"/>
-      <member ref="-8476" role="arp" type="node"/>
+      <member ref="38476" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8475" version="0" visible="true">
+   <relation id="38475" version="0" visible="true">
       <tag k="comm:afis" v="120.3MHz"/>
       <tag k="icao" v="LHHH"/>
       <tag k="aerodrome" v="yes"/>
@@ -729,9 +729,9 @@
       <tag k="runway:designator" v="13, 31"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="runway:length" v="1000m, 1000m"/>
-      <member ref="-8443" role="arp" type="node"/>
+      <member ref="38443" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8442" version="0" visible="true">
+   <relation id="38442" version="0" visible="true">
       <tag k="comm:afis" v="124.2MHz"/>
       <tag k="icao" v="LHHO"/>
       <tag k="aerodrome" v="yes"/>
@@ -739,9 +739,9 @@
       <tag k="runway:designator" v="04, 22"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="runway:length" v="1000m, 1000m"/>
-      <member ref="-8410" role="arp" type="node"/>
+      <member ref="38410" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8409" version="0" visible="true">
+   <relation id="38409" version="0" visible="true">
       <tag k="comm:afis" v="123.3MHz"/>
       <tag k="icao" v="LHGR"/>
       <tag k="aerodrome" v="yes"/>
@@ -749,18 +749,18 @@
       <tag k="runway:designator" v="15, 33"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="runway:length" v="850m, 850m"/>
-      <member ref="-8377" role="arp" type="node"/>
+      <member ref="38377" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8372" version="0" visible="true">
+   <relation id="38372" version="0" visible="true">
       <tag k="comm:afis" v="129.9MHz"/>
       <tag k="aerodrome" v="yes"/>
       <tag k="name" v="Gyõrszentiván-Bõny"/>
       <tag k="runway:designator" v="13, 31"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="runway:length" v="750m, 750m"/>
-      <member ref="-8340" role="arp" type="node"/>
+      <member ref="38340" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8339" version="0" visible="true">
+   <relation id="38339" version="0" visible="true">
       <tag k="comm:afis" v="124.9MHz"/>
       <tag k="icao" v="LHGY"/>
       <tag k="aerodrome" v="yes"/>
@@ -768,9 +768,9 @@
       <tag k="runway:designator" v="15, 33"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="runway:length" v="760m, 760m"/>
-      <member ref="-8279" role="arp" type="node"/>
+      <member ref="38279" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8278" version="0" visible="true">
+   <relation id="38278" version="0" visible="true">
       <tag k="comm:afis" v="118.65MHz"/>
       <tag k="icao" v="LHGD"/>
       <tag k="aerodrome" v="yes"/>
@@ -778,9 +778,9 @@
       <tag k="runway:designator" v="13, 31"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="runway:length" v="1300m, 1300m"/>
-      <member ref="-8246" role="arp" type="node"/>
+      <member ref="38246" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8239" version="0" visible="true">
+   <relation id="38239" version="0" visible="true">
       <tag k="comm:afis" v="125.6MHz"/>
       <tag k="icao" v="LHFH"/>
       <tag k="aerodrome" v="yes"/>
@@ -788,9 +788,9 @@
       <tag k="runway:designator" v="15, 33"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="runway:length" v="1000m, 1000m"/>
-      <member ref="-8207" role="arp" type="node"/>
+      <member ref="38207" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8206" version="0" visible="true">
+   <relation id="38206" version="0" visible="true">
       <tag k="comm:afis" v="126.85MHz"/>
       <tag k="icao" v="LHEM"/>
       <tag k="aerodrome" v="yes"/>
@@ -798,9 +798,9 @@
       <tag k="runway:designator" v="02, 20"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="runway:length" v="1000m, 1000m"/>
-      <member ref="-8174" role="arp" type="node"/>
+      <member ref="38174" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8173" version="0" visible="true">
+   <relation id="38173" version="0" visible="true">
       <tag k="comm:afis" v="122.7MHz"/>
       <tag k="icao" v="LHER"/>
       <tag k="aerodrome" v="yes"/>
@@ -808,9 +808,9 @@
       <tag k="runway:designator" v="16, 34"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="runway:length" v="800m, 800m"/>
-      <member ref="-8141" role="arp" type="node"/>
+      <member ref="38141" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8140" version="0" visible="true">
+   <relation id="38140" version="0" visible="true">
       <tag k="comm:afis" v="130.8MHz"/>
       <tag k="icao" v="LHDV"/>
       <tag k="aerodrome" v="yes"/>
@@ -818,9 +818,9 @@
       <tag k="runway:designator" v="14, 32"/>
       <tag k="runway:surface" v="grass"/>
       <tag k="runway:length" v="950m, 950m"/>
-      <member ref="-8108" role="arp" type="node"/>
+      <member ref="38108" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8106" version="0" visible="true">
+   <relation id="38106" version="0" visible="true">
       <tag k="comm:afis" v="129.8MHz"/>
       <tag k="icao" v="LHDK"/>
       <tag k="aerodrome" v="yes"/>
@@ -828,18 +828,18 @@
       <tag k="runway:designator" v="11, 29"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="runway:length" v="800m, 800m"/>
-      <member ref="-8050" role="arp" type="node"/>
+      <member ref="38050" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8042" version="0" visible="true">
+   <relation id="38042" version="0" visible="true">
       <tag k="aerodrome" v="yes"/>
       <tag k="name" v="Dáka"/>
       <tag k="runway:designator" v="16, 34"/>
       <tag k="comm:twr" v="131.1MHz"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="runway:length" v="1000m, 1000m"/>
-      <member ref="-8010" role="arp" type="node"/>
+      <member ref="38010" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-8004" version="0" visible="true">
+   <relation id="38004" version="0" visible="true">
       <tag k="comm:afis" v="124.5MHz"/>
       <tag k="icao" v="LHBS"/>
       <tag k="aerodrome" v="yes"/>
@@ -847,9 +847,9 @@
       <tag k="runway:designator" v="09R, 27L, 09L, 27R"/>
       <tag k="runway:surface" v="grass, grass, grass, grass"/>
       <tag k="runway:length" v="980m, 980m, 750m, 750m"/>
-      <member ref="-7972" role="arp" type="node"/>
+      <member ref="37972" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-7970" version="0" visible="true">
+   <relation id="37970" version="0" visible="true">
       <tag k="icao" v="LHBD"/>
       <tag k="aerodrome" v="yes"/>
       <tag k="name" v="Börgönd"/>
@@ -857,9 +857,9 @@
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="comm:unicom" v="135,7MHz"/>
       <tag k="runway:length" v="1200m, 1200m"/>
-      <member ref="-7938" role="" type="node"/>
+      <member ref="37938" role="" type="node"/>
    </relation>
-   <relation action="create" id="-7922" version="0" visible="true">
+   <relation id="37922" version="0" visible="true">
       <tag k="height:unit" v="m"/>
       <tag k="height" v="143"/>
       <tag k="height:class" v="amsl"/>
@@ -869,18 +869,18 @@
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="comm:unicom" v="135.7MHz"/>
       <tag k="runway:length" v="800m, 800m"/>
-      <member ref="-7884" role="arp" type="node"/>
+      <member ref="37884" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-7868" version="0" visible="true">
+   <relation id="37868" version="0" visible="true">
       <tag k="aerodrome" v="yes"/>
       <tag k="name" v="Balatonkeresztúr"/>
       <tag k="runway:designator" v="13, 31"/>
       <tag k="runway:surface" v="grass, grass"/>
       <tag k="comm:unicom" v="135.7MHz"/>
       <tag k="runway:length" v="800m, 800m"/>
-      <member ref="-7834" role="arp" type="node"/>
+      <member ref="37834" role="arp" type="node"/>
    </relation>
-   <relation action="create" id="-7771" version="0" visible="true">
+   <relation id="37771" version="0" visible="true">
       <tag k="height:unit" v="m"/>
       <tag k="comm:afis" v="120.125MHz"/>
       <tag k="height" v="90"/>
@@ -890,6 +890,6 @@
       <tag k="runway:designator" v="16R, 34L, 16L, 34R"/>
       <tag k="runway:surface" v="grass"/>
       <tag k="runway:length" v="855m, 855m, 855m, 855m"/>
-      <member ref="-7753" role="arp" type="node"/>
+      <member ref="37753" role="arp" type="node"/>
    </relation>
 </osm>
