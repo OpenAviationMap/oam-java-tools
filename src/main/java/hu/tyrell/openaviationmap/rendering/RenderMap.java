@@ -20,11 +20,16 @@ package hu.tyrell.openaviationmap.rendering;
 import gnu.getopt.Getopt;
 import gnu.getopt.LongOpt;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.RenderingHints;
 import java.awt.geom.AffineTransform;
+import java.awt.geom.Line2D;
+import java.awt.geom.Rectangle2D;
 import java.awt.image.ColorModel;
 import java.awt.image.SampleModel;
 import java.io.IOException;
@@ -425,8 +430,8 @@ public final class RenderMap {
 
         // first, generate the ground map
         System.out.println("Rendering ground map...");
-        PlanarImage osmImage =
-                          renderMap(osmMap, mapBounds, imageBounds, scale, dpi);
+//        PlanarImage osmImage =
+//                          renderMap(osmMap, mapBounds, imageBounds, scale, dpi);
         osmDataStore.dispose();
 
 
@@ -437,10 +442,329 @@ public final class RenderMap {
         oamDataStore.dispose();
 
         // third, combine these together and into outputFile
-        System.out.println("Saving map...");
-        combineImages(imageBounds, osmImage, oamImage, outputFile);
+        System.out.println("Combining ground & aviation map...");
+//        DiskMemImage image = combineImages(imageBounds, osmImage, oamImage);
+        DiskMemImage image = (DiskMemImage) oamImage;
 
+        // draw the labels on the map
+        drawLabels(image, scale, dpi);
+
+        // save the map
+        JAI.create("filestore", image, outputFile, "TIFF", null);
         System.out.println("Map saved to " + outputFile);
+    }
+
+    /**
+     * Draw the static labels on the rendered map, like scale, title, etc.
+     *
+     * @param image the image to draw on
+     * @param scale the scale of the map
+     * @param dpi the DPI of rendering
+     */
+    private static void drawLabels(DiskMemImage image,
+                                   double       scale,
+                                   double       dpi) {
+        // get a graphics object
+        Graphics2D gr = image.createGraphics();
+        Rectangle bounds = image.getBounds();
+
+        // create a white edge around the map at 2.5% on each side
+        int edgeHeight = (int) (bounds.height * .030);
+        int edgeWidth = (int) (bounds.height * .015);
+        gr.setColor(Color.WHITE);
+        gr.fill(new Rectangle(0, 0, bounds.width, edgeHeight));
+        gr.fill(new Rectangle(0, 0, edgeWidth, bounds.height));
+        gr.fill(new Rectangle(0, bounds.height - edgeHeight,
+                              bounds.width, edgeHeight));
+        gr.fill(new Rectangle(bounds.width - edgeWidth, 0,
+                              edgeWidth, bounds.height));
+
+        // draw a frame around the map
+        gr.setColor(Color.BLACK);
+        gr.setStroke(new BasicStroke((int) (bounds.height * .003)));
+        gr.draw(new Rectangle(edgeWidth, edgeHeight,
+                              bounds.width - 2 * edgeWidth,
+                              bounds.height - 2 * edgeHeight));
+
+        // set a large bold font
+        gr.setFont(getFont("Arial", Font.BOLD, (int) (edgeHeight * .55), gr));
+        gr.setColor(Color.BLACK);
+        FontMetrics fm = gr.getFontMetrics();
+
+        // draw a label of 2% of the whole height, in the center on the top
+        String str = "Open Aviation Map - Hungary VFR Chart";
+        Rectangle2D strR = fm.getStringBounds(str, gr);
+        gr.drawString(str, (int) ((bounds.width / 2.0) - strR.getWidth() / 2.0),
+                           (int) ((edgeHeight / 2.0)
+                                + (strR.getHeight() - fm.getDescent()) / 2.0));
+
+        // draw the scale information on the top-right
+        final DecimalFormat df = new DecimalFormat("#,###");
+        gr.setFont(getFont("Arial", Font.BOLD, (int) (edgeHeight * .45), gr));
+        fm = gr.getFontMetrics();
+        str = "Scale 1:" + df.format(scale);
+        strR = fm.getStringBounds(str, gr);
+        gr.drawString(str, (int) ((bounds.width - edgeWidth) - strR.getWidth()),
+                           (int) ((edgeHeight / 2.0)
+                                + (strR.getHeight() - fm.getDescent()) / 2.0));
+
+        // draw a reference to the project in the lower right
+        gr.setFont(getFont("Arial", Font.BOLD, (int) (edgeHeight * .45), gr));
+        fm = gr.getFontMetrics();
+        str = "Open Aviation Map - http://openaviationmap.tyrell.hu/";
+        strR = fm.getStringBounds(str, gr);
+        gr.drawString(str, (int) ((bounds.width - edgeWidth) - strR.getWidth()),
+                           (int) (bounds.height - (edgeHeight / 2.0)
+                                + (strR.getHeight() - fm.getDescent()) / 2.0));
+
+
+        drawScaleBarMetric(edgeWidth,
+                           (int) (bounds.height * .980),
+                           (int) (bounds.width / 4d),
+                           (int) (edgeHeight / 8.0d),
+                           scale,
+                           dpi,
+                           gr,
+                           bounds,
+                           edgeHeight);
+
+        drawScaleBarNautical(edgeWidth,
+                             (int) (bounds.height * .980 + edgeHeight / 8.0d),
+                             (int) (bounds.width / 4d),
+                             (int) (edgeHeight / 8.0d),
+                             scale,
+                             dpi,
+                             gr,
+                             bounds,
+                             edgeHeight);
+
+        // clean up
+        gr.dispose();
+    }
+
+    /**
+     * Generate a font that has a height of certain pixels.
+     *
+     * @param name the name of the font
+     * @param style the style of the font
+     * @param size the size of the font, in pixels, which is the height in
+     *        pixels
+     * @param gr the Graphics object to generate the font for
+     * @return a font of the specified size
+     */
+    private static Font getFont(String      name,
+                                int         style,
+                                int         size,
+                                Graphics2D  gr) {
+
+        Font font = new Font(name, style, 10);
+        FontMetrics fm = gr.getFontMetrics(font);
+        double pointPerPixel = (fm.getMaxAscent() + fm.getMaxDescent()) / 10.0d;
+
+        // set a large bold font
+        return new Font("Arial", Font.BOLD, (int) (size * pointPerPixel));
+    }
+
+    /**
+     * Draw a metric scale bar on the bottom-left.
+     *
+     * @param x the x coordinate of the left hand side of the scale bar
+     * @param y the y coordinate of the opper side of the scale bar
+     *        (note: additional decoration will be drawn above this)
+     * @param width the maximum width of the scale bar
+     * @param scaleHeight the height of the scale bar itself (not the whole
+     *        thing though)
+     * @param scale the scale of the map
+     * @param dpi the DPI value
+     * @param gr the graphics object to use
+     * @param bounds the bounds of the entire map
+     * @param edgeHeight the height of the edge (drawing area)
+     */
+    private static void
+    drawScaleBarMetric(int          x,
+                       int          y,
+                       int          width,
+                       int          scaleHeight,
+                       double       scale,
+                       double       dpi,
+                       Graphics2D   gr,
+                       Rectangle    bounds,
+                       int          edgeHeight) {
+
+        String str;
+        Rectangle2D strR;
+
+        // draw a scale bar on the bottom left, on the 1/3rd of the map
+        double dotInMeters = 0.0254d / dpi;
+        double meterPerPixel = 1 / dotInMeters;
+        double scaledMeterPerPixel = meterPerPixel / scale;
+        double scaleLength = bounds.width / 4.0d;
+        double scaleLengthInMeters = scaleLength / scaledMeterPerPixel;
+        if (scaleLengthInMeters >= 100000) {
+            scaleLengthInMeters -= scaleLengthInMeters % 100000;
+        } else {
+            scaleLengthInMeters -= scaleLengthInMeters % 10000;
+        }
+        gr.setColor(Color.BLACK);
+        gr.setStroke(new BasicStroke((int) (bounds.height * .0001)));
+
+
+        // draw a 100km long scale line
+        gr.draw(new Rectangle(x, y,
+                              (int) (scaleLengthInMeters * scaledMeterPerPixel),
+                              scaleHeight));
+
+        // draw a checkered scale at 10km each
+        boolean fill = true;
+        gr.setFont(getFont("Arial", Font.PLAIN, scaleHeight, gr));
+        FontMetrics fm = gr.getFontMetrics();
+
+        // draw the first line that extends from the rectangle
+        gr.draw(new Line2D.Double(x, y + scaleHeight, x, y - scaleHeight));
+        str = "0km";
+        strR = fm.getStringBounds(str, gr);
+        gr.drawString(str,
+                      (int) (x - (strR.getWidth() / 2.0)),
+                      y - scaleHeight);
+
+        // draw a line each 10km
+        for (double i = 10000; i < scaleLengthInMeters; i += 10000) {
+            int xx = (int) (x + i * scaledMeterPerPixel);
+
+            // fill in if needed
+            if (fill) {
+                gr.fill(new Rectangle(xx, y,
+                                      (int) (10000 * scaledMeterPerPixel),
+                                      scaleHeight));
+                fill = false;
+            } else {
+                fill = true;
+            }
+
+            // draw a line that extends from the rectangle
+            gr.draw(new Line2D.Double(xx, y + scaleHeight,
+                                      xx, y - scaleHeight));
+
+            // draw a length value
+            str = "" + ((int) (i / 1000)) + "km";
+            strR = fm.getStringBounds(str, gr);
+            gr.drawString(str,
+                          (int) (xx - (strR.getWidth() / 2.0)),
+                          y - scaleHeight);
+        }
+
+        // draw the last line that extends from the rectangle
+        gr.draw(new Line2D.Double(x + scaleLengthInMeters * scaledMeterPerPixel,
+                                  y + scaleHeight,
+                                  x + scaleLengthInMeters * scaledMeterPerPixel,
+                                  y - scaleHeight));
+        str = "" + ((int) scaleLengthInMeters / 1000) + "km";
+        strR = fm.getStringBounds(str, gr);
+        gr.drawString(str,
+                      (int) (x + scaleLengthInMeters * scaledMeterPerPixel
+                           - (strR.getWidth() / 2.0)),
+                      y - scaleHeight);
+
+    }
+
+    /**
+     * Draw a nautical scale bar on the bottom-left.
+     *
+     * @param x the x coordinate of the left hand side of the scale bar
+     * @param y the y coordinate of the opper side of the scale bar
+     *        (note: additional decoration will be drawn above this)
+     * @param width the maximum width of the scale bar
+     * @param scaleHeight the height of the scale bar itself (not the whole
+     *        thing though)
+     * @param scale the scale of the map
+     * @param dpi the DPI value
+     * @param gr the graphics object to use
+     * @param bounds the bounds of the entire map
+     * @param edgeHeight the height of the edge (drawing area)
+     */
+    private static void
+    drawScaleBarNautical(int          x,
+                         int          y,
+                         int          width,
+                         int          scaleHeight,
+                         double       scale,
+                         double       dpi,
+                         Graphics2D   gr,
+                         Rectangle    bounds,
+                         int          edgeHeight) {
+
+        String str;
+        Rectangle2D strR;
+
+        // draw a scale bar on the bottom left, on the 1/3rd of the map
+        double dotInNm = 0.0000137149d / dpi;
+        double nmPerPixel = 1 / dotInNm;
+        double scaledNmPerPixel = nmPerPixel / scale;
+        double scaleLength = bounds.width / 4.0d;
+        double scaleLengthInNm = scaleLength / scaledNmPerPixel;
+        if (scaleLengthInNm >= 100) {
+            scaleLengthInNm -= scaleLengthInNm % 100;
+        } else {
+            scaleLengthInNm -= scaleLengthInNm % 10;
+        }
+        gr.setColor(Color.BLACK);
+
+
+        // draw a 100nm long scale line
+        gr.draw(new Rectangle(x, y,
+                              (int) (scaleLengthInNm * scaledNmPerPixel),
+                              scaleHeight));
+
+        // draw a checkered scale at 10km each
+        boolean fill = true;
+        gr.setFont(getFont("Arial", Font.PLAIN, scaleHeight, gr));
+        FontMetrics fm = gr.getFontMetrics();
+
+        // draw the first line that extends from the rectangle
+        gr.draw(new Line2D.Double(x, y + scaleHeight, x, y + 2 * scaleHeight));
+        str = "0nm";
+        strR = fm.getStringBounds(str, gr);
+        gr.drawString(str,
+                      (int) (x - (strR.getWidth() / 2.0)),
+                      (int) (y + 2 * scaleHeight + strR.getHeight()));
+
+        // draw a line each 10nm
+        for (double i = 10; i < scaleLengthInNm; i += 10) {
+            int xx = (int) (x + i * scaledNmPerPixel);
+
+            // fill in if needed
+            if (fill) {
+                gr.fill(new Rectangle(xx, y,
+                                      (int) (10 * scaledNmPerPixel),
+                                      scaleHeight));
+                fill = false;
+            } else {
+                fill = true;
+            }
+
+            // draw a line that extends from the rectangle
+            gr.draw(new Line2D.Double(xx, y + scaleHeight,
+                                      xx, y + 2 * scaleHeight));
+
+            // draw a length value
+            str = "" + ((int) i) + "nm";
+            strR = fm.getStringBounds(str, gr);
+            gr.drawString(str,
+                          (int) (xx - (strR.getWidth() / 2.0)),
+                          (int) (y + 2 * scaleHeight + strR.getHeight()));
+        }
+
+        // draw the last line that extends from the rectangle
+        gr.draw(new Line2D.Double(x + scaleLengthInNm * scaledNmPerPixel,
+                                  y + scaleHeight,
+                                  x + scaleLengthInNm  * scaledNmPerPixel,
+                                  y + 2 * scaleHeight));
+        str = "" + ((int) scaleLengthInNm) + "nm";
+        strR = fm.getStringBounds(str, gr);
+        gr.drawString(str,
+                      (int) (x + scaleLengthInNm * scaledNmPerPixel
+                           - (strR.getWidth() / 2.0)),
+                      (int) (y + 2 * scaleHeight + strR.getHeight()));
     }
 
     /**
@@ -450,14 +774,13 @@ public final class RenderMap {
      * @param imageBounds the bounds of the image to combine into
      * @param osmImage the lower layer to combine
      * @param oamImage the upper layer to combine
-     * @param outputFile the output file
+     * @return the combined image
      * @throws IOException on I/O errors
      */
-    private static void
+    private static DiskMemImage
     combineImages(Rectangle     imageBounds,
                   PlanarImage   osmImage,
-                  PlanarImage   oamImage,
-                  String        outputFile)
+                  PlanarImage   oamImage)
                                                         throws IOException {
 
         ColorModel cm = ColorModel.getRGBdefault();
@@ -474,9 +797,9 @@ public final class RenderMap {
         gr.drawRenderedImage(osmImage, new AffineTransform());
         gr.drawRenderedImage(oamImage, new AffineTransform());
 
-        JAI.create("filestore", image, outputFile, "TIFF", null);
-
         gr.dispose();
+
+        return image;
     }
 
     /**
