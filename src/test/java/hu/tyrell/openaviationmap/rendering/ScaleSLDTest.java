@@ -35,7 +35,9 @@ import javax.xml.transform.TransformerException;
 import javax.xml.xpath.XPathExpressionException;
 
 import org.custommonkey.xmlunit.XMLUnit;
+import org.geotools.referencing.CRS;
 import org.junit.Test;
+import org.opengis.referencing.FactoryException;
 import org.w3c.dom.Node;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -73,6 +75,7 @@ public class ScaleSLDTest {
      * @throws TransformerException on XML transformation errors
      * @throws RenderException on SLD scaling, rendering issues
      * @throws XPathExpressionException on XPath errors
+     * @throws FactoryException on CRS factory errors
      */
     @Test
     public void testIdentity() throws ParserConfigurationException,
@@ -80,14 +83,15 @@ public class ScaleSLDTest {
                                       IOException,
                                       TransformerException,
                                       XPathExpressionException,
-                                      RenderException {
+                                      RenderException,
+                                      FactoryException {
         FileReader      input  = new FileReader("var/proba.sld");
         List<Double>    scales = new ArrayList<Double>(0);
         StringWriter    output = new StringWriter();
 
         ScaleSLD.scaleSld(input, scales,
-                          ScaleSLD.DEFAULT_CRS, ScaleSLD.DEFAULT_REF_XY,
-                          output);
+                          CRS.decode(ScaleSLD.DEFAULT_CRS),
+                          ScaleSLD.DEFAULT_REF_XY, output);
 
         // now check that the input and output are the same
         Node d  = readXml(new FileReader("var/proba.sld"));
@@ -108,6 +112,7 @@ public class ScaleSLDTest {
      * @throws TransformerException on XML transformation errors
      * @throws RenderException on SLD scaling, rendering issues
      * @throws XPathExpressionException on XPath errors
+     * @throws FactoryException on CRS factory errors
      */
     @Test
     public void testNotSld() throws ParserConfigurationException,
@@ -115,7 +120,8 @@ public class ScaleSLDTest {
                                     IOException,
                                     TransformerException,
                                     XPathExpressionException,
-                                    RenderException {
+                                    RenderException,
+                                    FactoryException {
 
         FileReader      input  = new FileReader("var/empty.aixm51");
         List<Double>    scales = new ArrayList<Double>(0);
@@ -124,8 +130,8 @@ public class ScaleSLDTest {
 
         try {
             ScaleSLD.scaleSld(input, scales,
-                              ScaleSLD.DEFAULT_CRS, ScaleSLD.DEFAULT_REF_XY,
-                              output);
+                              CRS.decode(ScaleSLD.DEFAULT_CRS),
+                              ScaleSLD.DEFAULT_REF_XY, output);
         } catch (RenderException e) {
             // this is what we expected
             caught = true;
@@ -143,6 +149,7 @@ public class ScaleSLDTest {
      * @throws TransformerException on XML transformation errors
      * @throws RenderException on SLD scaling, rendering issues
      * @throws XPathExpressionException on XPath errors
+     * @throws FactoryException on CRS factory errors
      */
     @Test
     public void testAlreadyScaled() throws ParserConfigurationException,
@@ -150,7 +157,8 @@ public class ScaleSLDTest {
                                            IOException,
                                            TransformerException,
                                            XPathExpressionException,
-                                           RenderException {
+                                           RenderException,
+                                           FactoryException {
 
         FileReader      input  = new FileReader("var/proba-500000.sld");
         List<Double>    scales = new ArrayList<Double>(0);
@@ -159,8 +167,8 @@ public class ScaleSLDTest {
 
         try {
             ScaleSLD.scaleSld(input, scales,
-                              ScaleSLD.DEFAULT_CRS, ScaleSLD.DEFAULT_REF_XY,
-                              output);
+                              CRS.decode(ScaleSLD.DEFAULT_CRS),
+                              ScaleSLD.DEFAULT_REF_XY, output);
         } catch (RenderException e) {
             // this is what we expected
             caught = true;
@@ -180,6 +188,7 @@ public class ScaleSLDTest {
      * @throws TransformerException on XML transformation errors
      * @throws RenderException on SLD scaling, rendering issues
      * @throws XPathExpressionException on XPath errors
+     * @throws FactoryException on CRS factory errors
      */
     @Test
     public void testOneScale() throws ParserConfigurationException,
@@ -187,7 +196,8 @@ public class ScaleSLDTest {
                                       IOException,
                                       TransformerException,
                                       XPathExpressionException,
-                                      RenderException {
+                                      RenderException,
+                                      FactoryException {
 
         FileReader      input  = new FileReader("var/proba.sldt");
         List<Double>    scales = new ArrayList<Double>(1);
@@ -196,8 +206,8 @@ public class ScaleSLDTest {
         scales.add(500000d);
 
         ScaleSLD.scaleSld(input, scales,
-                          ScaleSLD.DEFAULT_CRS, ScaleSLD.DEFAULT_REF_XY,
-                          output);
+                          CRS.decode(ScaleSLD.DEFAULT_CRS),
+                          ScaleSLD.DEFAULT_REF_XY, output);
 
         // now check that the input and output are the same
         Node d  = readXml(new FileReader("var/proba-500000.sld"));
@@ -218,6 +228,7 @@ public class ScaleSLDTest {
      * @throws TransformerException on XML transformation errors
      * @throws RenderException on SLD scaling, rendering issues
      * @throws XPathExpressionException on XPath errors
+     * @throws FactoryException on CRS factory errors
      */
     @Test
     public void testTwoScales() throws ParserConfigurationException,
@@ -225,7 +236,8 @@ public class ScaleSLDTest {
                                        IOException,
                                        TransformerException,
                                        XPathExpressionException,
-                                       RenderException {
+                                       RenderException,
+                                       FactoryException {
 
         FileReader      input  = new FileReader("var/proba.sldt");
         List<Double>    scales = new ArrayList<Double>(2);
@@ -235,8 +247,8 @@ public class ScaleSLDTest {
         scales.add(500000d);
 
         ScaleSLD.scaleSld(input, scales,
-                          ScaleSLD.DEFAULT_CRS, ScaleSLD.DEFAULT_REF_XY,
-                          output);
+                          CRS.decode(ScaleSLD.DEFAULT_CRS),
+                          ScaleSLD.DEFAULT_REF_XY, output);
 
         // now check that the input and output are the same
         Node d  = readXml(new FileReader("var/proba-250000_500000.sld"));
@@ -257,6 +269,7 @@ public class ScaleSLDTest {
      * @throws TransformerException on XML transformation errors
      * @throws RenderException on SLD scaling, rendering issues
      * @throws XPathExpressionException on XPath errors
+     * @throws FactoryException on CRS factory errors
      */
     @Test
     public void testFourScales() throws ParserConfigurationException,
@@ -264,7 +277,8 @@ public class ScaleSLDTest {
                                         IOException,
                                         TransformerException,
                                         XPathExpressionException,
-                                        RenderException {
+                                        RenderException,
+                                        FactoryException {
 
         FileReader      input  = new FileReader("var/proba.sldt");
         List<Double>    scales = new ArrayList<Double>(2);
@@ -276,8 +290,8 @@ public class ScaleSLDTest {
         scales.add(1000000d);
 
         ScaleSLD.scaleSld(input, scales,
-                          ScaleSLD.DEFAULT_CRS, ScaleSLD.DEFAULT_REF_XY,
-                          output);
+                          CRS.decode(ScaleSLD.DEFAULT_CRS),
+                          ScaleSLD.DEFAULT_REF_XY, output);
 
         // now check that the input and output are the same
         Node d  = readXml(new FileReader(

@@ -40,6 +40,7 @@ import java.io.StringWriter;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -52,13 +53,18 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.geotools.data.DataStore;
 import org.geotools.data.DataStoreFinder;
+import org.geotools.data.Query;
 import org.geotools.data.simple.SimpleFeatureSource;
 import org.geotools.factory.CommonFactoryFinder;
 import org.geotools.geometry.DirectPosition2D;
 import org.geotools.geometry.jts.ReferencedEnvelope;
+import org.geotools.grid.Lines;
+import org.geotools.grid.ortholine.LineOrientation;
+import org.geotools.grid.ortholine.OrthoLineDef;
 import org.geotools.jdbc.JDBCDataStore;
 import org.geotools.map.FeatureLayer;
 import org.geotools.map.MapContent;
+import org.geotools.referencing.CRS;
 import org.geotools.referencing.GeodeticCalculator;
 import org.geotools.referencing.crs.DefaultGeographicCRS;
 import org.geotools.renderer.GTRenderer;
@@ -68,7 +74,9 @@ import org.geotools.styling.SLDParser;
 import org.geotools.styling.Style;
 import org.jaitools.tiledimage.DiskMemImage;
 import org.opengis.referencing.FactoryException;
+import org.opengis.referencing.NoSuchAuthorityCodeException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
+import org.opengis.referencing.cs.AxisDirection;
 import org.opengis.referencing.operation.TransformException;
 import org.xml.sax.SAXException;
 
@@ -113,7 +121,9 @@ public final class RenderMap {
         System.out.println(
         "                               the lower-left, C,D the upper-right");
         System.out.println(
-        "                               corner. defaults to the whole map");
+        "                               corner. defaults to the whole map.");
+        System.out.println(
+        "                               special value of 'Hungary' accepted");
         System.out.println(
         "  -d | --dpi <value>           the target device dpi");
         System.out.println(
@@ -127,6 +137,14 @@ public final class RenderMap {
         "                               comma-separated list");
         System.out.println(
         "  -o | --output <output.file>  the output file, a TIFF image");
+        System.out.println(
+        "  -r | --crs <value>           the CRS id to use for projection");
+        System.out.println(
+        "                               defaults to the CRS of the OAM data");
+        System.out.println(
+        "                               source. a special value of");
+        System.out.println(
+        "                               'Hungary:Lambert' is also accepted");
         System.out.println(
         "  -s | --scale <value>         the scale to generate the map in");
         System.out.println(
@@ -157,7 +175,7 @@ public final class RenderMap {
                                          TransformException,
                                          FactoryException {
 
-        LongOpt[] longopts = new LongOpt[8];
+        LongOpt[] longopts = new LongOpt[9];
 
         longopts[0] = new LongOpt("help", LongOpt.NO_ARGUMENT, null, 'h');
         longopts[1] = new LongOpt("oam", LongOpt.REQUIRED_ARGUMENT,
@@ -170,12 +188,14 @@ public final class RenderMap {
                 null, 'm');
         longopts[5] = new LongOpt("output", LongOpt.REQUIRED_ARGUMENT,
                 null, 'o');
-        longopts[6] = new LongOpt("scales", LongOpt.REQUIRED_ARGUMENT,
+        longopts[6] = new LongOpt("crs", LongOpt.REQUIRED_ARGUMENT,
+                null, 'r');
+        longopts[7] = new LongOpt("scales", LongOpt.REQUIRED_ARGUMENT,
                 null, 's');
-        longopts[7] = new LongOpt("sldurl", LongOpt.REQUIRED_ARGUMENT,
+        longopts[8] = new LongOpt("sldurl", LongOpt.REQUIRED_ARGUMENT,
                 null, 'u');
 
-        Getopt g = new Getopt("RenderMap", args, "a:c:d:hm:o:s:u:", longopts);
+        Getopt g = new Getopt("RenderMap", args, "a:c:d:hm:o:r:s:u:", longopts);
 
         int c;
 
@@ -186,6 +206,7 @@ public final class RenderMap {
         String      strDpi      = null;
         String      sldUrlStr   = null;
         String      coverageStr = null;
+        String      crsStr      = null;
 
         while ((c = g.getopt()) != -1) {
             switch (c) {
@@ -207,6 +228,10 @@ public final class RenderMap {
 
             case 'o':
                 outputFile = g.getOptarg();
+                break;
+
+            case 'r':
+                crsStr = g.getOptarg();
                 break;
 
             case 's':
@@ -288,8 +313,20 @@ public final class RenderMap {
             }
         }
 
+        CoordinateReferenceSystem crs = null;
+        if (crsStr != null) {
+            if ("Hungary:Lambert".equals(crsStr.toLowerCase())) {
+                crs = getHungarianLambertProjection();
+            } else {
+                crs = CRS.decode(crsStr);
+            }
+        }
+
         ReferencedEnvelope coverage = null;
         if (coverageStr != null) {
+            if ("hungary".equals(coverageStr.toLowerCase())) {
+                coverageStr = "16,45.5,23,48.75";
+            }
             coverage = parseCoverage(coverageStr);
         }
 
@@ -299,7 +336,7 @@ public final class RenderMap {
         System.out.println("Rendering map at scale 1:" + ((int) scale)
                          + " at " + ((int) dpi) + " dpi to " + outputFile);
 
-        renderMap(osmParams, oamParams, coverage, sldUrlStr, scale, dpi,
+        renderMap(osmParams, oamParams, coverage, crs, sldUrlStr, scale, dpi,
                   outputFile);
     }
 
@@ -310,6 +347,8 @@ public final class RenderMap {
      * @param oamParams the parameters to create the Open Aviaton Map DataStore
      * @param coverage the coverage of the rendered map, if null, the whole
      *        map area covered by the datastores is used
+     * @param crs the CRS to use for projection. if null, the CRS of the OAM
+     *        data source is used
      * @param sldUrlStr the base URL for SLD files &amp; related resources.
      * @param scale the scale, that is, 1:scale will be used
      * @param dpi the number of dots per inch on the target image
@@ -319,13 +358,15 @@ public final class RenderMap {
      * @throws TransformException on CRS transformation errors
      */
     private static void
-    renderMap(Map<String, Object>   osmParams,
-              Map<String, Object>   oamParams,
-              ReferencedEnvelope    coverage,
-              String                sldUrlStr,
-              double                scale,
-              double                dpi,
-              String                outputFile)    throws IOException,
+    renderMap(Map<String, Object>           osmParams,
+              Map<String, Object>           oamParams,
+              ReferencedEnvelope            coverage,
+              CoordinateReferenceSystem     crs,
+              String                        sldUrlStr,
+              double                        scale,
+              double                        dpi,
+              String                        outputFile)
+                                                   throws IOException,
                                                           TransformException,
                                                           FactoryException {
 
@@ -364,20 +405,20 @@ public final class RenderMap {
         System.out.println("Opening Open Street Map database...");
 
         // add the ground layers
-        addLayer(osmDataStore, sldParser, sldUrl,
+        addLayer(osmDataStore, sldParser, sldUrl, crs,
                  "planet_osm_polygon", "oam_waters.sldt", scale, dpi, osmMap);
-        addLayer(osmDataStore, sldParser, sldUrl,
+        addLayer(osmDataStore, sldParser, sldUrl, crs,
                  "planet_osm_polygon", "oam_forests.sld", scale, dpi, osmMap);
-        addLayer(osmDataStore, sldParser, sldUrl,
+        addLayer(osmDataStore, sldParser, sldUrl, crs,
                  "planet_osm_point", "oam_city_markers.sldt", scale, dpi,
                  osmMap);
-        addLayer(osmDataStore, sldParser, sldUrl,
+        addLayer(osmDataStore, sldParser, sldUrl, crs,
                  "planet_osm_polygon", "oam_cities.sldt", scale, dpi, osmMap);
-        addLayer(osmDataStore, sldParser, sldUrl,
+        addLayer(osmDataStore, sldParser, sldUrl, crs,
                  "planet_osm_point", "oam_peaks.sldt", scale, dpi, osmMap);
-        addLayer(osmDataStore, sldParser, sldUrl,
+        addLayer(osmDataStore, sldParser, sldUrl, crs,
                  "planet_osm_line", "oam_roads.sldt", scale, dpi, osmMap);
-        addLayer(osmDataStore, sldParser, sldUrl,
+        addLayer(osmDataStore, sldParser, sldUrl, crs,
                  "planet_osm_point", "oam_labels.sldt", scale, dpi, osmMap);
 
 
@@ -386,30 +427,30 @@ public final class RenderMap {
         MapContent oamMap = new MapContent();
 
         // add the aviation layers
-        addLayer(oamDataStore, sldParser, sldUrl,
+        addLayer(oamDataStore, sldParser, sldUrl, crs,
                 "planet_osm_polygon", "oam_airspaces.sldt", scale, dpi, oamMap);
-        addLayer(oamDataStore, sldParser, sldUrl,
+        addLayer(oamDataStore, sldParser, sldUrl, crs,
                 "planet_osm_point", "oam_navaids.sldt", scale, dpi, oamMap);
-        addLayer(oamDataStore, sldParser, sldUrl,
+        addLayer(oamDataStore, sldParser, sldUrl, crs,
                 "planet_osm_line", "oam_runways.sld", scale, dpi, oamMap);
 
-
-        if (!osmMap.getCoordinateReferenceSystem().equals(
-                oamMap.getCoordinateReferenceSystem())) {
-            throw new IllegalArgumentException(
-                                    "the OSM and OAM CRSs are different");
-        }
-
-        CoordinateReferenceSystem crs = osmMap.getCoordinateReferenceSystem();
+        CoordinateReferenceSystem refCrs = crs == null
+                                    ? oamMap.getCoordinateReferenceSystem()
+                                    : crs;
 
         // calculate map coverage and image size
         ReferencedEnvelope mapBounds;
         if (coverage == null) {
-            mapBounds = new ReferencedEnvelope(osmMap.getMaxBounds());
-            mapBounds.include(oamMap.getMaxBounds());
+            mapBounds = new ReferencedEnvelope(osmMap.getMaxBounds())
+                                                .transform(refCrs, false);
+            mapBounds.include(oamMap.getMaxBounds()
+                                                .transform(refCrs, false));
         } else {
-            mapBounds = coverage.transform(crs, false);
+            mapBounds = coverage.transform(refCrs, false);
         }
+
+        addLatticeLayer(mapBounds, sldParser, sldUrl, scale, dpi, oamMap);
+
 
         ReferencedEnvelope mapBoundsWgs84 =
                 mapBounds.transform(DefaultGeographicCRS.WGS84, false);
@@ -422,7 +463,8 @@ public final class RenderMap {
                    + "\u00b0," + FLOAT_FORMAT.format(mapBoundsWgs84.getMaxY())
                    + "\u00b0");
 
-        Rectangle imageBounds = calcImageBounds(scale, dpi, mapBounds, crs);
+        Rectangle imageBounds = calcImageBounds(scale, dpi, mapBounds,
+                                                refCrs);
 
 
         System.out.println("Image size: " + ((int) imageBounds.getWidth())
@@ -430,8 +472,8 @@ public final class RenderMap {
 
         // first, generate the ground map
         System.out.println("Rendering ground map...");
-//        PlanarImage osmImage =
-//                          renderMap(osmMap, mapBounds, imageBounds, scale, dpi);
+        PlanarImage osmImage =
+                          renderMap(osmMap, mapBounds, imageBounds, scale, dpi);
         osmDataStore.dispose();
 
 
@@ -443,8 +485,7 @@ public final class RenderMap {
 
         // third, combine these together and into outputFile
         System.out.println("Combining ground & aviation map...");
-//        DiskMemImage image = combineImages(imageBounds, osmImage, oamImage);
-        DiskMemImage image = (DiskMemImage) oamImage;
+        DiskMemImage image = combineImages(imageBounds, osmImage, oamImage);
 
         // draw the labels on the map
         drawLabels(image, scale, dpi);
@@ -452,6 +493,125 @@ public final class RenderMap {
         // save the map
         JAI.create("filestore", image, outputFile, "TIFF", null);
         System.out.println("Map saved to " + outputFile);
+    }
+
+    /**
+     * Add a lattice (grid) layer to a map.
+     *
+     * @param bounds the bounds of the lattice layer
+     * @param sldParser the SLD parser to use for parsing SLDs
+     * @param urlBase the base URL for the SLD & related resources
+     * @param scale the scale of the rendering, used to re-scale SLD templates
+     * @param dpi the target DPI, used to re-scale SLD templates
+     * @param map the map to add the lattice layer to
+     * @throws FactoryException if some factories are not found
+     * @throws TransformException on CRS transformation issues
+     * @throws IOException on I/O errors
+     */
+    private static void
+    addLatticeLayer(ReferencedEnvelope bounds,
+                    SLDParser          sldParser,
+                    final URL          urlBase,
+                    double             scale,
+                    double             dpi,
+                    MapContent         map)
+                                                    throws TransformException,
+                                                           FactoryException,
+                                                           IOException {
+
+        ReferencedEnvelope b = bounds.transform(DefaultGeographicCRS.WGS84,
+                                                false);
+
+        /*
+         * Line definitions:
+         * major lines at 10 degree spacing are indicated by level = 2
+         * minor lines at 2 degree spacing are indicated by level = 1
+         * (level values are arbitrary; only rank order matters)
+         */
+        List<OrthoLineDef> lineDefs = Arrays.asList(
+                // vertical (longitude) lines
+                new OrthoLineDef(LineOrientation.VERTICAL, 2, 1.0 / 2.0),
+                new OrthoLineDef(LineOrientation.VERTICAL, 1, 1.0 / 6.0),
+
+                // horizontal (latitude) lines
+                new OrthoLineDef(LineOrientation.HORIZONTAL, 2, 1.0 / 2.0),
+                new OrthoLineDef(LineOrientation.HORIZONTAL, 1, 1.0 / 6.0));
+
+        // Specify vertex spacing to get "densified" polygons
+        double vertexSpacing = 0.1;
+        SimpleFeatureSource grid = Lines.createOrthoLines(b,
+                                                          lineDefs,
+                                                          vertexSpacing);
+
+        CoordinateReferenceSystem crs = getHungarianLambertProjection();
+
+        // get the style by parsing & scaling an SLD
+        Style style;
+
+        try {
+            style = scaleSld(sldParser,
+                             urlBase,
+                             "oam_grid.sldt",
+                             bounds.transform(crs, false),
+                             scale,
+                             dpi);
+        } catch (Exception e) {
+            System.out.println("error scaling SLD template oam_grid.sldt");
+            System.out.println(e.getMessage());
+            return;
+        }
+
+        // add the layer to the map
+        Query query = new Query(Query.ALL);
+        query.setCoordinateSystemReproject(crs);
+
+        FeatureLayer layer = new FeatureLayer(grid.getFeatures(query), style);
+//        FeatureLayer layer = new FeatureLayer(grid, style);
+
+        map.addLayer(layer);
+    }
+
+    /**
+     * Return the Hungarian Lambert Conformal Projection as a CRS, which has the
+     * standard parallels at 46 and 48 degrees.
+     *
+     * @return a Lambert projection suitable for Hungary
+     * @throws FactoryException on CRS creation errors
+     */
+    public static CoordinateReferenceSystem
+    getHungarianLambertProjection() throws FactoryException {
+        // the projection covers the following area: 16,45 23,49
+        // thus the central meridian is 19.5
+
+        final String wkt = "PROJCS[\"WGS 84 / Hungary Lambert\","
+
+                + "GEOGCS[\"WGS 84\","
+                + "DATUM[\"World Geodetic System 1984\","
+                + "SPHEROID[\"WGS 84\", 6378137.0, 298.257223563,"
+                        + "AUTHORITY[\"EPSG\",\"7030\"]],"
+                    + "AUTHORITY[\"EPSG\",\"6326\"]],"
+                + "PRIMEM[\"Greenwich\", 0.0, AUTHORITY[\"EPSG\",\"8901\"]],"
+                + "UNIT[\"degree\", 0.017453292519943295],"
+                + "AXIS[\"Geodetic latitude\", NORTH],"
+                + "AXIS[\"Geodetic longitude\", EAST],"
+                + "AUTHORITY[\"EPSG\",\"4326\"]],"
+
+                + "PROJECTION[\"Lambert_Conformal_Conic_2SP\","
+                    + "AUTHORITY[\"EPSG\",\"9802\"]],"
+                + "PARAMETER[\"central_meridian\", 19.5],"
+                + "PARAMETER[\"latitude_of_origin\", 47.0],"
+                + "PARAMETER[\"standard_parallel_1\", 48.0],"
+                + "PARAMETER[\"false_easting\", 0.0],"
+                + "PARAMETER[\"false_northing\", 0.0],"
+                + "PARAMETER[\"scale_factor\", 1.0],"
+                + "PARAMETER[\"standard_parallel_2\", 46.0],"
+                + "UNIT[\"m\", 1.0],"
+                + "AXIS[\"Northing\", NORTH],"
+                + "AXIS[\"Easting\", EAST]]";
+                //+ "AUTHORITY[\"EPSG\",\"3416\"]]";
+
+
+        return CRS.parseWKT(wkt);
     }
 
     /**
@@ -837,44 +997,49 @@ public final class RenderMap {
      * @param dataStore the data store to add the layer from
      * @param sldParser the SLD parser to use for parsing SLDs
      * @param urlBase the base URL for the SLD & related resources
+     * @param crs the CRS to use. if null, the CRS of the data store is used
      * @param featureName the name of the feature from the data store
      * @param styleName the name of the SLD file to use
      * @param scale the scale of the rendering, used to re-scale SLD templates
      * @param dpi the target DPI, used to re-scale SLD templates
      * @param map the map to add the layer to
      * @throws IOException on I/O errors
+     * @throws FactoryException
+     * @throws NoSuchAuthorityCodeException
      */
     private static void
-    addLayer(DataStore          dataStore,
-             SLDParser          sldParser,
-             final URL          urlBase,
-             String             featureName,
-             String             styleName,
-             double             scale,
-             double             dpi,
-             MapContent         map) throws IOException {
+    addLayer(DataStore                  dataStore,
+             SLDParser                  sldParser,
+             final URL                  urlBase,
+             CoordinateReferenceSystem  crs,
+             String                     featureName,
+             String                     styleName,
+             double                     scale,
+             double                     dpi,
+             MapContent                 map) throws IOException,
+                                            NoSuchAuthorityCodeException,
+                                            FactoryException {
 
         if (styleName.endsWith(".sldt")) {
 
             SimpleFeatureSource fs = dataStore.getFeatureSource(featureName);
             ReferencedEnvelope bounds = fs.getBounds();
-            CoordinateReferenceSystem crs =
-                                        bounds.getCoordinateReferenceSystem();
-            String crsName = crs.getIdentifiers().iterator().next().toString();
-
-            Coordinate centerPoint = bounds.centre();
 
             try {
-                Reader scaledSld = scaleSld(urlBase,
-                                            styleName,
-                                            crsName,
-                                            scale,
-                                            dpi,
-                                            centerPoint);
-
-                sldParser.setInput(scaledSld);
-                Style[] styles = sldParser.readXML();
-                FeatureLayer layer = new FeatureLayer(fs, styles[0]);
+                Style style = scaleSld(sldParser,
+                                       urlBase,
+                                       styleName,
+                                       bounds,
+                                       scale,
+                                       dpi);
+                FeatureLayer layer;
+                if (crs != null) {
+                    Query query = new Query(Query.ALL);
+                    query.setCoordinateSystemReproject(crs);
+                    layer = new FeatureLayer(fs.getFeatures(query), style);
+                } else {
+                    layer = new FeatureLayer(fs, style);
+                }
                 map.addLayer(layer);
             } catch (RuntimeException e) {
                 throw e;
@@ -887,11 +1052,56 @@ public final class RenderMap {
         } else {
             sldParser.setInput(new URL(urlBase + styleName));
             Style[] styles = sldParser.readXML();
-            FeatureLayer layer = new FeatureLayer(
-                                     dataStore.getFeatureSource(featureName),
-                                     styles[0]);
+            FeatureLayer layer;
+            if (crs != null) {
+                Query query = new Query(Query.ALL);
+                query.setCoordinateSystemReproject(crs);
+                layer = new FeatureLayer(
+                    dataStore.getFeatureSource(featureName).getFeatures(query),
+                    styles[0]);
+            } else {
+                layer = new FeatureLayer(
+                        dataStore.getFeatureSource(featureName), styles[0]);
+            }
             map.addLayer(layer);
         }
+    }
+
+    /**
+     * Scale an SLD and produce a style object from it.
+     *
+     * @param sldParser the SLD parser to use for parsing SLDs
+     * @param urlBase the base URL for the SLD & related resources
+     * @param styleName the name of the SLD file to use
+     * @param bounds the bounds of the area to scale the SLD for
+     * @param scale the scale of the rendering, used to re-scale SLD templates
+     * @param dpi the target DPI, used to re-scale SLD templates
+     * @return the scale SLD as a style object
+     * @throws Exception on errors
+     */
+    private static Style
+    scaleSld(SLDParser          sldParser,
+             URL                urlBase,
+             String             styleName,
+             ReferencedEnvelope bounds,
+             double             scale,
+             double             dpi) throws Exception {
+        CoordinateReferenceSystem crs =
+                bounds.getCoordinateReferenceSystem();
+
+        Coordinate centerPoint = bounds.centre();
+
+        Reader scaledSld = scaleSld(urlBase,
+                                    styleName,
+                                    crs,
+                                    scale,
+                                    dpi,
+                                    centerPoint);
+
+        sldParser.setInput(scaledSld);
+        Style[] styles = sldParser.readXML();
+
+        return styles[0];
     }
 
     /**
@@ -900,7 +1110,7 @@ public final class RenderMap {
      *
      * @param urlBase the base URL where to find the SLD template
      * @param styleName the name of the SLD template, relative to urlBase
-     * @param crsName the name of the CRS to use for scaling
+     * @param crs the CRS to use for scaling
      * @param scale the target scale, which is 1:scale
      * @param dpi the target DPI
      * @param centerPoint a reference point to calculate real-world scale,
@@ -909,12 +1119,12 @@ public final class RenderMap {
      * @throws Exception on scaling errors
      */
     private static Reader
-    scaleSld(URL        urlBase,
-            String      styleName,
-            String      crsName,
-            double      scale,
-            double      dpi,
-            Coordinate  centerPoint) throws Exception {
+    scaleSld(URL                        urlBase,
+            String                      styleName,
+            CoordinateReferenceSystem   crs,
+            double                      scale,
+            double                      dpi,
+            Coordinate                  centerPoint) throws Exception {
 
         URL    url    = new URL(urlBase + styleName);
         Reader reader = new InputStreamReader(url.openStream());
@@ -927,7 +1137,7 @@ public final class RenderMap {
 
         StringWriter output = new StringWriter();
 
-        ScaleSLD.scaleSld(reader, scales, dpi, crsName, refXY, output);
+        ScaleSLD.scaleSld(reader, scales, dpi, crs, refXY, output);
 
         StringReader result = new StringReader(output.toString());
 
@@ -1013,20 +1223,61 @@ public final class RenderMap {
                     CoordinateReferenceSystem   crs)
                                                 throws TransformException {
         Rectangle imageBounds;
-        // calculate the width of the area in meters
-        double[] sp = {mapBounds.getMinimum(0), mapBounds.getMinimum(1)};
-        double[] dp = {mapBounds.getMaximum(0), mapBounds.getMinimum(1)};
+
+        double widthInMeters;
+        double heightInMeters;
 
         GeodeticCalculator gc = new GeodeticCalculator(crs);
 
-        gc.setStartingPosition(new DirectPosition2D(crs, sp[0], sp[1]));
-        gc.setDestinationPosition(new DirectPosition2D(crs, dp[0], dp[1]));
+        if (AxisDirection.NORTH.equals(
+                    crs.getCoordinateSystem().getAxis(0).getDirection())) {
 
-        double widthInMeters = gc.getOrthodromicDistance();
+            gc.setStartingPosition(new DirectPosition2D(crs,
+                                    mapBounds.getMinimum(0),
+                                    mapBounds.getMinimum(1)));
+            gc.setDestinationPosition(new DirectPosition2D(crs,
+                                      mapBounds.getMinimum(0),
+                                      mapBounds.getMaximum(1)));
+
+            widthInMeters = gc.getOrthodromicDistance();
+
+            gc.setStartingPosition(new DirectPosition2D(crs,
+                                   mapBounds.getMinimum(0),
+                                   mapBounds.getMinimum(1)));
+            gc.setDestinationPosition(new DirectPosition2D(crs,
+                                      mapBounds.getMaximum(0),
+                                      mapBounds.getMinimum(1)));
+
+            heightInMeters = gc.getOrthodromicDistance();
+
+        } else if (AxisDirection.EAST.equals(
+                        crs.getCoordinateSystem().getAxis(0).getDirection())) {
+
+            gc.setStartingPosition(new DirectPosition2D(crs,
+                                   mapBounds.getMinimum(0),
+                                   mapBounds.getMinimum(1)));
+            gc.setDestinationPosition(new DirectPosition2D(crs,
+                                      mapBounds.getMaximum(0),
+                                      mapBounds.getMinimum(1)));
+
+            widthInMeters = gc.getOrthodromicDistance();
+
+            gc.setStartingPosition(new DirectPosition2D(crs,
+                                   mapBounds.getMinimum(0),
+                                   mapBounds.getMinimum(1)));
+            gc.setDestinationPosition(new DirectPosition2D(crs,
+                                      mapBounds.getMinimum(0),
+                                      mapBounds.getMaximum(1)));
+
+            heightInMeters = gc.getOrthodromicDistance();
+
+        } else {
+            throw new IllegalArgumentException("unsupported CRS axis setup");
+        }
+
         double dotInMeters = 0.0254d / dpi;
         double imageWidth = widthInMeters / (scale * dotInMeters);
-
-        double heightToWidth = mapBounds.getSpan(1) / mapBounds.getSpan(0);
+        double heightToWidth = heightInMeters / widthInMeters;
         imageBounds = new Rectangle(
                             0, 0, (int) imageWidth,
                             (int) Math.round(imageWidth * heightToWidth));

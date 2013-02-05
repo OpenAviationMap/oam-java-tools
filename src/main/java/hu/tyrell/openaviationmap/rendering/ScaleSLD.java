@@ -45,6 +45,8 @@ import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
 import org.apache.ws.commons.util.NamespaceContextImpl;
+import org.geotools.referencing.CRS;
+import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.w3c.dom.Document;
 import org.w3c.dom.DocumentFragment;
 import org.w3c.dom.Element;
@@ -174,13 +176,13 @@ public final class ScaleSLD {
         String      outputFile  = null;
         String      strScales   = null;
         String      strDpi      = null;
-        String      crs         = DEFAULT_CRS;
+        String      crsStr      = DEFAULT_CRS;
         String      strRefPoint = null;
 
         while ((c = g.getopt()) != -1) {
             switch (c) {
             case 'c':
-                crs = g.getOptarg();
+                crsStr = g.getOptarg();
                 break;
 
             case 'd':
@@ -283,6 +285,7 @@ public final class ScaleSLD {
         try {
             FileReader   reader = new FileReader(inputFile);
             Writer       writer = new FileWriter(outputFile);
+            CoordinateReferenceSystem crs = CRS.decode(crsStr);
 
             scaleSld(reader, scales, dpi, crs, refXY, writer);
 
@@ -330,11 +333,11 @@ public final class ScaleSLD {
      * @throws RenderException on SLD scaling, rendering issues
      */
     static void
-    scaleSld(Reader         input,
-             List<Double>   scales,
-             String         crs,
-             double[]       refXY,
-             Writer         output)
+    scaleSld(Reader                     input,
+             List<Double>               scales,
+             CoordinateReferenceSystem  crs,
+             double[]                   refXY,
+             Writer                     output)
                                         throws ParserConfigurationException,
                                                SAXException,
                                                IOException,
@@ -363,12 +366,12 @@ public final class ScaleSLD {
      * @throws RenderException on SLD scaling, rendering issues
      */
     static void
-    scaleSld(Reader         input,
-             List<Double>   scales,
-             double         dpi,
-             String         crs,
-             double[]       refXY,
-             Writer         output)
+    scaleSld(Reader                     input,
+             List<Double>               scales,
+             double                     dpi,
+             CoordinateReferenceSystem  crs,
+             double[]                   refXY,
+             Writer                     output)
                                         throws ParserConfigurationException,
                                                SAXException,
                                                IOException,
@@ -410,11 +413,11 @@ public final class ScaleSLD {
      * @throws RenderException on SLD parsing, scaling errors
      * @throws ParserConfigurationException on XML parser config errors
      */
-    static Document scaleSld(Document        input,
-                             List<Double>    scales,
-                             double          dpi,
-                             String          crs,
-                             double[]        refXY)
+    static Document scaleSld(Document                   input,
+                             List<Double>               scales,
+                             double                     dpi,
+                             CoordinateReferenceSystem  crs,
+                             double[]                   refXY)
                                       throws XPathExpressionException,
                                              RenderException,
                                              ParserConfigurationException {
@@ -471,10 +474,11 @@ public final class ScaleSLD {
      * @throws XPathExpressionException on XPath errors
      */
     private static void
-    scaleSldDpi(Document document,
-                double   dpi,
-                String   crs,
-                double[] refXY)               throws XPathExpressionException {
+    scaleSldDpi(Document                    document,
+                double                      dpi,
+                CoordinateReferenceSystem   crs,
+                double[]                    refXY)
+                                              throws XPathExpressionException {
 
         XPath xpath = XPathFactory.newInstance().newXPath();
         xpath.setNamespaceContext(getNsCtx());
@@ -506,11 +510,12 @@ public final class ScaleSLD {
      * @throws XPathExpressionException on XPath errors
      */
     private static void
-    scaleSldSingle(Document document,
-                   double   scale,
-                   double   dpi,
-                   String   crs,
-                   double[] refXY) throws XPathExpressionException {
+    scaleSldSingle(Document                    document,
+                   double                      scale,
+                   double                      dpi,
+                   CoordinateReferenceSystem   crs,
+                   double[]                    refXY)
+                                               throws XPathExpressionException {
 
         XPath xpath = XPathFactory.newInstance().newXPath();
         xpath.setNamespaceContext(getNsCtx());
@@ -552,11 +557,12 @@ public final class ScaleSLD {
      * @throws XPathExpressionException on XPath errors
      */
     private static void
-    scaleSldMultiple(Document       document,
-                     List<Double>   scales,
-                     double         dpi,
-                     String         crs,
-                     double[]       refXY)    throws XPathExpressionException {
+    scaleSldMultiple(Document                   document,
+                     List<Double>               scales,
+                     double                     dpi,
+                     CoordinateReferenceSystem  crs,
+                     double[]                   refXY)
+                                             throws XPathExpressionException {
 
         // don't solve this here if there are less than 2 scaling values
         if (scales.isEmpty()) {
@@ -690,8 +696,11 @@ public final class ScaleSLD {
      * @throws XPathExpressionException on XPath errors
      */
     private static void
-    scaleValues(Node node, double scale, double dpi,
-                String crs, double[] refXY)
+    scaleValues(Node                      node,
+                double                    scale,
+                double                    dpi,
+                CoordinateReferenceSystem crs,
+                double[]                  refXY)
                                             throws XPathExpressionException {
 
         XPath xpath = XPathFactory.newInstance().newXPath();

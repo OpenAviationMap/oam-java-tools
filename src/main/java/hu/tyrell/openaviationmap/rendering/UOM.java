@@ -18,7 +18,6 @@
 package hu.tyrell.openaviationmap.rendering;
 
 import org.geotools.geometry.DirectPosition2D;
-import org.geotools.referencing.CRS;
 import org.geotools.referencing.GeodeticCalculator;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 
@@ -153,14 +152,17 @@ public enum UOM {
      * @param value a string representation of the value to convert. this is of
      *        the form "numeric_value uom", e.g. "2mm" or "-3.5 ft"
      * @param scale the scaling factor to use
-     * @param crsRef the CRS reference to use
+     * @param crs the CRS reference to use
      * @param refXY the x and y coordinates as a reference point in CRS space
      * @return the converted unit as a measure in the reference CRS
      * @throws RenderException if the unit of measurement is not recognized,
      *         or the numeric value cannot be parsed
      */
     public static double
-    scaleValueCrs(String value, double scale, String crsRef, double[] refXY)
+    scaleValueCrs(String                    value,
+                  double                    scale,
+                  CoordinateReferenceSystem crs,
+                  double[]                  refXY)
                                                     throws RenderException {
         String v      = value.trim();
 
@@ -188,12 +190,12 @@ public enum UOM {
         case M:
         case NM:
         default:
-            result = distanceInCrs(uom.inMeters * d, refXY, crsRef);
+            result = distanceInCrs(uom.inMeters * d, refXY, crs);
             break;
 
         case MM:
         case INCH:
-            result = distanceInCrs(uom.inMeters * d * scale, refXY, crsRef);
+            result = distanceInCrs(uom.inMeters * d * scale, refXY, crs);
             break;
         }
 
@@ -208,12 +210,14 @@ public enum UOM {
      *        as a distance in the supplied CRS
      * @param refXY the x and y coordinate of a reference coordinate, which is
      *        used as a location to calculate the distance at
-     * @param refCrs the name of the CRS to use for the calculation
+     * @param crs the CRS to use for the calculation
      * @return a distance, measured relative to the CRS supplied, which is in
      *         fact the same distance as the supplied inMeters parameter
      */
     private static double
-    distanceInCrs(double inMeters, double[] refXY, String refCrs) {
+    distanceInCrs(double                    inMeters,
+                  double[]                  refXY,
+                  CoordinateReferenceSystem crs) {
         double dist = 0;
 
         try {
@@ -221,7 +225,6 @@ public enum UOM {
             double[] sp = {refXY[0], refXY[1]};
             double[] dp = {refXY[0], refXY[1] * 1.01};
 
-            CoordinateReferenceSystem crs = CRS.decode(refCrs);
             GeodeticCalculator gc = new GeodeticCalculator(crs);
 
             gc.setStartingPosition(new DirectPosition2D(crs, sp[0], sp[1]));
