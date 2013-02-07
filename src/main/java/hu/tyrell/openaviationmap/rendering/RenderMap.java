@@ -19,6 +19,9 @@ package hu.tyrell.openaviationmap.rendering;
 
 import gnu.getopt.Getopt;
 import gnu.getopt.LongOpt;
+import hu.tyrell.openaviationmap.rendering.grid.Lines;
+import hu.tyrell.openaviationmap.rendering.grid.ortholine.LineOrientation;
+import hu.tyrell.openaviationmap.rendering.grid.ortholine.OrthoLineDef;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -39,6 +42,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import java.net.URL;
 import java.text.DecimalFormat;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -58,9 +62,6 @@ import org.geotools.data.simple.SimpleFeatureSource;
 import org.geotools.factory.CommonFactoryFinder;
 import org.geotools.geometry.DirectPosition2D;
 import org.geotools.geometry.jts.ReferencedEnvelope;
-import org.geotools.grid.Lines;
-import org.geotools.grid.ortholine.LineOrientation;
-import org.geotools.grid.ortholine.OrthoLineDef;
 import org.geotools.jdbc.JDBCDataStore;
 import org.geotools.map.FeatureLayer;
 import org.geotools.map.MapContent;
@@ -68,6 +69,7 @@ import org.geotools.referencing.CRS;
 import org.geotools.referencing.GeodeticCalculator;
 import org.geotools.referencing.crs.DefaultGeographicCRS;
 import org.geotools.renderer.GTRenderer;
+import org.geotools.renderer.lite.RendererUtilities;
 import org.geotools.renderer.lite.StreamingRenderer;
 import org.geotools.styling.DefaultResourceLocator;
 import org.geotools.styling.SLDParser;
@@ -77,6 +79,10 @@ import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.NoSuchAuthorityCodeException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.cs.AxisDirection;
+import org.opengis.referencing.operation.CoordinateOperation;
+import org.opengis.referencing.operation.CoordinateOperationFactory;
+import org.opengis.referencing.operation.MathTransform;
+import org.opengis.referencing.operation.OperationNotFoundException;
 import org.opengis.referencing.operation.TransformException;
 import org.xml.sax.SAXException;
 
@@ -93,6 +99,49 @@ public final class RenderMap {
     /** Float formatter. */
     private static final DecimalFormat FLOAT_FORMAT =
                                                 new DecimalFormat("###.##");
+
+    /** Constants marking alignment. */
+    private enum Alignment {
+        /** Constant marking center alignment. */
+        CENTER,
+
+        /** Constant marking a left alignment. */
+        LEFT,
+
+        /** Constant marking a right alignment. */
+        RIGHT
+    }
+
+    /** Constants marking a rotation. */
+    private enum Rotation {
+        /** Constant marking no rotation. */
+        NONE,
+
+        /** Constant marking a 90 degree clockwise rotation. */
+        CW,
+
+        /** Constant marking a 90 degree counter-clockwise rotation. */
+        CCW
+    }
+
+    /**
+     * The grid definition.
+     *
+     * major lines at 30' degree spacing are indicated by level = 2
+     * minor lines at 10' degree spacing are indicated by level = 1
+     * (level values are arbitrary; only rank order matters)
+     */
+    private static final List<OrthoLineDef> GRID_DEF = Arrays.asList(
+            // vertical (longitude) lines
+            new OrthoLineDef(LineOrientation.VERTICAL, 2, 1.0 / 2.0,
+                                                       1 / 60.0, 1 / 60.0),
+            new OrthoLineDef(LineOrientation.VERTICAL, 1, 1.0 / 6.0),
+
+            // horizontal (latitude) lines
+            new OrthoLineDef(LineOrientation.HORIZONTAL, 2, 1.0 / 2.0,
+                                                       1 / 60.0, 1 / 120.0),
+            new OrthoLineDef(LineOrientation.HORIZONTAL, 1, 1.0 / 6.0));
+
 
     /**
      * Private constructor.
@@ -315,7 +364,7 @@ public final class RenderMap {
 
         CoordinateReferenceSystem crs = null;
         if (crsStr != null) {
-            if ("Hungary:Lambert".equals(crsStr.toLowerCase())) {
+            if ("hungary:lambert".equals(crsStr.toLowerCase())) {
                 crs = getHungarianLambertProjection();
             } else {
                 crs = CRS.decode(crsStr);
@@ -449,7 +498,8 @@ public final class RenderMap {
             mapBounds = coverage.transform(refCrs, false);
         }
 
-        addLatticeLayer(mapBounds, sldParser, sldUrl, scale, dpi, oamMap);
+        addLatticeLayer(mapBounds, sldParser, sldUrl, scale, dpi, refCrs,
+                        oamMap);
 
 
         ReferencedEnvelope mapBoundsWgs84 =
@@ -481,14 +531,16 @@ public final class RenderMap {
         System.out.println("Rendering aviation map...");
         PlanarImage oamImage =
                           renderMap(oamMap, mapBounds, imageBounds, scale, dpi);
-        oamDataStore.dispose();
+
 
         // third, combine these together and into outputFile
         System.out.println("Combining ground & aviation map...");
         DiskMemImage image = combineImages(imageBounds, osmImage, oamImage);
 
-        // draw the labels on the map
-        drawLabels(image, scale, dpi);
+        // draw the labels around the map
+        System.out.println("Drawing legend...");
+        image = drawLabels(mapBounds, image, scale, dpi);
+        oamDataStore.dispose();
 
         // save the map
         JAI.create("filestore", image, outputFile, "TIFF", null);
@@ -503,18 +555,20 @@ public final class RenderMap {
      * @param urlBase the base URL for the SLD & related resources
      * @param scale the scale of the rendering, used to re-scale SLD templates
      * @param dpi the target DPI, used to re-scale SLD templates
+     * @param crs the CRS to use
      * @param map the map to add the lattice layer to
      * @throws FactoryException if some factories are not found
      * @throws TransformException on CRS transformation issues
      * @throws IOException on I/O errors
      */
     private static void
-    addLatticeLayer(ReferencedEnvelope bounds,
-                    SLDParser          sldParser,
-                    final URL          urlBase,
-                    double             scale,
-                    double             dpi,
-                    MapContent         map)
+    addLatticeLayer(ReferencedEnvelope          bounds,
+                    SLDParser                   sldParser,
+                    final URL                   urlBase,
+                    double                      scale,
+                    double                      dpi,
+                    CoordinateReferenceSystem   crs,
+                    MapContent                  map)
                                                     throws TransformException,
                                                            FactoryException,
                                                            IOException {
@@ -522,28 +576,13 @@ public final class RenderMap {
         ReferencedEnvelope b = bounds.transform(DefaultGeographicCRS.WGS84,
                                                 false);
 
-        /*
-         * Line definitions:
-         * major lines at 10 degree spacing are indicated by level = 2
-         * minor lines at 2 degree spacing are indicated by level = 1
-         * (level values are arbitrary; only rank order matters)
-         */
-        List<OrthoLineDef> lineDefs = Arrays.asList(
-                // vertical (longitude) lines
-                new OrthoLineDef(LineOrientation.VERTICAL, 2, 1.0 / 2.0),
-                new OrthoLineDef(LineOrientation.VERTICAL, 1, 1.0 / 6.0),
-
-                // horizontal (latitude) lines
-                new OrthoLineDef(LineOrientation.HORIZONTAL, 2, 1.0 / 2.0),
-                new OrthoLineDef(LineOrientation.HORIZONTAL, 1, 1.0 / 6.0));
+        b = noramlizeEnvelope(b);
 
         // Specify vertex spacing to get "densified" polygons
         double vertexSpacing = 0.1;
         SimpleFeatureSource grid = Lines.createOrthoLines(b,
-                                                          lineDefs,
+                                                          GRID_DEF,
                                                           vertexSpacing);
-
-        CoordinateReferenceSystem crs = getHungarianLambertProjection();
 
         // get the style by parsing & scaling an SLD
         Style style;
@@ -566,7 +605,6 @@ public final class RenderMap {
         query.setCoordinateSystemReproject(crs);
 
         FeatureLayer layer = new FeatureLayer(grid.getFeatures(query), style);
-//        FeatureLayer layer = new FeatureLayer(grid, style);
 
         map.addLayer(layer);
     }
@@ -583,7 +621,8 @@ public final class RenderMap {
         // the projection covers the following area: 16,45 23,49
         // thus the central meridian is 19.5
 
-        final String wkt = "PROJCS[\"WGS 84 / Hungary Lambert\","
+        final String wkt = "PROJCS[\"WGS 84 - "
+                + "Hungary Lambert Conformal Conic Projection\","
 
                 + "GEOGCS[\"WGS 84\","
                 + "DATUM[\"World Geodetic System 1984\","
@@ -601,14 +640,13 @@ public final class RenderMap {
                 + "PARAMETER[\"central_meridian\", 19.5],"
                 + "PARAMETER[\"latitude_of_origin\", 47.0],"
                 + "PARAMETER[\"standard_parallel_1\", 48.0],"
-                + "PARAMETER[\"false_easting\", 0.0],"
-                + "PARAMETER[\"false_northing\", 0.0],"
+                + "PARAMETER[\"false_easting\", 400000.0],"
+                + "PARAMETER[\"false_northing\", 400000.0],"
                 + "PARAMETER[\"scale_factor\", 1.0],"
                 + "PARAMETER[\"standard_parallel_2\", 46.0],"
                 + "UNIT[\"m\", 1.0],"
                 + "AXIS[\"Northing\", NORTH],"
                 + "AXIS[\"Easting\", EAST]]";
-                //+ "AUTHORITY[\"EPSG\",\"3416\"]]";
 
 
         return CRS.parseWKT(wkt);
@@ -617,37 +655,55 @@ public final class RenderMap {
     /**
      * Draw the static labels on the rendered map, like scale, title, etc.
      *
-     * @param image the image to draw on
+     * @param mapBounds the map to draw the labels for. used to calculate grid line
+     *        end positions, to draw grid line degrees
+     * @param mapImage the map image to draw around
      * @param scale the scale of the map
      * @param dpi the DPI of rendering
+     * @return an extended image, with the labels around the original map image
+     * @throws FactoryException on CRS conversion errors
+     * @throws TransformException on CRS conversion errors
      */
-    private static void drawLabels(DiskMemImage image,
-                                   double       scale,
-                                   double       dpi) {
-        // get a graphics object
-        Graphics2D gr = image.createGraphics();
-        Rectangle bounds = image.getBounds();
+    private static DiskMemImage
+    drawLabels(ReferencedEnvelope   mapBounds,
+               DiskMemImage         mapImage,
+               double               scale,
+               double               dpi) throws TransformException,
+                                                 FactoryException {
 
-        // create a white edge around the map at 2.5% on each side
-        int edgeHeight = (int) (bounds.height * .030);
-        int edgeWidth = (int) (bounds.height * .015);
+        // expand our original image at 3.5% on top & bottom, at 1.5% on the sides
+        Rectangle bounds = mapImage.getBounds();
+        int edgeHeight = (int) (bounds.height * .035);
+        int edgeWidth  = (int) (bounds.height * .015);
+
+        DiskMemImage image = new DiskMemImage(
+                                        0, 0,
+                                        mapImage.getWidth() + 2 * edgeWidth,
+                                        mapImage.getHeight() + 2 * edgeHeight,
+                                        0, 0,
+                                        mapImage.getSampleModel(),
+                                        mapImage.getColorModel());
+
+        // get a graphics object & create a while fill
+        Graphics2D gr = image.createGraphics();
+        bounds = image.getBounds();
         gr.setColor(Color.WHITE);
-        gr.fill(new Rectangle(0, 0, bounds.width, edgeHeight));
-        gr.fill(new Rectangle(0, 0, edgeWidth, bounds.height));
-        gr.fill(new Rectangle(0, bounds.height - edgeHeight,
-                              bounds.width, edgeHeight));
-        gr.fill(new Rectangle(bounds.width - edgeWidth, 0,
-                              edgeWidth, bounds.height));
+        gr.fill(bounds);
+
+        // draw the original map on our image
+        gr.drawRenderedImage(mapImage, new AffineTransform(1.0, 0, 0, 1.0,
+                                                        edgeWidth, edgeHeight));
 
         // draw a frame around the map
         gr.setColor(Color.BLACK);
-        gr.setStroke(new BasicStroke((int) (bounds.height * .003)));
+        gr.setStroke(new BasicStroke((int) (bounds.height * .002)));
         gr.draw(new Rectangle(edgeWidth, edgeHeight,
                               bounds.width - 2 * edgeWidth,
                               bounds.height - 2 * edgeHeight));
 
         // set a large bold font
-        gr.setFont(getFont("Arial", Font.BOLD, (int) (edgeHeight * .55), gr));
+        gr.setFont(getFont("Arial", Font.BOLD, (int) (edgeHeight * .50),
+                           Rotation.NONE, gr));
         gr.setColor(Color.BLACK);
         FontMetrics fm = gr.getFontMetrics();
 
@@ -660,7 +716,8 @@ public final class RenderMap {
 
         // draw the scale information on the top-right
         final DecimalFormat df = new DecimalFormat("#,###");
-        gr.setFont(getFont("Arial", Font.BOLD, (int) (edgeHeight * .45), gr));
+        gr.setFont(getFont("Arial", Font.BOLD, (int) (edgeHeight * .40),
+                           Rotation.NONE, gr));
         fm = gr.getFontMetrics();
         str = "Scale 1:" + df.format(scale);
         strR = fm.getStringBounds(str, gr);
@@ -668,8 +725,35 @@ public final class RenderMap {
                            (int) ((edgeHeight / 2.0)
                                 + (strR.getHeight() - fm.getDescent()) / 2.0));
 
+        // draw projection information on the top right
+        CoordinateReferenceSystem crs =
+                                    mapBounds.getCoordinateReferenceSystem();
+        String projStr = crs.getName().getCode();
+        String projStr2 = "";
+
+        if (CRS.equalsIgnoreMetadata(crs, getHungarianLambertProjection())) {
+            projStr = "Lambert Conformal Conic Projection, Datum: WGS84";
+            projStr2 = "Standard Parallels at 46\u00b0 and 48\u00b0";
+        } else if (CRS.equalsIgnoreMetadata(crs, DefaultGeographicCRS.WGS84)) {
+            projStr = "Mercator Projection, Datum: WGS84";
+        } else if (CRS.equalsIgnoreMetadata(crs, CRS.decode("EPSG:900913"))) {
+            projStr = "EPSG:900913 Google Mercator Projection, Datum: WGS84";
+        }
+        gr.setFont(getFont("Arial", Font.BOLD, (int) (edgeHeight * .20),
+                           Rotation.NONE, gr));
+        fm = gr.getFontMetrics();
+        strR = fm.getStringBounds(projStr, gr);
+        gr.drawString(projStr, edgeWidth, (int) ((edgeHeight * .20)
+                                + (strR.getHeight() - fm.getDescent()) / 2.0));
+        if (!projStr2.isEmpty()) {
+            strR = fm.getStringBounds(projStr2, gr);
+            gr.drawString(projStr2, edgeWidth, (int) ((edgeHeight * .55)
+                                 + (strR.getHeight() - fm.getDescent()) / 2.0));
+        }
+
         // draw a reference to the project in the lower right
-        gr.setFont(getFont("Arial", Font.BOLD, (int) (edgeHeight * .45), gr));
+        gr.setFont(getFont("Arial", Font.BOLD, (int) (edgeHeight * .40),
+                           Rotation.NONE, gr));
         fm = gr.getFontMetrics();
         str = "Open Aviation Map - http://openaviationmap.tyrell.hu/";
         strR = fm.getStringBounds(str, gr);
@@ -677,9 +761,9 @@ public final class RenderMap {
                            (int) (bounds.height - (edgeHeight / 2.0)
                                 + (strR.getHeight() - fm.getDescent()) / 2.0));
 
-
+        // draw scales on the lower left
         drawScaleBarMetric(edgeWidth,
-                           (int) (bounds.height * .980),
+                           (int) (bounds.height * .982),
                            (int) (bounds.width / 4d),
                            (int) (edgeHeight / 8.0d),
                            scale,
@@ -689,17 +773,246 @@ public final class RenderMap {
                            edgeHeight);
 
         drawScaleBarNautical(edgeWidth,
-                             (int) (bounds.height * .980 + edgeHeight / 8.0d),
+                             (int) (bounds.height * .982 + edgeHeight / 9.0d),
                              (int) (bounds.width / 4d),
-                             (int) (edgeHeight / 8.0d),
+                             (int) (edgeHeight / 9.0d),
                              scale,
                              dpi,
                              gr,
                              bounds,
                              edgeHeight);
 
+        // draw grid line values
+        drawGridLabels(mapBounds, mapImage, bounds, edgeHeight, edgeWidth, gr);
+
         // clean up
         gr.dispose();
+
+        return image;
+    }
+
+    /**
+     * Draw labels for the grid lines outside the map.
+     *
+     * @param mapBounds the bounds of the original map, includes proper
+     *        projection info
+     * @param mapImage the image of the original map
+     * @param bounds the bounds of the image to draw on
+     * @param edgeHeight the height of the edge area to draw, this extends
+     *        beyond the map image
+     * @param edgeWidth the width of the edge area to draw, this extends
+     *        beyond the map image
+     * @param gr the graphics object to draw into
+     * @throws OperationNotFoundException on coordinate conversion operations
+     *         not found
+     * @throws FactoryException on CRS transformation errors
+     * @throws TransformException on CRS transformation errors
+     */
+    private static void
+    drawGridLabels(ReferencedEnvelope   mapBounds,
+                   DiskMemImage         mapImage,
+                   Rectangle            bounds,
+                   int                  edgeHeight,
+                   int                  edgeWidth,
+                   Graphics2D           gr) throws FactoryException,
+                                                   TransformException {
+
+        AffineTransform ws = RendererUtilities.worldToScreenTransform(
+                                              mapBounds, mapImage.getBounds());
+
+        OrthoLineDef hDef = null;
+        OrthoLineDef vDef = null;
+
+        for (OrthoLineDef ld : GRID_DEF) {
+            if (hDef != null && vDef != null) {
+                break;
+            }
+
+            if (ld.getLevel() == 2) {
+                if (ld.getOrientation() == LineOrientation.HORIZONTAL) {
+                    hDef = ld;
+                }
+                if (ld.getOrientation() == LineOrientation.VERTICAL) {
+                    vDef = ld;
+                }
+            }
+        }
+
+        CoordinateOperationFactory coordinateOperationFactory =
+                                      CRS.getCoordinateOperationFactory(false);
+
+        CoordinateOperation wgs84ToMap =
+                    coordinateOperationFactory.createOperation(
+                                    DefaultGeographicCRS.WGS84,
+                                    mapBounds.getCoordinateReferenceSystem());
+
+        MathTransform wgs84ToMapT = wgs84ToMap.getMathTransform();
+
+        CoordinateOperation mapToWgs84 =
+                    coordinateOperationFactory.createOperation(
+                                    mapBounds.getCoordinateReferenceSystem(),
+                                    DefaultGeographicCRS.WGS84);
+
+        ReferencedEnvelope wgs84Bounds = new ReferencedEnvelope(
+                        CRS.transform(mapToWgs84, mapBounds).toRectangle2D(),
+                        DefaultGeographicCRS.WGS84);
+
+        wgs84Bounds = noramlizeEnvelope(wgs84Bounds);
+
+
+        int fontSize = (int) (edgeWidth * .3);
+
+        if (hDef != null && vDef != null) {
+            // draw grid line values for the vertical axis
+            double maxVertical = wgs84Bounds.getMaxY();
+
+            for (double v = wgs84Bounds.getMinY(); v < maxVertical;
+                 v += vDef.getSpacing()) {
+
+                // draw on the east edge
+                double[] p1 = new double[] {wgs84Bounds.getMaxX(), v};
+                double[] p2 = new double[2];
+                double[] p3 = new double[2];
+
+                // transform from WGS84 to map coordinates
+                wgs84ToMapT.transform(p1, 0, p2, 0, 1);
+                // transform from map coordinates to screen coordinates
+                ws.transform(p2,  0, p3, 0, 1);
+                drawGridLabel(bounds.width - edgeWidth,
+                              (int) (edgeHeight + p3[1]),
+                              fontSize,
+                              Alignment.RIGHT, Rotation.CW,
+                              p1[1], gr);
+
+                // draw on the west edge
+                p1 = new double[] {wgs84Bounds.getMinX(), v};
+
+                // transform from WGS84 to map coordinates
+                wgs84ToMapT.transform(p1, 0, p2, 0, 1);
+                // transform from map coordinates to screen coordinates
+                ws.transform(p2,  0, p3, 0, 1);
+                drawGridLabel(edgeWidth,
+                              (int) (edgeHeight + p3[1]),
+                              fontSize,
+                              Alignment.LEFT, Rotation.CCW,
+                              p1[1], gr);
+            }
+
+            double maxHorizontal = wgs84Bounds.getMaxX();
+
+            for (double v = wgs84Bounds.getMinX(); v < maxHorizontal;
+                 v += hDef.getSpacing()) {
+
+                // draw on the north edge
+                double[] p1 = new double[] {v, wgs84Bounds.getMaxY()};
+                double[] p2 = new double[2];
+                double[] p3 = new double[2];
+
+                // transform from WGS84 to map coordinates
+                wgs84ToMapT.transform(p1, 0, p2, 0, 1);
+                // transform from map coordinates to screen coordinates
+                ws.transform(p2,  0, p3, 0, 1);
+                drawGridLabel((int) (edgeWidth + p3[0]),
+                              edgeHeight,
+                              fontSize,
+                              Alignment.CENTER, Rotation.NONE,
+                              p1[0], gr);
+
+                // draw on the south edge
+                p1 = new double[] {v, wgs84Bounds.getMinY()};
+
+                // transform from WGS84 to map coordinates
+                wgs84ToMapT.transform(p1, 0, p2, 0, 1);
+                // transform from map coordinates to screen coordinates
+                ws.transform(p2,  0, p3, 0, 1);
+                drawGridLabel((int) (edgeWidth + p3[0]),
+                              bounds.height - edgeHeight + fontSize * 2,
+                              fontSize,
+                              Alignment.CENTER, Rotation.NONE,
+                              p1[0], gr);
+            }
+        }
+    }
+
+    /**
+     * Normalize an envelope so that the edges align with 0.5 degrees.
+     *
+     * @param e the envelope to normalize
+     * @return a normalized envelope
+     */
+    private static ReferencedEnvelope
+    noramlizeEnvelope(ReferencedEnvelope e) {
+        return new ReferencedEnvelope(Math.floor(e.getMinX() * 2.0) / 2.0,
+                                      Math.ceil(e.getMaxX() * 2.0) / 2.0,
+                                      Math.floor(e.getMinY() * 2.0) / 2.0,
+                                      Math.ceil(e.getMaxY() * 2.0) / 2.0,
+                                      e.getCoordinateReferenceSystem());
+    }
+
+    /**
+     * Draw a grid label at a specified point.
+     *
+     * @param x the x coordinate to draw at
+     * @param y the y coordinate to draw at
+     * @param size the size of the font to use
+     * @param align the alignment, see constants in SwingConstants, one of
+     *        LEFT or RIGHT
+     * @param rotation specify a rotation if needed
+     * @param degree the degree to draw
+     * @param gr the graphics object used for drawing
+     */
+    private static void
+    drawGridLabel(int x, int y, int size, Alignment align, Rotation rotation,
+                  double degree, Graphics2D gr) {
+        final MessageFormat mf = new MessageFormat(
+                                        "{0,number,#}\u00b0{1,number,00}''");
+
+        gr.setFont(getFont("Arial", Font.BOLD, size, rotation, gr));
+        FontMetrics fm = gr.getFontMetrics();
+
+        double d = Math.round(degree * 100.0) / 100.0;
+        double minutes = Math.floor((d - Math.floor(d)) * 60d);
+        Object[] args = {Math.floor(d), minutes};
+
+        String str = mf.format(args);
+
+        Rectangle2D strR = fm.getStringBounds(str, gr);
+        double height = strR.getHeight() - fm.getDescent();
+
+        double xOff;
+        double yOff;
+
+        switch (rotation) {
+        case CW:
+            xOff = height / 2.0;
+            yOff = (strR.getWidth() / 2.0);
+            break;
+
+        case CCW:
+            xOff = height;
+            yOff = (strR.getWidth() / 2.0);
+            break;
+
+        case NONE:
+        default:
+            xOff = strR.getWidth();
+            yOff = height / 2.0;
+        }
+
+        // note: all vertical alignments are centered
+        switch (align) {
+        case CENTER:
+            gr.drawString(str, (int) (x - xOff / 2.0), (int) (y - yOff));
+            break;
+
+        case RIGHT:
+            gr.drawString(str, (int) (x + xOff), (int) (y - yOff));
+            break;
+
+        case LEFT:
+        default:
+            gr.drawString(str, (int) (x - xOff), (int) (y + yOff));
+        }
     }
 
     /**
@@ -709,20 +1022,40 @@ public final class RenderMap {
      * @param style the style of the font
      * @param size the size of the font, in pixels, which is the height in
      *        pixels
+     * @param rotation specify a rotation if needed.
      * @param gr the Graphics object to generate the font for
      * @return a font of the specified size
      */
     private static Font getFont(String      name,
                                 int         style,
                                 int         size,
+                                Rotation    rotation,
                                 Graphics2D  gr) {
 
         Font font = new Font(name, style, 10);
         FontMetrics fm = gr.getFontMetrics(font);
         double pointPerPixel = (fm.getMaxAscent() + fm.getMaxDescent()) / 10.0d;
 
-        // set a large bold font
-        return new Font("Arial", Font.BOLD, (int) (size * pointPerPixel));
+        font = new Font(name, style, (int) (size * pointPerPixel));
+
+        AffineTransform at = new AffineTransform();
+
+        switch (rotation) {
+        case CW:
+            at.rotate(Math.PI / 2.0d);
+            font = font.deriveFont(at);
+            break;
+
+        case CCW:
+            at.rotate(-1.0d * Math.PI / 2.0d);
+            font = font.deriveFont(at);
+            break;
+
+        case NONE:
+        default:
+        }
+
+        return font;
     }
 
     /**
@@ -776,7 +1109,8 @@ public final class RenderMap {
 
         // draw a checkered scale at 10km each
         boolean fill = true;
-        gr.setFont(getFont("Arial", Font.PLAIN, scaleHeight, gr));
+        gr.setFont(getFont("Arial", Font.PLAIN, scaleHeight,
+                           Rotation.NONE, gr));
         FontMetrics fm = gr.getFontMetrics();
 
         // draw the first line that extends from the rectangle
@@ -877,7 +1211,7 @@ public final class RenderMap {
 
         // draw a checkered scale at 10km each
         boolean fill = true;
-        gr.setFont(getFont("Arial", Font.PLAIN, scaleHeight, gr));
+        gr.setFont(getFont("Arial", Font.PLAIN, scaleHeight, Rotation.NONE, gr));
         FontMetrics fm = gr.getFontMetrics();
 
         // draw the first line that extends from the rectangle
@@ -947,8 +1281,8 @@ public final class RenderMap {
         SampleModel sm = cm.createCompatibleSampleModel(1024, 1024);
 
         DiskMemImage image = new DiskMemImage(0, 0,
-                                    osmImage.getWidth(), osmImage.getHeight(),
-                                    0, 0, sm, cm);
+                                        imageBounds.width, imageBounds.height,
+                                        0, 0, sm, cm);
 
         Graphics2D gr = image.createGraphics();
         gr.setPaint(Color.WHITE);
