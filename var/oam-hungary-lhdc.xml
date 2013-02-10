@@ -96,6 +96,7 @@
       <tag k="height:unit" v="m"/>
       <tag k="height" v="110.0"/>
       <tag k="height:class" v="amsl"/>
+      <tag k="icao" v="LHDC"/>
       <tag k="name" v="DEBRECEN ARP"/>
       <tag k="arp" v="yes"/>
    </node>

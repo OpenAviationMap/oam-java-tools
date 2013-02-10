@@ -83,6 +83,7 @@
       <tag k="height:unit" v="m"/>
       <tag k="height" v="124.0"/>
       <tag k="height:class" v="amsl"/>
+      <tag k="icao" v="LHSM"/>
       <tag k="name" v="SÁRMELLÉK/BALATON ARP"/>
       <tag k="arp" v="yes"/>
    </node>

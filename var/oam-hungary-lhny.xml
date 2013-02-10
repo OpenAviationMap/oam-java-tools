@@ -81,6 +81,7 @@
       <tag k="height:unit" v="m"/>
       <tag k="height" v="103.0"/>
       <tag k="height:class" v="amsl"/>
+      <tag k="icao" v="LHNY"/>
       <tag k="name" v="NYÍREGYHÁZA ARP"/>
       <tag k="arp" v="yes"/>
    </node>

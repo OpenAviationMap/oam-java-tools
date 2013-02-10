@@ -62,6 +62,7 @@
       <tag k="height:unit" v="m"/>
       <tag k="height" v="130.0"/>
       <tag k="height:class" v="amsl"/>
+      <tag k="icao" v="LHPR"/>
       <tag k="name" v="GYŐR/PÉR ARP"/>
       <tag k="arp" v="yes"/>
    </node>

@@ -47,6 +47,7 @@
       <tag k="height:unit" v="m"/>
       <tag k="height" v="82.0"/>
       <tag k="height:class" v="amsl"/>
+      <tag k="icao" v="LHUD"/>
       <tag k="name" v="SZEGED ARP"/>
       <tag k="arp" v="yes"/>
    </node>

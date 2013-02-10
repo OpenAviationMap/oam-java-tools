@@ -7532,6 +7532,7 @@
     <tag k='height:class' v='amsl' />
     <tag k='height:unit' v='m' />
     <tag k='name' v='DEBRECEN ARP' />
+    <tag k='icao' v='LHDC' />
     <tag k='arp' v='yes' />
   </node>
   <node id='23960' timestamp='2012-04-13T14:47:20Z' uid='9' user='Ákos Maróy' visible='true' version='1' changeset='204' lat='47.53325' lon='21.6880556'>

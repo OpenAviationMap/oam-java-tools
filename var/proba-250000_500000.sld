@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sld:StyledLayerDescriptor
-    xmlns="http://www.opengis.net/sld"
-    xmlns:sld="http://www.opengis.net/sld"
-    xmlns:ogc="http://www.opengis.net/ogc"
-    xmlns:gml="http://www.opengis.net/gml"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    version="1.0.0">
+<sld:StyledLayerDescriptor xmlns:sld="http://www.opengis.net/sld" xmlns="http://www.opengis.net/sld"
+                           xmlns:ogc="http://www.opengis.net/ogc"
+                           xmlns:xlink="http://www.w3.org/1999/xlink"
+                           xmlns:gml="http://www.opengis.net/gml"
+                           version="1.0.0">
     <sld:NamedLayer>
         <sld:Name>proba</sld:Name>
         <sld:UserStyle>
@@ -15,7 +13,7 @@
             <sld:FeatureTypeStyle>
                 <sld:Rule>
                     <sld:Name>prohibited airspaces rule 1</sld:Name>
-                    <sld:MaxScaleDenominator>250000.0</sld:MaxScaleDenominator>
+               <sld:MaxScaleDenominator>250000.0</sld:MaxScaleDenominator>
                     <ogc:Filter>
                         <ogc:And>
                             <ogc:PropertyIsEqualTo>
@@ -43,15 +41,15 @@
                     <sld:PolygonSymbolizer>
                         <sld:Stroke>
                             <sld:CssParameter name="stroke">#FF0000</sld:CssParameter>
-                            <sld:CssParameter name="stroke-width">2</sld:CssParameter>
-                            <sld:CssParameter name="stroke-dasharray">71 71</sld:CssParameter>
+                            <sld:CssParameter name="stroke-width">1.7857142857142856</sld:CssParameter>
+                            <sld:CssParameter name="stroke-dasharray">71.42857142857142 71.42857142857142</sld:CssParameter>
                         </sld:Stroke>
                     </sld:PolygonSymbolizer>
                 </sld:Rule>
-                <sld:Rule>
+            <sld:Rule>
                     <sld:Name>prohibited airspaces rule 1</sld:Name>
-                    <sld:MinScaleDenominator>250000.0</sld:MinScaleDenominator>
-                    <sld:MaxScaleDenominator>500000.0</sld:MaxScaleDenominator>
+               <sld:MinScaleDenominator>250000.0</sld:MinScaleDenominator>
+               <sld:MaxScaleDenominator>500000.0</sld:MaxScaleDenominator>
                     <ogc:Filter>
                         <ogc:And>
                             <ogc:PropertyIsEqualTo>
@@ -79,14 +77,14 @@
                     <sld:PolygonSymbolizer>
                         <sld:Stroke>
                             <sld:CssParameter name="stroke">#FF0000</sld:CssParameter>
-                            <sld:CssParameter name="stroke-width">2</sld:CssParameter>
-                            <sld:CssParameter name="stroke-dasharray">71 71</sld:CssParameter>
+                            <sld:CssParameter name="stroke-width">1.7857142857142856</sld:CssParameter>
+                            <sld:CssParameter name="stroke-dasharray">71.42857142857142 71.42857142857142</sld:CssParameter>
                         </sld:Stroke>
                     </sld:PolygonSymbolizer>
                 </sld:Rule>
-                <sld:Rule>
+            <sld:Rule>
                     <sld:Name>prohibited airspaces rule 1</sld:Name>
-                    <sld:MinScaleDenominator>500000.0</sld:MinScaleDenominator>
+               <sld:MinScaleDenominator>500000.0</sld:MinScaleDenominator>
                     <ogc:Filter>
                         <ogc:And>
                             <ogc:PropertyIsEqualTo>
@@ -114,15 +112,15 @@
                     <sld:PolygonSymbolizer>
                         <sld:Stroke>
                             <sld:CssParameter name="stroke">#FF0000</sld:CssParameter>
-                            <sld:CssParameter name="stroke-width">2</sld:CssParameter>
-                            <sld:CssParameter name="stroke-dasharray">71 71</sld:CssParameter>
+                            <sld:CssParameter name="stroke-width">1.7857142857142856</sld:CssParameter>
+                            <sld:CssParameter name="stroke-dasharray">71.42857142857142 71.42857142857142</sld:CssParameter>
                         </sld:Stroke>
                     </sld:PolygonSymbolizer>
                 </sld:Rule>
 
                 <sld:Rule>
                     <sld:Name>prohibited airspaces rule 2</sld:Name>
-                    <sld:MaxScaleDenominator>250000.0</sld:MaxScaleDenominator>
+               <sld:MaxScaleDenominator>250000.0</sld:MaxScaleDenominator>
                     <ogc:Filter>
                         <ogc:And>
                             <ogc:PropertyIsEqualTo>
@@ -153,7 +151,7 @@
                                 <ogc:PropertyName>way</ogc:PropertyName>
                                 <ogc:Function name="buffer">
                                     <ogc:PropertyName>way</ogc:PropertyName>
-                                    <ogc:Literal>-439</ogc:Literal>
+                                    <ogc:Literal>-438.52153494644625</ogc:Literal>
                                 </ogc:Function>
                             </ogc:Function>
                         </sld:Geometry>
@@ -163,10 +161,10 @@
                         </sld:Fill>
                     </sld:PolygonSymbolizer>
                 </sld:Rule>
-                <sld:Rule>
+            <sld:Rule>
                     <sld:Name>prohibited airspaces rule 2</sld:Name>
-                    <sld:MinScaleDenominator>250000.0</sld:MinScaleDenominator>
-                    <sld:MaxScaleDenominator>500000.0</sld:MaxScaleDenominator>
+               <sld:MinScaleDenominator>250000.0</sld:MinScaleDenominator>
+               <sld:MaxScaleDenominator>500000.0</sld:MaxScaleDenominator>
                     <ogc:Filter>
                         <ogc:And>
                             <ogc:PropertyIsEqualTo>
@@ -197,7 +195,7 @@
                                 <ogc:PropertyName>way</ogc:PropertyName>
                                 <ogc:Function name="buffer">
                                     <ogc:PropertyName>way</ogc:PropertyName>
-                                    <ogc:Literal>-439</ogc:Literal>
+                                    <ogc:Literal>-438.52153494644625</ogc:Literal>
                                 </ogc:Function>
                             </ogc:Function>
                         </sld:Geometry>
@@ -207,9 +205,9 @@
                         </sld:Fill>
                     </sld:PolygonSymbolizer>
                 </sld:Rule>
-                <sld:Rule>
+            <sld:Rule>
                     <sld:Name>prohibited airspaces rule 2</sld:Name>
-                    <sld:MinScaleDenominator>500000.0</sld:MinScaleDenominator>
+               <sld:MinScaleDenominator>500000.0</sld:MinScaleDenominator>
                     <ogc:Filter>
                         <ogc:And>
                             <ogc:PropertyIsEqualTo>
@@ -240,7 +238,7 @@
                                 <ogc:PropertyName>way</ogc:PropertyName>
                                 <ogc:Function name="buffer">
                                     <ogc:PropertyName>way</ogc:PropertyName>
-                                    <ogc:Literal>-439</ogc:Literal>
+                                    <ogc:Literal>-438.52153494644625</ogc:Literal>
                                 </ogc:Function>
                             </ogc:Function>
                         </sld:Geometry>
