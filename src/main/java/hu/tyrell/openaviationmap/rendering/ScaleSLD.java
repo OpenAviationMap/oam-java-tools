@@ -247,7 +247,7 @@ public final class ScaleSLD {
         List<Double>   scales = null;
         if (strScales != null) {
             if ("EPSG:900913".equals(strScales)) {
-                scales = KnownScaleList.epsg900913ScaleList(31);
+                scales = KnownScaleList.epsg900913ScaleList(dpi, 31);
             } else {
                 StringTokenizer tok = new StringTokenizer(strScales, ",");
                 scales              = new ArrayList<Double>(tok.countTokens());
@@ -497,10 +497,8 @@ public final class ScaleSLD {
     }
 
     /**
-     * Scale with a single scaling value, that is, split the scaling into two
-     * based on this value. The result will be two sld:Rule elements created
-     * for each sld:Rule, which is split by scale denominators at the supplied
-     * value.
+     * Scale with a single scaling value, that is, just re-scale all the values
+     * for this single scale value.
      *
      * @param document the SLD document to scale.
      * @param scale the single scale point to split rendering by
@@ -528,19 +526,8 @@ public final class ScaleSLD {
         for (int i = 0; i < rules.getLength(); ++i) {
             Element rule = (Element) rules.item(i);
 
-            // create a copy of this rule element
-            Element ruleCopy = (Element) rule.cloneNode(true);
-
-            // insert the min and max scale denominators
-            insertMinScaleDenominator(rule, scale);
-            insertMaxScaleDenominator(ruleCopy, scale);
-
             // scale both old and new rule elements
             scaleValues(rule, scale, dpi, crs, refXY);
-            scaleValues(ruleCopy, scale, dpi, crs, refXY);
-
-            // insert the copied rule before the original one
-            rule.getParentNode().insertBefore(ruleCopy, rule);
         }
     }
 
@@ -572,6 +559,10 @@ public final class ScaleSLD {
             return;
         }
 
+        // convert the scale values into scaling intervals, that are suitable
+        // as min and max denominators in the SLD
+        List<Double> scaleIntervals = generateIntervals(scales);
+
         XPath xpath = XPathFactory.newInstance().newXPath();
         xpath.setNamespaceContext(getNsCtx());
 
@@ -586,8 +577,8 @@ public final class ScaleSLD {
 
             // the first duplicate will have a single max scale denominator
             Element ruleCopy = (Element) rule.cloneNode(true);
-            double  sMax     = scales.get(0);
-            int     nScales1 = scales.size() - 1;
+            double  sMax     = scaleIntervals.get(0);
+            int     nScales1 = scaleIntervals.size() - 1;
 
             // insert the max scale denominator
             insertMaxScaleDenominator(ruleCopy, sMax);
@@ -600,7 +591,7 @@ public final class ScaleSLD {
             // denominators
             for (int j = 1; j <= nScales1; ++j) {
                 double sMin = sMax;
-                sMax        = scales.get(j);
+                sMax        = scaleIntervals.get(j);
                 ruleCopy    = (Element) rule.cloneNode(true);
 
                 // insert the min and max scale denominators
@@ -614,13 +605,45 @@ public final class ScaleSLD {
             }
 
             // update the original rule with a min scale denominator
-            double sMin = scales.get(nScales1);
+            double sMin = scaleIntervals.get(nScales1);
             insertMinScaleDenominator(rule, sMin);
             scaleValues(rule, sMin, dpi, crs, refXY);
 
             // insert the new rules before the original one
             rule.getParentNode().insertBefore(df, rule);
         }
+    }
+
+    /**
+     * Create scale intervals based on the supplied scale values. The number of
+     * scale values is at least two. The intervals generated will be such that
+     * the lowest will be a 75% below the lowest scale value, the values in
+     * between will be halfway between values, and the highest value will be
+     * at 150% of the highest value.
+     *
+     * @param scales the scales to generate intervals for, in highest scale
+     *        first order (that is, lowest scale value first, e.g 1:100 first,
+     *        then 1:200 second, etc)
+     * @return scale intervals generated from the supplied scales
+     */
+    static List<Double> generateIntervals(List<Double> scales) {
+        List<Double> scaleIntervals = new ArrayList<Double>(scales.size() + 1);
+
+        // add the lowest scale
+        scaleIntervals.add(scales.get(0) * 0.75d);
+
+        // add intermediate scales
+        double p = scales.get(0);
+        for (int i = 1; i < scales.size(); ++i) {
+            double s = scales.get(i);
+            scaleIntervals.add((p + s) / 2.0d);
+            p = s;
+        }
+
+        // add the highest scale
+        scaleIntervals.add(scales.get(scales.size() - 1) * 1.5d);
+
+        return scaleIntervals;
     }
 
     /**

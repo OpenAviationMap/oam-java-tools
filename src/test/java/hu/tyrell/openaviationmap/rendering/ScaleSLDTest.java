@@ -17,6 +17,7 @@
  */
 package hu.tyrell.openaviationmap.rendering;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import hu.tyrell.openaviationmap.converter.NodeDiffIdOk;
 
@@ -64,6 +65,29 @@ public class ScaleSLDTest {
         InputSource            strSource = new InputSource(input);
 
         return db.parse(strSource);
+    }
+
+    /**
+     * Test generating scale intervals.
+     */
+    @Test
+    public void testScaleIntervals() {
+        List<Double> scales = new ArrayList<Double>(4);
+        scales.add(10d);
+        scales.add(20d);
+        scales.add(30d);
+        scales.add(40d);
+
+        List<Double> scaleIntervals = ScaleSLD.generateIntervals(scales);
+
+        List<Double> expected = new ArrayList<Double>(5);
+        expected.add(7.5d); // 10 * .75
+        expected.add(15d);
+        expected.add(25d);
+        expected.add(35d);
+        expected.add(60d);  // 40 * 1.5
+
+        assertEquals(expected, scaleIntervals);
     }
 
     /**
@@ -160,7 +184,7 @@ public class ScaleSLDTest {
                                            RenderException,
                                            FactoryException {
 
-        FileReader      input  = new FileReader("var/proba-500000.sld");
+        FileReader      input  = new FileReader("var/proba-250000_500000.sld");
         List<Double>    scales = new ArrayList<Double>(0);
         StringWriter    output = new StringWriter();
         boolean         caught = false;

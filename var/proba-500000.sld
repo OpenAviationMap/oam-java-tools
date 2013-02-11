@@ -13,42 +13,6 @@
             <sld:FeatureTypeStyle>
                 <sld:Rule>
                     <sld:Name>prohibited airspaces rule 1</sld:Name>
-               <sld:MaxScaleDenominator>500000.0</sld:MaxScaleDenominator>
-                    <ogc:Filter>
-                        <ogc:And>
-                            <ogc:PropertyIsEqualTo>
-                                <ogc:PropertyName>airspace</ogc:PropertyName>
-                                <ogc:Literal>yes</ogc:Literal>
-                            </ogc:PropertyIsEqualTo>
-                            <ogc:Or>
-                                <ogc:PropertyIsEqualTo>
-                                    <ogc:Function name="isNull">
-                                        <ogc:PropertyName>compound</ogc:PropertyName>
-                                    </ogc:Function>
-                                    <ogc:Literal>true</ogc:Literal>
-                                </ogc:PropertyIsEqualTo>
-                                <ogc:PropertyIsNotEqualTo>
-                                    <ogc:PropertyName>compound</ogc:PropertyName>
-                                    <ogc:Literal>original</ogc:Literal>
-                                </ogc:PropertyIsNotEqualTo>
-                            </ogc:Or>
-                            <ogc:PropertyIsEqualTo>
-                                <ogc:PropertyName>airspace_type</ogc:PropertyName>
-                                <ogc:Literal>P</ogc:Literal>
-                            </ogc:PropertyIsEqualTo>
-                        </ogc:And>
-                    </ogc:Filter>
-                    <sld:PolygonSymbolizer>
-                        <sld:Stroke>
-                            <sld:CssParameter name="stroke">#FF0000</sld:CssParameter>
-                            <sld:CssParameter name="stroke-width">1.7857142857142856</sld:CssParameter>
-                            <sld:CssParameter name="stroke-dasharray">71.42857142857142 71.42857142857142</sld:CssParameter>
-                        </sld:Stroke>
-                    </sld:PolygonSymbolizer>
-                </sld:Rule>
-            <sld:Rule>
-                    <sld:Name>prohibited airspaces rule 1</sld:Name>
-               <sld:MinScaleDenominator>500000.0</sld:MinScaleDenominator>
                     <ogc:Filter>
                         <ogc:And>
                             <ogc:PropertyIsEqualTo>
@@ -84,7 +48,6 @@
 
                 <sld:Rule>
                     <sld:Name>prohibited airspaces rule 2</sld:Name>
-               <sld:MaxScaleDenominator>500000.0</sld:MaxScaleDenominator>
                     <ogc:Filter>
                         <ogc:And>
                             <ogc:PropertyIsEqualTo>
@@ -110,48 +73,11 @@
                         </ogc:And>
                     </ogc:Filter>
                     <sld:PolygonSymbolizer>
-                        <sld:Geometry>
-                            <ogc:Function name="difference">
-                                <ogc:PropertyName>way</ogc:PropertyName>
-                                <ogc:Function name="buffer">
-                                    <ogc:PropertyName>way</ogc:PropertyName>
-                                    <ogc:Literal>-438.52153494644625</ogc:Literal>
-                                </ogc:Function>
-                            </ogc:Function>
-                        </sld:Geometry>
-                        <sld:Fill>
-                            <sld:CssParameter name="fill">#FF0000</sld:CssParameter>
-                            <sld:CssParameter name="fill-opacity">0.4</sld:CssParameter>
-                        </sld:Fill>
+                        <sld:Stroke>
+                            <sld:CssParameter name="stroke">#FF0000</sld:CssParameter>
+                            <sld:CssParameter name="stroke-width">1.4285714285714284</sld:CssParameter>
+                        </sld:Stroke>
                     </sld:PolygonSymbolizer>
-                </sld:Rule>
-            <sld:Rule>
-                    <sld:Name>prohibited airspaces rule 2</sld:Name>
-               <sld:MinScaleDenominator>500000.0</sld:MinScaleDenominator>
-                    <ogc:Filter>
-                        <ogc:And>
-                            <ogc:PropertyIsEqualTo>
-                                <ogc:PropertyName>airspace</ogc:PropertyName>
-                                <ogc:Literal>yes</ogc:Literal>
-                            </ogc:PropertyIsEqualTo>
-                            <ogc:Or>
-                                <ogc:PropertyIsEqualTo>
-                                    <ogc:Function name="isNull">
-                                        <ogc:PropertyName>compound</ogc:PropertyName>
-                                    </ogc:Function>
-                                    <ogc:Literal>true</ogc:Literal>
-                                </ogc:PropertyIsEqualTo>
-                                <ogc:PropertyIsNotEqualTo>
-                                    <ogc:PropertyName>compound</ogc:PropertyName>
-                                    <ogc:Literal>original</ogc:Literal>
-                                </ogc:PropertyIsNotEqualTo>
-                            </ogc:Or>
-                            <ogc:PropertyIsEqualTo>
-                                <ogc:PropertyName>airspace_type</ogc:PropertyName>
-                                <ogc:Literal>P</ogc:Literal>
-                            </ogc:PropertyIsEqualTo>
-                        </ogc:And>
-                    </ogc:Filter>
                     <sld:PolygonSymbolizer>
                         <sld:Geometry>
                             <ogc:Function name="difference">

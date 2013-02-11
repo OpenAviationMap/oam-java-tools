@@ -35,23 +35,28 @@ public final class KnownScaleList {
 
     /**
      * Generate a scaling list suitable for an EPSG:900913 CRS.
-     * The returned list is *not* the 900913 scaling list, but the 'middle
-     * values' of this scaling list, so that the resulting scaling can be used
-     * in minimum and maximum scale denominators in an SLD file.
      *
+     * @param dpi the dpi value used to generate the scale
      * @param depth the depth of the scaling needed
      * @return a scaling list of the desired depth
      */
     public static List<Double>
-    epsg900913ScaleList(int depth) {
+    epsg900913ScaleList(double dpi, int depth) {
         if (depth < 0) {
             throw new IllegalArgumentException(
                                         "scale depth should be non-negative");
         }
 
-        final double      level0 = 559082263.9508929 * 1.5d;
+        // this magic numbers comes from
+        // http://wiki.openstreetmap.org/wiki/Slippy_map_tilenames#Resolution_and_Scale
+        final double equatorInMeters = 40075016.686;
+        // a tile is 256 pixels wide
+        final double level0MetersPerPixel = equatorInMeters / 256d;
+        final double inchPerMeter = 39.37d;
+        final double level0Scale = dpi * inchPerMeter * level0MetersPerPixel;
+
         ArrayList<Double> list   = new ArrayList<Double>(depth);
-        double            scale  = level0;
+        double            scale  = level0Scale;
 
         for (int i = 0; i < depth; ++i) {
             list.add(scale);
