@@ -24,6 +24,12 @@ import java.util.Vector;
  * A class representing an aerodrome.
  */
 public class Aerodrome {
+
+    /**
+     * Indicates the type of aerodrome, for example Heliport or Seaport.
+     */
+    private AerodromeType aerodrometype = AerodromeType.AERODROME;
+
     /**
      * The ICAO code of the aerodrome.
      */
@@ -101,6 +107,28 @@ public class Aerodrome {
         runways   = new Vector<Runway>();
         navaids   = new Vector<Navaid>();
         airspaces = new Vector<Airspace>();
+    }
+
+
+    /**
+     * Returns the type of this aerodrome.
+     * 
+     * @return The aerodrome type.
+     */
+    public AerodromeType getAerodrometype() {
+        return aerodrometype;
+    }
+
+
+    /**
+     * Sets the type for this aerodrome.
+     * <p>
+     * If not set, the default is "AERODROME" which is a standard landbased aerodrome.
+     * 
+     * @param aerodrometype The Aerodrome type.
+     */
+    public void setAerodrometype(AerodromeType aerodrometype) {
+        this.aerodrometype = aerodrometype;
     }
 
     /**

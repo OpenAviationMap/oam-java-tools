@@ -38,6 +38,20 @@ public class Point {
     }
 
     /**
+     * Constructor that accepts the latitude and longitude directly.
+     * 
+     * @param latitude The double value for the latitude.
+     * 
+     * @param longitude The double value for the longitude.
+     * 
+     * @author Raymond Raw
+     */
+    public Point(final double latitude, final double longitude) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+
+    /**
      * Copy constructor.
      *
      * @param other the other object to get values from.
@@ -86,6 +100,40 @@ public class Point {
      */
     public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }
+
+    /**
+     * Give a distance and a bearing, create a new Point that is displaced from
+     * the current Point.
+     * 
+     * @param displacement The distance to displace.
+     * 
+     * @param bearing The bear to display to.
+     * 
+     * @return A new Point at the given displacement.
+     */
+    public Point displace(Distance displacement, double bearing) {
+        Point newPoint = new Point();
+        double distance = (displacement.inUom(UOM.M)).getDistance()/1000.0;
+        double PI180 = Math.PI / 180.0d;
+        double PIUnder180 = 180.0d / Math.PI;
+        
+        /* The radius of the earth such that d/R = angular distance in radians. */
+        double angularDisplacement = distance / 6378.137d;
+        double cosAngularDisplacement = Math.cos(angularDisplacement);
+        double sinAngularDisplacement = Math.sin(angularDisplacement);
+        double lat1 = this.getLatitude() * PI180;
+        double lon1 = this.getLongitude() * PI180;
+        double bearingRad = bearing * PI180;
+
+        double lat2 = Math.asin(Math.sin(lat1) * cosAngularDisplacement + Math.cos(lat1) * sinAngularDisplacement
+                * Math.cos(bearingRad));
+
+        double lon2 = lon1
+                + Math.atan2(Math.sin(bearingRad) * sinAngularDisplacement * Math.cos(lat1), cosAngularDisplacement
+                - Math.sin(lat1) * Math.sin(lat2));
+
+        return new Point(lat2 * PIUnder180, lon2 * PIUnder180);
     }
 
     /* (non-Javadoc)

@@ -1,6 +1,6 @@
 /*
     Open Aviation Map
-    Copyright (C) 2012-2013 Ákos Maróy
+    Copyright (C) 2012 Ã�kos MarÃ³y
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
@@ -46,6 +46,21 @@ public class Navaid extends Point {
         NDB,
 
         /**
+         * A co-located NDB-DME.
+         */
+        NDBDME,
+        
+        /**
+         * A military TACAN
+         */
+        TACAN,
+        
+        /**
+         * A co-located VOR and TACAN
+         */
+        VORTAC,
+
+        /**
          * A co-located VOR-DME.
          */
         VORDME,
@@ -69,6 +84,31 @@ public class Navaid extends Point {
          * A designated point / GPS reporting point.
          */
         DESIGNATED
+
+    ;
+
+
+        /**
+         * Given a String which represents a Navaid type, return the Navaid Type.
+         */
+        public static Type getType(String aTypeStr) {
+            String[] typeStrs = {"DME", "NDB", "NDB-DME", "NDBDME", "TACAN",
+                    "VOR", "VOR-DME", "VORDME", "VORTAC", "VOT", "MARKER",
+                    "LOC", "GP", "DESIGNATED", "REPORTING"};
+            Type[] types = {DME, NDB, NDBDME, NDBDME, TACAN,
+                    VOR, VORDME, VORDME, VORTAC, VOT, MARKER,
+                    LOC, GP, DESIGNATED, DESIGNATED};
+
+            Type returnType = null;
+            for (int i=0; i<typeStrs.length; ++i) {
+                if (aTypeStr.equalsIgnoreCase(typeStrs[i])) {
+                    returnType = types[i];
+                    break;
+                }
+            }
+
+            return returnType;
+        }
     }
 
     /**

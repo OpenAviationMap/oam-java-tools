@@ -41,19 +41,45 @@ public class Circle implements Boundary {
 
     /**
      * Create a polygon approximation of the circle.
+     * Create a polygon approximation of the circle using
+     * {@value hu.tyrell.openaviationmap.model.Circle#POLY_POINTS} segments.
+     * <p>
+     * Modified by RRaw Jan 2013 - method changed to allow the number of
+     * segments to generate to be passed in.
      *
      * @return a polygon approximation of the circle.
+     *                
+     * @see Circle#approximate(int)
      */
     public Ring approximate() {
+        return this.approximate(POLY_POINTS);
+    }
+
+    /**
+     * Create a polygon approximation of the circle using the given number of
+     * segments.
+     * <p>
+     * Modified by RRaw Jan 2013 - method changed to allow the number of
+     * segments to generate to be passed in.
+     *
+     *@param seqments Is the number of segments to use for the approximation.
+     *                The greater the number the smoother the curve but the
+     *                larger the processing and storage to define the circle.
+     *                
+     * @return a polygon approximation of the circle.
+     * 
+     * @see Circle#approximate()
+     */
+    public Ring approximate(final int seqments) {
         double radiusInNm  = radius.inUom(UOM.NM).getDistance();
         double radiusInDeg = radiusInNm / 60.0;
         double radiusLat   = radiusInDeg;
         double radiusLon   = radiusInDeg / Math.cos(
                                        Math.toRadians(center.getLatitude()));
 
-        double       tpHalf      = POLY_POINTS / 2.0;
-        ArrayList<Point> points  = new ArrayList<Point>(POLY_POINTS + 1);
-        for (int i = 0; i < POLY_POINTS; ++i) {
+        double       tpHalf      = seqments / 2.0;
+        ArrayList<Point> points  = new ArrayList<Point>(seqments + 1);
+        for (int i = 0; i < seqments; ++i) {
             double theta = Math.PI * i / tpHalf;
             double x = center.getLongitude()
                     + (radiusLon * Math.cos(theta));
