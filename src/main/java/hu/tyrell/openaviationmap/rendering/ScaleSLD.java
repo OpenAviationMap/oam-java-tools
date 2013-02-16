@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -65,7 +66,7 @@ public final class ScaleSLD {
     /** The default DPI value. */
     public static final double DEFAULT_DPI = 25.4d / .28d;
 
-    /** The defualt CRS value. */
+    /** The default CRS value. */
     public static final String DEFAULT_CRS = "EPSG:900913";
 
     /** The default reference point in the default CRS. */
@@ -247,7 +248,9 @@ public final class ScaleSLD {
         List<Double>   scales = null;
         if (strScales != null) {
             if ("EPSG:900913".equals(strScales)) {
-                scales = KnownScaleList.epsg900913ScaleList(dpi, 31);
+                scales = new ArrayList<Double>(
+                                KnownScaleList.epsg900913ScaleList(dpi, 31));
+                Collections.reverse(scales);
             } else {
                 StringTokenizer tok = new StringTokenizer(strScales, ",");
                 scales              = new ArrayList<Double>(tok.countTokens());

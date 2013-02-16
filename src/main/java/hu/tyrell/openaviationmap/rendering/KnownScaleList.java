@@ -18,7 +18,6 @@
 package hu.tyrell.openaviationmap.rendering;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -52,8 +51,8 @@ public final class KnownScaleList {
         final double equatorInMeters = 40075016.686;
         // a tile is 256 pixels wide
         final double level0MetersPerPixel = equatorInMeters / 256d;
-        final double inchPerMeter = 39.37d;
-        final double level0Scale = dpi * inchPerMeter * level0MetersPerPixel;
+        // there are 39.37 inches per meter
+        final double level0Scale = dpi * 39.37d * level0MetersPerPixel;
 
         ArrayList<Double> list   = new ArrayList<Double>(depth);
         double            scale  = level0Scale;
@@ -62,8 +61,6 @@ public final class KnownScaleList {
             list.add(scale);
             scale /= 2.0d;
         }
-
-        Collections.reverse(list);
 
         return list;
     }

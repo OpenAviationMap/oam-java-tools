@@ -35,6 +35,7 @@ import java.awt.geom.Line2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.ColorModel;
 import java.awt.image.SampleModel;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -76,7 +77,6 @@ import org.geotools.styling.SLDParser;
 import org.geotools.styling.Style;
 import org.jaitools.tiledimage.DiskMemImage;
 import org.opengis.referencing.FactoryException;
-import org.opengis.referencing.NoSuchAuthorityCodeException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.cs.AxisDirection;
 import org.opengis.referencing.operation.CoordinateOperation;
@@ -95,6 +95,12 @@ public final class RenderMap {
 
     /** The default DPI value. */
     public static final double DEFAULT_DPI = 300;
+
+    /** The default low zoom level for tilesets. */
+    public static final int DEFAULT_LOW_LEVEL = 0;
+
+    /** The default high zoom level for tilesets. */
+    public static final int DEFAULT_HIGH_LEVEL = 11;
 
     /** Float formatter. */
     private static final DecimalFormat FLOAT_FORMAT =
@@ -179,13 +185,20 @@ public final class RenderMap {
         "                               optional, defaults to "
                                       + DEFAULT_DPI);
         System.out.println(
+        "  -l | --levels <value>        the zoom levels used for tileset");
+        System.out.println(
+        "                               creation, e.g 1,8 - defaults to "
+                               + DEFAULT_LOW_LEVEL + "," + DEFAULT_HIGH_LEVEL);
+        System.out.println(
         "  -m | --osm host,db,user,pw   the Open Street Map PostGIS database");
         System.out.println(
         "                               connection parameters in a");
         System.out.println(
         "                               comma-separated list");
         System.out.println(
-        "  -o | --output <output.file>  the output file, a TIFF image");
+        "  -o | --output <output.file>  the output, a file name for single");
+        System.out.println(
+        "                               files, a directory for tilesets");
         System.out.println(
         "  -r | --crs <value>           the CRS id to use for projection");
         System.out.println(
@@ -198,6 +211,10 @@ public final class RenderMap {
         "  -s | --scale <value>         the scale to generate the map in");
         System.out.println(
         "                               e.g. 1:<value>");
+        System.out.println(
+        "  -t | --type <value>          type of rendering, one of TIFF or");
+        System.out.println(
+        "                               tileset");
         System.out.println(
         "  -u | --sldurl <value>        the base URL where the SLD files are");
         System.out.println(
@@ -224,7 +241,7 @@ public final class RenderMap {
                                          TransformException,
                                          FactoryException {
 
-        LongOpt[] longopts = new LongOpt[9];
+        LongOpt[] longopts = new LongOpt[11];
 
         longopts[0] = new LongOpt("help", LongOpt.NO_ARGUMENT, null, 'h');
         longopts[1] = new LongOpt("oam", LongOpt.REQUIRED_ARGUMENT,
@@ -233,29 +250,36 @@ public final class RenderMap {
                 null, 'c');
         longopts[3] = new LongOpt("dpi", LongOpt.REQUIRED_ARGUMENT,
                 null, 'd');
-        longopts[4] = new LongOpt("osm", LongOpt.REQUIRED_ARGUMENT,
+        longopts[4] = new LongOpt("levels", LongOpt.REQUIRED_ARGUMENT,
+                null, 'l');
+        longopts[5] = new LongOpt("osm", LongOpt.REQUIRED_ARGUMENT,
                 null, 'm');
-        longopts[5] = new LongOpt("output", LongOpt.REQUIRED_ARGUMENT,
+        longopts[6] = new LongOpt("output", LongOpt.REQUIRED_ARGUMENT,
                 null, 'o');
-        longopts[6] = new LongOpt("crs", LongOpt.REQUIRED_ARGUMENT,
+        longopts[7] = new LongOpt("crs", LongOpt.REQUIRED_ARGUMENT,
                 null, 'r');
-        longopts[7] = new LongOpt("scales", LongOpt.REQUIRED_ARGUMENT,
+        longopts[8] = new LongOpt("scale", LongOpt.REQUIRED_ARGUMENT,
                 null, 's');
-        longopts[8] = new LongOpt("sldurl", LongOpt.REQUIRED_ARGUMENT,
+        longopts[9] = new LongOpt("type", LongOpt.REQUIRED_ARGUMENT,
+                null, 't');
+        longopts[10] = new LongOpt("sldurl", LongOpt.REQUIRED_ARGUMENT,
                 null, 'u');
 
-        Getopt g = new Getopt("RenderMap", args, "a:c:d:hm:o:r:s:u:", longopts);
+        Getopt g = new Getopt("RenderMap", args, "a:c:d:hl:m:o:r:s:t:u:",
+                              longopts);
 
         int c;
 
         String      oamStr      = null;
         String      osmStr      = null;
-        String      outputFile  = null;
+        String      outputPath  = null;
         String      strScale    = null;
         String      strDpi      = null;
         String      sldUrlStr   = null;
         String      coverageStr = null;
         String      crsStr      = null;
+        String      typeStr     = "TIFF";
+        String      levelsStr   = null;
 
         while ((c = g.getopt()) != -1) {
             switch (c) {
@@ -271,12 +295,16 @@ public final class RenderMap {
                 strDpi = g.getOptarg();
                 break;
 
+            case 'l':
+                levelsStr = g.getOptarg();
+                break;
+
             case 'm':
                 osmStr = g.getOptarg();
                 break;
 
             case 'o':
-                outputFile = g.getOptarg();
+                outputPath = g.getOptarg();
                 break;
 
             case 'r':
@@ -285,6 +313,10 @@ public final class RenderMap {
 
             case 's':
                 strScale = g.getOptarg();
+                break;
+
+            case 't':
+                typeStr = g.getOptarg();
                 break;
 
             case 'u':
@@ -315,13 +347,13 @@ public final class RenderMap {
             printHelpMessage();
             return;
         }
-        if (outputFile == null) {
+        if (outputPath == null) {
             System.out.println("Required option output not specified");
             System.out.println();
             printHelpMessage();
             return;
         }
-        if (strScale == null) {
+        if ("TIFF".equals(typeStr.toUpperCase()) && strScale == null) {
             System.out.println("Required option scale not specified");
             System.out.println();
             printHelpMessage();
@@ -339,14 +371,16 @@ public final class RenderMap {
             sldUrlStr = sldUrlStr + "/";
         }
 
-        double scale;
-        try {
-            scale = Double.parseDouble(strScale);
-        } catch (Exception e) {
-            System.out.println("Error parsing scale value.");
-            System.out.println();
-            e.printStackTrace(System.out);
-            return;
+        double scale = Double.NaN;
+        if (strScale != null) {
+            try {
+                scale = Double.parseDouble(strScale);
+            } catch (Exception e) {
+                System.out.println("Error parsing scale value.");
+                System.out.println();
+                e.printStackTrace(System.out);
+                return;
+            }
         }
 
         // parse the DPI value, if supplied
@@ -356,6 +390,28 @@ public final class RenderMap {
                 dpi = Double.parseDouble(strDpi);
             } catch (Exception e) {
                 System.out.println("Error parsing dpi value.");
+                System.out.println();
+                e.printStackTrace(System.out);
+                return;
+            }
+        }
+
+        // parse the levels value
+        int lowLevel  = DEFAULT_LOW_LEVEL;
+        int highLevel = DEFAULT_HIGH_LEVEL;
+        if (levelsStr != null) {
+            StringTokenizer tok = new StringTokenizer(levelsStr, ",");
+            if (tok.countTokens() != 2) {
+                System.out.println("invalid levels option specified: "
+                                 + levelsStr);
+                return;
+            }
+
+            try {
+                lowLevel = Integer.parseInt(tok.nextToken());
+                highLevel = Integer.parseInt(tok.nextToken());
+            } catch (Exception e) {
+                System.out.println("Error parsing level value.");
                 System.out.println();
                 e.printStackTrace(System.out);
                 return;
@@ -382,15 +438,26 @@ public final class RenderMap {
         Map<String, Object> osmParams = parseDbParams(osmStr);
         Map<String, Object> oamParams = parseDbParams(oamStr);
 
-        System.out.println("Rendering map at scale 1:" + ((int) scale)
-                         + " at " + ((int) dpi) + " dpi to " + outputFile);
+        if ("TIFF".equals(typeStr.toUpperCase())) {
 
-        renderMap(osmParams, oamParams, coverage, crs, sldUrlStr, scale, dpi,
-                  outputFile);
+            System.out.println("Rendering map at scale 1:" + ((int) scale)
+                             + " at " + ((int) dpi) + " dpi to " + outputPath);
+
+            renderMapToFile(osmParams, oamParams, coverage, crs, sldUrlStr,
+                            scale, dpi, true, true, outputPath);
+
+        } else if ("tileset".equals(typeStr.toLowerCase())) {
+
+            System.out.println("Rendering map into tileset levels "
+                    + lowLevel + "..." + highLevel + " to " + outputPath);
+
+            renderMapTileset(osmParams, oamParams, coverage, crs, sldUrlStr,
+                             dpi, lowLevel, highLevel, outputPath);
+        }
     }
 
     /**
-     * Render a map.
+     * Render a map into a file.
      *
      * @param osmParams the parameters to create the Open Street Map DataStore
      * @param oamParams the parameters to create the Open Aviaton Map DataStore
@@ -401,20 +468,24 @@ public final class RenderMap {
      * @param sldUrlStr the base URL for SLD files &amp; related resources.
      * @param scale the scale, that is, 1:scale will be used
      * @param dpi the number of dots per inch on the target image
+     * @param drawLattice specify true if a lattice is to be drawn onto the map
+     * @param drawLegend specify true of labels should be drawn around the map
      * @param outputFile the name of the output TIFF file to create
      * @throws IOException on I/O errors
      * @throws FactoryException on CRS transformation errors
      * @throws TransformException on CRS transformation errors
      */
     private static void
-    renderMap(Map<String, Object>           osmParams,
-              Map<String, Object>           oamParams,
-              ReferencedEnvelope            coverage,
-              CoordinateReferenceSystem     crs,
-              String                        sldUrlStr,
-              double                        scale,
-              double                        dpi,
-              String                        outputFile)
+    renderMapToFile(Map<String, Object>           osmParams,
+                    Map<String, Object>           oamParams,
+                    ReferencedEnvelope            coverage,
+                    CoordinateReferenceSystem     crs,
+                    String                        sldUrlStr,
+                    double                        scale,
+                    double                        dpi,
+                    boolean                       drawLattice,
+                    boolean                       drawLegend,
+                    String                        outputFile)
                                                    throws IOException,
                                                           TransformException,
                                                           FactoryException {
@@ -449,6 +520,242 @@ public final class RenderMap {
         rl.setSourceUrl(sldUrl);
         sldParser.setOnLineResourceLocator(rl);
 
+        MapContent osmMap = openOSM(crs, scale, dpi, osmDataStore, sldUrl,
+                sldParser);
+
+        MapContent oamMap = openOAM(crs, scale, dpi, oamDataStore, sldUrl,
+                sldParser);
+
+        CoordinateReferenceSystem refCrs = crs == null
+                                    ? oamMap.getCoordinateReferenceSystem()
+                                    : crs;
+
+        // calculate map coverage and image size
+        ReferencedEnvelope mapBounds = coverage == null
+                                     ? calcCoverage(osmMap, oamMap, refCrs)
+                                     : transformCoverage(coverage, refCrs);
+
+        if (drawLattice) {
+            addLatticeLayer(mapBounds, sldParser, sldUrl, scale, dpi, refCrs,
+                            oamMap);
+        }
+
+        ReferencedEnvelope mapBoundsWgs84 =
+                mapBounds.transform(DefaultGeographicCRS.WGS84, false);
+        normalizeWgs84Bounds(mapBoundsWgs84);
+
+        System.out.println("Map coverage: "
+               + FLOAT_FORMAT.format(mapBoundsWgs84.getMinX())
+                   + "\u00b0," + FLOAT_FORMAT.format(mapBoundsWgs84.getMinY())
+               + "\u00b0 x "
+               + FLOAT_FORMAT.format(mapBoundsWgs84.getMaxX())
+                   + "\u00b0," + FLOAT_FORMAT.format(mapBoundsWgs84.getMaxY())
+                   + "\u00b0");
+
+        Rectangle imageBounds = calcImageBounds(scale, dpi, mapBoundsWgs84);
+
+
+        System.out.println("Image size: " + ((int) imageBounds.getWidth())
+                + "x" + ((int) imageBounds.getHeight()) + " pixels");
+
+        renderMap(osmMap, oamMap, scale, dpi,
+                  drawLegend, mapBounds, imageBounds, "TIFF", outputFile);
+
+        oamMap.dispose();
+        osmMap.dispose();
+        oamDataStore.dispose();
+        osmDataStore.dispose();
+    }
+
+    /**
+     * Calculate a coverage area based on two maps. The result is an area
+     * that include the two maps total area.
+     *
+     * @param osmMap one of the maps to calculate the coverage for
+     * @param oamMap the other map to calculate the coverage for
+     * @param refCrs the CRS to provide the coverage in
+     * @return a coverage that include the area of both supplied maps
+     * @throws TransformException on CRS transformation issues
+     * @throws FactoryException on CRS factory issues
+     */
+    private static ReferencedEnvelope
+    calcCoverage(MapContent                 osmMap,
+                 MapContent                 oamMap,
+                 CoordinateReferenceSystem  refCrs)
+                                                 throws TransformException,
+                                                        FactoryException {
+        ReferencedEnvelope mapBounds;
+
+        mapBounds = transformCoverage(
+                        new ReferencedEnvelope(osmMap.getMaxBounds()), refCrs);
+        mapBounds.include(transformCoverage(oamMap.getMaxBounds(), refCrs));
+
+        return mapBounds;
+    }
+
+    /**
+     * Transform a coverage into the provided CRS. Only performs a
+     * transformation if necessary
+     *
+     * @param coverage the coverage to transform
+     * @param refCrs the CRS to transform into
+     * @return the coverage in refCrs
+     * @throws TransformException on CRS transformation issues
+     * @throws FactoryException on CRS factory issues
+     */
+    private static ReferencedEnvelope
+    transformCoverage(ReferencedEnvelope        coverage,
+                      CoordinateReferenceSystem refCrs)
+                                                  throws TransformException,
+                                                         FactoryException {
+        ReferencedEnvelope mapBounds;
+
+        if (CRS.equalsIgnoreMetadata(refCrs,
+                                    coverage.getCoordinateReferenceSystem())) {
+            mapBounds = new ReferencedEnvelope(coverage);
+        } else {
+            mapBounds = coverage.transform(refCrs, false);
+        }
+
+        return mapBounds;
+    }
+
+    /**
+     * Render a map.
+     *
+     * @param osmMap the Open Street Map to render
+     * @param oamMap the Open Aviation Map to render
+     * @param scale the scale of rendering
+     * @param dpi the desired dpi value
+     * @param drawLegend specify true if the legend is to be drawn
+     * @param mapBounds the bounds of the map to render
+     * @param imageBounds the image bounds
+     * @param fileType the type of file to generate, e.g. TIFF or PNG, etc.
+     * @param outputFile the name of the output file
+     * @throws TransformException on CRS transformation errors
+     * @throws FactoryException on transformation factory errors
+     * @throws IOException on I/O errors
+     */
+    private static void
+    renderMap(MapContent            osmMap,
+              MapContent            oamMap,
+              double                scale,
+              double                dpi,
+              boolean               drawLegend,
+              ReferencedEnvelope    mapBounds,
+              Rectangle             imageBounds,
+              String                fileType,
+              String                outputFile)
+                                          throws TransformException,
+                                                 FactoryException,
+                                                 IOException {
+        // first, generate the ground map
+        System.out.println("Rendering ground map...");
+        PlanarImage osmImage =
+                          renderMap(osmMap, mapBounds, imageBounds, scale, dpi);
+
+
+        // second, generate the aviation map
+        System.out.println("Rendering aviation map...");
+        PlanarImage oamImage =
+                          renderMap(oamMap, mapBounds, imageBounds, scale, dpi);
+
+
+        // third, combine these together and into outputFile
+        System.out.println("Combining ground & aviation map...");
+        DiskMemImage image = combineImages(imageBounds, osmImage, oamImage);
+        oamImage.dispose();
+        osmImage.dispose();
+
+        if (drawLegend) {
+            // draw the labels around the map
+            System.out.println("Drawing legend...");
+            image = drawLabels(mapBounds, image, scale, dpi);
+        }
+
+        // save the map
+        JAI.create("filestore", image, outputFile, fileType, null);
+        System.out.println("Map saved to " + outputFile);
+        image.dispose();
+    }
+
+    /**
+     * Make sure no value of a WGS84 bounding box is outside of valid values.
+     *
+     * @param mapBoundsWgs84 the box to normalize
+     */
+    private static void
+    normalizeWgs84Bounds(ReferencedEnvelope mapBoundsWgs84) {
+        double west = Math.max(mapBoundsWgs84.getMinX(), -180d);
+        double east = Math.min(mapBoundsWgs84.getMaxX(), 180d);
+        double south = Math.max(mapBoundsWgs84.getMinY(), -90);
+        double north = Math.min(mapBoundsWgs84.getMaxY(), 90);
+
+        mapBoundsWgs84.setBounds(new ReferencedEnvelope(west, east,
+                                south, north,
+                                mapBoundsWgs84.getCoordinateReferenceSystem()));
+    }
+
+    /**
+     * Open the Open Avation Map.
+     *
+     * @param crs the CRS to use for projection. if null, the CRS of the OAM
+     *        data source is used
+     * @param scale the scale, that is, 1:scale will be used
+     * @param sldUrl the base URL for SLD files &amp; related resources.
+     * @param dpi the number of dots per inch on the target image
+     * @param oamDataStore the Open Aviation Map datastore to use
+     * @param sldParser the SLD parser to use to process SLD files
+     * @return an Open Aviation Map
+     * @throws IOException on I/O errors
+     * @throws FactoryException on CRS transformation errors
+     */
+    private static MapContent
+    openOAM(CoordinateReferenceSystem   crs,
+            double                      scale,
+            double                      dpi,
+            DataStore                   oamDataStore,
+            final URL                   sldUrl,
+            SLDParser                   sldParser)
+                                                    throws IOException,
+                                                           FactoryException {
+        System.out.println("Opening Open Aviation Map database...");
+
+        MapContent oamMap = new MapContent();
+
+        // add the aviation layers
+        addLayer(oamDataStore, sldParser, sldUrl, crs,
+                "planet_osm_polygon", "oam_airspaces.sldt", scale, dpi, oamMap);
+        addLayer(oamDataStore, sldParser, sldUrl, crs,
+                "planet_osm_point", "oam_navaids.sldt", scale, dpi, oamMap);
+        addLayer(oamDataStore, sldParser, sldUrl, crs,
+                "planet_osm_line", "oam_runways.sld", scale, dpi, oamMap);
+
+        return oamMap;
+    }
+
+    /**
+     * Open the Open Street Map.
+     *
+     * @param crs the CRS to use for projection. if null, the CRS of the OAM
+     *        data source is used
+     * @param scale the scale, that is, 1:scale will be used
+     * @param sldUrl the base URL for SLD files &amp; related resources.
+     * @param dpi the number of dots per inch on the target image
+     * @param osmDataStore the Open Street Map datastore to use
+     * @param sldParser the SLD parser to use to process SLD files
+     * @return an Open Aviation Map
+     * @throws IOException on I/O errors
+     * @throws FactoryException on CRS transformation errors
+     */
+    private static MapContent
+    openOSM(CoordinateReferenceSystem   crs,
+            double                      scale,
+            double                      dpi,
+            DataStore                   osmDataStore,
+            final URL                   sldUrl,
+            SLDParser                   sldParser) throws IOException,
+                                                          FactoryException {
         MapContent osmMap = new MapContent();
 
         System.out.println("Opening Open Street Map database...");
@@ -470,81 +777,307 @@ public final class RenderMap {
         addLayer(osmDataStore, sldParser, sldUrl, crs,
                  "planet_osm_point", "oam_labels.sldt", scale, dpi, osmMap);
 
+        return osmMap;
+    }
 
-        System.out.println("Opening Open Aviation Map database...");
+    /**
+     * Render a map into a tileset. Assuming 256x256 pixel tiles and the
+     * standard EPSG:900913 tileset zoom levels
+     *
+     * @param osmParams the parameters to create the Open Street Map DataStore
+     * @param oamParams the parameters to create the Open Aviaton Map DataStore
+     * @param coverage the area to generate tiles for. if null, the coverage
+     *        area of the Open Aviation Map is used
+     * @param crs the CRS to use for projection. if null, the CRS of the OAM
+     *        data source is used
+     * @param sldUrlStr the base URL for SLD files &amp; related resources.
+     * @param dpi the number of dots per inch on the target image
+     * @param lowLevel the lowest level to render
+     * @param highLevel the highest level to render
+     * @param outputPath the directory path where to generate the tile set
+     * @throws IOException on I/O issues
+     * @throws FactoryException in CRS factory issues
+     * @throws TransformException on coordinate transformation issues
+     */
+    private static void
+    renderMapTileset(Map<String, Object>        osmParams,
+                     Map<String, Object>        oamParams,
+                     ReferencedEnvelope         coverage,
+                     CoordinateReferenceSystem  crs,
+                     String                     sldUrlStr,
+                     double                     dpi,
+                     int                        lowLevel,
+                     int                        highLevel,
+                     String                     outputPath)
+                                                     throws IOException,
+                                                            TransformException,
+                                                            FactoryException {
 
-        MapContent oamMap = new MapContent();
-
-        // add the aviation layers
-        addLayer(oamDataStore, sldParser, sldUrl, crs,
-                "planet_osm_polygon", "oam_airspaces.sldt", scale, dpi, oamMap);
-        addLayer(oamDataStore, sldParser, sldUrl, crs,
-                "planet_osm_point", "oam_navaids.sldt", scale, dpi, oamMap);
-        addLayer(oamDataStore, sldParser, sldUrl, crs,
-                "planet_osm_line", "oam_runways.sld", scale, dpi, oamMap);
-
-        CoordinateReferenceSystem refCrs = crs == null
-                                    ? oamMap.getCoordinateReferenceSystem()
-                                    : crs;
-
-        // calculate map coverage and image size
-        ReferencedEnvelope mapBounds;
-        if (coverage == null) {
-            mapBounds = new ReferencedEnvelope(osmMap.getMaxBounds())
-                                                .transform(refCrs, false);
-            mapBounds.include(oamMap.getMaxBounds()
-                                                .transform(refCrs, false));
-        } else {
-            mapBounds = coverage.transform(refCrs, false);
+        // make sure we have an output directory
+        File dir = new File(outputPath);
+        if (dir.exists() && !dir.isDirectory()) {
+            throw new IllegalArgumentException("Specified path " + outputPath
+                                        + " exists, but is not a directory");
+        } else if (!dir.exists() && !dir.mkdirs()) {
+            throw new IllegalArgumentException("Could not create output dir "
+                                        + outputPath);
         }
 
-        addLatticeLayer(mapBounds, sldParser, sldUrl, scale, dpi, refCrs,
-                        oamMap);
+        // create the data stores
+        DataStore osmDataStore = DataStoreFinder.getDataStore(osmParams);
+        if (osmDataStore == null) {
+            System.out.println(
+                    "can't connect to the Open Street Map database");
+            return;
+        }
+
+        DataStore oamDataStore = DataStoreFinder.getDataStore(oamParams);
+        if (oamDataStore == null) {
+            System.out.println(
+                    "can't connect the to Open Aviation Map database");
+            return;
+        }
+
+        // set logging levels for the geotools APIs
+        ((JDBCDataStore) oamDataStore).getLogger().setLevel(Level.SEVERE);
+        ((JDBCDataStore) osmDataStore).getLogger().setLevel(Level.SEVERE);
+        org.geotools.util.logging.Logging.
+          getLogger("org.geotools.referencing.factory").setLevel(Level.SEVERE);
 
 
-        ReferencedEnvelope mapBoundsWgs84 =
-                mapBounds.transform(DefaultGeographicCRS.WGS84, false);
-
-        System.out.println("Map coverage: "
-               + FLOAT_FORMAT.format(mapBoundsWgs84.getMinX())
-                   + "\u00b0," + FLOAT_FORMAT.format(mapBoundsWgs84.getMinY())
-               + "\u00b0 x "
-               + FLOAT_FORMAT.format(mapBoundsWgs84.getMaxX())
-                   + "\u00b0," + FLOAT_FORMAT.format(mapBoundsWgs84.getMaxY())
-                   + "\u00b0");
-
-        Rectangle imageBounds = calcImageBounds(scale, dpi, mapBounds,
-                                                refCrs);
+        // create the parser with the sld configuration
+        final URL sldUrl = new URL(sldUrlStr);
+        SLDParser sldParser = new SLDParser(
+                                    CommonFactoryFinder.getStyleFactory(null));
+        DefaultResourceLocator rl = new DefaultResourceLocator();
+        rl.setSourceUrl(sldUrl);
+        sldParser.setOnLineResourceLocator(rl);
 
 
-        System.out.println("Image size: " + ((int) imageBounds.getWidth())
-                + "x" + ((int) imageBounds.getHeight()) + " pixels");
+        List<Double> scales = KnownScaleList.epsg900913ScaleList(dpi,
+                                                                 highLevel + 1);
 
-        // first, generate the ground map
-        System.out.println("Rendering ground map...");
-        PlanarImage osmImage =
-                          renderMap(osmMap, mapBounds, imageBounds, scale, dpi);
+        // coverage is the whole Earth
+
+        ReferencedEnvelope mapBounds;
+        if (coverage == null) {
+            MapContent osmMap = openOSM(crs, scales.get(highLevel), dpi,
+                                        osmDataStore, sldUrl, sldParser);
+            MapContent oamMap = openOAM(crs, scales.get(highLevel), dpi,
+                                        oamDataStore, sldUrl, sldParser);
+
+            mapBounds = calcCoverage(osmMap, oamMap,
+                                     DefaultGeographicCRS.WGS84);
+
+            osmMap.dispose();
+            oamMap.dispose();
+        } else {
+            mapBounds = transformCoverage(coverage, DefaultGeographicCRS.WGS84);
+        }
+
+        for (int level = lowLevel; level <= highLevel; ++level) {
+            System.out.println("Rendering tiles for level " + level
+                         + ", at dpi " + dpi + ", scale: " + scales.get(level));
+
+            MapContent osmMap = openOSM(crs, scales.get(level), dpi,
+                                        osmDataStore, sldUrl, sldParser);
+
+            renderMapTileset(osmMap, crs, dpi, level, scales.get(level),
+                         mapBounds,
+                         outputPath + File.separator + "osm" + File.separator);
+
+            osmMap.dispose();
+
+            MapContent oamMap = openOAM(crs, scales.get(level), dpi,
+                                        oamDataStore, sldUrl, sldParser);
+
+            renderMapTileset(oamMap, crs, dpi, level, scales.get(level),
+                        mapBounds,
+                        outputPath + File.separator + "oam" + File.separator);
+
+            oamMap.dispose();
+
+            System.out.println("Level " + level + " done.");
+        }
+
         osmDataStore.dispose();
-
-
-        // second, generate the aviation map
-        System.out.println("Rendering aviation map...");
-        PlanarImage oamImage =
-                          renderMap(oamMap, mapBounds, imageBounds, scale, dpi);
-
-
-        // third, combine these together and into outputFile
-        System.out.println("Combining ground & aviation map...");
-        DiskMemImage image = combineImages(imageBounds, osmImage, oamImage);
-
-        // draw the labels around the map
-        System.out.println("Drawing legend...");
-        image = drawLabels(mapBounds, image, scale, dpi);
         oamDataStore.dispose();
+    }
 
-        // save the map
-        JAI.create("filestore", image, outputFile, "TIFF", null);
-        System.out.println("Map saved to " + outputFile);
+    /**
+     * Render a tiles for a particular map.
+     *
+     * @param map the map to render
+     * @param crs the CRS to use for rendering
+     * @param dpi the resolution to use for rendering
+     * @param level the zoom level to render at
+     * @param scale the scale to render at
+     * @param mapBounds the map bounds to render
+     * @param outputPath the base output path to render tiles into
+     * @throws IOException on I/O errors
+     * @throws FactoryException on CRS factory errors
+     * @throws TransformException the CRS transformation errors
+     */
+    private static void
+    renderMapTileset(MapContent                 map,
+                     CoordinateReferenceSystem  crs,
+                     double                     dpi,
+                     int                        level,
+                     double                     scale,
+                     ReferencedEnvelope         mapBounds,
+                     String                     outputPath)
+                                                     throws IOException,
+                                                            FactoryException,
+                                                            TransformException {
+
+        CoordinateReferenceSystem refCrs = crs == null
+                                        ? map.getCoordinateReferenceSystem()
+                                        : crs;
+
+        Rectangle imageBounds = new Rectangle(256, 256);
+        Rectangle tileBounds = getTileBounds(mapBounds, level);
+
+        for (int x = (int) tileBounds.getMinX();
+             x <= (int) tileBounds.getMaxX(); ++x) {
+
+            File tileDir = new File(outputPath + File.separator + level
+                                               + File.separator + x);
+
+            if (!tileDir.exists() && !tileDir.mkdirs()) {
+                throw new IllegalArgumentException(
+                                        "Could not create tile dir "
+                                         + tileDir.getAbsolutePath());
+            }
+
+            for (int y = (int) tileBounds.getMinY();
+                 y <= (int) tileBounds.getMaxY(); ++y) {
+
+                System.out.println("Rendering tile " + tileDir.getPath()
+                                                     + File.separator + y);
+
+                ReferencedEnvelope c = tile2BoundingBox(x, y, level);
+                ReferencedEnvelope mb = c.transform(refCrs, false);
+
+                // first, generate the ground map
+                PlanarImage image = renderMap(map, mb, imageBounds,
+                                              scale, dpi);
+
+                String fileName = tileDir.getAbsolutePath()
+                                             + File.separator + y + ".png";
+
+                // save the tile
+                JAI.create("filestore", image, fileName, "PNG", null);
+                image.dispose();
+            }
+        }
+    }
+
+    /**
+     * Return the tile index boundaries for a specific real-world boundary
+     * at a specified zoom level.
+     *
+     * @param bounds the real-world bounds
+     * @param zoom the zoom level
+     * @return the tile index rectangle, representing the specified real-world
+     *         region
+     */
+    public static Rectangle
+    getTileBounds(ReferencedEnvelope bounds, final int zoom) {
+        int west = (int) Math.floor(
+                                (bounds.getMinX() + 180) / 360 * (1 << zoom));
+        int east = (int) Math.floor(
+                                (bounds.getMaxX() + 180) / 360 * (1 << zoom));
+        int south = (int) Math.floor(
+                (1 - Math.log(Math.tan(Math.toRadians(bounds.getMinY())) + 1
+                        / Math.cos(Math.toRadians(bounds.getMinY()))) / Math.PI)
+                        / 2 * (1 << zoom));
+        int north = (int) Math.floor(
+                (1 - Math.log(Math.tan(Math.toRadians(bounds.getMaxY())) + 1
+                        / Math.cos(Math.toRadians(bounds.getMaxY()))) / Math.PI)
+                        / 2 * (1 << zoom));
+
+        return new Rectangle(west, north, east - west, south - north);
+    }
+
+    /**
+     * Return a tile path for a particular position and zoom level.
+     *
+     * @param lat the latitude of the position
+     * @param lon the longitude of the position
+     * @param zoom the zoom level
+     * @return a relative path to this particular tile, without extension
+     */
+    public static String
+    getTilePath(final double lat, final double lon, final int zoom) {
+        int xtile = (int) Math.floor((lon + 180) / 360 * (1 << zoom));
+        int ytile = (int) Math.floor(
+                (1 - Math.log(Math.tan(Math.toRadians(lat)) + 1
+              / Math.cos(Math.toRadians(lat))) / Math.PI) / 2 * (1 << zoom));
+
+        return "" + zoom + File.separator + xtile + File.separator + ytile;
+    }
+
+    /**
+     * Return a tile directory path for a particular position and zoom level.
+     *
+     * @param lat the latitude of the position
+     * @param lon the longitude of the position
+     * @param zoom the zoom level
+     * @return a relative directory path to this particular tile, without the
+     *         filename
+     */
+    public static String
+    getTileDir(final double lat, final double lon, final int zoom) {
+        int xtile = (int) Math.floor((lon + 180) / 360 * (1 << zoom));
+
+        return "" + zoom + File.separator + xtile;
+    }
+
+    /**
+     * Generate a geographical bounding box for a particular tile at a
+     * particular zoom level.
+     *
+     * @param x the x tile coordinate
+     * @param y the y tile coordinate
+     * @param zoom the zoom level
+     * @return a bounding box in WGS84 covering the specified tile
+     */
+    private static ReferencedEnvelope
+    tile2BoundingBox(final int x, final int y, final int zoom) {
+        return new ReferencedEnvelope(tile2lon(x, zoom),
+                                      tile2lon(x + 1, zoom),
+                                      tile2lat(y + 1, zoom),
+                                      tile2lat(y, zoom),
+                                      DefaultGeographicCRS.WGS84);
+    }
+
+    /**
+     * Convert a tile x coordinate into a longitude value in degrees, at
+     * a particular zoom level.
+     *
+     * @param x the x coordinate
+     * @param z the zoom level
+     * @return the longitude in degrees
+     */
+    static double tile2lon(int x, int z) {
+        double d = x / Math.pow(2.0, z) * 360.0 - 180;
+
+        return d;
+    }
+
+    /**
+     * Convert a tile y coordinate into a latitude value in degrees, at
+     * a particular zoom level.
+     *
+     * @param y the y coordinate
+     * @param z the zoom level
+     * @return the latitude in degrees
+     */
+    static double tile2lat(int y, int z) {
+        double n = Math.PI - (2.0 * Math.PI * y) / Math.pow(2.0, z);
+        double d = Math.toDegrees(Math.atan(Math.sinh(n)));
+
+        return d;
     }
 
     /**
@@ -1338,8 +1871,7 @@ public final class RenderMap {
      * @param dpi the target DPI, used to re-scale SLD templates
      * @param map the map to add the layer to
      * @throws IOException on I/O errors
-     * @throws FactoryException
-     * @throws NoSuchAuthorityCodeException
+     * @throws FactoryException on CRS factory errors
      */
     private static void
     addLayer(DataStore                  dataStore,
@@ -1351,8 +1883,7 @@ public final class RenderMap {
              double                     scale,
              double                     dpi,
              MapContent                 map) throws IOException,
-                                            NoSuchAuthorityCodeException,
-                                            FactoryException {
+                                                    FactoryException {
 
         if (styleName.endsWith(".sldt")) {
 
@@ -1463,9 +1994,8 @@ public final class RenderMap {
         URL    url    = new URL(urlBase + styleName);
         Reader reader = new InputStreamReader(url.openStream());
 
-        List<Double> scales = new ArrayList<Double>(2);
-        scales.add(scale * 0.75d);
-        scales.add(scale * 1.25d);
+        List<Double> scales = new ArrayList<Double>(1);
+        scales.add(scale);
 
         double[] refXY = {centerPoint.x, centerPoint.y};
 
@@ -1546,64 +2076,63 @@ public final class RenderMap {
      * @param scale the scale to use for generating the image
      * @param dpi the dots per inch in the image
      * @param mapBounds the bounds of the map used for generating the image
-     * @param crs the CRS of the map (reference of the map bounds)
      * @return the rectangle depicting the size of the generated image
      * @throws TransformException on coordinate transformation errors
      */
     private static Rectangle
     calcImageBounds(final double                scale,
                     final double                dpi,
-                    ReferencedEnvelope          mapBounds,
-                    CoordinateReferenceSystem   crs)
+                    ReferencedEnvelope          mapBounds)
                                                 throws TransformException {
         Rectangle imageBounds;
 
         double widthInMeters;
         double heightInMeters;
 
+        CoordinateReferenceSystem crs =
+                                    mapBounds.getCoordinateReferenceSystem();
         GeodeticCalculator gc = new GeodeticCalculator(crs);
+
+        double mean0 = (mapBounds.getMinimum(0) + mapBounds.getMaximum(0))
+                     / 2.0d;
+        double mean1 = (mapBounds.getMinimum(1) + mapBounds.getMaximum(1))
+                     / 2.0d;
 
         if (AxisDirection.NORTH.equals(
                     crs.getCoordinateSystem().getAxis(0).getDirection())) {
 
             gc.setStartingPosition(new DirectPosition2D(crs,
-                                    mapBounds.getMinimum(0),
-                                    mapBounds.getMinimum(1)));
+                                    mean0, mapBounds.getMinimum(1)));
             gc.setDestinationPosition(new DirectPosition2D(crs,
-                                      mapBounds.getMinimum(0),
-                                      mapBounds.getMaximum(1)));
+                    mapBounds.getMinimum(1) + mapBounds.getWidth() / 3.0d,
+                    mean0));
 
-            widthInMeters = gc.getOrthodromicDistance();
+            widthInMeters = gc.getOrthodromicDistance() * 3.0d;
 
             gc.setStartingPosition(new DirectPosition2D(crs,
-                                   mapBounds.getMinimum(0),
-                                   mapBounds.getMinimum(1)));
-            gc.setDestinationPosition(new DirectPosition2D(crs,
-                                      mapBounds.getMaximum(0),
-                                      mapBounds.getMinimum(1)));
+                                   mapBounds.getMinimum(0), mean1));
+            gc.setDestinationPosition(new DirectPosition2D(crs, mean1,
+                    mapBounds.getMinimum(0) + mapBounds.getHeight() / 3.0d));
 
-            heightInMeters = gc.getOrthodromicDistance();
+            heightInMeters = gc.getOrthodromicDistance() * 3.0d;
 
         } else if (AxisDirection.EAST.equals(
                         crs.getCoordinateSystem().getAxis(0).getDirection())) {
 
             gc.setStartingPosition(new DirectPosition2D(crs,
-                                   mapBounds.getMinimum(0),
-                                   mapBounds.getMinimum(1)));
+                                   mapBounds.getMinimum(0), mean1));
             gc.setDestinationPosition(new DirectPosition2D(crs,
-                                      mapBounds.getMaximum(0),
-                                      mapBounds.getMinimum(1)));
+                        mapBounds.getMinimum(0) + mapBounds.getWidth() / 3.0d,
+                        mean1));
 
-            widthInMeters = gc.getOrthodromicDistance();
+            widthInMeters = gc.getOrthodromicDistance() * 3.0d;
 
             gc.setStartingPosition(new DirectPosition2D(crs,
-                                   mapBounds.getMinimum(0),
-                                   mapBounds.getMinimum(1)));
-            gc.setDestinationPosition(new DirectPosition2D(crs,
-                                      mapBounds.getMinimum(0),
-                                      mapBounds.getMaximum(1)));
+                                   mean0, mapBounds.getMinimum(1)));
+            gc.setDestinationPosition(new DirectPosition2D(crs, mean0,
+                    mapBounds.getMinimum(1) + mapBounds.getHeight() / 3.0d));
 
-            heightInMeters = gc.getOrthodromicDistance();
+            heightInMeters = gc.getOrthodromicDistance() * 3.0d;
 
         } else {
             throw new IllegalArgumentException("unsupported CRS axis setup");
