@@ -33,6 +33,7 @@ import java.awt.RenderingHints;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Line2D;
 import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
 import java.awt.image.ColorModel;
 import java.awt.image.SampleModel;
 import java.io.File;
@@ -101,6 +102,12 @@ public final class RenderMap {
 
     /** The default high zoom level for tilesets. */
     public static final int DEFAULT_HIGH_LEVEL = 11;
+
+    /** The tile size, in pixels. */
+    public static final int TILE_SIZE = 256;
+
+    /** The metatile size, in tiles. */
+    public static final int METATILE_SIZE = 32;
 
     /** Float formatter. */
     private static final DecimalFormat FLOAT_FORMAT =
@@ -934,41 +941,73 @@ public final class RenderMap {
                                         ? map.getCoordinateReferenceSystem()
                                         : crs;
 
-        Rectangle imageBounds = new Rectangle(256, 256);
         Rectangle tileBounds = getTileBounds(mapBounds, level);
 
-        for (int x = (int) tileBounds.getMinX();
-             x <= (int) tileBounds.getMaxX(); ++x) {
+        int x = (int) tileBounds.getMinX();
+        while (x <= (int) tileBounds.getMaxX()) {
 
-            File tileDir = new File(outputPath + File.separator + level
-                                               + File.separator + x);
+            int metatileWidth = x + METATILE_SIZE <= (int) tileBounds.getMaxX()
+                              ? METATILE_SIZE
+                              : ((int) tileBounds.getMaxX()) - x + 1;
 
-            if (!tileDir.exists() && !tileDir.mkdirs()) {
-                throw new IllegalArgumentException(
-                                        "Could not create tile dir "
-                                         + tileDir.getAbsolutePath());
-            }
+            int y = (int) tileBounds.getMinY();
+            while (y <= (int) tileBounds.getMaxY()) {
 
-            for (int y = (int) tileBounds.getMinY();
-                 y <= (int) tileBounds.getMaxY(); ++y) {
+                int metatileHeight =
+                                y + METATILE_SIZE <= (int) tileBounds.getMaxY()
+                                ? METATILE_SIZE
+                                : ((int) tileBounds.getMaxY()) - y + 1;
 
-                System.out.println("Rendering tile " + tileDir.getPath()
-                                                     + File.separator + y);
+                System.out.println("Rendering tiles " + level + File.separator
+                        + x + ".." + (x + metatileWidth - 1) + File.separator
+                        + y + ".." + (y + metatileHeight - 1));
+
+                Rectangle imageBounds = new Rectangle(TILE_SIZE * metatileWidth,
+                                                    TILE_SIZE * metatileHeight);
 
                 ReferencedEnvelope c = tile2BoundingBox(x, y, level);
+                ReferencedEnvelope d = tile2BoundingBox(x + metatileWidth - 1,
+                                                        y + metatileHeight - 1,
+                                                        level);
+                c.expandToInclude(d);
                 ReferencedEnvelope mb = c.transform(refCrs, false);
 
                 // first, generate the ground map
                 PlanarImage image = renderMap(map, mb, imageBounds,
                                               scale, dpi);
 
-                String fileName = tileDir.getAbsolutePath()
-                                             + File.separator + y + ".png";
+                // now we have the metatile, cut it up and save it as tiles
+                for (int i = x; i < x + metatileWidth; ++i) {
+                    File tileDir = new File(outputPath + File.separator + level
+                                                       + File.separator + i);
 
-                // save the tile
-                JAI.create("filestore", image, fileName, "PNG", null);
+                    if (!tileDir.exists() && !tileDir.mkdirs()) {
+                        throw new IllegalArgumentException(
+                                             "Could not create tile dir "
+                                              + tileDir.getAbsolutePath());
+                    }
+
+                    for (int j = y; j < y + metatileHeight; ++j) {
+
+                        String fileName = tileDir.getAbsolutePath()
+                                                + File.separator + j + ".png";
+
+                        Rectangle r = new Rectangle((i - x) * TILE_SIZE,
+                                                    (j - y) * TILE_SIZE,
+                                                    TILE_SIZE, TILE_SIZE);
+                        BufferedImage tile = image.getAsBufferedImage(r, null);
+
+                        // save the tile
+                        JAI.create("filestore", tile, fileName, "PNG", null);
+                    }
+                }
+
                 image.dispose();
+
+                y += metatileHeight;
             }
+
+            x += metatileWidth;
         }
     }
 
@@ -1059,7 +1098,7 @@ public final class RenderMap {
      * @param z the zoom level
      * @return the longitude in degrees
      */
-    static double tile2lon(int x, int z) {
+    private static double tile2lon(int x, int z) {
         double d = x / Math.pow(2.0, z) * 360.0 - 180;
 
         return d;
@@ -1073,7 +1112,7 @@ public final class RenderMap {
      * @param z the zoom level
      * @return the latitude in degrees
      */
-    static double tile2lat(int y, int z) {
+    private static double tile2lat(int y, int z) {
         double n = Math.PI - (2.0 * Math.PI * y) / Math.pow(2.0, z);
         double d = Math.toDegrees(Math.atan(Math.sinh(n)));
 
