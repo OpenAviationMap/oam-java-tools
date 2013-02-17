@@ -769,14 +769,14 @@ public final class RenderMap {
 
         // add the ground layers
         addLayer(osmDataStore, sldParser, sldUrl, crs,
-                 "planet_osm_polygon", "oam_waters.sldt", scale, dpi, osmMap);
-        addLayer(osmDataStore, sldParser, sldUrl, crs,
                  "planet_osm_polygon", "oam_forests.sld", scale, dpi, osmMap);
         addLayer(osmDataStore, sldParser, sldUrl, crs,
                  "planet_osm_point", "oam_city_markers.sldt", scale, dpi,
                  osmMap);
         addLayer(osmDataStore, sldParser, sldUrl, crs,
                  "planet_osm_polygon", "oam_cities.sldt", scale, dpi, osmMap);
+        addLayer(osmDataStore, sldParser, sldUrl, crs,
+                "planet_osm_polygon", "oam_waters.sldt", scale, dpi, osmMap);
         addLayer(osmDataStore, sldParser, sldUrl, crs,
                  "planet_osm_point", "oam_peaks.sldt", scale, dpi, osmMap);
         addLayer(osmDataStore, sldParser, sldUrl, crs,
