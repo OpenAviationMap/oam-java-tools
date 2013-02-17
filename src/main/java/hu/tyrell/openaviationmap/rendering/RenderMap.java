@@ -208,6 +208,9 @@ public final class RenderMap {
     /** A list of scales, used when rendering a tileset. */
     private List<Double> scales;
 
+    /** Flag to mark that existing files should be overwritten. */
+    private boolean forceOverwrite = false;
+
     /**
      * The grid definition.
      *
@@ -256,6 +259,8 @@ public final class RenderMap {
         System.out.println(
         "                               optional, defaults to "
                                       + DEFAULT_DPI);
+        System.out.println(
+        "  -f | --force                 overwrite existing output files");
         System.out.println(
         "  -l | --levels <value>        the zoom levels used for tileset");
         System.out.println(
@@ -313,7 +318,7 @@ public final class RenderMap {
                                          TransformException,
                                          FactoryException {
 
-        LongOpt[] longopts = new LongOpt[11];
+        LongOpt[] longopts = new LongOpt[12];
 
         longopts[0] = new LongOpt("help", LongOpt.NO_ARGUMENT, null, 'h');
         longopts[1] = new LongOpt("oam", LongOpt.REQUIRED_ARGUMENT,
@@ -322,22 +327,23 @@ public final class RenderMap {
                 null, 'c');
         longopts[3] = new LongOpt("dpi", LongOpt.REQUIRED_ARGUMENT,
                 null, 'd');
-        longopts[4] = new LongOpt("levels", LongOpt.REQUIRED_ARGUMENT,
+        longopts[4] = new LongOpt("force", LongOpt.NO_ARGUMENT, null, 'f');
+        longopts[5] = new LongOpt("levels", LongOpt.REQUIRED_ARGUMENT,
                 null, 'l');
-        longopts[5] = new LongOpt("osm", LongOpt.REQUIRED_ARGUMENT,
+        longopts[6] = new LongOpt("osm", LongOpt.REQUIRED_ARGUMENT,
                 null, 'm');
-        longopts[6] = new LongOpt("output", LongOpt.REQUIRED_ARGUMENT,
+        longopts[7] = new LongOpt("output", LongOpt.REQUIRED_ARGUMENT,
                 null, 'o');
-        longopts[7] = new LongOpt("crs", LongOpt.REQUIRED_ARGUMENT,
+        longopts[8] = new LongOpt("crs", LongOpt.REQUIRED_ARGUMENT,
                 null, 'r');
-        longopts[8] = new LongOpt("scale", LongOpt.REQUIRED_ARGUMENT,
+        longopts[9] = new LongOpt("scale", LongOpt.REQUIRED_ARGUMENT,
                 null, 's');
-        longopts[9] = new LongOpt("type", LongOpt.REQUIRED_ARGUMENT,
+        longopts[10] = new LongOpt("type", LongOpt.REQUIRED_ARGUMENT,
                 null, 't');
-        longopts[10] = new LongOpt("sldurl", LongOpt.REQUIRED_ARGUMENT,
+        longopts[11] = new LongOpt("sldurl", LongOpt.REQUIRED_ARGUMENT,
                 null, 'u');
 
-        Getopt g = new Getopt("RenderMap", args, "a:c:d:hl:m:o:r:s:t:u:",
+        Getopt g = new Getopt("RenderMap", args, "a:c:d:fhl:m:o:r:s:t:u:",
                               longopts);
 
         int c;
@@ -352,6 +358,7 @@ public final class RenderMap {
         String      crsStr      = null;
         String      typeStr     = "TIFF";
         String      levelsStr   = null;
+        boolean     force       = false;
 
         while ((c = g.getopt()) != -1) {
             switch (c) {
@@ -365,6 +372,10 @@ public final class RenderMap {
 
             case 'd':
                 strDpi = g.getOptarg();
+                break;
+
+            case 'f':
+                force = true;
                 break;
 
             case 'l':
@@ -512,12 +523,21 @@ public final class RenderMap {
 
         if ("TIFF".equals(typeStr.toUpperCase())) {
 
+            if (!force) {
+                File f = new File(outputPath);
+                if (f.exists()) {
+                    System.out.println("Output file " + outputPath
+                            + " exists, specify --force to overwrite");
+                    return;
+                }
+            }
+
             System.out.println("Rendering map at scale 1:" + ((int) scale)
                              + " at " + ((int) dpi) + " dpi to " + outputPath);
 
             RenderMap rm = new RenderMap(osmParams, oamParams, coverage, crs,
-                                        sldUrlStr, scale, dpi, true, true,
-                                        outputPath);
+                                         sldUrlStr, scale, dpi, true, true,
+                                         outputPath);
 
             rm.render();
 
@@ -528,7 +548,7 @@ public final class RenderMap {
 
             RenderMap rm = new RenderMap(osmParams, oamParams, coverage, crs,
                                          sldUrlStr, dpi, lowLevel, highLevel,
-                                         outputPath);
+                                         force, outputPath);
 
             rm.render();
         }
@@ -591,6 +611,7 @@ public final class RenderMap {
      * @param dpi the number of dots per inch on the target image
      * @param lowLevel the lowest level to render
      * @param highLevel the highest level to render
+     * @param force overwrite existing files if true
      * @param outputPath the directory path where to generate the tile set
      */
     public
@@ -602,17 +623,19 @@ public final class RenderMap {
               double                     dpi,
               int                        lowLevel,
               int                        highLevel,
+              boolean                    force,
               String                     outputPath) {
 
-        this.osmParams    = osmParams;
-        this.oamParams    = oamParams;
-        this.coverage     = coverage;
-        this.crs          = crs;
-        this.sldUrlStr    = sldUrlStr;
-        this.dpi          = dpi;
-        this.lowLevel     = lowLevel;
-        this.highLevel    = highLevel;
-        this.outputPath   = outputPath;
+        this.osmParams      = osmParams;
+        this.oamParams      = oamParams;
+        this.coverage       = coverage;
+        this.crs            = crs;
+        this.sldUrlStr      = sldUrlStr;
+        this.dpi            = dpi;
+        this.lowLevel       = lowLevel;
+        this.highLevel      = highLevel;
+        this.forceOverwrite = force;
+        this.outputPath     = outputPath;
 
         type         = Type.TILESET;
         renderGrid   = false;
@@ -897,9 +920,9 @@ public final class RenderMap {
      * @throws TransformException on coordinate transformation issues
      */
     private void
-    renderMapToTileset()                             throws IOException,
-                                                            TransformException,
-                                                            FactoryException {
+    renderMapToTileset()            throws IOException,
+                                           TransformException,
+                                           FactoryException {
 
         // make sure we have an output directory
         File dir = new File(outputPath);
@@ -952,6 +975,21 @@ public final class RenderMap {
 
         osmDataStore.dispose();
         oamDataStore.dispose();
+
+        // create the GEMF files, for mobile use
+        // first the Open Street Map GEMF file
+        List<File> sourceFolders = new ArrayList<File>();
+        sourceFolders.add(new File(outputPath + File.separator + "osm"));
+        String destFile = outputPath + File.separator + "osm.gemf";
+        GEMFFile gemffile = new GEMFFile(destFile, sourceFolders);
+        gemffile.close();
+
+        // then the Open Aviation Map GEMF file
+        sourceFolders.clear();
+        sourceFolders.add(new File(outputPath + File.separator + "oam"));
+        destFile = outputPath + File.separator + "oam.gemf";
+        gemffile = new GEMFFile(destFile, sourceFolders);
+        gemffile.close();
     }
 
     /**
@@ -977,6 +1015,20 @@ public final class RenderMap {
 
         Rectangle tileBounds = getTileBounds(mapBounds, level);
 
+        boolean allExist = allTilesExist(outputBase, level,
+                                         (int) tileBounds.getMinX(),
+                                         (int) tileBounds.getMinY(),
+                                         (int) tileBounds.getWidth(),
+                                         (int) tileBounds.getHeight());
+
+        if (allExist) {
+            System.out.println("All tiles for level " + level + " already exist"
+                             + ", specify --force to overwrite");
+
+            return;
+        }
+
+
         int x = (int) tileBounds.getMinX();
         while (x <= (int) tileBounds.getMaxX()) {
 
@@ -991,6 +1043,23 @@ public final class RenderMap {
                                 y + METATILE_SIZE <= (int) tileBounds.getMaxY()
                                 ? METATILE_SIZE
                                 : ((int) tileBounds.getMaxY()) - y + 1;
+
+                // check to see if all tiles for this metatile exist
+                // now we have the metatile, cut it up and save it as tiles
+                allExist = allTilesExist(outputBase, level, x, y,
+                                         metatileWidth, metatileHeight);
+
+                if (allExist) {
+                    System.out.println("Tiles " + level + File.separator
+                            + x + ".." + (x + metatileWidth - 1)
+                                                            + File.separator
+                            + y + ".." + (y + metatileHeight - 1)
+                            + " already exist, specify --force to overwrite");
+
+                    y += metatileHeight;
+
+                    continue;
+                }
 
                 System.out.println("Rendering tiles " + level + File.separator
                         + x + ".." + (x + metatileWidth - 1) + File.separator
@@ -1025,6 +1094,12 @@ public final class RenderMap {
                         String fileName = tileDir.getAbsolutePath()
                                                 + File.separator + j + ".png";
 
+                        File f = new File(fileName);
+
+                        if (f.exists() && !forceOverwrite) {
+                            continue;
+                        }
+
                         Rectangle r = new Rectangle((i - x) * TILE_SIZE,
                                                     (j - y) * TILE_SIZE,
                                                     TILE_SIZE, TILE_SIZE);
@@ -1042,6 +1117,43 @@ public final class RenderMap {
 
             x += metatileWidth;
         }
+    }
+
+    /**
+     * Check to see if all tiles exist for a given set of tiles.
+     *
+     * @param outputBase the base directory where the tiles are generated
+     * @param level the zoom level
+     * @param x the left-most tile
+     * @param y the upper-most tile
+     * @param width the width of the tile area to check for
+     * @param height the height of the tile area to check for
+     * @return true if all tile files exist, false otherwise
+     */
+    private boolean
+    allTilesExist(String    outputBase,
+                  int       level,
+                  int       x,
+                  int       y,
+                  int       width,
+                  int       height) {
+
+        for (int i = x; i < x + width; ++i) {
+            File tileDir = new File(outputBase + File.separator + level
+                                               + File.separator + i);
+            for (int j = y; j < y + height; ++j) {
+                String fileName = tileDir.getAbsolutePath()
+                                        + File.separator + j + ".png";
+
+                File f = new File(fileName);
+
+                if (!f.exists()) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 
     /**
