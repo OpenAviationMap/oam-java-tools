@@ -2166,7 +2166,6 @@ public final class RenderMap {
         DiskMemImage image = new DiskMemImage(0, 0,
                                               iBounds.width, iBounds.height,
                                               0, 0, sm, cm);
-
         Graphics2D gr = image.createGraphics();
 
         renderer.paint(gr, iBounds, mBounds);
