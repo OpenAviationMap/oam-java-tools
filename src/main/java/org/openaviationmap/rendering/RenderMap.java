@@ -19,9 +19,6 @@ package org.openaviationmap.rendering;
 
 import gnu.getopt.Getopt;
 import gnu.getopt.LongOpt;
-import org.openaviationmap.rendering.grid.Lines;
-import org.openaviationmap.rendering.grid.ortholine.LineOrientation;
-import org.openaviationmap.rendering.grid.ortholine.OrthoLineDef;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -57,6 +54,11 @@ import javax.media.jai.JAI;
 import javax.media.jai.PlanarImage;
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.apache.batik.dom.svg.SAXSVGDocumentFactory;
+import org.apache.batik.transcoder.TranscoderException;
+import org.apache.batik.transcoder.TranscoderInput;
+import org.apache.batik.transcoder.image.PNGTranscoder;
+import org.apache.batik.util.XMLResourceDescriptor;
 import org.geotools.data.DataStore;
 import org.geotools.data.DataStoreFinder;
 import org.geotools.data.Query;
@@ -77,6 +79,9 @@ import org.geotools.styling.DefaultResourceLocator;
 import org.geotools.styling.SLDParser;
 import org.geotools.styling.Style;
 import org.jaitools.tiledimage.DiskMemImage;
+import org.openaviationmap.rendering.grid.Lines;
+import org.openaviationmap.rendering.grid.ortholine.LineOrientation;
+import org.openaviationmap.rendering.grid.ortholine.OrthoLineDef;
 import org.opengis.referencing.FactoryException;
 import org.opengis.referencing.crs.CoordinateReferenceSystem;
 import org.opengis.referencing.cs.AxisDirection;
@@ -84,6 +89,7 @@ import org.opengis.referencing.operation.CoordinateOperation;
 import org.opengis.referencing.operation.CoordinateOperationFactory;
 import org.opengis.referencing.operation.MathTransform;
 import org.opengis.referencing.operation.TransformException;
+import org.w3c.dom.svg.SVGDocument;
 import org.xml.sax.SAXException;
 
 import com.vividsolutions.jts.geom.Coordinate;
@@ -111,6 +117,17 @@ public final class RenderMap {
     /** Float formatter. */
     private static final DecimalFormat FLOAT_FORMAT =
                                                 new DecimalFormat("###.##");
+
+    /** Project label. */
+    private static final String PROJECT_LABEL =
+                        "Open Aviation Map - http://www.openaviationmap.org/";
+
+    /** CC-by-sa logo URL. */
+    private static final String CC_BY_SA_LOGO_URL =
+      "http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg";
+
+    /** CC-by-sa logo resource URL. */
+    private static final String CC_BY_SA_LOGO_RES_URL = "images/by-sa.svg";
 
     /** Constants marking alignment. */
     private enum Alignment {
@@ -211,6 +228,9 @@ public final class RenderMap {
     /** Flag to mark that existing files should be overwritten. */
     private boolean forceOverwrite = false;
 
+    /** The validity string, if provided. */
+    private String validityStr;
+
     /**
      * The grid definition.
      *
@@ -297,6 +317,8 @@ public final class RenderMap {
         System.out.println(
         "                               located");
         System.out.println(
+        "  -v | --validity <value>      a validity statement (optional)");
+        System.out.println(
         "  -h | --help                  show this usage page");
         System.out.println();
     }
@@ -318,7 +340,7 @@ public final class RenderMap {
                                          TransformException,
                                          FactoryException {
 
-        LongOpt[] longopts = new LongOpt[12];
+        LongOpt[] longopts = new LongOpt[13];
 
         longopts[0] = new LongOpt("help", LongOpt.NO_ARGUMENT, null, 'h');
         longopts[1] = new LongOpt("oam", LongOpt.REQUIRED_ARGUMENT,
@@ -342,8 +364,10 @@ public final class RenderMap {
                 null, 't');
         longopts[11] = new LongOpt("sldurl", LongOpt.REQUIRED_ARGUMENT,
                 null, 'u');
+        longopts[12] = new LongOpt("validity", LongOpt.REQUIRED_ARGUMENT,
+                null, 'v');
 
-        Getopt g = new Getopt("RenderMap", args, "a:c:d:fhl:m:o:r:s:t:u:",
+        Getopt g = new Getopt("RenderMap", args, "a:c:d:fhl:m:o:r:s:t:u:v:",
                               longopts);
 
         int c;
@@ -359,6 +383,7 @@ public final class RenderMap {
         String      typeStr     = "TIFF";
         String      levelsStr   = null;
         boolean     force       = false;
+        String      validityStr = null;
 
         while ((c = g.getopt()) != -1) {
             switch (c) {
@@ -404,6 +429,10 @@ public final class RenderMap {
 
             case 'u':
                 sldUrlStr = g.getOptarg();
+                break;
+
+            case 'v':
+                validityStr = g.getOptarg();
                 break;
 
             default:
@@ -537,7 +566,7 @@ public final class RenderMap {
 
             RenderMap rm = new RenderMap(osmParams, oamParams, coverage, crs,
                                          sldUrlStr, scale, dpi, true, true,
-                                         outputPath);
+                                         validityStr, outputPath);
 
             rm.render();
 
@@ -568,6 +597,7 @@ public final class RenderMap {
      * @param dpi the number of dots per inch on the target image
      * @param renderGrid specify true if a lattice is to be drawn onto the map
      * @param renderLegend specify true of labels should be drawn around the map
+     * @param validityStr a map data validity statement, may be null
      * @param outputFile the name of the output TIFF file to create
      */
     public
@@ -580,6 +610,7 @@ public final class RenderMap {
               double                        dpi,
               boolean                       renderGrid,
               boolean                       renderLegend,
+              String                        validityStr,
               String                        outputFile) {
 
         this.osmParams    = osmParams;
@@ -591,6 +622,7 @@ public final class RenderMap {
         this.dpi          = dpi;
         this.renderGrid   = renderGrid;
         this.renderLegend = renderLegend;
+        this.validityStr  = validityStr;
         this.outputPath   = outputFile;
 
         type = Type.TIFF;
@@ -1446,15 +1478,59 @@ public final class RenderMap {
                                  + (strR.getHeight() - fm.getDescent()) / 2.0));
         }
 
+        // draw a CC-by-sa logo unto the lower right
+        int ccLogoOffset = 0;
+        try {
+            String parser = XMLResourceDescriptor.getXMLParserClassName();
+            SAXSVGDocumentFactory f = new SAXSVGDocumentFactory(parser);
+            ClassLoader cl = RenderMap.class.getClassLoader();
+            SVGDocument svg = f.createSVGDocument(CC_BY_SA_LOGO_URL,
+                                 cl.getResourceAsStream(CC_BY_SA_LOGO_RES_URL));
+
+            int width = Integer.parseInt(
+                                  svg.getRootElement().getAttribute("width"));
+            int height = Integer.parseInt(
+                                  svg.getRootElement().getAttribute("height"));
+            double ratio = ((double) width) / ((double) height);
+            height = (int) (edgeHeight * .45);
+            width = (int) (height * ratio);
+
+            BufferedImage bi = renderSVG(svg, width, height);
+
+            gr.drawImage(bi,
+                 bounds.width - edgeWidth - width,
+                 (int) (bounds.height - (edgeHeight / 2.0) - (height / 2.0)),
+                 null);
+
+            ccLogoOffset = (int) (width * 1.1);
+
+        } catch (IOException e) {
+        } catch (TranscoderException e) {
+        }
+
         // draw a reference to the project in the lower right
         gr.setFont(getFont("Arial", Font.BOLD, (int) (edgeHeight * .40),
                            Rotation.NONE, gr));
         fm = gr.getFontMetrics();
-        str = "Open Aviation Map - http://openaviationmap.tyrell.hu/";
+        str = PROJECT_LABEL;
         strR = fm.getStringBounds(str, gr);
-        gr.drawString(str, (int) ((bounds.width - edgeWidth) - strR.getWidth()),
-                           (int) (bounds.height - (edgeHeight / 2.0)
+        gr.drawString(str,
+            (int) ((bounds.width - edgeWidth) - strR.getWidth() - ccLogoOffset),
+            (int) (bounds.height - (edgeHeight / 2.0)
                                 + (strR.getHeight() - fm.getDescent()) / 2.0));
+
+        // draw a validity statement on the lower middle
+        if (validityStr != null) {
+            gr.setFont(getFont("Arial", Font.BOLD, (int) (edgeHeight * .20),
+                    Rotation.NONE, gr));
+            fm = gr.getFontMetrics();
+            str = validityStr;
+            strR = fm.getStringBounds(str, gr);
+            gr.drawString(str,
+                    (int) ((bounds.width / 2.0) - strR.getWidth()),
+                    (int) (bounds.height - (edgeHeight / 2.0)
+                         + (strR.getHeight() - fm.getDescent()) / 2.0));
+        }
 
         // draw scales on the lower left
         drawScaleBarMetric(edgeWidth,
@@ -1480,6 +1556,30 @@ public final class RenderMap {
         gr.dispose();
 
         return image;
+    }
+
+    /**
+     * Render an SVG document into a buffered image.
+     *
+     * @param svg the SVG document
+     * @param width the width of the image to be rendered
+     * @param height the height of the image to be rendered
+     * @return the rendered SVG as a bitmap
+     * @throws TranscoderException on rendering errors
+     */
+    private static BufferedImage
+    renderSVG(SVGDocument svg, float width, float height)
+                                                throws TranscoderException {
+
+        BufferedImageTranscoder imageTranscoder = new BufferedImageTranscoder();
+
+        imageTranscoder.addTranscodingHint(PNGTranscoder.KEY_WIDTH, width);
+        imageTranscoder.addTranscodingHint(PNGTranscoder.KEY_HEIGHT, height);
+
+        TranscoderInput input = new TranscoderInput(svg);
+        imageTranscoder.transcode(input, null);
+
+        return imageTranscoder.getBufferedImage();
     }
 
     /**
