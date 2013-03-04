@@ -273,7 +273,9 @@ public final class RenderMap {
         System.out.println(
         "                               corner. defaults to the whole map.");
         System.out.println(
-        "                               special value of 'Hungary' accepted");
+        "                               special value of 'Hungary' and");
+        System.out.println(
+        "                               'Hungary:Budapest' accepted");
         System.out.println(
         "  -d | --dpi <value>           the target device dpi");
         System.out.println(
@@ -543,6 +545,8 @@ public final class RenderMap {
         if (coverageStr != null) {
             if ("hungary".equals(coverageStr.toLowerCase())) {
                 coverageStr = "16,45.5,23,48.75";
+            } else if ("hungary:budapest".equals(coverageStr.toLowerCase())) {
+                coverageStr = "18,47,20.25,48";
             }
             coverage = parseCoverage(coverageStr);
         }
@@ -1502,14 +1506,14 @@ public final class RenderMap {
                  (int) (bounds.height - (edgeHeight / 2.0) - (height / 2.0)),
                  null);
 
-            ccLogoOffset = (int) (width * 1.1);
+            ccLogoOffset = (int) (width * 1.25);
 
         } catch (IOException e) {
         } catch (TranscoderException e) {
         }
 
         // draw a reference to the project in the lower right
-        gr.setFont(getFont("Arial", Font.BOLD, (int) (edgeHeight * .40),
+        gr.setFont(getFont("Arial", Font.BOLD, (int) (edgeHeight * .30),
                            Rotation.NONE, gr));
         fm = gr.getFontMetrics();
         str = PROJECT_LABEL;
