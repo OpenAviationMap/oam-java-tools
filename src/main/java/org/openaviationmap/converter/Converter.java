@@ -20,6 +20,8 @@ package org.openaviationmap.converter;
 import gnu.getopt.Getopt;
 import gnu.getopt.LongOpt;
 import org.openaviationmap.converter.eaip.EAipProcessorAd13;
+import org.openaviationmap.converter.kml.KmlWriter;
+import org.openaviationmap.converter.ourairports.OurAirportsReader;
 import org.openaviationmap.model.Aerodrome;
 import org.openaviationmap.model.Airspace;
 import org.openaviationmap.model.Navaid;
@@ -63,71 +65,49 @@ public final class Converter {
      * Print a help message.
      */
     private static void printHelpMessage() {
+        //@formatter:off
+        //CHECKSTYLE:OFF
         System.out.println(
-          "Open Aviation Map converter utility");
-        System.out.println("");
-        System.out.println(
-          "usage:");
-        System.out.println("");
-        System.out.println(
-          "  -i | --input <input.file>    specify the input file, required");
-        System.out.println(
-          "  -f | --input-format <input.format>  specify the input format,");
-        System.out.println(
-          "                               required");
-        System.out.println(
-          "                               supported formats: eAIP.Hungary");
-        System.out.println(
-          "  -o | --output <output.file>  specify the output file, required");
-        System.out.println(
-          "  -F | --output-format <output.format>  specify the output format,");
-        System.out.println(
-          "                               required");
-        System.out.println(
-          "                               supported formats: OAM, AIXM");
-        System.out.println(
-          "  -c | --create                if specified, the OAM output file");
-        System.out.println(
-          "                               is created in 'create' mode, for");
-        System.out.println(
-          "                               adding new OAM nodes & ways");
-        System.out.println(
-          "  -b | --border                a border polygon file in OSM");
-        System.out.println(
-          "                               format to be used for airspaces");
-        System.out.println(
-          "                               that refer to national borders. "
-                                                                 + "optional");
-        System.out.println(
-          "  -a | --aerodromes            an aerodrome index file, in the");
-        System.out.println(
-          "                               eAIP section AD 1.3 format. used");
-        System.out.println(
-          "                               when processing aerodromes from");
-        System.out.println(
-          "                               eAIP. optional.");
-        System.out.println(
-          "  -s | --validity-start        the start of the validity period for "
-                                                            + "the data to be");
-        System.out.println(
-          "                               converted. only relevant for AIXM "
-                                                          + " output formats.");
-        System.out.println(
-        "                               accepted format: YYYY-MM-DDTHH:MM:SSZ");
-        System.out.println(
-          "  -e | --validity-end          the start of the validity period for "
-                                                            + "the data to be");
-        System.out.println(
-          "                               converted. only relevant for AIXM "
-                                                          + " output formats.");
-        System.out.println(
-        "                               accepted format: YYYY-MM-DDTHH:MM:SSZ");
-        System.out.println(
-          "  -v | --version               specify the OAM node versions");
-        System.out.println(
-          "                               required if output format is OAM");
-        System.out.println(
-          "  -h | --help                  show this usage page");
+            "Open Aviation Map converter utility\n"
+          + "\n"
+          + "usage:\n"
+          + ""
+          + "  -i | --input <input.file>             Specify the input file, [required]     \n"
+          + "  -f | --input-format <input.format>    Specify the input format, [required]\n"
+          + "                                        Supported formats: eAIP.Hungary,\n"
+          + "                                        OurAirports\n"
+          + "  -o | --output <output.file>           Specify the output file, [required]\n"
+          + "  -F | --output-format <output.format>  Specify the output format, [required]\n"
+          + "                                        Supported formats: OAM, AIXM, KML\n"
+          + "  -p | --output-options                 The file name of the properties file \n"
+          + "                                        which contains output formater options.\n"
+          + "                                        Currently only used by the KML output\n"
+          + "                                        formatter. [optional]\n"
+          + "  -c | --create                         If specified, the OAM output file is\n"
+          + "                                        created in 'create' mode, for adding\n"
+          + "                                        new OAM nodes & ways. [[optional]\n"
+          + "  -b | --border                         A border polygon file in OSM format to\n"
+          + "                                        be used for airspaces that refer to\n"
+          + "                                        national borders. [optional]\n"
+          + "  -a | --aerodromes                     An aerodrome index file, in the eAIP\n"
+          + "                                        section AD 1.3 format. used when\n"
+          + "                                        processing aerodromes from eAIP.\n"
+          + "                                        [optional].\n"
+          + "  -s | --validity-start                 The start of the validity period for \n"
+          + "                                        the data to be converted. Only \n"
+          + "                                        relevant for AIXM output formats.\n"
+          + "                                        Accepted format: YYYY-MM-DDTHH:MM:SSZ\n"
+          + "  -e | --validity-end                   The end of the validity period for \n"
+          + "                                        the data to be converted. Only\n"
+          + "                                        relevant for AIXM output formats.\n"
+          + "                                        Accepted format:\n"
+          + "                                        YYYY-MM-DDTHH:MM:SSZ\n"
+          + "  -v | --version                        Specify the OAM node version\n"
+          + "                                        Required if output format is OAM\n"
+          + "  -h | --help                           Show this usage page\n\n"
+          );
+        //CHECKSTYLE:ON
+        //@formatter:on
     }
 
     /**
@@ -137,49 +117,58 @@ public final class Converter {
      */
     public static void main(String[] args) {
 
-        LongOpt[] longopts = new LongOpt[11];
+        LongOpt[] longopts = new LongOpt[12];
 
         longopts[0] = new LongOpt("help", LongOpt.NO_ARGUMENT, null, 'h');
-        longopts[1] = new LongOpt("input", LongOpt.REQUIRED_ARGUMENT,
-                null, 'i');
-        longopts[2] = new LongOpt("input-format", LongOpt.REQUIRED_ARGUMENT,
-                null, 'f');
-        longopts[3] = new LongOpt("output", LongOpt.REQUIRED_ARGUMENT,
-                null, 'o');
-        longopts[4] = new LongOpt("output-format", LongOpt.REQUIRED_ARGUMENT,
-                null, 'F');
-        longopts[5] = new LongOpt("create", LongOpt.NO_ARGUMENT,
-                null, 'c');
-        longopts[6] = new LongOpt("border", LongOpt.REQUIRED_ARGUMENT,
-                null, 'b');
-        longopts[7] = new LongOpt("aerodromes", LongOpt.REQUIRED_ARGUMENT,
-                null, 'a');
-        longopts[8] = new LongOpt("validity-start", LongOpt.REQUIRED_ARGUMENT,
-                null, 's');
-        longopts[9] = new LongOpt("validity-end", LongOpt.REQUIRED_ARGUMENT,
-                null, 'e');
-        longopts[10] = new LongOpt("version", LongOpt.REQUIRED_ARGUMENT,
-                null, 'v');
+        longopts[1] =
+                new LongOpt("input", LongOpt.REQUIRED_ARGUMENT, null, 'i');
+        longopts[2] =
+                new LongOpt("input-format", LongOpt.REQUIRED_ARGUMENT, null,
+                        'f');
+        longopts[3] =
+                new LongOpt("output", LongOpt.REQUIRED_ARGUMENT, null, 'o');
+        longopts[4] =
+                new LongOpt("output-format", LongOpt.REQUIRED_ARGUMENT, null,
+                        'F');
+        longopts[5] = new LongOpt("create", LongOpt.NO_ARGUMENT, null, 'c');
+        longopts[6] =
+                new LongOpt("border", LongOpt.REQUIRED_ARGUMENT, null, 'b');
+        longopts[7] =
+                new LongOpt("aerodromes", LongOpt.REQUIRED_ARGUMENT, null, 'a');
+        longopts[8] =
+                new LongOpt("validity-start", LongOpt.REQUIRED_ARGUMENT, null,
+                        's');
+        longopts[9] =
+                new LongOpt("validity-end", LongOpt.REQUIRED_ARGUMENT, null,
+                        'e');
+        longopts[10] =
+                new LongOpt("version", LongOpt.REQUIRED_ARGUMENT, null, 'v');
+        longopts[11] =
+                new LongOpt("output-options", LongOpt.REQUIRED_ARGUMENT, null,
+                        'p');
 
-        Getopt g = new Getopt("Converter", args, "hi:f:o:F:cb:a:s:e:v:",
-                              longopts);
+        Getopt g =
+                new Getopt("Converter", args, "hi:f:o:F:cb:a:s:e:v:p:",
+                        longopts);
 
         int c;
 
-        String                  inputFile     = null;
-        String                  inputFormat   = null;
-        String                  outputFile    = null;
-        String                  outputFormat  = null;
-        boolean                 create        = false;
-        String                  borderFile    = null;
-        String                  adFile        = null;
-        GregorianCalendar       validityStart = null;
-        GregorianCalendar       validityEnd   = null;
-        int                     version       = 0;
-        List<ParseException>    errors        = new Vector<ParseException>();
+        String inputFile = null;
+        String inputFormat = null;
+        String outputFile = null;
+        String outputFormat = null;
+        boolean create = false;
+        String borderFile = null;
+        String adFile = null;
+        GregorianCalendar validityStart = null;
+        GregorianCalendar validityEnd = null;
+        int version = 0;
+        /* Holds the value of the "outputProperties" command line arg.        */
+        String outputOptions = null;
+        List<ParseException> errors = new Vector<ParseException>();
 
-        SimpleDateFormat        dateFormat =
-                              new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX");
+        SimpleDateFormat dateFormat =
+                new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX");
 
         while ((c = g.getopt()) != -1) {
             switch (c) {
@@ -241,6 +230,10 @@ public final class Converter {
                 version = Integer.parseInt(g.getOptarg());
                 break;
 
+            case 'p':
+                outputOptions = g.getOptarg();
+                break;
+
             default:
             case 'h':
                 printHelpMessage();
@@ -248,7 +241,7 @@ public final class Converter {
 
             case '?':
                 System.out.println("Invalid option '" + g.getOptopt()
-                                   + "' specified");
+                        + "' specified");
                 return;
             }
         }
@@ -277,7 +270,16 @@ public final class Converter {
             printHelpMessage();
             return;
         }
-        if (version <= 0) {
+        if ((outputFormat.equalsIgnoreCase("KML"))
+                && ((outputOptions == null) || (outputOptions.length() == 0))) {
+            System.out.println("Required option \"output-options\" when"
+                    + " out-format is \"KML\" was not specified");
+            System.out.println();
+            printHelpMessage();
+            return;
+        }
+
+        if (outputFormat.equalsIgnoreCase("OAM") && version <= 0) {
             System.out.println("Version not specified as positive ingeger");
             System.out.println();
             printHelpMessage();
@@ -287,17 +289,9 @@ public final class Converter {
         System.out.println("Converting " + inputFile + " to " + outputFile);
 
         try {
-            convert(inputFile,
-                    inputFormat,
-                    outputFile,
-                    outputFormat,
-                    create ? Action.CREATE : Action.NONE,
-                    borderFile,
-                    adFile,
-                    validityStart,
-                    validityEnd,
-                    version,
-                    errors);
+            convert(inputFile, inputFormat, outputFile, outputFormat,
+                    create ? Action.CREATE : Action.NONE, borderFile, adFile,
+                    outputOptions, validityStart, validityEnd, version, errors);
         } catch (Exception e) {
             System.out.println("Conversion failed.");
             System.out.println();
@@ -330,6 +324,9 @@ public final class Converter {
      * @param adFile a file containing an aerodrome index, in the eAIP AD 1.3
      *        format. used when processing eAIP Aerodrome definitions.
      *        may be null.
+     * @param outputProperties a Java Properties file which is used by the
+     *        output formatter to control its function and the output
+     *        generate. Currently only used by the KML formatter.
      * @param validityStart the start of the validity period for the data to be
      *        converted. may be null if unknown
      * @param validityEnd the end of the validity period for the data to be
@@ -338,31 +335,24 @@ public final class Converter {
      * @param errors all parsing errors will be put into this list
      * @throws Exception on conversion problems.
      */
-    public static void convert(String                   inputFile,
-                               String                   inputFormat,
-                               String                   outputFile,
-                               String                   outputFormat,
-                               Action                   action,
-                               String                   borderFile,
-                               String                   adFile,
-                               GregorianCalendar        validityStart,
-                               GregorianCalendar        validityEnd,
-                               int                      version,
-                               List<ParseException>     errors)
-                                                           throws Exception {
+    public static void convert(String inputFile, String inputFormat,
+            String outputFile, String outputFormat, Action action,
+            String borderFile, String adFile, String outputProperties,
+            GregorianCalendar validityStart, GregorianCalendar validityEnd,
+            int version, List<ParseException> errors) throws Exception {
 
-        List<Airspace>  airspaces    = new Vector<Airspace>();
-        List<Navaid>    navaids      = new Vector<Navaid>();
-        List<Aerodrome> aerodromes   = new Vector<Aerodrome>();
-        List<Point>     borderPoints = null;
+        List<Airspace> airspaces = new Vector<Airspace>();
+        List<Navaid> navaids = new Vector<Navaid>();
+        List<Aerodrome> aerodromes = new Vector<Aerodrome>();
+        List<Point> borderPoints = null;
 
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-        DocumentBuilder        db  = dbf.newDocumentBuilder();
+        DocumentBuilder db = dbf.newDocumentBuilder();
 
         if (borderFile != null) {
-            Document        d      = db.parse(new FileInputStream(borderFile));
-            OAMReader       reader = new OAMReader();
-            Oam             oam    = new Oam();
+            Document d = db.parse(new FileInputStream(borderFile));
+            OAMReader reader = new OAMReader();
+            Oam oam = new Oam();
             reader.processOsm(d.getDocumentElement(), oam, errors);
 
             if (!oam.getWays().isEmpty()) {
@@ -377,16 +367,12 @@ public final class Converter {
         }
 
         if (adFile != null) {
-            Document        d      = db.parse(new FileInputStream(adFile));
+            Document d = db.parse(new FileInputStream(adFile));
 
             if ("e:AD-1.3".equals(d.getDocumentElement().getTagName())) {
                 EAipProcessorAd13 p = new EAipProcessorAd13();
-                p.processEAIP(d.getDocumentElement(),
-                              borderPoints,
-                              airspaces,
-                              navaids,
-                              aerodromes,
-                              errors);
+                p.processEAIP(d.getDocumentElement(), borderPoints, airspaces,
+                        navaids, aerodromes, errors);
             }
 
         }
@@ -398,44 +384,50 @@ public final class Converter {
             eAipNode = d.getDocumentElement();
 
             EAIPHungaryReader reader = new EAIPHungaryReader();
-            reader.processEAIP(eAipNode,
-                               borderPoints,
-                               airspaces,
-                               navaids,
-                               aerodromes,
-                               errors);
-        } else {
-            throw new Exception("input format " + inputFormat
-                              + " not recognized");
+            reader.processEAIP(eAipNode, borderPoints, airspaces, navaids,
+                    aerodromes, errors);
         }
 
+        // Check for an input file type of "OurAirports" and process it
+        else if ("OurAirports".equals(inputFormat)) {
+            OurAirportsReader ourAirportsReader =
+                    new OurAirportsReader(inputFile);
+            ourAirportsReader.processOurAirports(airspaces, navaids,
+                    aerodromes, errors);
+        }
+
+        // We didn't find a valid input format. Throw an Exception.
+        else {
+            throw new Exception("input format " + inputFormat
+                    + " not recognized");
+        }
+
+        ////////////////////////////////////////////////////////////////////////
+        //    Generate the output
+        ////////////////////////////////////////////////////////////////////////
         if ("OAM".equals(outputFormat)) {
             // convert the airspaces to OAM
             Oam oam = new Oam();
 
             OamConverter.airspacesToOam(airspaces, oam, action, version, 1);
             OamConverter.navaidsToOam(navaids, oam, action, version,
-                                      oam.getMaxNodeId() + 1);
+                    oam.getMaxNodeId() + 1);
             OamConverter.aerodromesToOam(aerodromes, oam, action, version,
-                                         oam.getMaxNodeId() + 1);
+                    oam.getMaxNodeId() + 1);
 
             OAMWriter.write(oam, new FileWriter(outputFile));
 
         } else if ("AIXM".equals(outputFormat)) {
             // convert
             JAXBElement<AIXMBasicMessageType> m =
-                                    AixmConverter.convertToAixm(airspaces,
-                                                                navaids,
-                                                                aerodromes,
-                                                                validityStart,
-                                                                validityEnd,
-                                                                "BASELINE",
-                                                                version,
-                                                                0L);
+                    AixmConverter
+                            .convertToAixm(airspaces, navaids, aerodromes,
+                                    validityStart, validityEnd, "BASELINE",
+                                    version, 0L);
 
             // marshal the data into XML using the JAXB marshaller
-            JAXBContext  ctx = JAXBContext.newInstance(
-                                              "aero.aixm.schema._5_1.message");
+            JAXBContext ctx =
+                    JAXBContext.newInstance("aero.aixm.schema._5_1.message");
             Marshaller marsh = ctx.createMarshaller();
 
             Document document = db.newDocument();
@@ -443,12 +435,17 @@ public final class Converter {
 
             ConverterUtil.canonizeNS(document, AixmConverter.getNsCtx());
 
-            ConverterUtil.serializeDocument(document,
-                                            new FileOutputStream(outputFile));
+            ConverterUtil.serializeDocument(document, new FileOutputStream(
+                    outputFile));
+
+        } else if ("KML".equals(outputFormat)) {
+            KmlWriter kmlWriter = new KmlWriter(outputFile, outputProperties);
+            kmlWriter.convertToKml(airspaces, navaids, aerodromes);
+            kmlWriter.close();
 
         } else {
             throw new Exception("output format " + outputFormat
-                              + " not recognized");
+                    + " not recognized");
         }
     }
 
