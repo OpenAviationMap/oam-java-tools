@@ -1,0 +1,7 @@
+"id","airport_ref","airport_ident","type","description","frequency_mhz"
+50217,1787,"CYKF","MF","Traffic",126.0
+50219,1787,"CYKF","TWR","TWR",126.0
+0,1787,"CYKF","EMERG","TWR",118.55
+49929,1368,"CNZ8",,0.0,
+49930,1368,"CNZ8",,0.0,
+
