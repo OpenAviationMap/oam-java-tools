@@ -95,8 +95,13 @@ public final class AirportCsv {
      * Very little actual validation of the values occur and many of the values
      * may be blank.
      *
-     * @param csValues
+     * @param csVariables
      *            Is a String array containing the values to use.
+     *
+     * @param properties
+     *            Is the Properties object that contains the .properties file
+     *            that was specified on the command line for the OurAirports
+     *            input.
      *
      * @throws ParseException
      *            If any of the CSV values cannot be parsed.

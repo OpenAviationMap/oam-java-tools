@@ -39,12 +39,11 @@ public class Point {
 
     /**
      * Constructor that accepts the latitude and longitude directly.
-     * 
+     *
      * @param latitude The double value for the latitude.
-     * 
+     *
      * @param longitude The double value for the longitude.
-     * 
-     * @author Raymond Raw
+     *
      */
     public Point(final double latitude, final double longitude) {
         this.latitude = latitude;
@@ -57,7 +56,7 @@ public class Point {
      * @param other the other object to get values from.
      */
     public Point(Point other) {
-        latitude  = other.latitude;
+        latitude = other.latitude;
         longitude = other.longitude;
     }
 
@@ -114,10 +113,10 @@ public class Point {
      */
     public Point displace(Distance displacement, double bearing) {
         Point newPoint = new Point();
-        double distance = (displacement.inUom(UOM.M)).getDistance()/1000.0;
+        double distance = (displacement.inUom(UOM.M)).getDistance() / 1000.0;
         double PI180 = Math.PI / 180.0d;
         double PIUnder180 = 180.0d / Math.PI;
-        
+
         /* The radius of the earth such that d/R = angular distance in radians. */
         double angularDisplacement = distance / 6378.137d;
         double cosAngularDisplacement = Math.cos(angularDisplacement);
@@ -126,12 +125,16 @@ public class Point {
         double lon1 = this.getLongitude() * PI180;
         double bearingRad = bearing * PI180;
 
-        double lat2 = Math.asin(Math.sin(lat1) * cosAngularDisplacement + Math.cos(lat1) * sinAngularDisplacement
+        double lat2 = Math.asin(Math.sin(lat1) * cosAngularDisplacement
+                + Math.cos(lat1) * sinAngularDisplacement
                 * Math.cos(bearingRad));
 
         double lon2 = lon1
-                + Math.atan2(Math.sin(bearingRad) * sinAngularDisplacement * Math.cos(lat1), cosAngularDisplacement
-                - Math.sin(lat1) * Math.sin(lat2));
+                + Math.atan2(
+                        Math.sin(bearingRad) * sinAngularDisplacement
+                                * Math.cos(lat1),
+                        cosAngularDisplacement - Math.sin(lat1)
+                                * Math.sin(lat2));
 
         return new Point(lat2 * PIUnder180, lon2 * PIUnder180);
     }
