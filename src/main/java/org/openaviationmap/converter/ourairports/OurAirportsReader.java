@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -107,6 +108,36 @@ public class OurAirportsReader {
     public static final String PROPERTYKEY_FILTERISOREGION = "FilterIsoRegion";
 
     /**
+     * The Property file key which controls the auto generation of a circular
+     * control zone around aerodromes that have a tower.
+     * <p>
+     * The value is specified as a letter between A and G which determines the
+     * control zone type. If no value is specified then a control zone is not
+     * generated.
+     */
+    public static final String PROPERTYKEY_AUTOGENERATECZWHENTOWER = "AutoGenerateCZWhenTower";
+
+    /**
+     * The Property file key which controls the auto generation of a circular
+     * control zone around aerodromes that have a separate approach frequency.
+     * <p>
+     * The value is specified as a letter between A and G which determines the
+     * control zone type. If no value is specified then a control zone is not
+     * generated.
+     */
+    public static final String PROPERTYKEY_AUTOGENERATECZWHENAPPROACH = "AutoGenerateCZWhenApproach";
+
+    /**
+     * The Property file key which controls the auto generation of a circular
+     * control zone around aerodromes that have an AFIS .
+     * <p>
+     * The value is specified as a letter between A and G which determines the
+     * control zone type. If no value is specified then a control zone is not
+     * generated.
+      */
+    public static final String PROPERTYKEY_AUTOGENERATECZWHENAFIS = "AutoGenerateCZWhenAFIS";
+
+    /**
      * The root directory where all of the various csv files exist.
      * <p>
      * This is loaded from a Property in the Property file specified as the
@@ -133,7 +164,8 @@ public class OurAirportsReader {
      *             If a required key in the Properties file isn't found.
      */
     public OurAirportsReader(final String inputFile) throws IOException,
-            FileNotFoundException, MissingResourceException {
+            FileNotFoundException, MissingResourceException,
+            OurAirportsValidationException {
 
         // Set defaults and load our Properties file
         this.properties = this.loadProperties(inputFile);
@@ -597,43 +629,90 @@ public class OurAirportsReader {
     //TODO Need a way to find and define irregular control zones
     private void generateAerodromeControlZone(final Aerodrome aerodrome) {
 
+        // Used to put the control zone height into the label
+        DecimalFormat makeInt = new DecimalFormat("0");
         if (aerodrome.getTower() != null) {
-            // We need to generate a control zone.
-            Airspace controlZone = new Airspace();
-            Circle circle = new Circle();
-            circle.setCenter(aerodrome.getArp());
-            controlZone.setBoundary(circle);
-            controlZone.setLowerLimit(new Elevation(0.0d, UOM.FT,
-                    ElevationReference.SFC));
-            controlZone.setCommFrequency(aerodrome.getTower().toString());
-            controlZone.setType("CTR");
-            List<Airspace> airspaces = aerodrome.getAirspaces();
-            if (airspaces == null) {
-                // No airspaces so far, create the new List for ours
-                airspaces = new Vector<Airspace>(5);
-                aerodrome.setAirspaces(airspaces);
-            }
-
-            if (aerodrome.getApproach() != null) {
-                // We need to generate a class C airspace.
-                circle.setRadius(new Distance(7.0d, UOM.NM));
-                controlZone.setAirspaceClass("C");
-                controlZone.setUpperLimit(new Elevation(4000.0d, UOM.FT,
+            // We have a tower. Generate a control zone
+            Object[] cz = (Object[]) this.properties
+                    .get(PROPERTYKEY_AUTOGENERATECZWHENTOWER);
+            if (cz.length != 0) {
+                // We need to generate a control zone.
+                Airspace controlZone = new Airspace();
+                Circle circle = new Circle();
+                circle.setCenter(aerodrome.getArp());
+                controlZone.setBoundary(circle);
+                controlZone.setLowerLimit(new Elevation(0.0d, UOM.FT,
                         ElevationReference.SFC));
-                controlZone.setName("CZ \"C\" 4000");
-            }
+                controlZone.setCommFrequency(aerodrome.getTower().toString());
+                controlZone.setType("CTR");
+                List<Airspace> airspaces = aerodrome.getAirspaces();
+                if (airspaces == null) {
+                    // No airspaces so far, create the new List for ours
+                    airspaces = new Vector<Airspace>(5);
+                    aerodrome.setAirspaces(airspaces);
+                }
 
-            else {
-                // We need to generate a class D airspace.
-                circle.setRadius(new Distance(5.0d, UOM.NM));
-                controlZone.setAirspaceClass("D");
-                controlZone.setUpperLimit(new Elevation(4000.0d, UOM.FT,
+                if (aerodrome.getApproach() == null) {
+                    // We need to generate a "Tower" only airspace.
+                    circle.setRadius(new Distance((Double) cz[1], UOM.NM));
+                    controlZone.setAirspaceClass((String) cz[0]);
+                    controlZone.setUpperLimit(new Elevation((Double) cz[2],
+                            UOM.FT, ElevationReference.SFC));
+                    controlZone.setName("CZ \"" + cz[0] + "\" "
+                            + makeInt.format(cz[2]));
+                }
+
+                else {
+                    // We need to generate an airspace when there's appraoch.
+                    Object[] czAPRCH = (Object[]) this.properties
+                            .get(PROPERTYKEY_AUTOGENERATECZWHENAPPROACH);
+                    if (czAPRCH.length != 0) {
+                        // Use the "Approach control zone type
+                        cz = czAPRCH;
+                    }
+                    circle.setRadius(new Distance((Double) cz[1], UOM.NM));
+                    controlZone.setAirspaceClass((String) cz[0]);
+                    controlZone.setUpperLimit(new Elevation((Double) cz[2],
+                            UOM.FT, ElevationReference.SFC));
+                    controlZone.setName("CZ \"" + cz[0] + "\" "
+                            + makeInt.format(cz[2]));
+                }
+
+                // Add the new airspace
+                airspaces.add(controlZone);
+            }
+        }
+
+        else if (aerodrome.getAfis() != null) {
+            // This aerodrome has a Flight Information Service
+            Object[] cz = (Object[]) this.properties
+                    .get(PROPERTYKEY_AUTOGENERATECZWHENAFIS);
+            if (cz.length != 0) {
+                // We need to generate a control zone.
+                Airspace controlZone = new Airspace();
+                Circle circle = new Circle();
+                circle.setCenter(aerodrome.getArp());
+                controlZone.setBoundary(circle);
+                controlZone.setLowerLimit(new Elevation(0.0d, UOM.FT,
                         ElevationReference.SFC));
-                controlZone.setName("CZ \"D\" 4000");
-            }
+                controlZone.setCommFrequency(aerodrome.getAfis().toString());
+                controlZone.setType("CTR");
+                List<Airspace> airspaces = aerodrome.getAirspaces();
+                if (airspaces == null) {
+                    // No airspaces so far, create the new List for ours
+                    airspaces = new Vector<Airspace>(5);
+                    aerodrome.setAirspaces(airspaces);
+                }
+                circle.setRadius(new Distance((Double) cz[1], UOM.NM));
+                controlZone.setAirspaceClass((String) cz[0]);
+                controlZone.setUpperLimit(new Elevation((Double) cz[2], UOM.FT,
+                        ElevationReference.SFC));
+                controlZone.setName("CZ \"" + cz[0] + "\" "
+                        + makeInt.format(cz[2]));
 
-            // Add the new airspace
-            airspaces.add(controlZone);
+                // Add the new airspace
+                airspaces.add(controlZone);
+            }
         }
 
     }
@@ -756,19 +835,20 @@ public class OurAirportsReader {
             Collection<NavaidCsv> csvNavaids = navaidsCsv.values();
             for (NavaidCsv aNavaidCsv : csvNavaids) {
                 if (this.isSelectedByFilter(aNavaidCsv)) {
-                    // Note, we may get back either one or two navaids. Two
-                    // will be returned if the navaid is of type NDBDME. This is
-                    // done because AIXM does not seem to support a single
-                    // navaid with both NDB and DME.
                     ArrayList<Navaid> navaid = aNavaidCsv.convertToOamNavaids();
                     Aerodrome aerodrome = null;
                     if (aNavaidCsv.associated_airport.length() != 0) {
+                        // If there is an associated aerodrome but we get a null
+                        // returned, then, this aerodrome has propably been
+                        // filtered out so we ignor it
                         aerodrome = aerodromesMap
                                 .get(aNavaidCsv.associated_airport.trim());
-                    }
-                    if (aerodrome != null) {
-                        this.addNavaidToAerodrome(aerodrome, navaid);
+                        if (aerodrome != null) {
+                            this.addNavaidToAerodrome(aerodrome, navaid);
+                        }
                     } else {
+                        // There is no associated aerodrome so, its a free
+                        // navaid.
                         navaids.addAll(navaid);
                     }
                 }
@@ -797,7 +877,8 @@ public class OurAirportsReader {
      */
     //TODO Cleanup the contructor and make use of this "loadProperties" method
     private Properties loadProperties(final String propertiesFileName)
-            throws FileNotFoundException, IOException {
+            throws FileNotFoundException, IOException,
+            OurAirportsValidationException {
 
         Properties properties = new Properties();
 
@@ -837,6 +918,10 @@ public class OurAirportsReader {
         properties.put(PROPERTYKEY_FILTERLATITUDEMINIMUM, minLatitude);
         properties.put(PROPERTYKEY_FILTERLONGITUDEMAXIMUM, maxLongitude);
         properties.put(PROPERTYKEY_FILTERLONGITUDEMINIMUM, minLongitude);
+
+        properties.put(PROPERTYKEY_AUTOGENERATECZWHENAFIS, "");
+        properties.put(PROPERTYKEY_AUTOGENERATECZWHENAPPROACH, "C,7.0,4000");
+        properties.put(PROPERTYKEY_AUTOGENERATECZWHENTOWER, "D,5.0,4000");
 
         // ISO-Country filter. This is a comma separated list of country codes.
         // Separate each country, trim it and uppercase it. We then stuff the
@@ -878,6 +963,42 @@ public class OurAirportsReader {
                 properties.put(PROPERTYKEY_FILTERAERODROMEIDENTS, "");
             }
         }
+
+        // Parse the auto generate control zone settings. The control zone
+        // String must be in the form "z,ddd,hhh" where "z" is a letter from
+        // A - G, ddd is a decimal number representing the zone diameter in
+        // nautical miles and hhh is the zone height in feet.
+        String[] propNames = {PROPERTYKEY_AUTOGENERATECZWHENAFIS,
+                PROPERTYKEY_AUTOGENERATECZWHENAPPROACH,
+                PROPERTYKEY_AUTOGENERATECZWHENTOWER};
+        for (String propName : propNames) {
+            String czDef = properties.getProperty(propName);
+            Double diameter;
+            Double height;
+            if (czDef.length() != 0) {
+                String[] czParts = czDef.split(",");
+                try {
+                    if ((czParts[0].length() != 1)
+                            || (!czParts[0].matches("[ABCDEFG]"))) {
+                        throw new ParseException(
+                                "Control zone type must a single letter A - G");
+                    }
+                    diameter = new Double(czParts[1]);
+                    height = new Double(czParts[2]);
+                } catch (Exception e) {
+                    throw new OurAirportsValidationException(
+                            "Invalid value for property \""
+                                    + PROPERTYKEY_AUTOGENERATECZWHENAFIS
+                                    + "\". The Exception was "
+                                    + e.getLocalizedMessage());
+                }
+                Object[] values = {czParts[0], diameter, height};
+                properties.put(propName, values);
+            } else {
+                properties.put(propName, new Object[0]);
+            }
+        }
+
         return properties;
 
     }
@@ -1299,7 +1420,7 @@ public class OurAirportsReader {
             aerodromeNavaids = new Vector<Navaid>(5);
             aerodrome.setNavaids(aerodromeNavaids);
         }
-        navaids.addAll(navaids);
+        aerodromeNavaids.addAll(navaids);
     }
 
     /**
@@ -1339,6 +1460,17 @@ public class OurAirportsReader {
                         || (longitude < minLongitude)
                         || (longitude > maxLongitude)) {
                     selected = false;
+                }
+
+                if (selected) {
+                    // *** Filter on the associated airport ICAO ident
+                    String identRegexp = this.properties
+                            .getProperty(PROPERTYKEY_FILTERAERODROMEIDENTS);
+                    if (!(identRegexp.length() == 0)) {
+                        if (!navaid.associated_airport.matches(identRegexp)) {
+                            selected = false;
+                        }
+                    }
                 }
             }
 

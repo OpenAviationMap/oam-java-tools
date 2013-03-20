@@ -199,7 +199,7 @@ public class NavaidCsv {
     }
 
     /**
-     * Converts a this OurAirports "AirportCsv" object into an OAM "Aerodrome"
+     * Converts a this OurAirports "NavaidCsv" object into an OAM "Navaid"
      * object.
      *
      * @return The converted Aerodrome object.
@@ -207,6 +207,7 @@ public class NavaidCsv {
     public ArrayList<Navaid> convertToOamNavaids() {
         ArrayList<Navaid> navaids = new ArrayList<Navaid>(2);
 
+        // Its supported as is, just add it.
         Navaid aNavaid = new Navaid();
         //aNavaid.setAngle(angle);
         aNavaid.setDmeChannel(this.dme_channel.trim());
@@ -222,6 +223,7 @@ public class NavaidCsv {
         aNavaid.setType(Navaid.Type.getType(this.type));
         aNavaid.setVariation(new MagneticVariation(this.magnetic_variation_deg,
                 0));
+        navaids.add(aNavaid);
 
         return navaids;
     }

@@ -938,10 +938,9 @@ public class KmlWriter {
                     String identRegexp = this.properties
                             .getProperty(FILTERAERODROMEIDENTS);
                     String aerodromeIdent = aerodrome.getIcao();
-                    if (aerodromeIdent.startsWith("C")) {
-                        int i = 1;
-                    }
-                    if (!aerodromeIdent.matches(identRegexp)) {
+                    // If there is a Ident regular expression then it must match
+                    if ((identRegexp != null) && (identRegexp.length() != 0)
+                            && (!aerodromeIdent.matches(identRegexp))) {
                         selected = false;
                     }
                 }

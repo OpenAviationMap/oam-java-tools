@@ -157,12 +157,35 @@ public class RunwayCsv {
 
         // Now do some essential validation of the data
         // Make sure the ident is a valid format
-        if (!this.le_ident.matches("[0-9][0-9][RCL]?")) {
-            throw new ParseException("Invalid le runway ident = \""
-                    + this.le_ident + "\" at record = "
-                    + RunwayCsv.recordNumber);
+
+        // Convert N, E, S, NE etc into standard runway numbers
+        String[] compassPoints = {"N", "NE", "E", "SE", "S", "SW", "W", "NW"};
+        String[] runwayNumbers = {"36", "04", "09", "13", "18", "22", "27",
+                "31"};
+        String[] oppositRunwayNumbers = {"18", "22", "27", "31", "36", "04",
+                "09", "13"};
+        for (int i = 0; i < 8; ++i) {
+            if (this.le_ident.equals(compassPoints[i])) {
+                this.le_ident = runwayNumbers[i];
+                this.he_ident = oppositRunwayNumbers[i];
+                break;
+            }
+        }
+        if (!this.le_ident.matches("[0-9]?[0-9][RCL]?")) {
+            // We'll just ignore Heliport pads for now
+            if (this.le_ident.matches("^H\\d$")) {
+                return;
+            } else {
+                throw new ParseException("Invalid le runway ident = \""
+                        + this.le_ident + "\" at record = "
+                        + RunwayCsv.recordNumber);
+            }
         }
         // Check that it is the low heading runway and if not, swap it
+        // Check if we need to prepend a 0
+        if (!this.le_ident.matches("[0-9][0-9][RCL]?")) {
+            this.le_ident = "0" + this.le_ident;
+        }
         if (Integer.parseInt(this.le_ident.substring(0, 2)) > 18) {
             // We need to swap the low and the high
             String tempS = this.le_ident;
@@ -184,7 +207,7 @@ public class RunwayCsv {
             this.le_longitude_deg = this.he_longitude_deg;
             this.he_longitude_deg = tempD;
             // Make sure the ident is a valid format
-            if (!this.le_ident.matches("[0-9][0-9][RCL]?")) {
+            if (!this.le_ident.matches("[0-9]?[0-9][RCL]?")) {
                 throw new ParseException("Invalid he runway ident = \""
                         + this.le_ident + "\" at record = "
                         + RunwayCsv.recordNumber);
@@ -192,6 +215,10 @@ public class RunwayCsv {
         }
         // If there is a ident for the opposite end of the runway, make sure its
         // valid. If not, generate one.
+        // First we prepend a leading zero to the le ident if we need to
+        if (!this.le_ident.matches("[0-9][0-9][RCL]?")) {
+            this.le_ident = "0" + this.le_ident;
+        }
         String heIdent = ""
                 + (Integer.parseInt(this.le_ident.substring(0, 2)) + 18);
         if (this.le_ident.length() == 3) {
@@ -203,10 +230,6 @@ public class RunwayCsv {
             this.he_ident = heIdent;
         } else {
             if (!this.he_ident.equals(heIdent)) {
-                System.out.println("Invalid he runway ident = \""
-                        + this.he_ident + "\" at record = "
-                        + RunwayCsv.recordNumber + ". Expected \"" + heIdent
-                        + "\".");
                 throw new ParseException("Invalid he runway ident = \""
                         + this.he_ident + "\" at record = "
                         + RunwayCsv.recordNumber + ". Expected \"" + heIdent
