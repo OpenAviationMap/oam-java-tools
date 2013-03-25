@@ -1,0 +1,26 @@
+Open Aviation Map README
+
+for more documentation, see the project site at:
+https://code.google.com/p/openaviationmap/
+
+and the mailing list at:
+https://groups.google.com/forum/?fromgroups#!forum/openaviationmap
+
+
+to compile, execute:
+
+mvn assembly:single
+
+to execute the various tools, use the scripts provided in the bin directory,
+which include command line help:
+
+bin/aixmconvert_all.sh
+bin/eaip_to_aixm.sh
+bin/eaip_to_oam.sh
+bin/oamconvert_all.sh
+bin/oamconverter.sh
+bin/oamdiff_all.sh
+bin/oamdiff.sh
+bin/scale_sld.sh
+
+
