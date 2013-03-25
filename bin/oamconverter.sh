@@ -29,7 +29,7 @@ SCRIPTDIR=$(dirname $0)
 BASEDIR=$(cd $SCRIPTDIR/..; pwd)
 
 JAR_FILE=oam-java-tools-1.0-SNAPSHOT-jar-with-dependencies.jar
-MAIN_CLASS=hu.tyrell.openaviationmap.converter.Converter
+MAIN_CLASS=org.openaviationmap.converter.Converter
 
 JAVA=$(which java)
 if [ ! -x $JAVA ]; then

@@ -2,7 +2,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>hu.tyrell</groupId>
+    <groupId>org.openaviationmap</groupId>
     <artifactId>oam-java-tools</artifactId>
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
@@ -154,7 +154,7 @@
                                 true
                             </addDefaultSpecificationEntries>
                             <addClasspath>true</addClasspath>
-                            <mainClass>hu.tyrell.openaviationmap.converter.Converter</mainClass>
+                            <mainClass>org.openaviationmap.converter.Converter</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -174,7 +174,7 @@
                                 true
                             </addDefaultSpecificationEntries>
                             <addClasspath>true</addClasspath>
-                            <mainClass>hu.tyrell.openaviationmap.converter.Converter</mainClass>
+                            <mainClass>org.openaviationmap.converter.Converter</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
