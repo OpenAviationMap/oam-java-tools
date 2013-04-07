@@ -112,7 +112,7 @@ public final class RenderMap {
     public static final int TILE_SIZE = 256;
 
     /** The metatile size, in tiles. */
-    public static final int METATILE_SIZE = 32;
+    public static final int METATILE_SIZE = 24;
 
     /** Float formatter. */
     private static final DecimalFormat FLOAT_FORMAT =
@@ -1057,7 +1057,7 @@ public final class RenderMap {
                                          (int) tileBounds.getWidth(),
                                          (int) tileBounds.getHeight());
 
-        if (allExist) {
+        if (allExist && !forceOverwrite) {
             System.out.println("All tiles for level " + level + " already exist"
                              + ", specify --force to overwrite");
 
@@ -1174,14 +1174,19 @@ public final class RenderMap {
                   int       width,
                   int       height) {
 
-        for (int i = x; i < x + width; ++i) {
+        for (int i = x; i <= x + width; ++i) {
             File tileDir = new File(outputBase + File.separator + level
                                                + File.separator + i);
-            for (int j = y; j < y + height; ++j) {
+
+            System.out.println("tileDir: " + tileDir.getAbsolutePath());
+            for (int j = y; j <= y + height; ++j) {
                 String fileName = tileDir.getAbsolutePath()
                                         + File.separator + j + ".png";
 
                 File f = new File(fileName);
+
+                System.out.println("fileName: " + fileName
+                                 + ", exists: " + f.exists());
 
                 if (!f.exists()) {
                     return false;
