@@ -1,7 +1,7 @@
 Open Aviation Map README
 
 for more documentation, see the project site at:
-https://code.google.com/p/openaviationmap/
+https://github.com/OpenAviationMap/
 
 and the mailing list at:
 https://groups.google.com/forum/?fromgroups#!forum/openaviationmap
@@ -9,7 +9,7 @@ https://groups.google.com/forum/?fromgroups#!forum/openaviationmap
 
 to compile, execute:
 
-mvn assembly:single
+mvn package
 
 to execute the various tools, use the scripts provided in the bin directory,
 which include command line help:
@@ -23,4 +23,10 @@ bin/oamdiff_all.sh
 bin/oamdiff.sh
 bin/scale_sld.sh
 
+
+to develop in eclipse, do:
+
+mvn eclipse:eclipse
+
+then import the project as an existing eclipse project into your workspace
 

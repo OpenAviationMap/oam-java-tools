@@ -30,7 +30,7 @@ BASEDIR=$(cd $SCRIPTDIR/..; pwd)
 
 JAR_FILE=oam-java-tools-1.0-SNAPSHOT.jar
 LIB_DIR=target/lib
-MAIN_CLASS=org.openaviationmap.rendering.ScaleSLD
+MAIN_CLASS=org.openaviationmap.rendering.RenderMap
 
 JAVA=$(which java)
 if [ ! -x $JAVA ]; then

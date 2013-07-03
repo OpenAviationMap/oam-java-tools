@@ -28,7 +28,8 @@
 SCRIPTDIR=$(dirname $0)
 BASEDIR=$(cd $SCRIPTDIR/..; pwd)
 
-JAR_FILE=oam-java-tools-1.0-SNAPSHOT-jar-with-dependencies.jar
+JAR_FILE=oam-java-tools-1.0-SNAPSHOT.jar
+LIB_DIR=target/lib
 MAIN_CLASS=org.openaviationmap.converter.Converter
 
 JAVA=$(which java)
@@ -46,11 +47,10 @@ if [ ! -f "$BASEDIR/target/$JAR_FILE" ]; then
         exit 1;
     fi
 
-    $MVN -DskipTests=true assembly:assembly;
+    $MVN -DskipTests=true package;
 fi
 
 
 # off we go
-java -cp $BASEDIR/target/$JAR_FILE $MAIN_CLASS $*
-
+java -cp $BASEDIR/$LIB_DIR:$BASEDIR/target/$JAR_FILE $MAIN_CLASS "$@"
 
