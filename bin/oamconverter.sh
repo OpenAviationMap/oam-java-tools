@@ -52,5 +52,5 @@ fi
 
 
 # off we go
-java -cp $BASEDIR/$LIB_DIR:$BASEDIR/target/$JAR_FILE $MAIN_CLASS "$@"
+java $JAVA_OPTS -cp $BASEDIR/$LIB_DIR:$BASEDIR/target/$JAR_FILE $MAIN_CLASS "$@"
 
