@@ -1,4 +1,5 @@
 Open Aviation Map README
+========================
 
 for more documentation, see the project site at:
 https://github.com/OpenAviationMap/
@@ -6,6 +7,9 @@ https://github.com/OpenAviationMap/
 and the mailing list at:
 https://groups.google.com/forum/?fromgroups#!forum/openaviationmap
 
+
+to compile
+----------
 
 to compile, execute:
 
@@ -22,7 +26,11 @@ bin/oamconverter.sh
 bin/oamdiff_all.sh
 bin/oamdiff.sh
 bin/scale_sld.sh
+bin/rendermap.sh
 
+
+to develop in eclipse
+---------------------
 
 to develop in eclipse, do:
 
