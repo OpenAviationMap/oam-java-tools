@@ -767,7 +767,7 @@ public final class ScaleSLD {
                         sb.append(' ');
                     } else {
                         double d = UOM.scaleValue(t, scale, dpi);
-                        sb.append(Double.toString(d));
+                        sb.append(Integer.toString((int) d));
                         sb.append(' ');
                     }
                 } catch (RenderException e) {
