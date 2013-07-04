@@ -255,7 +255,7 @@ public final class RenderMap {
      */
     private static void printHelpMessage() {
         System.out.println(
-        "Open Aviation Map SLD scaling utility");
+        "Open Aviation Map map rendering utility");
         System.out.println();
         System.out.println(
         "usage:");
