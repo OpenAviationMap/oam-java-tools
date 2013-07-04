@@ -27,8 +27,10 @@ import java.io.Reader;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.StringTokenizer;
+import java.util.Vector;
 
 import javax.xml.namespace.NamespaceContext;
 import javax.xml.parsers.DocumentBuilder;
@@ -436,16 +438,6 @@ public final class ScaleSLD {
         XPath xpath = XPathFactory.newInstance().newXPath();
         xpath.setNamespaceContext(getNsCtx());
 
-        // see if this document already contains scaling information
-        Double d = (Double) xpath.evaluate(
-                "count(//" + SLD_NS_PREFIX + ":MinScaleDenominator"
-                   + "|//" + SLD_NS_PREFIX + ":MaxScaleDenominator)",
-                input, XPathConstants.NUMBER);
-        if (d != 0) {
-            throw new RenderException("document is already scaled, "
-                                    + "rescaling not supported");
-        }
-
         // duplicate the input at first
         DocumentBuilderFactory dbf    = DocumentBuilderFactory.newInstance();
         dbf.setNamespaceAware(true);
@@ -526,11 +518,38 @@ public final class ScaleSLD {
                                                 document,
                                                 XPathConstants.NODESET);
 
+        Vector<Element> toRemove = new Vector<Element>();
+        
         for (int i = 0; i < rules.getLength(); ++i) {
             Element rule = (Element) rules.item(i);
+            
+            // see if this rule already contains scaling information
+            Double min = (Double) xpath.evaluate(
+            						SLD_NS_PREFIX + ":MinScaleDenominator",
+            						rule, XPathConstants.NUMBER);
+            Double max = (Double) xpath.evaluate(
+            						SLD_NS_PREFIX + ":MaxScaleDenominator",
+            						rule, XPathConstants.NUMBER);
 
-            // scale both old and new rule elements
-            scaleValues(rule, scale, dpi, crs, refXY);
+            if (!min.isNaN() || !max.isNaN()) {
+            	// scale only values that fit between min & max
+            	if ((min.isNaN() && scale < max)
+            	 || (max.isNaN() && min <= scale)
+            	 || (min <= scale && scale < max)) {
+
+		            scaleValues(rule, scale, dpi, crs, refXY);
+                } else {
+                	// remove this rule as it falls outside our scale
+                	toRemove.add(rule);
+                }
+            } else {
+	            // scale the element, as no min and max scale is provided
+	            scaleValues(rule, scale, dpi, crs, refXY);
+            }
+        }
+        
+        for (Element e : toRemove) {
+        	e.getParentNode().removeChild(e);
         }
     }
 
@@ -575,47 +594,161 @@ public final class ScaleSLD {
                                                 XPathConstants.NODESET);
 
         for (int i = 0; i < rules.getLength(); ++i) {
-            Element          rule = (Element) rules.item(i);
-            DocumentFragment df   = document.createDocumentFragment();
-
-            // the first duplicate will have a single max scale denominator
-            Element ruleCopy = (Element) rule.cloneNode(true);
+            Element rule     = (Element) rules.item(i);
             double  sMax     = scaleIntervals.get(0);
             int     nScales1 = scaleIntervals.size() - 1;
+            DocumentFragment df   = document.createDocumentFragment();
 
-            // insert the max scale denominator
-            insertMaxScaleDenominator(ruleCopy, sMax);
-            // scale the values
-            scaleValues(ruleCopy, sMax, dpi, crs, refXY);
-            // store this node, will be added later
-            df.appendChild(ruleCopy);
+            
+            // see if this rule already contains scaling information
+            Double min = (Double) xpath.evaluate(
+            						SLD_NS_PREFIX + ":MinScaleDenominator",
+            						rule, XPathConstants.NUMBER);
+            Double max = (Double) xpath.evaluate(
+            						SLD_NS_PREFIX + ":MaxScaleDenominator",
+            						rule, XPathConstants.NUMBER);
+            
+
+            // the first duplicate will have a single max scale denominator
+        	// scale only values that fit between min & max for this rule
+            // or if no min or max values are provided
+            if ((    (!min.isNaN() || !max.isNaN())
+            		  && (  (min.isNaN() && sMax < max)
+            	         || (max.isNaN() && min <= sMax)
+            	         || (min <= sMax && sMax < max)
+            	         ))
+                     || (min.isNaN() && max.isNaN())) {
+
+                // the first duplicate will have a single max scale denominator
+                Element ruleCopy = (Element) rule.cloneNode(true);
+
+                // insert the max scale denominator
+                insertMaxScaleDenominator(ruleCopy, sMax);
+                // scale the values
+                scaleValues(ruleCopy, sMax, dpi, crs, refXY);
+                // store this node, will be added later
+                df.appendChild(ruleCopy);
+            }
 
             // process the intermediate rules, that have box max and min scale
             // denominators
             for (int j = 1; j <= nScales1; ++j) {
                 double sMin = sMax;
                 sMax        = scaleIntervals.get(j);
-                ruleCopy    = (Element) rule.cloneNode(true);
+                
+                List<Double> ins = intersection(min, max, sMin, sMax);
+                
+                // scale only rules that overlap with the min & max values
+                // or if no min or max values are provided
+                if ((!ins.get(0).isNaN() && !ins.get(1).isNaN())) {
 
-                // insert the min and max scale denominators
-                insertMaxScaleDenominator(ruleCopy, sMax);
-                insertMinScaleDenominator(ruleCopy, sMin);
-
-                // scale the values inside this rule
-                scaleValues(ruleCopy, (sMax + sMin) / 2, dpi, crs, refXY);
-
-                df.appendChild(ruleCopy);
+	                Element ruleCopy    = (Element) rule.cloneNode(true);
+	
+	                // insert the min and max scale denominators
+	                insertMaxScaleDenominator(ruleCopy, ins.get(1));
+	                insertMinScaleDenominator(ruleCopy, ins.get(0));
+	
+	                // scale the values inside this rule
+	                scaleValues(ruleCopy, (sMax + sMin) / 2, dpi, crs, refXY);
+	
+	                df.appendChild(ruleCopy);
+                }
             }
-
-            // update the original rule with a min scale denominator
-            double sMin = scaleIntervals.get(nScales1);
-            insertMinScaleDenominator(rule, sMin);
-            scaleValues(rule, sMin, dpi, crs, refXY);
 
             // insert the new rules before the original one
             rule.getParentNode().insertBefore(df, rule);
+
+            
+            // update the original rule with a min scale denominator
+            double sMin = scaleIntervals.get(nScales1);
+            
+        	// scale only values that fit between min & max for this rule
+            // or if no min or max values are provided
+            if ((    (!min.isNaN() || !max.isNaN())
+            		  && (  (min.isNaN() && sMin < max)
+            	         || (max.isNaN() && min <= sMin)
+            	         || (min <= sMin && sMin < max)
+            	         ))
+                     || (min.isNaN() && max.isNaN())) {
+
+	            insertMinScaleDenominator(rule, sMin);
+	            scaleValues(rule, sMin, dpi, crs, refXY);
+            } else {
+            	// or remove if it doesn't fit
+            	rule.getParentNode().removeChild(rule);
+            }
+
         }
     }
+        
+    /**
+     * Return the intersection of two intervals.
+     * if both min1 and max1 are NaN, then min2 an max2 is returned
+     * 
+     * @param min1 the minimum value of the first interval,
+     *             might be NaN
+     * @param max1 the maximum value of the first interval,
+     *             might be NaN
+     * @param min2 the minimum value of the second interval
+     * @param max2 the maximum value of the second interval
+     * @return a list of two entries, being the lower and higher ends of
+     *         the intersection. two NaN values indicate no intersection
+     */
+     private static List<Double> intersection(double min1,
+                                              double max1,
+                                              double min2,
+                                              double max2) {
+    	 
+    	 Vector<Double> result = new Vector<Double>(2);
+    	 result.add(Double.NaN);
+    	 result.add(Double.NaN);
+    	 
+    	 if (Double.isNaN(min1) && Double.isNaN(max1)) {
+    		 result.add(0, min2);
+    		 result.add(1, max2);
+    	 }
+    	 
+    	 // if it's not really an overlap, as only one value is provided
+    	 else if (Double.isNaN(max1) && min1 <= max2) {
+    		 result.add(0, Math.max(min1, min2));
+    		 result.add(1, max2);
+    	 } else if (Double.isNaN(min1) && min2 <= max1) {
+    		 result.add(0, min2);
+    		 result.add(1, Math.min(max1, max2));
+    	 }
+    	 
+    	 // the first interval is lower then the second
+    	 // or the other way around
+    	 else if (max1 < min2 || max2 < min1) { 
+    		 // nothing really to do here as both are set to NaN already
+    	 
+    	 // one is inside the other
+    	 // min2   min1    max1    max2
+    	 } else if (min2 <= min1 && max1 < max2) {
+    		 result.add(0, min1);
+    		 result.add(1, max1);
+    	 }
+    	 // the second is inside the first
+    	 // min1   min2    max2    max1
+    	 else if (min1 <= min2 && max2 < max1) {
+    		 result.add(0, min2);
+    		 result.add(1, max2);
+    	 }
+    	 // the first is lower, but overlapping the second
+    	 // min1   min2    max1    max2
+    	 else if (min1 <= min2 && max1 < max2) {
+    		 result.add(0, min2);
+    		 result.add(1, max1);
+    	 }
+    	 // the second is lower, but overlapping the first
+    	 // min2   min1    max2    max1
+    	 else if (min2 <= min1 && max2 < max1) {
+    		 result.add(0, min1);
+    		 result.add(1, max2);
+    	 }
+    	 
+    	 return result;
+     }
 
     /**
      * Create scale intervals based on the supplied scale values. The number of
@@ -693,6 +826,13 @@ public final class ScaleSLD {
 
         XPath xpath = XPathFactory.newInstance().newXPath();
         xpath.setNamespaceContext(getNsCtx());
+        
+        // remove the old denominator element if present
+        Element old = (Element) xpath.evaluate(elementName,
+									rule, XPathConstants.NODE);
+        if (old != null) {
+        	rule.removeChild(old);
+        }
 
         // create the scale denominator element
         Document d   = rule.getOwnerDocument();

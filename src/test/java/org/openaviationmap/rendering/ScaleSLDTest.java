@@ -19,9 +19,9 @@ package org.openaviationmap.rendering;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import org.openaviationmap.converter.NodeDiffIdOk;
 
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
@@ -38,6 +38,7 @@ import javax.xml.xpath.XPathExpressionException;
 import org.custommonkey.xmlunit.XMLUnit;
 import org.geotools.referencing.CRS;
 import org.junit.Test;
+import org.openaviationmap.converter.NodeDiffIdOk;
 import org.opengis.referencing.FactoryException;
 import org.w3c.dom.Node;
 import org.xml.sax.InputSource;
@@ -148,43 +149,6 @@ public class ScaleSLDTest {
                                     FactoryException {
 
         FileReader      input  = new FileReader("var/empty.aixm51");
-        List<Double>    scales = new ArrayList<Double>(0);
-        StringWriter    output = new StringWriter();
-        boolean         caught = false;
-
-        try {
-            ScaleSLD.scaleSld(input, scales,
-                              CRS.decode(ScaleSLD.DEFAULT_CRS),
-                              ScaleSLD.DEFAULT_REF_XY, output);
-        } catch (RenderException e) {
-            // this is what we expected
-            caught = true;
-        }
-
-        assertTrue("expected RenderException not caught", caught);
-    }
-
-    /**
-     * Test when the input document already contains scaling information.
-     *
-     * @throws IOException on I/O errors
-     * @throws SAXException on XML parsing errors
-     * @throws ParserConfigurationException on XML parser configuration errors
-     * @throws TransformerException on XML transformation errors
-     * @throws RenderException on SLD scaling, rendering issues
-     * @throws XPathExpressionException on XPath errors
-     * @throws FactoryException on CRS factory errors
-     */
-    @Test
-    public void testAlreadyScaled() throws ParserConfigurationException,
-                                           SAXException,
-                                           IOException,
-                                           TransformerException,
-                                           XPathExpressionException,
-                                           RenderException,
-                                           FactoryException {
-
-        FileReader      input  = new FileReader("var/proba-250000_500000.sld");
         List<Double>    scales = new ArrayList<Double>(0);
         StringWriter    output = new StringWriter();
         boolean         caught = false;
@@ -327,4 +291,248 @@ public class ScaleSLDTest {
         NodeDiffIdOk diff = new NodeDiffIdOk(dd, d);
         assertTrue(diff.similar());
     }
+    
+    /**
+     * Test when there is one scale value applied, and where the SLDT file
+     * contains scaling constraints. This will create two rule elements for
+     * each rule element, split by the single scaling that is provided.
+     *
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing errors
+     * @throws ParserConfigurationException on XML parser configuration errors
+     * @throws TransformerException on XML transformation errors
+     * @throws RenderException on SLD scaling, rendering issues
+     * @throws XPathExpressionException on XPath errors
+     * @throws FactoryException on CRS factory errors
+     */
+    @Test
+    public void testOneScaleDenominator()
+    		                   throws ParserConfigurationException,
+                                      SAXException,
+                                      IOException,
+                                      TransformerException,
+                                      XPathExpressionException,
+                                      RenderException,
+                                      FactoryException {
+
+        FileReader      input  = new FileReader("var/proba-denominator.sldt");
+        List<Double>    scales = new ArrayList<Double>(1);
+        StringWriter    output = new StringWriter();
+
+        // first try a scale that is below the lowest max in the document
+        scales.add(125000d);
+
+        ScaleSLD.scaleSld(input, scales,
+                          CRS.decode(ScaleSLD.DEFAULT_CRS),
+                          ScaleSLD.DEFAULT_REF_XY, output);
+        
+        // now check that the input and output are the same
+        Node d  = readXml(new FileReader("var/proba-denominator-125000.sld"));
+        Node dd = readXml(new StringReader(output.toString()));
+
+        XMLUnit.setXSLTVersion("2.0");
+        XMLUnit.setIgnoreWhitespace(true);
+        NodeDiffIdOk diff = new NodeDiffIdOk(dd, d);
+        assertTrue(diff.similar());
+        
+
+        // now try a scale that is in between a min and max value
+        input  = new FileReader("var/proba-denominator.sldt");
+        output = new StringWriter();
+        scales.clear();
+        scales.add(300000d);
+
+        ScaleSLD.scaleSld(input, scales,
+                          CRS.decode(ScaleSLD.DEFAULT_CRS),
+                          ScaleSLD.DEFAULT_REF_XY, output);
+        
+        // now check that the input and output are the same
+        d  = readXml(new FileReader("var/proba-denominator-300000.sld"));
+        dd = readXml(new StringReader(output.toString()));
+
+        XMLUnit.setXSLTVersion("2.0");
+        XMLUnit.setIgnoreWhitespace(true);
+        diff = new NodeDiffIdOk(dd, d);
+        assertTrue(diff.similar());
+
+        
+        // now try a scale that above the highest min value
+        input  = new FileReader("var/proba-denominator.sldt");
+        output = new StringWriter();
+        scales.clear();
+        scales.add(750000d);
+
+        ScaleSLD.scaleSld(input, scales,
+                          CRS.decode(ScaleSLD.DEFAULT_CRS),
+                          ScaleSLD.DEFAULT_REF_XY, output);
+        
+        // now check that the input and output are the same
+        d  = readXml(new FileReader("var/proba-denominator-750000.sld"));
+        dd = readXml(new StringReader(output.toString()));
+
+        XMLUnit.setXSLTVersion("2.0");
+        XMLUnit.setIgnoreWhitespace(true);
+        diff = new NodeDiffIdOk(dd, d);
+        assertTrue(diff.similar());
+
+
+        // now try a scale that is equal to a min and a max value as well
+        // the min scale is inclusive while the max scale is exclusive
+        input  = new FileReader("var/proba-denominator.sldt");
+        output = new StringWriter();
+        scales.clear();
+        scales.add(250000d);
+
+        ScaleSLD.scaleSld(input, scales,
+                          CRS.decode(ScaleSLD.DEFAULT_CRS),
+                          ScaleSLD.DEFAULT_REF_XY, output);
+        
+        // now check that the input and output are the same
+        d  = readXml(new FileReader("var/proba-denominator-250000.sld"));
+        dd = readXml(new StringReader(output.toString()));
+
+        XMLUnit.setXSLTVersion("2.0");
+        XMLUnit.setIgnoreWhitespace(true);
+        diff = new NodeDiffIdOk(dd, d);
+        assertTrue(diff.similar());
+    }
+
+    /**
+     * Test when there are two scale values applied, and we also have
+     * scale min and max denominators in the document
+     *
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing errors
+     * @throws ParserConfigurationException on XML parser configuration errors
+     * @throws TransformerException on XML transformation errors
+     * @throws RenderException on SLD scaling, rendering issues
+     * @throws XPathExpressionException on XPath errors
+     * @throws FactoryException on CRS factory errors
+     */
+    @Test
+    public void testTwoScalesDenominator() throws ParserConfigurationException,
+                                                  SAXException,
+                                                  IOException,
+                                                  TransformerException,
+                                                  XPathExpressionException,
+                                                  RenderException,
+                                                  FactoryException {
+
+        FileReader      input  = new FileReader("var/proba-denominator.sldt");
+        List<Double>    scales = new ArrayList<Double>(2);
+        StringWriter    output = new StringWriter();
+
+        // first try with two scales the exactly match a min max pair
+        // in the original document
+        scales.add(250000d);
+        scales.add(500000d);
+
+        ScaleSLD.scaleSld(input, scales,
+                          CRS.decode(ScaleSLD.DEFAULT_CRS),
+                          ScaleSLD.DEFAULT_REF_XY, output);
+        
+        // now check that the input and output are the same
+        Node d  = readXml(new FileReader(
+        						"var/proba-denominator-250000_500000.sld"));
+        Node dd = readXml(new StringReader(output.toString()));
+
+        XMLUnit.setXSLTVersion("2.0");
+        XMLUnit.setIgnoreWhitespace(true);
+        NodeDiffIdOk diff = new NodeDiffIdOk(dd, d);
+        assertTrue(diff.similar());
+
+    
+        // now test one where the interval is above the max
+        // in the original document
+        scales.clear();
+        scales.add(750000d);
+        scales.add(1000000d);
+        input  = new FileReader("var/proba-denominator.sldt");
+        output = new StringWriter();
+
+        ScaleSLD.scaleSld(input, scales,
+                          CRS.decode(ScaleSLD.DEFAULT_CRS),
+                          ScaleSLD.DEFAULT_REF_XY, output);
+        
+        // now check that the input and output are the same
+        d  = readXml(new FileReader(
+        						"var/proba-denominator-750000_1000000.sld"));
+        dd = readXml(new StringReader(output.toString()));
+
+        XMLUnit.setXSLTVersion("2.0");
+        XMLUnit.setIgnoreWhitespace(true);
+        diff = new NodeDiffIdOk(dd, d);
+        assertTrue(diff.similar());
+
+        
+        // now test one where the interval is below the min
+        // in the original document
+        scales.clear();
+        scales.add(75000d);
+        scales.add(125000d);
+        input  = new FileReader("var/proba-denominator.sldt");
+        output = new StringWriter();
+
+        ScaleSLD.scaleSld(input, scales,
+                          CRS.decode(ScaleSLD.DEFAULT_CRS),
+                          ScaleSLD.DEFAULT_REF_XY, output);
+        
+        // now check that the input and output are the same
+        d  = readXml(new FileReader(
+        						"var/proba-denominator-75000_125000.sld"));
+        dd = readXml(new StringReader(output.toString()));
+
+        XMLUnit.setXSLTVersion("2.0");
+        XMLUnit.setIgnoreWhitespace(true);
+        diff = new NodeDiffIdOk(dd, d);
+        assertTrue(diff.similar());
+
+    }
+
+    /**
+     * Test when there are four scale values applied, and we also have
+     * scale min and max denominators in the document
+     *
+     * @throws IOException on I/O errors
+     * @throws SAXException on XML parsing errors
+     * @throws ParserConfigurationException on XML parser configuration errors
+     * @throws TransformerException on XML transformation errors
+     * @throws RenderException on SLD scaling, rendering issues
+     * @throws XPathExpressionException on XPath errors
+     * @throws FactoryException on CRS factory errors
+     */
+    @Test
+    public void testFourScalesDenominator()
+    		                     throws ParserConfigurationException,
+                                        SAXException,
+                                        IOException,
+                                        TransformerException,
+                                        XPathExpressionException,
+                                        RenderException,
+                                        FactoryException {
+
+        FileReader      input  = new FileReader("var/proba-denominator.sldt");
+        List<Double>    scales = new ArrayList<Double>(2);
+        StringWriter    output = new StringWriter();
+
+        scales.add(125000d);
+        scales.add(250000d);
+        scales.add(500000d);
+        scales.add(1000000d);
+
+        ScaleSLD.scaleSld(input, scales,
+                          CRS.decode(ScaleSLD.DEFAULT_CRS),
+                          ScaleSLD.DEFAULT_REF_XY, output);
+
+        // now check that the input and output are the same
+        Node d  = readXml(new FileReader(
+                 	"var/proba-denominator-125000_250000_500000_1000000.sld"));
+        Node dd = readXml(new StringReader(output.toString()));
+
+        XMLUnit.setXSLTVersion("2.0");
+        XMLUnit.setIgnoreWhitespace(true);
+        NodeDiffIdOk diff = new NodeDiffIdOk(dd, d);
+        assertTrue(diff.similar());
+    }
+
 }
