@@ -140,6 +140,12 @@ public final class ScaleSLD {
         System.out.println(
         "                               output file, e.g. 50000,100000");
         System.out.println(
+        "                               a special value of EPSG:900913 will");
+        System.out.println(
+        "                               result in a slippy map style scaling");
+        System.out.println(
+        "                               for zoom levels 0 .. 31");
+        System.out.println(
         "                               optional");
         System.out.println(
         "                               must be in increasing order!");
@@ -158,17 +164,17 @@ public final class ScaleSLD {
         LongOpt[] longopts = new LongOpt[7];
 
         longopts[0] = new LongOpt("help", LongOpt.NO_ARGUMENT, null, 'h');
-        longopts[1] = new LongOpt("crs", LongOpt.OPTIONAL_ARGUMENT,
+        longopts[1] = new LongOpt("crs", LongOpt.REQUIRED_ARGUMENT,
                 null, 'c');
-        longopts[2] = new LongOpt("dpi", LongOpt.OPTIONAL_ARGUMENT,
+        longopts[2] = new LongOpt("dpi", LongOpt.REQUIRED_ARGUMENT,
                 null, 'd');
         longopts[3] = new LongOpt("input", LongOpt.REQUIRED_ARGUMENT,
                 null, 'i');
         longopts[4] = new LongOpt("output", LongOpt.REQUIRED_ARGUMENT,
                 null, 'o');
-        longopts[5] = new LongOpt("refpoint", LongOpt.OPTIONAL_ARGUMENT,
+        longopts[5] = new LongOpt("refpoint", LongOpt.REQUIRED_ARGUMENT,
                 null, 'r');
-        longopts[6] = new LongOpt("scales", LongOpt.OPTIONAL_ARGUMENT,
+        longopts[6] = new LongOpt("scales", LongOpt.REQUIRED_ARGUMENT,
                 null, 's');
 
         Getopt g = new Getopt("ScaleSLD", args, "c:d:hi:o:r:s:", longopts);
